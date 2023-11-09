@@ -28,28 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dataGridView1 = new DataGridView();
             panel1 = new Panel();
-            label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             iconButton4 = new FontAwesome.Sharp.IconButton();
-            btnFilter = new FontAwesome.Sharp.IconButton();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2ComboBox4 = new Guna.UI2.WinForms.Guna2ComboBox();
-            guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            guna2ToggleSwitch1 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -59,44 +57,30 @@
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Bottom;
-            dataGridView1.Location = new Point(0, 187);
+            dataGridView1.Location = new Point(0, 149);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1183, 634);
+            dataGridView1.Size = new Size(1183, 672);
             dataGridView1.TabIndex = 0;
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Transparent;
-            panel1.Controls.Add(label4);
+            panel1.BackColor = Color.Turquoise;
+            panel1.Controls.Add(guna2ToggleSwitch1);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(iconButton1);
             panel1.Controls.Add(iconButton4);
-            panel1.Controls.Add(btnFilter);
             panel1.Controls.Add(iconButton3);
             panel1.Controls.Add(guna2TextBox1);
             panel1.Controls.Add(guna2ComboBox2);
             panel1.Controls.Add(guna2ComboBox4);
-            panel1.Controls.Add(guna2ComboBox1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1183, 187);
+            panel1.Size = new Size(1183, 149);
             panel1.TabIndex = 1;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = SystemColors.GrayText;
-            label4.Location = new Point(335, 98);
-            label4.Name = "label4";
-            label4.Size = new Size(136, 19);
-            label4.TabIndex = 26;
-            label4.Text = "Tìm kiếm theo tên";
             // 
             // label3
             // 
@@ -104,7 +88,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.GrayText;
-            label3.Location = new Point(85, 98);
+            label3.Location = new Point(153, 21);
             label3.Name = "label3";
             label3.Size = new Size(66, 19);
             label3.TabIndex = 25;
@@ -116,7 +100,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.GrayText;
-            label2.Location = new Point(335, 31);
+            label2.Location = new Point(386, 21);
             label2.Name = "label2";
             label2.Size = new Size(127, 19);
             label2.TabIndex = 24;
@@ -128,7 +112,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.GrayText;
-            label1.Location = new Point(85, 31);
+            label1.Location = new Point(33, 21);
             label1.Name = "label1";
             label1.Size = new Size(81, 19);
             label1.TabIndex = 23;
@@ -143,7 +127,7 @@
             iconButton1.IconColor = Color.White;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 20;
-            iconButton1.Location = new Point(1061, 120);
+            iconButton1.Location = new Point(919, 91);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(43, 36);
             iconButton1.TabIndex = 22;
@@ -161,28 +145,13 @@
             iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton4.IconSize = 20;
             iconButton4.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton4.Location = new Point(766, 53);
+            iconButton4.Location = new Point(673, 43);
             iconButton4.Name = "iconButton4";
             iconButton4.Size = new Size(168, 36);
             iconButton4.TabIndex = 21;
             iconButton4.Text = "Nhập xuất excel";
             iconButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton4.UseVisualStyleBackColor = false;
-            // 
-            // btnFilter
-            // 
-            btnFilter.BackColor = Color.FromArgb(226, 153, 48);
-            btnFilter.FlatAppearance.BorderSize = 0;
-            btnFilter.FlatStyle = FlatStyle.Flat;
-            btnFilter.IconChar = FontAwesome.Sharp.IconChar.Filter;
-            btnFilter.IconColor = Color.White;
-            btnFilter.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnFilter.IconSize = 20;
-            btnFilter.Location = new Point(1061, 53);
-            btnFilter.Name = "btnFilter";
-            btnFilter.Size = new Size(43, 36);
-            btnFilter.TabIndex = 20;
-            btnFilter.UseVisualStyleBackColor = false;
             // 
             // iconButton3
             // 
@@ -196,7 +165,7 @@
             iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton3.IconSize = 20;
             iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(940, 53);
+            iconButton3.Location = new Point(847, 43);
             iconButton3.Name = "iconButton3";
             iconButton3.Size = new Size(115, 36);
             iconButton3.TabIndex = 19;
@@ -206,7 +175,7 @@
             // 
             // guna2TextBox1
             // 
-            guna2TextBox1.CustomizableEdges = customizableEdges1;
+            guna2TextBox1.CustomizableEdges = customizableEdges3;
             guna2TextBox1.DefaultText = "";
             guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -215,19 +184,19 @@
             guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new Point(328, 120);
+            guna2TextBox1.Location = new Point(33, 91);
             guna2TextBox1.Name = "guna2TextBox1";
             guna2TextBox1.PasswordChar = '\0';
             guna2TextBox1.PlaceholderText = "Nhập tên để tìm kiếm";
             guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2TextBox1.Size = new Size(727, 36);
+            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2TextBox1.Size = new Size(880, 36);
             guna2TextBox1.TabIndex = 18;
             // 
             // guna2ComboBox2
             // 
             guna2ComboBox2.BackColor = Color.Transparent;
-            guna2ComboBox2.CustomizableEdges = customizableEdges3;
+            guna2ComboBox2.CustomizableEdges = customizableEdges5;
             guna2ComboBox2.DrawMode = DrawMode.OwnerDrawFixed;
             guna2ComboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             guna2ComboBox2.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -235,16 +204,16 @@
             guna2ComboBox2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             guna2ComboBox2.ForeColor = Color.FromArgb(68, 88, 112);
             guna2ComboBox2.ItemHeight = 30;
-            guna2ComboBox2.Location = new Point(78, 120);
+            guna2ComboBox2.Location = new Point(146, 43);
             guna2ComboBox2.Name = "guna2ComboBox2";
-            guna2ComboBox2.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2ComboBox2.Size = new Size(211, 36);
+            guna2ComboBox2.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2ComboBox2.Size = new Size(227, 36);
             guna2ComboBox2.TabIndex = 17;
             // 
             // guna2ComboBox4
             // 
             guna2ComboBox4.BackColor = Color.Transparent;
-            guna2ComboBox4.CustomizableEdges = customizableEdges5;
+            guna2ComboBox4.CustomizableEdges = customizableEdges7;
             guna2ComboBox4.DrawMode = DrawMode.OwnerDrawFixed;
             guna2ComboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
             guna2ComboBox4.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -252,28 +221,28 @@
             guna2ComboBox4.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             guna2ComboBox4.ForeColor = Color.FromArgb(68, 88, 112);
             guna2ComboBox4.ItemHeight = 30;
-            guna2ComboBox4.Location = new Point(328, 53);
+            guna2ComboBox4.Location = new Point(379, 43);
             guna2ComboBox4.Name = "guna2ComboBox4";
-            guna2ComboBox4.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2ComboBox4.Size = new Size(416, 36);
+            guna2ComboBox4.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2ComboBox4.Size = new Size(288, 36);
             guna2ComboBox4.TabIndex = 16;
             // 
-            // guna2ComboBox1
+            // guna2ToggleSwitch1
             // 
-            guna2ComboBox1.BackColor = Color.Transparent;
-            guna2ComboBox1.CustomizableEdges = customizableEdges7;
-            guna2ComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
-            guna2ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            guna2ComboBox1.FocusedColor = Color.FromArgb(94, 148, 255);
-            guna2ComboBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2ComboBox1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2ComboBox1.ForeColor = Color.FromArgb(68, 88, 112);
-            guna2ComboBox1.ItemHeight = 30;
-            guna2ComboBox1.Location = new Point(78, 53);
-            guna2ComboBox1.Name = "guna2ComboBox1";
-            guna2ComboBox1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2ComboBox1.Size = new Size(211, 36);
-            guna2ComboBox1.TabIndex = 15;
+            guna2ToggleSwitch1.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2ToggleSwitch1.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            guna2ToggleSwitch1.CheckedState.InnerBorderColor = Color.White;
+            guna2ToggleSwitch1.CheckedState.InnerColor = Color.White;
+            guna2ToggleSwitch1.CustomizableEdges = customizableEdges1;
+            guna2ToggleSwitch1.Location = new Point(34, 51);
+            guna2ToggleSwitch1.Name = "guna2ToggleSwitch1";
+            guna2ToggleSwitch1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2ToggleSwitch1.Size = new Size(81, 20);
+            guna2ToggleSwitch1.TabIndex = 26;
+            guna2ToggleSwitch1.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            guna2ToggleSwitch1.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            guna2ToggleSwitch1.UncheckedState.InnerBorderColor = Color.White;
+            guna2ToggleSwitch1.UncheckedState.InnerColor = Color.White;
             // 
             // SanPhamForm
             // 
@@ -298,17 +267,15 @@
 
         private DataGridView dataGridView1;
         private Panel panel1;
-        private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton btnFilter;
         private FontAwesome.Sharp.IconButton iconButton3;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox4;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch guna2ToggleSwitch1;
     }
 }
