@@ -97,12 +97,13 @@ namespace GUI
             panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+            lblTitleChildForm.Text = childForm.Text;
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new SanPhamForm());
+
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
@@ -176,11 +177,13 @@ namespace GUI
         private void btnLoaiSanPham_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new SanPhamForm());
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
         }
+
     }
 }
