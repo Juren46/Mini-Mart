@@ -184,6 +184,5 @@ namespace GUI
         {
             ActivateButton(sender, RGBColors.color2);
         }
-
     }
 }
