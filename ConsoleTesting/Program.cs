@@ -12,20 +12,36 @@ namespace ConsoleTesting
             //TestPhanQuyen.TestLayPhanQuyenTheoMa();
             //TestPhanQuyen.TestLayPhanQuyenTheoTen();
             //TestPhanQuyen.TestLayPhanQuyenTheoTenTaiKhoan();
-            //TestPhanQuyen.TestTimKiemTaiKhoan();
+            //TestPhanQuyen.TestTimKiemPhanQuyen();
 
             //TestTaiKhoan.TestLayDanhSachTaiKhoan();
             //TestTaiKhoan.TestLayTaiKhoanTheoTen();
             //TestTaiKhoan.TestKiemTraDangNhap();
             //TestTaiKhoan.TestThemTaiKhoan();
-            //TestTaiKhoan.TestDoiMatKhau
+            //TestTaiKhoan.TestDoiMatKhau();
             //TestTaiKhoan.TestKhoaTaiKhoan();
             //TestTaiKhoan.TestMoKhoaTaiKhoan();
             //TestTaiKhoan.TestTimKiemTaiKhoan();
             //TestTaiKhoan.TestLocTaiKhoanTheoPhanQuyen();
 
-            //TestNhanVien.TestLayDanhSachNhanVien
-            TestNhanVien.TestThemNhanVien();
+            //TestNhanVien.TestLayDanhSachNhanVien();
+            //TestNhanVien.TestLayNhanVienTheoMa();
+            //TestNhanVien.TestLayNhanVienTheoTenTaiKhoan();
+            //TestNhanVien.TestThemNhanVien();
+            //TestNhanVien.TestXoaNhanVien();
+            //TestNhanVien.TestSuaNhanVien()
+            //TestNhanVien.TestTimKiemNhanVien();
+            //TestNhanVien.TestLocNhanVienTheoPhanQuyen();
+            //TestNhanVien.TestLocNhanVienTheoGioiTinh();
+
+            //TestKhachHang.TestLayDanhSachKhachHang();
+            //TestKhachHang.TestLayKhachHangTheoMa();
+            //TestKhachHang.TestLayKhachHangTheoSoDienThoai();
+            //TestKhachHang.TestThemKhachHang();
+            //TestKhachHang.TestSuaKhachHang();
+            //TestKhachHang.TestTimKiemKhachHang();
+            //TestKhachHang.TestLocKhachHangTheoGioiTinh();
+            TestKhachHang.TestLocKhachHangTheoBacThanhVien();
         }
     }
 }

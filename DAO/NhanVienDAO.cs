@@ -27,7 +27,8 @@ namespace DAO
                 nhanVien.tenTaiKhoan = row["tenTaiKhoan"].ToString();
                 nhanVien.hoTen = row["tenNhanVien"].ToString();
                 nhanVien.gioiTinh = row["gioiTinh"].ToString();
-                nhanVien.ngaySinh = (DateTime)row["ngaySinh"];
+                try { nhanVien.ngaySinh = (DateTime)row["ngaySinh"]; }
+                catch { nhanVien.ngaySinh = DateTime.MinValue; }
                 nhanVien.soDienThoai = row["soDienThoai"].ToString();
                 nhanVien.email = row["email"].ToString();
                 nhanVien.diaChi = row["diaChi"].ToString();
@@ -37,6 +38,50 @@ namespace DAO
             }
 
             return listNhanVien;
+        }
+
+        public NhanVien LayNhanVienTheoMa(string maNhanVien)
+        {
+            string query = $"SELECT * FROM NhanVien WHERE maNhanVien = '{maNhanVien}' AND trangThai = 1;";
+
+            DataTable dataTable = DBHelper.ExecuteQuery(query);
+
+            NhanVien nhanVien = new NhanVien();
+
+            nhanVien.maNhanVien = dataTable.Rows[0]["maNhanVien"].ToString();
+            nhanVien.tenTaiKhoan = dataTable.Rows[0]["tenTaiKhoan"].ToString();
+            nhanVien.hoTen = dataTable.Rows[0]["tenNhanVien"].ToString();
+            nhanVien.gioiTinh = dataTable.Rows[0]["gioiTinh"].ToString();
+            try { nhanVien.ngaySinh = (DateTime)dataTable.Rows[0]["ngaySinh"]; }
+            catch { nhanVien.ngaySinh = DateTime.MinValue; }
+            nhanVien.soDienThoai = dataTable.Rows[0]["soDienThoai"].ToString();
+            nhanVien.email = dataTable.Rows[0]["email"].ToString();
+            nhanVien.diaChi = dataTable.Rows[0]["diaChi"].ToString();
+            nhanVien.trangThai = (bool)dataTable.Rows[0]["trangThai"];
+
+            return nhanVien;
+        }
+
+        public NhanVien LayNhanVienTheoTenTaiKhoan(string tenTaiKhoan)
+        {
+            string query = $"SELECT * FROM NhanVien WHERE tenTaiKhoan = '{tenTaiKhoan}' AND trangThai = 1;";
+
+            DataTable dataTable = DBHelper.ExecuteQuery(query);
+
+            NhanVien nhanVien = new NhanVien();
+
+            nhanVien.maNhanVien = dataTable.Rows[0]["maNhanVien"].ToString();
+            nhanVien.tenTaiKhoan = dataTable.Rows[0]["tenTaiKhoan"].ToString();
+            nhanVien.hoTen = dataTable.Rows[0]["tenNhanVien"].ToString();
+            nhanVien.gioiTinh = dataTable.Rows[0]["gioiTinh"].ToString();
+            try { nhanVien.ngaySinh = (DateTime)dataTable.Rows[0]["ngaySinh"]; }
+            catch { nhanVien.ngaySinh = DateTime.MinValue; }
+            nhanVien.soDienThoai = dataTable.Rows[0]["soDienThoai"].ToString();
+            nhanVien.email = dataTable.Rows[0]["email"].ToString();
+            nhanVien.diaChi = dataTable.Rows[0]["diaChi"].ToString();
+            nhanVien.trangThai = (bool)dataTable.Rows[0]["trangThai"];
+
+            return nhanVien;
         }
 
         public int DemSoNhanVien(string tenPhanQuyen)
@@ -74,30 +119,26 @@ namespace DAO
 
         public bool SuaNhanVien(NhanVien nhanVien)
         {
-            string query = $"UPDATE NhanVien SET tenNhanVien = '{nhanVien.hoTen}', gioiTinh = '{nhanVien.gioiTinh}', ngaySinh = '{nhanVien.ngaySinh}', soDienThoai = '{nhanVien.soDienThoai}', email = '{nhanVien.email}', diaChi = '{nhanVien.diaChi}' WHERE maNhanVien = '{nhanVien.maNhanVien}';";
+            string query = $"UPDATE NhanVien SET tenNhanVien = N'{nhanVien.hoTen}', gioiTinh = N'{nhanVien.gioiTinh}', ngaySinh = '{nhanVien.ngaySinh}', soDienThoai = '{nhanVien.soDienThoai}', email = '{nhanVien.email}', diaChi = N'{nhanVien.diaChi}' WHERE maNhanVien = '{nhanVien.maNhanVien}';";
 
             int rowsAffected = DBHelper.ExecuteNonQuery(query);
 
             return rowsAffected > 0;
         }
 
-        public List<NhanVien> TimKiemNhanVien(string keyword, string phanQuyen, string gioiTinh)
+        public List<NhanVien> TimKiemNhanVien(string keyword)
         {
 
             List<NhanVien> listNhanVien = new List<NhanVien>();
 
-            string query = $"SELECT NV.* " +
-                           $"FROM NhanVien NV " +
-                           $"JOIN TaiKhoan TK ON NV.tenTaiKhoan = TK.tenTaiKhoan " +
-                           $"JOIN PhanQuyen PQ ON TK.maPhanQuyen = PQ.maPhanQuyen " +
-                           $"WHERE (LOWER(NV.tenNhanVien) LIKE '%{keyword}%' OR LOWER(NV.soDienThoai) LIKE '%{keyword}%' OR LOWER(NV.email) LIKE '%{keyword}%' OR LOWER(NV.diaChi) LIKE '%{keyword}%') " +
-                           $"AND NV.trangThai = 1";
-
-            if (!phanQuyen.Equals("Mặc định") && !string.IsNullOrEmpty(phanQuyen))
-                query += $" AND NV.phanQuyen = '{phanQuyen}'";
-
-            if (!gioiTinh.Equals("Mặc định") && !string.IsNullOrEmpty(gioiTinh))
-                query += $" AND NV.gioiTinh = '{gioiTinh}'";
+            string query = $"SELECT * FROM NhanVien " +
+                           $"WHERE LOWER(maNhanVien) LIKE '%{keyword}%' " +
+                           $"OR  LOWER(tenTaiKhoan) LIKE '%{keyword}%' " +
+                           $"OR LOWER(tenNhanVien) LIKE N'%{keyword}%' " +
+                           $"OR soDienThoai LIKE '%{keyword}%' " +
+                           $"OR LOWER(email) LIKE '%{keyword}%' " +
+                           $"OR LOWER(diaChi) LIKE N'%{keyword}%' " +
+                           $"AND trangThai = 1;";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
@@ -107,9 +148,73 @@ namespace DAO
 
                 nhanVien.maNhanVien = row["maNhanVien"].ToString();
                 nhanVien.tenTaiKhoan = row["tenTaiKhoan"].ToString();
-                nhanVien.hoTen = row["hoTen"].ToString();
+                nhanVien.hoTen = row["tenNhanVien"].ToString();
                 nhanVien.gioiTinh = row["gioiTinh"].ToString();
-                nhanVien.ngaySinh = (DateTime)row["ngaySinh"];
+                try { nhanVien.ngaySinh = (DateTime)row["ngaySinh"]; }
+                catch { nhanVien.ngaySinh = DateTime.MinValue; }
+                nhanVien.soDienThoai = row["soDienThoai"].ToString();
+                nhanVien.email = row["email"].ToString();
+                nhanVien.diaChi = row["diaChi"].ToString();
+
+                listNhanVien.Add(nhanVien);
+            }
+
+            return listNhanVien;
+        }
+
+        public List<NhanVien> LocNhanVienTheoPhanQuyen(string tenPhanQuyen)
+        {
+
+            List<NhanVien> listNhanVien = new List<NhanVien>();
+
+            string query = $"SELECT NV.* " +
+                           $"FROM NhanVien AS NV " +
+                           $"JOIN TaiKhoan AS TK ON NV.tenTaiKhoan = TK.tenTaiKhoan " +
+                           $"JOIN PhanQuyen AS PQ ON TK.maPhanQuyen = PQ.maPhanQuyen " +
+                           $"WHERE PQ.tenPhanQuyen = N'{tenPhanQuyen}' " +
+                           $"AND NV.trangThai = 1;";
+
+            DataTable dataTable = DBHelper.ExecuteQuery(query);
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                NhanVien nhanVien = new NhanVien();
+
+                nhanVien.maNhanVien = row["maNhanVien"].ToString();
+                nhanVien.tenTaiKhoan = row["tenTaiKhoan"].ToString();
+                nhanVien.hoTen = row["tenNhanVien"].ToString();
+                nhanVien.gioiTinh = row["gioiTinh"].ToString();
+                try { nhanVien.ngaySinh = (DateTime)row["ngaySinh"]; }
+                catch { nhanVien.ngaySinh = DateTime.MinValue; }
+                nhanVien.soDienThoai = row["soDienThoai"].ToString();
+                nhanVien.email = row["email"].ToString();
+                nhanVien.diaChi = row["diaChi"].ToString();
+
+                listNhanVien.Add(nhanVien);
+            }
+
+            return listNhanVien;
+        }
+
+        public List<NhanVien> LocNhanVienTheoGioiTinh(string gioiTinh)
+        {
+
+            List<NhanVien> listNhanVien = new List<NhanVien>();
+
+            string query = $"SELECT * FROM NhanVien WHERE gioiTinh = N'{gioiTinh}' AND trangThai = 1;";
+
+            DataTable dataTable = DBHelper.ExecuteQuery(query);
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                NhanVien nhanVien = new NhanVien();
+
+                nhanVien.maNhanVien = row["maNhanVien"].ToString();
+                nhanVien.tenTaiKhoan = row["tenTaiKhoan"].ToString();
+                nhanVien.hoTen = row["tenNhanVien"].ToString();
+                nhanVien.gioiTinh = row["gioiTinh"].ToString();
+                try { nhanVien.ngaySinh = (DateTime)row["ngaySinh"]; }
+                catch { nhanVien.ngaySinh = DateTime.MinValue; }
                 nhanVien.soDienThoai = row["soDienThoai"].ToString();
                 nhanVien.email = row["email"].ToString();
                 nhanVien.diaChi = row["diaChi"].ToString();
