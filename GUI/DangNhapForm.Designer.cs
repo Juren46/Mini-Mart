@@ -32,9 +32,10 @@
             // 
             // DangNhapForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(7F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(120, 0);
+            ClientSize = new Size(403, 458);
+            Font = new Font("Roboto", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "DangNhapForm";
             Text = "DangNhapForm";
             ResumeLayout(false);
