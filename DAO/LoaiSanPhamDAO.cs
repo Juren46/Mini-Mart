@@ -25,6 +25,7 @@ namespace DAO
                 LoaiSanPham loaiSanPham = new LoaiSanPham();
                 loaiSanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
                 loaiSanPham.tenLoaiSanPham = row["tenLoaiSanPham"].ToString();
+                loaiSanPham.trangThai = (bool)row["trangThai"];
 
                 listLoaiSanPham.Add(loaiSanPham);
             }
@@ -32,11 +33,25 @@ namespace DAO
             return listLoaiSanPham;
         }
 
+        public LoaiSanPham LayLoaiSanPhamTheoMa(string maLoaiSanPham)
+        {
+            LoaiSanPham loaiSanPham = new LoaiSanPham();
+
+            string query = $"SELECT * FROM LoaiSanPham WHERE maLoaiSanPham = '{maLoaiSanPham}'  AND trangThai = 1;";
+
+            DataTable dataTable = DBHelper.ExecuteQuery(query);
+
+            loaiSanPham.maLoaiSanPham = dataTable.Rows[0]["maLoaiSanPham"].ToString();
+            loaiSanPham.tenLoaiSanPham = dataTable.Rows[0]["tenLoaiSanPham"].ToString();
+
+            return loaiSanPham;
+        }
+
         public LoaiSanPham LayLoaiSanPhamTheoTen(string tenLoaiSanPham)
         {
             LoaiSanPham loaiSanPham = new LoaiSanPham();
 
-            string query = $"SELECT * FROM LoaiSanPham WHERE trangThai = 1 AND tenLoaiSanPham = '{tenLoaiSanPham}';";
+            string query = $"SELECT * FROM LoaiSanPham WHERE tenLoaiSanPham = N'{tenLoaiSanPham}'  AND trangThai = 1;";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
@@ -57,11 +72,49 @@ namespace DAO
             return count;
         }
 
-        public List<LoaiSanPham> TimKiemTheoTen(string tenLoaiSanPham)
+        public bool KiemTraLoaiSanPhamDaTonTai(string tenLoaiSanPham)
+        {
+            string query = $"SELECT tenLoaiSanPham FROM LoaiSanPham WHERE tenLoaiSanPham = N'{tenLoaiSanPham}';";
+
+            DataTable dataTable = DBHelper.ExecuteQuery(query);
+
+            return dataTable.Rows.Count > 0;
+        }
+
+        public bool ThemLoaiSanPham(LoaiSanPham loaiSanPham)
+        {
+            string query = $"INSERT INTO LoaiSanPham VALUES ('{loaiSanPham.maLoaiSanPham}', N'{loaiSanPham.tenLoaiSanPham}', 1);";
+
+            int rowsAffected = DBHelper.ExecuteNonQuery(query);
+
+            return rowsAffected > 0;
+        }
+
+        public bool XoaLoaiSanPham(string maLoaiSanPham)
+        {
+            string query = $"UPDATE LoaiSanPham SET trangThai = 0 WHERE maLoaiSanPham = '{maLoaiSanPham}';";
+
+            int rowsAffected = DBHelper.ExecuteNonQuery(query);
+
+            return rowsAffected > 0;
+        }
+
+        public bool SuaLoaiSanPham(LoaiSanPham loaiSanPham)
+        {
+            string query = $"UPDATE LoaiSanPham SET tenLoaiSanPham = N'{loaiSanPham.tenLoaiSanPham}' WHERE maLoaiSanPham = '{loaiSanPham.maLoaiSanPham}';";
+
+            int rowsAffected = DBHelper.ExecuteNonQuery(query);
+
+            return rowsAffected > 0;
+        }
+
+        public List<LoaiSanPham> TimKiemLoaiSanPham(string keyword)
         {
             List<LoaiSanPham> listLoaiSanPham = new List<LoaiSanPham>();
 
-            string query = $"SELECT * FROM LoaiSanPham WHERE LOWER(tenLoaiSanPham) LIKE '%{tenLoaiSanPham}%' AND trangThai = 1;";
+            string query = $"SELECT * FROM LoaiSanPham WHERE LOWER(maLoaiSanPham) LIKE '%{keyword}%' " +
+                           $"OR LOWER(tenLoaiSanPham) LIKE N'%{keyword}%' " +
+                           $"AND trangThai = 1;";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
@@ -76,42 +129,6 @@ namespace DAO
             }
 
             return listLoaiSanPham;
-        }
-
-        public bool ThemLoaiSanPham(LoaiSanPham loaiSanPham)
-        {
-            string query = $"INSERT INTO LoaiSanPham VALUES ('{loaiSanPham.maLoaiSanPham}', '{loaiSanPham.tenLoaiSanPham}', 1);";
-
-            int rowsAffected = DBHelper.ExecuteNonQuery(query);
-
-            return rowsAffected > 0;
-        }
-
-        public bool KiemTraDaTonTai(string tenLoaiSanPham)
-        {
-            string query = $"SELECT tenLoaiSanPham FROM LoaiSanPham WHERE LOWER(tenLoaiSanPham) = '{tenLoaiSanPham}';";
-
-            DataTable dataTable = DBHelper.ExecuteQuery(query);
-
-            return dataTable.Rows.Count > 0;
-        }
-
-        public bool XoaLoaiSanPham(string maLoaiSanPham)
-        {
-            string query = $"UPDATE LoaiSanPham SET trangThai = 0 WHERE maLoaiSanPham = '{maLoaiSanPham}';";
-
-            int rowsAffected = DBHelper.ExecuteNonQuery(query);
-
-            return rowsAffected > 0;
-        }
-
-        public bool ChinhSuaLoaiSanPham(LoaiSanPham loaiSanPham)
-        {
-            string query = $"UPDATE LoaiSanPham SET tenLoaiSanPham = '{loaiSanPham.tenLoaiSanPham}' WHERE maLoaiSanPham = '{loaiSanPham.maLoaiSanPham}';";
-
-            int rowsAffected = DBHelper.ExecuteNonQuery(query);
-
-            return rowsAffected > 0;
-        }
+        }      
     }
 }
