@@ -31,20 +31,17 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panelMenu = new Guna.UI2.WinForms.Guna2Panel();
-            panelNavigation = new Panel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            btnThongKe = new FontAwesome.Sharp.IconButton();
             btnBanHang = new FontAwesome.Sharp.IconButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
-            btnNhanVien = new FontAwesome.Sharp.IconButton();
-            btnKhuyenMai = new FontAwesome.Sharp.IconButton();
-            btnNhaCungCap = new FontAwesome.Sharp.IconButton();
-            btnKhachhang = new FontAwesome.Sharp.IconButton();
-            btnLoaiSanPham = new FontAwesome.Sharp.IconButton();
             btnHoaDon = new FontAwesome.Sharp.IconButton();
-            btnThongKe = new FontAwesome.Sharp.IconButton();
+            btnLoaiSanPham = new FontAwesome.Sharp.IconButton();
+            btnKhoHang = new FontAwesome.Sharp.IconButton();
+            btnKhachhang = new FontAwesome.Sharp.IconButton();
+            btnNhanVien = new FontAwesome.Sharp.IconButton();
             btnPhieuNhap = new FontAwesome.Sharp.IconButton();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
+            btnNhaCungCap = new FontAwesome.Sharp.IconButton();
+            btnKhuyenMai = new FontAwesome.Sharp.IconButton();
             panel1 = new Panel();
             lblTitleChildForm = new Label();
             panel2 = new Panel();
@@ -54,8 +51,6 @@
             iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             panelDesktop = new Panel();
             panelMenu.SuspendLayout();
-            panelNavigation.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).BeginInit();
@@ -64,7 +59,17 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(0, 79, 111);
-            panelMenu.Controls.Add(panelNavigation);
+            panelMenu.Controls.Add(btnThongKe);
+            panelMenu.Controls.Add(btnBanHang);
+            panelMenu.Controls.Add(iconButton1);
+            panelMenu.Controls.Add(btnHoaDon);
+            panelMenu.Controls.Add(btnLoaiSanPham);
+            panelMenu.Controls.Add(btnKhoHang);
+            panelMenu.Controls.Add(btnKhachhang);
+            panelMenu.Controls.Add(btnNhanVien);
+            panelMenu.Controls.Add(btnPhieuNhap);
+            panelMenu.Controls.Add(btnNhaCungCap);
+            panelMenu.Controls.Add(btnKhuyenMai);
             panelMenu.CustomizableEdges = customizableEdges1;
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
@@ -74,34 +79,27 @@
             panelMenu.Size = new Size(201, 861);
             panelMenu.TabIndex = 0;
             // 
-            // panelNavigation
+            // btnThongKe
             // 
-            panelNavigation.Controls.Add(flowLayoutPanel1);
-            panelNavigation.Dock = DockStyle.Bottom;
-            panelNavigation.Location = new Point(0, 121);
-            panelNavigation.Name = "panelNavigation";
-            panelNavigation.Size = new Size(201, 740);
-            panelNavigation.TabIndex = 1;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Controls.Add(btnBanHang);
-            flowLayoutPanel1.Controls.Add(iconButton1);
-            flowLayoutPanel1.Controls.Add(btnNhanVien);
-            flowLayoutPanel1.Controls.Add(btnKhuyenMai);
-            flowLayoutPanel1.Controls.Add(btnNhaCungCap);
-            flowLayoutPanel1.Controls.Add(btnKhachhang);
-            flowLayoutPanel1.Controls.Add(btnLoaiSanPham);
-            flowLayoutPanel1.Controls.Add(btnHoaDon);
-            flowLayoutPanel1.Controls.Add(btnThongKe);
-            flowLayoutPanel1.Controls.Add(btnPhieuNhap);
-            flowLayoutPanel1.Controls.Add(iconButton3);
-            flowLayoutPanel1.Controls.Add(iconButton2);
-            flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(0, 0);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(201, 740);
-            flowLayoutPanel1.TabIndex = 0;
+            btnThongKe.BackColor = Color.FromArgb(0, 79, 111);
+            btnThongKe.FlatAppearance.BorderSize = 0;
+            btnThongKe.FlatStyle = FlatStyle.Flat;
+            btnThongKe.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnThongKe.ForeColor = Color.White;
+            btnThongKe.IconChar = FontAwesome.Sharp.IconChar.ChartSimple;
+            btnThongKe.IconColor = Color.White;
+            btnThongKe.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnThongKe.IconSize = 40;
+            btnThongKe.ImageAlign = ContentAlignment.MiddleLeft;
+            btnThongKe.Location = new Point(0, 701);
+            btnThongKe.Name = "btnThongKe";
+            btnThongKe.Padding = new Padding(10, 0, 20, 0);
+            btnThongKe.Size = new Size(198, 50);
+            btnThongKe.TabIndex = 15;
+            btnThongKe.Text = "Thống kê ";
+            btnThongKe.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnThongKe.UseVisualStyleBackColor = false;
+            btnThongKe.Click += btnThongKe_Click;
             // 
             // btnBanHang
             // 
@@ -115,7 +113,7 @@
             btnBanHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnBanHang.IconSize = 40;
             btnBanHang.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBanHang.Location = new Point(3, 3);
+            btnBanHang.Location = new Point(0, 131);
             btnBanHang.Name = "btnBanHang";
             btnBanHang.Padding = new Padding(10, 0, 20, 0);
             btnBanHang.Size = new Size(198, 50);
@@ -137,7 +135,7 @@
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 40;
             iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(3, 59);
+            iconButton1.Location = new Point(0, 359);
             iconButton1.Name = "iconButton1";
             iconButton1.Padding = new Padding(10, 0, 20, 0);
             iconButton1.Size = new Size(198, 50);
@@ -145,116 +143,6 @@
             iconButton1.Text = "Loại sản phẩm";
             iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // btnNhanVien
-            // 
-            btnNhanVien.BackColor = Color.FromArgb(0, 79, 111);
-            btnNhanVien.FlatAppearance.BorderSize = 0;
-            btnNhanVien.FlatStyle = FlatStyle.Flat;
-            btnNhanVien.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnNhanVien.ForeColor = Color.White;
-            btnNhanVien.IconChar = FontAwesome.Sharp.IconChar.UserGear;
-            btnNhanVien.IconColor = Color.White;
-            btnNhanVien.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnNhanVien.IconSize = 40;
-            btnNhanVien.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNhanVien.Location = new Point(3, 115);
-            btnNhanVien.Name = "btnNhanVien";
-            btnNhanVien.Padding = new Padding(10, 0, 20, 0);
-            btnNhanVien.Size = new Size(198, 50);
-            btnNhanVien.TabIndex = 14;
-            btnNhanVien.Text = "Nhân viên";
-            btnNhanVien.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnNhanVien.UseVisualStyleBackColor = false;
-            btnNhanVien.Click += btnNhanVien_Click;
-            // 
-            // btnKhuyenMai
-            // 
-            btnKhuyenMai.BackColor = Color.FromArgb(0, 79, 111);
-            btnKhuyenMai.FlatAppearance.BorderSize = 0;
-            btnKhuyenMai.FlatStyle = FlatStyle.Flat;
-            btnKhuyenMai.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnKhuyenMai.ForeColor = Color.White;
-            btnKhuyenMai.IconChar = FontAwesome.Sharp.IconChar.Tags;
-            btnKhuyenMai.IconColor = Color.White;
-            btnKhuyenMai.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnKhuyenMai.IconSize = 40;
-            btnKhuyenMai.ImageAlign = ContentAlignment.MiddleLeft;
-            btnKhuyenMai.Location = new Point(3, 171);
-            btnKhuyenMai.Name = "btnKhuyenMai";
-            btnKhuyenMai.Padding = new Padding(10, 0, 20, 0);
-            btnKhuyenMai.Size = new Size(198, 50);
-            btnKhuyenMai.TabIndex = 13;
-            btnKhuyenMai.Text = "Khuyến mãi ";
-            btnKhuyenMai.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnKhuyenMai.UseVisualStyleBackColor = false;
-            btnKhuyenMai.Click += btnKhuyenMai_Click;
-            // 
-            // btnNhaCungCap
-            // 
-            btnNhaCungCap.BackColor = Color.FromArgb(0, 79, 111);
-            btnNhaCungCap.FlatAppearance.BorderSize = 0;
-            btnNhaCungCap.FlatStyle = FlatStyle.Flat;
-            btnNhaCungCap.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnNhaCungCap.ForeColor = Color.White;
-            btnNhaCungCap.IconChar = FontAwesome.Sharp.IconChar.Shop;
-            btnNhaCungCap.IconColor = Color.White;
-            btnNhaCungCap.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnNhaCungCap.IconSize = 40;
-            btnNhaCungCap.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNhaCungCap.Location = new Point(3, 227);
-            btnNhaCungCap.Name = "btnNhaCungCap";
-            btnNhaCungCap.Padding = new Padding(10, 0, 20, 0);
-            btnNhaCungCap.Size = new Size(198, 50);
-            btnNhaCungCap.TabIndex = 12;
-            btnNhaCungCap.Text = "Nhà cung cấp";
-            btnNhaCungCap.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnNhaCungCap.UseVisualStyleBackColor = false;
-            btnNhaCungCap.Click += iconButton5_Click;
-            // 
-            // btnKhachhang
-            // 
-            btnKhachhang.BackColor = Color.FromArgb(0, 79, 111);
-            btnKhachhang.FlatAppearance.BorderSize = 0;
-            btnKhachhang.FlatStyle = FlatStyle.Flat;
-            btnKhachhang.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnKhachhang.ForeColor = Color.White;
-            btnKhachhang.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
-            btnKhachhang.IconColor = Color.White;
-            btnKhachhang.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnKhachhang.IconSize = 40;
-            btnKhachhang.ImageAlign = ContentAlignment.MiddleLeft;
-            btnKhachhang.Location = new Point(3, 283);
-            btnKhachhang.Name = "btnKhachhang";
-            btnKhachhang.Padding = new Padding(10, 0, 20, 0);
-            btnKhachhang.Size = new Size(198, 50);
-            btnKhachhang.TabIndex = 8;
-            btnKhachhang.Text = "Khách hàng";
-            btnKhachhang.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnKhachhang.UseVisualStyleBackColor = false;
-            btnKhachhang.Click += iconButton2_Click;
-            // 
-            // btnLoaiSanPham
-            // 
-            btnLoaiSanPham.BackColor = Color.FromArgb(0, 79, 111);
-            btnLoaiSanPham.FlatAppearance.BorderSize = 0;
-            btnLoaiSanPham.FlatStyle = FlatStyle.Flat;
-            btnLoaiSanPham.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLoaiSanPham.ForeColor = Color.White;
-            btnLoaiSanPham.IconChar = FontAwesome.Sharp.IconChar.Shopify;
-            btnLoaiSanPham.IconColor = Color.White;
-            btnLoaiSanPham.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnLoaiSanPham.IconSize = 40;
-            btnLoaiSanPham.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLoaiSanPham.Location = new Point(3, 339);
-            btnLoaiSanPham.Name = "btnLoaiSanPham";
-            btnLoaiSanPham.Padding = new Padding(10, 0, 20, 0);
-            btnLoaiSanPham.Size = new Size(198, 50);
-            btnLoaiSanPham.TabIndex = 16;
-            btnLoaiSanPham.Text = "Sản phẩm";
-            btnLoaiSanPham.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnLoaiSanPham.UseVisualStyleBackColor = false;
-            btnLoaiSanPham.Click += btnLoaiSanPham_Click;
             // 
             // btnHoaDon
             // 
@@ -268,7 +156,7 @@
             btnHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnHoaDon.IconSize = 40;
             btnHoaDon.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHoaDon.Location = new Point(3, 395);
+            btnHoaDon.Location = new Point(0, 189);
             btnHoaDon.Name = "btnHoaDon";
             btnHoaDon.Padding = new Padding(10, 0, 20, 0);
             btnHoaDon.Size = new Size(198, 50);
@@ -278,27 +166,93 @@
             btnHoaDon.UseVisualStyleBackColor = false;
             btnHoaDon.Click += iconButton3_Click;
             // 
-            // btnThongKe
+            // btnLoaiSanPham
             // 
-            btnThongKe.BackColor = Color.FromArgb(0, 79, 111);
-            btnThongKe.FlatAppearance.BorderSize = 0;
-            btnThongKe.FlatStyle = FlatStyle.Flat;
-            btnThongKe.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnThongKe.ForeColor = Color.White;
-            btnThongKe.IconChar = FontAwesome.Sharp.IconChar.ChartSimple;
-            btnThongKe.IconColor = Color.White;
-            btnThongKe.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnThongKe.IconSize = 40;
-            btnThongKe.ImageAlign = ContentAlignment.MiddleLeft;
-            btnThongKe.Location = new Point(3, 451);
-            btnThongKe.Name = "btnThongKe";
-            btnThongKe.Padding = new Padding(10, 0, 20, 0);
-            btnThongKe.Size = new Size(198, 50);
-            btnThongKe.TabIndex = 15;
-            btnThongKe.Text = "Thống kê ";
-            btnThongKe.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnThongKe.UseVisualStyleBackColor = false;
-            btnThongKe.Click += btnThongKe_Click;
+            btnLoaiSanPham.BackColor = Color.FromArgb(0, 79, 111);
+            btnLoaiSanPham.FlatAppearance.BorderSize = 0;
+            btnLoaiSanPham.FlatStyle = FlatStyle.Flat;
+            btnLoaiSanPham.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLoaiSanPham.ForeColor = Color.White;
+            btnLoaiSanPham.IconChar = FontAwesome.Sharp.IconChar.Shopify;
+            btnLoaiSanPham.IconColor = Color.White;
+            btnLoaiSanPham.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnLoaiSanPham.IconSize = 40;
+            btnLoaiSanPham.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLoaiSanPham.Location = new Point(0, 303);
+            btnLoaiSanPham.Name = "btnLoaiSanPham";
+            btnLoaiSanPham.Padding = new Padding(10, 0, 20, 0);
+            btnLoaiSanPham.Size = new Size(198, 50);
+            btnLoaiSanPham.TabIndex = 16;
+            btnLoaiSanPham.Text = "Sản phẩm";
+            btnLoaiSanPham.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnLoaiSanPham.UseVisualStyleBackColor = false;
+            btnLoaiSanPham.Click += btnLoaiSanPham_Click;
+            // 
+            // btnKhoHang
+            // 
+            btnKhoHang.BackColor = Color.FromArgb(0, 79, 111);
+            btnKhoHang.FlatAppearance.BorderSize = 0;
+            btnKhoHang.FlatStyle = FlatStyle.Flat;
+            btnKhoHang.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnKhoHang.ForeColor = Color.White;
+            btnKhoHang.IconChar = FontAwesome.Sharp.IconChar.Deezer;
+            btnKhoHang.IconColor = Color.White;
+            btnKhoHang.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnKhoHang.IconSize = 40;
+            btnKhoHang.ImageAlign = ContentAlignment.MiddleLeft;
+            btnKhoHang.Location = new Point(0, 415);
+            btnKhoHang.Name = "btnKhoHang";
+            btnKhoHang.Padding = new Padding(10, 0, 20, 0);
+            btnKhoHang.Size = new Size(198, 50);
+            btnKhoHang.TabIndex = 10;
+            btnKhoHang.Text = "Kho hàng";
+            btnKhoHang.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnKhoHang.UseVisualStyleBackColor = false;
+            btnKhoHang.Click += iconButton6_Click;
+            // 
+            // btnKhachhang
+            // 
+            btnKhachhang.BackColor = Color.FromArgb(0, 79, 111);
+            btnKhachhang.FlatAppearance.BorderSize = 0;
+            btnKhachhang.FlatStyle = FlatStyle.Flat;
+            btnKhachhang.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnKhachhang.ForeColor = Color.White;
+            btnKhachhang.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
+            btnKhachhang.IconColor = Color.White;
+            btnKhachhang.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnKhachhang.IconSize = 40;
+            btnKhachhang.ImageAlign = ContentAlignment.MiddleLeft;
+            btnKhachhang.Location = new Point(0, 247);
+            btnKhachhang.Name = "btnKhachhang";
+            btnKhachhang.Padding = new Padding(10, 0, 20, 0);
+            btnKhachhang.Size = new Size(198, 50);
+            btnKhachhang.TabIndex = 8;
+            btnKhachhang.Text = "Khách hàng";
+            btnKhachhang.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnKhachhang.UseVisualStyleBackColor = false;
+            btnKhachhang.Click += iconButton2_Click;
+            // 
+            // btnNhanVien
+            // 
+            btnNhanVien.BackColor = Color.FromArgb(0, 79, 111);
+            btnNhanVien.FlatAppearance.BorderSize = 0;
+            btnNhanVien.FlatStyle = FlatStyle.Flat;
+            btnNhanVien.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNhanVien.ForeColor = Color.White;
+            btnNhanVien.IconChar = FontAwesome.Sharp.IconChar.UserGear;
+            btnNhanVien.IconColor = Color.White;
+            btnNhanVien.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnNhanVien.IconSize = 40;
+            btnNhanVien.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNhanVien.Location = new Point(0, 645);
+            btnNhanVien.Name = "btnNhanVien";
+            btnNhanVien.Padding = new Padding(10, 0, 20, 0);
+            btnNhanVien.Size = new Size(198, 50);
+            btnNhanVien.TabIndex = 14;
+            btnNhanVien.Text = "Nhân viên";
+            btnNhanVien.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnNhanVien.UseVisualStyleBackColor = false;
+            btnNhanVien.Click += btnNhanVien_Click;
             // 
             // btnPhieuNhap
             // 
@@ -312,7 +266,7 @@
             btnPhieuNhap.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnPhieuNhap.IconSize = 40;
             btnPhieuNhap.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPhieuNhap.Location = new Point(3, 507);
+            btnPhieuNhap.Location = new Point(0, 531);
             btnPhieuNhap.Name = "btnPhieuNhap";
             btnPhieuNhap.Padding = new Padding(10, 0, 20, 0);
             btnPhieuNhap.Size = new Size(198, 50);
@@ -322,47 +276,49 @@
             btnPhieuNhap.UseVisualStyleBackColor = false;
             btnPhieuNhap.Click += iconButton4_Click;
             // 
-            // iconButton3
+            // btnNhaCungCap
             // 
-            iconButton3.BackColor = Color.FromArgb(0, 79, 111);
-            iconButton3.FlatAppearance.BorderSize = 0;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton3.ForeColor = Color.White;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.UserGear;
-            iconButton3.IconColor = Color.White;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.IconSize = 40;
-            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(3, 563);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Padding = new Padding(10, 0, 20, 0);
-            iconButton3.Size = new Size(198, 50);
-            iconButton3.TabIndex = 19;
-            iconButton3.Text = "Phân quyền";
-            iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton3.UseVisualStyleBackColor = false;
+            btnNhaCungCap.BackColor = Color.FromArgb(0, 79, 111);
+            btnNhaCungCap.FlatAppearance.BorderSize = 0;
+            btnNhaCungCap.FlatStyle = FlatStyle.Flat;
+            btnNhaCungCap.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNhaCungCap.ForeColor = Color.White;
+            btnNhaCungCap.IconChar = FontAwesome.Sharp.IconChar.Shop;
+            btnNhaCungCap.IconColor = Color.White;
+            btnNhaCungCap.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnNhaCungCap.IconSize = 40;
+            btnNhaCungCap.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNhaCungCap.Location = new Point(0, 473);
+            btnNhaCungCap.Name = "btnNhaCungCap";
+            btnNhaCungCap.Padding = new Padding(10, 0, 20, 0);
+            btnNhaCungCap.Size = new Size(198, 50);
+            btnNhaCungCap.TabIndex = 12;
+            btnNhaCungCap.Text = "Nhà cung cấp";
+            btnNhaCungCap.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnNhaCungCap.UseVisualStyleBackColor = false;
+            btnNhaCungCap.Click += iconButton5_Click;
             // 
-            // iconButton2
+            // btnKhuyenMai
             // 
-            iconButton2.BackColor = Color.FromArgb(0, 79, 111);
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton2.ForeColor = Color.White;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.Tags;
-            iconButton2.IconColor = Color.White;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 40;
-            iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(3, 619);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Padding = new Padding(10, 0, 20, 0);
-            iconButton2.Size = new Size(198, 50);
-            iconButton2.TabIndex = 18;
-            iconButton2.Text = "Tài khoản";
-            iconButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton2.UseVisualStyleBackColor = false;
+            btnKhuyenMai.BackColor = Color.FromArgb(0, 79, 111);
+            btnKhuyenMai.FlatAppearance.BorderSize = 0;
+            btnKhuyenMai.FlatStyle = FlatStyle.Flat;
+            btnKhuyenMai.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnKhuyenMai.ForeColor = Color.White;
+            btnKhuyenMai.IconChar = FontAwesome.Sharp.IconChar.Tags;
+            btnKhuyenMai.IconColor = Color.White;
+            btnKhuyenMai.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnKhuyenMai.IconSize = 40;
+            btnKhuyenMai.ImageAlign = ContentAlignment.MiddleLeft;
+            btnKhuyenMai.Location = new Point(0, 587);
+            btnKhuyenMai.Name = "btnKhuyenMai";
+            btnKhuyenMai.Padding = new Padding(10, 0, 20, 0);
+            btnKhuyenMai.Size = new Size(198, 50);
+            btnKhuyenMai.TabIndex = 13;
+            btnKhuyenMai.Text = "Khuyến mãi ";
+            btnKhuyenMai.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnKhuyenMai.UseVisualStyleBackColor = false;
+            btnKhuyenMai.Click += btnKhuyenMai_Click;
             // 
             // panel1
             // 
@@ -492,8 +448,6 @@
             Name = "TrangChuForm";
             Text = "TrangChuForm";
             panelMenu.ResumeLayout(false);
-            panelNavigation.ResumeLayout(false);
-            flowLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -509,6 +463,7 @@
         private FontAwesome.Sharp.IconButton btnHoaDon;
         private FontAwesome.Sharp.IconButton btnPhieuNhap;
         private FontAwesome.Sharp.IconButton btnNhaCungCap;
+        private FontAwesome.Sharp.IconButton btnKhoHang;
         private Panel panel1;
         private Panel panelDesktop;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
@@ -522,9 +477,5 @@
         private FontAwesome.Sharp.IconButton btnKhuyenMai;
         private Label lblTitleChildForm;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Panel panelNavigation;
     }
 }

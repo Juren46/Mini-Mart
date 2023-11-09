@@ -24,7 +24,7 @@ namespace GUI
             CenterToScreen();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 50);
-            panelNavigation.Controls.Add(leftBorderBtn);
+            panelMenu.Controls.Add(leftBorderBtn);
 
             this.Text = string.Empty;
             this.ControlBox = false;
