@@ -23,6 +23,16 @@ namespace BUS
             return nhanVienDAO.LayDanhSachNhanVien();
         }
 
+        public NhanVien LayNhanVienTheoMa(string maNhanVien)
+        {
+            return nhanVienDAO.LayNhanVienTheoMa(maNhanVien);
+        }
+
+        public NhanVien LayNhanVienTheoTenTaiKhoan(string tenTaiKhoan)
+        {
+            return nhanVienDAO.LayNhanVienTheoTenTaiKhoan(tenTaiKhoan);
+        }
+
         public int DemSoNhanVien(string tenPhanQuyen)
         {
             return nhanVienDAO.DemSoNhanVien(tenPhanQuyen);
@@ -46,7 +56,9 @@ namespace BUS
             if (!string.IsNullOrEmpty(email) && !InputValidate.EmailValidate(email))
                 return "Vui lòng nhập đúng email!";
 
-            DateTime dateTime = DateTime.ParseExact(ngaySinh, "dd/MM/yyyy", null);
+            DateTime dateTime;
+            try { dateTime = DateTime.ParseExact(ngaySinh, "dd/MM/yyyy", null); }
+            catch { dateTime = DateTime.MinValue; }
 
             NhanVien nhanVien = new NhanVien(hoTen, gioiTinh, dateTime, soDienThoai, email, diaChi, maNhanVien, tenTaiKhoan);
 
@@ -64,13 +76,10 @@ namespace BUS
             return "Xóa nhân viên thất bại!";
         }
 
-        public string SuaNhanVien(string maNhanVien, string tenTaiKhoan, string hoTen, string gioiTinh, string ngaySinh, string soDienThoai, string email, string diaChi)
+        public string SuaNhanVien(string maNhanVien, string hoTen, string gioiTinh, string ngaySinh, string soDienThoai, string email, string diaChi)
         {
             if (string.IsNullOrEmpty(hoTen))
                 return "Họ tên không được bỏ trống!";
-
-            if (!string.IsNullOrEmpty(ngaySinh) && !InputValidate.BirthdayValidate(ngaySinh))
-                return "Vui lòng nhập ngày sinh đúng định dạng!";
 
             if (!string.IsNullOrEmpty(soDienThoai) && !InputValidate.PhoneNumberValidate(soDienThoai))
                 return "Vui lòng nhập đúng số điện thoại!";
@@ -78,9 +87,19 @@ namespace BUS
             if (!string.IsNullOrEmpty(email) && !InputValidate.EmailValidate(email))
                 return "Vui lòng nhập đúng email!";
 
-            DateTime dateTime = DateTime.Parse(ngaySinh);
+            DateTime dateTime;
+            try { dateTime = DateTime.ParseExact(ngaySinh, "dd/MM/yyyy", null); }
+            catch { dateTime = DateTime.MinValue; }
 
-            NhanVien nhanVien = new NhanVien(hoTen, gioiTinh, dateTime, soDienThoai, email, diaChi, maNhanVien, tenTaiKhoan);
+            NhanVien nhanVien = new NhanVien();
+
+            nhanVien.maNhanVien = maNhanVien;
+            nhanVien.hoTen = hoTen;
+            nhanVien.gioiTinh = gioiTinh;
+            nhanVien.ngaySinh = dateTime;
+            nhanVien.soDienThoai = soDienThoai;
+            nhanVien.email = email;
+            nhanVien.diaChi = diaChi;
 
             if (nhanVienDAO.SuaNhanVien(nhanVien))
                 return "Sửa thông tin nhân viên thành công!";
@@ -88,11 +107,21 @@ namespace BUS
                 return "Sửa thông tin nhân viên thất bại!";
         }
 
-        public List<NhanVien> TimKiemNhanVien(string keyword, string phanQuyen = "Mặc định", string gioiTinh = "Mặc định")
+        public List<NhanVien> TimKiemNhanVien(string keyword)
         {
             keyword = keyword.Trim().ToLower();
 
-            return nhanVienDAO.TimKiemNhanVien(keyword, phanQuyen, gioiTinh);
+            return nhanVienDAO.TimKiemNhanVien(keyword);
+        }
+
+        public List<NhanVien> LocNhanVienTheoPhanQuyen(string tenPhanQuyen)
+        {
+            return nhanVienDAO.LocNhanVienTheoPhanQuyen(tenPhanQuyen);
+        }
+
+        public List<NhanVien> LocNhanVienTheoGioiTinh(string gioiTinh)
+        {
+            return nhanVienDAO.LocNhanVienTheoGioiTinh(gioiTinh);
         }
     }
 }

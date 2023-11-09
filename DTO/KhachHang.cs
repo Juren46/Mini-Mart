@@ -14,9 +14,12 @@ namespace DTO
         public int diemTichLuy { get; set; }
         public KhachHang()
         {
+            bacThanhVien = "Đồng";
+            diemThanhVien = 0;
+            diemTichLuy = 0;
         }
 
-        public KhachHang(string hoTen, string gioiTinh, DateTime ngaySinh, string soDienThoai, string email, string diaChi, string maKhachHang, string bacThanhVien, int diemThanhVien, int diemTichLuy) : base(hoTen, gioiTinh, ngaySinh, soDienThoai, email, diaChi)
+        public KhachHang(string hoTen, string gioiTinh, DateTime ngaySinh, string soDienThoai, string email, string diaChi, string maKhachHang, string bacThanhVien = "Đồng", int diemThanhVien = 0, int diemTichLuy = 0) : base(hoTen, gioiTinh, ngaySinh, soDienThoai, email, diaChi)
         {
             this.maKhachHang = maKhachHang;
             this.bacThanhVien = bacThanhVien;

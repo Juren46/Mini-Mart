@@ -44,7 +44,7 @@ namespace ConsoleTesting
             Console.WriteLine(phanQuyen.maPhanQuyen + "\n" + phanQuyen.tenPhanQuyen);
         }
 
-        public static void TestTimKiemTaiKhoan()
+        public static void TestTimKiemPhanQuyen()
         {          
             string keyword = Console.ReadLine();
             List<PhanQuyen> listPhanQuyen = phanQuyenBUS.TimKiemPhanQuyen(keyword);

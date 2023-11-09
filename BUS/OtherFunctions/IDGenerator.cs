@@ -54,6 +54,17 @@ namespace BUS.OtherFunctions
             return nhanVienID;
         }
 
+        public static string GenerateKhachHangID()
+        {
+            KhachHangBUS khachHangBUS = new KhachHangBUS();
+
+            int count = khachHangBUS.DemSoKhachHang();
+
+            string khachHangID = string.Format("KHH{0:D5}", ++count); ;
+
+            return khachHangID;
+        }
+
         public static string GenerateSanPhamID()
         {
             SanPhamBUS sanPhamBUS = new SanPhamBUS();

@@ -19,9 +19,7 @@ namespace BUS
 
         public List<LoaiSanPham> LayDanhSachLoaiSanPham()
         {
-            List<LoaiSanPham> listLoaiSanPham = loaiSanPhamDAO.LayDanhSachLoaiSanPham();
-
-            return listLoaiSanPham;
+            return loaiSanPhamDAO.LayDanhSachLoaiSanPham();
         }
 
         public LoaiSanPham LayLoaiSanPhamTheoTen(string tenLoaiSanPham)
