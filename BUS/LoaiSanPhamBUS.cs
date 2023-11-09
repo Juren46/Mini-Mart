@@ -22,6 +22,11 @@ namespace BUS
             return loaiSanPhamDAO.LayDanhSachLoaiSanPham();
         }
 
+        public LoaiSanPham LayLoaiSanPhamTheoMa(string maLoaiSanPham)
+        {
+            return loaiSanPhamDAO.LayLoaiSanPhamTheoMa(maLoaiSanPham);
+        }
+
         public LoaiSanPham LayLoaiSanPhamTheoTen(string tenLoaiSanPham)
         {
             return loaiSanPhamDAO.LayLoaiSanPhamTheoTen(tenLoaiSanPham);
@@ -32,13 +37,6 @@ namespace BUS
             return loaiSanPhamDAO.DemSoLoaiSanPham();
         }
 
-        public List<LoaiSanPham> TimKiemTheoTen(string tenLoaiSanPham)
-        {
-            tenLoaiSanPham = tenLoaiSanPham.Trim().ToLower();
-
-            return loaiSanPhamDAO.TimKiemTheoTen(tenLoaiSanPham);
-        }
-
         public string ThemLoaiSanPham(string maLoaiSanPham, string tenLoaiSanPham)
         {
             if (string.IsNullOrEmpty(tenLoaiSanPham))
@@ -46,8 +44,8 @@ namespace BUS
 
             tenLoaiSanPham = tenLoaiSanPham.Trim();
 
-            if (loaiSanPhamDAO.KiemTraDaTonTai(tenLoaiSanPham.ToLower()))
-                return "Loại sản phẩm đã tồn tại, vui lòng chọn tên khác!";
+            if (loaiSanPhamDAO.KiemTraLoaiSanPhamDaTonTai(tenLoaiSanPham.ToLower()))
+                return "Tên loại sản phẩm đã tồn tại, vui lòng chọn tên khác!";
             else
             {
                 LoaiSanPham loaiSanPham = new LoaiSanPham(maLoaiSanPham, tenLoaiSanPham);
@@ -62,22 +60,31 @@ namespace BUS
         public string XoaLoaiSanPham(string maLoaiSanPham)
         {
             if (loaiSanPhamDAO.XoaLoaiSanPham(maLoaiSanPham))
-                return "Xóa sản phẩm thành công!";
+                return "Xóa loại sản phẩm thành công!";
 
-            return "Xóa sản phẩm thất bại!";
+            return "Xóa loại  phẩm thất bại!";
         }
 
-        public string ChinhSuaLoaiSanPham(string maLoaiSanPham, string tenLoaiSanPham)
+        public string SuaLoaiSanPham(string maLoaiSanPham, string tenLoaiSanPham)
         {
             if (string.IsNullOrEmpty(tenLoaiSanPham))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
-            LoaiSanPham loaiSanPham = new LoaiSanPham(maLoaiSanPham, tenLoaiSanPham);
-
-            if (loaiSanPhamDAO.ChinhSuaLoaiSanPham(loaiSanPham))
-                return "Chỉnh sửa loại sản phẩm thành công!";
+            if (loaiSanPhamDAO.SuaLoaiSanPham(new LoaiSanPham(maLoaiSanPham, tenLoaiSanPham)))
+                return "Sửa thông tin loại sản phẩm thành công!";
             else
-                return "Chỉnh sửa loại sản phẩm thất bại!";
+                return "Sửa thông tin loại sản phẩm thất bại!";
         }
+
+        public List<LoaiSanPham> TimKiemLoaiSanPham(string keyword)
+        {
+            keyword = keyword.Trim().ToLower();
+
+            return loaiSanPhamDAO.TimKiemLoaiSanPham(keyword);
+        }
+
+        
+
+        
     }
 }

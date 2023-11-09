@@ -8,6 +8,7 @@ namespace ConsoleTesting
         {
             Console.InputEncoding = Encoding.UTF8;
             Console.OutputEncoding = Encoding.UTF8;
+
             //TestPhanQuyen.TestLayDanhSachPhanQuyen();
             //TestPhanQuyen.TestLayPhanQuyenTheoMa();
             //TestPhanQuyen.TestLayPhanQuyenTheoTen();
@@ -41,7 +42,15 @@ namespace ConsoleTesting
             //TestKhachHang.TestSuaKhachHang();
             //TestKhachHang.TestTimKiemKhachHang();
             //TestKhachHang.TestLocKhachHangTheoGioiTinh();
-            TestKhachHang.TestLocKhachHangTheoBacThanhVien();
+            //TestKhachHang.TestLocKhachHangTheoBacThanhVien();
+
+            //TestLoaiSanPham.TestLayDanhSachLoaiSanPham();
+            //TestLoaiSanPham.TestLayLoaiSanPhamTheoMa();
+            //TestLoaiSanPham.TestLayLoaiSanPhamTheoTen();
+            //TestLoaiSanPham.TestThemLoaiSanPham();
+            //TestLoaiSanPham.TestXoaLoaiSanPham();
+            //TestLoaiSanPham.TestSuaLoaiSanPham();
+            TestLoaiSanPham.TestTimKiemLoaiSanPham();
         }
     }
 }
