@@ -79,5 +79,10 @@ namespace BUS
 
             return sanPhamDAO.TimKiemSanPham(keyword);
         }
+
+        public List<SanPham> LocSanPhamTheoLoaiSanPham(string tenLoaiSanPham)
+        {
+            return sanPhamDAO.LocSanPhamTheoLoaiSanPham(tenLoaiSanPham);
+        }
     }
 }
