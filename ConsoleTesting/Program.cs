@@ -60,9 +60,12 @@ namespace ConsoleTesting
             //TestNhaCungCap.TestTimKiemNhaCungCap();
 
             //TestSanPham.TestLayDanhSachSanPham();
-            //TestSanPham.TestLaySanPhamTheoMa();       //Chưa test
-            //TestSanPham.TestThemSanPham();            //Chưa test
-            //TestSanPham.TestXoaSanPham();            //Chưa test
+            //TestSanPham.TestLaySanPhamTheoMa();  
+            //TestSanPham.TestThemSanPham();          
+            //TestSanPham.TestXoaSanPham();           
+            //TestSanPham.TestTimKiemSanPham();
+            //TestSanPham.LocSanPhamTheoLoaiSanPham();
+
         }
     }
 }

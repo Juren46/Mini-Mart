@@ -103,9 +103,9 @@ namespace DAO
         {
             List<SanPham> listSanPham = new List<SanPham>();
 
-            string query = $"SELECT SP.* FROM SanPham " +
+            string query = $"SELECT SP.* FROM SanPham AS SP " +
                            $"JOIN LoaiSanPham AS LSP ON SP.maLoaiSanPham = LSP.maLoaiSanPham " +
-                           $"JOIN NhaCungCap AS NCC ON SP.maNhaCungCap = LSP.maNhaCungCap " +
+                           $"JOIN NhaCungCap AS NCC ON SP.maNhaCungCap = NCC.maNhaCungCap " +
                            $"WHERE LOWER(LSP.tenLoaiSanPham) LIKE N'%{keyword}%' " +
                            $"OR LOWER(NCC.tenNhaCungCap) LIKE N'%{keyword}%' " +
                            $"OR LOWER(SP.tenSanPham) LIKE N'%{keyword}%';";
@@ -137,7 +137,7 @@ namespace DAO
 
             string query = $"SELECT * FROM SanPham AS SP " +
                            $"JOIN LoaiSanPham AS LSP ON SP.maLoaiSanPham = LSP.maLoaiSanPham " +
-                           $"WHERE LSP.tenLoaiSanPham = '{tenLoaiSanPham}';";
+                           $"WHERE LSP.tenLoaiSanPham = N'{tenLoaiSanPham}';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 

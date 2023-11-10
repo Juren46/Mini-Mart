@@ -55,5 +55,29 @@ namespace ConsoleTesting
             string maSanPham = Console.ReadLine();      //Luôn đúng
             Console.WriteLine(sanPhamBUS.XoaSanPham(maSanPham));
         }
+
+        public static void TestTimKiemSanPham()
+        {
+            Console.Write("Nhập keyword: ");
+            string keyword = Console.ReadLine();
+            List<SanPham> listSanPham = sanPhamBUS.TimKiemSanPham(keyword);
+
+            foreach (SanPham sanPham in listSanPham)
+            {
+                Console.WriteLine(sanPham.maSanPham + "\n" + sanPham.maLoaiSanPham + "\n" + sanPham.maNhaCungCap + "\n" + sanPham.tenSanPham + "\n" + sanPham.donViTinh + "\n" + sanPham.soLuong + "\n" + sanPham.giaBan + "\n" + sanPham.duongDanAnh + "\n" + sanPham.maLoaiSanPham + "\n" + sanPham.trangThai + "\n");
+            }
+        }
+
+        public static void LocSanPhamTheoLoaiSanPham()
+        {
+            Console.Write("Nhập loại sản phẩm: ");
+            string tenLoaiSanPham = Console.ReadLine();     //Luôn đúng
+            List<SanPham> listSanPham = sanPhamBUS.LocSanPhamTheoLoaiSanPham(tenLoaiSanPham);
+
+            foreach (SanPham sanPham in listSanPham)
+            {
+                Console.WriteLine(sanPham.maSanPham + "\n" + sanPham.maLoaiSanPham + "\n" + sanPham.maNhaCungCap + "\n" + sanPham.tenSanPham + "\n" + sanPham.donViTinh + "\n" + sanPham.soLuong + "\n" + sanPham.giaBan + "\n" + sanPham.duongDanAnh + "\n" + sanPham.maLoaiSanPham + "\n" + sanPham.trangThai + "\n");
+            }
+        }
     }
 }
