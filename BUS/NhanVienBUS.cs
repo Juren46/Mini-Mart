@@ -40,15 +40,8 @@ namespace BUS
 
         public string ThemNhanVien(string maNhanVien, string tenTaiKhoan, string hoTen, string gioiTinh, string ngaySinh, string soDienThoai, string email, string diaChi)
         {
-            hoTen = hoTen.Trim();
-            gioiTinh = gioiTinh.Trim();
-            ngaySinh = ngaySinh.Trim();
-            soDienThoai = soDienThoai.Trim();
-            email = email.Trim();
-            diaChi = diaChi.Trim();
-
             if (string.IsNullOrEmpty(hoTen) || string.IsNullOrEmpty(tenTaiKhoan))
-                return "Tên nhân viên và tên tài khoản không được để trống!";
+                return "Tên tài khoản và tên nhân viên không được để trống!";
 
             if (!string.IsNullOrEmpty(soDienThoai) && !InputValidate.PhoneNumberValidate(soDienThoai))
                 return "Vui lòng nhập đúng số điện thoại!";
@@ -56,11 +49,17 @@ namespace BUS
             if (!string.IsNullOrEmpty(email) && !InputValidate.EmailValidate(email))
                 return "Vui lòng nhập đúng email!";
 
-            DateTime dateTime;
-            try { dateTime = DateTime.ParseExact(ngaySinh, "dd/MM/yyyy", null); }
-            catch { dateTime = DateTime.MinValue; }
+            NhanVien nhanVien = new NhanVien();
 
-            NhanVien nhanVien = new NhanVien(hoTen, gioiTinh, dateTime, soDienThoai, email, diaChi, maNhanVien, tenTaiKhoan);
+            nhanVien.maNhanVien = maNhanVien;
+            nhanVien.tenTaiKhoan = tenTaiKhoan;
+            nhanVien.hoTen = hoTen.Trim();
+            nhanVien.gioiTinh = gioiTinh;
+            try { nhanVien.ngaySinh = DateTime.ParseExact(ngaySinh, "dd/MM/yyyy", null); }
+            catch { nhanVien.ngaySinh = DateTime.MinValue; }
+            nhanVien.soDienThoai = soDienThoai.Trim();
+            nhanVien.email = email.Trim();
+            nhanVien.diaChi = diaChi.Trim();
 
             if (nhanVienDAO.ThemNhanVien(nhanVien))
                 return "Thêm nhân viên thành công!";
@@ -87,16 +86,13 @@ namespace BUS
             if (!string.IsNullOrEmpty(email) && !InputValidate.EmailValidate(email))
                 return "Vui lòng nhập đúng email!";
 
-            DateTime dateTime;
-            try { dateTime = DateTime.ParseExact(ngaySinh, "dd/MM/yyyy", null); }
-            catch { dateTime = DateTime.MinValue; }
-
             NhanVien nhanVien = new NhanVien();
 
             nhanVien.maNhanVien = maNhanVien;
             nhanVien.hoTen = hoTen;
             nhanVien.gioiTinh = gioiTinh;
-            nhanVien.ngaySinh = dateTime;
+            try { nhanVien.ngaySinh = DateTime.ParseExact(ngaySinh, "dd/MM/yyyy", null); }
+            catch { nhanVien.ngaySinh = DateTime.MinValue; }
             nhanVien.soDienThoai = soDienThoai;
             nhanVien.email = email;
             nhanVien.diaChi = diaChi;

@@ -42,11 +42,11 @@ namespace DAO
 
         public NhanVien LayNhanVienTheoMa(string maNhanVien)
         {
+            NhanVien nhanVien = new NhanVien();
+
             string query = $"SELECT * FROM NhanVien WHERE maNhanVien = '{maNhanVien}' AND trangThai = 1;";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
-
-            NhanVien nhanVien = new NhanVien();
 
             nhanVien.maNhanVien = dataTable.Rows[0]["maNhanVien"].ToString();
             nhanVien.tenTaiKhoan = dataTable.Rows[0]["tenTaiKhoan"].ToString();
@@ -64,11 +64,11 @@ namespace DAO
 
         public NhanVien LayNhanVienTheoTenTaiKhoan(string tenTaiKhoan)
         {
+            NhanVien nhanVien = new NhanVien();
+
             string query = $"SELECT * FROM NhanVien WHERE tenTaiKhoan = '{tenTaiKhoan}' AND trangThai = 1;";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
-
-            NhanVien nhanVien = new NhanVien();
 
             nhanVien.maNhanVien = dataTable.Rows[0]["maNhanVien"].ToString();
             nhanVien.tenTaiKhoan = dataTable.Rows[0]["tenTaiKhoan"].ToString();
@@ -128,7 +128,6 @@ namespace DAO
 
         public List<NhanVien> TimKiemNhanVien(string keyword)
         {
-
             List<NhanVien> listNhanVien = new List<NhanVien>();
 
             string query = $"SELECT * FROM NhanVien " +
@@ -164,7 +163,6 @@ namespace DAO
 
         public List<NhanVien> LocNhanVienTheoPhanQuyen(string tenPhanQuyen)
         {
-
             List<NhanVien> listNhanVien = new List<NhanVien>();
 
             string query = $"SELECT NV.* " +
@@ -198,7 +196,6 @@ namespace DAO
 
         public List<NhanVien> LocNhanVienTheoGioiTinh(string gioiTinh)
         {
-
             List<NhanVien> listNhanVien = new List<NhanVien>();
 
             string query = $"SELECT * FROM NhanVien WHERE gioiTinh = N'{gioiTinh}' AND trangThai = 1;";

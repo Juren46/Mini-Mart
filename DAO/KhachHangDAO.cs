@@ -44,12 +44,12 @@ namespace DAO
 
         public KhachHang LayKhachHangTheoMa(string maKhachHang)
         {
+            KhachHang khachHang = new KhachHang();
+
             string query = $"SELECT * FROM KhachHang WHERE maKhachHang = '{maKhachHang}';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
-
-            KhachHang khachHang = new KhachHang();
-
+           
             khachHang.maKhachHang = dataTable.Rows[0]["maKhachHang"].ToString();
             khachHang.hoTen = dataTable.Rows[0]["tenKhachHang"].ToString();
             khachHang.gioiTinh = dataTable.Rows[0]["gioiTinh"].ToString();
@@ -67,12 +67,12 @@ namespace DAO
 
         public KhachHang LayKhachHangTheoSoDienThoai(string soDienThoai)
         {
+            KhachHang khachHang = new KhachHang();
+
             string query = $"SELECT * FROM KhachHang WHERE soDienThoai = '{soDienThoai}';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
-
-            KhachHang khachHang = new KhachHang();
-
+            
             khachHang.maKhachHang = dataTable.Rows[0]["maKhachHang"].ToString();
             khachHang.hoTen = dataTable.Rows[0]["tenKhachHang"].ToString();
             khachHang.gioiTinh = dataTable.Rows[0]["gioiTinh"].ToString();

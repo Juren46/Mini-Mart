@@ -41,7 +41,7 @@ namespace BUS.OtherFunctions
             {
                 int count = nhanVienDAO.DemSoNhanVien(tenPhanQuyen);
 
-                nhanVienID = string.Format("NBH{0:D5}", ++count);
+                nhanVienID = string.Format("NVB{0:D5}", ++count);
             }
 
             if (tenPhanQuyen.Equals("Nhân viên kho"))
@@ -71,7 +71,7 @@ namespace BUS.OtherFunctions
 
             int count = sanPhamBUS.DemSoSanPham();
 
-            string sanPhamID = string.Format("SPM{0:D5}", ++count); ;
+            string sanPhamID = string.Format("SPH{0:D5}", ++count); ;
 
             return sanPhamID;
         }

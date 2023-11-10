@@ -40,11 +40,6 @@ namespace BUS
 
         public string ThemKhachHang(string maKhachHang, string hoTen, string gioiTinh, string ngaySinh, string soDienThoai, string email, string diaChi)
         {
-            hoTen = hoTen.Trim();
-            soDienThoai = soDienThoai.Trim();
-            email = email.Trim();
-            diaChi = diaChi.Trim();
-
             if (string.IsNullOrEmpty(hoTen) || string.IsNullOrEmpty(soDienThoai))
                 return "Họ tên khách hàng và số điện thoại không được bỏ trống!";
 
@@ -57,11 +52,16 @@ namespace BUS
             if (!string.IsNullOrEmpty(email) && !InputValidate.EmailValidate(email))
                 return "Vui lòng nhập đúng email!";
 
-            DateTime dateTime;
-            try { dateTime = DateTime.ParseExact(ngaySinh, "dd/MM/yyyy", null); }
-            catch { dateTime = DateTime.MinValue; }
+            KhachHang khachHang = new KhachHang();
 
-            KhachHang khachHang = new KhachHang(hoTen, gioiTinh, dateTime, soDienThoai, email, diaChi, maKhachHang);
+            khachHang.maKhachHang = maKhachHang;
+            khachHang.hoTen = hoTen.Trim();
+            khachHang.gioiTinh = gioiTinh;
+            try { khachHang.ngaySinh = DateTime.ParseExact(ngaySinh, "dd/MM/yyyy", null); }
+            catch { khachHang.ngaySinh = DateTime.MinValue; }
+            khachHang.soDienThoai = soDienThoai.Trim();
+            khachHang.email = email.Trim();
+            khachHang.diaChi = diaChi.Trim();
 
             if (khachHangDAO.ThemKhachHang(khachHang))
                 return "Thêm khách hàng thành công!";
@@ -83,19 +83,16 @@ namespace BUS
             if (!string.IsNullOrEmpty(email) && !InputValidate.EmailValidate(email))
                 return "Vui lòng nhập đúng email!";
 
-            DateTime dateTime;
-            try { dateTime = DateTime.ParseExact(ngaySinh, "dd/MM/yyyy", null); }
-            catch { dateTime = DateTime.MinValue; }
-
             KhachHang khachHang = new KhachHang();
 
             khachHang.maKhachHang = maKhachHang;
-            khachHang.hoTen = hoTen;
+            khachHang.hoTen = hoTen.Trim();
             khachHang.gioiTinh = gioiTinh;
-            khachHang.ngaySinh = dateTime;
-            khachHang.soDienThoai = soDienThoai;
-            khachHang.email = email;
-            khachHang.diaChi = diaChi;
+            try { khachHang.ngaySinh = DateTime.ParseExact(ngaySinh, "dd/MM/yyyy", null); }
+            catch { khachHang.ngaySinh = DateTime.MinValue; }
+            khachHang.soDienThoai = soDienThoai.Trim();
+            khachHang.email = email.Trim();
+            khachHang.diaChi = diaChi.Trim();
 
             if (khachHangDAO.SuaKhachHang(khachHang))
                 return "Sửa thông tin khách hàng thành công!";

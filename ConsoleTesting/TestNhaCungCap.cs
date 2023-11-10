@@ -65,7 +65,7 @@ namespace ConsoleTesting
             string email = Console.ReadLine();
             Console.Write("Nhap dia chi: ");
             string diaChi = Console.ReadLine();
-            Console.WriteLine(nhaCungCapBUS.ThemNhaCungCap(maNhaCungCap, tenNhaCungCap, soDienThoai, email, diaChi));
+            Console.WriteLine(nhaCungCapBUS.SuaNhaCungCap(maNhaCungCap, tenNhaCungCap, soDienThoai, email, diaChi));
         }
 
         public static void TestTimKiemNhaCungCap()

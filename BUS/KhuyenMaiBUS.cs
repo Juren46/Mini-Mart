@@ -26,5 +26,75 @@ namespace BUS
         {
             return khuyenMaiDAO.DemSoKhuyenMai();
         }
+
+        public KhuyenMai LayKhuyenMaiTheoMa(string maKhuyenMai)
+        {
+            return khuyenMaiDAO.LayKhuyenMaiTheoMa(maKhuyenMai);
+        }
+
+        public string ThemKhuyenMai(string maKhuyenMai, string maQuanLi, string tenKhuyenMai, string thoiGianBatDau, string thoiGianKetThuc, string loaiGiaTri, string giaTriApDung)
+        {
+            if (string.IsNullOrEmpty(tenKhuyenMai) || string.IsNullOrEmpty(thoiGianBatDau) || string.IsNullOrEmpty(thoiGianKetThuc) || string.IsNullOrEmpty(loaiGiaTri) || string.IsNullOrEmpty(giaTriApDung))
+                return "Vui lòng nhập đầy đủ thông tin!";
+
+            DateTime dateTimeBatDau = DateTime.Parse(thoiGianBatDau);
+            DateTime dateTimeKetThuc = DateTime.Parse(thoiGianKetThuc);
+
+            if (dateTimeBatDau > dateTimeKetThuc)
+                return "Thời gian bắt đầu phải trước thời gian kết thúc!";
+
+            if (dateTimeBatDau < DateTime.Now)
+                return "Thời gian bắt đầu không được trước thời điểm hiện tại!";
+
+            if (!Decimal.TryParse(giaTriApDung, out decimal decimalGiaTriApDung))
+                return "Giá trị áp dụng phải là kiểu decimal!";
+
+            if (Decimal.Parse(giaTriApDung) <= 0)
+                return "Giá trị áp dụng không được bé hơn 0!";
+
+            KhuyenMai khuyenMai = new KhuyenMai();
+
+            khuyenMai.maKhuyenMai = maKhuyenMai;
+            khuyenMai.maQuanLi = maQuanLi;
+            khuyenMai.tenKhuyenMai = tenKhuyenMai.Trim();
+            khuyenMai.thoiGianBatDau = dateTimeBatDau;
+            khuyenMai.thoiGianKetThuc = dateTimeKetThuc;
+            khuyenMai.loaiGiaTri = loaiGiaTri;
+            khuyenMai.giaTriApDung = decimalGiaTriApDung;
+
+            if (khuyenMaiDAO.ThemKhuyenMai(khuyenMai))
+                return "Thêm khuyến mãi thành công!";
+            else
+                return "Thêm khuyến mãi thất bại!";
+        }
+
+        public string XoaKhuyenMai(string maKhuyenMai)
+        {
+            if (khuyenMaiDAO.XoaKhuyenMai(maKhuyenMai))
+                return "Xóa khuyến mãi thành công!";
+            else
+                return "Xóa khuyến mãi thất bại!";
+        }
+
+        public List<KhuyenMai> TimKiemKhuyenMai(string keyword)
+        {
+            keyword = keyword.Trim().ToLower();
+
+            return khuyenMaiDAO.TimKiemKhuyenMai(keyword);
+        }
+
+        public List<KhuyenMai> TimKiemKhuyenMaiTheoKhoangThoiGian(string thoiGianBatDau, string thoiGianKetThuc)
+        {
+            if (string.IsNullOrEmpty(thoiGianBatDau) || string.IsNullOrEmpty(thoiGianKetThuc))
+                return null;
+
+            DateTime dateTimeBatDau = DateTime.Parse(thoiGianBatDau);
+            DateTime dateTimeKetThuc = DateTime.Parse(thoiGianKetThuc);
+
+            if (dateTimeBatDau > dateTimeKetThuc)
+                return null;
+
+            return khuyenMaiDAO.TimKiemKhuyenMaiTheoKhoangThoiGian(dateTimeBatDau, dateTimeKetThuc);
+        }
     }
 }
