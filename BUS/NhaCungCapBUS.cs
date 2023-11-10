@@ -23,6 +23,11 @@ namespace BUS
             return nhaCungCapDAO.LayDanhSachNhaCungCap();
         }
 
+        public NhaCungCap LayNhaCungCapTheoMa(string maNhaCungCap)
+        {
+            return nhaCungCapDAO.LayNhaCungCapTheoMa(maNhaCungCap);
+        }
+
         public NhaCungCap LayNhaCungCapTheoTen(string tenNhaCungCap)
         {
             return nhaCungCapDAO.LayNhaCungCapTheoTen(tenNhaCungCap);
@@ -36,7 +41,7 @@ namespace BUS
         public string ThemNhaCungCap(string maNhaCungCap, string tenNhaCungCap, string soDienThoai, string email, string diaChi)
         {
             if (string.IsNullOrEmpty(tenNhaCungCap))
-                return "Vui lòng nhập đầy đủ thông tin!";
+                return "Tên nhà cung cấp không được bỏ trống!";
 
             tenNhaCungCap = tenNhaCungCap.Trim();
             soDienThoai = soDienThoai.Trim();
@@ -49,7 +54,7 @@ namespace BUS
             if (!string.IsNullOrEmpty(email) && !InputValidate.EmailValidate(email))
                 return "Vui lòng nhập đúng email!";
 
-            if (nhaCungCapDAO.KiemTraDaTonTai(tenNhaCungCap.ToLower()))
+            if (nhaCungCapDAO.KiemTraNhaCungCapDaTonTai(tenNhaCungCap.ToLower()))
                 return "Nhà cung cấp đã tồn tại, vui lòng chọn tên khác!";
             else
             {
@@ -65,7 +70,7 @@ namespace BUS
         public string SuaNhaCungCap(string maNhaCungCap, string tenNhaCungCap, string soDienThoai, string email, string diaChi)
         {
             if (string.IsNullOrEmpty(tenNhaCungCap))
-                return "Vui lòng nhập đầy đủ thông tin!";
+                return "Tên nhà cung cấp không được bỏ trống!";
 
             if (!string.IsNullOrEmpty(soDienThoai) && !InputValidate.PhoneNumberValidate(soDienThoai))
                 return "Vui lòng nhập đúng số điện thoại!";
@@ -76,9 +81,9 @@ namespace BUS
             NhaCungCap NhaCungCap = new NhaCungCap(maNhaCungCap, tenNhaCungCap, soDienThoai, email, diaChi);
 
             if (nhaCungCapDAO.SuaNhaCungCap(NhaCungCap))
-                return "Sửa loại sản phẩm thành công!";
+                return "Sửa thông tin nhà cung cấp thành công!";
             else
-                return "Sửa loại sản phẩm thất bại!";
+                return "Sửa thông tin nhà cung cấp thất bại!";
         }
 
         public List<NhaCungCap> TimKiemNhaCungCap(string keyword)
