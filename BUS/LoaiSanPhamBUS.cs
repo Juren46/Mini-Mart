@@ -81,10 +81,6 @@ namespace BUS
             keyword = keyword.Trim().ToLower();
 
             return loaiSanPhamDAO.TimKiemLoaiSanPham(keyword);
-        }
-
-        
-
-        
+        }     
     }
 }
