@@ -21,6 +21,11 @@ namespace BUS
             return sanPhamDAO.LayDanhSachSanPham();
         }
 
+        public SanPham LaySanPhamTheoMa(string maSanPham)
+        {
+            return sanPhamDAO.LaySanPhamTheoMa(maSanPham);
+        }
+
         public int DemSoSanPham()
         {
             return sanPhamDAO.DemSoSanPham();
@@ -31,16 +36,11 @@ namespace BUS
             if (string.IsNullOrEmpty(maLoaiSanPham) || string.IsNullOrEmpty(maNhaCungCap) || string.IsNullOrEmpty(tenSanPham) || string.IsNullOrEmpty(donViTinh) || string.IsNullOrEmpty(giaBan) || string.IsNullOrEmpty(duongDanAnh))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
-            SanPham sanPham = new SanPham();
+            Decimal decimalGiaBan;
+            if (!Decimal.TryParse(giaBan, out decimalGiaBan))
+                return "Giá bán phải là kiểu decimal!";
 
-            sanPham.maSanPham = maSanPham;
-            sanPham.maLoaiSanPham = maLoaiSanPham;
-            sanPham.maNhaCungCap = maNhaCungCap;
-            sanPham.tenSanPham = tenSanPham;
-            sanPham.donViTinh = donViTinh;
-            sanPham.soLuong = 0;
-            sanPham.giaBan = Decimal.Parse(giaBan);
-            sanPham.duongDanAnh = duongDanAnh;
+            SanPham sanPham = new SanPham(maSanPham, maLoaiSanPham, maNhaCungCap, tenSanPham, donViTinh, decimalGiaBan, duongDanAnh);
 
             if (sanPhamDAO.ThemSanPham(sanPham))
                 return "Thêm sản phẩm thành công!";
@@ -58,16 +58,14 @@ namespace BUS
 
         public string SuaSanPham(string maSanPham, string maLoaiSanPham, string maNhaCungCap, string tenSanPham, string donViTinh, string giaBan, string duongDanAnh)
         {
-            if (string.IsNullOrEmpty(tenSanPham))
-                return "Tên sản phẩm không được bỏ trống!";
+            if (string.IsNullOrEmpty(maLoaiSanPham) || string.IsNullOrEmpty(maNhaCungCap) || string.IsNullOrEmpty(tenSanPham) || string.IsNullOrEmpty(donViTinh) || string.IsNullOrEmpty(giaBan) || string.IsNullOrEmpty(duongDanAnh))
+                return "Vui lòng nhập đầy đủ thông tin!";
 
-            if (string.IsNullOrEmpty(donViTinh))
-                return "Đơn vị tính không được bỏ trống!";
+            Decimal decimalGiaBan;
+            if (!Decimal.TryParse(giaBan, out decimalGiaBan))
+                return "Giá bán chỉ được nhập kiểu decimal!";
 
-            if (string.IsNullOrEmpty(giaBan))
-                return "Giá bán không được bỏ trống!";
-
-            SanPham sanPham = new SanPham(maSanPham, maLoaiSanPham, maNhaCungCap, tenSanPham, donViTinh, Decimal.Parse(giaBan), duongDanAnh);
+            SanPham sanPham = new SanPham(maSanPham, maLoaiSanPham, maNhaCungCap, tenSanPham, donViTinh, decimalGiaBan, duongDanAnh);
 
             if (sanPhamDAO.SuaSanPham(sanPham))
                 return "Sửa thông tin sản phẩm thành công!";
@@ -75,17 +73,11 @@ namespace BUS
                 return "Sửa thông tin sản phẩm thất bại!";
         }
 
-        public List<SanPham> TimKiemSanPham(string keyword, string tenLoaiSanPham = "Mặc định", string tenNhaCungCap = "Mặc định")
+        public List<SanPham> TimKiemSanPham(string keyword)
         {
             keyword = keyword.Trim().ToLower();
 
-            LoaiSanPhamBUS loaiSanPhamBUS = new LoaiSanPhamBUS();
-            LoaiSanPham loaiSanPham = loaiSanPhamBUS.LayLoaiSanPhamTheoTen(tenLoaiSanPham);
-
-            NhaCungCapBUS nhaCungCapBUS = new NhaCungCapBUS();
-            NhaCungCap nhaCungCap = nhaCungCapBUS.LayNhaCungCapTheoTen(tenNhaCungCap);
-
-            return sanPhamDAO.TimKiemSanPham(keyword, loaiSanPham.maLoaiSanPham, nhaCungCap.maNhaCungCap);
+            return sanPhamDAO.TimKiemSanPham(keyword);
         }
     }
 }

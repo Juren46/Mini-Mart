@@ -53,11 +53,16 @@ namespace ConsoleTesting
             //TestLoaiSanPham.TestTimKiemLoaiSanPham();
 
             //TestNhaCungCap.TestLayDanhSachNhaCungCap();
-            TestNhaCungCap.TestLayNhaCungCapTheoMa();       //Chưa test
-            //TestNhaCungCap.TestLayNhaCungCapTheoTen();    //Chưa test
-            //TestNhaCungCap.TestThemNhaCungCap();          //Chưa test
-            //TestNhaCungCap.TestSuaNhaCungCap();           //Chưa test
-            //TestNhaCungCap.TestTimKiemNhaCungCap();       //Chưa test
+            //TestNhaCungCap.TestLayNhaCungCapTheoMa();       
+            //TestNhaCungCap.TestLayNhaCungCapTheoTen();    
+            //TestNhaCungCap.TestThemNhaCungCap();          
+            //TestNhaCungCap.TestSuaNhaCungCap();           
+            //TestNhaCungCap.TestTimKiemNhaCungCap();
+
+            //TestSanPham.TestLayDanhSachSanPham();
+            //TestSanPham.TestLaySanPhamTheoMa();       //Chưa test
+            //TestSanPham.TestThemSanPham();            //Chưa test
+            //TestSanPham.TestXoaSanPham();            //Chưa test
         }
     }
 }

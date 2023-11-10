@@ -43,7 +43,7 @@ namespace BUS
 
         public string ThemTaiKhoan(string tenPhanQuyen, string tenTaiKhoan, string matKhau)     //Chọn phân quyền bằng combobox trong GUI nên sẽ dùng tên phân quyền
         {
-            if (string.IsNullOrEmpty(tenTaiKhoan) || string.IsNullOrEmpty(matKhau))
+            if (string.IsNullOrEmpty(tenPhanQuyen) || string.IsNullOrEmpty(tenTaiKhoan) || string.IsNullOrEmpty(matKhau))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
             if (InputValidate.KiemTraASCII(tenTaiKhoan) || InputValidate.KiemTraASCII(matKhau))
@@ -55,8 +55,7 @@ namespace BUS
             tenTaiKhoan = tenTaiKhoan.Trim();
             matKhau = matKhau.Trim();
 
-            PhanQuyenBUS phanQuyenBUS = new PhanQuyenBUS();
-            PhanQuyen phanQuyen = phanQuyenBUS.LayPhanQuyenTheoTen(tenPhanQuyen);
+            PhanQuyen phanQuyen = new PhanQuyenBUS().LayPhanQuyenTheoTen(tenPhanQuyen);
 
             TaiKhoan taiKhoan = new TaiKhoan(phanQuyen.maPhanQuyen, tenTaiKhoan, matKhau);
 
@@ -68,14 +67,14 @@ namespace BUS
 
         public string DoiMatKhau(string tenTaiKhoan, string matKhauCu, string matKhauMoi, string xacNhanMatKhauMoi)
         {
-            if (string.IsNullOrEmpty(matKhauCu) || string.IsNullOrEmpty(matKhauMoi))
+            if (string.IsNullOrEmpty(matKhauCu) || string.IsNullOrEmpty(matKhauMoi) || string.IsNullOrEmpty(xacNhanMatKhauMoi))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
             if (!taiKhoanDAO.KiemTraDangNhap(tenTaiKhoan, matKhauCu))
                 return "Mật khẩu cũ sai!";
 
             if (InputValidate.KiemTraASCII(matKhauMoi))
-                return "Mật khẩu mới không được chứa kí tự không thuộc ASCII!";
+                return "Mật khẩu không được chứa kí tự không thuộc ASCII!";
 
             if (!matKhauMoi.Equals(xacNhanMatKhauMoi))
                 return "Xác nhận mật khẩu mới không chính xác!";

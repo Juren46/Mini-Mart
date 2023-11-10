@@ -42,19 +42,18 @@ namespace BUS
             if (string.IsNullOrEmpty(tenLoaiSanPham))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
-            tenLoaiSanPham = tenLoaiSanPham.Trim();
-
             if (loaiSanPhamDAO.KiemTraLoaiSanPhamDaTonTai(tenLoaiSanPham.ToLower()))
                 return "Tên loại sản phẩm đã tồn tại, vui lòng chọn tên khác!";
-            else
-            {
-                LoaiSanPham loaiSanPham = new LoaiSanPham(maLoaiSanPham, tenLoaiSanPham);
 
-                if (loaiSanPhamDAO.ThemLoaiSanPham(loaiSanPham))
-                    return "Thêm loại sản phẩm thành công!";
-                else
-                    return "Thêm loại sản phẩm thất bại!";
-            }
+            LoaiSanPham loaiSanPham = new LoaiSanPham();
+
+            loaiSanPham.maLoaiSanPham = maLoaiSanPham;
+            loaiSanPham.tenLoaiSanPham = tenLoaiSanPham.Trim();
+
+            if (loaiSanPhamDAO.ThemLoaiSanPham(loaiSanPham))
+                return "Thêm loại sản phẩm thành công!";
+            else
+                return "Thêm loại sản phẩm thất bại!";
         }
 
         public string XoaLoaiSanPham(string maLoaiSanPham)
@@ -70,7 +69,15 @@ namespace BUS
             if (string.IsNullOrEmpty(tenLoaiSanPham))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
-            if (loaiSanPhamDAO.SuaLoaiSanPham(new LoaiSanPham(maLoaiSanPham, tenLoaiSanPham)))
+            if (loaiSanPhamDAO.KiemTraLoaiSanPhamDaTonTai(tenLoaiSanPham.ToLower()))
+                return "Tên loại sản phẩm đã tồn tại, vui lòng chọn tên khác!";
+
+            LoaiSanPham loaiSanPham = new LoaiSanPham();
+
+            loaiSanPham.maLoaiSanPham = maLoaiSanPham;
+            loaiSanPham.tenLoaiSanPham = tenLoaiSanPham.Trim();
+
+            if (loaiSanPhamDAO.SuaLoaiSanPham(loaiSanPham))
                 return "Sửa thông tin loại sản phẩm thành công!";
             else
                 return "Sửa thông tin loại sản phẩm thất bại!";

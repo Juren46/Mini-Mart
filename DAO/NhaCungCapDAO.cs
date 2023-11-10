@@ -112,7 +112,8 @@ namespace DAO
             List<NhaCungCap> listNhaCungCap = new List<NhaCungCap>();
 
             string query = $"SELECT * FROM NhaCungCap " +
-                           $"WHERE LOWER(tenNhaCungCap) LIKE N'%{keyword}%' " +
+                           $"WHERE LOWER(maNhaCungCap) LIKE '%{keyword}%' " +
+                           $"OR LOWER(tenNhaCungCap) LIKE N'%{keyword}%' " +
                            $"OR soDienThoai LIKE '%{keyword}%' " +
                            $"OR LOWER(email) LIKE '%{keyword}%' " +
                            $"OR LOWER(diaChi) LIKE N'%{keyword}%';";

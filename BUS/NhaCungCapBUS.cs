@@ -43,11 +43,6 @@ namespace BUS
             if (string.IsNullOrEmpty(tenNhaCungCap))
                 return "Tên nhà cung cấp không được bỏ trống!";
 
-            tenNhaCungCap = tenNhaCungCap.Trim();
-            soDienThoai = soDienThoai.Trim();
-            email = email.Trim();
-            diaChi = diaChi.Trim();
-
             if (!string.IsNullOrEmpty(soDienThoai) && !InputValidate.PhoneNumberValidate(soDienThoai))
                 return "Vui lòng nhập đúng số điện thoại!";
 
@@ -56,15 +51,19 @@ namespace BUS
 
             if (nhaCungCapDAO.KiemTraNhaCungCapDaTonTai(tenNhaCungCap.ToLower()))
                 return "Nhà cung cấp đã tồn tại, vui lòng chọn tên khác!";
-            else
-            {
-                NhaCungCap NhaCungCap = new NhaCungCap(maNhaCungCap, tenNhaCungCap, soDienThoai, email, diaChi);
 
-                if (nhaCungCapDAO.ThemNhaCungCap(NhaCungCap))
-                    return "Thêm nhà cung cấp thành công!";
-                else
-                    return "Thêm nhà cung cấp thất bại!";
-            }
+            NhaCungCap nhaCungCap = new NhaCungCap();
+
+            nhaCungCap.maNhaCungCap = maNhaCungCap;
+            nhaCungCap.tenNhaCungCap = tenNhaCungCap.Trim();
+            nhaCungCap.soDienThoai = soDienThoai.Trim();
+            nhaCungCap.email = email.Trim();
+            nhaCungCap.diaChi = diaChi.Trim();
+
+            if (nhaCungCapDAO.ThemNhaCungCap(nhaCungCap))
+                return "Thêm nhà cung cấp thành công!";
+            else
+                return "Thêm nhà cung cấp thất bại!";
         }
 
         public string SuaNhaCungCap(string maNhaCungCap, string tenNhaCungCap, string soDienThoai, string email, string diaChi)
@@ -78,9 +77,15 @@ namespace BUS
             if (!string.IsNullOrEmpty(email) && !InputValidate.EmailValidate(email))
                 return "Vui lòng nhập đúng email!";
 
-            NhaCungCap NhaCungCap = new NhaCungCap(maNhaCungCap, tenNhaCungCap, soDienThoai, email, diaChi);
+            NhaCungCap nhaCungCap = new NhaCungCap();
 
-            if (nhaCungCapDAO.SuaNhaCungCap(NhaCungCap))
+            nhaCungCap.maNhaCungCap = maNhaCungCap;
+            nhaCungCap.tenNhaCungCap = tenNhaCungCap.Trim();
+            nhaCungCap.soDienThoai = soDienThoai.Trim();
+            nhaCungCap.email = email.Trim();
+            nhaCungCap.diaChi = diaChi.Trim();
+
+            if (nhaCungCapDAO.SuaNhaCungCap(nhaCungCap))
                 return "Sửa thông tin nhà cung cấp thành công!";
             else
                 return "Sửa thông tin nhà cung cấp thất bại!";

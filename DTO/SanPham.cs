@@ -10,6 +10,7 @@ namespace DTO
     {
         public SanPham()
         {
+            soLuong = 0;
             trangThai = true;
         }
 
