@@ -33,8 +33,8 @@ namespace DAO
                 khachHang.email = row["email"].ToString();
                 khachHang.diaChi = row["diaChi"].ToString();
                 khachHang.bacThanhVien = row["bacThanhVien"].ToString();
-                khachHang.diemThanhVien = (int)row["diemThanhVien"];
-                khachHang.diemTichLuy = (int)row["diemTichLuy"];
+                khachHang.diemThanhVien = Decimal.Parse(row["diemThanhVien"].ToString());
+                khachHang.diemTichLuy = Decimal.Parse(row["diemTichLuy"].ToString());
 
                 listKhachHang.Add(khachHang);
             }
@@ -59,8 +59,8 @@ namespace DAO
             khachHang.email = dataTable.Rows[0]["email"].ToString();
             khachHang.diaChi = dataTable.Rows[0]["diaChi"].ToString();
             khachHang.bacThanhVien = dataTable.Rows[0]["bacThanhVien"].ToString();
-            khachHang.diemThanhVien = (int)dataTable.Rows[0]["diemThanhVien"];
-            khachHang.diemTichLuy = (int)dataTable.Rows[0]["diemTichLuy"];
+            khachHang.diemThanhVien = Decimal.Parse(dataTable.Rows[0]["diemThanhVien"].ToString());
+            khachHang.diemTichLuy = Decimal.Parse(dataTable.Rows[0]["diemTichLuy"].ToString());
 
             return khachHang;
         }
@@ -184,8 +184,8 @@ namespace DAO
                 khachHang.email = row["email"].ToString();
                 khachHang.diaChi = row["diaChi"].ToString();
                 khachHang.bacThanhVien = row["bacThanhVien"].ToString();
-                khachHang.diemThanhVien = (int)row["diemThanhVien"];
-                khachHang.diemTichLuy = (int)row["diemTichLuy"];
+                khachHang.diemThanhVien = (decimal)row["diemThanhVien"];
+                khachHang.diemTichLuy = (decimal)row["diemTichLuy"];
 
                 listKhachHang.Add(khachHang);
             }
@@ -215,13 +215,44 @@ namespace DAO
                 khachHang.email = row["email"].ToString();
                 khachHang.diaChi = row["diaChi"].ToString();
                 khachHang.bacThanhVien = row["bacThanhVien"].ToString();
-                khachHang.diemThanhVien = (int)row["diemThanhVien"];
-                khachHang.diemTichLuy = (int)row["diemTichLuy"];
+                khachHang.diemThanhVien = row.Field<Decimal>("diemThanhVien");
+                khachHang.diemTichLuy = row.Field<Decimal>("diemTichLuy");
 
                 listKhachHang.Add(khachHang);
             }
 
             return listKhachHang;
         }
+
+        public bool TichDiem(string maKhachHang, decimal thanhTien)
+        {
+            KhachHang khachHang = LayKhachHangTheoMa(maKhachHang);
+
+            khachHang.diemTichLuy += (decimal)(thanhTien * 2 / 100);
+
+            khachHang.diemThanhVien += (decimal)(thanhTien * 2 / 100);
+
+            if (khachHang.diemTichLuy >= 1000)
+                khachHang.bacThanhVien = "Bạc";
+            else if (khachHang.diemTichLuy >= 2000)
+                khachHang.bacThanhVien = "Vàng";
+
+            return SuaKhachHang(khachHang);
+        }
+
+        /*public decimal ApDungGiamGiaThanhVien(string maKhachHang, string diemMuonDoi, decimal tongTien)
+        {
+            KhachHang khachHang = LayKhachHangTheoMa(maKhachHang);
+
+            if (Decimal.Parse(diemMuonDoi) <= khachHang.diemThanhVien)
+            {
+                tongTien -= Decimal.Parse(diemMuonDoi);
+                khachHang.diemThanhVien -= Decimal.Parse(diemMuonDoi);
+                SuaKhachHang(khachHang);
+                return tongTien;
+            }
+            else
+                return 0;
+        }*/
     }
 }

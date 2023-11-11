@@ -87,6 +87,17 @@ namespace BUS.OtherFunctions
             return khuyenMaiID;
         }
 
+        public static string GenerateHoaDonID()
+        {
+            HoaDonBUS hoaDonBUS = new HoaDonBUS();
 
+            int count = hoaDonBUS.DemSoHoaDonTheoNgay(DateTime.Now.ToString());
+
+            DateTime formattedDate = DateTime.ParseExact(DateTime.Now.ToString(), "dd/MM/yyyy", null);
+
+            string hoaDonID = string.Format("{0}-HD{1:D4}", formattedDate, ++count);
+
+            return hoaDonID;
+        }
     }
 }

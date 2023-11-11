@@ -74,7 +74,7 @@ namespace ConsoleTesting
             //TestKhuyenMai.TestXoaKhuyenMai();
             //TestKhuyenMai.TestTimKiemKhuyenMai();
             //TestKhuyenMai.TestTimKiemKhuyenMaiTheoKhoangThoiGian();     //Chưa test
-            TestKhuyenMai.TestApDungKhuyenMai();        //Chưa test
+            //TestKhuyenMai.TestApDungKhuyenMai();        //Chưa test
         }
     }
 }

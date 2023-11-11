@@ -40,5 +40,46 @@ namespace DAO
 
             return listHoaDon;
         }
+
+        public int DemSoHoaDon()
+        {
+            string query = $"SELECT COUNT(*) AS SoHoaDon FROM HoaDon;";
+
+            DataTable dataTable = DBHelper.ExecuteQuery(query);
+
+            int count = (int)dataTable.Rows[0]["SoHoaDon"];
+
+            return count;
+        }
+
+        public int DemSoHoaDonTheoNgay(DateTime ngay)
+        {
+            string query = $"SELECT COUNT(*) AS SoHoaDon FROM HoaDon WHERE thoiGianTao = '{ngay}';";
+
+            DataTable dataTable = DBHelper.ExecuteQuery(query);
+
+            int count = (int)dataTable.Rows[0]["SoHoaDon"];
+
+            return count;
+        }
+
+        public bool ThemHoaDon(HoaDon hoaDon, List<ChiTietHoaDon> listChiTietHoaDon)
+        {
+            int rowsAffected = 0;
+
+            foreach (ChiTietHoaDon chiTietHoaDon in listChiTietHoaDon)
+            {
+                string chiTietHoaDonQuery = $"INSERT INTO ChiTietHoaDon (maHoaDon, maSanPham, soLuong, donViTinh, giaBan, thanhTien) " +
+                                            $"SELECT '{hoaDon.maHoaDon}' AS maHoaDon, maSanPham, {chiTietHoaDon.soLuong} AS soLuong, donViTinh, giaBan, giaBan * soLuong AS thanhTien " +
+                                            $"FROM SanPham WHERE maSanPham = '{chiTietHoaDon.maSanPham}';";
+                rowsAffected += DBHelper.ExecuteNonQuery(chiTietHoaDonQuery);
+            }
+
+            string hoaDonQuery = $"INSERT INTO HoaDon VALUES('{hoaDon.maHoaDon}', '{hoaDon.maNhanVien}', '{hoaDon.maKhachHang}', '{hoaDon.maKhuyenMai}', '{hoaDon.thoiGianTao}', {hoaDon.tongTien}, {hoaDon.giaTriKhuyenMai}, {hoaDon.thanhTien}, {hoaDon.tienThua}, {hoaDon.tienThua});";
+
+            rowsAffected += DBHelper.ExecuteNonQuery(hoaDonQuery);
+
+            return rowsAffected == listChiTietHoaDon.Count + 1;
+        }
     }
 }

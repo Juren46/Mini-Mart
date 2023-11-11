@@ -12,20 +12,20 @@ namespace DTO
         {
         }
 
-        public ChiTietHoaDon(string maHoaDon, string maSanPham, string maKhuyenMai, int soLuong, decimal donGia, decimal thanhTien)
+        public ChiTietHoaDon(string maHoaDon, string maSanPham, string donViTinh, int soLuong, decimal donGia, decimal thanhTien)
         {
             this.maHoaDon = maHoaDon;
             this.maSanPham = maSanPham;
-            this.maKhuyenMai = maKhuyenMai;
+            this.donViTinh = donViTinh;
             this.soLuong = soLuong;
             this.donGia = donGia;
             this.thanhTien = thanhTien;
         }
 
-        public ChiTietHoaDon(string maSanPham, string maKhuyenMai, int soLuong, decimal donGia, decimal thanhTien)
+        public ChiTietHoaDon(string maSanPham, string donViTinh, int soLuong, decimal donGia, decimal thanhTien)
         {
             this.maSanPham = maSanPham;
-            this.maKhuyenMai = maKhuyenMai;
+            this.donViTinh = donViTinh;
             this.soLuong = soLuong;
             this.donGia = donGia;
             this.thanhTien = thanhTien;
@@ -33,7 +33,7 @@ namespace DTO
 
         public string maHoaDon { get; set; }
         public string maSanPham { get; set; }
-        public string maKhuyenMai { get; set; }
+        public string donViTinh {  get; set; }
         public int soLuong { get; set; }
         public decimal donGia { get; set; }
         public decimal thanhTien { get; set; }

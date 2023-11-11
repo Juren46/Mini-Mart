@@ -26,6 +26,7 @@ namespace DAO
 
                 chiTietHoaDon.maHoaDon = row["maHoaDon"].ToString();
                 chiTietHoaDon.maSanPham = row["maSanPham"].ToString();
+                chiTietHoaDon.donViTinh = row["donViTinh"].ToString();
                 chiTietHoaDon.soLuong = (int)row["soLuong"];
                 chiTietHoaDon.donGia = (decimal)row["donGia"];
                 chiTietHoaDon.thanhTien = (decimal)row["thanhTien"];

@@ -37,17 +37,14 @@ namespace BUS
             if (string.IsNullOrEmpty(tenKhuyenMai) || string.IsNullOrEmpty(thoiGianBatDau) || string.IsNullOrEmpty(thoiGianKetThuc) || string.IsNullOrEmpty(loaiGiaTri) || string.IsNullOrEmpty(giaTriApDung))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
-            DateTime dateTimeBatDau = DateTime.ParseExact(thoiGianBatDau, "dd/MM/yyyy HH:mm:ss", null);
-            DateTime dateTimeKetThuc = DateTime.ParseExact(thoiGianKetThuc, "dd/MM/yyyy HH:mm:ss", null);
+            DateTime dateTimeBatDau = DateTime.Parse(thoiGianBatDau);
+            DateTime dateTimeKetThuc = DateTime.Parse(thoiGianKetThuc);
 
             if (dateTimeBatDau > dateTimeKetThuc)
                 return "Thời gian bắt đầu phải trước thời gian kết thúc!";
 
             if (dateTimeBatDau < DateTime.Now)
                 return "Thời gian bắt đầu không được trước thời điểm hiện tại!";
-
-            if (!Decimal.TryParse(giaTriApDung, out decimal decimalGiaTriApDung))
-                return "Giá trị áp dụng phải là kiểu decimal!";
 
             if (Decimal.Parse(giaTriApDung) <= 0)
                 return "Giá trị áp dụng không được bé hơn 0!";
@@ -60,7 +57,7 @@ namespace BUS
             khuyenMai.thoiGianBatDau = dateTimeBatDau;
             khuyenMai.thoiGianKetThuc = dateTimeKetThuc;
             khuyenMai.loaiGiaTri = loaiGiaTri;
-            khuyenMai.giaTriApDung = decimalGiaTriApDung;
+            khuyenMai.giaTriApDung = Decimal.Parse(giaTriApDung);
 
             if (khuyenMaiDAO.ThemKhuyenMai(khuyenMai))
                 return "Thêm khuyến mãi thành công!";
@@ -81,8 +78,8 @@ namespace BUS
             if (string.IsNullOrEmpty(tenKhuyenMai) || string.IsNullOrEmpty(thoiGianBatDau) || string.IsNullOrEmpty(thoiGianKetThuc) || string.IsNullOrEmpty(loaiGiaTri) || string.IsNullOrEmpty(giaTriApDung))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
-            DateTime dateTimeBatDau = DateTime.ParseExact(thoiGianBatDau, "dd/MM/yyyy HH:mm:ss", null);
-            DateTime dateTimeKetThuc = DateTime.ParseExact(thoiGianKetThuc, "dd/MM/yyyy HH:mm:ss", null);
+            DateTime dateTimeBatDau = DateTime.Parse(thoiGianBatDau);
+            DateTime dateTimeKetThuc = DateTime.Parse(thoiGianKetThuc);
 
             if (dateTimeBatDau > dateTimeKetThuc)
                 return "Thời gian bắt đầu phải trước thời gian kết thúc!";
@@ -121,11 +118,11 @@ namespace BUS
         public List<KhuyenMai> TimKiemKhuyenMaiTheoKhoangThoiGian(string thoiGianBatDau, string thoiGianKetThuc)
         {
             DateTime dateTimeBatDau;
-            try { dateTimeBatDau = DateTime.ParseExact(thoiGianBatDau, "dd/MM/yyyy HH:mm:ss", null); } 
+            try { dateTimeBatDau = DateTime.Parse(thoiGianBatDau); } 
             catch {  dateTimeBatDau = DateTime.MinValue;}
 
             DateTime dateTimeKetThuc;
-            try { dateTimeKetThuc = DateTime.ParseExact(thoiGianKetThuc, "dd/MM/yyyy HH:mm:ss", null); }
+            try { dateTimeKetThuc = DateTime.Parse(thoiGianKetThuc); }
             catch { dateTimeKetThuc = DateTime.MinValue; }
 
             return khuyenMaiDAO.TimKiemKhuyenMaiTheoKhoangThoiGian(dateTimeBatDau, dateTimeKetThuc);
