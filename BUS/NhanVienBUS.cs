@@ -55,7 +55,7 @@ namespace BUS
             nhanVien.tenTaiKhoan = tenTaiKhoan;
             nhanVien.hoTen = hoTen.Trim();
             nhanVien.gioiTinh = gioiTinh;
-            try { nhanVien.ngaySinh = DateTime.ParseExact(ngaySinh, "dd/MM/yyyy", null); }
+            try { nhanVien.ngaySinh = DateTime.Parse(ngaySinh); }
             catch { nhanVien.ngaySinh = DateTime.MinValue; }
             nhanVien.soDienThoai = soDienThoai.Trim();
             nhanVien.email = email.Trim();
@@ -91,7 +91,7 @@ namespace BUS
             nhanVien.maNhanVien = maNhanVien;
             nhanVien.hoTen = hoTen;
             nhanVien.gioiTinh = gioiTinh;
-            try { nhanVien.ngaySinh = DateTime.ParseExact(ngaySinh, "dd/MM/yyyy", null); }
+            try { nhanVien.ngaySinh = DateTime.Parse(ngaySinh); }
             catch { nhanVien.ngaySinh = DateTime.MinValue; }
             nhanVien.soDienThoai = soDienThoai;
             nhanVien.email = email;

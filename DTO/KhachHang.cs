@@ -10,8 +10,8 @@ namespace DTO
     {
         public string maKhachHang { get; set; }
         public string bacThanhVien { get; set; }
-        public int diemThanhVien { get; set; }
-        public int diemTichLuy { get; set; }
+        public decimal diemThanhVien { get; set; }
+        public decimal diemTichLuy { get; set; }
         public KhachHang()
         {
             bacThanhVien = "Đồng";
@@ -19,7 +19,7 @@ namespace DTO
             diemTichLuy = 0;
         }
 
-        public KhachHang(string hoTen, string gioiTinh, DateTime ngaySinh, string soDienThoai, string email, string diaChi, string maKhachHang, string bacThanhVien = "Đồng", int diemThanhVien = 0, int diemTichLuy = 0) : base(hoTen, gioiTinh, ngaySinh, soDienThoai, email, diaChi)
+        public KhachHang(string hoTen, string gioiTinh, DateTime ngaySinh, string soDienThoai, string email, string diaChi, string maKhachHang, string bacThanhVien = "Đồng", decimal diemThanhVien = 0, decimal diemTichLuy = 0) : base(hoTen, gioiTinh, ngaySinh, soDienThoai, email, diaChi)
         {
             this.maKhachHang = maKhachHang;
             this.bacThanhVien = bacThanhVien;

@@ -53,7 +53,7 @@ namespace DAO
             khuyenMai.thoiGianBatDau = (DateTime)dataTable.Rows[0]["thoiGianBatDau"];
             khuyenMai.thoiGianKetThuc = (DateTime)dataTable.Rows[0]["thoiGianKetThuc"];
             khuyenMai.loaiGiaTri = dataTable.Rows[0]["loaiGiaTri"].ToString();
-            khuyenMai.giaTriApDung = Decimal.Parse(dataTable.Rows[0]["giaTriApDung"].ToString());
+            khuyenMai.giaTriApDung = (decimal)dataTable.Rows[0]["giaTriApDung"];
 
             return khuyenMai;
         }
@@ -117,7 +117,7 @@ namespace DAO
                 khuyenMai.thoiGianBatDau = (DateTime)row["thoiGianBatDau"];
                 khuyenMai.thoiGianKetThuc = (DateTime)row["thoiGianKetThuc"];
                 khuyenMai.loaiGiaTri = row["loaiGiaTri"].ToString();
-                khuyenMai.giaTriApDung = Decimal.Parse(row["giaTriApDung"].ToString());
+                khuyenMai.giaTriApDung = (decimal)row["giaTriApDung"];
 
                 listKhuyenMai.Add(khuyenMai);
             }

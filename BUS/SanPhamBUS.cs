@@ -36,11 +36,7 @@ namespace BUS
             if (string.IsNullOrEmpty(maLoaiSanPham) || string.IsNullOrEmpty(maNhaCungCap) || string.IsNullOrEmpty(tenSanPham) || string.IsNullOrEmpty(donViTinh) || string.IsNullOrEmpty(giaBan) || string.IsNullOrEmpty(duongDanAnh))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
-            Decimal decimalGiaBan;
-            if (!Decimal.TryParse(giaBan, out decimalGiaBan))
-                return "Giá bán phải là kiểu decimal!";
-
-            SanPham sanPham = new SanPham(maSanPham, maLoaiSanPham, maNhaCungCap, tenSanPham, donViTinh, decimalGiaBan, duongDanAnh);
+            SanPham sanPham = new SanPham(maSanPham, maLoaiSanPham, maNhaCungCap, tenSanPham, donViTinh, Decimal.Parse(giaBan), duongDanAnh);
 
             if (sanPhamDAO.ThemSanPham(sanPham))
                 return "Thêm sản phẩm thành công!";
@@ -61,11 +57,7 @@ namespace BUS
             if (string.IsNullOrEmpty(maLoaiSanPham) || string.IsNullOrEmpty(maNhaCungCap) || string.IsNullOrEmpty(tenSanPham) || string.IsNullOrEmpty(donViTinh) || string.IsNullOrEmpty(giaBan) || string.IsNullOrEmpty(duongDanAnh))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
-            Decimal decimalGiaBan;
-            if (!Decimal.TryParse(giaBan, out decimalGiaBan))
-                return "Giá bán chỉ được nhập kiểu decimal!";
-
-            SanPham sanPham = new SanPham(maSanPham, maLoaiSanPham, maNhaCungCap, tenSanPham, donViTinh, decimalGiaBan, duongDanAnh);
+            SanPham sanPham = new SanPham(maSanPham, maLoaiSanPham, maNhaCungCap, tenSanPham, donViTinh, Decimal.Parse(giaBan), duongDanAnh);
 
             if (sanPhamDAO.SuaSanPham(sanPham))
                 return "Sửa thông tin sản phẩm thành công!";
