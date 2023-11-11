@@ -22,6 +22,15 @@ namespace DTO
             this.thanhTien = thanhTien;
         }
 
+        public ChiTietHoaDon(string maSanPham, string maKhuyenMai, int soLuong, decimal donGia, decimal thanhTien)
+        {
+            this.maSanPham = maSanPham;
+            this.maKhuyenMai = maKhuyenMai;
+            this.soLuong = soLuong;
+            this.donGia = donGia;
+            this.thanhTien = thanhTien;
+        }
+
         public string maHoaDon { get; set; }
         public string maSanPham { get; set; }
         public string maKhuyenMai { get; set; }
