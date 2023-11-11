@@ -21,7 +21,6 @@ namespace DTO
             this.thoiGianKetThuc = thoiGianKetThuc;
             this.loaiGiaTri = loaiGiaTri;
             this.giaTriApDung = giaTriApDung;
-            trangThai = true;
         }
 
         public string maKhuyenMai { get; set; }
@@ -31,6 +30,5 @@ namespace DTO
         public DateTime thoiGianKetThuc { get; set; }
         public string loaiGiaTri { get; set; }
         public decimal giaTriApDung { get; set; }
-        public bool trangThai { get; set; }
     }
 }
