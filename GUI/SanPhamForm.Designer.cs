@@ -32,6 +32,11 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanPhamForm));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -40,22 +45,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panel1 = new Panel();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            guna2ToggleSwitch1 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            iconButton4 = new FontAwesome.Sharp.IconButton();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
-            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
-            guna2ComboBox4 = new Guna.UI2.WinForms.Guna2ComboBox();
             Column2 = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -67,6 +58,16 @@
             Column9 = new DataGridViewImageColumn();
             Column10 = new DataGridViewImageColumn();
             Column11 = new DataGridViewImageColumn();
+            guna2ToggleSwitch1 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            iconButton4 = new FontAwesome.Sharp.IconButton();
+            iconButton3 = new FontAwesome.Sharp.IconButton();
+            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            guna2ComboBox4 = new Guna.UI2.WinForms.Guna2ComboBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             SuspendLayout();
@@ -98,7 +99,7 @@
             guna2DataGridView1.BackgroundColor = Color.FromArgb(242, 245, 250);
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.LightBlue;
-            dataGridViewCellStyle2.Font = new Font("Roboto", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.FromArgb(30, 110, 142);
             dataGridViewCellStyle2.SelectionBackColor = Color.LightBlue;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -109,10 +110,10 @@
             guna2DataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column2, Column1, Column3, Column4, Column5, Column6, Column7, Column8, Column9, Column10, Column11 });
             dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = Color.White;
-            dataGridViewCellStyle7.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle7.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(50, 130, 162);
-            dataGridViewCellStyle7.SelectionForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(227, 248, 251);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
             guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
             guna2DataGridView1.Dock = DockStyle.Bottom;
@@ -122,7 +123,7 @@
             guna2DataGridView1.ReadOnly = true;
             dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = Color.White;
-            dataGridViewCellStyle8.Font = new Font("Roboto", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle8.ForeColor = Color.FromArgb(242, 245, 250);
             dataGridViewCellStyle8.SelectionBackColor = Color.White;
             dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
@@ -142,19 +143,123 @@
             guna2DataGridView1.ThemeStyle.GridColor = Color.FromArgb(242, 245, 250);
             guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(242, 245, 250);
             guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Roboto", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.DimGray;
             guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 40;
             guna2DataGridView1.ThemeStyle.ReadOnly = true;
             guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
             guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            guna2DataGridView1.ThemeStyle.RowsStyle.Font = new Font("Roboto", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2DataGridView1.ThemeStyle.RowsStyle.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
             guna2DataGridView1.ThemeStyle.RowsStyle.Height = 50;
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(0, 80, 112);
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
+            guna2DataGridView1.CellFormatting += guna2DataGridView1_CellFormatting;
             guna2DataGridView1.CellPainting += guna2DataGridView1_CellPainting;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            Column2.HeaderText = "#";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 42;
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 129.305817F;
+            Column1.HeaderText = "Mã sản phẩm";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Resizable = DataGridViewTriState.True;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column3.FillWeight = 155.167023F;
+            Column3.HeaderText = "Tên sản phẩm";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.FillWeight = 155.167023F;
+            Column4.HeaderText = "Loại sản phẩm";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.FillWeight = 155.167023F;
+            Column5.HeaderText = "Nhà cung cấp ";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column6.DefaultCellStyle = dataGridViewCellStyle4;
+            Column6.FillWeight = 64.65291F;
+            Column6.HeaderText = "Đơn vị ";
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column7.DefaultCellStyle = dataGridViewCellStyle5;
+            Column7.FillWeight = 90F;
+            Column7.HeaderText = "Số lượng ";
+            Column7.Name = "Column7";
+            Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column8.DefaultCellStyle = dataGridViewCellStyle6;
+            Column8.FillWeight = 129.305817F;
+            Column8.HeaderText = "Giá bán ";
+            Column8.Name = "Column8";
+            Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            Column9.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column9.FillWeight = 30F;
+            Column9.HeaderText = "";
+            Column9.Image = Properties.Resources._003_information;
+            Column9.Name = "Column9";
+            Column9.ReadOnly = true;
+            Column9.Width = 5;
+            // 
+            // Column10
+            // 
+            Column10.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column10.FillWeight = 30F;
+            Column10.HeaderText = "";
+            Column10.Image = (Image)resources.GetObject("Column10.Image");
+            Column10.Name = "Column10";
+            Column10.ReadOnly = true;
+            Column10.Width = 5;
+            // 
+            // Column11
+            // 
+            Column11.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column11.FillWeight = 30F;
+            Column11.HeaderText = "";
+            Column11.Image = Properties.Resources._001_delete;
+            Column11.Name = "Column11";
+            Column11.ReadOnly = true;
+            Column11.Width = 5;
             // 
             // guna2ToggleSwitch1
             // 
@@ -180,11 +285,11 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.GrayText;
             label3.Location = new Point(153, 17);
             label3.Name = "label3";
-            label3.Size = new Size(66, 19);
+            label3.Size = new Size(67, 20);
             label3.TabIndex = 25;
             label3.Text = "Sắp xếp";
             // 
@@ -192,11 +297,11 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.GrayText;
             label2.Location = new Point(386, 17);
             label2.Name = "label2";
-            label2.Size = new Size(127, 19);
+            label2.Size = new Size(125, 20);
             label2.TabIndex = 24;
             label2.Text = "Nhóm sản phẩm";
             // 
@@ -204,11 +309,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.GrayText;
             label1.Location = new Point(33, 17);
             label1.Name = "label1";
-            label1.Size = new Size(81, 19);
+            label1.Size = new Size(80, 20);
             label1.TabIndex = 23;
             label1.Text = "Trạng thái";
             // 
@@ -232,7 +337,7 @@
             iconButton4.BackColor = Color.FromArgb(33, 31, 48);
             iconButton4.FlatAppearance.BorderSize = 0;
             iconButton4.FlatStyle = FlatStyle.Flat;
-            iconButton4.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton4.ForeColor = Color.White;
             iconButton4.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
             iconButton4.IconColor = Color.White;
@@ -252,7 +357,7 @@
             iconButton3.BackColor = Color.FromArgb(226, 153, 48);
             iconButton3.FlatAppearance.BorderSize = 0;
             iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton3.ForeColor = Color.White;
             iconButton3.IconChar = FontAwesome.Sharp.IconChar.HandHoldingMedical;
             iconButton3.IconColor = Color.White;
@@ -321,114 +426,14 @@
             guna2ComboBox4.Size = new Size(288, 36);
             guna2ComboBox4.TabIndex = 16;
             // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column2.DefaultCellStyle = dataGridViewCellStyle3;
-            Column2.HeaderText = "#";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 44;
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 129.305817F;
-            Column1.HeaderText = "Mã sản phẩm";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Resizable = DataGridViewTriState.True;
-            // 
-            // Column3
-            // 
-            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.FillWeight = 155.167023F;
-            Column3.HeaderText = "Tên sản phẩm";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.FillWeight = 155.167023F;
-            Column4.HeaderText = "Loại sản phẩm";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.FillWeight = 155.167023F;
-            Column5.HeaderText = "Nhà cung cấp ";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column6.DefaultCellStyle = dataGridViewCellStyle4;
-            Column6.FillWeight = 64.65291F;
-            Column6.HeaderText = "Đơn vị ";
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column7.DefaultCellStyle = dataGridViewCellStyle5;
-            Column7.FillWeight = 103.444656F;
-            Column7.HeaderText = "Số lượng ";
-            Column7.Name = "Column7";
-            Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column8.DefaultCellStyle = dataGridViewCellStyle6;
-            Column8.FillWeight = 129.305817F;
-            Column8.HeaderText = "Giá bán ";
-            Column8.Name = "Column8";
-            Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            Column9.FillWeight = 30F;
-            Column9.HeaderText = "";
-            Column9.Image = Properties.Resources._003_info;
-            Column9.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            Column9.Name = "Column9";
-            Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            Column10.FillWeight = 30F;
-            Column10.HeaderText = "";
-            Column10.Image = Properties.Resources._002_pencil;
-            Column10.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            Column10.Name = "Column10";
-            Column10.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            Column11.FillWeight = 30F;
-            Column11.HeaderText = "";
-            Column11.Image = Properties.Resources._001_bin;
-            Column11.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            Column11.Name = "Column11";
-            Column11.ReadOnly = true;
-            // 
             // SanPhamForm
             // 
-            AutoScaleDimensions = new SizeF(11F, 23F);
+            AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(223, 243, 252);
             ClientSize = new Size(1183, 821);
             Controls.Add(panel1);
-            Font = new Font("Roboto", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
             Name = "SanPhamForm";
