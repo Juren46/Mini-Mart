@@ -73,6 +73,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _001_delete {
+            get {
+                object obj = ResourceManager.GetObject("001-delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _002_pencil {
             get {
                 object obj = ResourceManager.GetObject("002-pencil", resourceCulture);
@@ -86,6 +96,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap _003_info {
             get {
                 object obj = ResourceManager.GetObject("003-info", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _003_information {
+            get {
+                object obj = ResourceManager.GetObject("003-information", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
