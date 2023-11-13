@@ -87,6 +87,27 @@ namespace GUI
             }
         }
 
+        private void guna2DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Kiểm tra xem cell đang được định dạng có phải là cell hình ảnh không.
+            if ((e.ColumnIndex == 8 || e.ColumnIndex == 9 || e.ColumnIndex == 10) && e.RowIndex >= 0)
+            {
+                // Kiểm tra giá trị của cell có phải là hình ảnh không.
+                if (e.Value is Image)
+                {
+                    // Thiết lập kích thước mới cho hình ảnh.
+                    int newWidth = 25; // Kích thước mới theo chiều rộng
+                    int newHeight = 25; // Kích thước mới theo chiều cao
+
+                    // Đổi kích thước hình ảnh.
+                    Image originalImage = (Image)e.Value;
+                    Image resizedImage = new Bitmap(originalImage, new Size(newWidth, newHeight));
+
+                    // Gán hình ảnh mới vào cell.
+                    e.Value = resizedImage;
+                }
+            }
+        }
 
 
 
