@@ -129,6 +129,7 @@
             dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
             guna2DataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             guna2DataGridView1.RowHeadersVisible = false;
+            guna2DataGridView1.RowHeadersWidth = 62;
             guna2DataGridView1.RowTemplate.DividerHeight = 3;
             guna2DataGridView1.RowTemplate.Height = 50;
             guna2DataGridView1.Size = new Size(1183, 668);
@@ -184,7 +185,7 @@
             label3.ForeColor = SystemColors.GrayText;
             label3.Location = new Point(153, 17);
             label3.Name = "label3";
-            label3.Size = new Size(66, 19);
+            label3.Size = new Size(97, 29);
             label3.TabIndex = 25;
             label3.Text = "Sắp xếp";
             // 
@@ -196,7 +197,7 @@
             label2.ForeColor = SystemColors.GrayText;
             label2.Location = new Point(386, 17);
             label2.Name = "label2";
-            label2.Size = new Size(127, 19);
+            label2.Size = new Size(188, 29);
             label2.TabIndex = 24;
             label2.Text = "Nhóm sản phẩm";
             // 
@@ -208,7 +209,7 @@
             label1.ForeColor = SystemColors.GrayText;
             label1.Location = new Point(33, 17);
             label1.Name = "label1";
-            label1.Size = new Size(81, 19);
+            label1.Size = new Size(119, 29);
             label1.TabIndex = 23;
             label1.Text = "Trạng thái";
             // 
@@ -327,15 +328,17 @@
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             Column2.DefaultCellStyle = dataGridViewCellStyle3;
             Column2.HeaderText = "#";
+            Column2.MinimumWidth = 8;
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
-            Column2.Width = 44;
+            Column2.Width = 68;
             // 
             // Column1
             // 
             Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column1.FillWeight = 129.305817F;
             Column1.HeaderText = "Mã sản phẩm";
+            Column1.MinimumWidth = 8;
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
             Column1.Resizable = DataGridViewTriState.True;
@@ -345,6 +348,7 @@
             Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column3.FillWeight = 155.167023F;
             Column3.HeaderText = "Tên sản phẩm";
+            Column3.MinimumWidth = 8;
             Column3.Name = "Column3";
             Column3.ReadOnly = true;
             // 
@@ -353,6 +357,7 @@
             Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column4.FillWeight = 155.167023F;
             Column4.HeaderText = "Loại sản phẩm";
+            Column4.MinimumWidth = 8;
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
@@ -361,6 +366,7 @@
             Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column5.FillWeight = 155.167023F;
             Column5.HeaderText = "Nhà cung cấp ";
+            Column5.MinimumWidth = 8;
             Column5.Name = "Column5";
             Column5.ReadOnly = true;
             // 
@@ -371,6 +377,7 @@
             Column6.DefaultCellStyle = dataGridViewCellStyle4;
             Column6.FillWeight = 64.65291F;
             Column6.HeaderText = "Đơn vị ";
+            Column6.MinimumWidth = 8;
             Column6.Name = "Column6";
             Column6.ReadOnly = true;
             // 
@@ -381,6 +388,7 @@
             Column7.DefaultCellStyle = dataGridViewCellStyle5;
             Column7.FillWeight = 103.444656F;
             Column7.HeaderText = "Số lượng ";
+            Column7.MinimumWidth = 8;
             Column7.Name = "Column7";
             Column7.ReadOnly = true;
             // 
@@ -391,6 +399,7 @@
             Column8.DefaultCellStyle = dataGridViewCellStyle6;
             Column8.FillWeight = 129.305817F;
             Column8.HeaderText = "Giá bán ";
+            Column8.MinimumWidth = 8;
             Column8.Name = "Column8";
             Column8.ReadOnly = true;
             // 
@@ -400,6 +409,7 @@
             Column9.HeaderText = "";
             Column9.Image = Properties.Resources._003_info;
             Column9.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            Column9.MinimumWidth = 8;
             Column9.Name = "Column9";
             Column9.ReadOnly = true;
             // 
@@ -409,6 +419,7 @@
             Column10.HeaderText = "";
             Column10.Image = Properties.Resources._002_pencil;
             Column10.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            Column10.MinimumWidth = 8;
             Column10.Name = "Column10";
             Column10.ReadOnly = true;
             // 
@@ -418,12 +429,13 @@
             Column11.HeaderText = "";
             Column11.Image = Properties.Resources._001_bin;
             Column11.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            Column11.MinimumWidth = 8;
             Column11.Name = "Column11";
             Column11.ReadOnly = true;
             // 
             // SanPhamForm
             // 
-            AutoScaleDimensions = new SizeF(11F, 23F);
+            AutoScaleDimensions = new SizeF(16F, 35F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(223, 243, 252);
             ClientSize = new Size(1183, 821);
