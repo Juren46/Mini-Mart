@@ -66,14 +66,14 @@ namespace ConsoleTesting
             //TestSanPham.LocSanPhamTheoLoaiSanPham();
 
 
-            //TestKhuyenMai.TestLayDanhSachKhuyenMai();     //Chưa test
+            //TestKhuyenMai.TestLayDanhSachKhuyenMai();   
             //TestKhuyenMai.TestLayKhuyenMaiTheoMa();
             //TestKhuyenMai.TestThemKhuyenMai();
             //TestKhuyenMai.TestSuaKhuyenMai();
             //TestKhuyenMai.TestXoaKhuyenMai();
             //TestKhuyenMai.TestTimKiemKhuyenMai();
-            //TestKhuyenMai.TestTimKiemKhuyenMaiTheoKhoangThoiGian();     //Chưa test
-            //TestKhuyenMai.TestApDungKhuyenMai();        //Chưa test
+            //TestKhuyenMai.TestTimKiemKhuyenMaiTheoKhoangThoiGian();
+            //TestKhuyenMai.TestApDungKhuyenMai();     
         }
     }
 }
