@@ -113,7 +113,7 @@ namespace DAO
             List<LoaiSanPham> listLoaiSanPham = new List<LoaiSanPham>();
 
             string query = $"SELECT * FROM LoaiSanPham WHERE LOWER(maLoaiSanPham) LIKE '%{keyword}%' " +
-                           $"OR LOWER(tenLoaiSanPham) LIKE N'%{keyword}%' " +
+                           $"OR tenLoaiSanPham COLLATE Latin1_General_CI_AI LIKE N'%{keyword}%' " +
                            $"AND trangThai = 1;";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);

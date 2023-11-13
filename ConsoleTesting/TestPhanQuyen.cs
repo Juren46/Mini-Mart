@@ -19,38 +19,42 @@ namespace ConsoleTesting
 
             foreach(PhanQuyen phanQuyen in listPhanQuyen)
             {
-                Console.WriteLine(phanQuyen.maPhanQuyen + "\n" + phanQuyen.tenPhanQuyen);
+                Console.WriteLine(phanQuyen.maPhanQuyen + "\n" + phanQuyen.tenPhanQuyen + "\n");
             }
         }
 
         public static void TestLayPhanQuyenTheoMa()
         {
-            string maPhanQuyen = "PQ02";
+            Console.Write("Nhập mã phân quyền: ");  //Luôn đúng
+            string maPhanQuyen = Console.ReadLine();
             PhanQuyen phanQuyen = phanQuyenBUS.LayPhanQuyenTheoMa(maPhanQuyen);
             Console.WriteLine(phanQuyen.maPhanQuyen + "\n" + phanQuyen.tenPhanQuyen);
         }
 
         public static void TestLayPhanQuyenTheoTen()
         {
-            string tenPhanQuyen = "Nhân viên bán hàng";
+            Console.Write("Nhập tên phân quyền: ");  //Luôn đúng
+            string tenPhanQuyen = Console.ReadLine();
             PhanQuyen phanQuyen = phanQuyenBUS.LayPhanQuyenTheoTen(tenPhanQuyen);
             Console.WriteLine(phanQuyen.maPhanQuyen + "\n" + phanQuyen.tenPhanQuyen);
         }
 
         public static void TestLayPhanQuyenTheoTenTaiKhoan()
         {
-            string tenTaiKhoan = "nvbhanh";
+            Console.Write("Nhập tên tài khoản: ");  //Luôn đúng
+            string tenTaiKhoan = Console.ReadLine();
             PhanQuyen phanQuyen = phanQuyenBUS.LayPhanQuyenTheoTenTaiKhoan(tenTaiKhoan);
             Console.WriteLine(phanQuyen.maPhanQuyen + "\n" + phanQuyen.tenPhanQuyen);
         }
 
         public static void TestTimKiemPhanQuyen()
-        {          
+        {
+            Console.Write("Nhập từ khóa: ");
             string keyword = Console.ReadLine();
             List<PhanQuyen> listPhanQuyen = phanQuyenBUS.TimKiemPhanQuyen(keyword);
             foreach (PhanQuyen phanQuyen in listPhanQuyen)
             {
-                Console.WriteLine(phanQuyen.maPhanQuyen + "\n" + phanQuyen.tenPhanQuyen);
+                Console.WriteLine(phanQuyen.maPhanQuyen + "\n" + phanQuyen.tenPhanQuyen + "\n");
             }
         }
     }

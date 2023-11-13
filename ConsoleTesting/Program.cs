@@ -20,17 +20,17 @@ namespace ConsoleTesting
             //TestTaiKhoan.TestKiemTraDangNhap();
             //TestTaiKhoan.TestThemTaiKhoan();
             //TestTaiKhoan.TestDoiMatKhau();
-            //TestTaiKhoan.TestKhoaTaiKhoan();
-            //TestTaiKhoan.TestMoKhoaTaiKhoan();
+            //TestTaiKhoan.TestXoaTaiKhoan();
             //TestTaiKhoan.TestTimKiemTaiKhoan();
             //TestTaiKhoan.TestLocTaiKhoanTheoPhanQuyen();
+            //TestTaiKhoan.TestLayDanhSachTaiKhoanChuaDung();
 
             //TestNhanVien.TestLayDanhSachNhanVien();
             //TestNhanVien.TestLayNhanVienTheoMa();
             //TestNhanVien.TestLayNhanVienTheoTenTaiKhoan();
             //TestNhanVien.TestThemNhanVien();
             //TestNhanVien.TestXoaNhanVien();
-            //TestNhanVien.TestSuaNhanVien()
+            //TestNhanVien.TestSuaNhanVien();
             //TestNhanVien.TestTimKiemNhanVien();
             //TestNhanVien.TestLocNhanVienTheoPhanQuyen();
             //TestNhanVien.TestLocNhanVienTheoGioiTinh();
@@ -53,8 +53,7 @@ namespace ConsoleTesting
             //TestLoaiSanPham.TestTimKiemLoaiSanPham();
 
             //TestNhaCungCap.TestLayDanhSachNhaCungCap();
-            //TestNhaCungCap.TestLayNhaCungCapTheoMa();       
-            //TestNhaCungCap.TestLayNhaCungCapTheoTen();    
+            //TestNhaCungCap.TestLayNhaCungCapTheoMa();    
             //TestNhaCungCap.TestThemNhaCungCap();          
             //TestNhaCungCap.TestSuaNhaCungCap();           
             //TestNhaCungCap.TestTimKiemNhaCungCap();
