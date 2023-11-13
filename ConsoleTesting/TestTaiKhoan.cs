@@ -18,85 +18,86 @@ namespace ConsoleTesting
 
             foreach (TaiKhoan taiKhoan in listTaiKhoan)
             {
-                Console.WriteLine(taiKhoan.maPhanQuyen + "\n" + taiKhoan.tenTaiKhoan + "\n" + taiKhoan.matKhau + "\n");
+                Console.WriteLine(taiKhoan.maPhanQuyen + "\n" + taiKhoan.tenTaiKhoan + "\n" + taiKhoan.matKhau + "\n" + taiKhoan.trangThai + "\n");
             }
         }
 
         public static void TestLayTaiKhoanTheoTen()
         {
-            Console.Write("Nhap ten tai khoan: ");
+            Console.Write("Nhập tên tài khoản: ");  //Luôn đúng
             string tenTaiKhoan = Console.ReadLine();
             TaiKhoan taiKhoan = taiKhoanBUS.LayTaiKhoanTheoTen(tenTaiKhoan);
-            Console.WriteLine(taiKhoan.maPhanQuyen + "\n" + taiKhoan.tenTaiKhoan + "\n" + taiKhoan.matKhau + "\n");
+            Console.WriteLine(taiKhoan.maPhanQuyen + "\n" + taiKhoan.tenTaiKhoan + "\n" + taiKhoan.matKhau + "\n" + taiKhoan.trangThai + "\n");
         }
 
         public static void TestKiemTraDangNhap()
         {
-            Console.Write("Nhap ten tai khoan: ");
+            Console.Write("Nhập tên tài khoản: ");
             string tenTaiKhoan = Console.ReadLine();
-            Console.Write("Nhap mat khau: ");
+            Console.Write("Nhập mật khẩu: ");
             string matKhau = Console.ReadLine();
             Console.WriteLine(taiKhoanBUS.KiemTraDangNhap(tenTaiKhoan, matKhau));
         }
 
         public static void TestThemTaiKhoan()
         {
-            Console.Write("Nhap ten phan quyen: ");
-            string tenPhanQuyen = Console.ReadLine();    //Tên phân quyền chọn bằng combobox trong GUI nên phải luôn đúng
-            Console.Write("Nhap ten tai khoan: ");
+            Console.Write("Nhập tên phân quyền: ");     //Luôn đúng
+            string tenPhanQuyen = Console.ReadLine();    
+            Console.Write("Nhập tên tài khoản: ");
             string tenTaiKhoan = Console.ReadLine();
-            Console.Write("Nhap mat khau: ");
+            Console.Write("Nhập mật khẩu: ");
             string matKhau = Console.ReadLine();
             Console.WriteLine(taiKhoanBUS.ThemTaiKhoan(tenPhanQuyen, tenTaiKhoan, matKhau));
         }
 
         public static void TestDoiMatKhau()
         {
-            Console.Write("Nhap ten tai khoan: ");
-            string tenTaiKhoan = Console.ReadLine();    //Admin đổi mật khẩu hoặc người dùng có thể tự đổi mật khẩu nên trong GUI tên tài khoản phải luôn đúng
-            Console.Write("Nhap mat khau cu: ");
+            Console.Write("Nhập tên tài khoản: ");
+            string tenTaiKhoan = Console.ReadLine();    //Luôn đúng
+            Console.Write("Nhập mật khẩu cũ: ");
             string matKhauCu = Console.ReadLine();
-            Console.Write("Nhap mat khau moi: ");
+            Console.Write("Nhập mật khẩu mới: ");
             string matKhauMoi = Console.ReadLine();
-            Console.Write("Xac nhan mat khau moi: ");
+            Console.Write("Xác nhận mật khẩu mới: ");
             string xacNhanMatKhauMoi = Console.ReadLine();
             Console.WriteLine(taiKhoanBUS.DoiMatKhau(tenTaiKhoan, matKhauCu, matKhauMoi, xacNhanMatKhauMoi));
         }
 
-        public static void TestKhoaTaiKhoan()
+        public static void TestXoaTaiKhoan()
         {
-            Console.Write("Nhap ten tai khoan: ");      //Admin khóa tài khoản chọn trong GUI nên tên tài khoản phải luôn đúng
+            Console.Write("Nhập tên tài khoản: ");      //Luôn đúng
             string tenTaiKhoan = Console.ReadLine();
-            Console.WriteLine(taiKhoanBUS.KhoaTaiKhoan(tenTaiKhoan));
-            TestKiemTraDangNhap();
-        }
-
-        public static void TestMoKhoaTaiKhoan()
-        {
-            Console.Write("Nhap ten tai khoan: ");      //Admin khóa tài khoản chọn trong GUI nên tên tài khoản phải luôn đúng
-            string tenTaiKhoan = Console.ReadLine();
-            Console.WriteLine(taiKhoanBUS.MoKhoaTaiKhoan(tenTaiKhoan));
-            TestKiemTraDangNhap();
+            Console.WriteLine(taiKhoanBUS.XoaTaiKhoan(tenTaiKhoan));
         }
 
         public static void TestTimKiemTaiKhoan()
         {
+            Console.Write("Nhập từ khóa: ");
             string keyword = Console.ReadLine();
             List<TaiKhoan> listTaiKhoan = taiKhoanBUS.TimKiemTaiKhoan(keyword);
             foreach (TaiKhoan taiKhoan in listTaiKhoan)
             {
-                Console.WriteLine(taiKhoan.maPhanQuyen + "\n" + taiKhoan.tenTaiKhoan + "\n" + taiKhoan.matKhau + "\n");
+                Console.WriteLine(taiKhoan.maPhanQuyen + "\n" + taiKhoan.tenTaiKhoan + "\n" + taiKhoan.matKhau + "\n" + taiKhoan.trangThai + "\n");
             }
         }
 
         public static void TestLocTaiKhoanTheoPhanQuyen()
         {
-            Console.Write("Nhap ten phan quyen: ");      //Tên phân quyền chọn bằng combobox trong GUI nên phải luôn 
+            Console.Write("Nhập tên phân quyền: ");      //Luôn đúng
             string tenPhanQuyen = Console.ReadLine();
             List<TaiKhoan> listTaiKhoan = taiKhoanBUS.LocTaiKhoanTheoPhanQuyen(tenPhanQuyen);
             foreach (TaiKhoan taiKhoan in listTaiKhoan)
             {
-                Console.WriteLine(taiKhoan.maPhanQuyen + "\n" + taiKhoan.tenTaiKhoan + "\n" + taiKhoan.matKhau + "\n");
+                Console.WriteLine(taiKhoan.maPhanQuyen + "\n" + taiKhoan.tenTaiKhoan + "\n" + taiKhoan.matKhau + "\n" + taiKhoan.trangThai+ "\n");
+            }
+        }
+
+        public static void TestLayDanhSachTaiKhoanChuaDung()
+        {
+            List<TaiKhoan> listTaiKhoan = taiKhoanBUS.LayDanhSachTaiKhoanChuaDung();
+            foreach (TaiKhoan taiKhoan in listTaiKhoan)
+            {
+                Console.WriteLine(taiKhoan.maPhanQuyen + "\n" + taiKhoan.tenTaiKhoan + "\n" + taiKhoan.matKhau + "\n" + taiKhoan.trangThai + "\n");
             }
         }
     }

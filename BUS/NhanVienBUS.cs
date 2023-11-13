@@ -33,14 +33,14 @@ namespace BUS
             return nhanVienDAO.LayNhanVienTheoTenTaiKhoan(tenTaiKhoan);
         }
 
-        public int DemSoNhanVien(string tenPhanQuyen)
+        public int DemSoNhanVienTheoPhanQuyen(string tenPhanQuyen)
         {
-            return nhanVienDAO.DemSoNhanVien(tenPhanQuyen);
+            return nhanVienDAO.DemSoNhanVienTheoPhanQuyen(tenPhanQuyen);
         }
 
         public string ThemNhanVien(string maNhanVien, string tenTaiKhoan, string hoTen, string gioiTinh, string ngaySinh, string soDienThoai, string email, string diaChi)
         {
-            if (string.IsNullOrEmpty(hoTen) || string.IsNullOrEmpty(tenTaiKhoan))
+            if (string.IsNullOrEmpty(tenTaiKhoan) || string.IsNullOrEmpty(hoTen))
                 return "Tên tài khoản và tên nhân viên không được để trống!";
 
             if (!string.IsNullOrEmpty(soDienThoai) && !InputValidate.PhoneNumberValidate(soDienThoai))
@@ -56,7 +56,7 @@ namespace BUS
             nhanVien.hoTen = hoTen.Trim();
             nhanVien.gioiTinh = gioiTinh;
             try { nhanVien.ngaySinh = DateTime.Parse(ngaySinh); }
-            catch { nhanVien.ngaySinh = DateTime.MinValue; }
+            catch { nhanVien.ngaySinh = null; }
             nhanVien.soDienThoai = soDienThoai.Trim();
             nhanVien.email = email.Trim();
             nhanVien.diaChi = diaChi.Trim();
@@ -89,13 +89,13 @@ namespace BUS
             NhanVien nhanVien = new NhanVien();
 
             nhanVien.maNhanVien = maNhanVien;
-            nhanVien.hoTen = hoTen;
+            nhanVien.hoTen = hoTen.Trim();
             nhanVien.gioiTinh = gioiTinh;
             try { nhanVien.ngaySinh = DateTime.Parse(ngaySinh); }
-            catch { nhanVien.ngaySinh = DateTime.MinValue; }
-            nhanVien.soDienThoai = soDienThoai;
-            nhanVien.email = email;
-            nhanVien.diaChi = diaChi;
+            catch { nhanVien.ngaySinh = null; }
+            nhanVien.soDienThoai = soDienThoai.Trim();
+            nhanVien.email = email.Trim();
+            nhanVien.diaChi = diaChi.Trim();
 
             if (nhanVienDAO.SuaNhanVien(nhanVien))
                 return "Sửa thông tin nhân viên thành công!";

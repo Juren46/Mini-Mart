@@ -52,23 +52,6 @@ namespace DAO
             return nhaCungCap;
         }
 
-        public NhaCungCap LayNhaCungCapTheoTen(string tenNhaCungCap)
-        {
-            NhaCungCap nhaCungCap = new NhaCungCap();
-
-            string query = $"SELECT * FROM NhaCungCap WHERE tenNhaCungCap = N'{tenNhaCungCap}';";
-
-            DataTable dataTable = DBHelper.ExecuteQuery(query);
-
-            nhaCungCap.maNhaCungCap = dataTable.Rows[0]["maNhaCungCap"].ToString();
-            nhaCungCap.tenNhaCungCap = dataTable.Rows[0]["tenNhaCungCap"].ToString();
-            nhaCungCap.soDienThoai = dataTable.Rows[0]["soDienThoai"].ToString();
-            nhaCungCap.email = dataTable.Rows[0]["email"].ToString();
-            nhaCungCap.diaChi = dataTable.Rows[0]["diaChi"].ToString();
-
-            return nhaCungCap;
-        }
-
         public int DemSoNhaCungCap()
         {
             string query = "SELECT COUNT(*) AS SoNhaCungCap FROM NhaCungCap;";
@@ -113,10 +96,10 @@ namespace DAO
 
             string query = $"SELECT * FROM NhaCungCap " +
                            $"WHERE LOWER(maNhaCungCap) LIKE '%{keyword}%' " +
-                           $"OR LOWER(tenNhaCungCap) LIKE N'%{keyword}%' " +
+                           $"OR tenNhaCungCap COLLATE Latin1_General_CI_AI LIKE N'%{keyword}%' " +
                            $"OR soDienThoai LIKE '%{keyword}%' " +
                            $"OR LOWER(email) LIKE '%{keyword}%' " +
-                           $"OR LOWER(diaChi) LIKE N'%{keyword}%';";
+                           $"OR diaChi COLLATE Latin1_General_CI_AI LIKE N'%{keyword}%';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 

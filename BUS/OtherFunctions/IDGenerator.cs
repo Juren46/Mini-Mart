@@ -39,14 +39,14 @@ namespace BUS.OtherFunctions
 
             if (tenPhanQuyen.Equals("Nhân viên bán hàng"))
             {
-                int count = nhanVienDAO.DemSoNhanVien(tenPhanQuyen);
+                int count = nhanVienDAO.DemSoNhanVienTheoPhanQuyen(tenPhanQuyen);
 
                 nhanVienID = string.Format("NVB{0:D5}", ++count);
             }
 
             if (tenPhanQuyen.Equals("Nhân viên kho"))
             {
-                int count = nhanVienDAO.DemSoNhanVien(tenPhanQuyen);
+                int count = nhanVienDAO.DemSoNhanVienTheoPhanQuyen(tenPhanQuyen);
 
                 nhanVienID = string.Format("NVK{0:D5}", ++count);
             }
