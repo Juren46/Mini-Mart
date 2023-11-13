@@ -32,13 +32,13 @@ namespace BUS
             return khuyenMaiDAO.LayKhuyenMaiTheoMa(maKhuyenMai);
         }
 
-        public string ThemKhuyenMai(string maKhuyenMai, string maQuanLi, string tenKhuyenMai, string thoiGianBatDau, string thoiGianKetThuc, string loaiGiaTri, string giaTriApDung)
+        public string ThemKhuyenMai(string maKhuyenMai, string tenKhuyenMai, string thoiGianBatDau, string thoiGianKetThuc, string loaiGiaTri, string giaTriApDung)
         {
             if (string.IsNullOrEmpty(tenKhuyenMai) || string.IsNullOrEmpty(thoiGianBatDau) || string.IsNullOrEmpty(thoiGianKetThuc) || string.IsNullOrEmpty(loaiGiaTri) || string.IsNullOrEmpty(giaTriApDung))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
-            DateTime dateTimeBatDau = DateTime.Parse(thoiGianBatDau);
-            DateTime dateTimeKetThuc = DateTime.Parse(thoiGianKetThuc);
+            DateTime dateTimeBatDau = DateTime.ParseExact(thoiGianBatDau, "dd/MM/yyyy HH:mm:ss", null);
+            DateTime dateTimeKetThuc = DateTime.ParseExact(thoiGianKetThuc, "dd/MM/yyyy HH:mm:ss", null);
 
             if (dateTimeBatDau > dateTimeKetThuc)
                 return "Thời gian bắt đầu phải trước thời gian kết thúc!";
@@ -52,7 +52,6 @@ namespace BUS
             KhuyenMai khuyenMai = new KhuyenMai();
 
             khuyenMai.maKhuyenMai = maKhuyenMai;
-            khuyenMai.maQuanLi = maQuanLi;
             khuyenMai.tenKhuyenMai = tenKhuyenMai.Trim();
             khuyenMai.thoiGianBatDau = dateTimeBatDau;
             khuyenMai.thoiGianKetThuc = dateTimeKetThuc;
@@ -78,17 +77,14 @@ namespace BUS
             if (string.IsNullOrEmpty(tenKhuyenMai) || string.IsNullOrEmpty(thoiGianBatDau) || string.IsNullOrEmpty(thoiGianKetThuc) || string.IsNullOrEmpty(loaiGiaTri) || string.IsNullOrEmpty(giaTriApDung))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
-            DateTime dateTimeBatDau = DateTime.Parse(thoiGianBatDau);
-            DateTime dateTimeKetThuc = DateTime.Parse(thoiGianKetThuc);
+            DateTime dateTimeBatDau = DateTime.ParseExact(thoiGianBatDau, "dd/MM/yyyy HH:mm:ss", null);
+            DateTime dateTimeKetThuc = DateTime.ParseExact(thoiGianKetThuc, "dd/MM/yyyy HH:mm:ss", null);
 
             if (dateTimeBatDau > dateTimeKetThuc)
                 return "Thời gian bắt đầu phải trước thời gian kết thúc!";
 
             if (dateTimeBatDau < DateTime.Now)
                 return "Thời gian bắt đầu không được trước thời điểm hiện tại!";
-
-            if (!Decimal.TryParse(giaTriApDung, out decimal decimalGiaTriApDung))
-                return "Giá trị áp dụng phải là kiểu decimal!";
 
             if (Decimal.Parse(giaTriApDung) <= 0)
                 return "Giá trị áp dụng không được bé hơn 0!";
@@ -100,7 +96,7 @@ namespace BUS
             khuyenMai.thoiGianBatDau = dateTimeBatDau;
             khuyenMai.thoiGianKetThuc = dateTimeKetThuc;
             khuyenMai.loaiGiaTri = loaiGiaTri;
-            khuyenMai.giaTriApDung = decimalGiaTriApDung;
+            khuyenMai.giaTriApDung = Decimal.Parse(giaTriApDung);
 
             if (khuyenMaiDAO.SuaKhuyenMai(khuyenMai))
                 return "Sửa thông tin khuyến mãi thành công!";
@@ -117,22 +113,17 @@ namespace BUS
 
         public List<KhuyenMai> TimKiemKhuyenMaiTheoKhoangThoiGian(string thoiGianBatDau, string thoiGianKetThuc)
         {
-            DateTime dateTimeBatDau;
-            try { dateTimeBatDau = DateTime.Parse(thoiGianBatDau); } 
-            catch {  dateTimeBatDau = DateTime.MinValue;}
-
-            DateTime dateTimeKetThuc;
-            try { dateTimeKetThuc = DateTime.Parse(thoiGianKetThuc); }
-            catch { dateTimeKetThuc = DateTime.MinValue; }
+            DateTime dateTimeBatDau = DateTime.ParseExact(thoiGianBatDau, "dd/MM/yyyy HH:mm:ss", null);
+            DateTime dateTimeKetThuc = DateTime.ParseExact(thoiGianKetThuc, "dd/MM/yyyy HH:mm:ss", null);
 
             return khuyenMaiDAO.TimKiemKhuyenMaiTheoKhoangThoiGian(dateTimeBatDau, dateTimeKetThuc);
         }
 
-        public decimal ApDungKhuyenMai(string maKhuyenMai, string donGia)
+        public decimal ApDungKhuyenMai(string maKhuyenMai,  string tongTien)
         {
-            decimal decimalDonGia = Decimal.Parse(donGia);
+            KhuyenMai khuyenMai = khuyenMaiDAO.LayKhuyenMaiTheoMa(maKhuyenMai);
 
-            return khuyenMaiDAO.ApDungKhuyenMai(maKhuyenMai, decimalDonGia);
+            return khuyenMaiDAO.ApDungKhuyenMai(khuyenMai, Decimal.Parse(tongTien));
         }
     }
 }
