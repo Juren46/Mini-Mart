@@ -43,6 +43,8 @@ namespace ConsoleTesting
             //TestKhachHang.TestTimKiemKhachHang();
             //TestKhachHang.TestLocKhachHangTheoGioiTinh();
             //TestKhachHang.TestLocKhachHangTheoBacThanhVien();
+            //TestKhachHang.TestTichDiem();
+            //TestKhachHang.TestGiamGiaThanhVien();
 
             //TestLoaiSanPham.TestLayDanhSachLoaiSanPham();
             //TestLoaiSanPham.TestLayLoaiSanPhamTheoMa();
