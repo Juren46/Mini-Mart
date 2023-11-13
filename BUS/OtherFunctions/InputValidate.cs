@@ -18,7 +18,7 @@ namespace BUS.OtherFunctions
         }
         public static bool PhoneNumberValidate(string phoneNumber)
         {
-            string pattern = @"^(0\d{10}|84\d{10}|\+84\d{10})$";
+            string pattern = @"^(0\d{9,10}|84\d{9,10}|\+84\d{9,10})$";
 
             return Regex.IsMatch(phoneNumber, pattern);
         }

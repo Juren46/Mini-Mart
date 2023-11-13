@@ -41,7 +41,7 @@ namespace BUS
         public string ThemKhachHang(string maKhachHang, string hoTen, string gioiTinh, string ngaySinh, string soDienThoai, string email, string diaChi)
         {
             if (string.IsNullOrEmpty(hoTen) || string.IsNullOrEmpty(soDienThoai))
-                return "Họ tên khách hàng và số điện thoại không được bỏ trống!";
+                return "Tên khách hàng và số điện thoại không được bỏ trống!";
 
             if (!string.IsNullOrEmpty(soDienThoai) && !InputValidate.PhoneNumberValidate(soDienThoai))
                 return "Vui lòng nhập đúng số điện thoại!";
@@ -58,7 +58,7 @@ namespace BUS
             khachHang.hoTen = hoTen.Trim();
             khachHang.gioiTinh = gioiTinh;
             try { khachHang.ngaySinh = DateTime.ParseExact(ngaySinh, "dd/MM/yyyy", null); }
-            catch { khachHang.ngaySinh = DateTime.MinValue; }
+            catch { khachHang.ngaySinh = null; }
             khachHang.soDienThoai = soDienThoai.Trim();
             khachHang.email = email.Trim();
             khachHang.diaChi = diaChi.Trim();
@@ -89,7 +89,7 @@ namespace BUS
             khachHang.hoTen = hoTen.Trim();
             khachHang.gioiTinh = gioiTinh;
             try { khachHang.ngaySinh = DateTime.ParseExact(ngaySinh, "dd/MM/yyyy", null); }
-            catch { khachHang.ngaySinh = DateTime.MinValue; }
+            catch { khachHang.ngaySinh = null; }
             khachHang.soDienThoai = soDienThoai.Trim();
             khachHang.email = email.Trim();
             khachHang.diaChi = diaChi.Trim();
@@ -117,6 +117,18 @@ namespace BUS
             return khachHangDAO.LocKhachHangTheoBacThanhVien(bacThanhVien);
         }
 
+        public bool TichDiem(string maKhachHang, string tongTien)
+        {
+            KhachHang khachHang = khachHangDAO.LayKhachHangTheoMa(maKhachHang);
 
+            return khachHangDAO.TichDiem(khachHang, Decimal.Parse(tongTien));
+        }
+
+        public decimal GiamGiaThanhVien(string maKhachHang, string diemMuonDoi, string tongTien)
+        {
+            KhachHang khachHang = khachHangDAO.LayKhachHangTheoMa(maKhachHang);
+
+            return khachHangDAO.GiamGiaThanhVien(khachHang, Decimal.Parse(diemMuonDoi), Decimal.Parse(tongTien));
+        }
     }
 }

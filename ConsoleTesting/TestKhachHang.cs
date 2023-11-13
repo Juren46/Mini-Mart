@@ -24,7 +24,7 @@ namespace ConsoleTesting
 
         public static void TestLayKhachHangTheoMa()
         {
-            Console.Write("Nhập mã khách hàng: ");       //Chọn khách hàng từ GUI nên phải luôn đúng
+            Console.Write("Nhập mã khách hàng: ");       //Luôn đúng
 
             string maKhachHang = Console.ReadLine();
 
@@ -35,7 +35,7 @@ namespace ConsoleTesting
 
         public static void TestLayKhachHangTheoSoDienThoai()
         {
-            Console.Write("Nhập số điện thoại: ");       //Chọn khách hàng từ GUI nên phải luôn đúng
+            Console.Write("Nhập số điện thoại: ");       //Luôn đúng
 
             string soDienThoai = Console.ReadLine();
 
@@ -47,43 +47,43 @@ namespace ConsoleTesting
         public static void TestThemKhachHang()
         {          
             string maKhachHang = IDGenerator.GenerateKhachHangID();
-            Console.Write("Nhap ten khach hang: ");
+            Console.Write("Nhập tên khách hàng: ");
             string hoTen = Console.ReadLine();
-            Console.Write("Nhap gioi tinh: ");          //Chọn bằng GUI nên luôn là "Nữ" hoặc "Nam"
+            Console.Write("Nhập giới tính: ");          //Nam hoặc Nữ
             string gioiTinh = Console.ReadLine();
-            Console.Write("Nhap ngay sinh: ");           //Ngày sinh chọn bằng tool trong GUI nên phải luôn đúng định dạng là dd/MM/yyyy
+            Console.Write("Nhập ngày sinh: ");           //dd/MM/yyyy
             string ngaySinh = Console.ReadLine();
-            Console.Write("Nhap so dien thoai: ");
+            Console.Write("Nhập số điện thoại: ");
             string soDienThoai = Console.ReadLine();
-            Console.Write("Nhap email: ");
+            Console.Write("Nhập email: ");
             string email = Console.ReadLine();
-            Console.Write("Nhap dia chi: ");
+            Console.Write("Nhập địa chỉ: ");
             string diaChi = Console.ReadLine();
             Console.WriteLine(khachHangBUS.ThemKhachHang(maKhachHang, hoTen, gioiTinh, ngaySinh, soDienThoai, email, diaChi));
         }
 
         public static void TestSuaKhachHang()
         {
-            Console.Write("Nhap ma khach hang: ");       //Chọn từ GUI nên luôn đúng
+            Console.Write("Nhập mã khách hàng: ");       //Luôn đúng
             string maKhachHang = Console.ReadLine();
-            Console.Write("Nhap ten khach hang: ");
+            Console.Write("Nhập tên khách hàng: ");
             string hoTen = Console.ReadLine();
-            Console.Write("Nhap gioi tinh: ");          //Chọn bằng GUI nên luôn là "Nữ" hoặc "Nam"
+            Console.Write("Nhập giới tính: ");          //Nam hoặc Nữ
             string gioiTinh = Console.ReadLine();
-            Console.Write("Nhap ngay sinh: ");           //Ngày sinh chọn bằng tool trong GUI nên phải luôn đúng định dạng là dd/MM/yyyy
+            Console.Write("Nhập ngày sinh: ");           //dd/MM/yyyy
             string ngaySinh = Console.ReadLine();
-            Console.Write("Nhap so dien thoai: ");
+            Console.Write("Nhập số điện thoại: ");
             string soDienThoai = Console.ReadLine();
-            Console.Write("Nhap email: ");
+            Console.Write("Nhập email: ");
             string email = Console.ReadLine();
-            Console.Write("Nhap dia chi: ");
+            Console.Write("Nhập địa chỉ: ");
             string diaChi = Console.ReadLine();
             Console.WriteLine(khachHangBUS.SuaKhachHang(maKhachHang, hoTen, gioiTinh, ngaySinh, soDienThoai, email, diaChi));
         }
 
         public static void TestTimKiemKhachHang()
         {
-            Console.Write("Nhập keyword: ");
+            Console.Write("Nhập từ khóa: ");
             string keyword = Console.ReadLine();
             List<KhachHang> listKhachHang = khachHangBUS.TimKiemKhachHang(keyword);
             foreach (KhachHang khachHang in listKhachHang)
@@ -94,7 +94,7 @@ namespace ConsoleTesting
 
         public static void TestLocKhachHangTheoGioiTinh()
         {
-            Console.Write("Nhập giới tính: ");     //Chọn từ GUI nên luôn đúng
+            Console.Write("Nhập giới tính: ");     //Nam hoặc Nữ
             string gioiTinh = Console.ReadLine();
             List<KhachHang> listKhachHang = khachHangBUS.LocKhachHangTheoGioiTinh(gioiTinh);
             foreach (KhachHang khachHang in listKhachHang)
@@ -105,13 +105,33 @@ namespace ConsoleTesting
 
         public static void TestLocKhachHangTheoBacThanhVien()
         {
-            Console.Write("Nhập bậc thành viên: ");     //Chọn từ GUI nên luôn đúng
+            Console.Write("Nhập bậc thành viên: ");     //Luôn đúng
             string bacThanhVien = Console.ReadLine();
             List<KhachHang> listKhachHang = khachHangBUS.LocKhachHangTheoBacThanhVien(bacThanhVien);
             foreach (KhachHang khachHang in listKhachHang)
             {
                 Console.WriteLine(khachHang.maKhachHang + "\n" + khachHang.hoTen + "\n" + khachHang.gioiTinh + "\n" + khachHang.ngaySinh + "\n" + khachHang.soDienThoai + "\n" + khachHang.email + "\n" + khachHang.diaChi + "\n" + khachHang.bacThanhVien + "\n" + khachHang.diemThanhVien + "\n" + khachHang.diemTichLuy + "\n");
             }
+        }
+
+        public static void TestTichDiem()
+        {
+            Console.Write("Nhập mã khách hàng: ");
+            string maKhachHang = Console.ReadLine();
+            Console.Write("Nhập tổng tiền: ");
+            string tongTien = Console.ReadLine();
+            Console.WriteLine(khachHangBUS.TichDiem(maKhachHang, tongTien));
+        }
+
+        public static void TestGiamGiaThanhVien()
+        {
+            Console.Write("Nhập mã khách hàng: ");
+            string maKhachHang = Console.ReadLine();
+            Console.Write("Nhập điểm muốn đổi: ");
+            string diemMuonDoi = Console.ReadLine();
+            Console.Write("Nhập tổng tiền: ");
+            string tongTien = Console.ReadLine();
+            Console.WriteLine(khachHangBUS.GiamGiaThanhVien(maKhachHang, diemMuonDoi, tongTien));
         }
     }
 }
