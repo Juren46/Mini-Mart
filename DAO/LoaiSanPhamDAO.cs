@@ -37,7 +37,7 @@ namespace DAO
         {
             LoaiSanPham loaiSanPham = new LoaiSanPham();
 
-            string query = $"SELECT * FROM LoaiSanPham WHERE maLoaiSanPham = '{maLoaiSanPham}'  AND trangThai = 1;";
+            string query = $"SELECT * FROM LoaiSanPham WHERE maLoaiSanPham = '{maLoaiSanPham}';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
@@ -51,7 +51,7 @@ namespace DAO
         {
             LoaiSanPham loaiSanPham = new LoaiSanPham();
 
-            string query = $"SELECT * FROM LoaiSanPham WHERE tenLoaiSanPham = N'{tenLoaiSanPham}'  AND trangThai = 1;";
+            string query = $"SELECT * FROM LoaiSanPham WHERE tenLoaiSanPham = N'{tenLoaiSanPham}';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
@@ -74,7 +74,7 @@ namespace DAO
 
         public bool KiemTraLoaiSanPhamDaTonTai(string tenLoaiSanPham)
         {
-            string query = $"SELECT tenLoaiSanPham FROM LoaiSanPham WHERE tenLoaiSanPham = N'{tenLoaiSanPham}';";
+            string query = $"SELECT tenLoaiSanPham FROM LoaiSanPham WHERE LOWER(tenLoaiSanPham) = N'{tenLoaiSanPham}';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
