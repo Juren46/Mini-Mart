@@ -38,20 +38,21 @@ namespace DAO
         {
             TaiKhoan taiKhoan = new TaiKhoan();
 
-            string query = $"SELECT * FROM TaiKhoan WHERE tenTaiKhoan = N'{tenTaiKhoan}';";
+            string query = $"SELECT * FROM TaiKhoan WHERE tenTaiKhoan = '{tenTaiKhoan}';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
             taiKhoan.maPhanQuyen = dataTable.Rows[0]["maPhanQuyen"].ToString();
             taiKhoan.tenTaiKhoan = dataTable.Rows[0]["tenTaiKhoan"].ToString();
             taiKhoan.matKhau = dataTable.Rows[0]["matKhau"].ToString();
+            taiKhoan.trangThai = (bool)dataTable.Rows[0]["trangThai"];
 
             return taiKhoan;
         }
 
         public bool KiemTraDangNhap(string tenTaiKhoan, string matKhau)
         {
-            string query = $"SELECT * FROM TaiKhoan WHERE trangThai = 1 AND tenTaiKhoan = '{tenTaiKhoan}' AND matKhau = '{matKhau}';";
+            string query = $"SELECT * FROM TaiKhoan WHERE tenTaiKhoan = '{tenTaiKhoan}' AND matKhau = '{matKhau}' AND  trangThai = 1;";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
@@ -85,18 +86,9 @@ namespace DAO
             return rowsAffected > 0;
         }
 
-        public bool KhoaTaiKhoan(string tenTaiKhoan)
+        public bool XoaTaiKhoan(string tenTaiKhoan)
         {
             string query = $"UPDATE TaiKhoan SET trangThai = 0 WHERE tenTaiKhoan = '{tenTaiKhoan}';";
-
-            int rowsAffected = DBHelper.ExecuteNonQuery(query);
-
-            return rowsAffected > 0;
-        }
-
-        public bool MoKhoaTaiKhoan(string tenTaiKhoan)
-        {
-            string query = $"UPDATE TaiKhoan SET trangThai = 1 WHERE tenTaiKhoan = '{tenTaiKhoan}';";
 
             int rowsAffected = DBHelper.ExecuteNonQuery(query);
 
@@ -108,7 +100,7 @@ namespace DAO
             List<TaiKhoan> listTaiKhoan = new List<TaiKhoan>();
 
             string query = $"SELECT * FROM TaiKhoan " +
-                           $"WHERE LOWER(tenTaiKhoan) LIKE '%{keyword}%' OR LOWER(maPhanQuyen) LIKE '%{keyword}%' " +
+                           $"WHERE LOWER(tenTaiKhoan) LIKE '%{keyword}%' " +
                            $"AND trangThai = 1;";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
@@ -119,6 +111,7 @@ namespace DAO
                 taiKhoan.maPhanQuyen = row["maPhanQuyen"].ToString();
                 taiKhoan.tenTaiKhoan = row["tenTaiKhoan"].ToString();
                 taiKhoan.matKhau = row["matKhau"].ToString();
+                taiKhoan.trangThai = (bool)row["trangThai"];
 
                 listTaiKhoan.Add(taiKhoan);
             }
@@ -142,6 +135,7 @@ namespace DAO
                 taiKhoan.maPhanQuyen = row["maPhanQuyen"].ToString();
                 taiKhoan.tenTaiKhoan = row["tenTaiKhoan"].ToString();
                 taiKhoan.matKhau = row["matKhau"].ToString();
+                taiKhoan.trangThai = (bool)row["trangThai"];
 
                 listTaiKhoan.Add(taiKhoan);
             }
@@ -153,10 +147,11 @@ namespace DAO
         {
             List<TaiKhoan> listTaiKhoan = new List<TaiKhoan>();
 
-            string query = "SELECT TK.* " +
-                           "FROM TaiKhoan AS TK " +
-                           "LEFT JOIN NhanVien AS NV ON TK.tenTaiKhoan = NV.tenTaiKhoan " +
-                           "WHERE NV.tenTaiKhoan IS NULL " +
+            string query = "SELECT * FROM TaiKhoan AS TK " +
+                           "WHERE TK.tenTaiKhoan NOT IN " +
+                           "(SELECT TenTaiKhoan FROM NhanVien " +
+                           "UNION SELECT TenTaiKhoan FROM Admin " +
+                           "UNION SELECT TenTaiKhoan FROM QuanLi) " +
                            "AND TK.trangThai = 1;";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);

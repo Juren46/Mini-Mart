@@ -20,17 +20,17 @@ namespace ConsoleTesting
             //TestTaiKhoan.TestKiemTraDangNhap();
             //TestTaiKhoan.TestThemTaiKhoan();
             //TestTaiKhoan.TestDoiMatKhau();
-            //TestTaiKhoan.TestKhoaTaiKhoan();
-            //TestTaiKhoan.TestMoKhoaTaiKhoan();
+            //TestTaiKhoan.TestXoaTaiKhoan();
             //TestTaiKhoan.TestTimKiemTaiKhoan();
             //TestTaiKhoan.TestLocTaiKhoanTheoPhanQuyen();
+            //TestTaiKhoan.TestLayDanhSachTaiKhoanChuaDung();
 
             //TestNhanVien.TestLayDanhSachNhanVien();
             //TestNhanVien.TestLayNhanVienTheoMa();
             //TestNhanVien.TestLayNhanVienTheoTenTaiKhoan();
             //TestNhanVien.TestThemNhanVien();
             //TestNhanVien.TestXoaNhanVien();
-            //TestNhanVien.TestSuaNhanVien()
+            //TestNhanVien.TestSuaNhanVien();
             //TestNhanVien.TestTimKiemNhanVien();
             //TestNhanVien.TestLocNhanVienTheoPhanQuyen();
             //TestNhanVien.TestLocNhanVienTheoGioiTinh();
@@ -43,6 +43,8 @@ namespace ConsoleTesting
             //TestKhachHang.TestTimKiemKhachHang();
             //TestKhachHang.TestLocKhachHangTheoGioiTinh();
             //TestKhachHang.TestLocKhachHangTheoBacThanhVien();
+            //TestKhachHang.TestTichDiem();
+            //TestKhachHang.TestGiamGiaThanhVien();
 
             //TestLoaiSanPham.TestLayDanhSachLoaiSanPham();
             //TestLoaiSanPham.TestLayLoaiSanPhamTheoMa();
@@ -53,8 +55,7 @@ namespace ConsoleTesting
             //TestLoaiSanPham.TestTimKiemLoaiSanPham();
 
             //TestNhaCungCap.TestLayDanhSachNhaCungCap();
-            //TestNhaCungCap.TestLayNhaCungCapTheoMa();       
-            //TestNhaCungCap.TestLayNhaCungCapTheoTen();    
+            //TestNhaCungCap.TestLayNhaCungCapTheoMa();    
             //TestNhaCungCap.TestThemNhaCungCap();          
             //TestNhaCungCap.TestSuaNhaCungCap();           
             //TestNhaCungCap.TestTimKiemNhaCungCap();
@@ -67,14 +68,14 @@ namespace ConsoleTesting
             //TestSanPham.LocSanPhamTheoLoaiSanPham();
 
 
-            //TestKhuyenMai.TestLayDanhSachKhuyenMai();     //Chưa test
+            //TestKhuyenMai.TestLayDanhSachKhuyenMai();   
             //TestKhuyenMai.TestLayKhuyenMaiTheoMa();
             //TestKhuyenMai.TestThemKhuyenMai();
             //TestKhuyenMai.TestSuaKhuyenMai();
             //TestKhuyenMai.TestXoaKhuyenMai();
             //TestKhuyenMai.TestTimKiemKhuyenMai();
-            //TestKhuyenMai.TestTimKiemKhuyenMaiTheoKhoangThoiGian();     //Chưa test
-            //TestKhuyenMai.TestApDungKhuyenMai();        //Chưa test
+            //TestKhuyenMai.TestTimKiemKhuyenMaiTheoKhoangThoiGian();
+            //TestKhuyenMai.TestApDungKhuyenMai();     
         }
     }
 }

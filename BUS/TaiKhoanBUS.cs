@@ -46,9 +46,6 @@ namespace BUS
             if (string.IsNullOrEmpty(tenPhanQuyen) || string.IsNullOrEmpty(tenTaiKhoan) || string.IsNullOrEmpty(matKhau))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
-            if (InputValidate.KiemTraASCII(tenTaiKhoan) || InputValidate.KiemTraASCII(matKhau))
-                return "Tên tài khoản và mật khẩu không được chứa kí tự không thuộc ASCII!";
-
             if (taiKhoanDAO.KiemTraTaiKhoanDaTonTai(tenTaiKhoan))
                 return "Tên tài khoản đã tồn tại, vui lòng chọn tên khác!";           
 
@@ -73,9 +70,6 @@ namespace BUS
             if (!taiKhoanDAO.KiemTraDangNhap(tenTaiKhoan, matKhauCu))
                 return "Mật khẩu cũ sai!";
 
-            if (InputValidate.KiemTraASCII(matKhauMoi))
-                return "Mật khẩu không được chứa kí tự không thuộc ASCII!";
-
             if (!matKhauMoi.Equals(xacNhanMatKhauMoi))
                 return "Xác nhận mật khẩu mới không chính xác!";
 
@@ -90,20 +84,12 @@ namespace BUS
                 return "Đổi mật khẩu thất bại!";
         }
 
-        public string KhoaTaiKhoan(string tenTaiKhoan)
+        public string XoaTaiKhoan(string tenTaiKhoan)
         {
-            if (taiKhoanDAO.KhoaTaiKhoan(tenTaiKhoan))
-                return "Khóa tài khoản thành công!";
+            if (taiKhoanDAO.XoaTaiKhoan(tenTaiKhoan))
+                return "Xóa tài khoản thành công!";
 
-            return "Khóa tài khoản thất bại!";
-        }
-
-        public string MoKhoaTaiKhoan(string tenTaiKhoan)
-        {
-            if (taiKhoanDAO.MoKhoaTaiKhoan(tenTaiKhoan))
-                return "Mở khóa tài khoản thành công!";
-
-            return "Mở khóa tài khoản thất bại!";
+            return "Xóa tài khoản thất bại!";
         }
 
         public List<TaiKhoan> TimKiemTaiKhoan(string keyword)
@@ -113,9 +99,14 @@ namespace BUS
             return taiKhoanDAO.TimKiemTaiKhoan(keyword);
         }
 
-        public List<TaiKhoan> LocTaiKhoanTheoPhanQuyen(string tenPhanQuyen)     //Chọn phân quyền bằng combobox trong GUI nên sẽ dùng tên phân quyền
+        public List<TaiKhoan> LocTaiKhoanTheoPhanQuyen(string tenPhanQuyen)
         {
             return taiKhoanDAO.LocTaiKhoanTheoPhanQuyen(tenPhanQuyen);
+        }
+
+        public List<TaiKhoan> LayDanhSachTaiKhoanChuaDung()
+        {
+            return taiKhoanDAO.LayDanhSachTaiKhoanChuaDung();
         }
     }
 }
