@@ -393,6 +393,7 @@
             iconButton3.Text = "Thêm mới";
             iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton3.UseVisualStyleBackColor = false;
+            iconButton3.Click += iconButton3_Click;
             // 
             // guna2TextBox1
             // 

@@ -138,11 +138,11 @@ namespace GUI
             }
         }
 
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            ChiTietSanPhamForm chitietsanphamfrom = new ChiTietSanPhamForm();
+            chitietsanphamfrom.ShowDialog();
 
-
-
-
-
-
+        }
     }
 }

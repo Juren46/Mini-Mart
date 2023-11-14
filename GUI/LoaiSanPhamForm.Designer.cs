@@ -30,31 +30,31 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoaiSanPhamForm));
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoaiSanPhamForm));
             iconButton1 = new FontAwesome.Sharp.IconButton();
             iconButton4 = new FontAwesome.Sharp.IconButton();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             panel2 = new Panel();
-            guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column9 = new DataGridViewImageColumn();
-            Column10 = new DataGridViewImageColumn();
-            Column11 = new DataGridViewImageColumn();
             panel3 = new Panel();
             panel1 = new Panel();
+            Column11 = new DataGridViewImageColumn();
+            Column10 = new DataGridViewImageColumn();
+            Column9 = new DataGridViewImageColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             SuspendLayout();
             // 
             // iconButton1
@@ -144,6 +144,90 @@
             panel2.Size = new Size(1167, 60);
             panel2.TabIndex = 28;
             // 
+            // panel3
+            // 
+            panel3.Controls.Add(guna2DataGridView1);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 60);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1167, 722);
+            panel3.TabIndex = 29;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1167, 782);
+            panel1.TabIndex = 2;
+            // 
+            // Column11
+            // 
+            Column11.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column11.FillWeight = 30F;
+            Column11.HeaderText = "";
+            Column11.Image = Properties.Resources._001_delete;
+            Column11.Name = "Column11";
+            Column11.ReadOnly = true;
+            Column11.Width = 5;
+            // 
+            // Column10
+            // 
+            Column10.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column10.FillWeight = 30F;
+            Column10.HeaderText = "";
+            Column10.Image = (Image)resources.GetObject("Column10.Image");
+            Column10.Name = "Column10";
+            Column10.ReadOnly = true;
+            Column10.Width = 5;
+            // 
+            // Column9
+            // 
+            Column9.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column9.FillWeight = 30F;
+            Column9.HeaderText = "";
+            Column9.Image = Properties.Resources._003_information;
+            Column9.Name = "Column9";
+            Column9.ReadOnly = true;
+            Column9.Width = 5;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.FillWeight = 155.167023F;
+            Column4.HeaderText = "trạng thái";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column3.FillWeight = 155.167023F;
+            Column3.HeaderText = "Tên loại sản phẩm ";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 129.305817F;
+            Column1.HeaderText = "Mã loại sản phẩm ";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Resizable = DataGridViewTriState.True;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            Column2.HeaderText = "#";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 43;
+            // 
             // guna2DataGridView1
             // 
             guna2DataGridView1.AllowUserToAddRows = false;
@@ -211,90 +295,6 @@
             guna2DataGridView1.CellFormatting += guna2DataGridView1_CellFormatting;
             guna2DataGridView1.CellPainting += guna2DataGridView1_CellPainting;
             // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column2.DefaultCellStyle = dataGridViewCellStyle3;
-            Column2.HeaderText = "#";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 43;
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 129.305817F;
-            Column1.HeaderText = "Mã loại sản phẩm ";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Resizable = DataGridViewTriState.True;
-            // 
-            // Column3
-            // 
-            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.FillWeight = 155.167023F;
-            Column3.HeaderText = "Tên loại sản phẩm ";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.FillWeight = 155.167023F;
-            Column4.HeaderText = "trạng thái";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            Column9.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column9.FillWeight = 30F;
-            Column9.HeaderText = "";
-            Column9.Image = Properties.Resources._003_information;
-            Column9.Name = "Column9";
-            Column9.ReadOnly = true;
-            Column9.Width = 5;
-            // 
-            // Column10
-            // 
-            Column10.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column10.FillWeight = 30F;
-            Column10.HeaderText = "";
-            Column10.Image = (Image)resources.GetObject("Column10.Image");
-            Column10.Name = "Column10";
-            Column10.ReadOnly = true;
-            Column10.Width = 5;
-            // 
-            // Column11
-            // 
-            Column11.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column11.FillWeight = 30F;
-            Column11.HeaderText = "";
-            Column11.Image = Properties.Resources._001_delete;
-            Column11.Name = "Column11";
-            Column11.ReadOnly = true;
-            Column11.Width = 5;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(guna2DataGridView1);
-            panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 60);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1167, 722);
-            panel3.TabIndex = 29;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(panel3);
-            panel1.Controls.Add(panel2);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1167, 782);
-            panel1.TabIndex = 2;
-            // 
             // LoaiSanPhamForm
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
@@ -308,9 +308,9 @@
             Text = "LoaiSanPhamForm";
             Load += LoaiSanPhamForm_Load;
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
             panel3.ResumeLayout(false);
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -321,9 +321,9 @@
         private FontAwesome.Sharp.IconButton iconButton3;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Panel panel2;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Panel panel3;
         private Panel panel1;
+        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column3;
