@@ -140,9 +140,25 @@ namespace GUI
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
+
             ChiTietSanPhamForm chitietsanphamfrom = new ChiTietSanPhamForm();
             chitietsanphamfrom.ShowDialog();
 
+        }
+
+        private void guna2DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            // Kiểm tra số lượng dòng được chọn
+            if (guna2DataGridView1.SelectedRows.Count > 1)
+            {
+                // Nếu nhiều hơn 1 dòng được chọn, hiển thị nút xoá tất cả
+                btnDeleteAll.Visible = true;
+            }
+            else
+            {
+                // Nếu không có hoặc chỉ có 1 dòng được chọn, ẩn nút xoá tất cả
+                btnDeleteAll.Visible = false;
+            }
         }
     }
 }
