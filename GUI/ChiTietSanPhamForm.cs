@@ -10,19 +10,17 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class DangNhapForm : Form
+    public partial class ChiTietSanPhamForm : Form
     {
-        public DangNhapForm()
+        public ChiTietSanPhamForm()
         {
             InitializeComponent();
-            CenterToScreen();
+            CenterToParent();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void guna2Button2_Click(object sender, EventArgs e)
         {
-            LoadingForm form = new LoadingForm();
-            form.Show();
-      
+            this.Close();
         }
     }
 }
