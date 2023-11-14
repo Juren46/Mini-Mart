@@ -40,7 +40,7 @@ namespace GUI
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            panel2.Width += 30;
+            panel2.Width += 10;
             if (panel2.Width >= 840)
             {
                 timer3.Stop();

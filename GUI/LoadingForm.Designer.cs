@@ -42,7 +42,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Roboto", 26.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ControlDarkDark;
+            label1.ForeColor = Color.Gray;
             label1.Location = new Point(475, 409);
             label1.Name = "label1";
             label1.Size = new Size(464, 42);
@@ -78,13 +78,15 @@
             // timer3
             // 
             timer3.Enabled = true;
+            timer3.Interval = 30;
             timer3.Tick += timer3_Tick;
             // 
             // LoadingForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(150, 209, 223);
+            BackColor = Color.FromArgb(185, 226, 239);
+            BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1384, 861);
             Controls.Add(panel1);
             Controls.Add(label1);

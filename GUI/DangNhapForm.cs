@@ -22,7 +22,7 @@ namespace GUI
         {
             LoadingForm form = new LoadingForm();
             form.Show();
-      
+
         }
     }
 }
