@@ -28,11 +28,6 @@ namespace BUS
             return nhaCungCapDAO.LayNhaCungCapTheoMa(maNhaCungCap);
         }
 
-        public NhaCungCap LayNhaCungCapTheoTen(string tenNhaCungCap)
-        {
-            return nhaCungCapDAO.LayNhaCungCapTheoTen(tenNhaCungCap);
-        }
-
         public int DemSoNhaCungCap()
         {
             return nhaCungCapDAO.DemSoNhaCungCap();
@@ -50,7 +45,7 @@ namespace BUS
                 return "Vui lòng nhập đúng email!";
 
             if (nhaCungCapDAO.KiemTraNhaCungCapDaTonTai(tenNhaCungCap.ToLower()))
-                return "Nhà cung cấp đã tồn tại, vui lòng chọn tên khác!";
+                return "Tên nhà cung cấp đã tồn tại, vui lòng chọn tên khác!";
 
             NhaCungCap nhaCungCap = new NhaCungCap();
 

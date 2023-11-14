@@ -83,7 +83,7 @@ namespace DAO
             List<PhanQuyen> listPhanQuyen = new List<PhanQuyen>();
 
             string query = $"SELECT * FROM PhanQuyen WHERE LOWER(maPhanQuyen) LIKE '%{keyword}%' " +
-                           $"OR LOWER(tenPhanQuyen) LIKE N'%{keyword}%';";
+                           $"OR tenPhanQuyen COLLATE Latin1_General_CI_AI LIKE N'%{keyword}%';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);          
 

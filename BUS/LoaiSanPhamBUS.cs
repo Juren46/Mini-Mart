@@ -61,7 +61,7 @@ namespace BUS
             if (loaiSanPhamDAO.XoaLoaiSanPham(maLoaiSanPham))
                 return "Xóa loại sản phẩm thành công!";
 
-            return "Xóa loại  phẩm thất bại!";
+            return "Xóa loại sản phẩm thất bại!";
         }
 
         public string SuaLoaiSanPham(string maLoaiSanPham, string tenLoaiSanPham)

@@ -25,7 +25,7 @@ namespace ConsoleTesting
 
         public static void TestLayLoaiSanPhamTheoMa()
         {
-            Console.Write("Nhập mã loại sản phẩm: ");      //Phải luôn đúng
+            Console.Write("Nhập mã loại sản phẩm: ");      //Luôn đúng
             string maLoaiSanPham = Console.ReadLine();
             LoaiSanPham loaiSanPham = loaiSanPhamBUS.LayLoaiSanPhamTheoMa(maLoaiSanPham);
             Console.WriteLine(loaiSanPham.maLoaiSanPham + "\n" + loaiSanPham.tenLoaiSanPham);
@@ -33,7 +33,7 @@ namespace ConsoleTesting
 
         public static void TestLayLoaiSanPhamTheoTen()
         {
-            Console.Write("Nhập tên loại sản phẩm: ");      //Phải luôn đúng
+            Console.Write("Nhập tên loại sản phẩm: ");      //Luôn đúng
             string tenLoaiSanPham = Console.ReadLine();
             LoaiSanPham loaiSanPham = loaiSanPhamBUS.LayLoaiSanPhamTheoTen(tenLoaiSanPham);
             Console.WriteLine(loaiSanPham.maLoaiSanPham + "\n" + loaiSanPham.tenLoaiSanPham);
@@ -42,30 +42,30 @@ namespace ConsoleTesting
         public static void TestThemLoaiSanPham()
         {
             string maLoaiSanPham = IDGenerator.GenerateLoaiSanPhamID();
-            Console.Write("Nhap ten loai san pham: ");
+            Console.Write("Nhập tên loại sản phẩm: ");
             string tenLoaiSanPham = Console.ReadLine();
             Console.WriteLine(loaiSanPhamBUS.ThemLoaiSanPham(maLoaiSanPham, tenLoaiSanPham));
         }
 
         public static void TestXoaLoaiSanPham()
         {
-            Console.Write("Nhap ma loai san pham: ");
+            Console.Write("Nhập mã loại sản phẩm: ");
             string maLoaiSanPham = Console.ReadLine();
             Console.WriteLine(loaiSanPhamBUS.XoaLoaiSanPham(maLoaiSanPham));
         }
 
         public static void TestSuaLoaiSanPham()
         {
-            Console.Write("Nhap ma loai san pham: ");       //Luôn đúng
+            Console.Write("Nhập mã loại sản phẩm: ");       //Luôn đúng
             string maLoaiSanPham = Console.ReadLine();
-            Console.Write("Nhap ten loai san pham: ");
+            Console.Write("Nhập tên loại sản phẩm: ");
             string tenLoaiSanPham = Console.ReadLine();
             Console.WriteLine(loaiSanPhamBUS.SuaLoaiSanPham(maLoaiSanPham, tenLoaiSanPham));
         }
 
         public static void TestTimKiemLoaiSanPham()
         {
-            Console.Write("Nhap keyword: ");     
+            Console.Write("Nhập từ khóa: ");     
             string keyword = Console.ReadLine();
             List<LoaiSanPham> listLoaiSanPham = loaiSanPhamBUS.TimKiemLoaiSanPham(keyword);
             foreach (LoaiSanPham loaiSanPham in listLoaiSanPham)

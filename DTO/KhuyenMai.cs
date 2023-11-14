@@ -12,10 +12,9 @@ namespace DTO
         {
         }
 
-        public KhuyenMai(string maKhuyenMai, string maQuanLi, string tenKhuyenMai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string loaiGiaTri, decimal giaTriApDung)
+        public KhuyenMai(string maKhuyenMai, string tenKhuyenMai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string loaiGiaTri, decimal giaTriApDung)
         {
             this.maKhuyenMai = maKhuyenMai;
-            this.maQuanLi = maQuanLi;
             this.tenKhuyenMai = tenKhuyenMai;
             this.thoiGianBatDau = thoiGianBatDau;
             this.thoiGianKetThuc = thoiGianKetThuc;
@@ -24,7 +23,6 @@ namespace DTO
         }
 
         public string maKhuyenMai { get; set; }
-        public string maQuanLi { get; set; }
         public string tenKhuyenMai { get; set; }
         public DateTime thoiGianBatDau { get; set; }
         public DateTime thoiGianKetThuc { get; set; }
