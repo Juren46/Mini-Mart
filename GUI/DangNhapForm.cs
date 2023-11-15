@@ -15,6 +15,13 @@ namespace GUI
         public DangNhapForm()
         {
             InitializeComponent();
+            CenterToScreen();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            LoadingForm form = new LoadingForm();
+            form.Show();
         }
     }
 }

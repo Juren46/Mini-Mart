@@ -1,0 +1,58 @@
+﻿using Microsoft.Data.SqlClient;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DAO
+{
+    public class DBHelper
+    {
+        private static string servername = "TRUNG-LAPTOP\\ELIO";
+        private static string dbName = "mini-mart";
+        private static string username = "";
+        private static string password = "";
+        private static string connectionString = $"Data Source={servername};Initial Catalog={dbName};Integrated Security=True;Encrypt=False";
+        //private static string connectionString = $"Data Source={servername};Initial Catalog={dbName};User ID={username};Password={password}";
+
+        public static DataTable ExecuteQuery(string query)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                DataTable dataTable = new DataTable();
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Lỗi khi thực hiện truy vấn SQL: " + ex.Message);
+                }
+                return dataTable;
+            }
+        }
+
+        public static int ExecuteNonQuery(string query)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    return command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Lỗi khi thực hiện câu lệnh SQL: " + ex.Message);
+                    return -1;
+                }
+            }
+        }
+    }
+}

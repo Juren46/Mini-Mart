@@ -86,7 +86,7 @@ namespace GUI
             //open only form
             if (currentChildForm != null)
             {
-                currentChildForm.Close();
+                currentChildForm.Hide();
             }
             currentChildForm = childForm;
             //End
@@ -183,6 +183,12 @@ namespace GUI
         private void btnThongKe_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+        }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new LoaiSanPhamForm());
         }
     }
 }

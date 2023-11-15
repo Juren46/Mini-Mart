@@ -1,10 +1,92 @@
-﻿namespace ConsoleTesting
+﻿using System.Text;
+
+namespace ConsoleTesting
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.InputEncoding = Encoding.UTF8;
+            Console.OutputEncoding = Encoding.UTF8;
+
+            //TestPhanQuyen.TestLayDanhSachPhanQuyen();
+            //TestPhanQuyen.TestLayPhanQuyenTheoMa();
+            //TestPhanQuyen.TestLayPhanQuyenTheoTen();
+            //TestPhanQuyen.TestLayPhanQuyenTheoTenTaiKhoan();
+            //TestPhanQuyen.TestTimKiemPhanQuyen();
+
+            //TestTaiKhoan.TestLayDanhSachTaiKhoan();
+            //TestTaiKhoan.TestLayTaiKhoanTheoTen();
+            //TestTaiKhoan.TestKiemTraDangNhap();
+            //TestTaiKhoan.TestThemTaiKhoan();
+            //TestTaiKhoan.TestDoiMatKhau();
+            //TestTaiKhoan.TestXoaTaiKhoan();
+            //TestTaiKhoan.TestTimKiemTaiKhoan();
+            //TestTaiKhoan.TestLocTaiKhoanTheoPhanQuyen();
+            //TestTaiKhoan.TestLayDanhSachTaiKhoanChuaDung();
+
+            //TestNhanVien.TestLayDanhSachNhanVien();
+            //TestNhanVien.TestLayNhanVienTheoMa();
+            //TestNhanVien.TestLayNhanVienTheoTenTaiKhoan();
+            //TestNhanVien.TestThemNhanVien();
+            //TestNhanVien.TestXoaNhanVien();
+            //TestNhanVien.TestSuaNhanVien();
+            //TestNhanVien.TestTimKiemNhanVien();
+            //TestNhanVien.TestLocNhanVienTheoPhanQuyen();
+            //TestNhanVien.TestLocNhanVienTheoGioiTinh();
+
+            //TestKhachHang.TestLayDanhSachKhachHang();
+            //TestKhachHang.TestLayKhachHangTheoMa();
+            //TestKhachHang.TestLayKhachHangTheoSoDienThoai();
+            //TestKhachHang.TestThemKhachHang();
+            //TestKhachHang.TestSuaKhachHang();
+            //TestKhachHang.TestTimKiemKhachHang();
+            //TestKhachHang.TestLocKhachHangTheoGioiTinh();
+            //TestKhachHang.TestLocKhachHangTheoBacThanhVien();
+            //TestKhachHang.TestTichDiem();
+            //TestKhachHang.TestGiamGiaThanhVien();
+
+            //TestLoaiSanPham.TestLayDanhSachLoaiSanPham();
+            //TestLoaiSanPham.TestLayLoaiSanPhamTheoMa();
+            //TestLoaiSanPham.TestLayLoaiSanPhamTheoTen();
+            //TestLoaiSanPham.TestThemLoaiSanPham();
+            //TestLoaiSanPham.TestXoaLoaiSanPham();
+            //TestLoaiSanPham.TestSuaLoaiSanPham();
+            //TestLoaiSanPham.TestTimKiemLoaiSanPham();
+
+            //TestNhaCungCap.TestLayDanhSachNhaCungCap();
+            //TestNhaCungCap.TestLayNhaCungCapTheoMa();    
+            //TestNhaCungCap.TestThemNhaCungCap();          
+            //TestNhaCungCap.TestSuaNhaCungCap();           
+            //TestNhaCungCap.TestTimKiemNhaCungCap();
+
+            //TestSanPham.TestLayDanhSachSanPham();
+            //TestSanPham.TestLaySanPhamTheoMa();  
+            //TestSanPham.TestThemSanPham();          
+            //TestSanPham.TestXoaSanPham();           
+            //TestSanPham.TestTimKiemSanPham();
+            //TestSanPham.LocSanPhamTheoLoaiSanPham();
+            //TestSanPham.LocSanPhamTheoNhaCungCap();
+
+            //TestKhuyenMai.TestLayDanhSachKhuyenMai();   
+            //TestKhuyenMai.TestLayKhuyenMaiTheoMa();
+            //TestKhuyenMai.TestThemKhuyenMai();
+            //TestKhuyenMai.TestSuaKhuyenMai();
+            //TestKhuyenMai.TestXoaKhuyenMai();
+            //TestKhuyenMai.TestTimKiemKhuyenMai();
+            //TestKhuyenMai.TestTimKiemKhuyenMaiTheoKhoangThoiGian();
+            //TestKhuyenMai.TestApDungKhuyenMai();
+
+            //TestHoaDon.TestLayDanhSachHoaDon();
+            //TestHoaDon.TestLayHoaDonTheoMa();
+            //TestHoaDon.TestLayDanhSachHoaDonTheoNgay();
+            //TestHoaDon.TestLayDanhSachHoaDonTheoKhoangThoiGian();
+            TestHoaDon.TestThemHoaDon();
+
+            //TestChiTietHoaDon.TestLayDanhSachChiTietHoaDon();
+
+            //TestPhieuNhap.TestThemPhieuNhap();
+            //TestPhieuNhap.TestLayPhieuNhapTheoMa();
         }
     }
 }
