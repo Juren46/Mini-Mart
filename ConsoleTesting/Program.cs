@@ -66,7 +66,7 @@ namespace ConsoleTesting
             //TestSanPham.TestXoaSanPham();           
             //TestSanPham.TestTimKiemSanPham();
             //TestSanPham.LocSanPhamTheoLoaiSanPham();
-
+            //TestSanPham.LocSanPhamTheoNhaCungCap();
 
             //TestKhuyenMai.TestLayDanhSachKhuyenMai();   
             //TestKhuyenMai.TestLayKhuyenMaiTheoMa();
@@ -75,7 +75,18 @@ namespace ConsoleTesting
             //TestKhuyenMai.TestXoaKhuyenMai();
             //TestKhuyenMai.TestTimKiemKhuyenMai();
             //TestKhuyenMai.TestTimKiemKhuyenMaiTheoKhoangThoiGian();
-            //TestKhuyenMai.TestApDungKhuyenMai();     
+            //TestKhuyenMai.TestApDungKhuyenMai();
+
+            //TestHoaDon.TestLayDanhSachHoaDon();
+            //TestHoaDon.TestLayHoaDonTheoMa();
+            //TestHoaDon.TestLayDanhSachHoaDonTheoNgay();
+            //TestHoaDon.TestLayDanhSachHoaDonTheoKhoangThoiGian();
+            TestHoaDon.TestThemHoaDon();
+
+            //TestChiTietHoaDon.TestLayDanhSachChiTietHoaDon();
+
+            //TestPhieuNhap.TestThemPhieuNhap();
+            //TestPhieuNhap.TestLayPhieuNhapTheoMa();
         }
     }
 }

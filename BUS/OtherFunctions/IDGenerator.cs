@@ -91,13 +91,22 @@ namespace BUS.OtherFunctions
         {
             HoaDonBUS hoaDonBUS = new HoaDonBUS();
 
-            int count = hoaDonBUS.DemSoHoaDonTheoNgay(DateTime.Now.ToString());
+            int count = hoaDonBUS.DemSoHoaDonTheoNgay(DateTime.Now.ToString("dd/MM/yyyy"));
 
-            DateTime formattedDate = DateTime.ParseExact(DateTime.Now.ToString(), "dd/MM/yyyy", null);
-
-            string hoaDonID = string.Format("{0}-HD{1:D4}", formattedDate, ++count);
+            string hoaDonID = string.Format("{0}-HD{1:D4}", DateTime.Now.ToString("dd/MM/yyyy"), ++count);
 
             return hoaDonID;
+        }
+
+        public static string GeneratePhieuNhapID()
+        {
+            PhieuNhapBUS phieuNhapBUS = new PhieuNhapBUS();
+
+            int count = phieuNhapBUS.DemSoPhieuNhapTheoNgay(DateTime.Now.ToString("dd/MM/yyyy"));
+
+            string phieuNhapID = string.Format("{0}-PN{1:D4}", DateTime.Now.ToString("dd/MM/yyyy"), ++count);
+
+            return phieuNhapID;
         }
     }
 }
