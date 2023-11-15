@@ -18,7 +18,7 @@ namespace ConsoleTesting
 
             foreach (KhachHang khachHang in listKhachHang)
             {
-                Console.WriteLine(khachHang.maKhachHang + "\n" + khachHang.hoTen + "\n" + khachHang.gioiTinh + "\n" + khachHang.ngaySinh + "\n" + khachHang.soDienThoai + "\n" + khachHang.email + "\n" + khachHang.diaChi + "\n" + khachHang.bacThanhVien + "\n" + khachHang.diemThanhVien + "\n" + khachHang.diemTichLuy + "\n");
+                Console.WriteLine(khachHang.maKhachHang + "\n" + khachHang.hoTen + "\n" + khachHang.gioiTinh + "\n" + khachHang.ngaySinh + "\n" + khachHang.soDienThoai + "\n" + khachHang.email + "\n" + khachHang.diaChi + "\n" + khachHang.bacThanhVien + "\n" +  khachHang.diemTichLuy + "\n");
             }
         }
 
@@ -30,7 +30,7 @@ namespace ConsoleTesting
 
             KhachHang khachHang = khachHangBUS.LayKhachHangTheoMa(maKhachHang);
 
-            Console.WriteLine(khachHang.maKhachHang + "\n" + khachHang.hoTen + "\n" + khachHang.gioiTinh + "\n" + khachHang.ngaySinh + "\n" + khachHang.soDienThoai + "\n" + khachHang.email + "\n" + khachHang.diaChi + "\n" + khachHang.bacThanhVien + "\n" + khachHang.diemThanhVien + "\n" + khachHang.diemTichLuy + "\n");
+            Console.WriteLine(khachHang.maKhachHang + "\n" + khachHang.hoTen + "\n" + khachHang.gioiTinh + "\n" + khachHang.ngaySinh + "\n" + khachHang.soDienThoai + "\n" + khachHang.email + "\n" + khachHang.diaChi + "\n" + khachHang.bacThanhVien + "\n" + khachHang.diemTichLuy + "\n");
         }
 
         public static void TestLayKhachHangTheoSoDienThoai()
@@ -41,7 +41,7 @@ namespace ConsoleTesting
 
             KhachHang khachHang = khachHangBUS.LayKhachHangTheoSoDienThoai(soDienThoai);
 
-            Console.WriteLine(khachHang.maKhachHang + "\n" + khachHang.hoTen + "\n" + khachHang.gioiTinh + "\n" + khachHang.ngaySinh + "\n" + khachHang.soDienThoai + "\n" + khachHang.email + "\n" + khachHang.diaChi + "\n" + khachHang.bacThanhVien + "\n" + khachHang.diemThanhVien + "\n" + khachHang.diemTichLuy + "\n");
+            Console.WriteLine(khachHang.maKhachHang + "\n" + khachHang.hoTen + "\n" + khachHang.gioiTinh + "\n" + khachHang.ngaySinh + "\n" + khachHang.soDienThoai + "\n" + khachHang.email + "\n" + khachHang.diaChi + "\n" + khachHang.bacThanhVien + "\n" + khachHang.diemTichLuy + "\n");
         }
 
         public static void TestThemKhachHang()
@@ -88,7 +88,7 @@ namespace ConsoleTesting
             List<KhachHang> listKhachHang = khachHangBUS.TimKiemKhachHang(keyword);
             foreach (KhachHang khachHang in listKhachHang)
             {
-                Console.WriteLine(khachHang.maKhachHang + "\n" + khachHang.hoTen + "\n" + khachHang.gioiTinh + "\n" + khachHang.ngaySinh + "\n" + khachHang.soDienThoai + "\n" + khachHang.email + "\n" + khachHang.diaChi + "\n" + khachHang.bacThanhVien + "\n" + khachHang.diemThanhVien + "\n" + khachHang.diemTichLuy + "\n");
+                Console.WriteLine(khachHang.maKhachHang + "\n" + khachHang.hoTen + "\n" + khachHang.gioiTinh + "\n" + khachHang.ngaySinh + "\n" + khachHang.soDienThoai + "\n" + khachHang.email + "\n" + khachHang.diaChi + "\n" + khachHang.bacThanhVien + "\n"  + khachHang.diemTichLuy + "\n");
             }
         }
 
@@ -99,7 +99,7 @@ namespace ConsoleTesting
             List<KhachHang> listKhachHang = khachHangBUS.LocKhachHangTheoGioiTinh(gioiTinh);
             foreach (KhachHang khachHang in listKhachHang)
             {
-                Console.WriteLine(khachHang.maKhachHang + "\n" + khachHang.hoTen + "\n" + khachHang.gioiTinh + "\n" + khachHang.ngaySinh + "\n" + khachHang.soDienThoai + "\n" + khachHang.email + "\n" + khachHang.diaChi + "\n" + khachHang.bacThanhVien + "\n" + khachHang.diemThanhVien + "\n" + khachHang.diemTichLuy + "\n");
+                Console.WriteLine(khachHang.maKhachHang + "\n" + khachHang.hoTen + "\n" + khachHang.gioiTinh + "\n" + khachHang.ngaySinh + "\n" + khachHang.soDienThoai + "\n" + khachHang.email + "\n" + khachHang.diaChi + "\n" + khachHang.bacThanhVien + "\n" + khachHang.diemTichLuy + "\n");
             }
         }
 
@@ -110,7 +110,7 @@ namespace ConsoleTesting
             List<KhachHang> listKhachHang = khachHangBUS.LocKhachHangTheoBacThanhVien(bacThanhVien);
             foreach (KhachHang khachHang in listKhachHang)
             {
-                Console.WriteLine(khachHang.maKhachHang + "\n" + khachHang.hoTen + "\n" + khachHang.gioiTinh + "\n" + khachHang.ngaySinh + "\n" + khachHang.soDienThoai + "\n" + khachHang.email + "\n" + khachHang.diaChi + "\n" + khachHang.bacThanhVien + "\n" + khachHang.diemThanhVien + "\n" + khachHang.diemTichLuy + "\n");
+                Console.WriteLine(khachHang.maKhachHang + "\n" + khachHang.hoTen + "\n" + khachHang.gioiTinh + "\n" + khachHang.ngaySinh + "\n" + khachHang.soDienThoai + "\n" + khachHang.email + "\n" + khachHang.diaChi + "\n" + khachHang.bacThanhVien + "\n" + khachHang.diemTichLuy + "\n");
             }
         }
 
@@ -131,7 +131,7 @@ namespace ConsoleTesting
             string diemMuonDoi = Console.ReadLine();
             Console.Write("Nhập tổng tiền: ");
             string tongTien = Console.ReadLine();
-            Console.WriteLine(khachHangBUS.GiamGiaThanhVien(maKhachHang, diemMuonDoi, tongTien));
+            Console.WriteLine(khachHangBUS.GiamGiaThanhVien(maKhachHang, tongTien));
         }
     }
 }

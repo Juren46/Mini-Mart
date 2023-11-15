@@ -76,5 +76,15 @@ namespace BUS
         {
             return sanPhamDAO.LocSanPhamTheoLoaiSanPham(tenLoaiSanPham);
         }
+
+        public List<SanPham> LocSanPhamTheoNhaCungCap(string maNhaCungCap)
+        {
+            return sanPhamDAO.LocSanPhamTheoNhaCungCap(maNhaCungCap);
+        }
+
+        public bool CapNhatSoLuong(string maSanPham, int soLuong)
+        {
+            return sanPhamDAO.CapNhatSoLuong(maSanPham, soLuong);
+        }
     }
 }

@@ -28,8 +28,8 @@ namespace DAO
                 chiTietHoaDon.maSanPham = row["maSanPham"].ToString();
                 chiTietHoaDon.donViTinh = row["donViTinh"].ToString();
                 chiTietHoaDon.soLuong = (int)row["soLuong"];
-                chiTietHoaDon.donGia = (decimal)row["donGia"];
-                chiTietHoaDon.thanhTien = (decimal)row["thanhTien"];
+                chiTietHoaDon.donGia = Decimal.Parse(row["giaBan"].ToString());
+                chiTietHoaDon.thanhTien = Decimal.Parse(row["thanhTien"].ToString());
 
                 listChiTietHoaDon.Add(chiTietHoaDon);
             }

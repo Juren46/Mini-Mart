@@ -117,18 +117,18 @@ namespace BUS
             return khachHangDAO.LocKhachHangTheoBacThanhVien(bacThanhVien);
         }
 
-        public bool TichDiem(string maKhachHang, string tongTien)
+        public decimal TichDiem(string maKhachHang, string tongTien)
         {
             KhachHang khachHang = khachHangDAO.LayKhachHangTheoMa(maKhachHang);
 
             return khachHangDAO.TichDiem(khachHang, Decimal.Parse(tongTien));
         }
 
-        public decimal GiamGiaThanhVien(string maKhachHang, string diemMuonDoi, string tongTien)
+        public decimal GiamGiaThanhVien(string maKhachHang, string tongTien)
         {
             KhachHang khachHang = khachHangDAO.LayKhachHangTheoMa(maKhachHang);
 
-            return khachHangDAO.GiamGiaThanhVien(khachHang, Decimal.Parse(diemMuonDoi), Decimal.Parse(tongTien));
+            return khachHangDAO.GiamGiaThanhVien(khachHang, Decimal.Parse(tongTien));
         }
     }
 }

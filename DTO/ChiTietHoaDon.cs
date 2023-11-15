@@ -22,13 +22,10 @@ namespace DTO
             this.thanhTien = thanhTien;
         }
 
-        public ChiTietHoaDon(string maSanPham, string donViTinh, int soLuong, decimal donGia, decimal thanhTien)
+        public ChiTietHoaDon(string maSanPham, int soLuong)
         {
             this.maSanPham = maSanPham;
-            this.donViTinh = donViTinh;
             this.soLuong = soLuong;
-            this.donGia = donGia;
-            this.thanhTien = thanhTien;
         }
 
         public string maHoaDon { get; set; }

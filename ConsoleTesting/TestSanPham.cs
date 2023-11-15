@@ -79,5 +79,17 @@ namespace ConsoleTesting
                 Console.WriteLine(sanPham.maSanPham + "\n" + sanPham.maLoaiSanPham + "\n" + sanPham.maNhaCungCap + "\n" + sanPham.tenSanPham + "\n" + sanPham.donViTinh + "\n" + sanPham.soLuong + "\n" + sanPham.giaBan + "\n" + sanPham.duongDanAnh + "\n" + sanPham.maLoaiSanPham + "\n" + sanPham.trangThai + "\n");
             }
         }
+
+        public static void LocSanPhamTheoNhaCungCap()
+        {
+            Console.Write("Nhập mã nhà cung cấp: ");
+            string maNhaCungCap = Console.ReadLine();     //Luôn đúng
+            List<SanPham> listSanPham = sanPhamBUS.LocSanPhamTheoNhaCungCap(maNhaCungCap);
+
+            foreach (SanPham sanPham in listSanPham)
+            {
+                Console.WriteLine(sanPham.maSanPham + "\n" + sanPham.maLoaiSanPham + "\n" + sanPham.maNhaCungCap + "\n" + sanPham.tenSanPham + "\n" + sanPham.donViTinh + "\n" + sanPham.soLuong + "\n" + sanPham.giaBan + "\n" + sanPham.duongDanAnh + "\n" + sanPham.maLoaiSanPham + "\n" + sanPham.trangThai + "\n");
+            }
+        }
     }
 }

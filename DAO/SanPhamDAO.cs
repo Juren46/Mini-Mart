@@ -159,5 +159,43 @@ namespace DAO
 
             return listSanPham;
         }
+
+        public List<SanPham> LocSanPhamTheoNhaCungCap(string maNhaCungCap)
+        {
+            List<SanPham> listSanPham = new List<SanPham>();
+
+            string query = $"SELECT * FROM SanPham AS SP " +
+                           $"JOIN NhaCungCap AS NCC ON SP.maNhaCungCap = NCC.maNhaCungCap " +
+                           $"WHERE NCC.maNhaCungCap = '{maNhaCungCap}';";
+
+            DataTable dataTable = DBHelper.ExecuteQuery(query);
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                SanPham sanPham = new SanPham();
+                sanPham.maSanPham = row["maSanPham"].ToString();
+                sanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
+                sanPham.maNhaCungCap = row["maNhaCungCap"].ToString();
+                sanPham.tenSanPham = row["tenSanPham"].ToString();
+                sanPham.donViTinh = row["donViTinh"].ToString();
+                sanPham.soLuong = (int)row["soLuong"];
+                sanPham.giaBan = (decimal)row["giaBan"];
+                sanPham.duongDanAnh = row["duongDanAnh"].ToString();
+                sanPham.trangThai = (bool)row["trangThai"];
+
+                listSanPham.Add(sanPham);
+            }
+
+            return listSanPham;
+        }
+
+        public bool CapNhatSoLuong(string maSanPham, int soLuong)
+        {
+            string query = $"UPDATE SanPham SET soLuong = soLuong + {soLuong} WHERE maSanPham = '{maSanPham}';";
+
+            int rowsAffected = DBHelper.ExecuteNonQuery(query);
+
+            return rowsAffected > 0;
+        }
     }
 }
