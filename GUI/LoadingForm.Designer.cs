@@ -78,7 +78,7 @@
             // timer3
             // 
             timer3.Enabled = true;
-            timer3.Interval = 30;
+            timer3.Interval = 4;
             timer3.Tick += timer3_Tick;
             // 
             // LoadingForm
