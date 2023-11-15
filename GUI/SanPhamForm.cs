@@ -18,50 +18,79 @@ namespace GUI
         }
         private void Patient_Load(object sender, EventArgs e)
         {
-            guna2DataGridView1.Rows.Add(9);
+            guna2DataGridView1.Rows.Add(8);
             guna2DataGridView1.Rows[0].Cells[1].Value = "DCT12190";
-            guna2DataGridView1.Rows[0].Cells[2].Value = "Bánh mì susu";
+            guna2DataGridView1.Rows[0].Cells[2].Value = "Bánh mì bơ sữa";
             guna2DataGridView1.Rows[0].Cells[3].Value = "thực phẩm";
             guna2DataGridView1.Rows[0].Cells[4].Value = "ABC bakery";
             guna2DataGridView1.Rows[0].Cells[5].Value = "gói";
             guna2DataGridView1.Rows[0].Cells[6].Value = "10";
-            guna2DataGridView1.Rows[0].Cells[7].Value = "10.000";
+            guna2DataGridView1.Rows[0].Cells[7].Value = "10.000đ";
 
-            guna2DataGridView1.Rows.Add(9);
+            guna2DataGridView1.Rows.Add(8);
             guna2DataGridView1.Rows[1].Cells[1].Value = "DCT12190";
-            guna2DataGridView1.Rows[1].Cells[2].Value = "Bánh mì susu";
+            guna2DataGridView1.Rows[1].Cells[2].Value = "Bánh mì bơ sữa";
             guna2DataGridView1.Rows[1].Cells[3].Value = "thực phẩm";
             guna2DataGridView1.Rows[1].Cells[4].Value = "ABC bakery";
             guna2DataGridView1.Rows[1].Cells[5].Value = "gói";
             guna2DataGridView1.Rows[1].Cells[6].Value = "10";
-            guna2DataGridView1.Rows[1].Cells[7].Value = "10.000";
+            guna2DataGridView1.Rows[1].Cells[7].Value = "10.000đ";
 
-            guna2DataGridView1.Rows.Add(9);
+            guna2DataGridView1.Rows.Add(8);
+            guna2DataGridView1.Rows[2].Cells[1].Value = "DCT12190";
+            guna2DataGridView1.Rows[2].Cells[2].Value = "Bánh mì bơ sữa";
+            guna2DataGridView1.Rows[2].Cells[3].Value = "thực phẩm";
+            guna2DataGridView1.Rows[2].Cells[4].Value = "ABC bakery";
+            guna2DataGridView1.Rows[2].Cells[5].Value = "gói";
+            guna2DataGridView1.Rows[2].Cells[6].Value = "10";
+            guna2DataGridView1.Rows[2].Cells[7].Value = "10.000đ";
+
+            guna2DataGridView1.Rows.Add(8);
             guna2DataGridView1.Rows[3].Cells[1].Value = "DCT12190";
-            guna2DataGridView1.Rows[3].Cells[2].Value = "Bánh mì susu";
+            guna2DataGridView1.Rows[3].Cells[2].Value = "Bánh mì bơ sữa";
             guna2DataGridView1.Rows[3].Cells[3].Value = "thực phẩm";
             guna2DataGridView1.Rows[3].Cells[4].Value = "ABC bakery";
             guna2DataGridView1.Rows[3].Cells[5].Value = "gói";
             guna2DataGridView1.Rows[3].Cells[6].Value = "10";
-            guna2DataGridView1.Rows[3].Cells[7].Value = "10.000";
+            guna2DataGridView1.Rows[3].Cells[7].Value = "10.000đ";
 
-            guna2DataGridView1.Rows.Add(9);
+            guna2DataGridView1.Rows.Add(8);
             guna2DataGridView1.Rows[4].Cells[1].Value = "DCT12190";
-            guna2DataGridView1.Rows[4].Cells[2].Value = "Bánh mì susu";
+            guna2DataGridView1.Rows[4].Cells[2].Value = "Bánh mì bơ sữa";
             guna2DataGridView1.Rows[4].Cells[3].Value = "thực phẩm";
             guna2DataGridView1.Rows[4].Cells[4].Value = "ABC bakery";
             guna2DataGridView1.Rows[4].Cells[5].Value = "gói";
             guna2DataGridView1.Rows[4].Cells[6].Value = "10";
-            guna2DataGridView1.Rows[4].Cells[7].Value = "10.000";
+            guna2DataGridView1.Rows[4].Cells[7].Value = "10.000đ";
 
-            guna2DataGridView1.Rows.Add(9);
+            guna2DataGridView1.Rows.Add(8);
             guna2DataGridView1.Rows[5].Cells[1].Value = "DCT12190";
-            guna2DataGridView1.Rows[5].Cells[2].Value = "Bánh mì susu";
+            guna2DataGridView1.Rows[5].Cells[2].Value = "Bánh mì bơ sữa";
             guna2DataGridView1.Rows[5].Cells[3].Value = "thực phẩm";
             guna2DataGridView1.Rows[5].Cells[4].Value = "ABC bakery";
             guna2DataGridView1.Rows[5].Cells[5].Value = "gói";
             guna2DataGridView1.Rows[5].Cells[6].Value = "10";
-            guna2DataGridView1.Rows[5].Cells[7].Value = "10.000";
+            guna2DataGridView1.Rows[5].Cells[7].Value = "10.000đ";
+
+            guna2DataGridView1.Rows.Add(8);
+            guna2DataGridView1.Rows[6].Cells[1].Value = "DCT12190";
+            guna2DataGridView1.Rows[6].Cells[2].Value = "Bánh mì bơ sữa";
+            guna2DataGridView1.Rows[6].Cells[3].Value = "thực phẩm";
+            guna2DataGridView1.Rows[6].Cells[4].Value = "ABC bakery";
+            guna2DataGridView1.Rows[6].Cells[5].Value = "gói";
+            guna2DataGridView1.Rows[6].Cells[6].Value = "10";
+            guna2DataGridView1.Rows[6].Cells[7].Value = "10.000đ";
+
+            guna2DataGridView1.Rows.Add(8);
+            guna2DataGridView1.Rows[7].Cells[1].Value = "DCT12190";
+            guna2DataGridView1.Rows[7].Cells[2].Value = "Bánh mì bơ sữa";
+            guna2DataGridView1.Rows[7].Cells[3].Value = "thực phẩm";
+            guna2DataGridView1.Rows[7].Cells[4].Value = "ABC bakery";
+            guna2DataGridView1.Rows[7].Cells[5].Value = "gói";
+            guna2DataGridView1.Rows[7].Cells[6].Value = "10";
+            guna2DataGridView1.Rows[7].Cells[7].Value = "10.000đ";
+
+
 
 
         }
@@ -109,11 +138,27 @@ namespace GUI
             }
         }
 
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
 
+            ChiTietSanPhamForm chitietsanphamfrom = new ChiTietSanPhamForm();
+            chitietsanphamfrom.ShowDialog();
 
+        }
 
-
-
-
+        private void guna2DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            // Kiểm tra số lượng dòng được chọn
+            if (guna2DataGridView1.SelectedRows.Count > 1)
+            {
+                // Nếu nhiều hơn 1 dòng được chọn, hiển thị nút xoá tất cả
+                btnDeleteAll.Visible = true;
+            }
+            else
+            {
+                // Nếu không có hoặc chỉ có 1 dòng được chọn, ẩn nút xoá tất cả
+                btnDeleteAll.Visible = false;
+            }
+        }
     }
 }
