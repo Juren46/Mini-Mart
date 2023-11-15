@@ -86,7 +86,7 @@ namespace GUI
             //open only form
             if (currentChildForm != null)
             {
-                currentChildForm.Close();
+                currentChildForm.Hide();
             }
             currentChildForm = childForm;
             //End
