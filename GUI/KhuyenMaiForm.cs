@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class ChiTietSanPhamForm : Form
+    public partial class KhuyenMaiForm : Form
     {
-        public ChiTietSanPhamForm()
+        public KhuyenMaiForm()
         {
             InitializeComponent();
-            CenterToParent();
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
