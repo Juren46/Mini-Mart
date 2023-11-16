@@ -18,7 +18,7 @@ namespace GUI
             CenterToParent();
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
