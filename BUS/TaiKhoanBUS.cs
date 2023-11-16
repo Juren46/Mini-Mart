@@ -108,5 +108,10 @@ namespace BUS
         {
             return taiKhoanDAO.LayDanhSachTaiKhoanChuaDung();
         }
+
+        public bool KiemTraTaiKhoanCoNguoiDung(string tenTaiKhoan)
+        {
+            return taiKhoanDAO.KiemTraTaiKhoanCoNguoiDung(tenTaiKhoan);
+        }
     }
 }

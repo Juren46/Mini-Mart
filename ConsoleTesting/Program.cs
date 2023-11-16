@@ -81,12 +81,17 @@ namespace ConsoleTesting
             //TestHoaDon.TestLayHoaDonTheoMa();
             //TestHoaDon.TestLayDanhSachHoaDonTheoNgay();
             //TestHoaDon.TestLayDanhSachHoaDonTheoKhoangThoiGian();
-            TestHoaDon.TestThemHoaDon();
+            //TestHoaDon.TestThemHoaDon();
 
             //TestChiTietHoaDon.TestLayDanhSachChiTietHoaDon();
 
             //TestPhieuNhap.TestThemPhieuNhap();
             //TestPhieuNhap.TestLayPhieuNhapTheoMa();
+            //TestPhieuNhap.TestLayDanhSachPhieuNhapChuaDuyet();
+            //TestPhieuNhap.TestLayDanhSachPhieuNhapDaDuyet();
+            //TestPhieuNhap.TestSuaPhieuNhapChuaDuyet();
+            //TestPhieuNhap.TestDuyetPhieuNhap();
+            //TestPhieuNhap.TestTuChoiPhieuNhap();
         }
     }
 }

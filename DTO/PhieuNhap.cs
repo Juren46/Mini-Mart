@@ -10,8 +10,7 @@ namespace DTO
     {
         public PhieuNhap()
         {
-            trangThaiDuyet = false;
-            trangThai = true;
+            trangThaiDuyet = "Chưa duyệt";
         }
 
         public PhieuNhap(string maPhieuNhap, string maNhaCungCap, string maNhanVien, string maQuanLi, DateTime thoiGianTao, DateTime thoiGianDuyet, decimal thanhTien)
@@ -23,8 +22,7 @@ namespace DTO
             this.thoiGianTao = thoiGianTao;
             this.thoiGianDuyet = thoiGianDuyet;
             this.thanhTien = thanhTien;
-            trangThaiDuyet = false;
-            trangThai = true;
+            trangThaiDuyet = "Chưa duyệt";
         }
 
         public string maPhieuNhap { get; set; }
@@ -34,7 +32,6 @@ namespace DTO
         public DateTime thoiGianTao { get; set; }
         public DateTime? thoiGianDuyet { get; set; }
         public decimal thanhTien { get; set; }
-        public bool trangThaiDuyet { get; set; }
-        public bool trangThai { get; set; }
+        public string trangThaiDuyet { get; set; }
     }
 }

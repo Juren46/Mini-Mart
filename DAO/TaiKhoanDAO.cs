@@ -169,5 +169,19 @@ namespace DAO
 
             return listTaiKhoan;
         }
+
+        public bool KiemTraTaiKhoanCoNguoiDung(string tenTaiKhoan)
+        {
+            string query = "SELECT * FROM TaiKhoan AS TK " +
+                           "WHERE TK.tenTaiKhoan IN " +
+                           "(SELECT TenTaiKhoan FROM NhanVien " +
+                           "UNION SELECT TenTaiKhoan FROM Admin " +
+                           "UNION SELECT TenTaiKhoan FROM QuanLi) " +
+                           $"AND TK.tenTaiKhoan = '{tenTaiKhoan}';";
+
+            DataTable dataTable = DBHelper.ExecuteQuery(query);
+
+            return dataTable.Rows.Count > 0;
+        }
     }
 }

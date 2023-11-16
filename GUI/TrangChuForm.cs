@@ -1,4 +1,6 @@
-﻿using FontAwesome.Sharp;
+﻿using BUS;
+using DTO;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,16 +14,23 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-
     public partial class TrangChuForm : Form
     {
+        public static TaiKhoan taiKhoan;
+        public static TaiKhoanBUS taiKhoanBUS;
+
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-        public TrangChuForm()
+        public TrangChuForm(TaiKhoan taiKhoan)
         {
             InitializeComponent();
+
+            TrangChuForm.taiKhoan = taiKhoan;
+            taiKhoanBUS = new TaiKhoanBUS();
+
             CenterToScreen();
+
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 50);
             panelMenu.Controls.Add(leftBorderBtn);
@@ -30,7 +39,80 @@ namespace GUI
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            HideSideMenu();
+            HienThiSideMenuTheoPhanQuyen();
         }
+
+        private void HideSideMenu()
+        {
+            btnBanHang.Visible = false;
+            btnSanPham.Visible = false;
+            btnKhuyenMai.Visible = false;
+            btnNhanVien.Visible = false;
+            btnPhieuNhap.Visible = false;
+            btnThongKe.Visible = false;
+            btnLoaiSanPham.Visible = false;
+            btnKhachHang.Visible = false;
+            btnHoaDon.Visible = false;
+            btnPhanQuyen.Visible = false;
+            btnNhaCungCap.Visible = false;
+            btnTaiKhoan.Visible = false;
+        }
+
+        private void HienThiSideMenuTheoPhanQuyen()
+        {
+            switch (taiKhoan.maPhanQuyen)
+            {
+                case "PQ01":
+                    btnPhanQuyen.Visible = true;
+                    btnTaiKhoan.Visible = true;
+                    break;
+
+                case "PQ02":
+                    btnNhanVien.Visible = true;
+                    btnSanPham.Visible = true;
+                    btnLoaiSanPham.Visible = true;
+                    btnNhaCungCap.Visible = true;
+                    btnPhieuNhap.Visible = true;
+                    btnHoaDon.Visible = true;
+                    btnKhuyenMai.Visible = true;
+                    btnKhachHang.Visible = true;
+                    btnThongKe.Visible = true;
+                    break;
+
+                case "PQ03":
+                    btnBanHang.Visible = true;
+                    btnSanPham.Visible = true;
+                    btnLoaiSanPham.Visible = true;
+                    btnKhuyenMai.Visible = true;
+                    btnHoaDon.Visible = true;
+                    break;
+
+                case "PQ04":
+                    btnSanPham.Visible = true;
+                    btnLoaiSanPham.Visible = true;
+                    btnNhaCungCap.Visible = true;
+                    btnPhieuNhap.Visible = true;
+                    break;
+            }
+        }
+
+        public void KiemTraNguoiDung()
+        {
+            if (taiKhoanBUS.KiemTraTaiKhoanCoNguoiDung(taiKhoan.tenTaiKhoan))
+                HienThiSideMenuTheoPhanQuyen();
+            else
+            {
+                Label message = new Label();
+                message.Text = "Tài khoản chưa có người dùng, vui lòng liên hệ admin để thêm người dùng vào tài khoản.";
+                message.Font = new Font("Roboto", 16, FontStyle.Regular);
+                message.AutoSize = true;
+                panelDesktop.Controls.Add(message);
+                message.Anchor = AnchorStyles.None;
+            }
+        }
+
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(255, 192, 203);
@@ -100,34 +182,64 @@ namespace GUI
             lblTitleChildForm.Text = childForm.Text;
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color2);
-
-        }
-
-        private void iconButton3_Click(object sender, EventArgs e)
+        private void btnBanHang_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void btnSanPham_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new SanPhamForm());
+        }
+
+        private void btnKhuyenMai_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
         }
 
-        private void iconButton6_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color2);
-
-        }
-
-        private void iconButton5_Click(object sender, EventArgs e)
+        private void btnNhanVien_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
         }
 
-        private void iconButton4_Click(object sender, EventArgs e)
+        private void btnPhieuNhap_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+        }
+
+        private void btnLoaiSanPham_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new LoaiSanPhamForm());
+        }
+
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+        }
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+        }
+
+        private void btnPhanQuyen_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+        }
+
+        private void btnNhaCungCap_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+        }
+
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
         }
@@ -162,33 +274,6 @@ namespace GUI
                 FormBorderStyle = FormBorderStyle.None;
             else
                 FormBorderStyle = FormBorderStyle.Sizable;
-        }
-
-        private void btnKhuyenMai_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color2);
-        }
-
-        private void btnNhanVien_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color2);
-        }
-
-        private void btnLoaiSanPham_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new SanPhamForm());
-        }
-
-        private void btnThongKe_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color2);
-        }
-
-        private void iconButton1_Click_1(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new LoaiSanPhamForm());
         }
     }
 }
