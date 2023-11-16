@@ -1,4 +1,5 @@
 ﻿using DAO;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,15 @@ namespace BUS
 {
     public class ChiTietPhieuNhapBUS
     {
-        ChiTietHoaDonDAO chiTietHoaDonDAO;
+        ChiTietPhieuNhapDAO chiTietPhieuNhapDAO;
         public ChiTietPhieuNhapBUS() 
         { 
-            chiTietHoaDonDAO = new ChiTietHoaDonDAO();
+            chiTietPhieuNhapDAO = new ChiTietPhieuNhapDAO();
+        }
+
+        public List<ChiTietPhieuNhap> LayDanhSachChiTietPhieuNhap(string maPhieuNhap)
+        {
+            return chiTietPhieuNhapDAO.LayDanhSachChiTietPhieuNhap(maPhieuNhap);
         }
     }
 }

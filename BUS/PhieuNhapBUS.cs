@@ -29,6 +29,16 @@ namespace BUS
             return phieuNhapDAO.LayPhieuNhapTheoMa(maPhieuNhap);
         }
 
+        public List<PhieuNhap> LayDanhSachPhieuNhapChuaDuyet()
+        {
+            return phieuNhapDAO.LayDanhSachPhieuNhapChuaDuyet();
+        }
+
+        public List<PhieuNhap> LayDanhSachPhieuNhapDaDuyet()
+        {
+            return phieuNhapDAO.LayDanhSachPhieuNhapDaDuyet();
+        }
+
         public string ThemPhieuNhap(List<ChiTietPhieuNhap> listChiTietPhieuNhap, string maPhieuNhap, string maNhaCungCap, string maNhanVien, string thanhTien)
         {
             PhieuNhap phieuNhap= new PhieuNhap();
@@ -45,24 +55,37 @@ namespace BUS
                 return "Thêm phiếu nhập thất bại!";
         }
 
-        /*public string SuaPhieuNhapChuaDuyet(string maPhieuNhap, List<ChiTietPhieuNhap> listChiTietPhieuNhap, string maQuanLi)
+        public string SuaPhieuNhapChuaDuyet(List<ChiTietPhieuNhap> listChiTietPhieuNhap)
         {
-            PhieuNhap phieuNhap = phieuNhapDAO.LayPhieuNhapTheoMa(maPhieuNhap);
-
-
-
-            if (phieuNhapDAO.SuaPhieuNhapChuaDuyet(phieuNhap, listChiTietPhieuNhap))
+            if (phieuNhapDAO.SuaPhieuNhapChuaDuyet(listChiTietPhieuNhap))
                 return "Sửa phiếu nhập chưa duyệt thành công!";
             else
                 return "Sửa phiếu nhập chưa duyệt thất bại!";
-        }*/
+        }
 
-        public string DuyetPhieuNhap(string maPhieuNhap)
+        public string DuyetPhieuNhap(string maPhieuNhap, string maQuanLi)
         {
-            if (phieuNhapDAO.DuyetPhieuNhap(maPhieuNhap))
+            List<ChiTietPhieuNhap> listChiTietPhieuNhap = new ChiTietPhieuNhapDAO().LayDanhSachChiTietPhieuNhap(maPhieuNhap);
+
+            foreach (ChiTietPhieuNhap chiTietPhieuNhap in listChiTietPhieuNhap)
+            {
+                SanPhamBUS sanPhamBUS = new SanPhamBUS();
+
+                sanPhamBUS.CapNhatSoLuong(chiTietPhieuNhap.maSanPham, +(chiTietPhieuNhap.soLuong));
+            }
+
+            if (phieuNhapDAO.DuyetPhieuNhap(maPhieuNhap, maQuanLi, DateTime.Now))
                 return "Duyệt phiếu nhập thành công!";
             else
                 return "Duyệt phiếu nhập thất bại!";
+        }
+
+        public string TuChoiPhieuNhap(string maPhieuNhap)
+        {
+            if (phieuNhapDAO.TuChoiDuyetPhieuNhap(maPhieuNhap))
+                return "Từ chối duyệt phiếu nhập thành công!";
+            else
+                return "Từ chối duyệt phiếu nhập thất bại!";
         }
     }
 }

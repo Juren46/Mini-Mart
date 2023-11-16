@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,13 @@ namespace GUI
 {
     public partial class LoadingForm : Form
     {
-        public LoadingForm()
+        TaiKhoan taiKhoan;
+        public LoadingForm(TaiKhoan taiKhoan)
         {
             InitializeComponent();
             CenterToParent();
+
+            this.taiKhoan = taiKhoan;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -45,7 +49,7 @@ namespace GUI
             {
                 timer3.Stop();
 
-                TrangChuForm frm = new TrangChuForm();
+                TrangChuForm frm = new TrangChuForm(taiKhoan);
                 frm.Show();
                 this.Hide();
             }

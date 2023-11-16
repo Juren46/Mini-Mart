@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 namespace GUI
 {
@@ -16,12 +18,50 @@ namespace GUI
         {
             InitializeComponent();
             CenterToScreen();
+
+            this.KeyPreview = true;
+            this.KeyDown += DangNhapForm_KeyDown;
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void DangNhapForm_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
-            LoadingForm form = new LoadingForm();
-            form.Show();
+            if (e.KeyCode == Keys.Enter)
+            {
+                dangNhapButton_Click(sender, e);
+            }
+        }
+
+        private void tenTaiKhoanTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && (e.KeyChar == ' ' || !char.IsAscii(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void matKhauTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && (e.KeyChar == ' ' || !char.IsAscii(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dangNhapButton_Click(object sender, EventArgs e)
+        {
+            string tenTaiKhoan = tenTaiKhoanTextBox.Text.Trim();
+            string matKhau = matKhauTextBox.Text.Trim();
+
+            string message = new TaiKhoanBUS().KiemTraDangNhap(tenTaiKhoan, matKhau);
+
+            MessageBox.Show(message);
+
+            if (message.Equals("Đăng nhập thành công!"))
+            {
+                LoadingForm form = new LoadingForm(new TaiKhoanBUS().LayTaiKhoanTheoTen(tenTaiKhoan));
+                form.Show();
+                this.Hide();
+            }
         }
     }
 }
