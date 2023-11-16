@@ -371,6 +371,7 @@
             panel1.Controls.Add(lblTitleChildForm);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(iconCurrentChildForm);
+            panel1.Cursor = Cursors.Hand;
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(201, 0);
             panel1.Name = "panel1";
@@ -402,44 +403,47 @@
             // 
             // iconButton9
             // 
-            iconButton9.BackColor = Color.FromArgb(128, 171, 196);
+            iconButton9.BackColor = Color.FromArgb(0, 71, 107);
             iconButton9.FlatAppearance.BorderSize = 0;
+            iconButton9.FlatAppearance.MouseOverBackColor = Color.FromArgb(20, 91, 127);
             iconButton9.FlatStyle = FlatStyle.Flat;
             iconButton9.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton9.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
             iconButton9.IconColor = Color.White;
             iconButton9.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButton9.IconSize = 20;
-            iconButton9.Location = new Point(63, 9);
+            iconButton9.Location = new Point(63, 3);
             iconButton9.Name = "iconButton9";
             iconButton9.Padding = new Padding(0, 3, 0, 0);
-            iconButton9.Size = new Size(45, 25);
+            iconButton9.Size = new Size(45, 34);
             iconButton9.TabIndex = 11;
             iconButton9.UseVisualStyleBackColor = false;
             iconButton9.Click += btnMaximize_Click;
             // 
             // iconButton8
             // 
-            iconButton8.BackColor = Color.LightPink;
+            iconButton8.BackColor = Color.FromArgb(0, 71, 107);
             iconButton8.FlatAppearance.BorderSize = 0;
+            iconButton8.FlatAppearance.MouseOverBackColor = Color.FromArgb(20, 91, 127);
             iconButton8.FlatStyle = FlatStyle.Flat;
             iconButton8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton8.IconChar = FontAwesome.Sharp.IconChar.Xmark;
             iconButton8.IconColor = Color.White;
             iconButton8.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButton8.IconSize = 20;
-            iconButton8.Location = new Point(114, 9);
+            iconButton8.Location = new Point(114, 3);
             iconButton8.Name = "iconButton8";
             iconButton8.Padding = new Padding(0, 3, 0, 0);
-            iconButton8.Size = new Size(45, 25);
+            iconButton8.Size = new Size(45, 34);
             iconButton8.TabIndex = 9;
             iconButton8.UseVisualStyleBackColor = false;
             iconButton8.Click += btnExit_Click;
             // 
             // iconButton7
             // 
-            iconButton7.BackColor = Color.FromArgb(155, 203, 171);
+            iconButton7.BackColor = Color.FromArgb(0, 71, 107);
             iconButton7.FlatAppearance.BorderSize = 0;
+            iconButton7.FlatAppearance.MouseOverBackColor = Color.FromArgb(20, 91, 127);
             iconButton7.FlatStyle = FlatStyle.Flat;
             iconButton7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton7.ForeColor = Color.White;
@@ -447,10 +451,10 @@
             iconButton7.IconColor = Color.White;
             iconButton7.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButton7.IconSize = 20;
-            iconButton7.Location = new Point(12, 9);
+            iconButton7.Location = new Point(12, 3);
             iconButton7.Name = "iconButton7";
             iconButton7.Padding = new Padding(0, 3, 0, 0);
-            iconButton7.Size = new Size(45, 25);
+            iconButton7.Size = new Size(45, 34);
             iconButton7.TabIndex = 10;
             iconButton7.UseVisualStyleBackColor = false;
             iconButton7.Click += btnMinimize_Click;
