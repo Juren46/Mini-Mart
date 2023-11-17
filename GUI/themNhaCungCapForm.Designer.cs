@@ -44,8 +44,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            panel1 = new Panel();
-            label1 = new Label();
             panel2 = new Panel();
             guna2ToggleSwitch1 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -61,32 +59,11 @@
             label2 = new Label();
             guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            panel1.SuspendLayout();
+            label1 = new Label();
+            panel1 = new Panel();
             panel2.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(0, 79, 111);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(5);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(877, 49);
-            panel1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(38, 10);
-            label1.Margin = new Padding(5, 0, 5, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(256, 29);
-            label1.TabIndex = 0;
-            label1.Text = "Chi tiết nhà cung cấp";
             // 
             // panel2
             // 
@@ -339,6 +316,29 @@
             guna2TextBox1.Size = new Size(243, 36);
             guna2TextBox1.TabIndex = 23;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(38, 10);
+            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(256, 29);
+            label1.TabIndex = 0;
+            label1.Text = "Chi tiết nhà cung cấp";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(0, 79, 111);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(5);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(877, 49);
+            panel1.TabIndex = 2;
+            // 
             // themNhaCungCapForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -348,17 +348,14 @@
             Controls.Add(panel1);
             Name = "themNhaCungCapForm";
             Text = "Thêm nhà cung cấp";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panel1;
-        private Label label1;
         private Panel panel2;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
@@ -374,5 +371,7 @@
         private Label label8;
         private Label label7;
         private Guna.UI2.WinForms.Guna2ToggleSwitch guna2ToggleSwitch1;
+        private Label label1;
+        private Panel panel1;
     }
 }
