@@ -108,5 +108,16 @@ namespace BUS.OtherFunctions
 
             return phieuNhapID;
         }
+
+        public static string GenerateQuanLiID()
+        {
+            QuanLiBUS quanLiBUS = new QuanLiBUS();
+
+            int count = quanLiBUS.DemSoQuanLi();
+
+            string quanLiID = string.Format("QLI{0:D5}", ++count); ;
+
+            return quanLiID;
+        }
     }
 }
