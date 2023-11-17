@@ -85,6 +85,37 @@ namespace DAO
             return listPhieuNhap;
         }
 
+        public List<PhieuNhap> LayDanhSachPhieuNhapDaTuChoi()
+        {
+            List<PhieuNhap> listPhieuNhap = new List<PhieuNhap>();
+
+            string query = "SELECT * FROM PhieuNhap WHERE trangThaiDuyet = N'Từ chối';";
+
+            DataTable dataTable = DBHelper.ExecuteQuery(query);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    PhieuNhap phieuNhap = new PhieuNhap();
+
+                    phieuNhap.maPhieuNhap = dataTable.Rows[0]["maPhieuNhap"].ToString();
+                    phieuNhap.maNhaCungCap = dataTable.Rows[0]["maNhaCungCap"].ToString();
+                    phieuNhap.maNhanVien = dataTable.Rows[0]["maNhanVien"].ToString();
+                    phieuNhap.maQuanLi = dataTable.Rows[0]["maQuanLi"].ToString();
+                    phieuNhap.thoiGianTao = (DateTime)dataTable.Rows[0]["thoiGianTao"];
+                    try { phieuNhap.thoiGianDuyet = (DateTime)dataTable.Rows[0]["thoiGianDuyet"]; }
+                    catch { phieuNhap.thoiGianDuyet = null; }
+                    phieuNhap.thanhTien = Decimal.Parse(dataTable.Rows[0]["thanhTien"].ToString());
+                    phieuNhap.trangThaiDuyet = dataTable.Rows[0]["trangThaiDuyet"].ToString();
+
+                    listPhieuNhap.Add(phieuNhap);
+                }
+            }
+
+            return listPhieuNhap;
+        }
+
         public PhieuNhap LayPhieuNhapTheoMa(string maPhieuNhap)
         {
             PhieuNhap phieuNhap = new PhieuNhap();
@@ -167,6 +198,43 @@ namespace DAO
             int rowsAffected = DBHelper.ExecuteNonQuery(query);
 
             return rowsAffected > 0;
+        }
+
+        public List<PhieuNhap> TimKiemPhieuNhap(string tuKhoa, string trangThaiDuyet)
+        {
+            List<PhieuNhap> listPhieuNhap = new List<PhieuNhap> ();
+
+            string query = $"SELECT * FROM PhieuNhap " +
+                           $"WHERE LOWER(maPhieuNhap) LIKE '%{tuKhoa}%' " +
+                           $"OR LOWER(maNhaCungCap) LIKE '%{tuKhoa}%' " +
+                           $"OR LOWER(maNhanVien) LIKE '%{tuKhoa}%' " +
+                           $"OR LOWER(maQuanLi) LIKE '%{tuKhoa}%' " +
+                           $"OR thanhTien = {tuKhoa} " +
+                           $"WHERE trangThaiDuyet = N'{trangThaiDuyet}';";
+
+            DataTable dataTable = new DataTable();
+
+            if (dataTable.Rows.Count > 0)
+            {
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    PhieuNhap phieuNhap = new PhieuNhap();
+
+                    phieuNhap.maPhieuNhap = dataTable.Rows[0]["maPhieuNhap"].ToString();
+                    phieuNhap.maNhaCungCap = dataTable.Rows[0]["maNhaCungCap"].ToString();
+                    phieuNhap.maNhanVien = dataTable.Rows[0]["maNhanVien"].ToString();
+                    phieuNhap.maQuanLi = dataTable.Rows[0]["maQuanLi"].ToString();
+                    phieuNhap.thoiGianTao = (DateTime)dataTable.Rows[0]["thoiGianTao"];
+                    try { phieuNhap.thoiGianDuyet = (DateTime)dataTable.Rows[0]["thoiGianDuyet"]; }
+                    catch { phieuNhap.thoiGianDuyet = null; }
+                    phieuNhap.thanhTien = Decimal.Parse(dataTable.Rows[0]["thanhTien"].ToString());
+                    phieuNhap.trangThaiDuyet = dataTable.Rows[0]["trangThaiDuyet"].ToString();
+
+                    listPhieuNhap.Add(phieuNhap);
+                }
+            }
+
+            return listPhieuNhap;
         }
     }
 }
