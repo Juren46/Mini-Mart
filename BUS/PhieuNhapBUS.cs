@@ -39,6 +39,11 @@ namespace BUS
             return phieuNhapDAO.LayDanhSachPhieuNhapDaDuyet();
         }
 
+        public List<PhieuNhap> LayDanhSachPhieuNhapDaTuChoi()
+        {
+            return phieuNhapDAO.LayDanhSachPhieuNhapDaTuChoi();
+        }
+
         public string ThemPhieuNhap(List<ChiTietPhieuNhap> listChiTietPhieuNhap, string maPhieuNhap, string maNhaCungCap, string maNhanVien, string thanhTien)
         {
             PhieuNhap phieuNhap= new PhieuNhap();
