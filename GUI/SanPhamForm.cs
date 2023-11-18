@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BUS;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,111 +14,38 @@ namespace GUI
 {
     public partial class SanPhamForm : Form
     {
+        List<SanPham> listSanPham;
+        SanPhamBUS sanPhamBUS;
         public SanPhamForm()
         {
             InitializeComponent();
-        }
-        private void Patient_Load(object sender, EventArgs e)
-        {
-            guna2DataGridView1.Rows.Add(8);
-            guna2DataGridView1.Rows[0].Cells[1].Value = "DCT12190";
-            guna2DataGridView1.Rows[0].Cells[2].Value = "Bánh mì bơ sữa";
-            guna2DataGridView1.Rows[0].Cells[3].Value = "thực phẩm";
-            guna2DataGridView1.Rows[0].Cells[4].Value = "ABC bakery";
-            guna2DataGridView1.Rows[0].Cells[5].Value = "gói";
-            guna2DataGridView1.Rows[0].Cells[6].Value = "10";
-            guna2DataGridView1.Rows[0].Cells[7].Value = "10.000đ";
 
-            guna2DataGridView1.Rows.Add(8);
-            guna2DataGridView1.Rows[1].Cells[1].Value = "DCT12190";
-            guna2DataGridView1.Rows[1].Cells[2].Value = "Bánh mì bơ sữa";
-            guna2DataGridView1.Rows[1].Cells[3].Value = "thực phẩm";
-            guna2DataGridView1.Rows[1].Cells[4].Value = "ABC bakery";
-            guna2DataGridView1.Rows[1].Cells[5].Value = "gói";
-            guna2DataGridView1.Rows[1].Cells[6].Value = "10";
-            guna2DataGridView1.Rows[1].Cells[7].Value = "10.000đ";
-
-            guna2DataGridView1.Rows.Add(8);
-            guna2DataGridView1.Rows[2].Cells[1].Value = "DCT12190";
-            guna2DataGridView1.Rows[2].Cells[2].Value = "Bánh mì bơ sữa";
-            guna2DataGridView1.Rows[2].Cells[3].Value = "thực phẩm";
-            guna2DataGridView1.Rows[2].Cells[4].Value = "ABC bakery";
-            guna2DataGridView1.Rows[2].Cells[5].Value = "gói";
-            guna2DataGridView1.Rows[2].Cells[6].Value = "10";
-            guna2DataGridView1.Rows[2].Cells[7].Value = "10.000đ";
-
-            guna2DataGridView1.Rows.Add(8);
-            guna2DataGridView1.Rows[3].Cells[1].Value = "DCT12190";
-            guna2DataGridView1.Rows[3].Cells[2].Value = "Bánh mì bơ sữa";
-            guna2DataGridView1.Rows[3].Cells[3].Value = "thực phẩm";
-            guna2DataGridView1.Rows[3].Cells[4].Value = "ABC bakery";
-            guna2DataGridView1.Rows[3].Cells[5].Value = "gói";
-            guna2DataGridView1.Rows[3].Cells[6].Value = "10";
-            guna2DataGridView1.Rows[3].Cells[7].Value = "10.000đ";
-
-            guna2DataGridView1.Rows.Add(8);
-            guna2DataGridView1.Rows[4].Cells[1].Value = "DCT12190";
-            guna2DataGridView1.Rows[4].Cells[2].Value = "Bánh mì bơ sữa";
-            guna2DataGridView1.Rows[4].Cells[3].Value = "thực phẩm";
-            guna2DataGridView1.Rows[4].Cells[4].Value = "ABC bakery";
-            guna2DataGridView1.Rows[4].Cells[5].Value = "gói";
-            guna2DataGridView1.Rows[4].Cells[6].Value = "10";
-            guna2DataGridView1.Rows[4].Cells[7].Value = "10.000đ";
-
-            guna2DataGridView1.Rows.Add(8);
-            guna2DataGridView1.Rows[5].Cells[1].Value = "DCT12190";
-            guna2DataGridView1.Rows[5].Cells[2].Value = "Bánh mì bơ sữa";
-            guna2DataGridView1.Rows[5].Cells[3].Value = "thực phẩm";
-            guna2DataGridView1.Rows[5].Cells[4].Value = "ABC bakery";
-            guna2DataGridView1.Rows[5].Cells[5].Value = "gói";
-            guna2DataGridView1.Rows[5].Cells[6].Value = "10";
-            guna2DataGridView1.Rows[5].Cells[7].Value = "10.000đ";
-
-            guna2DataGridView1.Rows.Add(8);
-            guna2DataGridView1.Rows[6].Cells[1].Value = "DCT12190";
-            guna2DataGridView1.Rows[6].Cells[2].Value = "Bánh mì bơ sữa";
-            guna2DataGridView1.Rows[6].Cells[3].Value = "thực phẩm";
-            guna2DataGridView1.Rows[6].Cells[4].Value = "ABC bakery";
-            guna2DataGridView1.Rows[6].Cells[5].Value = "gói";
-            guna2DataGridView1.Rows[6].Cells[6].Value = "10";
-            guna2DataGridView1.Rows[6].Cells[7].Value = "10.000đ";
-
-            guna2DataGridView1.Rows.Add(8);
-            guna2DataGridView1.Rows[7].Cells[1].Value = "DCT12190";
-            guna2DataGridView1.Rows[7].Cells[2].Value = "Bánh mì bơ sữa";
-            guna2DataGridView1.Rows[7].Cells[3].Value = "thực phẩm";
-            guna2DataGridView1.Rows[7].Cells[4].Value = "ABC bakery";
-            guna2DataGridView1.Rows[7].Cells[5].Value = "gói";
-            guna2DataGridView1.Rows[7].Cells[6].Value = "10";
-            guna2DataGridView1.Rows[7].Cells[7].Value = "10.000đ";
-
-
-
-
+            sanPhamBUS = new SanPhamBUS();
+            listSanPham = sanPhamBUS.LayDanhSachSanPham();
         }
 
-        private void guna2DataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        private void SanPhamForm_Load(object sender, EventArgs e)
         {
-            int numberOfColumnsToSkip = 3; // Số lượng cột cuối cùng không cần chia
+            LoadDataToDataGridView(listSanPham);
+        }
 
-            if (e.ColumnIndex > -1 && e.RowIndex >= 0 && e.ColumnIndex < guna2DataGridView1.Columns.Count - numberOfColumnsToSkip)
+        private void LoadDataToDataGridView(List<SanPham> listSanPham)
+        {
+            for(int i = 0; i < listSanPham.Count; i++)
             {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-
-                // Đặt màu cho đường kẻ giữa các cột (nếu không thuộc vào cột cuối cùng)
-                using (Pen pen = new Pen(Color.FromArgb(242, 245, 250), 5))
-                {
-                    int x = e.CellBounds.Right - 1;
-                    int y1 = e.CellBounds.Top;
-                    int y2 = e.CellBounds.Bottom;
-                    e.Graphics.DrawLine(pen, x, y1, x, y2);
-                }
-
-                e.Handled = true;
+                sanPhamDataGridView.Rows.Add(1);
+                sanPhamDataGridView.Rows[i].Cells[0].Value = i + 1;
+                sanPhamDataGridView.Rows[i].Cells[1].Value = listSanPham[i].maSanPham;
+                sanPhamDataGridView.Rows[i].Cells[2].Value = listSanPham[i].tenSanPham;
+                sanPhamDataGridView.Rows[i].Cells[3].Value = new LoaiSanPhamBUS().LayLoaiSanPhamTheoMa(listSanPham[i].maLoaiSanPham).tenLoaiSanPham;
+                sanPhamDataGridView.Rows[i].Cells[4].Value = new NhaCungCapBUS().LayNhaCungCapTheoMa(listSanPham[i].maNhaCungCap).tenNhaCungCap;
+                sanPhamDataGridView.Rows[i].Cells[5].Value = listSanPham[i].donViTinh;
+                sanPhamDataGridView.Rows[i].Cells[6].Value = listSanPham[i].soLuong;
+                sanPhamDataGridView.Rows[i].Cells[7].Value = listSanPham[i].giaBan.ToString("#,##0") + " VNĐ";
             }
         }
 
-        private void guna2DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void sanPhamDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Kiểm tra xem cell đang được định dạng có phải là cell hình ảnh không.
             if ((e.ColumnIndex == 8 || e.ColumnIndex == 9 || e.ColumnIndex == 10) && e.RowIndex >= 0)
@@ -138,18 +67,31 @@ namespace GUI
             }
         }
 
-        private void iconButton3_Click(object sender, EventArgs e)
+        private void sanPhamDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
+            int numberOfColumnsToSkip = 3; // Số lượng cột cuối cùng không cần chia
 
-            ChiTietSanPhamForm chitietsanphamfrom = new ChiTietSanPhamForm();
-            chitietsanphamfrom.ShowDialog();
+            if (e.ColumnIndex > -1 && e.RowIndex >= 0 && e.ColumnIndex < sanPhamDataGridView.Columns.Count - numberOfColumnsToSkip)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
+                // Đặt màu cho đường kẻ giữa các cột (nếu không thuộc vào cột cuối cùng)
+                using (Pen pen = new Pen(Color.FromArgb(242, 245, 250), 5))
+                {
+                    int x = e.CellBounds.Right - 1;
+                    int y1 = e.CellBounds.Top;
+                    int y2 = e.CellBounds.Bottom;
+                    e.Graphics.DrawLine(pen, x, y1, x, y2);
+                }
+
+                e.Handled = true;
+            }
         }
 
-        private void guna2DataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void sanPhamDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             // Kiểm tra số lượng dòng được chọn
-            if (guna2DataGridView1.SelectedRows.Count > 1)
+            if (sanPhamDataGridView.SelectedRows.Count > 1)
             {
                 // Nếu nhiều hơn 1 dòng được chọn, hiển thị nút xoá tất cả
                 btnDeleteAll.Visible = true;
@@ -159,6 +101,12 @@ namespace GUI
                 // Nếu không có hoặc chỉ có 1 dòng được chọn, ẩn nút xoá tất cả
                 btnDeleteAll.Visible = false;
             }
+        }
+
+        private void themMoiButton_Click(object sender, EventArgs e)
+        {
+            ChiTietSanPhamForm chitietsanphamfrom = new ChiTietSanPhamForm();
+            chitietsanphamfrom.ShowDialog();
         }
     }
 }

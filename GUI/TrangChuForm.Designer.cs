@@ -46,32 +46,32 @@
             btnPhanQuyen = new FontAwesome.Sharp.IconButton();
             btnNhaCungCap = new FontAwesome.Sharp.IconButton();
             btnTaiKhoan = new FontAwesome.Sharp.IconButton();
+            panel5 = new Panel();
+            dangXuatButton = new FontAwesome.Sharp.IconButton();
+            panel4 = new Panel();
+            label2 = new Label();
+            label1 = new Label();
+            guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             panel1 = new Panel();
+            panel3 = new Panel();
+            lblTitleChildForm = new Label();
+            iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             panel2 = new Panel();
             iconButton9 = new FontAwesome.Sharp.IconButton();
             iconButton8 = new FontAwesome.Sharp.IconButton();
             iconButton7 = new FontAwesome.Sharp.IconButton();
             panelDesktop = new Panel();
             guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            panel3 = new Panel();
-            lblTitleChildForm = new Label();
-            iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            label1 = new Label();
-            label2 = new Label();
             panelNav.SuspendLayout();
             panelMenu.SuspendLayout();
             fllMenu.SuspendLayout();
+            panel5.SuspendLayout();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).BeginInit();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panelNav
@@ -382,6 +382,80 @@
             btnTaiKhoan.UseVisualStyleBackColor = false;
             btnTaiKhoan.Click += btnTaiKhoan_Click;
             // 
+            // panel5
+            // 
+            panel5.Controls.Add(dangXuatButton);
+            panel5.Dock = DockStyle.Bottom;
+            panel5.Location = new Point(0, 854);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(241, 57);
+            panel5.TabIndex = 1;
+            // 
+            // dangXuatButton
+            // 
+            dangXuatButton.BackColor = Color.FromArgb(0, 79, 111);
+            dangXuatButton.FlatAppearance.BorderSize = 0;
+            dangXuatButton.FlatStyle = FlatStyle.Flat;
+            dangXuatButton.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dangXuatButton.ForeColor = Color.White;
+            dangXuatButton.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
+            dangXuatButton.IconColor = Color.White;
+            dangXuatButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            dangXuatButton.IconSize = 40;
+            dangXuatButton.ImageAlign = ContentAlignment.MiddleLeft;
+            dangXuatButton.Location = new Point(1, 7);
+            dangXuatButton.Name = "dangXuatButton";
+            dangXuatButton.Padding = new Padding(10, 0, 20, 0);
+            dangXuatButton.Size = new Size(240, 50);
+            dangXuatButton.TabIndex = 20;
+            dangXuatButton.Text = "Đăng xuất ";
+            dangXuatButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            dangXuatButton.UseVisualStyleBackColor = false;
+            dangXuatButton.Click += dangXuatButton_Click;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(label2);
+            panel4.Controls.Add(label1);
+            panel4.Controls.Add(guna2CirclePictureBox1);
+            panel4.Dock = DockStyle.Top;
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(241, 180);
+            panel4.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.ForeColor = Color.Gainsboro;
+            label2.Location = new Point(31, 115);
+            label2.Name = "label2";
+            label2.Size = new Size(178, 24);
+            label2.TabIndex = 2;
+            label2.Text = "nhân viên bán hàng";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(107, 68);
+            label1.Name = "label1";
+            label1.Size = new Size(98, 25);
+            label1.TabIndex = 1;
+            label1.Text = "Ngọc Tín";
+            // 
+            // guna2CirclePictureBox1
+            // 
+            guna2CirclePictureBox1.ImageRotate = 0F;
+            guna2CirclePictureBox1.Location = new Point(31, 42);
+            guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            guna2CirclePictureBox1.Size = new Size(70, 70);
+            guna2CirclePictureBox1.TabIndex = 0;
+            guna2CirclePictureBox1.TabStop = false;
+            // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 71, 107);
@@ -394,6 +468,43 @@
             panel1.Size = new Size(1143, 90);
             panel1.TabIndex = 1;
             panel1.MouseDown += panelTitleBar_MouseDown;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(lblTitleChildForm);
+            panel3.Controls.Add(iconCurrentChildForm);
+            panel3.Dock = DockStyle.Left;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(410, 90);
+            panel3.TabIndex = 1;
+            // 
+            // lblTitleChildForm
+            // 
+            lblTitleChildForm.AutoSize = true;
+            lblTitleChildForm.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTitleChildForm.ForeColor = Color.White;
+            lblTitleChildForm.Location = new Point(91, 27);
+            lblTitleChildForm.Name = "lblTitleChildForm";
+            lblTitleChildForm.Size = new Size(299, 37);
+            lblTitleChildForm.TabIndex = 3;
+            lblTitleChildForm.Text = "Quản lý loại sản phẩm";
+            lblTitleChildForm.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // iconCurrentChildForm
+            // 
+            iconCurrentChildForm.BackColor = Color.FromArgb(0, 71, 107);
+            iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
+            iconCurrentChildForm.IconColor = Color.White;
+            iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconCurrentChildForm.IconSize = 60;
+            iconCurrentChildForm.Location = new Point(25, 15);
+            iconCurrentChildForm.Name = "iconCurrentChildForm";
+            iconCurrentChildForm.Padding = new Padding(10, 0, 0, 0);
+            iconCurrentChildForm.Size = new Size(60, 60);
+            iconCurrentChildForm.SizeMode = PictureBoxSizeMode.Zoom;
+            iconCurrentChildForm.TabIndex = 2;
+            iconCurrentChildForm.TabStop = false;
             // 
             // panel2
             // 
@@ -487,116 +598,6 @@
             guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             guna2ContextMenuStrip1.Size = new Size(61, 4);
             // 
-            // panel3
-            // 
-            panel3.Controls.Add(lblTitleChildForm);
-            panel3.Controls.Add(iconCurrentChildForm);
-            panel3.Dock = DockStyle.Left;
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(410, 90);
-            panel3.TabIndex = 1;
-            // 
-            // lblTitleChildForm
-            // 
-            lblTitleChildForm.AutoSize = true;
-            lblTitleChildForm.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitleChildForm.ForeColor = Color.White;
-            lblTitleChildForm.Location = new Point(91, 27);
-            lblTitleChildForm.Name = "lblTitleChildForm";
-            lblTitleChildForm.Size = new Size(299, 37);
-            lblTitleChildForm.TabIndex = 3;
-            lblTitleChildForm.Text = "Quản lý loại sản phẩm";
-            lblTitleChildForm.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // iconCurrentChildForm
-            // 
-            iconCurrentChildForm.BackColor = Color.FromArgb(0, 71, 107);
-            iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
-            iconCurrentChildForm.IconColor = Color.White;
-            iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconCurrentChildForm.IconSize = 60;
-            iconCurrentChildForm.Location = new Point(25, 15);
-            iconCurrentChildForm.Name = "iconCurrentChildForm";
-            iconCurrentChildForm.Padding = new Padding(10, 0, 0, 0);
-            iconCurrentChildForm.Size = new Size(60, 60);
-            iconCurrentChildForm.SizeMode = PictureBoxSizeMode.Zoom;
-            iconCurrentChildForm.TabIndex = 2;
-            iconCurrentChildForm.TabStop = false;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(label2);
-            panel4.Controls.Add(label1);
-            panel4.Controls.Add(guna2CirclePictureBox1);
-            panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(0, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(241, 180);
-            panel4.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(iconButton1);
-            panel5.Dock = DockStyle.Bottom;
-            panel5.Location = new Point(0, 854);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(241, 57);
-            panel5.TabIndex = 1;
-            // 
-            // iconButton1
-            // 
-            iconButton1.BackColor = Color.FromArgb(0, 79, 111);
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton1.ForeColor = Color.White;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
-            iconButton1.IconColor = Color.White;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 40;
-            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(1, 7);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Padding = new Padding(10, 0, 20, 0);
-            iconButton1.Size = new Size(240, 50);
-            iconButton1.TabIndex = 20;
-            iconButton1.Text = "Đăng xuất ";
-            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // guna2CirclePictureBox1
-            // 
-            guna2CirclePictureBox1.ImageRotate = 0F;
-            guna2CirclePictureBox1.Location = new Point(31, 42);
-            guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CirclePictureBox1.Size = new Size(70, 70);
-            guna2CirclePictureBox1.TabIndex = 0;
-            guna2CirclePictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(107, 68);
-            label1.Name = "label1";
-            label1.Size = new Size(98, 25);
-            label1.TabIndex = 1;
-            label1.Text = "Ngọc Tín";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.ForeColor = Color.Gainsboro;
-            label2.Location = new Point(31, 115);
-            label2.Name = "label2";
-            label2.Size = new Size(178, 24);
-            label2.TabIndex = 2;
-            label2.Text = "nhân viên bán hàng";
-            // 
             // TrangChuForm
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
@@ -613,15 +614,15 @@
             panelNav.ResumeLayout(false);
             panelMenu.ResumeLayout(false);
             fllMenu.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -653,7 +654,7 @@
         private Label lblTitleChildForm;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         private Panel panel5;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton dangXuatButton;
         private Panel panel4;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Label label2;
