@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,14 @@ namespace GUI
 {
     public partial class DangNhapForm : Form
     {
+        public static TaiKhoan taiKhoan;
+        TaiKhoanBUS taiKhoanBUS;
         public DangNhapForm()
         {
             InitializeComponent();
             CenterToScreen();
+
+            taiKhoanBUS = new TaiKhoanBUS();
 
             this.KeyPreview = true;
             this.KeyDown += DangNhapForm_KeyDown;
@@ -52,13 +57,14 @@ namespace GUI
             string tenTaiKhoan = tenTaiKhoanTextBox.Text.Trim();
             string matKhau = matKhauTextBox.Text.Trim();
 
-            string message = new TaiKhoanBUS().KiemTraDangNhap(tenTaiKhoan, matKhau);
+            string message = taiKhoanBUS.KiemTraDangNhap(tenTaiKhoan, matKhau);
 
             MessageBox.Show(message);
 
             if (message.Equals("Đăng nhập thành công!"))
             {
-                LoadingForm form = new LoadingForm(new TaiKhoanBUS().LayTaiKhoanTheoTen(tenTaiKhoan));
+                DangNhapForm.taiKhoan = taiKhoanBUS.LayTaiKhoanTheoTen(tenTaiKhoan);
+                LoadingForm form = new LoadingForm();
                 form.Show();
                 this.Hide();
             }

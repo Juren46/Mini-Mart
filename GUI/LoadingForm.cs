@@ -13,13 +13,10 @@ namespace GUI
 {
     public partial class LoadingForm : Form
     {
-        TaiKhoan taiKhoan;
-        public LoadingForm(TaiKhoan taiKhoan)
+        public LoadingForm()
         {
             InitializeComponent();
             CenterToParent();
-
-            this.taiKhoan = taiKhoan;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -49,7 +46,7 @@ namespace GUI
             {
                 timer3.Stop();
 
-                TrangChuForm frm = new TrangChuForm(taiKhoan);
+                TrangChuForm frm = new TrangChuForm();
                 frm.Show();
                 this.Hide();
             }
