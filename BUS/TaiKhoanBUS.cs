@@ -34,6 +34,9 @@ namespace BUS
                 return "Vui lòng nhập đầy đủ thông tin!";
             else
             {
+                if (taiKhoanDAO.KiemTraTaiKhoanCoNguoiDung(tenTaiKhoan))
+                    return "Tài khoản chưa đăng ký người dùng, liên hệ admin để được hỗ trợ.";
+
                 if (taiKhoanDAO.KiemTraDangNhap(tenTaiKhoan, matKhau))
                     return "Đăng nhập thành công!";
                 else

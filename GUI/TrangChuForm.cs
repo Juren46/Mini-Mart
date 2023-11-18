@@ -16,20 +16,17 @@ namespace GUI
 {
     public partial class TrangChuForm : Form
     {
-        public static TaiKhoan taiKhoan;
         public static TaiKhoanBUS taiKhoanBUS;
 
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-        public TrangChuForm(TaiKhoan taiKhoan)
+        public TrangChuForm()
         {
             InitializeComponent();
-
-            TrangChuForm.taiKhoan = taiKhoan;
-            taiKhoanBUS = new TaiKhoanBUS();
-
             CenterToScreen();
+
+            taiKhoanBUS = new TaiKhoanBUS();
 
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 50);
@@ -62,7 +59,7 @@ namespace GUI
 
         private void HienThiSideMenuTheoPhanQuyen()
         {
-            switch (taiKhoan.maPhanQuyen)
+            switch (DangNhapForm.taiKhoan.maPhanQuyen)
             {
                 case "PQ01":
                     btnPhanQuyen.Visible = true;
@@ -95,21 +92,6 @@ namespace GUI
                     btnNhaCungCap.Visible = true;
                     btnPhieuNhap.Visible = true;
                     break;
-            }
-        }
-
-        public void KiemTraNguoiDung()
-        {
-            if (taiKhoanBUS.KiemTraTaiKhoanCoNguoiDung(taiKhoan.tenTaiKhoan))
-                HienThiSideMenuTheoPhanQuyen();
-            else
-            {
-                Label message = new Label();
-                message.Text = "Tài khoản chưa có người dùng, vui lòng liên hệ admin để thêm người dùng vào tài khoản.";
-                message.Font = new Font("Roboto", 16, FontStyle.Regular);
-                message.AutoSize = true;
-                panelDesktop.Controls.Add(message);
-                message.Anchor = AnchorStyles.None;
             }
         }
 

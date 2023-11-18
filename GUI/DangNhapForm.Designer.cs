@@ -118,10 +118,10 @@
             dangNhapButton.FillColor = Color.FromArgb(0, 71, 107);
             dangNhapButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             dangNhapButton.ForeColor = Color.White;
-            dangNhapButton.Location = new Point(227, 245);
+            dangNhapButton.Location = new Point(62, 245);
             dangNhapButton.Name = "dangNhapButton";
             dangNhapButton.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            dangNhapButton.Size = new Size(106, 33);
+            dangNhapButton.Size = new Size(271, 33);
             dangNhapButton.TabIndex = 6;
             dangNhapButton.Text = "Đăng nhập";
             dangNhapButton.Click += dangNhapButton_Click;
@@ -137,7 +137,7 @@
             // 
             // DangNhapForm
             // 
-            AutoScaleDimensions = new SizeF(16F, 35F);
+            AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(223, 243, 252);
             ClientSize = new Size(834, 436);
