@@ -222,6 +222,7 @@ namespace GUI
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new TaiKhoanForm());
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
