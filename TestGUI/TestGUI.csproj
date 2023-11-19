@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="fontawesome.sharp.pro" Version="6.3.0" />
     <PackageReference Include="guna.ui2.winforms" Version="2.0.4.5" />
   </ItemGroup>
 
