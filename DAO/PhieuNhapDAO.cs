@@ -54,6 +54,37 @@ namespace DAO
             return listPhieuNhap;
         }
 
+        public List<PhieuNhap> LayDanhSachPhieuNhap()
+        {
+            List<PhieuNhap> listPhieuNhap = new List<PhieuNhap>();
+
+            string query = "SELECT * FROM PhieuNhap;";
+
+            DataTable dataTable = DBHelper.ExecuteQuery(query);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    PhieuNhap phieuNhap = new PhieuNhap();
+
+                    phieuNhap.maPhieuNhap = dataTable.Rows[0]["maPhieuNhap"].ToString();
+                    phieuNhap.maNhaCungCap = dataTable.Rows[0]["maNhaCungCap"].ToString();
+                    phieuNhap.maNhanVien = dataTable.Rows[0]["maNhanVien"].ToString();
+                    phieuNhap.maQuanLi = dataTable.Rows[0]["maQuanLi"].ToString();
+                    phieuNhap.thoiGianTao = (DateTime)dataTable.Rows[0]["thoiGianTao"];
+                    try { phieuNhap.thoiGianDuyet = (DateTime)dataTable.Rows[0]["thoiGianDuyet"]; }
+                    catch { phieuNhap.thoiGianDuyet = null; }
+                    phieuNhap.thanhTien = Decimal.Parse(dataTable.Rows[0]["thanhTien"].ToString());
+                    phieuNhap.trangThaiDuyet = dataTable.Rows[0]["trangThaiDuyet"].ToString();
+
+                    listPhieuNhap.Add(phieuNhap);
+                }
+            }
+
+            return listPhieuNhap;
+        }
+
         public List<PhieuNhap> LayDanhSachPhieuNhapDaDuyet()
         {
             List<PhieuNhap> listPhieuNhap = new List<PhieuNhap>();

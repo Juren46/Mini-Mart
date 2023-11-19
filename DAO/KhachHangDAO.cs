@@ -20,22 +20,25 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0 )
             {
-                KhachHang khachHang = new KhachHang();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    KhachHang khachHang = new KhachHang();
 
-                khachHang.maKhachHang = row["maKhachHang"].ToString();
-                khachHang.hoTen = row["tenKhachHang"].ToString();
-                khachHang.gioiTinh = row["gioiTinh"].ToString();
-                try { khachHang.ngaySinh = (DateTime)row["ngaySinh"]; }
-                catch { khachHang.ngaySinh = null; }
-                khachHang.soDienThoai = row["soDienThoai"].ToString();
-                khachHang.email = row["email"].ToString();
-                khachHang.diaChi = row["diaChi"].ToString();
-                khachHang.bacThanhVien = row["bacThanhVien"].ToString();
-                khachHang.diemTichLuy = Decimal.Parse(row["diemTichLuy"].ToString());
+                    khachHang.maKhachHang = row["maKhachHang"].ToString();
+                    khachHang.hoTen = row["tenKhachHang"].ToString();
+                    khachHang.gioiTinh = row["gioiTinh"].ToString();
+                    try { khachHang.ngaySinh = (DateTime)row["ngaySinh"]; }
+                    catch { khachHang.ngaySinh = null; }
+                    khachHang.soDienThoai = row["soDienThoai"].ToString();
+                    khachHang.email = row["email"].ToString();
+                    khachHang.diaChi = row["diaChi"].ToString();
+                    khachHang.bacThanhVien = row["bacThanhVien"].ToString();
+                    khachHang.diemTichLuy = Decimal.Parse(row["diemTichLuy"].ToString());
 
-                listKhachHang.Add(khachHang);
+                    listKhachHang.Add(khachHang);
+                }
             }
 
             return listKhachHang;
@@ -147,22 +150,25 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0 )
             {
-                KhachHang khachHang = new KhachHang();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    KhachHang khachHang = new KhachHang();
 
-                khachHang.maKhachHang = row["maKhachHang"].ToString();
-                khachHang.hoTen = row["tenKhachHang"].ToString();
-                khachHang.gioiTinh = row["gioiTinh"].ToString();
-                try { khachHang.ngaySinh = (DateTime)row["ngaySinh"]; }
-                catch { khachHang.ngaySinh = null; }
-                khachHang.soDienThoai = row["soDienThoai"].ToString();
-                khachHang.email = row["email"].ToString();
-                khachHang.diaChi = row["diaChi"].ToString();
-                khachHang.bacThanhVien = row["bacThanhVien"].ToString();
-                khachHang.diemTichLuy = Decimal.Parse(row["diemTichLuy"].ToString());
+                    khachHang.maKhachHang = row["maKhachHang"].ToString();
+                    khachHang.hoTen = row["tenKhachHang"].ToString();
+                    khachHang.gioiTinh = row["gioiTinh"].ToString();
+                    try { khachHang.ngaySinh = (DateTime)row["ngaySinh"]; }
+                    catch { khachHang.ngaySinh = null; }
+                    khachHang.soDienThoai = row["soDienThoai"].ToString();
+                    khachHang.email = row["email"].ToString();
+                    khachHang.diaChi = row["diaChi"].ToString();
+                    khachHang.bacThanhVien = row["bacThanhVien"].ToString();
+                    khachHang.diemTichLuy = Decimal.Parse(row["diemTichLuy"].ToString());
 
-                listKhachHang.Add(khachHang);
+                    listKhachHang.Add(khachHang);
+                }
             }
 
             return listKhachHang;
@@ -177,22 +183,25 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0)
             {
-                KhachHang khachHang = new KhachHang();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    KhachHang khachHang = new KhachHang();
 
-                khachHang.maKhachHang = row["maKhachHang"].ToString();
-                khachHang.hoTen = row["tenKhachHang"].ToString();
-                khachHang.gioiTinh = row["gioiTinh"].ToString();
-                try { khachHang.ngaySinh = (DateTime)row["ngaySinh"]; }
-                catch { khachHang.ngaySinh = null; }
-                khachHang.soDienThoai = row["soDienThoai"].ToString();
-                khachHang.email = row["email"].ToString();
-                khachHang.diaChi = row["diaChi"].ToString();
-                khachHang.bacThanhVien = row["bacThanhVien"].ToString();
-                khachHang.diemTichLuy = Decimal.Parse(dataTable.Rows[0]["diemTichLuy"].ToString());
+                    khachHang.maKhachHang = row["maKhachHang"].ToString();
+                    khachHang.hoTen = row["tenKhachHang"].ToString();
+                    khachHang.gioiTinh = row["gioiTinh"].ToString();
+                    try { khachHang.ngaySinh = (DateTime)row["ngaySinh"]; }
+                    catch { khachHang.ngaySinh = null; }
+                    khachHang.soDienThoai = row["soDienThoai"].ToString();
+                    khachHang.email = row["email"].ToString();
+                    khachHang.diaChi = row["diaChi"].ToString();
+                    khachHang.bacThanhVien = row["bacThanhVien"].ToString();
+                    khachHang.diemTichLuy = Decimal.Parse(dataTable.Rows[0]["diemTichLuy"].ToString());
 
-                listKhachHang.Add(khachHang);
+                    listKhachHang.Add(khachHang);
+                }
             }
 
             return listKhachHang;
@@ -207,22 +216,25 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0)
             {
-                KhachHang khachHang = new KhachHang();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    KhachHang khachHang = new KhachHang();
 
-                khachHang.maKhachHang = row["maKhachHang"].ToString();
-                khachHang.hoTen = row["tenKhachHang"].ToString();
-                khachHang.gioiTinh = row["gioiTinh"].ToString();
-                try { khachHang.ngaySinh = (DateTime)row["ngaySinh"]; }
-                catch { khachHang.ngaySinh = null; }
-                khachHang.soDienThoai = row["soDienThoai"].ToString();
-                khachHang.email = row["email"].ToString();
-                khachHang.diaChi = row["diaChi"].ToString();
-                khachHang.bacThanhVien = row["bacThanhVien"].ToString();
-                khachHang.diemTichLuy = Decimal.Parse(row["diemTichLuy"].ToString());
+                    khachHang.maKhachHang = row["maKhachHang"].ToString();
+                    khachHang.hoTen = row["tenKhachHang"].ToString();
+                    khachHang.gioiTinh = row["gioiTinh"].ToString();
+                    try { khachHang.ngaySinh = (DateTime)row["ngaySinh"]; }
+                    catch { khachHang.ngaySinh = null; }
+                    khachHang.soDienThoai = row["soDienThoai"].ToString();
+                    khachHang.email = row["email"].ToString();
+                    khachHang.diaChi = row["diaChi"].ToString();
+                    khachHang.bacThanhVien = row["bacThanhVien"].ToString();
+                    khachHang.diemTichLuy = Decimal.Parse(row["diemTichLuy"].ToString());
 
-                listKhachHang.Add(khachHang);
+                    listKhachHang.Add(khachHang);
+                }
             }
 
             return listKhachHang;

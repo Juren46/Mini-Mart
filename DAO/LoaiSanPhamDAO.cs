@@ -20,14 +20,17 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0)
             {
-                LoaiSanPham loaiSanPham = new LoaiSanPham();
-                loaiSanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
-                loaiSanPham.tenLoaiSanPham = row["tenLoaiSanPham"].ToString();
-                loaiSanPham.trangThai = (bool)row["trangThai"];
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    LoaiSanPham loaiSanPham = new LoaiSanPham();
+                    loaiSanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
+                    loaiSanPham.tenLoaiSanPham = row["tenLoaiSanPham"].ToString();
+                    loaiSanPham.trangThai = (bool)row["trangThai"];
 
-                listLoaiSanPham.Add(loaiSanPham);
+                    listLoaiSanPham.Add(loaiSanPham);
+                }
             }
 
             return listLoaiSanPham;
@@ -118,14 +121,17 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0 )
             {
-                LoaiSanPham LoaiSanPham = new LoaiSanPham();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    LoaiSanPham LoaiSanPham = new LoaiSanPham();
 
-                LoaiSanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
-                LoaiSanPham.tenLoaiSanPham = row["tenLoaiSanPham"].ToString();
+                    LoaiSanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
+                    LoaiSanPham.tenLoaiSanPham = row["tenLoaiSanPham"].ToString();
 
-                listLoaiSanPham.Add(LoaiSanPham);
+                    listLoaiSanPham.Add(LoaiSanPham);
+                }
             }
 
             return listLoaiSanPham;

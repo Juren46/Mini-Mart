@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             excelBtn = new Guna.UI2.WinForms.Guna2Button();
             SuspendLayout();
             // 
             // excelBtn
             // 
-            excelBtn.CustomizableEdges = customizableEdges3;
+            excelBtn.CustomizableEdges = customizableEdges1;
             excelBtn.DisabledState.BorderColor = Color.DarkGray;
             excelBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             excelBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -44,10 +44,11 @@
             excelBtn.ForeColor = Color.White;
             excelBtn.Location = new Point(298, 193);
             excelBtn.Name = "excelBtn";
-            excelBtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            excelBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
             excelBtn.Size = new Size(180, 45);
             excelBtn.TabIndex = 0;
             excelBtn.Text = "In Excel";
+            excelBtn.Click += excelBtn_Click;
             // 
             // TestExcel
             // 

@@ -21,18 +21,21 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0 )
             {
-                KhuyenMai khuyenMai = new KhuyenMai();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    KhuyenMai khuyenMai = new KhuyenMai();
 
-                khuyenMai.maKhuyenMai = row["maKhuyenMai"].ToString();
-                khuyenMai.tenKhuyenMai = row["tenKhuyenMai"].ToString();
-                khuyenMai.thoiGianBatDau = (DateTime)row["thoiGianBatDau"];
-                khuyenMai.thoiGianKetThuc = (DateTime)row["thoiGianKetThuc"];
-                khuyenMai.loaiGiaTri = row["loaiGiaTri"].ToString();
-                khuyenMai.giaTriApDung = Decimal.Parse(row["giaTriApDung"].ToString());
+                    khuyenMai.maKhuyenMai = row["maKhuyenMai"].ToString();
+                    khuyenMai.tenKhuyenMai = row["tenKhuyenMai"].ToString();
+                    khuyenMai.thoiGianBatDau = (DateTime)row["thoiGianBatDau"];
+                    khuyenMai.thoiGianKetThuc = (DateTime)row["thoiGianKetThuc"];
+                    khuyenMai.loaiGiaTri = row["loaiGiaTri"].ToString();
+                    khuyenMai.giaTriApDung = Decimal.Parse(row["giaTriApDung"].ToString());
 
-                listKhuyenMai.Add(khuyenMai);
+                    listKhuyenMai.Add(khuyenMai);
+                }
             }
 
             return listKhuyenMai;
@@ -47,18 +50,21 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0)
             {
-                KhuyenMai khuyenMai = new KhuyenMai();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    KhuyenMai khuyenMai = new KhuyenMai();
 
-                khuyenMai.maKhuyenMai = row["maKhuyenMai"].ToString();
-                khuyenMai.tenKhuyenMai = row["tenKhuyenMai"].ToString();
-                khuyenMai.thoiGianBatDau = (DateTime)row["thoiGianBatDau"];
-                khuyenMai.thoiGianKetThuc = (DateTime)row["thoiGianKetThuc"];
-                khuyenMai.loaiGiaTri = row["loaiGiaTri"].ToString();
-                khuyenMai.giaTriApDung = Decimal.Parse(row["giaTriApDung"].ToString());
+                    khuyenMai.maKhuyenMai = row["maKhuyenMai"].ToString();
+                    khuyenMai.tenKhuyenMai = row["tenKhuyenMai"].ToString();
+                    khuyenMai.thoiGianBatDau = (DateTime)row["thoiGianBatDau"];
+                    khuyenMai.thoiGianKetThuc = (DateTime)row["thoiGianKetThuc"];
+                    khuyenMai.loaiGiaTri = row["loaiGiaTri"].ToString();
+                    khuyenMai.giaTriApDung = Decimal.Parse(row["giaTriApDung"].ToString());
 
-                listKhuyenMai.Add(khuyenMai);
+                    listKhuyenMai.Add(khuyenMai);
+                }
             }
 
             return listKhuyenMai;
@@ -131,18 +137,21 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0 )
             {
-                KhuyenMai khuyenMai = new KhuyenMai();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    KhuyenMai khuyenMai = new KhuyenMai();
 
-                khuyenMai.maKhuyenMai = row["maKhuyenMai"].ToString();
-                khuyenMai.tenKhuyenMai = row["tenKhuyenMai"].ToString();
-                khuyenMai.thoiGianBatDau = (DateTime)row["thoiGianBatDau"];
-                khuyenMai.thoiGianKetThuc = (DateTime)row["thoiGianKetThuc"];
-                khuyenMai.loaiGiaTri = row["loaiGiaTri"].ToString();
-                khuyenMai.giaTriApDung = Decimal.Parse(row["giaTriApDung"].ToString());
+                    khuyenMai.maKhuyenMai = row["maKhuyenMai"].ToString();
+                    khuyenMai.tenKhuyenMai = row["tenKhuyenMai"].ToString();
+                    khuyenMai.thoiGianBatDau = (DateTime)row["thoiGianBatDau"];
+                    khuyenMai.thoiGianKetThuc = (DateTime)row["thoiGianKetThuc"];
+                    khuyenMai.loaiGiaTri = row["loaiGiaTri"].ToString();
+                    khuyenMai.giaTriApDung = Decimal.Parse(row["giaTriApDung"].ToString());
 
-                listKhuyenMai.Add(khuyenMai);
+                    listKhuyenMai.Add(khuyenMai);
+                }
             }
 
             return listKhuyenMai;
@@ -156,18 +165,21 @@ namespace DAO
             
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0 )
             {
-                KhuyenMai khuyenMai = new KhuyenMai();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    KhuyenMai khuyenMai = new KhuyenMai();
 
-                khuyenMai.maKhuyenMai = row["maKhuyenMai"].ToString();
-                khuyenMai.tenKhuyenMai = row["tenKhuyenMai"].ToString();
-                khuyenMai.thoiGianBatDau = (DateTime)row["thoiGianBatDau"];
-                khuyenMai.thoiGianKetThuc = (DateTime)row["thoiGianKetThuc"];
-                khuyenMai.loaiGiaTri = row["loaiGiaTri"].ToString();
-                khuyenMai.giaTriApDung = Decimal.Parse(row["giaTriApDung"].ToString());
+                    khuyenMai.maKhuyenMai = row["maKhuyenMai"].ToString();
+                    khuyenMai.tenKhuyenMai = row["tenKhuyenMai"].ToString();
+                    khuyenMai.thoiGianBatDau = (DateTime)row["thoiGianBatDau"];
+                    khuyenMai.thoiGianKetThuc = (DateTime)row["thoiGianKetThuc"];
+                    khuyenMai.loaiGiaTri = row["loaiGiaTri"].ToString();
+                    khuyenMai.giaTriApDung = Decimal.Parse(row["giaTriApDung"].ToString());
 
-                listKhuyenMai.Add(khuyenMai);
+                    listKhuyenMai.Add(khuyenMai);
+                }
             }
 
             return listKhuyenMai;

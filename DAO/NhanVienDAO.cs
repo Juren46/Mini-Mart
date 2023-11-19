@@ -20,21 +20,24 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0 )
             {
-                NhanVien nhanVien = new NhanVien();
-                nhanVien.maNhanVien = row["maNhanVien"].ToString();
-                nhanVien.tenTaiKhoan = row["tenTaiKhoan"].ToString();
-                nhanVien.hoTen = row["tenNhanVien"].ToString();
-                nhanVien.gioiTinh = row["gioiTinh"].ToString();
-                try { nhanVien.ngaySinh = (DateTime)row["ngaySinh"]; }
-                catch { nhanVien.ngaySinh = null; }
-                nhanVien.soDienThoai = row["soDienThoai"].ToString();
-                nhanVien.email = row["email"].ToString();
-                nhanVien.diaChi = row["diaChi"].ToString();
-                nhanVien.trangThai = (bool)row["trangThai"];
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    NhanVien nhanVien = new NhanVien();
+                    nhanVien.maNhanVien = row["maNhanVien"].ToString();
+                    nhanVien.tenTaiKhoan = row["tenTaiKhoan"].ToString();
+                    nhanVien.hoTen = row["tenNhanVien"].ToString();
+                    nhanVien.gioiTinh = row["gioiTinh"].ToString();
+                    try { nhanVien.ngaySinh = (DateTime)row["ngaySinh"]; }
+                    catch { nhanVien.ngaySinh = null; }
+                    nhanVien.soDienThoai = row["soDienThoai"].ToString();
+                    nhanVien.email = row["email"].ToString();
+                    nhanVien.diaChi = row["diaChi"].ToString();
+                    nhanVien.trangThai = (bool)row["trangThai"];
 
-                listNhanVien.Add(nhanVien);
+                    listNhanVien.Add(nhanVien);
+                }
             }
 
             return listNhanVien;
@@ -151,22 +154,25 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0)
             {
-                NhanVien nhanVien = new NhanVien();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    NhanVien nhanVien = new NhanVien();
 
-                nhanVien.maNhanVien = row["maNhanVien"].ToString();
-                nhanVien.tenTaiKhoan = row["tenTaiKhoan"].ToString();
-                nhanVien.hoTen = row["tenNhanVien"].ToString();
-                nhanVien.gioiTinh = row["gioiTinh"].ToString();
-                try { nhanVien.ngaySinh = (DateTime)row["ngaySinh"]; }
-                catch { nhanVien.ngaySinh = null; }
-                nhanVien.soDienThoai = row["soDienThoai"].ToString();
-                nhanVien.email = row["email"].ToString();
-                nhanVien.diaChi = row["diaChi"].ToString();
-                nhanVien.trangThai = (bool)row["trangThai"];
+                    nhanVien.maNhanVien = row["maNhanVien"].ToString();
+                    nhanVien.tenTaiKhoan = row["tenTaiKhoan"].ToString();
+                    nhanVien.hoTen = row["tenNhanVien"].ToString();
+                    nhanVien.gioiTinh = row["gioiTinh"].ToString();
+                    try { nhanVien.ngaySinh = (DateTime)row["ngaySinh"]; }
+                    catch { nhanVien.ngaySinh = null; }
+                    nhanVien.soDienThoai = row["soDienThoai"].ToString();
+                    nhanVien.email = row["email"].ToString();
+                    nhanVien.diaChi = row["diaChi"].ToString();
+                    nhanVien.trangThai = (bool)row["trangThai"];
 
-                listNhanVien.Add(nhanVien);
+                    listNhanVien.Add(nhanVien);
+                }
             }
 
             return listNhanVien;
@@ -185,22 +191,25 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0)
             {
-                NhanVien nhanVien = new NhanVien();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    NhanVien nhanVien = new NhanVien();
 
-                nhanVien.maNhanVien = row["maNhanVien"].ToString();
-                nhanVien.tenTaiKhoan = row["tenTaiKhoan"].ToString();
-                nhanVien.hoTen = row["tenNhanVien"].ToString();
-                nhanVien.gioiTinh = row["gioiTinh"].ToString();
-                try { nhanVien.ngaySinh = (DateTime)row["ngaySinh"]; }
-                catch { nhanVien.ngaySinh = null; }
-                nhanVien.soDienThoai = row["soDienThoai"].ToString();
-                nhanVien.email = row["email"].ToString();
-                nhanVien.diaChi = row["diaChi"].ToString();
-                nhanVien.trangThai = (bool)row["trangThai"];
+                    nhanVien.maNhanVien = row["maNhanVien"].ToString();
+                    nhanVien.tenTaiKhoan = row["tenTaiKhoan"].ToString();
+                    nhanVien.hoTen = row["tenNhanVien"].ToString();
+                    nhanVien.gioiTinh = row["gioiTinh"].ToString();
+                    try { nhanVien.ngaySinh = (DateTime)row["ngaySinh"]; }
+                    catch { nhanVien.ngaySinh = null; }
+                    nhanVien.soDienThoai = row["soDienThoai"].ToString();
+                    nhanVien.email = row["email"].ToString();
+                    nhanVien.diaChi = row["diaChi"].ToString();
+                    nhanVien.trangThai = (bool)row["trangThai"];
 
-                listNhanVien.Add(nhanVien);
+                    listNhanVien.Add(nhanVien);
+                }
             }
 
             return listNhanVien;
@@ -214,22 +223,25 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0)
             {
-                NhanVien nhanVien = new NhanVien();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    NhanVien nhanVien = new NhanVien();
 
-                nhanVien.maNhanVien = row["maNhanVien"].ToString();
-                nhanVien.tenTaiKhoan = row["tenTaiKhoan"].ToString();
-                nhanVien.hoTen = row["tenNhanVien"].ToString();
-                nhanVien.gioiTinh = row["gioiTinh"].ToString();
-                try { nhanVien.ngaySinh = (DateTime)row["ngaySinh"]; }
-                catch { nhanVien.ngaySinh = null; }
-                nhanVien.soDienThoai = row["soDienThoai"].ToString();
-                nhanVien.email = row["email"].ToString();
-                nhanVien.diaChi = row["diaChi"].ToString();
-                nhanVien.trangThai = (bool)row["trangThai"];
+                    nhanVien.maNhanVien = row["maNhanVien"].ToString();
+                    nhanVien.tenTaiKhoan = row["tenTaiKhoan"].ToString();
+                    nhanVien.hoTen = row["tenNhanVien"].ToString();
+                    nhanVien.gioiTinh = row["gioiTinh"].ToString();
+                    try { nhanVien.ngaySinh = (DateTime)row["ngaySinh"]; }
+                    catch { nhanVien.ngaySinh = null; }
+                    nhanVien.soDienThoai = row["soDienThoai"].ToString();
+                    nhanVien.email = row["email"].ToString();
+                    nhanVien.diaChi = row["diaChi"].ToString();
+                    nhanVien.trangThai = (bool)row["trangThai"];
 
-                listNhanVien.Add(nhanVien);
+                    listNhanVien.Add(nhanVien);
+                }
             }
 
             return listNhanVien;
