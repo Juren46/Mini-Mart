@@ -20,16 +20,19 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0 )
             {
-                NhaCungCap nhaCungCap = new NhaCungCap();
-                nhaCungCap.maNhaCungCap = row["maNhaCungCap"].ToString();
-                nhaCungCap.tenNhaCungCap = row["tenNhaCungCap"].ToString();
-                nhaCungCap.soDienThoai = row["soDienThoai"].ToString();
-                nhaCungCap.email = row["email"].ToString();
-                nhaCungCap.diaChi = row["diaChi"].ToString();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    NhaCungCap nhaCungCap = new NhaCungCap();
+                    nhaCungCap.maNhaCungCap = row["maNhaCungCap"].ToString();
+                    nhaCungCap.tenNhaCungCap = row["tenNhaCungCap"].ToString();
+                    nhaCungCap.soDienThoai = row["soDienThoai"].ToString();
+                    nhaCungCap.email = row["email"].ToString();
+                    nhaCungCap.diaChi = row["diaChi"].ToString();
 
-                listNhaCungCap.Add(nhaCungCap);
+                    listNhaCungCap.Add(nhaCungCap);
+                }
             }
 
             return listNhaCungCap;
@@ -103,17 +106,20 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+           if (dataTable.Rows.Count > 0 )
             {
-                NhaCungCap nhaCungCap = new NhaCungCap();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    NhaCungCap nhaCungCap = new NhaCungCap();
 
-                nhaCungCap.maNhaCungCap = row["maNhaCungCap"].ToString();
-                nhaCungCap.tenNhaCungCap = row["tenNhaCungCap"].ToString();
-                nhaCungCap.soDienThoai = row["soDienThoai"].ToString();
-                nhaCungCap.email = row["email"].ToString();
-                nhaCungCap.diaChi = row["diaChi"].ToString();
+                    nhaCungCap.maNhaCungCap = row["maNhaCungCap"].ToString();
+                    nhaCungCap.tenNhaCungCap = row["tenNhaCungCap"].ToString();
+                    nhaCungCap.soDienThoai = row["soDienThoai"].ToString();
+                    nhaCungCap.email = row["email"].ToString();
+                    nhaCungCap.diaChi = row["diaChi"].ToString();
 
-                listNhaCungCap.Add(nhaCungCap);
+                    listNhaCungCap.Add(nhaCungCap);
+                }
             }
 
             return listNhaCungCap;

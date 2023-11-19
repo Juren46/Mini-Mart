@@ -20,22 +20,25 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0 )
             {
-                HoaDon hoaDon = new HoaDon();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    HoaDon hoaDon = new HoaDon();
 
-                hoaDon.maHoaDon = row["maHoaDon"].ToString();
-                hoaDon.maNhanVien = row["maNhanVien"].ToString();
-                hoaDon.maKhachHang = row["maKhachHang"].ToString();
-                hoaDon.maKhuyenMai = row["maKhuyenMai"].ToString();
-                hoaDon.thoiGianTao = (DateTime)row["thoiGianTao"];
-                hoaDon.tongTien = Decimal.Parse(row["tongTien"].ToString());
-                hoaDon.giamGia = Decimal.Parse(row["giamGia"].ToString());
-                hoaDon.thanhTien = Decimal.Parse(row["thanhTien"].ToString());
-                hoaDon.tienNhan = Decimal.Parse(row["tienNhan"].ToString());
-                hoaDon.tienThua = Decimal.Parse(row["tienThua"].ToString());
+                    hoaDon.maHoaDon = row["maHoaDon"].ToString();
+                    hoaDon.maNhanVien = row["maNhanVien"].ToString();
+                    hoaDon.maKhachHang = row["maKhachHang"].ToString();
+                    hoaDon.maKhuyenMai = row["maKhuyenMai"].ToString();
+                    hoaDon.thoiGianTao = (DateTime)row["thoiGianTao"];
+                    hoaDon.tongTien = Decimal.Parse(row["tongTien"].ToString());
+                    hoaDon.giamGia = Decimal.Parse(row["giamGia"].ToString());
+                    hoaDon.thanhTien = Decimal.Parse(row["thanhTien"].ToString());
+                    hoaDon.tienNhan = Decimal.Parse(row["tienNhan"].ToString());
+                    hoaDon.tienThua = Decimal.Parse(row["tienThua"].ToString());
 
-                listHoaDon.Add(hoaDon);
+                    listHoaDon.Add(hoaDon);
+                }
             }
 
             return listHoaDon;
@@ -117,23 +120,26 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
-            {
-                HoaDon hoaDon = new HoaDon();
+           if (dataTable.Rows.Count >0)
+           {
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    HoaDon hoaDon = new HoaDon();
 
-                hoaDon.maHoaDon = row["maHoaDon"].ToString();
-                hoaDon.maNhanVien = row["maNhanVien"].ToString();
-                hoaDon.maKhachHang = row["maKhachHang"].ToString();
-                hoaDon.maKhuyenMai = row["maKhuyenMai"].ToString();
-                hoaDon.thoiGianTao = (DateTime)row["thoiGianTao"];
-                hoaDon.tongTien = Decimal.Parse(row["tongTien"].ToString());
-                hoaDon.giamGia = Decimal.Parse(row["giamGia"].ToString());
-                hoaDon.thanhTien = Decimal.Parse(row["thanhTien"].ToString());
-                hoaDon.tienNhan = Decimal.Parse(row["tienNhan"].ToString());
-                hoaDon.tienThua = Decimal.Parse(row["tienThua"].ToString());
+                    hoaDon.maHoaDon = row["maHoaDon"].ToString();
+                    hoaDon.maNhanVien = row["maNhanVien"].ToString();
+                    hoaDon.maKhachHang = row["maKhachHang"].ToString();
+                    hoaDon.maKhuyenMai = row["maKhuyenMai"].ToString();
+                    hoaDon.thoiGianTao = (DateTime)row["thoiGianTao"];
+                    hoaDon.tongTien = Decimal.Parse(row["tongTien"].ToString());
+                    hoaDon.giamGia = Decimal.Parse(row["giamGia"].ToString());
+                    hoaDon.thanhTien = Decimal.Parse(row["thanhTien"].ToString());
+                    hoaDon.tienNhan = Decimal.Parse(row["tienNhan"].ToString());
+                    hoaDon.tienThua = Decimal.Parse(row["tienThua"].ToString());
 
-                listHoaDon.Add(hoaDon);
-            }
+                    listHoaDon.Add(hoaDon);
+                }
+           }
 
             return listHoaDon;
         }
@@ -146,22 +152,25 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0)
             {
-                HoaDon hoaDon = new HoaDon();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    HoaDon hoaDon = new HoaDon();
 
-                hoaDon.maHoaDon = row["maHoaDon"].ToString();
-                hoaDon.maNhanVien = row["maNhanVien"].ToString();
-                hoaDon.maKhachHang = row["maKhachHang"].ToString();
-                hoaDon.maKhuyenMai = row["maKhuyenMai"].ToString();
-                hoaDon.thoiGianTao = (DateTime)row["thoiGianTao"];
-                hoaDon.tongTien = Decimal.Parse(row["tongTien"].ToString());
-                hoaDon.giamGia = Decimal.Parse(row["giamGia"].ToString());
-                hoaDon.thanhTien = Decimal.Parse(row["thanhTien"].ToString());
-                hoaDon.tienNhan = Decimal.Parse(row["tienNhan"].ToString());
-                hoaDon.tienThua = Decimal.Parse(row["tienThua"].ToString());
+                    hoaDon.maHoaDon = row["maHoaDon"].ToString();
+                    hoaDon.maNhanVien = row["maNhanVien"].ToString();
+                    hoaDon.maKhachHang = row["maKhachHang"].ToString();
+                    hoaDon.maKhuyenMai = row["maKhuyenMai"].ToString();
+                    hoaDon.thoiGianTao = (DateTime)row["thoiGianTao"];
+                    hoaDon.tongTien = Decimal.Parse(row["tongTien"].ToString());
+                    hoaDon.giamGia = Decimal.Parse(row["giamGia"].ToString());
+                    hoaDon.thanhTien = Decimal.Parse(row["thanhTien"].ToString());
+                    hoaDon.tienNhan = Decimal.Parse(row["tienNhan"].ToString());
+                    hoaDon.tienThua = Decimal.Parse(row["tienThua"].ToString());
 
-                listHoaDon.Add(hoaDon);
+                    listHoaDon.Add(hoaDon);
+                }
             }
 
             return listHoaDon;
@@ -175,22 +184,25 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0 )
             {
-                HoaDon hoaDon = new HoaDon();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    HoaDon hoaDon = new HoaDon();
 
-                hoaDon.maHoaDon = row["maHoaDon"].ToString();
-                hoaDon.maNhanVien = row["maNhanVien"].ToString();
-                hoaDon.maKhachHang = row["maKhachHang"].ToString();
-                hoaDon.maKhuyenMai = row["maKhuyenMai"].ToString();
-                hoaDon.thoiGianTao = (DateTime)row["thoiGianTao"];
-                hoaDon.tongTien = Decimal.Parse(row["tongTien"].ToString());
-                hoaDon.giamGia = Decimal.Parse(row["giamGia"].ToString());
-                hoaDon.thanhTien = Decimal.Parse(row["thanhTien"].ToString());
-                hoaDon.tienNhan = Decimal.Parse(row["tienNhan"].ToString());
-                hoaDon.tienThua = Decimal.Parse(row["tienThua"].ToString());
+                    hoaDon.maHoaDon = row["maHoaDon"].ToString();
+                    hoaDon.maNhanVien = row["maNhanVien"].ToString();
+                    hoaDon.maKhachHang = row["maKhachHang"].ToString();
+                    hoaDon.maKhuyenMai = row["maKhuyenMai"].ToString();
+                    hoaDon.thoiGianTao = (DateTime)row["thoiGianTao"];
+                    hoaDon.tongTien = Decimal.Parse(row["tongTien"].ToString());
+                    hoaDon.giamGia = Decimal.Parse(row["giamGia"].ToString());
+                    hoaDon.thanhTien = Decimal.Parse(row["thanhTien"].ToString());
+                    hoaDon.tienNhan = Decimal.Parse(row["tienNhan"].ToString());
+                    hoaDon.tienThua = Decimal.Parse(row["tienThua"].ToString());
 
-                listHoaDon.Add(hoaDon);
+                    listHoaDon.Add(hoaDon);
+                }
             }
 
             return listHoaDon;
@@ -204,22 +216,25 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0 )
             {
-                HoaDon hoaDon = new HoaDon();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    HoaDon hoaDon = new HoaDon();
 
-                hoaDon.maHoaDon = row["maHoaDon"].ToString();
-                hoaDon.maNhanVien = row["maNhanVien"].ToString();
-                hoaDon.maKhachHang = row["maKhachHang"].ToString();
-                hoaDon.maKhuyenMai = row["maKhuyenMai"].ToString();
-                hoaDon.thoiGianTao = (DateTime)row["thoiGianTao"];
-                hoaDon.tongTien = Decimal.Parse(row["tongTien"].ToString());
-                hoaDon.giamGia = Decimal.Parse(row["giamGia"].ToString());
-                hoaDon.thanhTien = Decimal.Parse(row["thanhTien"].ToString());
-                hoaDon.tienNhan = Decimal.Parse(row["tienNhan"].ToString());
-                hoaDon.tienThua = Decimal.Parse(row["tienThua"].ToString());
+                    hoaDon.maHoaDon = row["maHoaDon"].ToString();
+                    hoaDon.maNhanVien = row["maNhanVien"].ToString();
+                    hoaDon.maKhachHang = row["maKhachHang"].ToString();
+                    hoaDon.maKhuyenMai = row["maKhuyenMai"].ToString();
+                    hoaDon.thoiGianTao = (DateTime)row["thoiGianTao"];
+                    hoaDon.tongTien = Decimal.Parse(row["tongTien"].ToString());
+                    hoaDon.giamGia = Decimal.Parse(row["giamGia"].ToString());
+                    hoaDon.thanhTien = Decimal.Parse(row["thanhTien"].ToString());
+                    hoaDon.tienNhan = Decimal.Parse(row["tienNhan"].ToString());
+                    hoaDon.tienThua = Decimal.Parse(row["tienThua"].ToString());
 
-                listHoaDon.Add(hoaDon);
+                    listHoaDon.Add(hoaDon);
+                }
             }
 
             return listHoaDon;

@@ -21,13 +21,16 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0 )
             {
-                PhanQuyen phanQuyen = new PhanQuyen();
-                phanQuyen.maPhanQuyen = row["maPhanQuyen"].ToString();
-                phanQuyen.tenPhanQuyen = row["tenPhanQuyen"].ToString();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    PhanQuyen phanQuyen = new PhanQuyen();
+                    phanQuyen.maPhanQuyen = row["maPhanQuyen"].ToString();
+                    phanQuyen.tenPhanQuyen = row["tenPhanQuyen"].ToString();
 
-                listPhanQuyen.Add(phanQuyen);
+                    listPhanQuyen.Add(phanQuyen);
+                }
             }
 
             return listPhanQuyen;
@@ -87,13 +90,16 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);          
 
-            foreach (DataRow row in dataTable.Rows)
+           if (dataTable.Rows.Count > 0)
             {
-                PhanQuyen phanQuyen = new PhanQuyen();
-                phanQuyen.maPhanQuyen = row["maPhanQuyen"].ToString();
-                phanQuyen.tenPhanQuyen = row["tenPhanQuyen"].ToString();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    PhanQuyen phanQuyen = new PhanQuyen();
+                    phanQuyen.maPhanQuyen = row["maPhanQuyen"].ToString();
+                    phanQuyen.tenPhanQuyen = row["tenPhanQuyen"].ToString();
 
-                listPhanQuyen.Add(phanQuyen);
+                    listPhanQuyen.Add(phanQuyen);
+                }
             }
 
             return listPhanQuyen;

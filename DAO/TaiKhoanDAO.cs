@@ -20,15 +20,18 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0 )
             {
-                TaiKhoan taiKhoan = new TaiKhoan();
-                taiKhoan.maPhanQuyen = row["maPhanQuyen"].ToString();
-                taiKhoan.tenTaiKhoan = row["tenTaiKhoan"].ToString();
-                taiKhoan.matKhau = row["matKhau"].ToString();
-                taiKhoan.trangThai = (bool)row["trangThai"];
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    TaiKhoan taiKhoan = new TaiKhoan();
+                    taiKhoan.maPhanQuyen = row["maPhanQuyen"].ToString();
+                    taiKhoan.tenTaiKhoan = row["tenTaiKhoan"].ToString();
+                    taiKhoan.matKhau = row["matKhau"].ToString();
+                    taiKhoan.trangThai = (bool)row["trangThai"];
 
-                listTaiKhoan.Add(taiKhoan);
+                    listTaiKhoan.Add(taiKhoan);
+                }
             }
 
             return listTaiKhoan;
@@ -105,15 +108,18 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0 )
             {
-                TaiKhoan taiKhoan = new TaiKhoan();
-                taiKhoan.maPhanQuyen = row["maPhanQuyen"].ToString();
-                taiKhoan.tenTaiKhoan = row["tenTaiKhoan"].ToString();
-                taiKhoan.matKhau = row["matKhau"].ToString();
-                taiKhoan.trangThai = (bool)row["trangThai"];
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    TaiKhoan taiKhoan = new TaiKhoan();
+                    taiKhoan.maPhanQuyen = row["maPhanQuyen"].ToString();
+                    taiKhoan.tenTaiKhoan = row["tenTaiKhoan"].ToString();
+                    taiKhoan.matKhau = row["matKhau"].ToString();
+                    taiKhoan.trangThai = (bool)row["trangThai"];
 
-                listTaiKhoan.Add(taiKhoan);
+                    listTaiKhoan.Add(taiKhoan);
+                }
             }
 
             return listTaiKhoan;
@@ -129,15 +135,18 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0)
             {
-                TaiKhoan taiKhoan = new TaiKhoan();
-                taiKhoan.maPhanQuyen = row["maPhanQuyen"].ToString();
-                taiKhoan.tenTaiKhoan = row["tenTaiKhoan"].ToString();
-                taiKhoan.matKhau = row["matKhau"].ToString();
-                taiKhoan.trangThai = (bool)row["trangThai"];
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    TaiKhoan taiKhoan = new TaiKhoan();
+                    taiKhoan.maPhanQuyen = row["maPhanQuyen"].ToString();
+                    taiKhoan.tenTaiKhoan = row["tenTaiKhoan"].ToString();
+                    taiKhoan.matKhau = row["matKhau"].ToString();
+                    taiKhoan.trangThai = (bool)row["trangThai"];
 
-                listTaiKhoan.Add(taiKhoan);
+                    listTaiKhoan.Add(taiKhoan);
+                }
             }
 
             return listTaiKhoan;
@@ -156,15 +165,18 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0)
             {
-                TaiKhoan taiKhoan = new TaiKhoan();
-                taiKhoan.maPhanQuyen = row["maPhanQuyen"].ToString();
-                taiKhoan.tenTaiKhoan = row["tenTaiKhoan"].ToString();
-                taiKhoan.matKhau = row["matKhau"].ToString();
-                taiKhoan.trangThai = (bool)row["trangThai"];
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    TaiKhoan taiKhoan = new TaiKhoan();
+                    taiKhoan.maPhanQuyen = row["maPhanQuyen"].ToString();
+                    taiKhoan.tenTaiKhoan = row["tenTaiKhoan"].ToString();
+                    taiKhoan.matKhau = row["matKhau"].ToString();
+                    taiKhoan.trangThai = (bool)row["trangThai"];
 
-                listTaiKhoan.Add(taiKhoan);
+                    listTaiKhoan.Add(taiKhoan);
+                }
             }
 
             return listTaiKhoan;

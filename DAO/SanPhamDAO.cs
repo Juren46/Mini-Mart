@@ -20,20 +20,23 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+           if (dataTable.Rows.Count > 0 )
             {
-                SanPham sanPham = new SanPham();
-                sanPham.maSanPham = row["maSanPham"].ToString();
-                sanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
-                sanPham.maNhaCungCap = row["maNhaCungCap"].ToString();
-                sanPham.tenSanPham = row["tenSanPham"].ToString();
-                sanPham.donViTinh = row["donViTinh"].ToString();
-                sanPham.soLuong = (int)row["soLuong"];
-                sanPham.giaBan = (decimal)row["giaBan"];
-                sanPham.duongDanAnh = row["duongDanAnh"].ToString();
-                sanPham.trangThai = (bool)row["trangThai"];
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    SanPham sanPham = new SanPham();
+                    sanPham.maSanPham = row["maSanPham"].ToString();
+                    sanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
+                    sanPham.maNhaCungCap = row["maNhaCungCap"].ToString();
+                    sanPham.tenSanPham = row["tenSanPham"].ToString();
+                    sanPham.donViTinh = row["donViTinh"].ToString();
+                    sanPham.soLuong = (int)row["soLuong"];
+                    sanPham.giaBan = (decimal)row["giaBan"];
+                    sanPham.duongDanAnh = row["duongDanAnh"].ToString();
+                    sanPham.trangThai = (bool)row["trangThai"];
 
-                listSanPham.Add(sanPham);
+                    listSanPham.Add(sanPham);
+                }
             }
 
             return listSanPham;
@@ -112,20 +115,23 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0)
             {
-                SanPham sanPham = new SanPham();
-                sanPham.maSanPham = row["maSanPham"].ToString();
-                sanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
-                sanPham.maNhaCungCap = row["maNhaCungCap"].ToString();
-                sanPham.tenSanPham = row["tenSanPham"].ToString();
-                sanPham.donViTinh = row["donViTinh"].ToString();
-                sanPham.soLuong = (int)row["soLuong"];
-                sanPham.giaBan = (decimal)row["giaBan"];
-                sanPham.duongDanAnh = row["duongDanAnh"].ToString();
-                sanPham.trangThai = (bool)row["trangThai"];
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    SanPham sanPham = new SanPham();
+                    sanPham.maSanPham = row["maSanPham"].ToString();
+                    sanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
+                    sanPham.maNhaCungCap = row["maNhaCungCap"].ToString();
+                    sanPham.tenSanPham = row["tenSanPham"].ToString();
+                    sanPham.donViTinh = row["donViTinh"].ToString();
+                    sanPham.soLuong = (int)row["soLuong"];
+                    sanPham.giaBan = (decimal)row["giaBan"];
+                    sanPham.duongDanAnh = row["duongDanAnh"].ToString();
+                    sanPham.trangThai = (bool)row["trangThai"];
 
-                listSanPham.Add(sanPham);
+                    listSanPham.Add(sanPham);
+                }
             }
 
             return listSanPham;
@@ -141,20 +147,23 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0)
             {
-                SanPham sanPham = new SanPham();
-                sanPham.maSanPham = row["maSanPham"].ToString();
-                sanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
-                sanPham.maNhaCungCap = row["maNhaCungCap"].ToString();
-                sanPham.tenSanPham = row["tenSanPham"].ToString();
-                sanPham.donViTinh = row["donViTinh"].ToString();
-                sanPham.soLuong = (int)row["soLuong"];
-                sanPham.giaBan = (decimal)row["giaBan"];
-                sanPham.duongDanAnh = row["duongDanAnh"].ToString();
-                sanPham.trangThai = (bool)row["trangThai"];
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    SanPham sanPham = new SanPham();
+                    sanPham.maSanPham = row["maSanPham"].ToString();
+                    sanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
+                    sanPham.maNhaCungCap = row["maNhaCungCap"].ToString();
+                    sanPham.tenSanPham = row["tenSanPham"].ToString();
+                    sanPham.donViTinh = row["donViTinh"].ToString();
+                    sanPham.soLuong = (int)row["soLuong"];
+                    sanPham.giaBan = (decimal)row["giaBan"];
+                    sanPham.duongDanAnh = row["duongDanAnh"].ToString();
+                    sanPham.trangThai = (bool)row["trangThai"];
 
-                listSanPham.Add(sanPham);
+                    listSanPham.Add(sanPham);
+                }
             }
 
             return listSanPham;
@@ -170,20 +179,23 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0)
             {
-                SanPham sanPham = new SanPham();
-                sanPham.maSanPham = row["maSanPham"].ToString();
-                sanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
-                sanPham.maNhaCungCap = row["maNhaCungCap"].ToString();
-                sanPham.tenSanPham = row["tenSanPham"].ToString();
-                sanPham.donViTinh = row["donViTinh"].ToString();
-                sanPham.soLuong = (int)row["soLuong"];
-                sanPham.giaBan = (decimal)row["giaBan"];
-                sanPham.duongDanAnh = row["duongDanAnh"].ToString();
-                sanPham.trangThai = (bool)row["trangThai"];
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    SanPham sanPham = new SanPham();
+                    sanPham.maSanPham = row["maSanPham"].ToString();
+                    sanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
+                    sanPham.maNhaCungCap = row["maNhaCungCap"].ToString();
+                    sanPham.tenSanPham = row["tenSanPham"].ToString();
+                    sanPham.donViTinh = row["donViTinh"].ToString();
+                    sanPham.soLuong = (int)row["soLuong"];
+                    sanPham.giaBan = (decimal)row["giaBan"];
+                    sanPham.duongDanAnh = row["duongDanAnh"].ToString();
+                    sanPham.trangThai = (bool)row["trangThai"];
 
-                listSanPham.Add(sanPham);
+                    listSanPham.Add(sanPham);
+                }
             }
 
             return listSanPham;

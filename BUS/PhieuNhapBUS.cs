@@ -18,6 +18,11 @@ namespace BUS
             phieuNhapDAO = new PhieuNhapDAO();
         }
 
+        public List<PhieuNhap> LayDanhSachPhieuNhap()
+        {
+            return phieuNhapDAO.LayDanhSachPhieuNhap();
+        }
+
         public int DemSoPhieuNhapTheoNgay(string strNgay)
         {
             DateTime ngay = DateTime.ParseExact(strNgay, "dd/MM/yyyy", null);
