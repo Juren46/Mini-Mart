@@ -70,6 +70,30 @@ namespace GUI
                 form.Show();
                 this.Hide();
             }
+            else
+            {
+                tenTaiKhoanTextBox.BorderColor = Color.Red;
+                matKhauTextBox.BorderColor = Color.Red;
+            }
+        }
+
+        private void guna2ImageCheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (guna2ImageCheckBox1.Checked == true)
+            {
+                matKhauTextBox.PasswordChar = '\0';
+                matKhauTextBox.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                matKhauTextBox.PasswordChar = '●';
+                matKhauTextBox.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void iconButton8_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
