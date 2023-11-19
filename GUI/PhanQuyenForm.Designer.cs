@@ -51,6 +51,7 @@
             Column6 = new DataGridViewImageColumn();
             panel1 = new Panel();
             panel2 = new Panel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dgvPhanQuyen).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -62,9 +63,9 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.GrayText;
-            label3.Location = new Point(27, 17);
+            label3.Location = new Point(24, 13);
             label3.Name = "label3";
-            label3.Size = new Size(85, 25);
+            label3.Size = new Size(67, 20);
             label3.TabIndex = 62;
             label3.Text = "Sắp xếp";
             // 
@@ -77,10 +78,9 @@
             btnTimKiem.IconColor = Color.White;
             btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnTimKiem.IconSize = 20;
-            btnTimKiem.Location = new Point(1040, 102);
-            btnTimKiem.Margin = new Padding(3, 4, 3, 4);
+            btnTimKiem.Location = new Point(910, 76);
             btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.Size = new Size(49, 48);
+            btnTimKiem.Size = new Size(43, 36);
             btnTimKiem.TabIndex = 61;
             btnTimKiem.UseVisualStyleBackColor = false;
             // 
@@ -96,10 +96,9 @@
             btnThemMoi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnThemMoi.IconSize = 20;
             btnThemMoi.ImageAlign = ContentAlignment.MiddleLeft;
-            btnThemMoi.Location = new Point(294, 46);
-            btnThemMoi.Margin = new Padding(3, 4, 3, 4);
+            btnThemMoi.Location = new Point(257, 34);
             btnThemMoi.Name = "btnThemMoi";
-            btnThemMoi.Size = new Size(131, 48);
+            btnThemMoi.Size = new Size(115, 36);
             btnThemMoi.TabIndex = 60;
             btnThemMoi.Text = "Thêm mới";
             btnThemMoi.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -116,14 +115,13 @@
             txtTimKiem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTimKiem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtTimKiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTimKiem.Location = new Point(27, 102);
-            txtTimKiem.Margin = new Padding(3, 4, 3, 4);
+            txtTimKiem.Location = new Point(24, 76);
             txtTimKiem.Name = "txtTimKiem";
             txtTimKiem.PasswordChar = '\0';
             txtTimKiem.PlaceholderText = "Nhập tên để tìm kiếm";
             txtTimKiem.SelectedText = "";
             txtTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            txtTimKiem.Size = new Size(1006, 48);
+            txtTimKiem.Size = new Size(880, 36);
             txtTimKiem.TabIndex = 59;
             // 
             // cbbSapXep
@@ -137,11 +135,10 @@
             cbbSapXep.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             cbbSapXep.ForeColor = Color.FromArgb(68, 88, 112);
             cbbSapXep.ItemHeight = 30;
-            cbbSapXep.Location = new Point(27, 46);
-            cbbSapXep.Margin = new Padding(3, 4, 3, 4);
+            cbbSapXep.Location = new Point(24, 34);
             cbbSapXep.Name = "cbbSapXep";
             cbbSapXep.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            cbbSapXep.Size = new Size(259, 36);
+            cbbSapXep.Size = new Size(227, 36);
             cbbSapXep.TabIndex = 58;
             // 
             // dgvPhanQuyen
@@ -172,7 +169,6 @@
             dgvPhanQuyen.Dock = DockStyle.Fill;
             dgvPhanQuyen.GridColor = Color.FromArgb(242, 245, 250);
             dgvPhanQuyen.Location = new Point(0, 0);
-            dgvPhanQuyen.Margin = new Padding(3, 4, 3, 4);
             dgvPhanQuyen.Name = "dgvPhanQuyen";
             dgvPhanQuyen.ReadOnly = true;
             dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -187,7 +183,7 @@
             dgvPhanQuyen.RowHeadersWidth = 51;
             dgvPhanQuyen.RowTemplate.DividerHeight = 3;
             dgvPhanQuyen.RowTemplate.Height = 50;
-            dgvPhanQuyen.Size = new Size(1334, 874);
+            dgvPhanQuyen.Size = new Size(1167, 655);
             dgvPhanQuyen.TabIndex = 63;
             dgvPhanQuyen.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvPhanQuyen.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -220,7 +216,7 @@
             Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
-            Column2.Width = 51;
+            Column2.Width = 42;
             // 
             // Column1
             // 
@@ -276,6 +272,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(iconButton1);
             panel1.Controls.Add(cbbSapXep);
             panel1.Controls.Add(txtTimKiem);
             panel1.Controls.Add(label3);
@@ -283,28 +280,44 @@
             panel1.Controls.Add(btnTimKiem);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1334, 169);
+            panel1.Size = new Size(1167, 127);
             panel1.TabIndex = 64;
             // 
             // panel2
             // 
             panel2.Controls.Add(dgvPhanQuyen);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 169);
+            panel2.Location = new Point(0, 127);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1334, 874);
+            panel2.Size = new Size(1167, 655);
             panel2.TabIndex = 65;
+            // 
+            // iconButton1
+            // 
+            iconButton1.BackColor = Color.FromArgb(33, 31, 48);
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowsRotate;
+            iconButton1.IconColor = Color.White;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 20;
+            iconButton1.Location = new Point(959, 76);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(43, 36);
+            iconButton1.TabIndex = 63;
+            iconButton1.UseVisualStyleBackColor = false;
             // 
             // PhanQuyenForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(223, 243, 252);
-            ClientSize = new Size(1334, 1043);
+            ClientSize = new Size(1167, 782);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "PhanQuyenForm";
             Text = "PhanQuyenForm";
             ((System.ComponentModel.ISupportInitialize)dgvPhanQuyen).EndInit();
@@ -330,5 +343,6 @@
         private DataGridViewImageColumn Column6;
         private Panel panel1;
         private Panel panel2;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

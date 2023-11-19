@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panelNav = new Guna.UI2.WinForms.Guna2Panel();
             panelMenu = new Panel();
             fllMenu = new FlowLayoutPanel();
@@ -49,9 +48,9 @@
             panel5 = new Panel();
             dangXuatButton = new FontAwesome.Sharp.IconButton();
             panel4 = new Panel();
+            guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             tenPhanQuyenLabel = new Label();
             tenNguoiDungLabel = new Label();
-            guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             panel1 = new Panel();
             panel3 = new Panel();
             lblTitleChildForm = new Label();
@@ -67,7 +66,7 @@
             fllMenu.SuspendLayout();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
+            guna2ShadowPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).BeginInit();
@@ -80,22 +79,22 @@
             panelNav.Controls.Add(panelMenu);
             panelNav.Controls.Add(panel5);
             panelNav.Controls.Add(panel4);
-            panelNav.CustomizableEdges = customizableEdges2;
+            panelNav.CustomizableEdges = customizableEdges3;
             panelNav.Dock = DockStyle.Left;
             panelNav.Location = new Point(0, 0);
             panelNav.Margin = new Padding(5);
             panelNav.Name = "panelNav";
-            panelNav.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            panelNav.Size = new Size(241, 911);
+            panelNav.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            panelNav.Size = new Size(241, 881);
             panelNav.TabIndex = 0;
             // 
             // panelMenu
             // 
             panelMenu.Controls.Add(fllMenu);
             panelMenu.Dock = DockStyle.Fill;
-            panelMenu.Location = new Point(0, 180);
+            panelMenu.Location = new Point(0, 116);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(241, 674);
+            panelMenu.Size = new Size(241, 681);
             panelMenu.TabIndex = 20;
             // 
             // fllMenu
@@ -115,7 +114,7 @@
             fllMenu.Dock = DockStyle.Fill;
             fllMenu.Location = new Point(0, 0);
             fllMenu.Name = "fllMenu";
-            fllMenu.Size = new Size(241, 674);
+            fllMenu.Size = new Size(241, 681);
             fllMenu.TabIndex = 0;
             // 
             // btnBanHang
@@ -386,9 +385,9 @@
             // 
             panel5.Controls.Add(dangXuatButton);
             panel5.Dock = DockStyle.Bottom;
-            panel5.Location = new Point(0, 854);
+            panel5.Location = new Point(0, 797);
             panel5.Name = "panel5";
-            panel5.Size = new Size(241, 57);
+            panel5.Size = new Size(241, 84);
             panel5.TabIndex = 1;
             // 
             // dangXuatButton
@@ -403,7 +402,7 @@
             dangXuatButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             dangXuatButton.IconSize = 40;
             dangXuatButton.ImageAlign = ContentAlignment.MiddleLeft;
-            dangXuatButton.Location = new Point(1, 7);
+            dangXuatButton.Location = new Point(1, 17);
             dangXuatButton.Name = "dangXuatButton";
             dangXuatButton.Padding = new Padding(10, 0, 20, 0);
             dangXuatButton.Size = new Size(240, 50);
@@ -415,20 +414,33 @@
             // 
             // panel4
             // 
-            panel4.Controls.Add(tenPhanQuyenLabel);
-            panel4.Controls.Add(tenNguoiDungLabel);
-            panel4.Controls.Add(guna2CirclePictureBox1);
+            panel4.Controls.Add(guna2ShadowPanel1);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(241, 180);
+            panel4.Size = new Size(241, 116);
             panel4.TabIndex = 0;
+            // 
+            // guna2ShadowPanel1
+            // 
+            guna2ShadowPanel1.BackColor = Color.Transparent;
+            guna2ShadowPanel1.Controls.Add(tenPhanQuyenLabel);
+            guna2ShadowPanel1.Controls.Add(tenNguoiDungLabel);
+            guna2ShadowPanel1.Dock = DockStyle.Top;
+            guna2ShadowPanel1.FillColor = Color.FromArgb(0, 50, 90);
+            guna2ShadowPanel1.Location = new Point(0, 0);
+            guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            guna2ShadowPanel1.Radius = 5;
+            guna2ShadowPanel1.ShadowColor = Color.FromArgb(0, 79, 111);
+            guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
+            guna2ShadowPanel1.Size = new Size(241, 100);
+            guna2ShadowPanel1.TabIndex = 0;
             // 
             // tenPhanQuyenLabel
             // 
             tenPhanQuyenLabel.AutoSize = true;
             tenPhanQuyenLabel.ForeColor = Color.Gainsboro;
-            tenPhanQuyenLabel.Location = new Point(31, 115);
+            tenPhanQuyenLabel.Location = new Point(12, 36);
             tenPhanQuyenLabel.Name = "tenPhanQuyenLabel";
             tenPhanQuyenLabel.Size = new Size(178, 24);
             tenPhanQuyenLabel.TabIndex = 2;
@@ -437,35 +449,24 @@
             // tenNguoiDungLabel
             // 
             tenNguoiDungLabel.AutoSize = true;
-            tenNguoiDungLabel.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            tenNguoiDungLabel.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             tenNguoiDungLabel.ForeColor = Color.White;
-            tenNguoiDungLabel.Location = new Point(107, 68);
+            tenNguoiDungLabel.Location = new Point(12, 8);
             tenNguoiDungLabel.Name = "tenNguoiDungLabel";
-            tenNguoiDungLabel.Size = new Size(98, 25);
+            tenNguoiDungLabel.Size = new Size(96, 24);
             tenNguoiDungLabel.TabIndex = 1;
             tenNguoiDungLabel.Text = "Ngọc Tín";
             // 
-            // guna2CirclePictureBox1
-            // 
-            guna2CirclePictureBox1.ImageRotate = 0F;
-            guna2CirclePictureBox1.Location = new Point(31, 42);
-            guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CirclePictureBox1.Size = new Size(70, 70);
-            guna2CirclePictureBox1.TabIndex = 0;
-            guna2CirclePictureBox1.TabStop = false;
-            // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(0, 71, 107);
+            panel1.BackColor = Color.FromArgb(0, 50, 90);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
             panel1.Cursor = Cursors.Hand;
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(241, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1143, 90);
+            panel1.Size = new Size(1143, 60);
             panel1.TabIndex = 1;
             panel1.MouseDown += panelTitleBar_MouseDown;
             // 
@@ -476,32 +477,32 @@
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(410, 90);
+            panel3.Size = new Size(410, 60);
             panel3.TabIndex = 1;
             // 
             // lblTitleChildForm
             // 
             lblTitleChildForm.AutoSize = true;
-            lblTitleChildForm.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTitleChildForm.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblTitleChildForm.ForeColor = Color.White;
-            lblTitleChildForm.Location = new Point(91, 27);
+            lblTitleChildForm.Location = new Point(91, 15);
             lblTitleChildForm.Name = "lblTitleChildForm";
-            lblTitleChildForm.Size = new Size(299, 37);
+            lblTitleChildForm.Size = new Size(136, 30);
             lblTitleChildForm.TabIndex = 3;
-            lblTitleChildForm.Text = "Quản lý loại sản phẩm";
+            lblTitleChildForm.Text = "TRANG CHỦ";
             lblTitleChildForm.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // iconCurrentChildForm
             // 
-            iconCurrentChildForm.BackColor = Color.FromArgb(0, 71, 107);
+            iconCurrentChildForm.BackColor = Color.FromArgb(0, 50, 90);
             iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
             iconCurrentChildForm.IconColor = Color.White;
             iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconCurrentChildForm.IconSize = 60;
-            iconCurrentChildForm.Location = new Point(25, 15);
+            iconCurrentChildForm.IconSize = 50;
+            iconCurrentChildForm.Location = new Point(25, 5);
             iconCurrentChildForm.Name = "iconCurrentChildForm";
             iconCurrentChildForm.Padding = new Padding(10, 0, 0, 0);
-            iconCurrentChildForm.Size = new Size(60, 60);
+            iconCurrentChildForm.Size = new Size(50, 50);
             iconCurrentChildForm.SizeMode = PictureBoxSizeMode.Zoom;
             iconCurrentChildForm.TabIndex = 2;
             iconCurrentChildForm.TabStop = false;
@@ -514,14 +515,14 @@
             panel2.Dock = DockStyle.Right;
             panel2.Location = new Point(972, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(171, 90);
+            panel2.Size = new Size(171, 60);
             panel2.TabIndex = 0;
             // 
             // iconButton9
             // 
-            iconButton9.BackColor = Color.FromArgb(0, 71, 107);
+            iconButton9.BackColor = Color.FromArgb(0, 50, 90);
             iconButton9.FlatAppearance.BorderSize = 0;
-            iconButton9.FlatAppearance.MouseOverBackColor = Color.FromArgb(20, 91, 127);
+            iconButton9.FlatAppearance.MouseOverBackColor = Color.FromArgb(100, 60, 60, 60);
             iconButton9.FlatStyle = FlatStyle.Flat;
             iconButton9.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton9.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
@@ -538,9 +539,9 @@
             // 
             // iconButton8
             // 
-            iconButton8.BackColor = Color.FromArgb(0, 71, 107);
+            iconButton8.BackColor = Color.FromArgb(0, 50, 90);
             iconButton8.FlatAppearance.BorderSize = 0;
-            iconButton8.FlatAppearance.MouseOverBackColor = Color.FromArgb(20, 91, 127);
+            iconButton8.FlatAppearance.MouseOverBackColor = Color.IndianRed;
             iconButton8.FlatStyle = FlatStyle.Flat;
             iconButton8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton8.IconChar = FontAwesome.Sharp.IconChar.Xmark;
@@ -557,9 +558,9 @@
             // 
             // iconButton7
             // 
-            iconButton7.BackColor = Color.FromArgb(0, 71, 107);
+            iconButton7.BackColor = Color.FromArgb(0, 50, 90);
             iconButton7.FlatAppearance.BorderSize = 0;
-            iconButton7.FlatAppearance.MouseOverBackColor = Color.FromArgb(20, 91, 127);
+            iconButton7.FlatAppearance.MouseOverBackColor = Color.FromArgb(100, 60, 60, 60);
             iconButton7.FlatStyle = FlatStyle.Flat;
             iconButton7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton7.ForeColor = Color.White;
@@ -567,9 +568,9 @@
             iconButton7.IconColor = Color.White;
             iconButton7.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButton7.IconSize = 20;
+            iconButton7.ImageAlign = ContentAlignment.TopCenter;
             iconButton7.Location = new Point(12, 3);
             iconButton7.Name = "iconButton7";
-            iconButton7.Padding = new Padding(0, 3, 0, 0);
             iconButton7.Size = new Size(45, 34);
             iconButton7.TabIndex = 10;
             iconButton7.UseVisualStyleBackColor = false;
@@ -578,7 +579,7 @@
             // panelDesktop
             // 
             panelDesktop.Dock = DockStyle.Fill;
-            panelDesktop.Location = new Point(241, 90);
+            panelDesktop.Location = new Point(241, 60);
             panelDesktop.Name = "panelDesktop";
             panelDesktop.Size = new Size(1143, 821);
             panelDesktop.TabIndex = 2;
@@ -603,7 +604,7 @@
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(223, 243, 252);
-            ClientSize = new Size(1384, 911);
+            ClientSize = new Size(1384, 881);
             Controls.Add(panelDesktop);
             Controls.Add(panel1);
             Controls.Add(panelNav);
@@ -617,8 +618,8 @@
             fllMenu.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
+            guna2ShadowPanel1.ResumeLayout(false);
+            guna2ShadowPanel1.PerformLayout();
             panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -657,8 +658,8 @@
         private Panel panel5;
         private FontAwesome.Sharp.IconButton dangXuatButton;
         private Panel panel4;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Label tenPhanQuyenLabel;
         private Label tenNguoiDungLabel;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
     }
 }

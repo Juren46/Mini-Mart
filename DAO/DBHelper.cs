@@ -10,12 +10,12 @@ namespace DAO
 {
     public class DBHelper
     {
-        private static string servername = "TRUNG-LAPTOP\\ELIO";
+        /*private static string servername = "TRUNG-LAPTOP\\ELIO";
         private static string dbName = "mini-mart";
         private static string username = "";
         private static string password = "";
-        private static string connectionString = $"Data Source={servername};Initial Catalog={dbName};Integrated Security=True;Encrypt=False";
-        //private static string connectionString = $"Data Source={servername};Initial Catalog={dbName};User ID={username};Password={password}";
+        private static string connectionString = $"Data Source={servername};Initial Catalog={dbName};Integrated Security=True;Encrypt=False";*/
+        private static string connectionString = @"Data Source=ngoctin\TIN;Initial Catalog=mini-mart;Persist Security Info=True;User ID=sa;Password=123;Encrypt=True;Trust Server Certificate=True";
 
         public static DataTable ExecuteQuery(string query)
         {
