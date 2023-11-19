@@ -70,6 +70,7 @@
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2ComboBox4 = new Guna.UI2.WinForms.Guna2ComboBox();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)sanPhamDataGridView).BeginInit();
@@ -283,6 +284,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(iconButton2);
             panel2.Controls.Add(btnDeleteAll);
             panel2.Controls.Add(guna2ToggleSwitch1);
             panel2.Controls.Add(label3);
@@ -312,7 +314,7 @@
             btnDeleteAll.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnDeleteAll.IconSize = 20;
             btnDeleteAll.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDeleteAll.Location = new Point(984, 75);
+            btnDeleteAll.Location = new Point(984, 27);
             btnDeleteAll.Name = "btnDeleteAll";
             btnDeleteAll.Size = new Size(115, 36);
             btnDeleteAll.TabIndex = 37;
@@ -488,6 +490,21 @@
             guna2ComboBox4.Size = new Size(288, 36);
             guna2ComboBox4.TabIndex = 27;
             // 
+            // iconButton2
+            // 
+            iconButton2.BackColor = Color.FromArgb(33, 31, 48);
+            iconButton2.FlatAppearance.BorderSize = 0;
+            iconButton2.FlatStyle = FlatStyle.Flat;
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.ArrowsRotate;
+            iconButton2.IconColor = Color.White;
+            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton2.IconSize = 20;
+            iconButton2.Location = new Point(984, 75);
+            iconButton2.Name = "iconButton2";
+            iconButton2.Size = new Size(43, 36);
+            iconButton2.TabIndex = 64;
+            iconButton2.UseVisualStyleBackColor = false;
+            // 
             // SanPhamForm
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
@@ -536,5 +553,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox4;
         private FontAwesome.Sharp.IconButton btnDeleteAll;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }

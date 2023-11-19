@@ -211,6 +211,7 @@ namespace GUI
         private void btnPhanQuyen_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new PhanQuyenForm());
         }
 
         private void btnNhaCungCap_Click(object sender, EventArgs e)
