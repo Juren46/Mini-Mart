@@ -11,6 +11,8 @@
   <ItemGroup>
     <PackageReference Include="fontawesome.sharp.pro" Version="6.3.0" />
     <PackageReference Include="guna.ui2.winforms" Version="2.0.4.5" />
+    <PackageReference Include="Microsoft.Report.Viewer" Version="11.0.0" />
+    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1586.0" />
   </ItemGroup>
 
   <ItemGroup>
