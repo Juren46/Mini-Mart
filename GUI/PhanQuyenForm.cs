@@ -19,7 +19,7 @@ namespace GUI
         private void sanPhamDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Kiểm tra xem cell đang được định dạng có phải là cell hình ảnh không.
-            if ((e.ColumnIndex == 4 || e.ColumnIndex == 5 || e.ColumnIndex == 6) && e.RowIndex >= 0)
+            if ((e.ColumnIndex == 3 || e.ColumnIndex == 4 || e.ColumnIndex == 5) && e.RowIndex >= 0)
             {
                 // Kiểm tra giá trị của cell có phải là hình ảnh không.
                 if (e.Value is Image)
