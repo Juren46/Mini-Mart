@@ -45,7 +45,7 @@
             guna2ToggleSwitch1 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             label3 = new Label();
             label1 = new Label();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            btnTimKiem = new FontAwesome.Sharp.IconButton();
             btnNhapXuatExcel = new FontAwesome.Sharp.IconButton();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -78,10 +78,11 @@
             guna2ToggleSwitch1.CheckedState.InnerBorderColor = Color.White;
             guna2ToggleSwitch1.CheckedState.InnerColor = Color.White;
             guna2ToggleSwitch1.CustomizableEdges = customizableEdges7;
-            guna2ToggleSwitch1.Location = new Point(37, 36);
+            guna2ToggleSwitch1.Location = new Point(42, 48);
+            guna2ToggleSwitch1.Margin = new Padding(3, 4, 3, 4);
             guna2ToggleSwitch1.Name = "guna2ToggleSwitch1";
             guna2ToggleSwitch1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2ToggleSwitch1.Size = new Size(66, 23);
+            guna2ToggleSwitch1.Size = new Size(75, 31);
             guna2ToggleSwitch1.TabIndex = 50;
             guna2ToggleSwitch1.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
             guna2ToggleSwitch1.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
@@ -94,9 +95,9 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.GrayText;
-            label3.Location = new Point(148, 9);
+            label3.Location = new Point(169, 12);
             label3.Name = "label3";
-            label3.Size = new Size(67, 20);
+            label3.Size = new Size(85, 25);
             label3.TabIndex = 49;
             label3.Text = "Sắp xếp";
             // 
@@ -106,26 +107,27 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.GrayText;
-            label1.Location = new Point(28, 9);
+            label1.Location = new Point(32, 12);
             label1.Name = "label1";
-            label1.Size = new Size(80, 20);
+            label1.Size = new Size(100, 25);
             label1.TabIndex = 48;
             label1.Text = "Trạng thái";
             // 
-            // iconButton1
+            // btnTimKiem
             // 
-            iconButton1.BackColor = Color.FromArgb(226, 153, 48);
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconButton1.IconColor = Color.White;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 20;
-            iconButton1.Location = new Point(914, 79);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(43, 36);
-            iconButton1.TabIndex = 47;
-            iconButton1.UseVisualStyleBackColor = false;
+            btnTimKiem.BackColor = Color.FromArgb(226, 153, 48);
+            btnTimKiem.FlatAppearance.BorderSize = 0;
+            btnTimKiem.FlatStyle = FlatStyle.Flat;
+            btnTimKiem.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            btnTimKiem.IconColor = Color.White;
+            btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnTimKiem.IconSize = 20;
+            btnTimKiem.Location = new Point(1045, 105);
+            btnTimKiem.Margin = new Padding(3, 4, 3, 4);
+            btnTimKiem.Name = "btnTimKiem";
+            btnTimKiem.Size = new Size(49, 48);
+            btnTimKiem.TabIndex = 47;
+            btnTimKiem.UseVisualStyleBackColor = false;
             // 
             // btnNhapXuatExcel
             // 
@@ -139,9 +141,10 @@
             btnNhapXuatExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnNhapXuatExcel.IconSize = 20;
             btnNhapXuatExcel.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNhapXuatExcel.Location = new Point(374, 31);
+            btnNhapXuatExcel.Location = new Point(427, 41);
+            btnNhapXuatExcel.Margin = new Padding(3, 4, 3, 4);
             btnNhapXuatExcel.Name = "btnNhapXuatExcel";
-            btnNhapXuatExcel.Size = new Size(168, 36);
+            btnNhapXuatExcel.Size = new Size(192, 48);
             btnNhapXuatExcel.TabIndex = 46;
             btnNhapXuatExcel.Text = "Nhập xuất excel";
             btnNhapXuatExcel.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -159,9 +162,10 @@
             iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton3.IconSize = 20;
             iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(548, 31);
+            iconButton3.Location = new Point(626, 41);
+            iconButton3.Margin = new Padding(3, 4, 3, 4);
             iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(115, 36);
+            iconButton3.Size = new Size(131, 48);
             iconButton3.TabIndex = 45;
             iconButton3.Text = "Thêm mới";
             iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -178,13 +182,14 @@
             guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new Point(28, 79);
+            guna2TextBox1.Location = new Point(32, 105);
+            guna2TextBox1.Margin = new Padding(3, 4, 3, 4);
             guna2TextBox1.Name = "guna2TextBox1";
             guna2TextBox1.PasswordChar = '\0';
             guna2TextBox1.PlaceholderText = "Nhập tên để tìm kiếm";
             guna2TextBox1.SelectedText = "";
             guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2TextBox1.Size = new Size(880, 36);
+            guna2TextBox1.Size = new Size(1006, 48);
             guna2TextBox1.TabIndex = 44;
             // 
             // guna2ComboBox2
@@ -198,10 +203,11 @@
             guna2ComboBox2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             guna2ComboBox2.ForeColor = Color.FromArgb(68, 88, 112);
             guna2ComboBox2.ItemHeight = 30;
-            guna2ComboBox2.Location = new Point(141, 31);
+            guna2ComboBox2.Location = new Point(161, 41);
+            guna2ComboBox2.Margin = new Padding(3, 4, 3, 4);
             guna2ComboBox2.Name = "guna2ComboBox2";
             guna2ComboBox2.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2ComboBox2.Size = new Size(227, 36);
+            guna2ComboBox2.Size = new Size(259, 36);
             guna2ComboBox2.TabIndex = 43;
             // 
             // guna2DataGridView1
@@ -231,7 +237,8 @@
             guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle15;
             guna2DataGridView1.Dock = DockStyle.Bottom;
             guna2DataGridView1.GridColor = Color.FromArgb(242, 245, 250);
-            guna2DataGridView1.Location = new Point(0, 122);
+            guna2DataGridView1.Location = new Point(0, 163);
+            guna2DataGridView1.Margin = new Padding(3, 4, 3, 4);
             guna2DataGridView1.Name = "guna2DataGridView1";
             guna2DataGridView1.ReadOnly = true;
             dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -243,9 +250,10 @@
             dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
             guna2DataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             guna2DataGridView1.RowHeadersVisible = false;
+            guna2DataGridView1.RowHeadersWidth = 51;
             guna2DataGridView1.RowTemplate.DividerHeight = 3;
             guna2DataGridView1.RowTemplate.Height = 50;
-            guna2DataGridView1.Size = new Size(1167, 660);
+            guna2DataGridView1.Size = new Size(1334, 880);
             guna2DataGridView1.TabIndex = 51;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -275,15 +283,17 @@
             dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
             Column2.DefaultCellStyle = dataGridViewCellStyle11;
             Column2.HeaderText = "#";
+            Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
-            Column2.Width = 42;
+            Column2.Width = 51;
             // 
             // Column1
             // 
             Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column1.FillWeight = 126.881325F;
             Column1.HeaderText = "Mã hóa đơn";
+            Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
             Column1.Resizable = DataGridViewTriState.True;
@@ -293,6 +303,7 @@
             Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column3.FillWeight = 152.257629F;
             Column3.HeaderText = "Mã nhân viên";
+            Column3.MinimumWidth = 6;
             Column3.Name = "Column3";
             Column3.ReadOnly = true;
             // 
@@ -301,6 +312,7 @@
             Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column4.FillWeight = 152.257629F;
             Column4.HeaderText = "Mã khách hàng";
+            Column4.MinimumWidth = 6;
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
@@ -309,6 +321,7 @@
             Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column5.FillWeight = 152.257629F;
             Column5.HeaderText = "Mã khuyến mãi";
+            Column5.MinimumWidth = 6;
             Column5.Name = "Column5";
             Column5.ReadOnly = true;
             // 
@@ -319,6 +332,7 @@
             Column6.DefaultCellStyle = dataGridViewCellStyle12;
             Column6.FillWeight = 63.4406624F;
             Column6.HeaderText = "thời gian tạo";
+            Column6.MinimumWidth = 6;
             Column6.Name = "Column6";
             Column6.ReadOnly = true;
             // 
@@ -329,6 +343,7 @@
             Column7.DefaultCellStyle = dataGridViewCellStyle13;
             Column7.FillWeight = 88.31249F;
             Column7.HeaderText = "Tổng tiền";
+            Column7.MinimumWidth = 6;
             Column7.Name = "Column7";
             Column7.ReadOnly = true;
             // 
@@ -339,6 +354,7 @@
             Column8.DefaultCellStyle = dataGridViewCellStyle14;
             Column8.FillWeight = 126.881325F;
             Column8.HeaderText = "Giá trị khuyến mãi";
+            Column8.MinimumWidth = 6;
             Column8.Name = "Column8";
             Column8.ReadOnly = true;
             // 
@@ -346,6 +362,7 @@
             // 
             Column9.FillWeight = 98.12499F;
             Column9.HeaderText = "Thành tiền";
+            Column9.MinimumWidth = 6;
             Column9.Name = "Column9";
             Column9.ReadOnly = true;
             // 
@@ -353,6 +370,7 @@
             // 
             Column10.FillWeight = 98.12499F;
             Column10.HeaderText = "Tiền nhận";
+            Column10.MinimumWidth = 6;
             Column10.Name = "Column10";
             Column10.ReadOnly = true;
             // 
@@ -360,6 +378,7 @@
             // 
             Column11.FillWeight = 98.12499F;
             Column11.HeaderText = "Tiền thừa";
+            Column11.MinimumWidth = 6;
             Column11.Name = "Column11";
             Column11.ReadOnly = true;
             // 
@@ -369,9 +388,10 @@
             Column12.FillWeight = 30F;
             Column12.HeaderText = "";
             Column12.Image = Properties.Resources._003_information;
+            Column12.MinimumWidth = 6;
             Column12.Name = "Column12";
             Column12.ReadOnly = true;
-            Column12.Width = 5;
+            Column12.Width = 6;
             // 
             // Column13
             // 
@@ -379,9 +399,10 @@
             Column13.FillWeight = 30F;
             Column13.HeaderText = "";
             Column13.Image = Properties.Resources._002_pencil;
+            Column13.MinimumWidth = 6;
             Column13.Name = "Column13";
             Column13.ReadOnly = true;
-            Column13.Width = 5;
+            Column13.Width = 6;
             // 
             // Column14
             // 
@@ -389,25 +410,27 @@
             Column14.FillWeight = 30F;
             Column14.HeaderText = "";
             Column14.Image = Properties.Resources._001_delete;
+            Column14.MinimumWidth = 6;
             Column14.Name = "Column14";
             Column14.ReadOnly = true;
-            Column14.Width = 5;
+            Column14.Width = 6;
             // 
             // HoaDonForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(223, 243, 252);
-            ClientSize = new Size(1167, 782);
+            ClientSize = new Size(1334, 1043);
             Controls.Add(guna2DataGridView1);
             Controls.Add(guna2ToggleSwitch1);
             Controls.Add(label3);
             Controls.Add(label1);
-            Controls.Add(iconButton1);
+            Controls.Add(btnTimKiem);
             Controls.Add(btnNhapXuatExcel);
             Controls.Add(iconButton3);
             Controls.Add(guna2TextBox1);
             Controls.Add(guna2ComboBox2);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "HoaDonForm";
             Text = "HoaDonForm";
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
@@ -420,7 +443,7 @@
         private Guna.UI2.WinForms.Guna2ToggleSwitch guna2ToggleSwitch1;
         private Label label3;
         private Label label1;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnTimKiem;
         private FontAwesome.Sharp.IconButton btnNhapXuatExcel;
         private FontAwesome.Sharp.IconButton iconButton3;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
