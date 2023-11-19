@@ -36,9 +36,6 @@ namespace GUI
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-
-            HideSideMenu();
-            HienThiSideMenuTheoPhanQuyen();
         }
 
         private void HideSideMenu()
@@ -266,7 +263,19 @@ namespace GUI
                 this.Close();
                 DangNhapForm dangNhap = new DangNhapForm();
                 dangNhap.Show();
-            }          
+            }
+        }
+
+        private void TrangChuForm_Load(object sender, EventArgs e)
+        {
+            HideSideMenu();
+            HienThiSideMenuTheoPhanQuyen();
+
+            /*switch(DangNhapForm.taiKhoan.maPhanQuyen)
+            {
+                case "PQ01":
+
+            }*/
         }
     }
 }

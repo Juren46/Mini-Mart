@@ -48,7 +48,7 @@ namespace DAO
             taiKhoan.trangThai = (bool)dataTable.Rows[0]["trangThai"];
 
             return taiKhoan;
-        }
+        } 
 
         public bool KiemTraDangNhap(string tenTaiKhoan, string matKhau)
         {

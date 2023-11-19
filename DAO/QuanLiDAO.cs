@@ -42,6 +42,28 @@ namespace DAO
             return listQuanLi;
         }
 
+        public QuanLi LayQuanLiTheoTenTaiKhoan(string tenTaiKhoan)
+        {
+            QuanLi quanLi = new QuanLi();
+
+            string query = $"SELECT * FROM QuanLi WHERE tenTaiKhoan = '{tenTaiKhoan}';";
+
+            DataTable dataTable = DBHelper.ExecuteQuery(query);
+
+            quanLi.maQuanLi = dataTable.Rows[0]["maQuanLi"].ToString();
+            quanLi.tenTaiKhoan = dataTable.Rows[0]["tenTaiKhoan"].ToString();
+            quanLi.hoTen = dataTable.Rows[0]["tenQuanLi"].ToString();
+            quanLi.gioiTinh = dataTable.Rows[0]["gioiTinh"].ToString();
+            try { quanLi.ngaySinh = (DateTime)dataTable.Rows[0]["ngaySinh"]; }
+            catch { quanLi.ngaySinh = null; }
+            quanLi.soDienThoai = dataTable.Rows[0]["soDienThoai"].ToString();
+            quanLi.email = dataTable.Rows[0]["email"].ToString();
+            quanLi.diaChi = dataTable.Rows[0]["diaChi"].ToString();
+            quanLi.trangThai = (bool)dataTable.Rows[0]["trangThai"];
+
+            return quanLi;
+        }
+
         public int DemSoQuanLi()
         {
             string query = "SELECT COUNT(*) AS SoQuanLi FROM QuanLi;";

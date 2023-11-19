@@ -23,6 +23,11 @@ namespace BUS
             return quanLiDAO.LayDanhSachQuanLi();
         }
 
+        public QuanLi LayQuanLiTheoTenTaiKhoan(string tenTaiKhoan)
+        {
+            return quanLiDAO.LayQuanLiTheoTenTaiKhoan(tenTaiKhoan);
+        }
+
         public int DemSoQuanLi()
         {
             return quanLiDAO.DemSoQuanLi();

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panelNav = new Guna.UI2.WinForms.Guna2Panel();
             panelMenu = new Panel();
             fllMenu = new FlowLayoutPanel();
@@ -49,8 +49,8 @@
             panel5 = new Panel();
             dangXuatButton = new FontAwesome.Sharp.IconButton();
             panel4 = new Panel();
-            label2 = new Label();
-            label1 = new Label();
+            tenPhanQuyenLabel = new Label();
+            tenNguoiDungLabel = new Label();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             panel1 = new Panel();
             panel3 = new Panel();
@@ -80,12 +80,12 @@
             panelNav.Controls.Add(panelMenu);
             panelNav.Controls.Add(panel5);
             panelNav.Controls.Add(panel4);
-            panelNav.CustomizableEdges = customizableEdges2;
+            panelNav.CustomizableEdges = customizableEdges7;
             panelNav.Dock = DockStyle.Left;
             panelNav.Location = new Point(0, 0);
             panelNav.Margin = new Padding(5);
             panelNav.Name = "panelNav";
-            panelNav.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            panelNav.ShadowDecoration.CustomizableEdges = customizableEdges8;
             panelNav.Size = new Size(241, 911);
             panelNav.TabIndex = 0;
             // 
@@ -415,8 +415,8 @@
             // 
             // panel4
             // 
-            panel4.Controls.Add(label2);
-            panel4.Controls.Add(label1);
+            panel4.Controls.Add(tenPhanQuyenLabel);
+            panel4.Controls.Add(tenNguoiDungLabel);
             panel4.Controls.Add(guna2CirclePictureBox1);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(0, 0);
@@ -424,33 +424,33 @@
             panel4.Size = new Size(241, 180);
             panel4.TabIndex = 0;
             // 
-            // label2
+            // tenPhanQuyenLabel
             // 
-            label2.AutoSize = true;
-            label2.ForeColor = Color.Gainsboro;
-            label2.Location = new Point(31, 115);
-            label2.Name = "label2";
-            label2.Size = new Size(178, 24);
-            label2.TabIndex = 2;
-            label2.Text = "nhân viên bán hàng";
+            tenPhanQuyenLabel.AutoSize = true;
+            tenPhanQuyenLabel.ForeColor = Color.Gainsboro;
+            tenPhanQuyenLabel.Location = new Point(31, 115);
+            tenPhanQuyenLabel.Name = "tenPhanQuyenLabel";
+            tenPhanQuyenLabel.Size = new Size(178, 24);
+            tenPhanQuyenLabel.TabIndex = 2;
+            tenPhanQuyenLabel.Text = "nhân viên bán hàng";
             // 
-            // label1
+            // tenNguoiDungLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(107, 68);
-            label1.Name = "label1";
-            label1.Size = new Size(98, 25);
-            label1.TabIndex = 1;
-            label1.Text = "Ngọc Tín";
+            tenNguoiDungLabel.AutoSize = true;
+            tenNguoiDungLabel.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            tenNguoiDungLabel.ForeColor = Color.White;
+            tenNguoiDungLabel.Location = new Point(107, 68);
+            tenNguoiDungLabel.Name = "tenNguoiDungLabel";
+            tenNguoiDungLabel.Size = new Size(98, 25);
+            tenNguoiDungLabel.TabIndex = 1;
+            tenNguoiDungLabel.Text = "Ngọc Tín";
             // 
             // guna2CirclePictureBox1
             // 
             guna2CirclePictureBox1.ImageRotate = 0F;
             guna2CirclePictureBox1.Location = new Point(31, 42);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges9;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CirclePictureBox1.Size = new Size(70, 70);
             guna2CirclePictureBox1.TabIndex = 0;
@@ -611,6 +611,7 @@
             Margin = new Padding(5);
             Name = "TrangChuForm";
             Text = "TrangChuForm";
+            Load += TrangChuForm_Load;
             panelNav.ResumeLayout(false);
             panelMenu.ResumeLayout(false);
             fllMenu.ResumeLayout(false);
@@ -657,7 +658,7 @@
         private FontAwesome.Sharp.IconButton dangXuatButton;
         private Panel panel4;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private Label label2;
-        private Label label1;
+        private Label tenPhanQuyenLabel;
+        private Label tenNguoiDungLabel;
     }
 }
