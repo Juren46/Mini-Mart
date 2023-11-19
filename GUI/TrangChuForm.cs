@@ -16,7 +16,7 @@ namespace GUI
 {
     public partial class TrangChuForm : Form
     {
-        public static TaiKhoanBUS taiKhoanBUS;
+        TaiKhoanBUS taiKhoanBUS;
 
         private IconButton currentBtn;
         private Panel leftBorderBtn;
@@ -271,11 +271,26 @@ namespace GUI
             HideSideMenu();
             HienThiSideMenuTheoPhanQuyen();
 
-            /*switch(DangNhapForm.taiKhoan.maPhanQuyen)
+            switch (DangNhapForm.taiKhoan.maPhanQuyen)
             {
                 case "PQ01":
+                    tenNguoiDungLabel.Text = new AdminBUS().LayAdminTheoTenTaiKhoan(DangNhapForm.taiKhoan.tenTaiKhoan).hoTen;
+                    break;
 
-            }*/
+                case "PQ02":
+                    tenNguoiDungLabel.Text = new QuanLiBUS().LayQuanLiTheoTenTaiKhoan(DangNhapForm.taiKhoan.tenTaiKhoan).hoTen;
+                    break;
+
+                case "PQ03":
+                    tenNguoiDungLabel.Text = new NhanVienBUS().LayNhanVienTheoTenTaiKhoan(DangNhapForm.taiKhoan.tenTaiKhoan).hoTen;
+                    break;
+
+                case "PQ04":
+                    tenNguoiDungLabel.Text = new NhanVienBUS().LayNhanVienTheoTenTaiKhoan(DangNhapForm.taiKhoan.tenTaiKhoan).hoTen;
+                    break;
+            }
+
+            tenPhanQuyenLabel.Text = new PhanQuyenBUS().LayPhanQuyenTheoMa(DangNhapForm.taiKhoan.maPhanQuyen).tenPhanQuyen;
         }
     }
 }

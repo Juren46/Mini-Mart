@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panelNav = new Guna.UI2.WinForms.Guna2Panel();
             panelMenu = new Panel();
             fllMenu = new FlowLayoutPanel();
@@ -80,12 +80,12 @@
             panelNav.Controls.Add(panelMenu);
             panelNav.Controls.Add(panel5);
             panelNav.Controls.Add(panel4);
-            panelNav.CustomizableEdges = customizableEdges7;
+            panelNav.CustomizableEdges = customizableEdges2;
             panelNav.Dock = DockStyle.Left;
             panelNav.Location = new Point(0, 0);
             panelNav.Margin = new Padding(5);
             panelNav.Name = "panelNav";
-            panelNav.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            panelNav.ShadowDecoration.CustomizableEdges = customizableEdges3;
             panelNav.Size = new Size(241, 911);
             panelNav.TabIndex = 0;
             // 
@@ -450,7 +450,7 @@
             guna2CirclePictureBox1.ImageRotate = 0F;
             guna2CirclePictureBox1.Location = new Point(31, 42);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges1;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CirclePictureBox1.Size = new Size(70, 70);
             guna2CirclePictureBox1.TabIndex = 0;

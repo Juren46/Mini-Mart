@@ -59,6 +59,8 @@ namespace GUI
 
             string message = taiKhoanBUS.KiemTraDangNhap(tenTaiKhoan, matKhau);
 
+            Console.WriteLine(message);
+
             MessageBox.Show(message);
 
             if (message.Equals("Đăng nhập thành công!"))
