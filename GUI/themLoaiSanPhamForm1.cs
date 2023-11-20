@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using BUS.OtherFunctions;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,22 +12,51 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class themLoaiSanPhamForm1 : Form
+    public partial class chiTietLoaiSanPhamForm : Form
     {
         LoaiSanPham loaiSanPham;
-        public themLoaiSanPhamForm1(LoaiSanPham loaiSanPham)
+        string context;
+        public chiTietLoaiSanPhamForm(LoaiSanPham loaiSanPham, string context)
         {
             InitializeComponent();
             CenterToParent();
 
             this.loaiSanPham = loaiSanPham;
+            this.context = context;
+        }
+
+        public chiTietLoaiSanPhamForm(string context)
+        {
+            InitializeComponent();
+            CenterToParent();
+
+            this.context = context;
         }
 
         private void themLoaiSanPhamForm1_Load(object sender, EventArgs e)
         {
-            txtMaSanPham.Text = loaiSanPham.maLoaiSanPham;
-            txtTenSanPham.Text = loaiSanPham.tenLoaiSanPham;
+            if (context.Equals("Chi tiết"))
+            {
+                txtMaSanPham.Text = loaiSanPham.maLoaiSanPham;
+                txtTenSanPham.Text = loaiSanPham.tenLoaiSanPham;
 
+                txtMaSanPham.Enabled = false;
+                txtTenSanPham.Enabled = false;
+            }
+
+            if (context.Equals("Thêm"))
+            {
+                txtMaSanPham.Text = IDGenerator.GenerateLoaiSanPhamID();
+                txtMaSanPham.Enabled = false;
+            }
+
+            if (context.Equals("Sửa"))
+            {
+                txtMaSanPham.Text = loaiSanPham.maLoaiSanPham;
+                txtTenSanPham.Text = loaiSanPham.tenLoaiSanPham;
+
+                txtMaSanPham.Enabled = false;
+            }
         }
     }
 }

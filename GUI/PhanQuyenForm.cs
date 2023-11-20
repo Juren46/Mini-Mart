@@ -1,4 +1,5 @@
 ﻿using BUS;
+using BUS.OtherFunctions;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -66,6 +67,8 @@ namespace GUI
 
         private void refreshButton_Click(object sender, EventArgs e)
         {
+            timKiemTextBox.Clear();
+
             listPhanQuyen = phanQuyenBUS.LayDanhSachPhanQuyen();
 
             LoadDataToDataGridView(listPhanQuyen);
@@ -82,7 +85,7 @@ namespace GUI
 
         private void PhanQuyenForm_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter && timKiemTextBox.Text.Length > 0)
             {
                 timKiemButton_Click(sender, e);
             }
@@ -91,6 +94,31 @@ namespace GUI
         private void timKiemTextBox_TextChanged(object sender, EventArgs e)
         {
             timKiemButton_Click(sender, e);
+        }
+
+        private void excelBtn_Click(object sender, EventArgs e)
+        {
+            List<string> listMaPhanQuyen = new List<string>();
+            for (int i = 0; i < dgvPhanQuyen.Rows.Count; i++)
+            {
+                listMaPhanQuyen.Add(dgvPhanQuyen.Rows[i].Cells[1].Value.ToString());
+            }
+            List<PhanQuyen> listPhanQuyen = new List<PhanQuyen>();
+            foreach (string maPhanQuyen in listMaPhanQuyen)
+            {
+                PhanQuyen phanQuyen = phanQuyenBUS.LayPhanQuyenTheoMa(maPhanQuyen);
+                listPhanQuyen.Add(phanQuyen);
+            }
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+            saveFileDialog.Title = "Chọn vị trí lưu file Excel";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+                new XuatExcel(filePath).XuatExcelPhanQuyen(listPhanQuyen);
+                MessageBox.Show("File Excel đã được tạo tại: " + filePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

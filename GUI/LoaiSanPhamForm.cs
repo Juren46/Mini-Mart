@@ -23,9 +23,6 @@ namespace GUI
         {
             InitializeComponent();
 
-            this.KeyPreview = true;
-            this.KeyDown += LoaiSanPhamForm_KeyDown;
-
             loaiSanPhamBUS = new LoaiSanPhamBUS();
             listLoaiSanPham = loaiSanPhamBUS.LayDanhSachLoaiSanPham();
         }
@@ -108,7 +105,7 @@ namespace GUI
 
         private void LoaiSanPhamForm_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter && timKiemTextBox.Text.Length > 0)
             {
                 timKiemButton_Click(sender, e);
             }
@@ -160,20 +157,27 @@ namespace GUI
 
             if (colName.Equals("editBtn"))
             {
-                new themLoaiSanPhamForm1(loaiSanPham).Show();
+                new chiTietLoaiSanPhamForm(loaiSanPham, "Sửa").Show();
             }
 
             if (colName.Equals("infoBtn"))
             {
-                new themLoaiSanPhamForm1(loaiSanPham).Show();
+                new chiTietLoaiSanPhamForm(loaiSanPham, "Chi tiết").Show();
             }
         }
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
+            timKiemTextBox.Clear();
+
             listLoaiSanPham = loaiSanPhamBUS.LayDanhSachLoaiSanPham();
 
             LoadDataToDataGridView(listLoaiSanPham);
+        }
+
+        private void themMoiBtn_Click(object sender, EventArgs e)
+        {
+            new chiTietLoaiSanPhamForm("Thêm").Show();
         }
     }
 }

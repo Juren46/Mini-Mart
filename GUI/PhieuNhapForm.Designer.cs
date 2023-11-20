@@ -46,7 +46,6 @@
             label3 = new Label();
             label1 = new Label();
             iconButton1 = new FontAwesome.Sharp.IconButton();
-            iconButton4 = new FontAwesome.Sharp.IconButton();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -62,6 +61,7 @@
             Column9 = new DataGridViewImageColumn();
             Column10 = new DataGridViewImageColumn();
             Column11 = new DataGridViewImageColumn();
+            iconButton4 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -123,26 +123,6 @@
             iconButton1.Size = new Size(43, 36);
             iconButton1.TabIndex = 55;
             iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // iconButton4
-            // 
-            iconButton4.BackColor = Color.FromArgb(33, 31, 48);
-            iconButton4.FlatAppearance.BorderSize = 0;
-            iconButton4.FlatStyle = FlatStyle.Flat;
-            iconButton4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton4.ForeColor = Color.White;
-            iconButton4.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
-            iconButton4.IconColor = Color.White;
-            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton4.IconSize = 20;
-            iconButton4.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton4.Location = new Point(378, 31);
-            iconButton4.Name = "iconButton4";
-            iconButton4.Size = new Size(168, 36);
-            iconButton4.TabIndex = 54;
-            iconButton4.Text = "Nhập xuất excel";
-            iconButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton4.UseVisualStyleBackColor = false;
             // 
             // iconButton3
             // 
@@ -369,6 +349,26 @@
             Column11.ReadOnly = true;
             Column11.Width = 5;
             // 
+            // iconButton4
+            // 
+            iconButton4.BackColor = Color.FromArgb(33, 31, 48);
+            iconButton4.FlatAppearance.BorderSize = 0;
+            iconButton4.FlatStyle = FlatStyle.Flat;
+            iconButton4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton4.ForeColor = Color.White;
+            iconButton4.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
+            iconButton4.IconColor = Color.White;
+            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton4.IconSize = 20;
+            iconButton4.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton4.Location = new Point(378, 31);
+            iconButton4.Name = "iconButton4";
+            iconButton4.Size = new Size(168, 36);
+            iconButton4.TabIndex = 54;
+            iconButton4.Text = "Nhập xuất excel";
+            iconButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iconButton4.UseVisualStyleBackColor = false;
+            // 
             // PhieuNhapForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -397,7 +397,6 @@
         private Label label3;
         private Label label1;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton4;
         private FontAwesome.Sharp.IconButton iconButton3;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
@@ -413,5 +412,6 @@
         private DataGridViewImageColumn Column9;
         private DataGridViewImageColumn Column10;
         private DataGridViewImageColumn Column11;
+        private FontAwesome.Sharp.IconButton iconButton4;
     }
 }
