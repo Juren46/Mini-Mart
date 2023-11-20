@@ -1,5 +1,6 @@
 ﻿using BUS;
 using DTO;
+using GUI.CacFormThongBao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,15 +60,16 @@ namespace GUI
 
             string message = taiKhoanBUS.KiemTraDangNhap(tenTaiKhoan, matKhau);
 
-            Console.WriteLine(message);
+           
 
-            MessageBox.Show(message);
+            CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.SUCCESS);
 
             if (message.Equals("Đăng nhập thành công!"))
             {
                 DangNhapForm.taiKhoan = taiKhoanBUS.LayTaiKhoanTheoTen(tenTaiKhoan);
-                LoadingForm form = new LoadingForm();
+                TrangChuForm form = new TrangChuForm();
                 form.Show();
+
                 this.Hide();
             }
             else
