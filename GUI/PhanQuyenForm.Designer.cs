@@ -118,7 +118,7 @@
             dgvPhanQuyen.ThemeStyle.RowsStyle.Height = 50;
             dgvPhanQuyen.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(0, 80, 112);
             dgvPhanQuyen.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
-            dgvPhanQuyen.CellFormatting += sanPhamDataGridView_CellFormatting;
+            dgvPhanQuyen.CellFormatting += phanQuyenDataGridView_CellFormatting;
             dgvPhanQuyen.CellPainting += sanPhamDataGridView_CellPainting;
             // 
             // Column2

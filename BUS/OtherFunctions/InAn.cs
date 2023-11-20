@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,14 +11,14 @@ namespace BUS.OtherFunctions
     {
         public InAn() { }
 
-        public static void InHoaDon()
+        public static void InHoaDon(HoaDon hoaDon)
         {
-
+            List<ChiTietHoaDon> listChiTietHoaDon = new ChiTietHoaDonBUS().LayDanhSachChiTietHoaDon(hoaDon.maHoaDon);
         }
 
-        public static void InPhieuNhap() 
-        { 
-            
+        public static void InPhieuNhap(PhieuNhap phieuNhap) 
+        {
+            List<ChiTietPhieuNhap> listChiTietPhieuNhap = new ChiTietPhieuNhapBUS().LayDanhSachChiTietPhieuNhap(phieuNhap.maPhieuNhap);
         }
     }
 }

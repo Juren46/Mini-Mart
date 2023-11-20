@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BUS;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,14 @@ namespace GUI
 {
     public partial class PhanQuyenForm : Form
     {
+        List<PhanQuyen> listPhanQuyen;
+        PhanQuyenBUS phanQuyenBus;
         public PhanQuyenForm()
         {
             InitializeComponent();
+
+            phanQuyenBus = new PhanQuyenBUS();
+            listPhanQuyen = phanQuyenBus.LayDanhSachPhanQuyen();
         }
         private void sanPhamDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -57,6 +64,11 @@ namespace GUI
 
                 e.Handled = true;
             }
+        }
+
+        private void phanQuyenDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
         }
     }
 }
