@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoaiSanPhamForm));
             timKiemButton = new FontAwesome.Sharp.IconButton();
             excelButton = new FontAwesome.Sharp.IconButton();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             panel2 = new Panel();
+            refreshBtn = new FontAwesome.Sharp.IconButton();
             panel3 = new Panel();
             loaiSanPhamDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             Column2 = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
-            Column9 = new DataGridViewImageColumn();
-            Column10 = new DataGridViewImageColumn();
-            Column11 = new DataGridViewImageColumn();
+            infoBtn = new DataGridViewImageColumn();
+            editBtn = new DataGridViewImageColumn();
+            deleteBtn = new DataGridViewImageColumn();
             panel1 = new Panel();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)loaiSanPhamDataGridView).BeginInit();
@@ -86,7 +86,7 @@
             excelButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             excelButton.IconSize = 20;
             excelButton.ImageAlign = ContentAlignment.MiddleLeft;
-            excelButton.Location = new Point(704, 13);
+            excelButton.Location = new Point(747, 13);
             excelButton.Name = "excelButton";
             excelButton.Size = new Size(168, 36);
             excelButton.TabIndex = 31;
@@ -107,7 +107,7 @@
             iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton3.IconSize = 20;
             iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(901, 13);
+            iconButton3.Location = new Point(921, 13);
             iconButton3.Name = "iconButton3";
             iconButton3.Size = new Size(115, 36);
             iconButton3.TabIndex = 30;
@@ -117,7 +117,7 @@
             // 
             // timKiemTextBox
             // 
-            timKiemTextBox.CustomizableEdges = customizableEdges3;
+            timKiemTextBox.CustomizableEdges = customizableEdges1;
             timKiemTextBox.DefaultText = "";
             timKiemTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             timKiemTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -131,14 +131,14 @@
             timKiemTextBox.PasswordChar = '\0';
             timKiemTextBox.PlaceholderText = "Nhập tên để tìm kiếm";
             timKiemTextBox.SelectedText = "";
-            timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
             timKiemTextBox.Size = new Size(574, 36);
             timKiemTextBox.TabIndex = 29;
             timKiemTextBox.TextChanged += timKiemTextBox_TextChanged;
             // 
             // panel2
             // 
-            panel2.Controls.Add(iconButton2);
+            panel2.Controls.Add(refreshBtn);
             panel2.Controls.Add(timKiemButton);
             panel2.Controls.Add(excelButton);
             panel2.Controls.Add(iconButton3);
@@ -148,6 +148,22 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1167, 60);
             panel2.TabIndex = 28;
+            // 
+            // refreshBtn
+            // 
+            refreshBtn.BackColor = Color.FromArgb(33, 31, 48);
+            refreshBtn.FlatAppearance.BorderSize = 0;
+            refreshBtn.FlatStyle = FlatStyle.Flat;
+            refreshBtn.IconChar = FontAwesome.Sharp.IconChar.ArrowsRotate;
+            refreshBtn.IconColor = Color.White;
+            refreshBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            refreshBtn.IconSize = 20;
+            refreshBtn.Location = new Point(682, 13);
+            refreshBtn.Name = "refreshBtn";
+            refreshBtn.Size = new Size(43, 36);
+            refreshBtn.TabIndex = 68;
+            refreshBtn.UseVisualStyleBackColor = false;
+            refreshBtn.Click += refreshBtn_Click;
             // 
             // panel3
             // 
@@ -161,41 +177,41 @@
             // loaiSanPhamDataGridView
             // 
             loaiSanPhamDataGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            loaiSanPhamDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            loaiSanPhamDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             loaiSanPhamDataGridView.BackgroundColor = Color.FromArgb(242, 245, 250);
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.LightBlue;
-            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(30, 110, 142);
-            dataGridViewCellStyle7.SelectionBackColor = Color.LightBlue;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            loaiSanPhamDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.LightBlue;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(30, 110, 142);
+            dataGridViewCellStyle2.SelectionBackColor = Color.LightBlue;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            loaiSanPhamDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             loaiSanPhamDataGridView.ColumnHeadersHeight = 40;
             loaiSanPhamDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            loaiSanPhamDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column2, Column1, Column3, Column4, Column9, Column10, Column11 });
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.White;
-            dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(227, 248, 251);
-            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
-            loaiSanPhamDataGridView.DefaultCellStyle = dataGridViewCellStyle9;
+            loaiSanPhamDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column2, Column1, Column3, Column4, infoBtn, editBtn, deleteBtn });
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(227, 248, 251);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            loaiSanPhamDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             loaiSanPhamDataGridView.Dock = DockStyle.Fill;
             loaiSanPhamDataGridView.GridColor = Color.FromArgb(242, 245, 250);
             loaiSanPhamDataGridView.Location = new Point(0, 0);
             loaiSanPhamDataGridView.Name = "loaiSanPhamDataGridView";
             loaiSanPhamDataGridView.ReadOnly = true;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = Color.White;
-            dataGridViewCellStyle10.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = Color.FromArgb(242, 245, 250);
-            dataGridViewCellStyle10.SelectionBackColor = Color.White;
-            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            loaiSanPhamDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(242, 245, 250);
+            dataGridViewCellStyle5.SelectionBackColor = Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            loaiSanPhamDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             loaiSanPhamDataGridView.RowHeadersVisible = false;
             loaiSanPhamDataGridView.RowTemplate.DividerHeight = 3;
             loaiSanPhamDataGridView.RowTemplate.Height = 50;
@@ -222,14 +238,15 @@
             loaiSanPhamDataGridView.ThemeStyle.RowsStyle.Height = 50;
             loaiSanPhamDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(0, 80, 112);
             loaiSanPhamDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
+            loaiSanPhamDataGridView.CellContentClick += loaiSanPhamDataGridView_CellContentClick;
             loaiSanPhamDataGridView.CellFormatting += loaiSanPhamDataGridView_CellFormatting;
             loaiSanPhamDataGridView.CellPainting += loaiSanPhamDataGridView_CellPainting;
             // 
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column2.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column2.DefaultCellStyle = dataGridViewCellStyle3;
             Column2.HeaderText = "#";
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
@@ -260,35 +277,35 @@
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
-            // Column9
+            // infoBtn
             // 
-            Column9.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column9.FillWeight = 30F;
-            Column9.HeaderText = "";
-            Column9.Image = Properties.Resources._003_information;
-            Column9.Name = "Column9";
-            Column9.ReadOnly = true;
-            Column9.Width = 5;
+            infoBtn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            infoBtn.FillWeight = 30F;
+            infoBtn.HeaderText = "";
+            infoBtn.Image = Properties.Resources._003_information;
+            infoBtn.Name = "infoBtn";
+            infoBtn.ReadOnly = true;
+            infoBtn.Width = 5;
             // 
-            // Column10
+            // editBtn
             // 
-            Column10.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column10.FillWeight = 30F;
-            Column10.HeaderText = "";
-            Column10.Image = (Image)resources.GetObject("Column10.Image");
-            Column10.Name = "Column10";
-            Column10.ReadOnly = true;
-            Column10.Width = 5;
+            editBtn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            editBtn.FillWeight = 30F;
+            editBtn.HeaderText = "";
+            editBtn.Image = (Image)resources.GetObject("editBtn.Image");
+            editBtn.Name = "editBtn";
+            editBtn.ReadOnly = true;
+            editBtn.Width = 5;
             // 
-            // Column11
+            // deleteBtn
             // 
-            Column11.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column11.FillWeight = 30F;
-            Column11.HeaderText = "";
-            Column11.Image = Properties.Resources._001_delete;
-            Column11.Name = "Column11";
-            Column11.ReadOnly = true;
-            Column11.Width = 5;
+            deleteBtn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            deleteBtn.FillWeight = 30F;
+            deleteBtn.HeaderText = "";
+            deleteBtn.Image = Properties.Resources._001_delete;
+            deleteBtn.Name = "deleteBtn";
+            deleteBtn.ReadOnly = true;
+            deleteBtn.Width = 5;
             // 
             // panel1
             // 
@@ -299,21 +316,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1167, 782);
             panel1.TabIndex = 2;
-            // 
-            // iconButton2
-            // 
-            iconButton2.BackColor = Color.FromArgb(33, 31, 48);
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.ArrowsRotate;
-            iconButton2.IconColor = Color.White;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 20;
-            iconButton2.Location = new Point(682, 13);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(43, 36);
-            iconButton2.TabIndex = 68;
-            iconButton2.UseVisualStyleBackColor = false;
             // 
             // LoaiSanPhamForm
             // 
@@ -344,13 +346,14 @@
         private Panel panel3;
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2DataGridView loaiSanPhamDataGridView;
+        private FontAwesome.Sharp.IconButton iconButton2;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
-        private DataGridViewImageColumn Column9;
-        private DataGridViewImageColumn Column10;
-        private DataGridViewImageColumn Column11;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private DataGridViewImageColumn infoBtn;
+        private DataGridViewImageColumn editBtn;
+        private DataGridViewImageColumn deleteBtn;
+        private FontAwesome.Sharp.IconButton refreshBtn;
     }
 }

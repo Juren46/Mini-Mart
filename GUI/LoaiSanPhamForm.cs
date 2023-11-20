@@ -138,5 +138,42 @@ namespace GUI
                 MessageBox.Show("File Excel đã được tạo tại: " + filePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void loaiSanPhamDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            LoaiSanPham loaiSanPham = loaiSanPhamBUS.LayLoaiSanPhamTheoMa(loaiSanPhamDataGridView[1, e.RowIndex].Value.ToString());
+            string colName = loaiSanPhamDataGridView.Columns[e.ColumnIndex].Name;
+
+            if (colName.Equals("deleteBtn"))
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn xóa không?", "Xóa loại sản phẩm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    string message = loaiSanPhamBUS.XoaLoaiSanPham(loaiSanPhamDataGridView[1, e.RowIndex].Value.ToString());
+
+                    MessageBox.Show(message);
+
+                    refreshBtn_Click(sender, e);
+                }
+            }
+
+            if (colName.Equals("editBtn"))
+            {
+                new themLoaiSanPhamForm1(loaiSanPham).Show();
+            }
+
+            if (colName.Equals("infoBtn"))
+            {
+                new themLoaiSanPhamForm1(loaiSanPham).Show();
+            }
+        }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            listLoaiSanPham = loaiSanPhamBUS.LayDanhSachLoaiSanPham();
+
+            LoadDataToDataGridView(listLoaiSanPham);
+        }
     }
 }
