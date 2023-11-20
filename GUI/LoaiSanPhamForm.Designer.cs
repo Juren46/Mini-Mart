@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoaiSanPhamForm));
             timKiemButton = new FontAwesome.Sharp.IconButton();
-            iconButton4 = new FontAwesome.Sharp.IconButton();
+            excelButton = new FontAwesome.Sharp.IconButton();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             panel2 = new Panel();
@@ -73,25 +73,26 @@
             timKiemButton.UseVisualStyleBackColor = false;
             timKiemButton.Click += timKiemButton_Click;
             // 
-            // iconButton4
+            // excelButton
             // 
-            iconButton4.BackColor = Color.FromArgb(33, 31, 48);
-            iconButton4.FlatAppearance.BorderSize = 0;
-            iconButton4.FlatStyle = FlatStyle.Flat;
-            iconButton4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton4.ForeColor = Color.White;
-            iconButton4.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
-            iconButton4.IconColor = Color.White;
-            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton4.IconSize = 20;
-            iconButton4.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton4.Location = new Point(704, 13);
-            iconButton4.Name = "iconButton4";
-            iconButton4.Size = new Size(168, 36);
-            iconButton4.TabIndex = 31;
-            iconButton4.Text = "Nhập xuất excel";
-            iconButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton4.UseVisualStyleBackColor = false;
+            excelButton.BackColor = Color.FromArgb(33, 31, 48);
+            excelButton.FlatAppearance.BorderSize = 0;
+            excelButton.FlatStyle = FlatStyle.Flat;
+            excelButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            excelButton.ForeColor = Color.White;
+            excelButton.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
+            excelButton.IconColor = Color.White;
+            excelButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            excelButton.IconSize = 20;
+            excelButton.ImageAlign = ContentAlignment.MiddleLeft;
+            excelButton.Location = new Point(704, 13);
+            excelButton.Name = "excelButton";
+            excelButton.Size = new Size(168, 36);
+            excelButton.TabIndex = 31;
+            excelButton.Text = "Nhập xuất excel";
+            excelButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            excelButton.UseVisualStyleBackColor = false;
+            excelButton.Click += excelButton_Click;
             // 
             // iconButton3
             // 
@@ -115,7 +116,7 @@
             // 
             // timKiemTextBox
             // 
-            timKiemTextBox.CustomizableEdges = customizableEdges1;
+            timKiemTextBox.CustomizableEdges = customizableEdges3;
             timKiemTextBox.DefaultText = "";
             timKiemTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             timKiemTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -129,7 +130,7 @@
             timKiemTextBox.PasswordChar = '\0';
             timKiemTextBox.PlaceholderText = "Nhập tên để tìm kiếm";
             timKiemTextBox.SelectedText = "";
-            timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
             timKiemTextBox.Size = new Size(574, 36);
             timKiemTextBox.TabIndex = 29;
             timKiemTextBox.TextChanged += timKiemTextBox_TextChanged;
@@ -137,7 +138,7 @@
             // panel2
             // 
             panel2.Controls.Add(timKiemButton);
-            panel2.Controls.Add(iconButton4);
+            panel2.Controls.Add(excelButton);
             panel2.Controls.Add(iconButton3);
             panel2.Controls.Add(timKiemTextBox);
             panel2.Dock = DockStyle.Top;
@@ -158,41 +159,41 @@
             // loaiSanPhamDataGridView
             // 
             loaiSanPhamDataGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            loaiSanPhamDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            loaiSanPhamDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             loaiSanPhamDataGridView.BackgroundColor = Color.FromArgb(242, 245, 250);
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.LightBlue;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(30, 110, 142);
-            dataGridViewCellStyle2.SelectionBackColor = Color.LightBlue;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            loaiSanPhamDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.LightBlue;
+            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(30, 110, 142);
+            dataGridViewCellStyle7.SelectionBackColor = Color.LightBlue;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            loaiSanPhamDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             loaiSanPhamDataGridView.ColumnHeadersHeight = 40;
             loaiSanPhamDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             loaiSanPhamDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column2, Column1, Column3, Column4, Column9, Column10, Column11 });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(227, 248, 251);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            loaiSanPhamDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.White;
+            dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(227, 248, 251);
+            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
+            loaiSanPhamDataGridView.DefaultCellStyle = dataGridViewCellStyle9;
             loaiSanPhamDataGridView.Dock = DockStyle.Fill;
             loaiSanPhamDataGridView.GridColor = Color.FromArgb(242, 245, 250);
             loaiSanPhamDataGridView.Location = new Point(0, 0);
             loaiSanPhamDataGridView.Name = "loaiSanPhamDataGridView";
             loaiSanPhamDataGridView.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(242, 245, 250);
-            dataGridViewCellStyle5.SelectionBackColor = Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            loaiSanPhamDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = Color.White;
+            dataGridViewCellStyle10.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = Color.FromArgb(242, 245, 250);
+            dataGridViewCellStyle10.SelectionBackColor = Color.White;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            loaiSanPhamDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             loaiSanPhamDataGridView.RowHeadersVisible = false;
             loaiSanPhamDataGridView.RowTemplate.DividerHeight = 3;
             loaiSanPhamDataGridView.RowTemplate.Height = 50;
@@ -225,8 +226,8 @@
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column2.DefaultCellStyle = dataGridViewCellStyle8;
             Column2.HeaderText = "#";
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
@@ -319,7 +320,7 @@
         #endregion
 
         private FontAwesome.Sharp.IconButton timKiemButton;
-        private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton excelButton;
         private FontAwesome.Sharp.IconButton iconButton3;
         private Guna.UI2.WinForms.Guna2TextBox timKiemTextBox;
         private Panel panel2;

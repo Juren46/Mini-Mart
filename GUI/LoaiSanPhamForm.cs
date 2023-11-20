@@ -1,4 +1,5 @@
 ﻿using BUS;
+using BUS.OtherFunctions;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,9 @@ namespace GUI
         {
             InitializeComponent();
 
+            this.KeyPreview = true;
+            this.KeyDown += LoaiSanPhamForm_KeyDown;
+
             loaiSanPhamBUS = new LoaiSanPhamBUS();
             listLoaiSanPham = loaiSanPhamBUS.LayDanhSachLoaiSanPham();
         }
@@ -33,6 +37,8 @@ namespace GUI
 
         private void LoadDataToDataGridView(List<LoaiSanPham> listLoaiSanPham)
         {
+            loaiSanPhamDataGridView.Rows.Clear();
+
             for (int i = 0; i < listLoaiSanPham.Count; i++)
             {
                 loaiSanPhamDataGridView.Rows.Add(1);
@@ -41,13 +47,6 @@ namespace GUI
                 loaiSanPhamDataGridView.Rows[i].Cells[2].Value = listLoaiSanPham[i].tenLoaiSanPham;
                 loaiSanPhamDataGridView.Rows[i].Cells[3].Value = listLoaiSanPham[i].trangThai;
             }
-        }
-
-        private void ResetDataGridView(List<LoaiSanPham> listLoaiSanPham)
-        {
-            loaiSanPhamDataGridView.Rows.Clear();
-
-            LoadDataToDataGridView(listLoaiSanPham);
         }
 
         private void loaiSanPhamDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -99,16 +98,44 @@ namespace GUI
 
             listLoaiSanPham = loaiSanPhamBUS.TimKiemLoaiSanPham(tuKhoa);
 
-            ResetDataGridView(listLoaiSanPham);
+            LoadDataToDataGridView(listLoaiSanPham);
         }
 
         private void timKiemTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (timKiemTextBox.Text.Equals(""))
-            {
-                listLoaiSanPham = loaiSanPhamBUS.LayDanhSachLoaiSanPham();
+            timKiemButton_Click(sender, e);
+        }
 
-                ResetDataGridView(listLoaiSanPham);
+        private void LoaiSanPhamForm_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                timKiemButton_Click(sender, e);
+            }
+        }
+
+        private void excelButton_Click(object sender, EventArgs e)
+        {
+            List<string> listMaLoaiSanPham = new List<string>();
+            for (int i = 0; i < loaiSanPhamDataGridView.Rows.Count; i++)
+            {
+                listMaLoaiSanPham.Add(loaiSanPhamDataGridView.Rows[i].Cells[1].Value.ToString());
+            }
+            List<LoaiSanPham> listLoaiSanPham = new List<LoaiSanPham>();
+            foreach (string maLoaiSanPham in listMaLoaiSanPham)
+            {
+                LoaiSanPham loaiSanPham = loaiSanPhamBUS.LayLoaiSanPhamTheoMa(maLoaiSanPham);
+                listLoaiSanPham.Add(loaiSanPham);
+            }
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+            saveFileDialog.Title = "Chọn vị trí lưu file Excel";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+                new XuatExcel(filePath).XuatExcelLoaiSanPham(listLoaiSanPham);
+                MessageBox.Show("File Excel đã được tạo tại: " + filePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

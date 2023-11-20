@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BUS;
+using BUS.OtherFunctions;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +15,30 @@ namespace GUI
 {
     public partial class TaiKhoanForm : Form
     {
+        TaiKhoanBUS taiKhoanBUS;
+        List<TaiKhoan> listTaiKhoan;
         public TaiKhoanForm()
         {
             InitializeComponent();
+
+            taiKhoanBUS = new TaiKhoanBUS();
+            listTaiKhoan = taiKhoanBUS.LayDanhSachTaiKhoan();
+
+            LoadDataToDataGridView(listTaiKhoan);
+        }
+
+        private void LoadDataToDataGridView(List<TaiKhoan> listTaiKhoan)
+        {
+            dgvTaiKhoan.Rows.Clear();
+            for (int i = 0; i < listTaiKhoan.Count; i++)
+            {
+                dgvTaiKhoan.Rows.Add(1);
+                dgvTaiKhoan.Rows[i].Cells[0].Value = i + 1;
+                dgvTaiKhoan.Rows[i].Cells[1].Value = listTaiKhoan[i].tenTaiKhoan;
+                dgvTaiKhoan.Rows[i].Cells[2].Value = new PhanQuyenBUS().LayPhanQuyenTheoMa(listTaiKhoan[i].maPhanQuyen).tenPhanQuyen;
+                dgvTaiKhoan.Rows[i].Cells[3].Value = listTaiKhoan[i].matKhau;
+                dgvTaiKhoan.Rows[i].Cells[4].Value = listTaiKhoan[i].trangThai;
+            }
         }
         private void sanPhamDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -59,5 +83,50 @@ namespace GUI
             }
         }
 
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            listTaiKhoan = taiKhoanBUS.LayDanhSachTaiKhoan();
+
+            LoadDataToDataGridView(listTaiKhoan);
+        }
+
+        private void timKiemButton_Click(object sender, EventArgs e)
+        {
+            string tuKhoa = timKiemTextBox.Text;
+
+            listTaiKhoan = taiKhoanBUS.TimKiemTaiKhoan(tuKhoa);
+
+            LoadDataToDataGridView(listTaiKhoan);
+        }
+
+        private void timKiemTextBox_TextChanged(object sender, EventArgs e)
+        {
+            timKiemButton_Click(sender, e);
+        }
+
+        private void excelButton_Click(object sender, EventArgs e)
+        {
+            List<string> listTenTaiKhoan = new List<string>();
+            for (int i = 0; i < dgvTaiKhoan.Rows.Count; i++)
+            {
+                listTenTaiKhoan.Add(dgvTaiKhoan.Rows[i].Cells[1].Value.ToString());
+            }
+            List<TaiKhoan> listTaiKhoan = new List<TaiKhoan>();
+            foreach (string tenTaiKhoan in listTenTaiKhoan)
+            {
+                TaiKhoan taiKhoan = taiKhoanBUS.LayTaiKhoanTheoTen(tenTaiKhoan);
+                listTaiKhoan.Add(taiKhoan);
+            }
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+            saveFileDialog.Title = "Chọn vị trí lưu file Excel";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+                new XuatExcel(filePath).XuatExcelTaiKhoan(listTaiKhoan);
+                MessageBox.Show("File Excel đã được tạo tại: " + filePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

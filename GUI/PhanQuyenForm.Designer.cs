@@ -43,9 +43,9 @@
             Column5 = new DataGridViewImageColumn();
             Column6 = new DataGridViewImageColumn();
             panel1 = new Panel();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            refreshButton = new FontAwesome.Sharp.IconButton();
+            timKiemButton = new FontAwesome.Sharp.IconButton();
+            timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvPhanQuyen).BeginInit();
             panel1.SuspendLayout();
@@ -119,7 +119,7 @@
             dgvPhanQuyen.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(0, 80, 112);
             dgvPhanQuyen.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
             dgvPhanQuyen.CellFormatting += phanQuyenDataGridView_CellFormatting;
-            dgvPhanQuyen.CellPainting += sanPhamDataGridView_CellPainting;
+            dgvPhanQuyen.CellPainting += phanQuyenDataGridView_CellPainting;
             // 
             // Column2
             // 
@@ -186,9 +186,9 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(iconButton2);
-            panel1.Controls.Add(iconButton1);
-            panel1.Controls.Add(guna2TextBox1);
+            panel1.Controls.Add(refreshButton);
+            panel1.Controls.Add(timKiemButton);
+            panel1.Controls.Add(timKiemTextBox);
             panel1.Dock = DockStyle.Top;
             panel1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             panel1.Location = new Point(0, 0);
@@ -197,55 +197,58 @@
             panel1.Size = new Size(1183, 62);
             panel1.TabIndex = 64;
             // 
-            // iconButton2
+            // refreshButton
             // 
-            iconButton2.BackColor = Color.FromArgb(33, 31, 48);
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.ArrowsRotate;
-            iconButton2.IconColor = Color.White;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 20;
-            iconButton2.Location = new Point(946, 12);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(43, 36);
-            iconButton2.TabIndex = 67;
-            iconButton2.UseVisualStyleBackColor = false;
+            refreshButton.BackColor = Color.FromArgb(33, 31, 48);
+            refreshButton.FlatAppearance.BorderSize = 0;
+            refreshButton.FlatStyle = FlatStyle.Flat;
+            refreshButton.IconChar = FontAwesome.Sharp.IconChar.ArrowsRotate;
+            refreshButton.IconColor = Color.White;
+            refreshButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            refreshButton.IconSize = 20;
+            refreshButton.Location = new Point(946, 12);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(43, 36);
+            refreshButton.TabIndex = 67;
+            refreshButton.UseVisualStyleBackColor = false;
+            refreshButton.Click += refreshButton_Click;
             // 
-            // iconButton1
+            // timKiemButton
             // 
-            iconButton1.BackColor = Color.FromArgb(226, 153, 48);
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconButton1.IconColor = Color.White;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 20;
-            iconButton1.Location = new Point(897, 12);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(43, 36);
-            iconButton1.TabIndex = 66;
-            iconButton1.UseVisualStyleBackColor = false;
+            timKiemButton.BackColor = Color.FromArgb(226, 153, 48);
+            timKiemButton.FlatAppearance.BorderSize = 0;
+            timKiemButton.FlatStyle = FlatStyle.Flat;
+            timKiemButton.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            timKiemButton.IconColor = Color.White;
+            timKiemButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            timKiemButton.IconSize = 20;
+            timKiemButton.Location = new Point(897, 12);
+            timKiemButton.Name = "timKiemButton";
+            timKiemButton.Size = new Size(43, 36);
+            timKiemButton.TabIndex = 66;
+            timKiemButton.UseVisualStyleBackColor = false;
+            timKiemButton.Click += timKiemButton_Click;
             // 
-            // guna2TextBox1
+            // timKiemTextBox
             // 
-            guna2TextBox1.CustomizableEdges = customizableEdges1;
-            guna2TextBox1.DefaultText = "";
-            guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2TextBox1.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
-            guna2TextBox1.Location = new Point(12, 12);
-            guna2TextBox1.Name = "guna2TextBox1";
-            guna2TextBox1.PasswordChar = '\0';
-            guna2TextBox1.PlaceholderText = "Nhập tên để tìm kiếm";
-            guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2TextBox1.Size = new Size(880, 36);
-            guna2TextBox1.TabIndex = 65;
+            timKiemTextBox.CustomizableEdges = customizableEdges1;
+            timKiemTextBox.DefaultText = "";
+            timKiemTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            timKiemTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            timKiemTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            timKiemTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            timKiemTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            timKiemTextBox.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            timKiemTextBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
+            timKiemTextBox.Location = new Point(12, 12);
+            timKiemTextBox.Name = "timKiemTextBox";
+            timKiemTextBox.PasswordChar = '\0';
+            timKiemTextBox.PlaceholderText = "Nhập tên để tìm kiếm";
+            timKiemTextBox.SelectedText = "";
+            timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            timKiemTextBox.Size = new Size(880, 36);
+            timKiemTextBox.TabIndex = 65;
+            timKiemTextBox.TextChanged += timKiemTextBox_TextChanged;
             // 
             // panel2
             // 
@@ -286,8 +289,8 @@
         private DataGridViewImageColumn Column6;
         private Panel panel1;
         private Panel panel2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private Guna.UI2.WinForms.Guna2TextBox timKiemTextBox;
+        private FontAwesome.Sharp.IconButton refreshButton;
+        private FontAwesome.Sharp.IconButton timKiemButton;
     }
 }

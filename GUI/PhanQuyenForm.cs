@@ -15,15 +15,33 @@ namespace GUI
     public partial class PhanQuyenForm : Form
     {
         List<PhanQuyen> listPhanQuyen;
-        PhanQuyenBUS phanQuyenBus;
+        PhanQuyenBUS phanQuyenBUS;
         public PhanQuyenForm()
         {
             InitializeComponent();
 
-            phanQuyenBus = new PhanQuyenBUS();
-            listPhanQuyen = phanQuyenBus.LayDanhSachPhanQuyen();
+            this.KeyPreview = true;
+            this.KeyDown += PhanQuyenForm_KeyDown;
+
+            phanQuyenBUS = new PhanQuyenBUS();
+            listPhanQuyen = phanQuyenBUS.LayDanhSachPhanQuyen();
+
+            LoadDataToDataGridView(listPhanQuyen);
         }
-        private void sanPhamDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+
+        private void LoadDataToDataGridView(List<PhanQuyen> listPhanQuyen)
+        {
+            dgvPhanQuyen.Rows.Clear();
+            for (int i = 0; i < listPhanQuyen.Count; i++)
+            {
+                dgvPhanQuyen.Rows.Add(1);
+                dgvPhanQuyen.Rows[i].Cells[0].Value = i + 1;
+                dgvPhanQuyen.Rows[i].Cells[1].Value = listPhanQuyen[i].maPhanQuyen;
+                dgvPhanQuyen.Rows[i].Cells[2].Value = listPhanQuyen[i].tenPhanQuyen;
+            }
+        }
+
+        private void phanQuyenDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Kiểm tra xem cell đang được định dạng có phải là cell hình ảnh không.
             if ((e.ColumnIndex == 3 || e.ColumnIndex == 4 || e.ColumnIndex == 5) && e.RowIndex >= 0)
@@ -45,7 +63,7 @@ namespace GUI
             }
         }
 
-        private void sanPhamDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        private void phanQuyenDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             int numberOfColumnsToSkip = 3; // Số lượng cột cuối cùng không cần chia
 
@@ -66,9 +84,33 @@ namespace GUI
             }
         }
 
-        private void phanQuyenDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void refreshButton_Click(object sender, EventArgs e)
         {
+            listPhanQuyen = phanQuyenBUS.LayDanhSachPhanQuyen();
 
+            LoadDataToDataGridView(listPhanQuyen);
+        }
+
+        private void timKiemButton_Click(object sender, EventArgs e)
+        {
+            string tuKhoa = timKiemTextBox.Text;
+
+            listPhanQuyen = phanQuyenBUS.TimKiemPhanQuyen(tuKhoa);
+
+            LoadDataToDataGridView(listPhanQuyen);
+        }
+
+        private void PhanQuyenForm_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                timKiemButton_Click(sender, e);
+            }
+        }
+
+        private void timKiemTextBox_TextChanged(object sender, EventArgs e)
+        {
+            timKiemButton_Click(sender, e);
         }
     }
 }

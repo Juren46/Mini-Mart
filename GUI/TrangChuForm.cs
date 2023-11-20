@@ -217,6 +217,7 @@ namespace GUI
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new NhaCungCapForm());
         }
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
