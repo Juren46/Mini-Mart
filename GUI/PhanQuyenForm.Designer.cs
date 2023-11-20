@@ -272,7 +272,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
             Name = "PhanQuyenForm";
-            Text = "PhanQuyenForm";
+            Text = "QUẢN LÝ PHÂN QUYỀN";
             ((System.ComponentModel.ISupportInitialize)dgvPhanQuyen).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);

@@ -51,6 +51,7 @@
             Column10 = new DataGridViewImageColumn();
             Column11 = new DataGridViewImageColumn();
             panel1 = new Panel();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)loaiSanPhamDataGridView).BeginInit();
@@ -106,7 +107,7 @@
             iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton3.IconSize = 20;
             iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(878, 13);
+            iconButton3.Location = new Point(901, 13);
             iconButton3.Name = "iconButton3";
             iconButton3.Size = new Size(115, 36);
             iconButton3.TabIndex = 30;
@@ -137,6 +138,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(iconButton2);
             panel2.Controls.Add(timKiemButton);
             panel2.Controls.Add(excelButton);
             panel2.Controls.Add(iconButton3);
@@ -298,6 +300,21 @@
             panel1.Size = new Size(1167, 782);
             panel1.TabIndex = 2;
             // 
+            // iconButton2
+            // 
+            iconButton2.BackColor = Color.FromArgb(33, 31, 48);
+            iconButton2.FlatAppearance.BorderSize = 0;
+            iconButton2.FlatStyle = FlatStyle.Flat;
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.ArrowsRotate;
+            iconButton2.IconColor = Color.White;
+            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton2.IconSize = 20;
+            iconButton2.Location = new Point(682, 13);
+            iconButton2.Name = "iconButton2";
+            iconButton2.Size = new Size(43, 36);
+            iconButton2.TabIndex = 68;
+            iconButton2.UseVisualStyleBackColor = false;
+            // 
             // LoaiSanPhamForm
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
@@ -334,5 +351,6 @@
         private DataGridViewImageColumn Column9;
         private DataGridViewImageColumn Column10;
         private DataGridViewImageColumn Column11;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }
