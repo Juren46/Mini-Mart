@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class themLoaiSanPhamForm1
+    partial class chiTietLoaiSanPhamForm
     {
         /// <summary>
         /// Required designer variable.
@@ -36,8 +36,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
             btnLuu = new Guna.UI2.WinForms.Guna2Button();
             btnHuyBo = new Guna.UI2.WinForms.Guna2Button();
@@ -45,8 +43,6 @@
             panel3 = new Panel();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             label1 = new Label();
-            label8 = new Label();
-            tsTrangThai = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             label5 = new Label();
             label2 = new Label();
             txtTenSanPham = new Guna.UI2.WinForms.Guna2TextBox();
@@ -62,8 +58,6 @@
             panel2.Controls.Add(btnLuu);
             panel2.Controls.Add(btnHuyBo);
             panel2.Controls.Add(panel1);
-            panel2.Controls.Add(label8);
-            panel2.Controls.Add(tsTrangThai);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(txtTenSanPham);
@@ -156,40 +150,6 @@
             label1.TabIndex = 0;
             label1.Text = "Chi tiết loại sản phẩm ";
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.ForeColor = Color.FromArgb(0, 79, 111);
-            label8.Location = new Point(437, 142);
-            label8.Name = "label8";
-            label8.Size = new Size(94, 24);
-            label8.TabIndex = 39;
-            label8.Text = "Trạng thái";
-            // 
-            // tsTrangThai
-            // 
-            tsTrangThai.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            tsTrangThai.Checked = true;
-            tsTrangThai.CheckedState.BorderColor = Color.FromArgb(0, 79, 111);
-            tsTrangThai.CheckedState.BorderRadius = 15;
-            tsTrangThai.CheckedState.FillColor = Color.FromArgb(0, 79, 111);
-            tsTrangThai.CheckedState.InnerBorderColor = Color.White;
-            tsTrangThai.CheckedState.InnerBorderRadius = 12;
-            tsTrangThai.CheckedState.InnerColor = Color.White;
-            tsTrangThai.CustomizableEdges = customizableEdges5;
-            tsTrangThai.Location = new Point(436, 169);
-            tsTrangThai.Name = "tsTrangThai";
-            tsTrangThai.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            tsTrangThai.Size = new Size(95, 36);
-            tsTrangThai.TabIndex = 35;
-            tsTrangThai.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
-            tsTrangThai.UncheckedState.BorderRadius = 15;
-            tsTrangThai.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
-            tsTrangThai.UncheckedState.InnerBorderColor = Color.White;
-            tsTrangThai.UncheckedState.InnerBorderRadius = 12;
-            tsTrangThai.UncheckedState.InnerColor = Color.White;
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -197,9 +157,9 @@
             label5.ForeColor = Color.FromArgb(0, 79, 111);
             label5.Location = new Point(29, 233);
             label5.Name = "label5";
-            label5.Size = new Size(137, 24);
+            label5.Size = new Size(171, 24);
             label5.TabIndex = 31;
-            label5.Text = "Tên sản phẩm ";
+            label5.Text = "Tên loại sản phẩm ";
             // 
             // label2
             // 
@@ -208,15 +168,15 @@
             label2.ForeColor = Color.FromArgb(0, 79, 111);
             label2.Location = new Point(29, 108);
             label2.Name = "label2";
-            label2.Size = new Size(129, 24);
+            label2.Size = new Size(163, 24);
             label2.TabIndex = 28;
-            label2.Text = "Mã sản phẩm ";
+            label2.Text = "Mã loại sản phẩm ";
             // 
             // txtTenSanPham
             // 
             txtTenSanPham.BorderColor = Color.FromArgb(0, 79, 111);
             txtTenSanPham.BorderRadius = 5;
-            txtTenSanPham.CustomizableEdges = customizableEdges7;
+            txtTenSanPham.CustomizableEdges = customizableEdges5;
             txtTenSanPham.DefaultText = "";
             txtTenSanPham.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtTenSanPham.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -230,7 +190,7 @@
             txtTenSanPham.PasswordChar = '\0';
             txtTenSanPham.PlaceholderText = "";
             txtTenSanPham.SelectedText = "";
-            txtTenSanPham.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txtTenSanPham.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtTenSanPham.Size = new Size(502, 58);
             txtTenSanPham.TabIndex = 24;
             // 
@@ -238,7 +198,7 @@
             // 
             txtMaSanPham.BorderColor = Color.FromArgb(0, 79, 111);
             txtMaSanPham.BorderRadius = 5;
-            txtMaSanPham.CustomizableEdges = customizableEdges9;
+            txtMaSanPham.CustomizableEdges = customizableEdges7;
             txtMaSanPham.DefaultText = "";
             txtMaSanPham.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtMaSanPham.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -252,18 +212,17 @@
             txtMaSanPham.PasswordChar = '\0';
             txtMaSanPham.PlaceholderText = "";
             txtMaSanPham.SelectedText = "";
-            txtMaSanPham.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txtMaSanPham.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtMaSanPham.Size = new Size(245, 58);
             txtMaSanPham.TabIndex = 23;
             // 
-            // themLoaiSanPhamForm1
+            // chiTietLoaiSanPhamForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(570, 483);
             Controls.Add(panel2);
-            Name = "themLoaiSanPhamForm1";
-            Text = "them Loai San Pham";
+            Name = "chiTietLoaiSanPhamForm";
             Load += themLoaiSanPhamForm1_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -275,12 +234,10 @@
 
         #endregion
         private Panel panel2;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch tsTrangThai;
         private Label label5;
         private Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtTenSanPham;
         private Guna.UI2.WinForms.Guna2TextBox txtMaSanPham;
-        private Label label8;
         private Panel panel1;
         private Panel panel3;
         private FontAwesome.Sharp.IconButton iconButton1;

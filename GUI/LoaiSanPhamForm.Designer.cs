@@ -38,7 +38,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoaiSanPhamForm));
             timKiemButton = new FontAwesome.Sharp.IconButton();
             excelButton = new FontAwesome.Sharp.IconButton();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
+            themMoiBtn = new FontAwesome.Sharp.IconButton();
             timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             panel2 = new Panel();
             refreshBtn = new FontAwesome.Sharp.IconButton();
@@ -67,7 +67,7 @@
             timKiemButton.IconColor = Color.White;
             timKiemButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             timKiemButton.IconSize = 20;
-            timKiemButton.Location = new Point(635, 12);
+            timKiemButton.Location = new Point(592, 12);
             timKiemButton.Name = "timKiemButton";
             timKiemButton.Size = new Size(43, 36);
             timKiemButton.TabIndex = 32;
@@ -86,34 +86,35 @@
             excelButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             excelButton.IconSize = 20;
             excelButton.ImageAlign = ContentAlignment.MiddleLeft;
-            excelButton.Location = new Point(747, 13);
+            excelButton.Location = new Point(839, 13);
             excelButton.Name = "excelButton";
-            excelButton.Size = new Size(168, 36);
+            excelButton.Size = new Size(116, 36);
             excelButton.TabIndex = 31;
-            excelButton.Text = "Nhập xuất excel";
+            excelButton.Text = "Xuất Excel";
             excelButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             excelButton.UseVisualStyleBackColor = false;
             excelButton.Click += excelButton_Click;
             // 
-            // iconButton3
+            // themMoiBtn
             // 
-            iconButton3.BackColor = Color.FromArgb(226, 153, 48);
-            iconButton3.FlatAppearance.BorderSize = 0;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton3.ForeColor = Color.White;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.HandHoldingMedical;
-            iconButton3.IconColor = Color.White;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.IconSize = 20;
-            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(921, 13);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(115, 36);
-            iconButton3.TabIndex = 30;
-            iconButton3.Text = "Thêm mới";
-            iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton3.UseVisualStyleBackColor = false;
+            themMoiBtn.BackColor = Color.FromArgb(226, 153, 48);
+            themMoiBtn.FlatAppearance.BorderSize = 0;
+            themMoiBtn.FlatStyle = FlatStyle.Flat;
+            themMoiBtn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            themMoiBtn.ForeColor = Color.White;
+            themMoiBtn.IconChar = FontAwesome.Sharp.IconChar.HandHoldingMedical;
+            themMoiBtn.IconColor = Color.White;
+            themMoiBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            themMoiBtn.IconSize = 20;
+            themMoiBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            themMoiBtn.Location = new Point(718, 12);
+            themMoiBtn.Name = "themMoiBtn";
+            themMoiBtn.Size = new Size(115, 36);
+            themMoiBtn.TabIndex = 30;
+            themMoiBtn.Text = "Thêm mới";
+            themMoiBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            themMoiBtn.UseVisualStyleBackColor = false;
+            themMoiBtn.Click += themMoiBtn_Click;
             // 
             // timKiemTextBox
             // 
@@ -126,7 +127,7 @@
             timKiemTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             timKiemTextBox.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             timKiemTextBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
-            timKiemTextBox.Location = new Point(55, 12);
+            timKiemTextBox.Location = new Point(12, 11);
             timKiemTextBox.Name = "timKiemTextBox";
             timKiemTextBox.PasswordChar = '\0';
             timKiemTextBox.PlaceholderText = "Nhập tên để tìm kiếm";
@@ -141,7 +142,7 @@
             panel2.Controls.Add(refreshBtn);
             panel2.Controls.Add(timKiemButton);
             panel2.Controls.Add(excelButton);
-            panel2.Controls.Add(iconButton3);
+            panel2.Controls.Add(themMoiBtn);
             panel2.Controls.Add(timKiemTextBox);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
@@ -158,7 +159,7 @@
             refreshBtn.IconColor = Color.White;
             refreshBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             refreshBtn.IconSize = 20;
-            refreshBtn.Location = new Point(682, 13);
+            refreshBtn.Location = new Point(641, 12);
             refreshBtn.Name = "refreshBtn";
             refreshBtn.Size = new Size(43, 36);
             refreshBtn.TabIndex = 68;
@@ -273,7 +274,7 @@
             // 
             Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column4.FillWeight = 155.167023F;
-            Column4.HeaderText = "trạng thái";
+            Column4.HeaderText = "Trạng thái";
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
@@ -340,13 +341,14 @@
 
         private FontAwesome.Sharp.IconButton timKiemButton;
         private FontAwesome.Sharp.IconButton excelButton;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton themMoiBtn;
         private Guna.UI2.WinForms.Guna2TextBox timKiemTextBox;
         private Panel panel2;
         private Panel panel3;
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2DataGridView loaiSanPhamDataGridView;
         private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton refreshBtn;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column3;
@@ -354,6 +356,5 @@
         private DataGridViewImageColumn infoBtn;
         private DataGridViewImageColumn editBtn;
         private DataGridViewImageColumn deleteBtn;
-        private FontAwesome.Sharp.IconButton refreshBtn;
     }
 }
