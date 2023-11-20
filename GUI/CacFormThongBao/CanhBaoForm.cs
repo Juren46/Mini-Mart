@@ -17,6 +17,7 @@ namespace GUI.CacFormThongBao
         public CanhBaoForm()
         {
             InitializeComponent();
+            
         }
 
         private static List<CanhBaoForm> OpenForms = new List<CanhBaoForm>();
