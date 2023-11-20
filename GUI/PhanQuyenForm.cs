@@ -41,31 +41,11 @@ namespace GUI
             }
         }
 
-        private void phanQuyenDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            // Kiểm tra xem cell đang được định dạng có phải là cell hình ảnh không.
-            if ((e.ColumnIndex == 3 || e.ColumnIndex == 4 || e.ColumnIndex == 5) && e.RowIndex >= 0)
-            {
-                // Kiểm tra giá trị của cell có phải là hình ảnh không.
-                if (e.Value is Image)
-                {
-                    // Thiết lập kích thước mới cho hình ảnh.
-                    int newWidth = 25; // Kích thước mới theo chiều rộng
-                    int newHeight = 25; // Kích thước mới theo chiều cao
-
-                    // Đổi kích thước hình ảnh.
-                    Image originalImage = (Image)e.Value;
-                    Image resizedImage = new Bitmap(originalImage, new Size(newWidth, newHeight));
-
-                    // Gán hình ảnh mới vào cell.
-                    e.Value = resizedImage;
-                }
-            }
-        }
+       
 
         private void phanQuyenDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            int numberOfColumnsToSkip = 3; // Số lượng cột cuối cùng không cần chia
+            int numberOfColumnsToSkip = 0; // Số lượng cột cuối cùng không cần chia
 
             if (e.ColumnIndex > -1 && e.RowIndex >= 0 && e.ColumnIndex < dgvPhanQuyen.Columns.Count - numberOfColumnsToSkip)
             {
