@@ -48,8 +48,11 @@ namespace GUI
                 txtMaSanPham.Text = loaiSanPham.maLoaiSanPham;
                 txtTenSanPham.Text = loaiSanPham.tenLoaiSanPham;
 
-                txtMaSanPham.Enabled = false;
-                txtTenSanPham.Enabled = false;
+                txtMaSanPham.ReadOnly = true;
+                txtTenSanPham.ReadOnly = true;
+                btnHuyBo.Visible = false;
+                btnLuu.Visible = false;
+                this.Size = new System.Drawing.Size(656, 230);
             }
 
             if (context.Equals("Thêm"))

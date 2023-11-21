@@ -328,7 +328,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
             Name = "NhaCungCapForm";
-            Text = "NhaCungCapForm";
+            Text = "QUẢN LÝ NHÀ CUNG CẤP";
             ((System.ComponentModel.ISupportInitialize)NhaCungCapDataGridView).EndInit();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);

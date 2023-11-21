@@ -175,21 +175,25 @@ namespace GUI
         private void btnKhuyenMai_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new KhuyenMaiForm());
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+
         }
 
         private void btnPhieuNhap_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new PhieuNhapForm());
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+
         }
 
         private void btnLoaiSanPham_Click(object sender, EventArgs e)
@@ -206,17 +210,20 @@ namespace GUI
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new HoaDonForm());
         }
 
         private void btnPhanQuyen_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            
+            OpenChildForm(new PhanQuyenForm());
+
         }
 
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new NhaCungCapForm());
         }
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
