@@ -9,6 +9,8 @@ namespace BUS.OtherFunctions
 {
     public class InAn
     {
+        string context = "";
+
         public InAn() { }
 
         public static void InHoaDon(HoaDon hoaDon)
@@ -20,5 +22,7 @@ namespace BUS.OtherFunctions
         {
             List<ChiTietPhieuNhap> listChiTietPhieuNhap = new ChiTietPhieuNhapBUS().LayDanhSachChiTietPhieuNhap(phieuNhap.maPhieuNhap);
         }
+
+
     }
 }
