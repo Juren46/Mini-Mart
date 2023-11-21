@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class KhuyenMaiForm : Form
+    public partial class NhaCungCapForm : Form
     {
-        public KhuyenMaiForm()
+        public NhaCungCapForm()
         {
             InitializeComponent();
         }
         private void sanPhamDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Kiểm tra xem cell đang được định dạng có phải là cell hình ảnh không.
-            if ((e.ColumnIndex == 9 || e.ColumnIndex == 10 || e.ColumnIndex == 11) && e.RowIndex >= 0)
+            if ((e.ColumnIndex == 6 || e.ColumnIndex == 7) && e.RowIndex >= 0)
             {
                 // Kiểm tra giá trị của cell có phải là hình ảnh không.
                 if (e.Value is Image)
@@ -40,9 +40,9 @@ namespace GUI
 
         private void sanPhamDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            int numberOfColumnsToSkip = 3; // Số lượng cột cuối cùng không cần chia
+            int numberOfColumnsToSkip = 2; // Số lượng cột cuối cùng không cần chia
 
-            if (e.ColumnIndex > -1 && e.RowIndex >= 0 && e.ColumnIndex < dgvKhuyenMai.Columns.Count - numberOfColumnsToSkip)
+            if (e.ColumnIndex > -1 && e.RowIndex >= 0 && e.ColumnIndex < NhaCungCapDataGridView.Columns.Count - numberOfColumnsToSkip)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 

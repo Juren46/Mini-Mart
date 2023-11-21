@@ -179,5 +179,19 @@ namespace GUI
         {
             new chiTietLoaiSanPhamForm("Thêm").Show();
         }
+        private void sanPhamDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            // Kiểm tra số lượng dòng được chọn
+            if (loaiSanPhamDataGridView.SelectedRows.Count > 1)
+            {
+                // Nếu nhiều hơn 1 dòng được chọn, hiển thị nút xoá tất cả
+                btnDeleteAll.Visible = true;
+            }
+            else
+            {
+                // Nếu không có hoặc chỉ có 1 dòng được chọn, ẩn nút xoá tất cả
+                btnDeleteAll.Visible = false;
+            }
+        }
     }
 }

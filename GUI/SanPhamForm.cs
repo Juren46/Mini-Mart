@@ -31,7 +31,7 @@ namespace GUI
 
         private void LoadDataToDataGridView(List<SanPham> listSanPham)
         {
-            for(int i = 0; i < listSanPham.Count; i++)
+            for (int i = 0; i < listSanPham.Count; i++)
             {
                 sanPhamDataGridView.Rows.Add(1);
                 sanPhamDataGridView.Rows[i].Cells[0].Value = i + 1;

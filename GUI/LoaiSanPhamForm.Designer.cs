@@ -35,12 +35,12 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoaiSanPhamForm));
             timKiemButton = new FontAwesome.Sharp.IconButton();
             excelButton = new FontAwesome.Sharp.IconButton();
             themMoiBtn = new FontAwesome.Sharp.IconButton();
-            timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             panel2 = new Panel();
+            btnDeleteAll = new FontAwesome.Sharp.IconButton();
+            timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             refreshBtn = new FontAwesome.Sharp.IconButton();
             panel3 = new Panel();
             loaiSanPhamDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -86,7 +86,7 @@
             excelButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             excelButton.IconSize = 20;
             excelButton.ImageAlign = ContentAlignment.MiddleLeft;
-            excelButton.Location = new Point(839, 13);
+            excelButton.Location = new Point(811, 13);
             excelButton.Name = "excelButton";
             excelButton.Size = new Size(116, 36);
             excelButton.TabIndex = 31;
@@ -107,7 +107,7 @@
             themMoiBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             themMoiBtn.IconSize = 20;
             themMoiBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            themMoiBtn.Location = new Point(718, 12);
+            themMoiBtn.Location = new Point(690, 13);
             themMoiBtn.Name = "themMoiBtn";
             themMoiBtn.Size = new Size(115, 36);
             themMoiBtn.TabIndex = 30;
@@ -115,6 +115,40 @@
             themMoiBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             themMoiBtn.UseVisualStyleBackColor = false;
             themMoiBtn.Click += themMoiBtn_Click;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(btnDeleteAll);
+            panel2.Controls.Add(timKiemTextBox);
+            panel2.Controls.Add(refreshBtn);
+            panel2.Controls.Add(timKiemButton);
+            panel2.Controls.Add(excelButton);
+            panel2.Controls.Add(themMoiBtn);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1167, 60);
+            panel2.TabIndex = 28;
+            // 
+            // btnDeleteAll
+            // 
+            btnDeleteAll.BackColor = Color.IndianRed;
+            btnDeleteAll.FlatAppearance.BorderSize = 0;
+            btnDeleteAll.FlatStyle = FlatStyle.Flat;
+            btnDeleteAll.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDeleteAll.ForeColor = Color.White;
+            btnDeleteAll.IconChar = FontAwesome.Sharp.IconChar.HandHoldingMedical;
+            btnDeleteAll.IconColor = Color.White;
+            btnDeleteAll.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDeleteAll.IconSize = 20;
+            btnDeleteAll.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDeleteAll.Location = new Point(933, 12);
+            btnDeleteAll.Name = "btnDeleteAll";
+            btnDeleteAll.Size = new Size(115, 36);
+            btnDeleteAll.TabIndex = 71;
+            btnDeleteAll.Text = "xoá tất cả ";
+            btnDeleteAll.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnDeleteAll.UseVisualStyleBackColor = false;
             // 
             // timKiemTextBox
             // 
@@ -125,30 +159,20 @@
             timKiemTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             timKiemTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             timKiemTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            timKiemTextBox.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            timKiemTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            timKiemTextBox.ForeColor = Color.FromArgb(84, 155, 255);
             timKiemTextBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
-            timKiemTextBox.Location = new Point(12, 11);
+            timKiemTextBox.Location = new Point(14, 12);
+            timKiemTextBox.Margin = new Padding(5);
             timKiemTextBox.Name = "timKiemTextBox";
             timKiemTextBox.PasswordChar = '\0';
+            timKiemTextBox.PlaceholderForeColor = Color.FromArgb(186, 215, 255);
             timKiemTextBox.PlaceholderText = "Nhập tên để tìm kiếm";
             timKiemTextBox.SelectedText = "";
             timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            timKiemTextBox.Size = new Size(574, 36);
-            timKiemTextBox.TabIndex = 29;
+            timKiemTextBox.Size = new Size(570, 36);
+            timKiemTextBox.TabIndex = 70;
             timKiemTextBox.TextChanged += timKiemTextBox_TextChanged;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(refreshBtn);
-            panel2.Controls.Add(timKiemButton);
-            panel2.Controls.Add(excelButton);
-            panel2.Controls.Add(themMoiBtn);
-            panel2.Controls.Add(timKiemTextBox);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1167, 60);
-            panel2.TabIndex = 28;
             // 
             // refreshBtn
             // 
@@ -242,6 +266,7 @@
             loaiSanPhamDataGridView.CellContentClick += loaiSanPhamDataGridView_CellContentClick;
             loaiSanPhamDataGridView.CellFormatting += loaiSanPhamDataGridView_CellFormatting;
             loaiSanPhamDataGridView.CellPainting += loaiSanPhamDataGridView_CellPainting;
+            loaiSanPhamDataGridView.SelectionChanged += sanPhamDataGridView_SelectionChanged;
             // 
             // Column2
             // 
@@ -283,7 +308,7 @@
             infoBtn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             infoBtn.FillWeight = 30F;
             infoBtn.HeaderText = "";
-            infoBtn.Image = Properties.Resources._003_information;
+            infoBtn.Image = Properties.Resources._003_info1;
             infoBtn.Name = "infoBtn";
             infoBtn.ReadOnly = true;
             infoBtn.Width = 5;
@@ -293,7 +318,7 @@
             editBtn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             editBtn.FillWeight = 30F;
             editBtn.HeaderText = "";
-            editBtn.Image = (Image)resources.GetObject("editBtn.Image");
+            editBtn.Image = Properties.Resources._002_pencil1;
             editBtn.Name = "editBtn";
             editBtn.ReadOnly = true;
             editBtn.Width = 5;
@@ -303,7 +328,7 @@
             deleteBtn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             deleteBtn.FillWeight = 30F;
             deleteBtn.HeaderText = "";
-            deleteBtn.Image = Properties.Resources._001_delete;
+            deleteBtn.Image = Properties.Resources._001_bin;
             deleteBtn.Name = "deleteBtn";
             deleteBtn.ReadOnly = true;
             deleteBtn.Width = 5;
@@ -328,7 +353,7 @@
             Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(5);
             Name = "LoaiSanPhamForm";
-            Text = "LoaiSanPhamForm";
+            Text = "QUẢN LÝ LOẠI SẢN PHẨM";
             Load += LoaiSanPhamForm_Load;
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
@@ -342,13 +367,13 @@
         private FontAwesome.Sharp.IconButton timKiemButton;
         private FontAwesome.Sharp.IconButton excelButton;
         private FontAwesome.Sharp.IconButton themMoiBtn;
-        private Guna.UI2.WinForms.Guna2TextBox timKiemTextBox;
         private Panel panel2;
         private Panel panel3;
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2DataGridView loaiSanPhamDataGridView;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton refreshBtn;
+        private Guna.UI2.WinForms.Guna2TextBox timKiemTextBox;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column3;
@@ -356,5 +381,6 @@
         private DataGridViewImageColumn infoBtn;
         private DataGridViewImageColumn editBtn;
         private DataGridViewImageColumn deleteBtn;
+        private FontAwesome.Sharp.IconButton btnDeleteAll;
     }
 }
