@@ -85,6 +85,7 @@
             panel2.Controls.Add(txtMaNCC);
             panel2.Controls.Add(panel1);
             panel2.Dock = DockStyle.Fill;
+            panel2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(729, 536);
@@ -98,7 +99,7 @@
             tsDangTonTai.CheckedState.InnerBorderColor = Color.White;
             tsDangTonTai.CheckedState.InnerColor = Color.White;
             tsDangTonTai.CustomizableEdges = customizableEdges1;
-            tsDangTonTai.Location = new Point(527, 333);
+            tsDangTonTai.Location = new Point(527, 356);
             tsDangTonTai.Name = "tsDangTonTai";
             tsDangTonTai.ShadowDecoration.CustomizableEdges = customizableEdges2;
             tsDangTonTai.Size = new Size(44, 23);
@@ -113,7 +114,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.FromArgb(0, 79, 111);
-            label8.Location = new Point(377, 333);
+            label8.Location = new Point(377, 356);
             label8.Name = "label8";
             label8.Size = new Size(124, 24);
             label8.TabIndex = 93;
@@ -130,7 +131,7 @@
             btnLuu.FillColor = Color.FromArgb(0, 79, 111);
             btnLuu.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnLuu.ForeColor = Color.White;
-            btnLuu.Location = new Point(492, 430);
+            btnLuu.Location = new Point(507, 445);
             btnLuu.Name = "btnLuu";
             btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnLuu.Size = new Size(189, 53);
@@ -150,7 +151,7 @@
             btnHuyBo.FillColor = Color.White;
             btnHuyBo.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnHuyBo.ForeColor = Color.FromArgb(0, 79, 111);
-            btnHuyBo.Location = new Point(297, 430);
+            btnHuyBo.Location = new Point(312, 445);
             btnHuyBo.Name = "btnHuyBo";
             btnHuyBo.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnHuyBo.Size = new Size(189, 53);
@@ -168,8 +169,9 @@
             txtEmail.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtEmail.Location = new Point(377, 131);
+            txtEmail.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEmail.Location = new Point(377, 162);
+            txtEmail.Margin = new Padding(5, 5, 5, 5);
             txtEmail.Name = "txtEmail";
             txtEmail.PasswordChar = '\0';
             txtEmail.PlaceholderText = "";
@@ -189,8 +191,9 @@
             txtDiaChi.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtDiaChi.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtDiaChi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDiaChi.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDiaChi.Location = new Point(377, 227);
+            txtDiaChi.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDiaChi.Location = new Point(377, 258);
+            txtDiaChi.Margin = new Padding(5, 5, 5, 5);
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.PasswordChar = '\0';
             txtDiaChi.PlaceholderText = "";
@@ -202,22 +205,22 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = Color.FromArgb(0, 79, 111);
-            label10.Location = new Point(377, 106);
+            label10.Location = new Point(377, 133);
             label10.Name = "label10";
-            label10.Size = new Size(45, 18);
+            label10.Size = new Size(57, 24);
             label10.TabIndex = 86;
             label10.Text = "Email";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label9.ForeColor = Color.FromArgb(0, 79, 111);
-            label9.Location = new Point(377, 202);
+            label9.Location = new Point(377, 229);
             label9.Name = "label9";
-            label9.Size = new Size(53, 18);
+            label9.Size = new Size(67, 24);
             label9.TabIndex = 85;
             label9.Text = "Địa chỉ";
             // 
@@ -232,8 +235,9 @@
             txtSoDienThoai.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtSoDienThoai.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtSoDienThoai.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSoDienThoai.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSoDienThoai.Location = new Point(62, 333);
+            txtSoDienThoai.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSoDienThoai.Location = new Point(64, 364);
+            txtSoDienThoai.Margin = new Padding(5, 5, 5, 5);
             txtSoDienThoai.Name = "txtSoDienThoai";
             txtSoDienThoai.PasswordChar = '\0';
             txtSoDienThoai.PlaceholderText = "";
@@ -245,33 +249,33 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(0, 79, 111);
-            label7.Location = new Point(62, 312);
+            label7.Location = new Point(64, 335);
             label7.Name = "label7";
-            label7.Size = new Size(94, 18);
+            label7.Size = new Size(121, 24);
             label7.TabIndex = 81;
             label7.Text = "Số điện thoại";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(0, 79, 111);
-            label3.Location = new Point(62, 206);
+            label3.Location = new Point(62, 229);
             label3.Name = "label3";
-            label3.Size = new Size(125, 18);
+            label3.Size = new Size(165, 24);
             label3.TabIndex = 77;
             label3.Text = "Tên nhà cung cấp";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(0, 79, 111);
-            label2.Location = new Point(64, 110);
+            label2.Location = new Point(64, 133);
             label2.Name = "label2";
-            label2.Size = new Size(121, 18);
+            label2.Size = new Size(157, 24);
             label2.TabIndex = 76;
             label2.Text = "Mã nhà cung cấp";
             // 
@@ -286,8 +290,9 @@
             txtTenNCC.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtTenNCC.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtTenNCC.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTenNCC.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTenNCC.Location = new Point(62, 227);
+            txtTenNCC.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTenNCC.Location = new Point(64, 258);
+            txtTenNCC.Margin = new Padding(5, 5, 5, 5);
             txtTenNCC.Name = "txtTenNCC";
             txtTenNCC.PasswordChar = '\0';
             txtTenNCC.PlaceholderText = "";
@@ -307,8 +312,9 @@
             txtMaNCC.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtMaNCC.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtMaNCC.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMaNCC.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMaNCC.Location = new Point(62, 131);
+            txtMaNCC.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtMaNCC.Location = new Point(64, 162);
+            txtMaNCC.Margin = new Padding(5, 5, 5, 5);
             txtMaNCC.Name = "txtMaNCC";
             txtMaNCC.PasswordChar = '\0';
             txtMaNCC.PlaceholderText = "";
