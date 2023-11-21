@@ -93,14 +93,15 @@
             // 
             // iconButton1
             // 
+            iconButton1.Dock = DockStyle.Right;
             iconButton1.FlatAppearance.BorderSize = 0;
             iconButton1.FlatStyle = FlatStyle.Flat;
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
             iconButton1.IconColor = Color.White;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(841, 9);
+            iconButton1.Location = new Point(853, 0);
             iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(129, 48);
+            iconButton1.Size = new Size(129, 66);
             iconButton1.TabIndex = 1;
             iconButton1.UseVisualStyleBackColor = true;
             iconButton1.Click += iconButton1_Click;
