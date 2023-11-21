@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class themNhaCungCapForm
+    partial class ChiTietNhaCungCapForm
     {
         /// <summary>
         /// Required designer variable.

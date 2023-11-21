@@ -281,7 +281,6 @@
             numSoLuong.Size = new Size(290, 40);
             numSoLuong.TabIndex = 33;
             numSoLuong.UpDownButtonFillColor = Color.FromArgb(0, 79, 111);
-            numSoLuong.UpDownButtonForeColor = Color.White;
             // 
             // label6
             // 
@@ -454,13 +453,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(223, 243, 252);
             ClientSize = new Size(982, 620);
+            ControlBox = false;
             Controls.Add(panel2);
             Controls.Add(panel1);
             Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
             Name = "ChiTietSanPhamForm";
-            Text = "ChiTietSanPhamForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

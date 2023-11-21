@@ -1,6 +1,7 @@
 ﻿using BUS;
 using DTO;
 using FontAwesome.Sharp;
+using GUI.CacFormDuLieu;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -181,6 +182,7 @@ namespace GUI
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new NhanVienForm());
 
         }
 

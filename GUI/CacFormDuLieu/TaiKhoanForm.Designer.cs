@@ -32,24 +32,16 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel4 = new Panel();
             panel3 = new Panel();
             dgvTaiKhoan = new Guna.UI2.WinForms.Guna2DataGridView();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewImageColumn();
-            Column5 = new DataGridViewImageColumn();
-            Column6 = new DataGridViewImageColumn();
             panel2 = new Panel();
             excelButton = new FontAwesome.Sharp.IconButton();
             refreshButton = new FontAwesome.Sharp.IconButton();
@@ -61,6 +53,14 @@
             label3 = new Label();
             timKiemButton = new FontAwesome.Sharp.IconButton();
             label1 = new Label();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewImageColumn();
+            Column5 = new DataGridViewImageColumn();
+            Column6 = new DataGridViewImageColumn();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvTaiKhoan).BeginInit();
@@ -154,83 +154,6 @@
             dgvTaiKhoan.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
             dgvTaiKhoan.CellFormatting += sanPhamDataGridView_CellFormatting;
             dgvTaiKhoan.CellPainting += sanPhamDataGridView_CellPainting;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column2.DefaultCellStyle = dataGridViewCellStyle3;
-            Column2.HeaderText = "#";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 46;
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 50F;
-            Column1.HeaderText = "Tên tài khoản";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Resizable = DataGridViewTriState.True;
-            // 
-            // Column3
-            // 
-            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.FillWeight = 50F;
-            Column3.HeaderText = "Mã phân quyền ";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            Column7.FillWeight = 50F;
-            Column7.HeaderText = "Mật khẩu";
-            Column7.Name = "Column7";
-            Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            Column8.FillWeight = 50F;
-            Column8.HeaderText = "Trạng thái";
-            Column8.Name = "Column8";
-            Column8.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column4.FillWeight = 30F;
-            Column4.HeaderText = "";
-            Column4.Image = Properties.Resources._003_info;
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            Column4.Width = 6;
-            // 
-            // Column5
-            // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column5.FillWeight = 30F;
-            Column5.HeaderText = "";
-            Column5.Image = Properties.Resources._002_pencil1;
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            Column5.Width = 6;
-            // 
-            // Column6
-            // 
-            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column6.FillWeight = 30F;
-            Column6.HeaderText = "";
-            Column6.Image = Properties.Resources._001_bin1;
-            Column6.MinimumWidth = 6;
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            Column6.Width = 6;
             // 
             // panel2
             // 
@@ -429,6 +352,83 @@
             label1.Size = new Size(80, 20);
             label1.TabIndex = 70;
             label1.Text = "Trạng thái";
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            Column2.HeaderText = "#";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 46;
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 50F;
+            Column1.HeaderText = "Tên tài khoản";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Resizable = DataGridViewTriState.True;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column3.FillWeight = 50F;
+            Column3.HeaderText = "Tên phân quyền";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            Column7.FillWeight = 50F;
+            Column7.HeaderText = "Mật khẩu";
+            Column7.Name = "Column7";
+            Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            Column8.FillWeight = 50F;
+            Column8.HeaderText = "Trạng thái";
+            Column8.Name = "Column8";
+            Column8.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column4.FillWeight = 30F;
+            Column4.HeaderText = "";
+            Column4.Image = Properties.Resources._003_info;
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            Column4.Width = 6;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column5.FillWeight = 30F;
+            Column5.HeaderText = "";
+            Column5.Image = Properties.Resources._002_pencil1;
+            Column5.MinimumWidth = 6;
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            Column5.Width = 6;
+            // 
+            // Column6
+            // 
+            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column6.FillWeight = 30F;
+            Column6.HeaderText = "";
+            Column6.Image = Properties.Resources._001_bin1;
+            Column6.MinimumWidth = 6;
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            Column6.Width = 6;
             // 
             // TaiKhoanForm
             // 

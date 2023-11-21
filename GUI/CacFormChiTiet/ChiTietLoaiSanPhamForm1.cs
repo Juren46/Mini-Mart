@@ -1,5 +1,6 @@
 ﻿using BUS.OtherFunctions;
 using DTO;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,11 +31,6 @@ namespace GUI
         {
             InitializeComponent();
             CenterToParent();
-            this.Text = string.Empty;
-            this.ControlBox = false;
-            this.DoubleBuffered = true;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-
             this.context = context;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

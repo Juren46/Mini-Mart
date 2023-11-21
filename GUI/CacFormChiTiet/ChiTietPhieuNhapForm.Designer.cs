@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class themPhieuNhapForm
+    partial class ChiTietPhieuNhapForm
     {
         /// <summary>
         /// Required designer variable.

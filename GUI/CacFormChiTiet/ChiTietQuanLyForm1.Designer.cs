@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class themQuanLyForm1
+    partial class ChiTietQuanLyForm1
     {
         /// <summary>
         /// Required designer variable.

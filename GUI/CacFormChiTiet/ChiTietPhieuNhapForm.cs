@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class HoaDonForm : Form
+    public partial class ChiTietPhieuNhapForm : Form
     {
-        public HoaDonForm()
+        public ChiTietPhieuNhapForm()
         {
             InitializeComponent();
+        }
+
+        private void themPhieuNhapForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

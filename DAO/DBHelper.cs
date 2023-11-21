@@ -15,7 +15,7 @@ namespace DAO
         private static string username = "";
         private static string password = "";
         private static string connectionString = $"Data Source={servername};Initial Catalog={dbName};Integrated Security=True;Encrypt=False";*/
-        private static string connectionString = @"Data Source=DESKTOP-QFAM29O\THU;Initial Catalog=mini-mart;Persist Security Info=True;User ID=sa;Password=123;Encrypt=True;Trust Server Certificate=True";
+        private static string connectionString = @"Data Source=ngoctin\TIN;Initial Catalog=mini-mart;Persist Security Info=True;User ID=sa;Password=123;Encrypt=True;Trust Server Certificate=True";
 
         public static DataTable ExecuteQuery(string query)
         {

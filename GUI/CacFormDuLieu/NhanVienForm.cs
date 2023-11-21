@@ -8,18 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI
+namespace GUI.CacFormDuLieu
 {
-    public partial class themPhieuNhapForm : Form
+    public partial class NhanVienForm : Form
     {
-        public themPhieuNhapForm()
+        public NhanVienForm()
         {
             InitializeComponent();
         }
 
-        private void themPhieuNhapForm_Load(object sender, EventArgs e)
+        private void btnThemMoi_Click(object sender, EventArgs e)
         {
-
+            ChiTietNhanVienForm chiTietNhanVienForm = new ChiTietNhanVienForm();
+            chiTietNhanVienForm.ShowDialog();
         }
     }
 }
