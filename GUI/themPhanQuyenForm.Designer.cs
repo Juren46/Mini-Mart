@@ -32,27 +32,100 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            panel2 = new Panel();
+            btnLuu = new Guna.UI2.WinForms.Guna2Button();
+            btnHuyBo = new Guna.UI2.WinForms.Guna2Button();
             panel1 = new Panel();
+            panel3 = new Panel();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             label1 = new Label();
-            label3 = new Label();
+            label5 = new Label();
             label2 = new Label();
-            txtTenKhachHang = new Guna.UI2.WinForms.Guna2TextBox();
-            txtMaKhachHang = new Guna.UI2.WinForms.Guna2TextBox();
+            txtTenPhanQuyen = new Guna.UI2.WinForms.Guna2TextBox();
+            txtMaPhanQuyen = new Guna.UI2.WinForms.Guna2TextBox();
+            panel2.SuspendLayout();
             panel1.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(223, 243, 252);
+            panel2.Controls.Add(btnLuu);
+            panel2.Controls.Add(btnHuyBo);
+            panel2.Controls.Add(panel1);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(txtTenPhanQuyen);
+            panel2.Controls.Add(txtMaPhanQuyen);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(656, 294);
+            panel2.TabIndex = 5;
+            // 
+            // btnLuu
+            // 
+            btnLuu.BorderRadius = 5;
+            btnLuu.CustomizableEdges = customizableEdges1;
+            btnLuu.DisabledState.BorderColor = Color.DarkGray;
+            btnLuu.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnLuu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnLuu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnLuu.FillColor = Color.FromArgb(0, 79, 111);
+            btnLuu.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLuu.ForeColor = Color.White;
+            btnLuu.Location = new Point(427, 190);
+            btnLuu.Name = "btnLuu";
+            btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnLuu.Size = new Size(189, 53);
+            btnLuu.TabIndex = 42;
+            btnLuu.Text = "Lưu";
+            // 
+            // btnHuyBo
+            // 
+            btnHuyBo.BorderColor = Color.FromArgb(0, 79, 111);
+            btnHuyBo.BorderRadius = 5;
+            btnHuyBo.BorderThickness = 1;
+            btnHuyBo.CustomizableEdges = customizableEdges3;
+            btnHuyBo.DisabledState.BorderColor = Color.DarkGray;
+            btnHuyBo.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnHuyBo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnHuyBo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnHuyBo.FillColor = Color.White;
+            btnHuyBo.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnHuyBo.ForeColor = Color.FromArgb(0, 79, 111);
+            btnHuyBo.Location = new Point(232, 190);
+            btnHuyBo.Name = "btnHuyBo";
+            btnHuyBo.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnHuyBo.Size = new Size(189, 53);
+            btnHuyBo.TabIndex = 41;
+            btnHuyBo.Text = "Huỷ bỏ";
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 79, 111);
-            panel1.Controls.Add(iconButton1);
+            panel1.Controls.Add(panel3);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(635, 66);
-            panel1.TabIndex = 72;
+            panel1.Size = new Size(656, 66);
+            panel1.TabIndex = 40;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(iconButton1);
+            panel3.Dock = DockStyle.Right;
+            panel3.Location = new Point(456, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(200, 66);
+            panel3.TabIndex = 1;
             // 
             // iconButton1
             // 
@@ -62,10 +135,10 @@
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
             iconButton1.IconColor = Color.White;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(506, 0);
+            iconButton1.Location = new Point(71, 0);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(129, 66);
-            iconButton1.TabIndex = 1;
+            iconButton1.TabIndex = 2;
             iconButton1.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -76,101 +149,105 @@
             label1.Location = new Point(38, 19);
             label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(236, 29);
+            label1.Size = new Size(243, 29);
             label1.TabIndex = 0;
-            label1.Text = "Chi tiết phân quyền";
+            label1.Text = "Chi tiết phân quyền ";
             // 
-            // label3
+            // label5
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.FromArgb(0, 79, 111);
-            label3.Location = new Point(172, 164);
-            label3.Name = "label3";
-            label3.Size = new Size(113, 18);
-            label3.TabIndex = 76;
-            label3.Text = "Tên khách hàng";
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.FromArgb(0, 79, 111);
+            label5.Location = new Point(326, 91);
+            label5.Name = "label5";
+            label5.Size = new Size(150, 24);
+            label5.TabIndex = 31;
+            label5.Text = "Tên phân quyền";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(0, 79, 111);
-            label2.Location = new Point(174, 68);
+            label2.Location = new Point(26, 91);
             label2.Name = "label2";
-            label2.Size = new Size(111, 18);
-            label2.TabIndex = 75;
-            label2.Text = "Mã Khách hàng";
+            label2.Size = new Size(142, 24);
+            label2.TabIndex = 28;
+            label2.Text = "Mã phân quyền";
             // 
-            // txtTenKhachHang
+            // txtTenPhanQuyen
             // 
-            txtTenKhachHang.BorderColor = Color.FromArgb(0, 79, 111);
-            txtTenKhachHang.BorderRadius = 5;
-            txtTenKhachHang.CustomizableEdges = customizableEdges1;
-            txtTenKhachHang.DefaultText = "";
-            txtTenKhachHang.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtTenKhachHang.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtTenKhachHang.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtTenKhachHang.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtTenKhachHang.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTenKhachHang.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTenKhachHang.Location = new Point(172, 185);
-            txtTenKhachHang.Name = "txtTenKhachHang";
-            txtTenKhachHang.PasswordChar = '\0';
-            txtTenKhachHang.PlaceholderText = "";
-            txtTenKhachHang.SelectedText = "";
-            txtTenKhachHang.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txtTenKhachHang.Size = new Size(290, 40);
-            txtTenKhachHang.TabIndex = 74;
+            txtTenPhanQuyen.BorderColor = Color.FromArgb(0, 79, 111);
+            txtTenPhanQuyen.BorderRadius = 5;
+            txtTenPhanQuyen.CustomizableEdges = customizableEdges5;
+            txtTenPhanQuyen.DefaultText = "";
+            txtTenPhanQuyen.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtTenPhanQuyen.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtTenPhanQuyen.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtTenPhanQuyen.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtTenPhanQuyen.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtTenPhanQuyen.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTenPhanQuyen.Location = new Point(326, 120);
+            txtTenPhanQuyen.Margin = new Padding(5, 5, 5, 5);
+            txtTenPhanQuyen.Name = "txtTenPhanQuyen";
+            txtTenPhanQuyen.PasswordChar = '\0';
+            txtTenPhanQuyen.PlaceholderText = "";
+            txtTenPhanQuyen.SelectedText = "";
+            txtTenPhanQuyen.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txtTenPhanQuyen.Size = new Size(290, 40);
+            txtTenPhanQuyen.TabIndex = 24;
             // 
-            // txtMaKhachHang
+            // txtMaPhanQuyen
             // 
-            txtMaKhachHang.BorderColor = Color.FromArgb(0, 79, 111);
-            txtMaKhachHang.BorderRadius = 5;
-            txtMaKhachHang.CustomizableEdges = customizableEdges3;
-            txtMaKhachHang.DefaultText = "";
-            txtMaKhachHang.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtMaKhachHang.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtMaKhachHang.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtMaKhachHang.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtMaKhachHang.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMaKhachHang.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMaKhachHang.Location = new Point(172, 89);
-            txtMaKhachHang.Name = "txtMaKhachHang";
-            txtMaKhachHang.PasswordChar = '\0';
-            txtMaKhachHang.PlaceholderText = "";
-            txtMaKhachHang.SelectedText = "";
-            txtMaKhachHang.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txtMaKhachHang.Size = new Size(290, 40);
-            txtMaKhachHang.TabIndex = 73;
+            txtMaPhanQuyen.BorderColor = Color.FromArgb(0, 79, 111);
+            txtMaPhanQuyen.BorderRadius = 5;
+            txtMaPhanQuyen.CustomizableEdges = customizableEdges7;
+            txtMaPhanQuyen.DefaultText = "";
+            txtMaPhanQuyen.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtMaPhanQuyen.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtMaPhanQuyen.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtMaPhanQuyen.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtMaPhanQuyen.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtMaPhanQuyen.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtMaPhanQuyen.Location = new Point(26, 120);
+            txtMaPhanQuyen.Margin = new Padding(5, 5, 5, 5);
+            txtMaPhanQuyen.Name = "txtMaPhanQuyen";
+            txtMaPhanQuyen.PasswordChar = '\0';
+            txtMaPhanQuyen.PlaceholderText = "";
+            txtMaPhanQuyen.SelectedText = "";
+            txtMaPhanQuyen.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txtMaPhanQuyen.Size = new Size(290, 40);
+            txtMaPhanQuyen.TabIndex = 23;
             // 
             // themPhanQuyenForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(635, 292);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(txtTenKhachHang);
-            Controls.Add(txtMaKhachHang);
-            Controls.Add(panel1);
+            ClientSize = new Size(656, 294);
+            Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "themPhanQuyenForm";
-            Text = "themPhanQuyenForm";
+            Text = "CHI TIẾT PHÂN QUYỀN";
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
+        private Panel panel2;
+        private Guna.UI2.WinForms.Guna2Button btnLuu;
+        private Guna.UI2.WinForms.Guna2Button btnHuyBo;
         private Panel panel1;
+        private Panel panel3;
         private FontAwesome.Sharp.IconButton iconButton1;
         private Label label1;
-        private Label label3;
+        private Label label5;
         private Label label2;
-        private Guna.UI2.WinForms.Guna2TextBox txtTenKhachHang;
-        private Guna.UI2.WinForms.Guna2TextBox txtMaKhachHang;
+        private Guna.UI2.WinForms.Guna2TextBox txtTenPhanQuyen;
+        private Guna.UI2.WinForms.Guna2TextBox txtMaPhanQuyen;
     }
 }
