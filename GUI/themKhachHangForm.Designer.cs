@@ -167,8 +167,9 @@
             txtBacThanhVien.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtBacThanhVien.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtBacThanhVien.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtBacThanhVien.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBacThanhVien.Location = new Point(692, 317);
+            txtBacThanhVien.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBacThanhVien.Location = new Point(692, 325);
+            txtBacThanhVien.Margin = new Padding(5, 5, 5, 5);
             txtBacThanhVien.Name = "txtBacThanhVien";
             txtBacThanhVien.PasswordChar = '\0';
             txtBacThanhVien.PlaceholderText = "";
@@ -180,11 +181,11 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label11.ForeColor = Color.FromArgb(0, 79, 111);
             label11.Location = new Point(692, 296);
             label11.Name = "label11";
-            label11.Size = new Size(104, 18);
+            label11.Size = new Size(134, 24);
             label11.TabIndex = 67;
             label11.Text = "Bậc thành viên";
             // 
@@ -199,8 +200,9 @@
             txtEmail.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEmail.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtEmail.Location = new Point(692, 119);
+            txtEmail.Margin = new Padding(5, 5, 5, 5);
             txtEmail.Name = "txtEmail";
             txtEmail.PasswordChar = '\0';
             txtEmail.PlaceholderText = "";
@@ -220,8 +222,9 @@
             txtDiaChi.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtDiaChi.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtDiaChi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDiaChi.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDiaChi.Location = new Point(692, 211);
+            txtDiaChi.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDiaChi.Location = new Point(692, 219);
+            txtDiaChi.Margin = new Padding(5, 5, 5, 5);
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.PasswordChar = '\0';
             txtDiaChi.PlaceholderText = "";
@@ -233,22 +236,22 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = Color.FromArgb(0, 79, 111);
             label10.Location = new Point(692, 94);
             label10.Name = "label10";
-            label10.Size = new Size(45, 18);
+            label10.Size = new Size(57, 24);
             label10.TabIndex = 64;
             label10.Text = "Email";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label9.ForeColor = Color.FromArgb(0, 79, 111);
             label9.Location = new Point(692, 190);
             label9.Name = "label9";
-            label9.Size = new Size(53, 18);
+            label9.Size = new Size(67, 24);
             label9.TabIndex = 63;
             label9.Text = "Địa chỉ";
             // 
@@ -263,8 +266,9 @@
             txtSoDienThoai.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtSoDienThoai.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtSoDienThoai.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSoDienThoai.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSoDienThoai.Location = new Point(57, 317);
+            txtSoDienThoai.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSoDienThoai.Location = new Point(59, 325);
+            txtSoDienThoai.Margin = new Padding(5, 5, 5, 5);
             txtSoDienThoai.Name = "txtSoDienThoai";
             txtSoDienThoai.PasswordChar = '\0';
             txtSoDienThoai.PlaceholderText = "";
@@ -280,9 +284,9 @@
             dtpNgaySinh.Checked = true;
             dtpNgaySinh.CustomizableEdges = customizableEdges13;
             dtpNgaySinh.FillColor = Color.Transparent;
-            dtpNgaySinh.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpNgaySinh.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             dtpNgaySinh.Format = DateTimePickerFormat.Long;
-            dtpNgaySinh.Location = new Point(377, 211);
+            dtpNgaySinh.Location = new Point(377, 219);
             dtpNgaySinh.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpNgaySinh.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpNgaySinh.Name = "dtpNgaySinh";
@@ -302,7 +306,7 @@
             cbbGioiTinh.DropDownWidth = 30;
             cbbGioiTinh.FocusedColor = Color.FromArgb(94, 148, 255);
             cbbGioiTinh.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbbGioiTinh.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            cbbGioiTinh.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             cbbGioiTinh.ForeColor = Color.FromArgb(68, 88, 112);
             cbbGioiTinh.ItemHeight = 30;
             cbbGioiTinh.Items.AddRange(new object[] { "Nam", "Nữ ", "Bede" });
@@ -315,66 +319,66 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(0, 79, 111);
             label7.Location = new Point(57, 296);
             label7.Name = "label7";
-            label7.Size = new Size(94, 18);
+            label7.Size = new Size(121, 24);
             label7.TabIndex = 59;
             label7.Text = "Số điện thoại";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.FromArgb(0, 79, 111);
             label6.Location = new Point(377, 190);
             label6.Name = "label6";
-            label6.Size = new Size(73, 18);
+            label6.Size = new Size(94, 24);
             label6.TabIndex = 58;
             label6.Text = "Ngày sinh";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(0, 79, 111);
-            label5.Location = new Point(377, 94);
+            label5.Location = new Point(377, 92);
             label5.Name = "label5";
-            label5.Size = new Size(62, 18);
+            label5.Size = new Size(78, 24);
             label5.TabIndex = 57;
             label5.Text = "Giới tính";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(0, 79, 111);
             label4.Location = new Point(377, 296);
             label4.Name = "label4";
-            label4.Size = new Size(92, 18);
+            label4.Size = new Size(117, 24);
             label4.TabIndex = 56;
             label4.Text = "Điểm tích lũy";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(0, 79, 111);
             label3.Location = new Point(57, 190);
             label3.Name = "label3";
-            label3.Size = new Size(113, 18);
+            label3.Size = new Size(148, 24);
             label3.TabIndex = 55;
             label3.Text = "Tên khách hàng";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(0, 79, 111);
             label2.Location = new Point(59, 94);
             label2.Name = "label2";
-            label2.Size = new Size(111, 18);
+            label2.Size = new Size(143, 24);
             label2.TabIndex = 54;
             label2.Text = "Mã Khách hàng";
             // 
@@ -389,8 +393,9 @@
             txtDiemTichLuy.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtDiemTichLuy.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtDiemTichLuy.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDiemTichLuy.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDiemTichLuy.Location = new Point(377, 317);
+            txtDiemTichLuy.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDiemTichLuy.Location = new Point(377, 325);
+            txtDiemTichLuy.Margin = new Padding(5, 5, 5, 5);
             txtDiemTichLuy.Name = "txtDiemTichLuy";
             txtDiemTichLuy.PasswordChar = '\0';
             txtDiemTichLuy.PlaceholderText = "";
@@ -410,8 +415,9 @@
             txtTenKhachHang.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtTenKhachHang.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtTenKhachHang.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTenKhachHang.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTenKhachHang.Location = new Point(57, 211);
+            txtTenKhachHang.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTenKhachHang.Location = new Point(59, 219);
+            txtTenKhachHang.Margin = new Padding(5, 5, 5, 5);
             txtTenKhachHang.Name = "txtTenKhachHang";
             txtTenKhachHang.PasswordChar = '\0';
             txtTenKhachHang.PlaceholderText = "";
@@ -431,8 +437,9 @@
             txtMaKhachHang.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtMaKhachHang.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtMaKhachHang.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMaKhachHang.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMaKhachHang.Location = new Point(57, 115);
+            txtMaKhachHang.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtMaKhachHang.Location = new Point(59, 119);
+            txtMaKhachHang.Margin = new Padding(5, 5, 5, 5);
             txtMaKhachHang.Name = "txtMaKhachHang";
             txtMaKhachHang.PasswordChar = '\0';
             txtMaKhachHang.PlaceholderText = "";
@@ -489,7 +496,7 @@
             Controls.Add(panel2);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(5, 5, 5, 5);
+            Margin = new Padding(5);
             Name = "themKhachHangForm";
             Text = "CHI TIẾT KHÁCH HÀNG";
             panel1.ResumeLayout(false);
