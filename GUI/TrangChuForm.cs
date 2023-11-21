@@ -80,6 +80,7 @@ namespace GUI
                     btnBanHang.Visible = true;
                     btnSanPham.Visible = true;
                     btnLoaiSanPham.Visible = true;
+                    btnKhachHang.Visible = true;
                     btnKhuyenMai.Visible = true;
                     btnHoaDon.Visible = true;
                     break;

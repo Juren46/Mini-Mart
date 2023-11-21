@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BUS;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +14,47 @@ namespace GUI
 {
     public partial class HoaDonForm : Form
     {
+        HoaDonBUS hoaDonBUS;
+        List<HoaDon> listHoaDon;
+
         public HoaDonForm()
         {
             InitializeComponent();
+
+            hoaDonBUS = new HoaDonBUS();
+            listHoaDon = hoaDonBUS.LayDanhSachHoaDon();
         }
-        private void sanPhamDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+
+        private void HoaDonForm_Load(object sender, EventArgs e)
+        {
+            LoadDataToDataGridView(listHoaDon);
+        }
+
+        private void LoadDataToDataGridView(List<HoaDon> listHoaDon)
+        {
+            hoaDonDataGridView.Rows.Clear();
+
+            for (int i = 0; i < listHoaDon.Count; i++)
+            {
+                hoaDonDataGridView.Rows.Add(1);
+                hoaDonDataGridView.Rows[i].Cells[0].Value = i + 1;
+                hoaDonDataGridView.Rows[i].Cells[1].Value = listHoaDon[i].maHoaDon;
+                hoaDonDataGridView.Rows[i].Cells[2].Value = listHoaDon[i].maNhanVien;
+                hoaDonDataGridView.Rows[i].Cells[3].Value = listHoaDon[i].maKhachHang;
+                hoaDonDataGridView.Rows[i].Cells[4].Value = listHoaDon[i].maKhuyenMai;
+                hoaDonDataGridView.Rows[i].Cells[5].Value = listHoaDon[i].thoiGianTao.ToString("dd/MM/yyyy HH:mm:ss");
+                hoaDonDataGridView.Rows[i].Cells[6].Value = listHoaDon[i].tongTien.ToString("#,##0") + " VNĐ";
+                hoaDonDataGridView.Rows[i].Cells[7].Value = listHoaDon[i].giamGia.ToString("#,##0") + " VNĐ";
+                hoaDonDataGridView.Rows[i].Cells[8].Value = listHoaDon[i].thanhTien.ToString("#,##0") + " VNĐ";
+                hoaDonDataGridView.Rows[i].Cells[9].Value = listHoaDon[i].tienNhan.ToString("#,##0") + " VNĐ";
+                hoaDonDataGridView.Rows[i].Cells[10].Value = listHoaDon[i].tienThua.ToString("#,##0") + " VNĐ";
+            }
+        }
+
+        private void hoaDonDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Kiểm tra xem cell đang được định dạng có phải là cell hình ảnh không.
-            if ((e.ColumnIndex == 8 || e.ColumnIndex == 9 || e.ColumnIndex == 10) && e.RowIndex >= 0)
+            if ((e.ColumnIndex == 11) && e.RowIndex >= 0)
             {
                 // Kiểm tra giá trị của cell có phải là hình ảnh không.
                 if (e.Value is Image)
@@ -38,11 +73,11 @@ namespace GUI
             }
         }
 
-        private void sanPhamDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        private void hoaDonDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             int numberOfColumnsToSkip = 3; // Số lượng cột cuối cùng không cần chia
 
-            if (e.ColumnIndex > -1 && e.RowIndex >= 0 && e.ColumnIndex < dgvHoaDon.Columns.Count - numberOfColumnsToSkip)
+            if (e.ColumnIndex > -1 && e.RowIndex >= 0 && e.ColumnIndex < hoaDonDataGridView.Columns.Count - numberOfColumnsToSkip)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
@@ -59,19 +94,21 @@ namespace GUI
             }
         }
 
-        private void sanPhamDataGridView_SelectionChanged(object sender, EventArgs e)
+        private void hoaDonDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             // Kiểm tra số lượng dòng được chọn
-            if (dgvHoaDon.SelectedRows.Count > 1)
+            if (hoaDonDataGridView.SelectedRows.Count > 1)
             {
                 // Nếu nhiều hơn 1 dòng được chọn, hiển thị nút xoá tất cả
-                btnDeleteAll.Visible = true;
+                xoaTatCaButton.Visible = true;
             }
             else
             {
                 // Nếu không có hoặc chỉ có 1 dòng được chọn, ẩn nút xoá tất cả
-                btnDeleteAll.Visible = false;
+                xoaTatCaButton.Visible = false;
             }
         }
+
+
     }
 }

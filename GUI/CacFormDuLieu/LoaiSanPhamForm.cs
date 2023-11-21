@@ -39,7 +39,7 @@ namespace GUI
             for (int i = 0; i < listLoaiSanPham.Count; i++)
             {
                 loaiSanPhamDataGridView.Rows.Add(1);
-                loaiSanPhamDataGridView.Rows[i].Cells[0].Value = string.Format("{0:d3}", i + 1);
+                loaiSanPhamDataGridView.Rows[i].Cells[0].Value = i + 1;
                 loaiSanPhamDataGridView.Rows[i].Cells[1].Value = listLoaiSanPham[i].maLoaiSanPham;
                 loaiSanPhamDataGridView.Rows[i].Cells[2].Value = listLoaiSanPham[i].tenLoaiSanPham;
                 loaiSanPhamDataGridView.Rows[i].Cells[3].Value = listLoaiSanPham[i].trangThai;
@@ -185,12 +185,12 @@ namespace GUI
             if (loaiSanPhamDataGridView.SelectedRows.Count > 1)
             {
                 // Nếu nhiều hơn 1 dòng được chọn, hiển thị nút xoá tất cả
-                btnDeleteAll.Visible = true;
+                xoaTatCaButton.Visible = true;
             }
             else
             {
                 // Nếu không có hoặc chỉ có 1 dòng được chọn, ẩn nút xoá tất cả
-                btnDeleteAll.Visible = false;
+                xoaTatCaButton.Visible = false;
             }
         }
     }

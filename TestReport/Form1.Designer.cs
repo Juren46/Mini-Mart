@@ -28,24 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            reportViewer1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            reportViewer1.Location = new Point(0, 0);
-            reportViewer1.Name = "ReportViewer";
-            reportViewer1.ServerReport.BearerToken = null;
-            reportViewer1.Size = new Size(816, 489);
-            reportViewer1.TabIndex = 0;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(reportViewer1);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -53,7 +42,5 @@
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

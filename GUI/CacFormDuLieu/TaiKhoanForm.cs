@@ -17,27 +17,33 @@ namespace GUI
     {
         TaiKhoanBUS taiKhoanBUS;
         List<TaiKhoan> listTaiKhoan;
+
         public TaiKhoanForm()
         {
             InitializeComponent();
 
             taiKhoanBUS = new TaiKhoanBUS();
             listTaiKhoan = taiKhoanBUS.LayDanhSachTaiKhoan();
+        }
 
+
+        private void TaiKhoanForm_Load(object sender, EventArgs e)
+        {
             LoadDataToDataGridView(listTaiKhoan);
         }
 
         private void LoadDataToDataGridView(List<TaiKhoan> listTaiKhoan)
         {
-            dgvTaiKhoan.Rows.Clear();
+            taiKhoanDataGridView.Rows.Clear();
+
             for (int i = 0; i < listTaiKhoan.Count; i++)
             {
-                dgvTaiKhoan.Rows.Add(1);
-                dgvTaiKhoan.Rows[i].Cells[0].Value = i + 1;
-                dgvTaiKhoan.Rows[i].Cells[1].Value = listTaiKhoan[i].tenTaiKhoan;
-                dgvTaiKhoan.Rows[i].Cells[2].Value = new PhanQuyenBUS().LayPhanQuyenTheoMa(listTaiKhoan[i].maPhanQuyen).tenPhanQuyen;
-                dgvTaiKhoan.Rows[i].Cells[3].Value = listTaiKhoan[i].matKhau;
-                dgvTaiKhoan.Rows[i].Cells[4].Value = listTaiKhoan[i].trangThai;
+                taiKhoanDataGridView.Rows.Add(1);
+                taiKhoanDataGridView.Rows[i].Cells[0].Value = i + 1;
+                taiKhoanDataGridView.Rows[i].Cells[1].Value = listTaiKhoan[i].tenTaiKhoan;
+                taiKhoanDataGridView.Rows[i].Cells[2].Value = new PhanQuyenBUS().LayPhanQuyenTheoMa(listTaiKhoan[i].maPhanQuyen).tenPhanQuyen;
+                taiKhoanDataGridView.Rows[i].Cells[3].Value = listTaiKhoan[i].matKhau;
+                taiKhoanDataGridView.Rows[i].Cells[4].Value = listTaiKhoan[i].trangThai;
             }
         }
         private void sanPhamDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -66,7 +72,7 @@ namespace GUI
         {
             int numberOfColumnsToSkip = 3; // Số lượng cột cuối cùng không cần chia
 
-            if (e.ColumnIndex > -1 && e.RowIndex >= 0 && e.ColumnIndex < dgvTaiKhoan.Columns.Count - numberOfColumnsToSkip)
+            if (e.ColumnIndex > -1 && e.RowIndex >= 0 && e.ColumnIndex < taiKhoanDataGridView.Columns.Count - numberOfColumnsToSkip)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
@@ -107,9 +113,9 @@ namespace GUI
         private void excelButton_Click(object sender, EventArgs e)
         {
             List<string> listTenTaiKhoan = new List<string>();
-            for (int i = 0; i < dgvTaiKhoan.Rows.Count; i++)
+            for (int i = 0; i < taiKhoanDataGridView.Rows.Count; i++)
             {
-                listTenTaiKhoan.Add(dgvTaiKhoan.Rows[i].Cells[1].Value.ToString());
+                listTenTaiKhoan.Add(taiKhoanDataGridView.Rows[i].Cells[1].Value.ToString());
             }
             List<TaiKhoan> listTaiKhoan = new List<TaiKhoan>();
             foreach (string tenTaiKhoan in listTenTaiKhoan)
@@ -128,5 +134,6 @@ namespace GUI
                 MessageBox.Show("File Excel đã được tạo tại: " + filePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BUS;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +14,44 @@ namespace GUI
 {
     public partial class KhachHangForm : Form
     {
+        KhachHangBUS khachHangBUS;
+        List<KhachHang> listKhachHang;
+
         public KhachHangForm()
         {
             InitializeComponent();
+
+            khachHangBUS = new KhachHangBUS();
+            listKhachHang = khachHangBUS.LayDanhSachKhachHang();
         }
-        private void sanPhamDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+
+        private void KhachHangForm_Load(object sender, EventArgs e)
+        {
+            LoadDataToDataGridView(listKhachHang);
+        }
+
+        private void LoadDataToDataGridView(List<KhachHang> listKhachHang)
+        {
+            khachHangDataGridView.Rows.Clear();
+
+            for (int i = 0; i < listKhachHang.Count; i++)
+            {
+                khachHangDataGridView.Rows.Add(1);
+                khachHangDataGridView.Rows[i].Cells[0].Value = i + 1;
+                khachHangDataGridView.Rows[i].Cells[1].Value = listKhachHang[i].maKhachHang;
+                khachHangDataGridView.Rows[i].Cells[2].Value = listKhachHang[i].hoTen;
+                khachHangDataGridView.Rows[i].Cells[3].Value = listKhachHang[i].gioiTinh;
+                khachHangDataGridView.Rows[i].Cells[4].Value = listKhachHang[i].ngaySinh?.ToString("dd/MM/yyyy");
+                khachHangDataGridView.Rows[i].Cells[5].Value = listKhachHang[i].soDienThoai;
+                khachHangDataGridView.Rows[i].Cells[6].Value = listKhachHang[i].bacThanhVien;
+                khachHangDataGridView.Rows[i].Cells[7].Value = listKhachHang[i].diemTichLuy;
+            }
+        }
+
+        private void khachHangDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Kiểm tra xem cell đang được định dạng có phải là cell hình ảnh không.
-            if ((e.ColumnIndex == 10 || e.ColumnIndex == 11) && e.RowIndex >= 0)
+            if ((e.ColumnIndex == 9 || e.ColumnIndex == 10) && e.RowIndex >= 0)
             {
                 // Kiểm tra giá trị của cell có phải là hình ảnh không.
                 if (e.Value is Image)
@@ -38,11 +70,11 @@ namespace GUI
             }
         }
 
-        private void sanPhamDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        private void khachHangDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             int numberOfColumnsToSkip = 2; // Số lượng cột cuối cùng không cần chia
 
-            if (e.ColumnIndex > -1 && e.RowIndex >= 0 && e.ColumnIndex < dgvKhachHang.Columns.Count - numberOfColumnsToSkip)
+            if (e.ColumnIndex > -1 && e.RowIndex >= 0 && e.ColumnIndex < khachHangDataGridView.Columns.Count - numberOfColumnsToSkip)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 

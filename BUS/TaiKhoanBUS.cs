@@ -34,7 +34,7 @@ namespace BUS
                 return "Vui lòng nhập đầy đủ thông tin!";
             else
             {
-                if (!taiKhoanDAO.KiemTraTaiKhoanCoNguoiDung(tenTaiKhoan))
+                if (!taiKhoanDAO.KiemTraTaiKhoanCoNguoiDung(LayTaiKhoanTheoTen(tenTaiKhoan)))
                     return "Tài khoản chưa đăng ký người dùng!";
 
                 if (taiKhoanDAO.KiemTraDangNhap(tenTaiKhoan, matKhau))
@@ -112,9 +112,9 @@ namespace BUS
             return taiKhoanDAO.LayDanhSachTaiKhoanChuaDung();
         }
 
-        public bool KiemTraTaiKhoanCoNguoiDung(string tenTaiKhoan)
+        public bool KiemTraTaiKhoanCoNguoiDung(TaiKhoan taiKhoan)
         {
-            return taiKhoanDAO.KiemTraTaiKhoanCoNguoiDung(tenTaiKhoan);
+            return taiKhoanDAO.KiemTraTaiKhoanCoNguoiDung(taiKhoan);
         }
     }
 }

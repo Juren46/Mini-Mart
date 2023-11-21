@@ -9,22 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="ReportDefinitions\HelloWorldReport.rdlc" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="ReportDefinitions\HelloWorldReport.rdlc" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.2" />
     <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.19" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Microsoft.Data.SqlClient">
-      <HintPath>..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\Microsoft.Data.SqlClient.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

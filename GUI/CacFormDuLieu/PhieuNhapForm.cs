@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BUS;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +14,46 @@ namespace GUI
 {
     public partial class PhieuNhapForm : Form
     {
+        PhieuNhapBUS phieuNhapBUS;
+        List<PhieuNhap> listPhieuNhap;
+
         public PhieuNhapForm()
         {
             InitializeComponent();
+
+            phieuNhapBUS = new PhieuNhapBUS();
+            listPhieuNhap = phieuNhapBUS.LayDanhSachPhieuNhap();
         }
-        private void loaiSanPhamDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+
+        private void PhieuNhapForm_Load(object sender, EventArgs e)
+        {
+            LoadDataToDataGridView(listPhieuNhap);
+        }
+
+        private void LoadDataToDataGridView(List<PhieuNhap> listPhieuNhap)
+        {
+            phieuNhapDataGridView.Rows.Clear();
+
+            for (int i = 0; i < listPhieuNhap.Count; i++)
+            {
+                phieuNhapDataGridView.Rows.Add(1);
+                phieuNhapDataGridView.Rows[i].Cells[0].Value = i + 1;
+                phieuNhapDataGridView.Rows[i].Cells[1].Value = listPhieuNhap[i].maPhieuNhap;
+                phieuNhapDataGridView.Rows[i].Cells[2].Value = listPhieuNhap[i].maNhaCungCap;
+                phieuNhapDataGridView.Rows[i].Cells[3].Value = listPhieuNhap[i].maNhanVien;
+                phieuNhapDataGridView.Rows[i].Cells[4].Value = listPhieuNhap[i].maQuanLi;
+                phieuNhapDataGridView.Rows[i].Cells[5].Value = listPhieuNhap[i].thoiGianTao.ToString("dd/MM/yyyy HH:mm:ss");
+                phieuNhapDataGridView.Rows[i].Cells[6].Value = listPhieuNhap[i].thoiGianDuyet?.ToString("dd/MM/yyyy HH:mm:ss");
+                phieuNhapDataGridView.Rows[i].Cells[7].Value = listPhieuNhap[i].thanhTien.ToString("#,##0") + " VNĐ";
+                phieuNhapDataGridView.Rows[i].Cells[8].Value = listPhieuNhap[i].trangThaiDuyet;
+            }
+        }
+
+        private void phieuNhapDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             int numberOfColumnsToSkip = 0; // Số lượng cột cuối cùng không cần chia
 
-            if (e.ColumnIndex > -1 && e.RowIndex >= 0 && e.ColumnIndex < dgvPhieuNhap.Columns.Count - numberOfColumnsToSkip)
+            if (e.ColumnIndex > -1 && e.RowIndex >= 0 && e.ColumnIndex < phieuNhapDataGridView.Columns.Count - numberOfColumnsToSkip)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
@@ -36,5 +69,7 @@ namespace GUI
                 e.Handled = true;
             }
         }
+
+       
     }
 }

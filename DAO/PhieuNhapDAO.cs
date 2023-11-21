@@ -68,15 +68,15 @@ namespace DAO
                 {
                     PhieuNhap phieuNhap = new PhieuNhap();
 
-                    phieuNhap.maPhieuNhap = dataTable.Rows[0]["maPhieuNhap"].ToString();
-                    phieuNhap.maNhaCungCap = dataTable.Rows[0]["maNhaCungCap"].ToString();
-                    phieuNhap.maNhanVien = dataTable.Rows[0]["maNhanVien"].ToString();
-                    phieuNhap.maQuanLi = dataTable.Rows[0]["maQuanLi"].ToString();
-                    phieuNhap.thoiGianTao = (DateTime)dataTable.Rows[0]["thoiGianTao"];
-                    try { phieuNhap.thoiGianDuyet = (DateTime)dataTable.Rows[0]["thoiGianDuyet"]; }
+                    phieuNhap.maPhieuNhap = row["maPhieuNhap"].ToString();
+                    phieuNhap.maNhaCungCap = row["maNhaCungCap"].ToString();
+                    phieuNhap.maNhanVien =row["maNhanVien"].ToString();
+                    phieuNhap.maQuanLi = row["maQuanLi"].ToString();
+                    phieuNhap.thoiGianTao = (DateTime)row["thoiGianTao"];
+                    try { phieuNhap.thoiGianDuyet = (DateTime)row["thoiGianDuyet"]; }
                     catch { phieuNhap.thoiGianDuyet = null; }
-                    phieuNhap.thanhTien = Decimal.Parse(dataTable.Rows[0]["thanhTien"].ToString());
-                    phieuNhap.trangThaiDuyet = dataTable.Rows[0]["trangThaiDuyet"].ToString();
+                    phieuNhap.thanhTien = Decimal.Parse(row["thanhTien"].ToString());
+                    phieuNhap.trangThaiDuyet = row["trangThaiDuyet"].ToString();
 
                     listPhieuNhap.Add(phieuNhap);
                 }

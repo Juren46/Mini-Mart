@@ -16,6 +16,7 @@ namespace GUI
     {
         List<SanPham> listSanPham;
         SanPhamBUS sanPhamBUS;
+
         public SanPhamForm()
         {
             InitializeComponent();
@@ -31,6 +32,8 @@ namespace GUI
 
         private void LoadDataToDataGridView(List<SanPham> listSanPham)
         {
+            sanPhamDataGridView.Rows.Clear();
+
             for (int i = 0; i < listSanPham.Count; i++)
             {
                 sanPhamDataGridView.Rows.Add(1);
@@ -38,7 +41,7 @@ namespace GUI
                 sanPhamDataGridView.Rows[i].Cells[1].Value = listSanPham[i].maSanPham;
                 sanPhamDataGridView.Rows[i].Cells[2].Value = listSanPham[i].tenSanPham;
                 sanPhamDataGridView.Rows[i].Cells[3].Value = new LoaiSanPhamBUS().LayLoaiSanPhamTheoMa(listSanPham[i].maLoaiSanPham).tenLoaiSanPham;
-                sanPhamDataGridView.Rows[i].Cells[4].Value = new NhaCungCapBUS().LayNhaCungCapTheoMa(listSanPham[i].maNhaCungCap).tenNhaCungCap;
+                sanPhamDataGridView.Rows[i].Cells[4].Value = listSanPham[i].maNhaCungCap;
                 sanPhamDataGridView.Rows[i].Cells[5].Value = listSanPham[i].donViTinh;
                 sanPhamDataGridView.Rows[i].Cells[6].Value = listSanPham[i].soLuong;
                 sanPhamDataGridView.Rows[i].Cells[7].Value = listSanPham[i].giaBan.ToString("#,##0") + " VNĐ";
@@ -94,12 +97,12 @@ namespace GUI
             if (sanPhamDataGridView.SelectedRows.Count > 1)
             {
                 // Nếu nhiều hơn 1 dòng được chọn, hiển thị nút xoá tất cả
-                btnDeleteAll.Visible = true;
+                xoaTatCaButton.Visible = true;
             }
             else
             {
                 // Nếu không có hoặc chỉ có 1 dòng được chọn, ẩn nút xoá tất cả
-                btnDeleteAll.Visible = false;
+                xoaTatCaButton.Visible = false;
             }
         }
 

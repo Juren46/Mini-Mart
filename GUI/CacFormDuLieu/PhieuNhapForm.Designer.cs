@@ -32,27 +32,19 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel3 = new Panel();
-            dgvPhieuNhap = new Guna.UI2.WinForms.Guna2DataGridView();
-            panel2 = new Panel();
-            timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            tsDangTonTai = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            btnNhapXuatExcel = new FontAwesome.Sharp.IconButton();
-            cbbSapXep = new Guna.UI2.WinForms.Guna2ComboBox();
-            label1 = new Label();
-            btnTimKiem = new FontAwesome.Sharp.IconButton();
+            phieuNhapDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             Column2 = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -62,9 +54,17 @@
             Column7 = new DataGridViewTextBoxColumn();
             Column8 = new DataGridViewTextBoxColumn();
             Column9 = new DataGridViewTextBoxColumn();
+            panel2 = new Panel();
+            timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
+            tsDangTonTai = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            btnNhapXuatExcel = new FontAwesome.Sharp.IconButton();
+            cbbSapXep = new Guna.UI2.WinForms.Guna2ComboBox();
+            label1 = new Label();
+            btnTimKiem = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvPhieuNhap).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)phieuNhapDataGridView).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -81,7 +81,7 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(dgvPhieuNhap);
+            panel3.Controls.Add(phieuNhapDataGridView);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 80);
             panel3.Margin = new Padding(3, 2, 3, 2);
@@ -89,12 +89,12 @@
             panel3.Size = new Size(1183, 751);
             panel3.TabIndex = 45;
             // 
-            // dgvPhieuNhap
+            // phieuNhapDataGridView
             // 
-            dgvPhieuNhap.AllowUserToAddRows = false;
+            phieuNhapDataGridView.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
-            dgvPhieuNhap.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvPhieuNhap.BackgroundColor = Color.FromArgb(242, 245, 250);
+            phieuNhapDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            phieuNhapDataGridView.BackgroundColor = Color.FromArgb(242, 245, 250);
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.LightBlue;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -102,10 +102,10 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.LightBlue;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvPhieuNhap.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvPhieuNhap.ColumnHeadersHeight = 40;
-            dgvPhieuNhap.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvPhieuNhap.Columns.AddRange(new DataGridViewColumn[] { Column2, Column1, Column3, Column4, Column5, Column6, Column7, Column8, Column9 });
+            phieuNhapDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            phieuNhapDataGridView.ColumnHeadersHeight = 40;
+            phieuNhapDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            phieuNhapDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column2, Column1, Column3, Column4, Column5, Column6, Column7, Column8, Column9 });
             dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = Color.White;
             dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -113,12 +113,12 @@
             dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(227, 248, 251);
             dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            dgvPhieuNhap.DefaultCellStyle = dataGridViewCellStyle7;
-            dgvPhieuNhap.Dock = DockStyle.Fill;
-            dgvPhieuNhap.GridColor = Color.FromArgb(242, 245, 250);
-            dgvPhieuNhap.Location = new Point(0, 0);
-            dgvPhieuNhap.Name = "dgvPhieuNhap";
-            dgvPhieuNhap.ReadOnly = true;
+            phieuNhapDataGridView.DefaultCellStyle = dataGridViewCellStyle7;
+            phieuNhapDataGridView.Dock = DockStyle.Fill;
+            phieuNhapDataGridView.GridColor = Color.FromArgb(242, 245, 250);
+            phieuNhapDataGridView.Location = new Point(0, 0);
+            phieuNhapDataGridView.Name = "phieuNhapDataGridView";
+            phieuNhapDataGridView.ReadOnly = true;
             dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = Color.White;
             dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -126,35 +126,119 @@
             dataGridViewCellStyle8.SelectionBackColor = Color.White;
             dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dgvPhieuNhap.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            dgvPhieuNhap.RowHeadersVisible = false;
-            dgvPhieuNhap.RowHeadersWidth = 51;
-            dgvPhieuNhap.RowTemplate.DividerHeight = 3;
-            dgvPhieuNhap.RowTemplate.Height = 50;
-            dgvPhieuNhap.Size = new Size(1183, 751);
-            dgvPhieuNhap.TabIndex = 43;
-            dgvPhieuNhap.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            dgvPhieuNhap.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dgvPhieuNhap.ThemeStyle.AlternatingRowsStyle.ForeColor = SystemColors.ControlText;
-            dgvPhieuNhap.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dgvPhieuNhap.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dgvPhieuNhap.ThemeStyle.BackColor = Color.FromArgb(242, 245, 250);
-            dgvPhieuNhap.ThemeStyle.GridColor = Color.FromArgb(242, 245, 250);
-            dgvPhieuNhap.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(242, 245, 250);
-            dgvPhieuNhap.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            dgvPhieuNhap.ThemeStyle.HeaderStyle.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dgvPhieuNhap.ThemeStyle.HeaderStyle.ForeColor = Color.DimGray;
-            dgvPhieuNhap.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvPhieuNhap.ThemeStyle.HeaderStyle.Height = 40;
-            dgvPhieuNhap.ThemeStyle.ReadOnly = true;
-            dgvPhieuNhap.ThemeStyle.RowsStyle.BackColor = Color.White;
-            dgvPhieuNhap.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvPhieuNhap.ThemeStyle.RowsStyle.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dgvPhieuNhap.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            dgvPhieuNhap.ThemeStyle.RowsStyle.Height = 50;
-            dgvPhieuNhap.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(0, 80, 112);
-            dgvPhieuNhap.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
-            dgvPhieuNhap.CellPainting += loaiSanPhamDataGridView_CellPainting;
+            phieuNhapDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            phieuNhapDataGridView.RowHeadersVisible = false;
+            phieuNhapDataGridView.RowHeadersWidth = 51;
+            phieuNhapDataGridView.RowTemplate.DividerHeight = 3;
+            phieuNhapDataGridView.RowTemplate.Height = 50;
+            phieuNhapDataGridView.Size = new Size(1183, 751);
+            phieuNhapDataGridView.TabIndex = 43;
+            phieuNhapDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            phieuNhapDataGridView.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            phieuNhapDataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = SystemColors.ControlText;
+            phieuNhapDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            phieuNhapDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            phieuNhapDataGridView.ThemeStyle.BackColor = Color.FromArgb(242, 245, 250);
+            phieuNhapDataGridView.ThemeStyle.GridColor = Color.FromArgb(242, 245, 250);
+            phieuNhapDataGridView.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(242, 245, 250);
+            phieuNhapDataGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            phieuNhapDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            phieuNhapDataGridView.ThemeStyle.HeaderStyle.ForeColor = Color.DimGray;
+            phieuNhapDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            phieuNhapDataGridView.ThemeStyle.HeaderStyle.Height = 40;
+            phieuNhapDataGridView.ThemeStyle.ReadOnly = true;
+            phieuNhapDataGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
+            phieuNhapDataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            phieuNhapDataGridView.ThemeStyle.RowsStyle.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            phieuNhapDataGridView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            phieuNhapDataGridView.ThemeStyle.RowsStyle.Height = 50;
+            phieuNhapDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(0, 80, 112);
+            phieuNhapDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
+            phieuNhapDataGridView.CellPainting += phieuNhapDataGridView_CellPainting;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            Column2.HeaderText = "#";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 42;
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.HeaderText = "Mã phiếu nhập";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Resizable = DataGridViewTriState.True;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column3.FillWeight = 120F;
+            Column3.HeaderText = "Tên nhà cung cấp";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.FillWeight = 60F;
+            Column4.HeaderText = "Nhân viên";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.FillWeight = 80F;
+            Column5.HeaderText = "Quản lý";
+            Column5.MinimumWidth = 6;
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column6.DefaultCellStyle = dataGridViewCellStyle4;
+            Column6.HeaderText = "Thời gian tạo";
+            Column6.MinimumWidth = 6;
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column7.DefaultCellStyle = dataGridViewCellStyle5;
+            Column7.HeaderText = "Thời gian duyệt";
+            Column7.MinimumWidth = 6;
+            Column7.Name = "Column7";
+            Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column8.DefaultCellStyle = dataGridViewCellStyle6;
+            Column8.HeaderText = "Thành tiền";
+            Column8.MinimumWidth = 6;
+            Column8.Name = "Column8";
+            Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            Column9.HeaderText = "Trạng thái duyệt";
+            Column9.MinimumWidth = 6;
+            Column9.Name = "Column9";
+            Column9.ReadOnly = true;
             // 
             // panel2
             // 
@@ -292,90 +376,6 @@
             btnTimKiem.TabIndex = 81;
             btnTimKiem.UseVisualStyleBackColor = false;
             // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column2.DefaultCellStyle = dataGridViewCellStyle3;
-            Column2.HeaderText = "#";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 42;
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.HeaderText = "Mã phiếu nhập";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Resizable = DataGridViewTriState.True;
-            // 
-            // Column3
-            // 
-            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.FillWeight = 120F;
-            Column3.HeaderText = "Tên nhà cung cấp";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.FillWeight = 60F;
-            Column4.HeaderText = "Nhân viên";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.FillWeight = 80F;
-            Column5.HeaderText = "Quản lý";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column6.DefaultCellStyle = dataGridViewCellStyle4;
-            Column6.HeaderText = "Thời gian tạo";
-            Column6.MinimumWidth = 6;
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column7.DefaultCellStyle = dataGridViewCellStyle5;
-            Column7.HeaderText = "Thời gian duyệt";
-            Column7.MinimumWidth = 6;
-            Column7.Name = "Column7";
-            Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column8.DefaultCellStyle = dataGridViewCellStyle6;
-            Column8.HeaderText = "Thành tiền";
-            Column8.MinimumWidth = 6;
-            Column8.Name = "Column8";
-            Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            Column9.HeaderText = "Trạng thái duyệt";
-            Column9.MinimumWidth = 6;
-            Column9.Name = "Column9";
-            Column9.ReadOnly = true;
-            // 
             // PhieuNhapForm
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
@@ -388,9 +388,10 @@
             Margin = new Padding(5);
             Name = "PhieuNhapForm";
             Text = "PhieuNhapForm";
+            Load += PhieuNhapForm_Load;
             panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvPhieuNhap).EndInit();
+            ((System.ComponentModel.ISupportInitialize)phieuNhapDataGridView).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -400,7 +401,7 @@
 
         private Panel panel1;
         private Panel panel3;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvPhieuNhap;
+        private Guna.UI2.WinForms.Guna2DataGridView phieuNhapDataGridView;
         private Panel panel2;
         private Guna.UI2.WinForms.Guna2TextBox timKiemTextBox;
         private FontAwesome.Sharp.IconButton iconButton2;
