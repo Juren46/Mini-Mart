@@ -1,6 +1,7 @@
 ﻿using BUS;
 using DTO;
 using FontAwesome.Sharp;
+using GUI.CacFormDuLieu;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -181,6 +182,7 @@ namespace GUI
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new NhanVienForm());
 
         }
 
@@ -205,6 +207,7 @@ namespace GUI
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new KhachHangForm());
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
@@ -266,7 +269,7 @@ namespace GUI
 
         private void dangXuatButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có chắc muốn đăng xuất không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = CacFormThongBao.XacNhanForm.ShowDialog("Bạn có chắc muốn đăng xuất?");
             if (result == DialogResult.Yes)
             {
                 this.Close();
