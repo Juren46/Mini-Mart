@@ -66,7 +66,7 @@
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(656, 294);
-            panel2.TabIndex = 5;
+            panel2.TabIndex = 6;
             // 
             // btnLuu
             // 
@@ -221,11 +221,13 @@
             // 
             // themPhanQuyenForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(656, 294);
             Controls.Add(panel2);
+            Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(5, 5, 5, 5);
             Name = "themPhanQuyenForm";
             Text = "CHI TIẾT PHÂN QUYỀN";
             panel2.ResumeLayout(false);
