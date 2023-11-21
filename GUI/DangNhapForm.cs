@@ -1,6 +1,7 @@
 ﻿using BUS;
 using DTO;
 using GUI.CacFormThongBao;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,28 +61,44 @@ namespace GUI
 
             string message = taiKhoanBUS.KiemTraDangNhap(tenTaiKhoan, matKhau);
 
-           
 
-            CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.SUCCESS);
+
+
 
             if (message.Equals("Đăng nhập thành công!"))
             {
+                CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.SUCCESS);
                 DangNhapForm.taiKhoan = taiKhoanBUS.LayTaiKhoanTheoTen(tenTaiKhoan);
                 TrangChuForm form = new TrangChuForm();
                 form.Show();
 
                 this.Hide();
             }
-            else
+            else if (message.Equals("Tài khoản chưa đăng ký người dùng!"))
             {
+                CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.ERROR);
+
                 tenTaiKhoanTextBox.BorderColor = Color.Red;
                 matKhauTextBox.BorderColor = Color.Red;
             }
+            else
+            {
+                CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.WARNING);
+                tenTaiKhoanTextBox.BorderColor = Color.Yellow;
+                matKhauTextBox.BorderColor = Color.Yellow;
+            }
         }
 
-        private void guna2ImageCheckBox1_CheckedChanged(object sender, EventArgs e)
+
+
+        private void iconButton8_Click(object sender, EventArgs e)
         {
-            if (guna2ImageCheckBox1.Checked == true)
+            this.Close();
+        }
+
+        private void guna2ImageCheckBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (guna2ImageCheckBox2.Checked == true)
             {
                 matKhauTextBox.PasswordChar = '\0';
                 matKhauTextBox.UseSystemPasswordChar = false;
@@ -91,11 +108,6 @@ namespace GUI
                 matKhauTextBox.PasswordChar = '●';
                 matKhauTextBox.UseSystemPasswordChar = true;
             }
-        }
-
-        private void iconButton8_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

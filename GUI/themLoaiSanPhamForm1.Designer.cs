@@ -65,11 +65,12 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(570, 483);
+            panel2.Size = new Size(640, 278);
             panel2.TabIndex = 4;
             // 
             // btnLuu
             // 
+            btnLuu.BorderRadius = 5;
             btnLuu.CustomizableEdges = customizableEdges1;
             btnLuu.DisabledState.BorderColor = Color.DarkGray;
             btnLuu.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -78,7 +79,7 @@
             btnLuu.FillColor = Color.FromArgb(0, 79, 111);
             btnLuu.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnLuu.ForeColor = Color.White;
-            btnLuu.Location = new Point(342, 379);
+            btnLuu.Location = new Point(427, 190);
             btnLuu.Name = "btnLuu";
             btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnLuu.Size = new Size(189, 53);
@@ -88,6 +89,7 @@
             // btnHuyBo
             // 
             btnHuyBo.BorderColor = Color.FromArgb(0, 79, 111);
+            btnHuyBo.BorderRadius = 5;
             btnHuyBo.BorderThickness = 1;
             btnHuyBo.CustomizableEdges = customizableEdges3;
             btnHuyBo.DisabledState.BorderColor = Color.DarkGray;
@@ -97,7 +99,7 @@
             btnHuyBo.FillColor = Color.White;
             btnHuyBo.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnHuyBo.ForeColor = Color.FromArgb(0, 79, 111);
-            btnHuyBo.Location = new Point(147, 379);
+            btnHuyBo.Location = new Point(232, 190);
             btnHuyBo.Name = "btnHuyBo";
             btnHuyBo.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnHuyBo.Size = new Size(189, 53);
@@ -113,30 +115,32 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(570, 66);
+            panel1.Size = new Size(640, 66);
             panel1.TabIndex = 40;
             // 
             // panel3
             // 
             panel3.Controls.Add(iconButton1);
             panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(370, 0);
+            panel3.Location = new Point(440, 0);
             panel3.Name = "panel3";
             panel3.Size = new Size(200, 66);
             panel3.TabIndex = 1;
             // 
             // iconButton1
             // 
+            iconButton1.Dock = DockStyle.Right;
             iconButton1.FlatAppearance.BorderSize = 0;
             iconButton1.FlatStyle = FlatStyle.Flat;
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
             iconButton1.IconColor = Color.White;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(36, 9);
+            iconButton1.Location = new Point(71, 0);
             iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(129, 48);
+            iconButton1.Size = new Size(129, 66);
             iconButton1.TabIndex = 2;
             iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
             // 
             // label1
             // 
@@ -146,7 +150,7 @@
             label1.Location = new Point(38, 19);
             label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(273, 29);
+            label1.Size = new Size(251, 29);
             label1.TabIndex = 0;
             label1.Text = "Chi tiết loại sản phẩm ";
             // 
@@ -155,7 +159,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(0, 79, 111);
-            label5.Location = new Point(29, 233);
+            label5.Location = new Point(326, 91);
             label5.Name = "label5";
             label5.Size = new Size(171, 24);
             label5.TabIndex = 31;
@@ -166,7 +170,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(0, 79, 111);
-            label2.Location = new Point(29, 108);
+            label2.Location = new Point(26, 91);
             label2.Name = "label2";
             label2.Size = new Size(163, 24);
             label2.TabIndex = 28;
@@ -184,14 +188,14 @@
             txtTenSanPham.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtTenSanPham.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTenSanPham.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTenSanPham.Location = new Point(29, 272);
+            txtTenSanPham.Location = new Point(326, 120);
             txtTenSanPham.Margin = new Padding(5, 5, 5, 5);
             txtTenSanPham.Name = "txtTenSanPham";
             txtTenSanPham.PasswordChar = '\0';
             txtTenSanPham.PlaceholderText = "";
             txtTenSanPham.SelectedText = "";
             txtTenSanPham.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            txtTenSanPham.Size = new Size(502, 58);
+            txtTenSanPham.Size = new Size(290, 40);
             txtTenSanPham.TabIndex = 24;
             // 
             // txtMaSanPham
@@ -206,21 +210,22 @@
             txtMaSanPham.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtMaSanPham.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtMaSanPham.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMaSanPham.Location = new Point(29, 147);
+            txtMaSanPham.Location = new Point(26, 120);
             txtMaSanPham.Margin = new Padding(5, 5, 5, 5);
             txtMaSanPham.Name = "txtMaSanPham";
             txtMaSanPham.PasswordChar = '\0';
             txtMaSanPham.PlaceholderText = "";
             txtMaSanPham.SelectedText = "";
             txtMaSanPham.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            txtMaSanPham.Size = new Size(245, 58);
+            txtMaSanPham.Size = new Size(290, 40);
             txtMaSanPham.TabIndex = 23;
             // 
             // chiTietLoaiSanPhamForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(570, 483);
+            ClientSize = new Size(640, 278);
+            ControlBox = false;
             Controls.Add(panel2);
             Name = "chiTietLoaiSanPhamForm";
             Load += themLoaiSanPhamForm1_Load;

@@ -35,7 +35,7 @@ namespace BUS
             else
             {
                 if (!taiKhoanDAO.KiemTraTaiKhoanCoNguoiDung(tenTaiKhoan))
-                    return "Tài khoản chưa đăng ký người dùng, liên hệ admin để được hỗ trợ.";
+                    return "Tài khoản chưa đăng ký người dùng!";
 
                 if (taiKhoanDAO.KiemTraDangNhap(tenTaiKhoan, matKhau))
                     return "Đăng nhập thành công!";
