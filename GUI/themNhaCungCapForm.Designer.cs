@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -42,12 +44,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
-            panel1 = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            label1 = new Label();
+            tsDangTonTai = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            label8 = new Label();
             btnLuu = new Guna.UI2.WinForms.Guna2Button();
             btnHuyBo = new Guna.UI2.WinForms.Guna2Button();
             txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
@@ -60,8 +59,9 @@
             label2 = new Label();
             txtTenNCC = new Guna.UI2.WinForms.Guna2TextBox();
             txtMaNCC = new Guna.UI2.WinForms.Guna2TextBox();
-            tsDangTonTai = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            label8 = new Label();
+            panel1 = new Panel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            label1 = new Label();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -87,46 +87,37 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(887, 551);
+            panel2.Size = new Size(729, 536);
             panel2.TabIndex = 5;
             // 
-            // panel1
+            // tsDangTonTai
             // 
-            panel1.BackColor = Color.FromArgb(0, 79, 111);
-            panel1.Controls.Add(iconButton1);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(5);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(887, 66);
-            panel1.TabIndex = 72;
+            tsDangTonTai.Checked = true;
+            tsDangTonTai.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tsDangTonTai.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            tsDangTonTai.CheckedState.InnerBorderColor = Color.White;
+            tsDangTonTai.CheckedState.InnerColor = Color.White;
+            tsDangTonTai.CustomizableEdges = customizableEdges1;
+            tsDangTonTai.Location = new Point(527, 333);
+            tsDangTonTai.Name = "tsDangTonTai";
+            tsDangTonTai.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            tsDangTonTai.Size = new Size(44, 23);
+            tsDangTonTai.TabIndex = 94;
+            tsDangTonTai.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            tsDangTonTai.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            tsDangTonTai.UncheckedState.InnerBorderColor = Color.White;
+            tsDangTonTai.UncheckedState.InnerColor = Color.White;
             // 
-            // iconButton1
+            // label8
             // 
-            iconButton1.Dock = DockStyle.Right;
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
-            iconButton1.IconColor = Color.White;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(758, 0);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(129, 66);
-            iconButton1.TabIndex = 1;
-            iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(38, 19);
-            label1.Margin = new Padding(5, 0, 5, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(256, 29);
-            label1.TabIndex = 0;
-            label1.Text = "Chi tiết nhà cung cấp";
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.FromArgb(0, 79, 111);
+            label8.Location = new Point(377, 333);
+            label8.Name = "label8";
+            label8.Size = new Size(124, 24);
+            label8.TabIndex = 93;
+            label8.Text = "Đang tồn tại? ";
             // 
             // btnLuu
             // 
@@ -139,7 +130,7 @@
             btnLuu.FillColor = Color.FromArgb(0, 79, 111);
             btnLuu.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnLuu.ForeColor = Color.White;
-            btnLuu.Location = new Point(586, 459);
+            btnLuu.Location = new Point(492, 430);
             btnLuu.Name = "btnLuu";
             btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnLuu.Size = new Size(189, 53);
@@ -159,7 +150,7 @@
             btnHuyBo.FillColor = Color.White;
             btnHuyBo.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnHuyBo.ForeColor = Color.FromArgb(0, 79, 111);
-            btnHuyBo.Location = new Point(391, 459);
+            btnHuyBo.Location = new Point(297, 430);
             btnHuyBo.Name = "btnHuyBo";
             btnHuyBo.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnHuyBo.Size = new Size(189, 53);
@@ -178,7 +169,7 @@
             txtEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtEmail.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtEmail.Location = new Point(456, 160);
+            txtEmail.Location = new Point(377, 131);
             txtEmail.Name = "txtEmail";
             txtEmail.PasswordChar = '\0';
             txtEmail.PlaceholderText = "";
@@ -199,7 +190,7 @@
             txtDiaChi.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtDiaChi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtDiaChi.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDiaChi.Location = new Point(456, 256);
+            txtDiaChi.Location = new Point(377, 227);
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.PasswordChar = '\0';
             txtDiaChi.PlaceholderText = "";
@@ -213,7 +204,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = Color.FromArgb(0, 79, 111);
-            label10.Location = new Point(456, 135);
+            label10.Location = new Point(377, 106);
             label10.Name = "label10";
             label10.Size = new Size(45, 18);
             label10.TabIndex = 86;
@@ -224,7 +215,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label9.ForeColor = Color.FromArgb(0, 79, 111);
-            label9.Location = new Point(456, 231);
+            label9.Location = new Point(377, 202);
             label9.Name = "label9";
             label9.Size = new Size(53, 18);
             label9.TabIndex = 85;
@@ -242,7 +233,7 @@
             txtSoDienThoai.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtSoDienThoai.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtSoDienThoai.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSoDienThoai.Location = new Point(141, 362);
+            txtSoDienThoai.Location = new Point(62, 333);
             txtSoDienThoai.Name = "txtSoDienThoai";
             txtSoDienThoai.PasswordChar = '\0';
             txtSoDienThoai.PlaceholderText = "";
@@ -256,7 +247,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(0, 79, 111);
-            label7.Location = new Point(141, 341);
+            label7.Location = new Point(62, 312);
             label7.Name = "label7";
             label7.Size = new Size(94, 18);
             label7.TabIndex = 81;
@@ -267,7 +258,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(0, 79, 111);
-            label3.Location = new Point(141, 235);
+            label3.Location = new Point(62, 206);
             label3.Name = "label3";
             label3.Size = new Size(125, 18);
             label3.TabIndex = 77;
@@ -278,7 +269,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(0, 79, 111);
-            label2.Location = new Point(143, 139);
+            label2.Location = new Point(64, 110);
             label2.Name = "label2";
             label2.Size = new Size(121, 18);
             label2.TabIndex = 76;
@@ -296,7 +287,7 @@
             txtTenNCC.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtTenNCC.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTenNCC.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTenNCC.Location = new Point(141, 256);
+            txtTenNCC.Location = new Point(62, 227);
             txtTenNCC.Name = "txtTenNCC";
             txtTenNCC.PasswordChar = '\0';
             txtTenNCC.PlaceholderText = "";
@@ -317,7 +308,7 @@
             txtMaNCC.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtMaNCC.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtMaNCC.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMaNCC.Location = new Point(141, 160);
+            txtMaNCC.Location = new Point(62, 131);
             txtMaNCC.Name = "txtMaNCC";
             txtMaNCC.PasswordChar = '\0';
             txtMaNCC.PlaceholderText = "";
@@ -326,44 +317,53 @@
             txtMaNCC.Size = new Size(290, 40);
             txtMaNCC.TabIndex = 73;
             // 
-            // tsDangTonTai
+            // panel1
             // 
-            tsDangTonTai.Checked = true;
-            tsDangTonTai.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tsDangTonTai.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
-            tsDangTonTai.CheckedState.InnerBorderColor = Color.White;
-            tsDangTonTai.CheckedState.InnerColor = Color.White;
-            tsDangTonTai.CustomizableEdges = customizableEdges1;
-            tsDangTonTai.Location = new Point(606, 362);
-            tsDangTonTai.Name = "tsDangTonTai";
-            tsDangTonTai.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            tsDangTonTai.Size = new Size(44, 23);
-            tsDangTonTai.TabIndex = 94;
-            tsDangTonTai.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
-            tsDangTonTai.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
-            tsDangTonTai.UncheckedState.InnerBorderColor = Color.White;
-            tsDangTonTai.UncheckedState.InnerColor = Color.White;
+            panel1.BackColor = Color.FromArgb(0, 79, 111);
+            panel1.Controls.Add(iconButton1);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(5);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(729, 66);
+            panel1.TabIndex = 72;
             // 
-            // label8
+            // iconButton1
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.ForeColor = Color.FromArgb(0, 79, 111);
-            label8.Location = new Point(456, 362);
-            label8.Name = "label8";
-            label8.Size = new Size(124, 24);
-            label8.TabIndex = 93;
-            label8.Text = "Đang tồn tại? ";
+            iconButton1.Dock = DockStyle.Right;
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
+            iconButton1.IconColor = Color.White;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.Location = new Point(600, 0);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(129, 66);
+            iconButton1.TabIndex = 1;
+            iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(38, 19);
+            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(256, 29);
+            label1.TabIndex = 0;
+            label1.Text = "Chi tiết nhà cung cấp";
             // 
             // themNhaCungCapForm
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(887, 551);
+            ClientSize = new Size(729, 536);
             Controls.Add(panel2);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(5, 5, 5, 5);
+            Margin = new Padding(5);
             Name = "themNhaCungCapForm";
             Text = "CHI TIẾT NHÀ CUNG CẤP";
             panel2.ResumeLayout(false);
