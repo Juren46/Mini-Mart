@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
             dgvHoaDon = new Guna.UI2.WinForms.Guna2DataGridView();
             Column2 = new DataGridViewTextBoxColumn();
@@ -59,16 +59,15 @@
             Column13 = new DataGridViewImageColumn();
             Column14 = new DataGridViewImageColumn();
             cbbSapXep = new Guna.UI2.WinForms.Guna2ComboBox();
-            txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
-            tsTrangThai = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             btnThemMoi = new FontAwesome.Sharp.IconButton();
-            label3 = new Label();
             btnNhapXuatExcel = new FontAwesome.Sharp.IconButton();
             label1 = new Label();
             btnTimKiem = new FontAwesome.Sharp.IconButton();
             panel1 = new Panel();
             iconButton2 = new FontAwesome.Sharp.IconButton();
             btnDeleteAll = new FontAwesome.Sharp.IconButton();
+            tsDangTonTai = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvHoaDon).BeginInit();
             panel1.SuspendLayout();
@@ -78,55 +77,55 @@
             // 
             panel2.Controls.Add(dgvHoaDon);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 133);
+            panel2.Location = new Point(0, 80);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1183, 688);
+            panel2.Size = new Size(1183, 741);
             panel2.TabIndex = 55;
             // 
             // dgvHoaDon
             // 
             dgvHoaDon.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dgvHoaDon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = Color.White;
+            dgvHoaDon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             dgvHoaDon.BackgroundColor = Color.FromArgb(242, 245, 250);
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.LightBlue;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(30, 110, 142);
-            dataGridViewCellStyle2.SelectionBackColor = Color.LightBlue;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = Color.LightBlue;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = Color.FromArgb(30, 110, 142);
+            dataGridViewCellStyle10.SelectionBackColor = Color.LightBlue;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            dgvHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             dgvHoaDon.ColumnHeadersHeight = 40;
             dgvHoaDon.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvHoaDon.Columns.AddRange(new DataGridViewColumn[] { Column2, Column1, Column3, Column4, Column5, Column6, Column7, Column8, Column9, Column10, Column11, Column12, Column13, Column14 });
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.White;
-            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(227, 248, 251);
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            dgvHoaDon.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = Color.White;
+            dataGridViewCellStyle15.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle15.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle15.SelectionBackColor = Color.FromArgb(227, 248, 251);
+            dataGridViewCellStyle15.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.False;
+            dgvHoaDon.DefaultCellStyle = dataGridViewCellStyle15;
             dgvHoaDon.Dock = DockStyle.Fill;
             dgvHoaDon.GridColor = Color.FromArgb(242, 245, 250);
             dgvHoaDon.Location = new Point(0, 0);
             dgvHoaDon.Name = "dgvHoaDon";
             dgvHoaDon.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.White;
-            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.FromArgb(242, 245, 250);
-            dataGridViewCellStyle8.SelectionBackColor = Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dgvHoaDon.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = Color.White;
+            dataGridViewCellStyle16.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle16.ForeColor = Color.FromArgb(242, 245, 250);
+            dataGridViewCellStyle16.SelectionBackColor = Color.White;
+            dataGridViewCellStyle16.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
+            dgvHoaDon.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             dgvHoaDon.RowHeadersVisible = false;
             dgvHoaDon.RowHeadersWidth = 51;
             dgvHoaDon.RowTemplate.DividerHeight = 3;
             dgvHoaDon.RowTemplate.Height = 50;
-            dgvHoaDon.Size = new Size(1183, 688);
+            dgvHoaDon.Size = new Size(1183, 741);
             dgvHoaDon.TabIndex = 51;
             dgvHoaDon.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvHoaDon.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -156,8 +155,8 @@
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column2.DefaultCellStyle = dataGridViewCellStyle11;
             Column2.HeaderText = "#";
             Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
@@ -202,8 +201,8 @@
             // Column6
             // 
             Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column6.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column6.DefaultCellStyle = dataGridViewCellStyle12;
             Column6.HeaderText = "thời gian tạo";
             Column6.MinimumWidth = 6;
             Column6.Name = "Column6";
@@ -212,8 +211,8 @@
             // Column7
             // 
             Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column7.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column7.DefaultCellStyle = dataGridViewCellStyle13;
             Column7.FillWeight = 80F;
             Column7.HeaderText = "Tổng tiền";
             Column7.MinimumWidth = 6;
@@ -223,8 +222,8 @@
             // Column8
             // 
             Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column8.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column8.DefaultCellStyle = dataGridViewCellStyle14;
             Column8.HeaderText = "Chiết khấu ";
             Column8.MinimumWidth = 6;
             Column8.Name = "Column8";
@@ -290,7 +289,7 @@
             // cbbSapXep
             // 
             cbbSapXep.BackColor = Color.Transparent;
-            cbbSapXep.CustomizableEdges = customizableEdges1;
+            cbbSapXep.CustomizableEdges = customizableEdges5;
             cbbSapXep.DrawMode = DrawMode.OwnerDrawFixed;
             cbbSapXep.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbSapXep.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -298,51 +297,11 @@
             cbbSapXep.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             cbbSapXep.ForeColor = Color.FromArgb(68, 88, 112);
             cbbSapXep.ItemHeight = 30;
-            cbbSapXep.Location = new Point(122, 30);
+            cbbSapXep.Location = new Point(98, 27);
             cbbSapXep.Name = "cbbSapXep";
-            cbbSapXep.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            cbbSapXep.ShadowDecoration.CustomizableEdges = customizableEdges6;
             cbbSapXep.Size = new Size(227, 36);
             cbbSapXep.TabIndex = 43;
-            // 
-            // txtTimKiem
-            // 
-            txtTimKiem.CustomizableEdges = customizableEdges3;
-            txtTimKiem.DefaultText = "";
-            txtTimKiem.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtTimKiem.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtTimKiem.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtTimKiem.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtTimKiem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTimKiem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTimKiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTimKiem.Location = new Point(10, 77);
-            txtTimKiem.Name = "txtTimKiem";
-            txtTimKiem.PasswordChar = '\0';
-            txtTimKiem.PlaceholderText = "Nhập tên để tìm kiếm";
-            txtTimKiem.SelectedText = "";
-            txtTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txtTimKiem.Size = new Size(665, 36);
-            txtTimKiem.TabIndex = 44;
-            // 
-            // tsTrangThai
-            // 
-            tsTrangThai.BackColor = Color.FromArgb(223, 243, 252);
-            tsTrangThai.Checked = true;
-            tsTrangThai.CheckedState.BorderColor = Color.FromArgb(0, 71, 107);
-            tsTrangThai.CheckedState.BorderRadius = 10;
-            tsTrangThai.CheckedState.FillColor = Color.FromArgb(0, 71, 107);
-            tsTrangThai.CheckedState.InnerBorderColor = Color.White;
-            tsTrangThai.CheckedState.InnerColor = Color.White;
-            tsTrangThai.CustomizableEdges = customizableEdges5;
-            tsTrangThai.Location = new Point(23, 34);
-            tsTrangThai.Name = "tsTrangThai";
-            tsTrangThai.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            tsTrangThai.Size = new Size(66, 23);
-            tsTrangThai.TabIndex = 50;
-            tsTrangThai.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
-            tsTrangThai.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
-            tsTrangThai.UncheckedState.InnerBorderColor = Color.White;
-            tsTrangThai.UncheckedState.InnerColor = Color.White;
             // 
             // btnThemMoi
             // 
@@ -356,25 +315,13 @@
             btnThemMoi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnThemMoi.IconSize = 20;
             btnThemMoi.ImageAlign = ContentAlignment.MiddleLeft;
-            btnThemMoi.Location = new Point(898, 77);
+            btnThemMoi.Location = new Point(935, 27);
             btnThemMoi.Name = "btnThemMoi";
             btnThemMoi.Size = new Size(115, 36);
             btnThemMoi.TabIndex = 45;
             btnThemMoi.Text = "Thêm mới";
             btnThemMoi.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnThemMoi.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.GrayText;
-            label3.Location = new Point(122, 7);
-            label3.Name = "label3";
-            label3.Size = new Size(67, 20);
-            label3.TabIndex = 49;
-            label3.Text = "Sắp xếp";
             // 
             // btnNhapXuatExcel
             // 
@@ -388,7 +335,7 @@
             btnNhapXuatExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnNhapXuatExcel.IconSize = 20;
             btnNhapXuatExcel.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNhapXuatExcel.Location = new Point(778, 77);
+            btnNhapXuatExcel.Location = new Point(815, 27);
             btnNhapXuatExcel.Name = "btnNhapXuatExcel";
             btnNhapXuatExcel.Size = new Size(114, 36);
             btnNhapXuatExcel.TabIndex = 46;
@@ -402,7 +349,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.GrayText;
-            label1.Location = new Point(14, 7);
+            label1.Location = new Point(12, 14);
             label1.Name = "label1";
             label1.Size = new Size(80, 20);
             label1.TabIndex = 48;
@@ -417,7 +364,7 @@
             btnTimKiem.IconColor = Color.White;
             btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnTimKiem.IconSize = 20;
-            btnTimKiem.Location = new Point(681, 77);
+            btnTimKiem.Location = new Point(714, 27);
             btnTimKiem.Name = "btnTimKiem";
             btnTimKiem.Size = new Size(43, 36);
             btnTimKiem.TabIndex = 47;
@@ -425,13 +372,12 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(timKiemTextBox);
+            panel1.Controls.Add(tsDangTonTai);
             panel1.Controls.Add(iconButton2);
             panel1.Controls.Add(btnDeleteAll);
             panel1.Controls.Add(cbbSapXep);
-            panel1.Controls.Add(txtTimKiem);
-            panel1.Controls.Add(tsTrangThai);
             panel1.Controls.Add(btnThemMoi);
-            panel1.Controls.Add(label3);
             panel1.Controls.Add(btnNhapXuatExcel);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btnTimKiem);
@@ -439,7 +385,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1183, 133);
+            panel1.Size = new Size(1183, 80);
             panel1.TabIndex = 54;
             // 
             // iconButton2
@@ -451,7 +397,7 @@
             iconButton2.IconColor = Color.White;
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton2.IconSize = 20;
-            iconButton2.Location = new Point(728, 77);
+            iconButton2.Location = new Point(765, 27);
             iconButton2.Name = "iconButton2";
             iconButton2.Size = new Size(43, 36);
             iconButton2.TabIndex = 66;
@@ -469,13 +415,54 @@
             btnDeleteAll.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnDeleteAll.IconSize = 20;
             btnDeleteAll.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDeleteAll.Location = new Point(1019, 77);
+            btnDeleteAll.Location = new Point(1056, 27);
             btnDeleteAll.Name = "btnDeleteAll";
             btnDeleteAll.Size = new Size(115, 36);
             btnDeleteAll.TabIndex = 65;
             btnDeleteAll.Text = "xoá tất cả ";
             btnDeleteAll.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDeleteAll.UseVisualStyleBackColor = false;
+            // 
+            // tsDangTonTai
+            // 
+            tsDangTonTai.Checked = true;
+            tsDangTonTai.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tsDangTonTai.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            tsDangTonTai.CheckedState.InnerBorderColor = Color.White;
+            tsDangTonTai.CheckedState.InnerColor = Color.White;
+            tsDangTonTai.CustomizableEdges = customizableEdges9;
+            tsDangTonTai.Location = new Point(22, 37);
+            tsDangTonTai.Name = "tsDangTonTai";
+            tsDangTonTai.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            tsDangTonTai.Size = new Size(52, 23);
+            tsDangTonTai.TabIndex = 74;
+            tsDangTonTai.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            tsDangTonTai.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            tsDangTonTai.UncheckedState.InnerBorderColor = Color.White;
+            tsDangTonTai.UncheckedState.InnerColor = Color.White;
+            // 
+            // timKiemTextBox
+            // 
+            timKiemTextBox.CustomizableEdges = customizableEdges7;
+            timKiemTextBox.DefaultText = "";
+            timKiemTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            timKiemTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            timKiemTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            timKiemTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            timKiemTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            timKiemTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            timKiemTextBox.ForeColor = Color.FromArgb(84, 155, 255);
+            timKiemTextBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
+            timKiemTextBox.Location = new Point(333, 27);
+            timKiemTextBox.Margin = new Padding(5);
+            timKiemTextBox.Name = "timKiemTextBox";
+            timKiemTextBox.PasswordChar = '\0';
+            timKiemTextBox.PlaceholderForeColor = Color.FromArgb(186, 215, 255);
+            timKiemTextBox.PlaceholderText = "Nhập tên để tìm kiếm";
+            timKiemTextBox.SelectedText = "";
+            timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            timKiemTextBox.Size = new Size(373, 36);
+            timKiemTextBox.TabIndex = 87;
             // 
             // HoaDonForm
             // 
@@ -502,10 +489,7 @@
         private Panel panel2;
         private Guna.UI2.WinForms.Guna2DataGridView dgvHoaDon;
         private Guna.UI2.WinForms.Guna2ComboBox cbbSapXep;
-        private Guna.UI2.WinForms.Guna2TextBox txtTimKiem;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch tsTrangThai;
         private FontAwesome.Sharp.IconButton btnThemMoi;
-        private Label label3;
         private FontAwesome.Sharp.IconButton btnNhapXuatExcel;
         private Label label1;
         private FontAwesome.Sharp.IconButton btnTimKiem;
@@ -526,5 +510,7 @@
         private DataGridViewImageColumn Column14;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton btnDeleteAll;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch tsDangTonTai;
+        private Guna.UI2.WinForms.Guna2TextBox timKiemTextBox;
     }
 }

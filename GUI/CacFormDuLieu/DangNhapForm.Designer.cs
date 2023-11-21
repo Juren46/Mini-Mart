@@ -236,7 +236,7 @@
             // 
             pictureBox4.BackColor = Color.FromArgb(0, 71, 107);
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(6, 2);
+            pictureBox4.Location = new Point(6, -34);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(270, 270);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;

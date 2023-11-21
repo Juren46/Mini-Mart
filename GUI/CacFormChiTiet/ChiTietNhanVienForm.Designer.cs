@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -75,6 +76,7 @@
             txtTenTaiKhoan = new Guna.UI2.WinForms.Guna2TextBox();
             txtTenNhanVien = new Guna.UI2.WinForms.Guna2TextBox();
             txtMaNhanVien = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
@@ -484,7 +486,7 @@
             txtMaNhanVien.Size = new Size(290, 40);
             txtMaNhanVien.TabIndex = 51;
             // 
-            // themNhanVienForm
+            // ChiTietNhanVienForm
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -493,7 +495,7 @@
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
-            Name = "themNhanVienForm";
+            Name = "ChiTietNhanVienForm";
             Text = "CHI TIẾT NHÂN VIÊN";
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
@@ -530,5 +532,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtMaNhanVien;
         private Guna.UI2.WinForms.Guna2ToggleSwitch tsDangTonTai;
         private Label label8;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
     }
 }

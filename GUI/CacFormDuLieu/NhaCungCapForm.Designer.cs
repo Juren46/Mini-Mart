@@ -219,7 +219,7 @@
             excelButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             excelButton.IconSize = 20;
             excelButton.ImageAlign = ContentAlignment.MiddleLeft;
-            excelButton.Location = new Point(839, 13);
+            excelButton.Location = new Point(811, 12);
             excelButton.Name = "excelButton";
             excelButton.Size = new Size(116, 36);
             excelButton.TabIndex = 31;
@@ -239,7 +239,7 @@
             themMoiBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             themMoiBtn.IconSize = 20;
             themMoiBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            themMoiBtn.Location = new Point(718, 12);
+            themMoiBtn.Location = new Point(690, 11);
             themMoiBtn.Name = "themMoiBtn";
             themMoiBtn.Size = new Size(115, 36);
             themMoiBtn.TabIndex = 30;

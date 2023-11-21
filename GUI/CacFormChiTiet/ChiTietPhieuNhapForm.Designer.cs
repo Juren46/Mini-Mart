@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -65,6 +66,7 @@
             label8 = new Label();
             btnLuu = new Guna.UI2.WinForms.Guna2Button();
             btnHuyBo = new Guna.UI2.WinForms.Guna2Button();
+            guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -367,7 +369,7 @@
             btnHuyBo.TabIndex = 89;
             btnHuyBo.Text = "Huỷ bỏ";
             // 
-            // themPhieuNhapForm
+            // ChiTietPhieuNhapForm
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -393,7 +395,7 @@
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
-            Name = "themPhieuNhapForm";
+            Name = "ChiTietPhieuNhapForm";
             Text = "CHI TIẾT PHIẾU NHẬP";
             Load += themPhieuNhapForm_Load;
             panel1.ResumeLayout(false);
@@ -423,5 +425,6 @@
         private Label label8;
         private Guna.UI2.WinForms.Guna2Button btnLuu;
         private Guna.UI2.WinForms.Guna2Button btnHuyBo;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -73,6 +74,7 @@
             txtNhaCungCap = new Guna.UI2.WinForms.Guna2TextBox();
             txtTenSanPham = new Guna.UI2.WinForms.Guna2TextBox();
             txtMaSanPham = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbAnhSanPham).BeginInit();
@@ -492,5 +494,6 @@
         private Label label9;
         private Guna.UI2.WinForms.Guna2ToggleSwitch tsDangTonTai;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
     }
 }

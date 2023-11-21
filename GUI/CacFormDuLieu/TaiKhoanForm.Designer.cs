@@ -32,27 +32,16 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel4 = new Panel();
             panel3 = new Panel();
             dgvTaiKhoan = new Guna.UI2.WinForms.Guna2DataGridView();
-            panel2 = new Panel();
-            excelButton = new FontAwesome.Sharp.IconButton();
-            refreshButton = new FontAwesome.Sharp.IconButton();
-            phanQuyenComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            btnDeleteAll = new FontAwesome.Sharp.IconButton();
-            timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2ToggleSwitch1 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            themMoiButton = new FontAwesome.Sharp.IconButton();
-            label3 = new Label();
-            timKiemButton = new FontAwesome.Sharp.IconButton();
-            label1 = new Label();
             Column2 = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -61,6 +50,16 @@
             Column4 = new DataGridViewImageColumn();
             Column5 = new DataGridViewImageColumn();
             Column6 = new DataGridViewImageColumn();
+            panel2 = new Panel();
+            timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            btnDeleteAll = new FontAwesome.Sharp.IconButton();
+            btnTimKiem = new FontAwesome.Sharp.IconButton();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
+            label1 = new Label();
+            tsDangTonTai = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            btnThemMoi = new FontAwesome.Sharp.IconButton();
+            btnNhapXuatExcel = new FontAwesome.Sharp.IconButton();
+            cbbSapXep = new Guna.UI2.WinForms.Guna2ComboBox();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvTaiKhoan).BeginInit();
@@ -81,9 +80,9 @@
             // 
             panel3.Controls.Add(dgvTaiKhoan);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 141);
+            panel3.Location = new Point(0, 80);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1183, 680);
+            panel3.Size = new Size(1183, 741);
             panel3.TabIndex = 76;
             // 
             // dgvTaiKhoan
@@ -129,7 +128,7 @@
             dgvTaiKhoan.RowHeadersWidth = 51;
             dgvTaiKhoan.RowTemplate.DividerHeight = 3;
             dgvTaiKhoan.RowTemplate.Height = 50;
-            dgvTaiKhoan.Size = new Size(1183, 680);
+            dgvTaiKhoan.Size = new Size(1183, 741);
             dgvTaiKhoan.TabIndex = 64;
             dgvTaiKhoan.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvTaiKhoan.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -154,204 +153,6 @@
             dgvTaiKhoan.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
             dgvTaiKhoan.CellFormatting += sanPhamDataGridView_CellFormatting;
             dgvTaiKhoan.CellPainting += sanPhamDataGridView_CellPainting;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(excelButton);
-            panel2.Controls.Add(refreshButton);
-            panel2.Controls.Add(phanQuyenComboBox);
-            panel2.Controls.Add(btnDeleteAll);
-            panel2.Controls.Add(timKiemTextBox);
-            panel2.Controls.Add(guna2ToggleSwitch1);
-            panel2.Controls.Add(themMoiButton);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(timKiemButton);
-            panel2.Controls.Add(label1);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1183, 141);
-            panel2.TabIndex = 75;
-            // 
-            // excelButton
-            // 
-            excelButton.AllowDrop = true;
-            excelButton.BackColor = Color.FromArgb(33, 31, 48);
-            excelButton.FlatAppearance.BorderSize = 0;
-            excelButton.FlatStyle = FlatStyle.Flat;
-            excelButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            excelButton.ForeColor = Color.White;
-            excelButton.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
-            excelButton.IconColor = Color.White;
-            excelButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            excelButton.IconSize = 20;
-            excelButton.ImageAlign = ContentAlignment.MiddleLeft;
-            excelButton.Location = new Point(419, 37);
-            excelButton.Name = "excelButton";
-            excelButton.Size = new Size(168, 36);
-            excelButton.TabIndex = 68;
-            excelButton.Text = "Xuất excel";
-            excelButton.TextImageRelation = TextImageRelation.ImageBeforeText;
-            excelButton.UseVisualStyleBackColor = false;
-            excelButton.Click += excelButton_Click;
-            // 
-            // refreshButton
-            // 
-            refreshButton.BackColor = Color.FromArgb(33, 31, 48);
-            refreshButton.FlatAppearance.BorderSize = 0;
-            refreshButton.FlatStyle = FlatStyle.Flat;
-            refreshButton.IconChar = FontAwesome.Sharp.IconChar.ArrowsRotate;
-            refreshButton.IconColor = Color.White;
-            refreshButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            refreshButton.IconSize = 20;
-            refreshButton.Location = new Point(1002, 85);
-            refreshButton.Name = "refreshButton";
-            refreshButton.Size = new Size(43, 36);
-            refreshButton.TabIndex = 74;
-            refreshButton.UseVisualStyleBackColor = false;
-            refreshButton.Click += refreshButton_Click;
-            // 
-            // phanQuyenComboBox
-            // 
-            phanQuyenComboBox.BackColor = Color.Transparent;
-            phanQuyenComboBox.CustomizableEdges = customizableEdges1;
-            phanQuyenComboBox.DrawMode = DrawMode.OwnerDrawFixed;
-            phanQuyenComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            phanQuyenComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
-            phanQuyenComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            phanQuyenComboBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            phanQuyenComboBox.ForeColor = Color.FromArgb(68, 88, 112);
-            phanQuyenComboBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
-            phanQuyenComboBox.ItemHeight = 30;
-            phanQuyenComboBox.Location = new Point(180, 37);
-            phanQuyenComboBox.Name = "phanQuyenComboBox";
-            phanQuyenComboBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            phanQuyenComboBox.Size = new Size(227, 36);
-            phanQuyenComboBox.TabIndex = 65;
-            // 
-            // btnDeleteAll
-            // 
-            btnDeleteAll.BackColor = Color.IndianRed;
-            btnDeleteAll.FlatAppearance.BorderSize = 0;
-            btnDeleteAll.FlatStyle = FlatStyle.Flat;
-            btnDeleteAll.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnDeleteAll.ForeColor = Color.White;
-            btnDeleteAll.IconChar = FontAwesome.Sharp.IconChar.HandHoldingMedical;
-            btnDeleteAll.IconColor = Color.White;
-            btnDeleteAll.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnDeleteAll.IconSize = 20;
-            btnDeleteAll.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDeleteAll.Location = new Point(714, 37);
-            btnDeleteAll.Name = "btnDeleteAll";
-            btnDeleteAll.Size = new Size(115, 36);
-            btnDeleteAll.TabIndex = 73;
-            btnDeleteAll.Text = "xoá tất cả ";
-            btnDeleteAll.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnDeleteAll.UseVisualStyleBackColor = false;
-            // 
-            // timKiemTextBox
-            // 
-            timKiemTextBox.CustomizableEdges = customizableEdges3;
-            timKiemTextBox.DefaultText = "";
-            timKiemTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            timKiemTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            timKiemTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            timKiemTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            timKiemTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            timKiemTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            timKiemTextBox.ForeColor = Color.FromArgb(84, 155, 255);
-            timKiemTextBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
-            timKiemTextBox.Location = new Point(76, 85);
-            timKiemTextBox.Margin = new Padding(4, 4, 4, 4);
-            timKiemTextBox.Name = "timKiemTextBox";
-            timKiemTextBox.PasswordChar = '\0';
-            timKiemTextBox.PlaceholderForeColor = Color.FromArgb(186, 215, 255);
-            timKiemTextBox.PlaceholderText = "Nhập tên để tìm kiếm";
-            timKiemTextBox.SelectedText = "";
-            timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            timKiemTextBox.Size = new Size(870, 36);
-            timKiemTextBox.TabIndex = 66;
-            timKiemTextBox.TextChanged += timKiemTextBox_TextChanged;
-            // 
-            // guna2ToggleSwitch1
-            // 
-            guna2ToggleSwitch1.BackColor = Color.FromArgb(223, 243, 252);
-            guna2ToggleSwitch1.Checked = true;
-            guna2ToggleSwitch1.CheckedState.BorderColor = Color.FromArgb(0, 71, 107);
-            guna2ToggleSwitch1.CheckedState.BorderRadius = 10;
-            guna2ToggleSwitch1.CheckedState.FillColor = Color.FromArgb(0, 71, 107);
-            guna2ToggleSwitch1.CheckedState.InnerBorderColor = Color.White;
-            guna2ToggleSwitch1.CheckedState.InnerColor = Color.White;
-            guna2ToggleSwitch1.CustomizableEdges = customizableEdges5;
-            guna2ToggleSwitch1.Location = new Point(76, 42);
-            guna2ToggleSwitch1.Name = "guna2ToggleSwitch1";
-            guna2ToggleSwitch1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2ToggleSwitch1.Size = new Size(66, 23);
-            guna2ToggleSwitch1.TabIndex = 72;
-            guna2ToggleSwitch1.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
-            guna2ToggleSwitch1.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
-            guna2ToggleSwitch1.UncheckedState.InnerBorderColor = Color.White;
-            guna2ToggleSwitch1.UncheckedState.InnerColor = Color.White;
-            // 
-            // themMoiButton
-            // 
-            themMoiButton.BackColor = Color.FromArgb(226, 153, 48);
-            themMoiButton.FlatAppearance.BorderSize = 0;
-            themMoiButton.FlatStyle = FlatStyle.Flat;
-            themMoiButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            themMoiButton.ForeColor = Color.White;
-            themMoiButton.IconChar = FontAwesome.Sharp.IconChar.HandHoldingMedical;
-            themMoiButton.IconColor = Color.White;
-            themMoiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            themMoiButton.IconSize = 20;
-            themMoiButton.ImageAlign = ContentAlignment.MiddleLeft;
-            themMoiButton.Location = new Point(593, 37);
-            themMoiButton.Name = "themMoiButton";
-            themMoiButton.Size = new Size(115, 36);
-            themMoiButton.TabIndex = 67;
-            themMoiButton.Text = "Thêm mới";
-            themMoiButton.TextImageRelation = TextImageRelation.ImageBeforeText;
-            themMoiButton.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.GrayText;
-            label3.Location = new Point(187, 15);
-            label3.Name = "label3";
-            label3.Size = new Size(97, 20);
-            label3.TabIndex = 71;
-            label3.Text = "Phân quyền ";
-            // 
-            // timKiemButton
-            // 
-            timKiemButton.BackColor = Color.FromArgb(226, 153, 48);
-            timKiemButton.FlatAppearance.BorderSize = 0;
-            timKiemButton.FlatStyle = FlatStyle.Flat;
-            timKiemButton.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            timKiemButton.IconColor = Color.White;
-            timKiemButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            timKiemButton.IconSize = 20;
-            timKiemButton.Location = new Point(953, 85);
-            timKiemButton.Name = "timKiemButton";
-            timKiemButton.Size = new Size(43, 36);
-            timKiemButton.TabIndex = 69;
-            timKiemButton.UseVisualStyleBackColor = false;
-            timKiemButton.Click += timKiemButton_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.GrayText;
-            label1.Location = new Point(67, 15);
-            label1.Name = "label1";
-            label1.Size = new Size(80, 20);
-            label1.TabIndex = 70;
-            label1.Text = "Trạng thái";
             // 
             // Column2
             // 
@@ -430,6 +231,183 @@
             Column6.ReadOnly = true;
             Column6.Width = 6;
             // 
+            // panel2
+            // 
+            panel2.Controls.Add(timKiemTextBox);
+            panel2.Controls.Add(btnDeleteAll);
+            panel2.Controls.Add(btnTimKiem);
+            panel2.Controls.Add(iconButton2);
+            panel2.Controls.Add(label1);
+            panel2.Controls.Add(tsDangTonTai);
+            panel2.Controls.Add(btnThemMoi);
+            panel2.Controls.Add(btnNhapXuatExcel);
+            panel2.Controls.Add(cbbSapXep);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1183, 80);
+            panel2.TabIndex = 75;
+            // 
+            // timKiemTextBox
+            // 
+            timKiemTextBox.CustomizableEdges = customizableEdges1;
+            timKiemTextBox.DefaultText = "";
+            timKiemTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            timKiemTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            timKiemTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            timKiemTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            timKiemTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            timKiemTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            timKiemTextBox.ForeColor = Color.FromArgb(84, 155, 255);
+            timKiemTextBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
+            timKiemTextBox.Location = new Point(343, 32);
+            timKiemTextBox.Margin = new Padding(5);
+            timKiemTextBox.Name = "timKiemTextBox";
+            timKiemTextBox.PasswordChar = '\0';
+            timKiemTextBox.PlaceholderForeColor = Color.FromArgb(186, 215, 255);
+            timKiemTextBox.PlaceholderText = "Nhập tên để tìm kiếm";
+            timKiemTextBox.SelectedText = "";
+            timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            timKiemTextBox.Size = new Size(367, 36);
+            timKiemTextBox.TabIndex = 95;
+            // 
+            // btnDeleteAll
+            // 
+            btnDeleteAll.BackColor = Color.IndianRed;
+            btnDeleteAll.FlatAppearance.BorderSize = 0;
+            btnDeleteAll.FlatStyle = FlatStyle.Flat;
+            btnDeleteAll.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDeleteAll.ForeColor = Color.White;
+            btnDeleteAll.IconChar = FontAwesome.Sharp.IconChar.HandHoldingMedical;
+            btnDeleteAll.IconColor = Color.White;
+            btnDeleteAll.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDeleteAll.IconSize = 20;
+            btnDeleteAll.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDeleteAll.Location = new Point(1058, 32);
+            btnDeleteAll.Name = "btnDeleteAll";
+            btnDeleteAll.Size = new Size(115, 36);
+            btnDeleteAll.TabIndex = 94;
+            btnDeleteAll.Text = "xoá tất cả ";
+            btnDeleteAll.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnDeleteAll.UseVisualStyleBackColor = false;
+            // 
+            // btnTimKiem
+            // 
+            btnTimKiem.BackColor = Color.FromArgb(226, 153, 48);
+            btnTimKiem.FlatAppearance.BorderSize = 0;
+            btnTimKiem.FlatStyle = FlatStyle.Flat;
+            btnTimKiem.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            btnTimKiem.IconColor = Color.White;
+            btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnTimKiem.IconSize = 20;
+            btnTimKiem.Location = new Point(718, 32);
+            btnTimKiem.Name = "btnTimKiem";
+            btnTimKiem.Size = new Size(43, 36);
+            btnTimKiem.TabIndex = 90;
+            btnTimKiem.UseVisualStyleBackColor = false;
+            // 
+            // iconButton2
+            // 
+            iconButton2.BackColor = Color.FromArgb(33, 31, 48);
+            iconButton2.FlatAppearance.BorderSize = 0;
+            iconButton2.FlatStyle = FlatStyle.Flat;
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.ArrowsRotate;
+            iconButton2.IconColor = Color.White;
+            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton2.IconSize = 20;
+            iconButton2.Location = new Point(767, 32);
+            iconButton2.Name = "iconButton2";
+            iconButton2.Size = new Size(43, 36);
+            iconButton2.TabIndex = 93;
+            iconButton2.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.GrayText;
+            label1.Location = new Point(10, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(80, 20);
+            label1.TabIndex = 91;
+            label1.Text = "Trạng thái";
+            // 
+            // tsDangTonTai
+            // 
+            tsDangTonTai.Checked = true;
+            tsDangTonTai.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tsDangTonTai.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            tsDangTonTai.CheckedState.InnerBorderColor = Color.White;
+            tsDangTonTai.CheckedState.InnerColor = Color.White;
+            tsDangTonTai.CustomizableEdges = customizableEdges3;
+            tsDangTonTai.Location = new Point(28, 45);
+            tsDangTonTai.Name = "tsDangTonTai";
+            tsDangTonTai.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            tsDangTonTai.Size = new Size(44, 23);
+            tsDangTonTai.TabIndex = 92;
+            tsDangTonTai.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            tsDangTonTai.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            tsDangTonTai.UncheckedState.InnerBorderColor = Color.White;
+            tsDangTonTai.UncheckedState.InnerColor = Color.White;
+            // 
+            // btnThemMoi
+            // 
+            btnThemMoi.BackColor = Color.FromArgb(226, 153, 48);
+            btnThemMoi.FlatAppearance.BorderSize = 0;
+            btnThemMoi.FlatStyle = FlatStyle.Flat;
+            btnThemMoi.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnThemMoi.ForeColor = Color.White;
+            btnThemMoi.IconChar = FontAwesome.Sharp.IconChar.HandHoldingMedical;
+            btnThemMoi.IconColor = Color.White;
+            btnThemMoi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnThemMoi.IconSize = 20;
+            btnThemMoi.ImageAlign = ContentAlignment.MiddleLeft;
+            btnThemMoi.Location = new Point(937, 32);
+            btnThemMoi.Name = "btnThemMoi";
+            btnThemMoi.Size = new Size(115, 36);
+            btnThemMoi.TabIndex = 88;
+            btnThemMoi.Text = "Thêm mới";
+            btnThemMoi.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnThemMoi.UseVisualStyleBackColor = false;
+            // 
+            // btnNhapXuatExcel
+            // 
+            btnNhapXuatExcel.BackColor = Color.FromArgb(33, 31, 48);
+            btnNhapXuatExcel.FlatAppearance.BorderSize = 0;
+            btnNhapXuatExcel.FlatStyle = FlatStyle.Flat;
+            btnNhapXuatExcel.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNhapXuatExcel.ForeColor = Color.White;
+            btnNhapXuatExcel.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
+            btnNhapXuatExcel.IconColor = Color.White;
+            btnNhapXuatExcel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnNhapXuatExcel.IconSize = 20;
+            btnNhapXuatExcel.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNhapXuatExcel.Location = new Point(816, 32);
+            btnNhapXuatExcel.Name = "btnNhapXuatExcel";
+            btnNhapXuatExcel.Size = new Size(115, 36);
+            btnNhapXuatExcel.TabIndex = 89;
+            btnNhapXuatExcel.Text = "Xuất excel";
+            btnNhapXuatExcel.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnNhapXuatExcel.UseVisualStyleBackColor = false;
+            // 
+            // cbbSapXep
+            // 
+            cbbSapXep.BackColor = Color.Transparent;
+            cbbSapXep.CustomizableEdges = customizableEdges5;
+            cbbSapXep.DrawMode = DrawMode.OwnerDrawFixed;
+            cbbSapXep.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbbSapXep.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbbSapXep.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbbSapXep.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            cbbSapXep.ForeColor = Color.FromArgb(68, 88, 112);
+            cbbSapXep.ItemHeight = 30;
+            cbbSapXep.Location = new Point(108, 32);
+            cbbSapXep.Name = "cbbSapXep";
+            cbbSapXep.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            cbbSapXep.Size = new Size(227, 36);
+            cbbSapXep.TabIndex = 87;
+            // 
             // TaiKhoanForm
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
@@ -456,16 +434,6 @@
         private Panel panel3;
         private Guna.UI2.WinForms.Guna2DataGridView dgvTaiKhoan;
         private Panel panel2;
-        private FontAwesome.Sharp.IconButton excelButton;
-        private FontAwesome.Sharp.IconButton refreshButton;
-        private Guna.UI2.WinForms.Guna2ComboBox phanQuyenComboBox;
-        private FontAwesome.Sharp.IconButton btnDeleteAll;
-        private Guna.UI2.WinForms.Guna2TextBox timKiemTextBox;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch guna2ToggleSwitch1;
-        private FontAwesome.Sharp.IconButton themMoiButton;
-        private Label label3;
-        private FontAwesome.Sharp.IconButton timKiemButton;
-        private Label label1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column3;
@@ -474,5 +442,14 @@
         private DataGridViewImageColumn Column4;
         private DataGridViewImageColumn Column5;
         private DataGridViewImageColumn Column6;
+        private Guna.UI2.WinForms.Guna2TextBox timKiemTextBox;
+        private FontAwesome.Sharp.IconButton btnDeleteAll;
+        private FontAwesome.Sharp.IconButton btnTimKiem;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private Label label1;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch tsDangTonTai;
+        private FontAwesome.Sharp.IconButton btnThemMoi;
+        private FontAwesome.Sharp.IconButton btnNhapXuatExcel;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbSapXep;
     }
 }

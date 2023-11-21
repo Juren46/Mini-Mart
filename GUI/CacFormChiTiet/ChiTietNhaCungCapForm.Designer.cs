@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -62,6 +63,7 @@
             panel1 = new Panel();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             label1 = new Label();
+            guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -361,7 +363,7 @@
             label1.TabIndex = 0;
             label1.Text = "Chi tiết nhà cung cấp";
             // 
-            // themNhaCungCapForm
+            // ChiTietNhaCungCapForm
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -370,7 +372,7 @@
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
-            Name = "themNhaCungCapForm";
+            Name = "ChiTietNhaCungCapForm";
             Text = "CHI TIẾT NHÀ CUNG CẤP";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -398,5 +400,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtMaNCC;
         private Guna.UI2.WinForms.Guna2ToggleSwitch tsDangTonTai;
         private Label label8;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
     }
 }
