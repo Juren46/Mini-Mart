@@ -51,6 +51,7 @@
             timKiemButton = new FontAwesome.Sharp.IconButton();
             panel3 = new Panel();
             khachHangDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            panel1 = new Panel();
             Column2 = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -58,11 +59,9 @@
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
             Column9 = new DataGridViewTextBoxColumn();
-            Column10 = new DataGridViewTextBoxColumn();
             Column11 = new DataGridViewTextBoxColumn();
             Column12 = new DataGridViewImageColumn();
             Column13 = new DataGridViewImageColumn();
-            panel1 = new Panel();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)khachHangDataGridView).BeginInit();
@@ -252,7 +251,7 @@
             khachHangDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             khachHangDataGridView.ColumnHeadersHeight = 40;
             khachHangDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            khachHangDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column2, Column1, Column3, Column4, Column5, Column6, Column9, Column10, Column11, Column12, Column13 });
+            khachHangDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column2, Column1, Column3, Column4, Column5, Column6, Column9, Column11, Column12, Column13 });
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = Color.White;
             dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -303,6 +302,17 @@
             khachHangDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
             khachHangDataGridView.CellFormatting += khachHangDataGridView_CellFormatting;
             khachHangDataGridView.CellPainting += khachHangDataGridView_CellPainting;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(223, 243, 252);
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1183, 821);
+            panel1.TabIndex = 1;
             // 
             // Column2
             // 
@@ -369,14 +379,6 @@
             Column9.Name = "Column9";
             Column9.ReadOnly = true;
             // 
-            // Column10
-            // 
-            Column10.FillWeight = 98.12499F;
-            Column10.HeaderText = "Điểm";
-            Column10.MinimumWidth = 6;
-            Column10.Name = "Column10";
-            Column10.ReadOnly = true;
-            // 
             // Column11
             // 
             Column11.FillWeight = 80F;
@@ -406,17 +408,6 @@
             Column13.Name = "Column13";
             Column13.ReadOnly = true;
             Column13.Width = 6;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(223, 243, 252);
-            panel1.Controls.Add(panel3);
-            panel1.Controls.Add(panel2);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1183, 821);
-            panel1.TabIndex = 1;
             // 
             // KhachHangForm
             // 
@@ -458,7 +449,6 @@
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column9;
-        private DataGridViewTextBoxColumn Column10;
         private DataGridViewTextBoxColumn Column11;
         private DataGridViewImageColumn Column12;
         private DataGridViewImageColumn Column13;

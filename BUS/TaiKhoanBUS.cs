@@ -34,13 +34,18 @@ namespace BUS
                 return "Vui lòng nhập đầy đủ thông tin!";
             else
             {
-                if (!taiKhoanDAO.KiemTraTaiKhoanCoNguoiDung(LayTaiKhoanTheoTen(tenTaiKhoan)))
-                    return "Tài khoản chưa đăng ký người dùng!";
+                
 
-                if (taiKhoanDAO.KiemTraDangNhap(tenTaiKhoan, matKhau))
-                    return "Đăng nhập thành công!";
-                else
+                if (!taiKhoanDAO.KiemTraDangNhap(tenTaiKhoan, matKhau))
                     return "Thông tin đăng nhập không chính xác!";
+                else
+                {
+                    if (!taiKhoanDAO.KiemTraTaiKhoanCoNguoiDung(tenTaiKhoan, matKhau))
+                        return "Tài khoản chưa đăng ký người dùng!";
+                    else
+                        return "Đăng nhập thành công!";
+                }
+                    
             }
         }
 
@@ -112,9 +117,9 @@ namespace BUS
             return taiKhoanDAO.LayDanhSachTaiKhoanChuaDung();
         }
 
-        public bool KiemTraTaiKhoanCoNguoiDung(TaiKhoan taiKhoan)
+        public bool KiemTraTaiKhoanCoNguoiDung(string tenTaiKhoan, string matKhau)
         {
-            return taiKhoanDAO.KiemTraTaiKhoanCoNguoiDung(taiKhoan);
+            return taiKhoanDAO.KiemTraTaiKhoanCoNguoiDung(tenTaiKhoan, matKhau);
         }
     }
 }

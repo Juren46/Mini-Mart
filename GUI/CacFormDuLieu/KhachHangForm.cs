@@ -51,7 +51,7 @@ namespace GUI
         private void khachHangDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Kiểm tra xem cell đang được định dạng có phải là cell hình ảnh không.
-            if ((e.ColumnIndex == 9 || e.ColumnIndex == 10) && e.RowIndex >= 0)
+            if ((e.ColumnIndex == 8 || e.ColumnIndex == 9) && e.RowIndex >= 0)
             {
                 // Kiểm tra giá trị của cell có phải là hình ảnh không.
                 if (e.Value is Image)
