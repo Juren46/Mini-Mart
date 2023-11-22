@@ -58,9 +58,9 @@
             iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             panel2 = new Panel();
             iconButton9 = new FontAwesome.Sharp.IconButton();
-            iconButton8 = new FontAwesome.Sharp.IconButton();
             iconButton7 = new FontAwesome.Sharp.IconButton();
             panelDesktop = new Panel();
+            iconButton8 = new FontAwesome.Sharp.IconButton();
             panelNav.SuspendLayout();
             panelMenu.SuspendLayout();
             fllMenu.SuspendLayout();
@@ -549,25 +549,6 @@
             iconButton9.UseVisualStyleBackColor = false;
             iconButton9.Click += btnMaximize_Click;
             // 
-            // iconButton8
-            // 
-            iconButton8.BackColor = Color.FromArgb(0, 50, 90);
-            iconButton8.FlatAppearance.BorderSize = 0;
-            iconButton8.FlatAppearance.MouseOverBackColor = Color.IndianRed;
-            iconButton8.FlatStyle = FlatStyle.Flat;
-            iconButton8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton8.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            iconButton8.IconColor = Color.White;
-            iconButton8.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconButton8.IconSize = 20;
-            iconButton8.Location = new Point(123, 0);
-            iconButton8.Name = "iconButton8";
-            iconButton8.Padding = new Padding(0, 3, 0, 0);
-            iconButton8.Size = new Size(45, 34);
-            iconButton8.TabIndex = 9;
-            iconButton8.UseVisualStyleBackColor = false;
-            iconButton8.Click += btnExit_Click;
-            // 
             // iconButton7
             // 
             iconButton7.BackColor = Color.FromArgb(0, 50, 90);
@@ -595,6 +576,25 @@
             panelDesktop.Name = "panelDesktop";
             panelDesktop.Size = new Size(1183, 821);
             panelDesktop.TabIndex = 2;
+            // 
+            // iconButton8
+            // 
+            iconButton8.BackColor = Color.FromArgb(0, 50, 90);
+            iconButton8.FlatAppearance.BorderSize = 0;
+            iconButton8.FlatAppearance.MouseOverBackColor = Color.IndianRed;
+            iconButton8.FlatStyle = FlatStyle.Flat;
+            iconButton8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton8.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            iconButton8.IconColor = Color.White;
+            iconButton8.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            iconButton8.IconSize = 20;
+            iconButton8.Location = new Point(123, 0);
+            iconButton8.Name = "iconButton8";
+            iconButton8.Padding = new Padding(0, 3, 0, 0);
+            iconButton8.Size = new Size(45, 34);
+            iconButton8.TabIndex = 9;
+            iconButton8.UseVisualStyleBackColor = false;
+            iconButton8.Click += btnExit_Click;
             // 
             // TrangChuForm
             // 
@@ -637,7 +637,6 @@
         private Panel panel1;
         private Panel panelDesktop;
         private FontAwesome.Sharp.IconButton iconButton7;
-        private FontAwesome.Sharp.IconButton iconButton8;
         private Panel panel2;
         private FontAwesome.Sharp.IconButton iconButton9;
         private FontAwesome.Sharp.IconButton btnThongKe;
@@ -659,5 +658,6 @@
         private Label tenNguoiDungLabel;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private PictureBox pictureBox3;
+        private FontAwesome.Sharp.IconButton iconButton8;
     }
 }

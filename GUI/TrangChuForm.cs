@@ -166,6 +166,7 @@ namespace GUI
         private void btnBanHang_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new BanHangForm());
         }
 
         private void btnSanPham_Click(object sender, EventArgs e)
