@@ -1,4 +1,5 @@
 ﻿using DAO;
+using DocumentFormat.OpenXml.Vml;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -31,12 +32,11 @@ namespace BUS
             return sanPhamDAO.DemSoSanPham();
         }
 
-        public string ThemSanPham(string maSanPham, string maLoaiSanPham, string maNhaCungCap, string tenSanPham, string donViTinh, string giaBan, string duongDanAnh)
+        public string ThemSanPham(string maSanPham, string maLoaiSanPham, string maNhaCungCap, string tenSanPham, string donViTinh, string giaBan, byte[]duLieuAnh)
         {
-            if (string.IsNullOrEmpty(maLoaiSanPham) || string.IsNullOrEmpty(maNhaCungCap) || string.IsNullOrEmpty(tenSanPham) || string.IsNullOrEmpty(donViTinh) || string.IsNullOrEmpty(giaBan) || string.IsNullOrEmpty(duongDanAnh))
+            if (string.IsNullOrEmpty(maLoaiSanPham) || string.IsNullOrEmpty(maNhaCungCap) || string.IsNullOrEmpty(tenSanPham) || string.IsNullOrEmpty(donViTinh) || string.IsNullOrEmpty(giaBan) || !(duLieuAnh != null && duLieuAnh.Length > 0))
                 return "Vui lòng nhập đầy đủ thông tin!";
-
-            SanPham sanPham = new SanPham(maSanPham, maLoaiSanPham, maNhaCungCap, tenSanPham, donViTinh, Decimal.Parse(giaBan), duongDanAnh);
+            SanPham sanPham = new SanPham(maSanPham, maLoaiSanPham, maNhaCungCap, tenSanPham, donViTinh, Decimal.Parse(giaBan), duLieuAnh);
 
             if (sanPhamDAO.ThemSanPham(sanPham))
                 return "Thêm sản phẩm thành công!";
@@ -52,12 +52,12 @@ namespace BUS
             return "Xóa sản phẩm thất bại!";
         }
 
-        public string SuaSanPham(string maSanPham, string maLoaiSanPham, string maNhaCungCap, string tenSanPham, string donViTinh, string giaBan, string duongDanAnh)
+        public string SuaSanPham(string maSanPham, string maLoaiSanPham, string maNhaCungCap, string tenSanPham, string donViTinh, string giaBan, byte[] duLieuAnh)
         {
-            if (string.IsNullOrEmpty(maLoaiSanPham) || string.IsNullOrEmpty(maNhaCungCap) || string.IsNullOrEmpty(tenSanPham) || string.IsNullOrEmpty(donViTinh) || string.IsNullOrEmpty(giaBan) || string.IsNullOrEmpty(duongDanAnh))
+            if (string.IsNullOrEmpty(maLoaiSanPham) || string.IsNullOrEmpty(maNhaCungCap) || string.IsNullOrEmpty(tenSanPham) || string.IsNullOrEmpty(donViTinh) || string.IsNullOrEmpty(giaBan) || !(duLieuAnh != null && duLieuAnh.Length > 0))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
-            SanPham sanPham = new SanPham(maSanPham, maLoaiSanPham, maNhaCungCap, tenSanPham, donViTinh, Decimal.Parse(giaBan), duongDanAnh);
+            SanPham sanPham = new SanPham(maSanPham, maLoaiSanPham, maNhaCungCap, tenSanPham, donViTinh, Decimal.Parse(giaBan), duLieuAnh);
 
             if (sanPhamDAO.SuaSanPham(sanPham))
                 return "Sửa thông tin sản phẩm thành công!";

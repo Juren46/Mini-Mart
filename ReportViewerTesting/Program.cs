@@ -1,6 +1,4 @@
-using System.Printing;
-
-namespace TestGUI
+namespace ReportViewerTesting
 {
     internal static class Program
     {
@@ -13,9 +11,7 @@ namespace TestGUI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            /*Application.Run(new TestThemSanPham());*/
-            Application.Run(new TestXemSanPham());
-
+            Application.Run(new Form1());
         }
     }
 }

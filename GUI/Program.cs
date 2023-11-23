@@ -1,3 +1,5 @@
+using GUI.InAn.Forms;
+
 namespace GUI
 {
     internal static class Program
@@ -6,7 +8,8 @@ namespace GUI
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new DangNhapForm());
+            //Application.Run(new DangNhapForm());
+            /*Application.Run(new InHoaDonForm());*/
         }
     }
 }
