@@ -10,10 +10,14 @@
 
   <ItemGroup>
     <None Remove="InAn\Reports\HoaDonReport.rdlc" />
+    <None Remove="InAn\Reports\PhieuNhapReport.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="InAn\Reports\HoaDonReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InAn\Reports\PhieuNhapReport.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

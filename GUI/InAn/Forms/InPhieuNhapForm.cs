@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DTO;
+using GUI.InAn.DefinitionClasses;
+using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +15,22 @@ namespace GUI.InAn.Forms
 {
     public partial class InPhieuNhapForm : Form
     {
-        public InPhieuNhapForm()
+        string maPhieuNhap;
+
+        public InPhieuNhapForm(string maPhieuNhap)
         {
             InitializeComponent();
+
+            this.maPhieuNhap = maPhieuNhap;
+
+            DataTable table = ChiTietPhieuNhapData.GetChiTietPhieuNhapDataTable(maPhieuNhap);
+
+            phieuNhapReportViewer.LocalReport.ReportEmbeddedResource = "GUI.InAn.Reports.PhieuNhapReport.rdlc";
+            phieuNhapReportViewer.LocalReport.DataSources.Clear();
+            phieuNhapReportViewer.LocalReport.DataSources.Add(new ReportDataSource("PhieuNhapDataSet", table));
+            phieuNhapReportViewer.ProcessingMode = ProcessingMode.Local;
+            phieuNhapReportViewer.RefreshReport();
+            this.maPhieuNhap = maPhieuNhap;
         }
     }
 }

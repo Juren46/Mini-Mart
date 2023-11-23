@@ -28,12 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "InPhieuNhapForm";
+            phieuNhapReportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            SuspendLayout();
+            // 
+            // phieuNhapReportViewer
+            // 
+            phieuNhapReportViewer.AutoSize = true;
+            phieuNhapReportViewer.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            phieuNhapReportViewer.Dock = DockStyle.Fill;
+            phieuNhapReportViewer.Location = new Point(0, 0);
+            phieuNhapReportViewer.Name = "ReportViewer";
+            phieuNhapReportViewer.ServerReport.BearerToken = null;
+            phieuNhapReportViewer.Size = new Size(630, 450);
+            phieuNhapReportViewer.TabIndex = 0;
+            // 
+            // InPhieuNhapForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(630, 450);
+            Controls.Add(phieuNhapReportViewer);
+            Name = "InPhieuNhapForm";
+            Text = "InPhieuNhapForm";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Microsoft.Reporting.WinForms.ReportViewer phieuNhapReportViewer;
     }
 }
