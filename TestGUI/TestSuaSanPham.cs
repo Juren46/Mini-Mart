@@ -1,4 +1,6 @@
-﻿using DTO;
+﻿using BUS.OtherFunctions;
+using BUS;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,44 +33,36 @@ namespace TestGUI
             tenSanPhamTextBox.Text = sanPham.tenSanPham;
             donViTinhTextBox.Text = sanPham.donViTinh;
             giaBanTextBox.Text = sanPham.giaBan.ToString();
-            pictureBox.Image = ByteArrayToImage(sanPham.duLieuAnh);
-
-        }
-
-        private Image ByteArrayToImage(byte[] imageData)
-        {
-            if (imageData != null && imageData.Length > 0)
-            {
-                using (MemoryStream memoryStream = new MemoryStream(imageData))
-                {
-                    // Thử chuyển đổi dữ liệu byte thành hình ảnh
-                    try
-                    {
-                        Image image = Image.FromStream(memoryStream);
-                        return image;
-                    }
-                    catch (ArgumentException ex)
-                    {
-                        Debug.WriteLine("Lỗi: " + ex.Message);
-                        return null;
-                    }
-                }
-            }
-            else
-            {
-                Debug.WriteLine("Dữ liệu hình ảnh không hợp lệ!");
-                return null;
-            }
+            pictureBox.Image = ImageHelper.ByteArrayToImage(sanPham.duLieuAnh);
         }
 
         private void chooseImageButton_Click(object sender, EventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.jpg, *.jpeg, *.png)|*.jpg; *.jpeg; *.png";
 
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                Image selectedImage = new Bitmap(openFileDialog.FileName);
+
+                // Scale ảnh theo kích thước của PictureBox
+                pictureBox.Image = ImageHelper.ScaleImage(selectedImage, pictureBox.Width, pictureBox.Height);
+            }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            string maSanPham = maSanPhamTextBox.Text;
+            string maLoaiSanPham = maLoaiSanPhamTextBox.Text;
+            string maNhaCungCap = maNhaCungCapTextBox.Text;
+            string tenSanPham = tenSanPhamTextBox.Text;
+            string donViTinh = donViTinhTextBox.Text;
+            string giaBan = giaBanTextBox.Text;
+            byte[] duLieuAnh = ImageHelper.ImageToByteArray(pictureBox.Image);
 
+            string message = new SanPhamBUS().SuaSanPham(maSanPham, maLoaiSanPham, maNhaCungCap, tenSanPham, donViTinh, giaBan, duLieuAnh);
+
+            MessageBox.Show(message);
         }
     }
 }

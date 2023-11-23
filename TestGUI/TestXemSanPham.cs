@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using BUS.OtherFunctions;
 using DAO;
 using DocumentFormat.OpenXml.Vml;
 using DocumentFormat.OpenXml.Wordprocessing;
@@ -46,34 +47,8 @@ namespace TestGUI
                 sanPhamDataGridView.Rows[i].Cells["donViTinh"].Value = listSanPham[i].donViTinh;
                 sanPhamDataGridView.Rows[i].Cells["soLuong"].Value = listSanPham[i].soLuong;
                 sanPhamDataGridView.Rows[i].Cells["giaBan"].Value = listSanPham[i].giaBan.ToString("#,##0") + " VNĐ";
-                sanPhamDataGridView.Rows[i].Cells["duLieuAnh"].Value = ByteArrayToImage(listSanPham[i].duLieuAnh);
+                sanPhamDataGridView.Rows[i].Cells["duLieuAnh"].Value = ImageHelper.ByteArrayToImage(listSanPham[i].duLieuAnh);
                 sanPhamDataGridView.Rows[i].Cells["trangThai"].Value = listSanPham[i].trangThai;
-            }
-        }
-
-        private Image ByteArrayToImage(byte[] imageData)
-        {
-            if (imageData != null && imageData.Length > 0)
-            {
-                using (MemoryStream memoryStream = new MemoryStream(imageData))
-                {
-                    // Thử chuyển đổi dữ liệu byte thành hình ảnh
-                    try
-                    {
-                        Image image = Image.FromStream(memoryStream);
-                        return image;
-                    }
-                    catch (ArgumentException ex)
-                    {
-                        Debug.WriteLine("Lỗi: " + ex.Message);
-                        return null;
-                    }
-                }
-            }
-            else
-            {
-                Debug.WriteLine("Dữ liệu hình ảnh không hợp lệ!");
-                return null;
             }
         }
 
@@ -82,15 +57,6 @@ namespace TestGUI
             // Kiểm tra xem ô nào được double click
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                /*DataGridViewCell selectedCell = sanPhamDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
-
-                // Xử lý dữ liệu trong ô được double click
-                if (selectedCell.Value != null)
-                {
-                    // Ví dụ: hiển thị giá trị của ô được double click
-                    MessageBox.Show("Giá trị ô: " + selectedCell.Value.ToString());
-                }*/
-
                 SanPham sanPham = new SanPhamBUS().LaySanPhamTheoMa(sanPhamDataGridView.Rows[e.RowIndex].Cells["maSanPham"].Value.ToString());
 
                 new TestSuaSanPham(sanPham).Show();

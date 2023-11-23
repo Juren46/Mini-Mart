@@ -127,7 +127,7 @@ namespace DAO
 
         public bool SuaSanPham(SanPham sanPham)
         {
-            string query = $"UPDATE SanPham (maLoaiSanPham, maNhaCungCap, tenSanPham, donViTinh, giaBan, duLieuAnh) SET maLoaiSanPham = @maLoaiSanPham, maNhaCungCap = @maNhaCungCap, tenSanPham = @tenSanPham, donViTinh = @donViTinh, giaBan = @giaBan, duLieuAnh = @duLieuAnh " +
+            string query = $"UPDATE SanPham SET maLoaiSanPham = @maLoaiSanPham, maNhaCungCap = @maNhaCungCap, tenSanPham = @tenSanPham, donViTinh = @donViTinh, giaBan = @giaBan, duLieuAnh = @duLieuAnh " +
                            $"WHERE maSanPham = @maSanPham;";
 
             int rowsAffected = 0;
@@ -136,10 +136,11 @@ namespace DAO
             {
                 SqlCommand command = new SqlCommand(query, connection);
 
+                command.Parameters.AddWithValue("@maSanPham", sanPham.maSanPham);
                 command.Parameters.AddWithValue("@maLoaiSanPham", sanPham.maLoaiSanPham);
                 command.Parameters.AddWithValue("@maNhaCungCap", sanPham.maNhaCungCap);
                 command.Parameters.AddWithValue("@tenSanPham", sanPham.tenSanPham);
-                command.Parameters.AddWithValue("@donViTinh", sanPham.donViTinh);              command.Parameters.AddWithValue("@maLoaiSanPham", sanPham.maLoaiSanPham);
+                command.Parameters.AddWithValue("@donViTinh", sanPham.donViTinh);             
                 command.Parameters.AddWithValue("@giaBan", sanPham.giaBan);
                 command.Parameters.AddWithValue("@duLieuAnh", sanPham.duLieuAnh);
 
