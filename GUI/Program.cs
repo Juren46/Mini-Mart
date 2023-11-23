@@ -8,7 +8,7 @@ namespace GUI
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            //Application.Run(new DangNhapForm());
+            Application.Run(new DangNhapForm());
             /*Application.Run(new InHoaDonForm());*/
         }
     }
