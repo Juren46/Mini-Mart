@@ -61,16 +61,17 @@
             timKiemTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             timKiemTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             timKiemTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            timKiemTextBox.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            timKiemTextBox.Font = new Font("Segoe UI", 9F);
             timKiemTextBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
             timKiemTextBox.Location = new Point(12, 11);
             timKiemTextBox.Name = "timKiemTextBox";
             timKiemTextBox.PasswordChar = '\0';
-            timKiemTextBox.PlaceholderText = "Nhập tên để tìm kiếm";
+            timKiemTextBox.PlaceholderText = "Tìm kiếm";
             timKiemTextBox.SelectedText = "";
             timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
             timKiemTextBox.Size = new Size(821, 36);
             timKiemTextBox.TabIndex = 29;
+            timKiemTextBox.TextChanged += timKiemTextBox_TextChanged;
             // 
             // panel2
             // 
@@ -99,6 +100,7 @@
             lamMoiButton.Size = new Size(43, 36);
             lamMoiButton.TabIndex = 72;
             lamMoiButton.UseVisualStyleBackColor = false;
+            lamMoiButton.Click += lamMoiButton_Click;
             // 
             // timKiemButton
             // 
@@ -114,13 +116,14 @@
             timKiemButton.Size = new Size(43, 36);
             timKiemButton.TabIndex = 71;
             timKiemButton.UseVisualStyleBackColor = false;
+            timKiemButton.Click += timKiemButton_Click;
             // 
             // xuatExcelButton
             // 
             xuatExcelButton.BackColor = Color.FromArgb(33, 31, 48);
             xuatExcelButton.FlatAppearance.BorderSize = 0;
             xuatExcelButton.FlatStyle = FlatStyle.Flat;
-            xuatExcelButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            xuatExcelButton.Font = new Font("Microsoft Sans Serif", 12F);
             xuatExcelButton.ForeColor = Color.White;
             xuatExcelButton.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
             xuatExcelButton.IconColor = Color.White;
@@ -134,6 +137,7 @@
             xuatExcelButton.Text = "Xuất Excel";
             xuatExcelButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             xuatExcelButton.UseVisualStyleBackColor = false;
+            xuatExcelButton.Click += xuatExcelButton_Click;
             // 
             // panel3
             // 
@@ -153,7 +157,7 @@
             phanQuyenDataGridView.BackgroundColor = Color.FromArgb(242, 245, 250);
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.LightBlue;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 14.25F);
             dataGridViewCellStyle2.ForeColor = Color.FromArgb(30, 110, 142);
             dataGridViewCellStyle2.SelectionBackColor = Color.LightBlue;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -164,7 +168,7 @@
             phanQuyenDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column2, Column1, Column3 });
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 12F);
             dataGridViewCellStyle4.ForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(227, 248, 251);
             dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(71, 69, 94);
@@ -178,7 +182,7 @@
             phanQuyenDataGridView.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 14.25F);
             dataGridViewCellStyle5.ForeColor = Color.FromArgb(242, 245, 250);
             dataGridViewCellStyle5.SelectionBackColor = Color.White;
             dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
@@ -190,7 +194,7 @@
             phanQuyenDataGridView.Size = new Size(1143, 751);
             phanQuyenDataGridView.TabIndex = 28;
             phanQuyenDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            phanQuyenDataGridView.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            phanQuyenDataGridView.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 9F);
             phanQuyenDataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = SystemColors.ControlText;
             phanQuyenDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             phanQuyenDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
@@ -198,14 +202,14 @@
             phanQuyenDataGridView.ThemeStyle.GridColor = Color.FromArgb(242, 245, 250);
             phanQuyenDataGridView.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(242, 245, 250);
             phanQuyenDataGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            phanQuyenDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            phanQuyenDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Microsoft Sans Serif", 14.25F);
             phanQuyenDataGridView.ThemeStyle.HeaderStyle.ForeColor = Color.DimGray;
             phanQuyenDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             phanQuyenDataGridView.ThemeStyle.HeaderStyle.Height = 40;
             phanQuyenDataGridView.ThemeStyle.ReadOnly = true;
             phanQuyenDataGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
             phanQuyenDataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            phanQuyenDataGridView.ThemeStyle.RowsStyle.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            phanQuyenDataGridView.ThemeStyle.RowsStyle.Font = new Font("Microsoft Sans Serif", 14.25F);
             phanQuyenDataGridView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
             phanQuyenDataGridView.ThemeStyle.RowsStyle.Height = 50;
             phanQuyenDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(0, 80, 112);
@@ -257,7 +261,7 @@
             BackColor = Color.FromArgb(223, 243, 252);
             ClientSize = new Size(1143, 821);
             Controls.Add(panel1);
-            Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("Segoe UI", 14.25F);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
             Name = "PhanQuyenForm";

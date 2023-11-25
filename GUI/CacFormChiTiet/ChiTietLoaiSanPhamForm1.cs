@@ -1,4 +1,5 @@
-﻿using BUS.OtherFunctions;
+﻿using BUS;
+using BUS.OtherFunctions;
 using DTO;
 using Guna.UI2.WinForms;
 using System;
@@ -18,55 +19,102 @@ namespace GUI
     {
         LoaiSanPham loaiSanPham;
         string context;
-        public chiTietLoaiSanPhamForm(LoaiSanPham loaiSanPham, string context)
+        LoaiSanPhamBUS loaiSanPhamBUS;
+        LoaiSanPhamForm form;
+
+        public chiTietLoaiSanPhamForm(LoaiSanPham loaiSanPham, string context, LoaiSanPhamForm form)
         {
             InitializeComponent();
             CenterToParent();
 
+            loaiSanPhamBUS = new LoaiSanPhamBUS();
             this.loaiSanPham = loaiSanPham;
             this.context = context;
+            this.form = form;
         }
 
-        public chiTietLoaiSanPhamForm(string context)
+        public chiTietLoaiSanPhamForm(string context, LoaiSanPhamForm form)
         {
             InitializeComponent();
             CenterToParent();
+
+            loaiSanPhamBUS = new LoaiSanPhamBUS();
             this.context = context;
+            this.form = form;
         }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void themLoaiSanPhamForm1_Load(object sender, EventArgs e)
+
+        private void chiTietLoaiSanPhamForm_Load(object sender, EventArgs e)
         {
-            if (context.Equals("Chi tiết"))
+            switch (context)
             {
-                txtMaSanPham.Text = loaiSanPham.maLoaiSanPham;
-                txtTenSanPham.Text = loaiSanPham.tenLoaiSanPham;
+                case "Chi tiết":
+                    tieuDeFormLabel.Text = "Chi tiết loại sản phẩm";
 
-                txtMaSanPham.ReadOnly = true;
-                txtTenSanPham.ReadOnly = true;
-                btnHuyBo.Visible = false;
-                btnLuu.Visible = false;
-                this.Size = new System.Drawing.Size(656, 230);
-            }
+                    maLoaiSanPhamTextBox.Text = loaiSanPham.maLoaiSanPham;
+                    tenLoaiSanPhamTextBox.Text = loaiSanPham.tenLoaiSanPham;
+                    //CHỜ THÊM TRẠNG THÁI
 
-            if (context.Equals("Thêm"))
-            {
-                txtMaSanPham.Text = IDGenerator.GenerateLoaiSanPhamID();
-                txtMaSanPham.Enabled = false;
-            }
+                    maLoaiSanPhamTextBox.ReadOnly = true;
+                    tenLoaiSanPhamTextBox.ReadOnly = true;
+                    luuButton.Visible = false;
+                    break;
 
-            if (context.Equals("Sửa"))
-            {
-                txtMaSanPham.Text = loaiSanPham.maLoaiSanPham;
-                txtTenSanPham.Text = loaiSanPham.tenLoaiSanPham;
+                case "Thêm":
+                    tieuDeFormLabel.Text = "Thêm loại sản phẩm";
 
-                txtMaSanPham.Enabled = false;
+                    maLoaiSanPhamTextBox.Text = IDGenerator.GenerateLoaiSanPhamID();
+
+                    maLoaiSanPhamTextBox.ReadOnly = true;
+                    //CHỜ THÊM TRẠNG THÁI
+                    break;
+
+                case "Sửa":
+                    tieuDeFormLabel.Text = "Chi tiết loại sản phẩm";
+
+                    maLoaiSanPhamTextBox.Text = loaiSanPham.maLoaiSanPham;
+                    tenLoaiSanPhamTextBox.Text = loaiSanPham.tenLoaiSanPham;
+                    //CHỜ THÊM TRẠNG THÁI
+
+                    maLoaiSanPhamTextBox.ReadOnly = true;
+                    break;
             }
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void huyBoButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void luuButton_Click(object sender, EventArgs e)
+        {
+            string maLoaiSanPham = maLoaiSanPhamTextBox.Text;
+            string tenLoaiSanPham = tenLoaiSanPhamTextBox.Text;
+
+            DialogResult result = MessageBox.Show("Bạn có muốn lưu loại sản phẩm không?", "Xác nhận", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                switch (context)
+                {
+                    case "Thêm":
+                        MessageBox.Show(loaiSanPhamBUS.ThemLoaiSanPham(maLoaiSanPham, tenLoaiSanPham));
+                        break;
+
+                    case "Sửa":
+                        MessageBox.Show(loaiSanPhamBUS.SuaLoaiSanPham(maLoaiSanPham, tenLoaiSanPham));
+                        break;
+                }
+
+                form.lamMoiButton_Click(sender, e);
+            }
+        }
+
+        private void quayLaiButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,7 @@ namespace DAO
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Lỗi khi thực hiện truy vấn SQL: " + ex.Message);
+                    Debug.WriteLine("Lỗi khi thực hiện truy vấn SQL: " + ex.Message);
                 }
                 return dataTable;
             }
@@ -49,7 +50,7 @@ namespace DAO
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Lỗi khi thực hiện câu lệnh SQL: " + ex.Message);
+                    Debug.WriteLine("Lỗi khi thực hiện câu lệnh SQL: " + ex.Message);
                     return -1;
                 }
             }

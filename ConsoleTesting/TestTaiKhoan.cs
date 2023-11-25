@@ -70,16 +70,6 @@ namespace ConsoleTesting
             Console.WriteLine(taiKhoanBUS.XoaTaiKhoan(tenTaiKhoan));
         }
 
-        public static void TestTimKiemTaiKhoan()
-        {
-            Console.Write("Nhập từ khóa: ");
-            string keyword = Console.ReadLine();
-            List<TaiKhoan> listTaiKhoan = taiKhoanBUS.TimKiemTaiKhoan(keyword);
-            foreach (TaiKhoan taiKhoan in listTaiKhoan)
-            {
-                Console.WriteLine(taiKhoan.maPhanQuyen + "\n" + taiKhoan.tenTaiKhoan + "\n" + taiKhoan.matKhau + "\n" + taiKhoan.trangThai + "\n");
-            }
-        }
 
         public static void TestLocTaiKhoanTheoPhanQuyen()
         {
