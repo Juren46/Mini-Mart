@@ -32,89 +32,91 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
-            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            label1 = new Label();
-            label2 = new Label();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
+            anhSanPhamPictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
+            tenSanPhamLabel = new Label();
+            giaBanLabel = new Label();
+            chonButton = new FontAwesome.Sharp.IconButton();
+            ((System.ComponentModel.ISupportInitialize)anhSanPhamPictureBox).BeginInit();
             SuspendLayout();
             // 
-            // guna2PictureBox1
+            // anhSanPhamPictureBox
             // 
-            guna2PictureBox1.CustomizableEdges = customizableEdges1;
-            guna2PictureBox1.Image = Properties.Resources._004_lock;
-            guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(3, 3);
-            guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2PictureBox1.Size = new Size(80, 80);
-            guna2PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            guna2PictureBox1.TabIndex = 0;
-            guna2PictureBox1.TabStop = false;
+            anhSanPhamPictureBox.CustomizableEdges = customizableEdges1;
+            anhSanPhamPictureBox.Image = Properties.Resources._004_lock;
+            anhSanPhamPictureBox.ImageRotate = 0F;
+            anhSanPhamPictureBox.Location = new Point(3, 3);
+            anhSanPhamPictureBox.Name = "anhSanPhamPictureBox";
+            anhSanPhamPictureBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            anhSanPhamPictureBox.Size = new Size(80, 80);
+            anhSanPhamPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            anhSanPhamPictureBox.TabIndex = 0;
+            anhSanPhamPictureBox.TabStop = false;
             // 
-            // label1
+            // tenSanPhamLabel
             // 
-            label1.BackColor = Color.FromArgb(223, 243, 252);
-            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ActiveCaptionText;
-            label1.Location = new Point(89, 3);
-            label1.Name = "label1";
-            label1.Size = new Size(91, 80);
-            label1.TabIndex = 1;
-            label1.Text = "cà phê chả trà sữa bún đá ";
-            label1.TextAlign = ContentAlignment.MiddleLeft;
+            tenSanPhamLabel.BackColor = Color.FromArgb(223, 243, 252);
+            tenSanPhamLabel.Font = new Font("Segoe UI", 11.25F);
+            tenSanPhamLabel.ForeColor = SystemColors.ActiveCaptionText;
+            tenSanPhamLabel.Location = new Point(89, 3);
+            tenSanPhamLabel.Name = "tenSanPhamLabel";
+            tenSanPhamLabel.Size = new Size(91, 80);
+            tenSanPhamLabel.TabIndex = 1;
+            tenSanPhamLabel.Text = "cà phê chả trà sữa bún đá ";
+            tenSanPhamLabel.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label2
+            // giaBanLabel
             // 
-            label2.BackColor = Color.FromArgb(223, 243, 252);
-            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(0, 50, 90);
-            label2.Location = new Point(3, 86);
-            label2.Name = "label2";
-            label2.Size = new Size(177, 25);
-            label2.TabIndex = 2;
-            label2.Text = "1.000.000 VNĐ";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            giaBanLabel.BackColor = Color.FromArgb(223, 243, 252);
+            giaBanLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            giaBanLabel.ForeColor = Color.FromArgb(0, 50, 90);
+            giaBanLabel.Location = new Point(3, 86);
+            giaBanLabel.Name = "giaBanLabel";
+            giaBanLabel.Size = new Size(177, 25);
+            giaBanLabel.TabIndex = 2;
+            giaBanLabel.Text = "1.000.000 VNĐ";
+            giaBanLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // iconButton1
+            // chonButton
             // 
-            iconButton1.BackColor = Color.FromArgb(0, 50, 90);
-            iconButton1.Dock = DockStyle.Bottom;
-            iconButton1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            iconButton1.ForeColor = Color.White;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(0, 114);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(183, 31);
-            iconButton1.TabIndex = 3;
-            iconButton1.Text = "Chọn";
-            iconButton1.UseVisualStyleBackColor = false;
+            chonButton.BackColor = Color.FromArgb(0, 50, 90);
+            chonButton.Dock = DockStyle.Bottom;
+            chonButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            chonButton.ForeColor = Color.White;
+            chonButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            chonButton.IconColor = Color.Black;
+            chonButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            chonButton.Location = new Point(0, 114);
+            chonButton.Name = "chonButton";
+            chonButton.Size = new Size(183, 31);
+            chonButton.TabIndex = 3;
+            chonButton.Text = "Chọn";
+            chonButton.UseVisualStyleBackColor = false;
+            chonButton.Click += chonButton_Click;
             // 
             // SanPhamControl
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(223, 243, 252);
-            Controls.Add(iconButton1);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(guna2PictureBox1);
-            Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Controls.Add(chonButton);
+            Controls.Add(giaBanLabel);
+            Controls.Add(tenSanPhamLabel);
+            Controls.Add(anhSanPhamPictureBox);
+            Font = new Font("Segoe UI", 14.25F);
             Margin = new Padding(5);
             Name = "SanPhamControl";
             Size = new Size(183, 145);
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
+            Load += SanPhamControl_Load;
+            ((System.ComponentModel.ISupportInitialize)anhSanPhamPictureBox).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Label label1;
-        private Label label2;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private Guna.UI2.WinForms.Guna2PictureBox anhSanPhamPictureBox;
+        private Label tenSanPhamLabel;
+        private Label giaBanLabel;
+        private FontAwesome.Sharp.IconButton chonButton;
     }
 }

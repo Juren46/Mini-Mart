@@ -234,8 +234,7 @@ namespace BUS.OtherFunctions
                 worksheet.Cell(1, 5).Value = "Đơn vị tính";
                 worksheet.Cell(1, 6).Value = "Số lượng";
                 worksheet.Cell(1, 7).Value = "Giá bán";
-                worksheet.Cell(1, 8).Value = "Đường dẫn ảnh";
-                worksheet.Cell(1, 9).Value = "Trạng thái";
+                worksheet.Cell(1, 8).Value = "Trạng thái";
 
                 int row = 2;
                 foreach (SanPham sanPham in listSanPham)
@@ -247,8 +246,7 @@ namespace BUS.OtherFunctions
                     worksheet.Cell(row, 5).Value = sanPham.donViTinh;
                     worksheet.Cell(row, 6).Value = sanPham.soLuong;
                     worksheet.Cell(row, 7).Value = sanPham.giaBan;
-                    worksheet.Cell(row, 8).Value = sanPham.duongDanAnh;
-                    worksheet.Cell(row, 9).Value = sanPham.trangThai;
+                    worksheet.Cell(row, 8).Value = sanPham.trangThai;
 
                     row++;
                 }

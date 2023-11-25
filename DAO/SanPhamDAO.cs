@@ -1,7 +1,9 @@
 ﻿using DTO;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +18,7 @@ namespace DAO
         {
             List<SanPham> listSanPham = new List<SanPham>();
 
-            string query = "SELECT * FROM SanPham WHERE trangThai = 1;";
+            string query = "SELECT * FROM SanPham;";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
@@ -32,7 +34,7 @@ namespace DAO
                     sanPham.donViTinh = row["donViTinh"].ToString();
                     sanPham.soLuong = (int)row["soLuong"];
                     sanPham.giaBan = (decimal)row["giaBan"];
-                    sanPham.duongDanAnh = row["duongDanAnh"].ToString();
+                    sanPham.duLieuAnh = (byte[])row["duLieuAnh"];
                     sanPham.trangThai = (bool)row["trangThai"];
 
                     listSanPham.Add(sanPham);
@@ -57,7 +59,7 @@ namespace DAO
             sanPham.donViTinh = dataTable.Rows[0]["donViTinh"].ToString();
             sanPham.soLuong = (int)dataTable.Rows[0]["soLuong"];
             sanPham.giaBan = (decimal)dataTable.Rows[0]["giaBan"];
-            sanPham.duongDanAnh = dataTable.Rows[0]["duongDanAnh"].ToString();
+            sanPham.duLieuAnh = (byte[])dataTable.Rows[0]["duLieuAnh"];
             sanPham.trangThai = (bool)dataTable.Rows[0]["trangThai"];
             
             return sanPham;
@@ -76,9 +78,40 @@ namespace DAO
 
         public bool ThemSanPham(SanPham sanPham)
         {
-            string query = $"INSERT INTO SanPham VALUES('{sanPham.maSanPham}', '{sanPham.maLoaiSanPham}', '{sanPham.maNhaCungCap}', N'{sanPham.tenSanPham}', N'{sanPham.donViTinh}', '{sanPham.soLuong}', '{sanPham.giaBan}', '{sanPham.duongDanAnh}', 1);";
+            string query = $"INSERT INTO SanPham (maSanPham, maLoaiSanPham, maNhaCungCap, tenSanPham, donViTinh, soLuong, giaBan, duLieuAnh, trangThai) " +
+                $"VALUES (@maSanPham, @maLoaiSanPham, @maNhaCungCap, @tenSanPham, @donViTinh, @soLuong, @giaBan, @duLieuAnh, @trangThai)";
 
-            int rowsAffected = DBHelper.ExecuteNonQuery(query);
+            int rowsAffected = 0;
+
+            using (SqlConnection connection = new SqlConnection(DBHelper.connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+
+                command.Parameters.AddWithValue("@maSanPham", sanPham.maSanPham);
+                command.Parameters.AddWithValue("@maLoaiSanPham", sanPham.maLoaiSanPham);
+                command.Parameters.AddWithValue("@maNhaCungCap", sanPham.maNhaCungCap);
+                command.Parameters.AddWithValue("@tenSanPham", sanPham.tenSanPham);
+                command.Parameters.AddWithValue("@donViTinh", sanPham.donViTinh);
+                command.Parameters.AddWithValue("@soLuong", sanPham.soLuong);
+                command.Parameters.AddWithValue("@giaBan", sanPham.giaBan);
+                command.Parameters.AddWithValue("@duLieuAnh", sanPham.duLieuAnh);
+                command.Parameters.AddWithValue("@trangThai", sanPham.trangThai);
+
+                try
+                {
+                    connection.Open();
+                    
+                    rowsAffected = command.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    Debug.WriteLine(ex.ToString());
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
 
             return rowsAffected > 0;
         }
@@ -94,10 +127,37 @@ namespace DAO
 
         public bool SuaSanPham(SanPham sanPham)
         {
-            string query = $"UPDATE SanPham SET maLoaiSanPham = '{sanPham.maLoaiSanPham}', maNhaCungCap = '{sanPham.maNhaCungCap}', tenSanPham = N'{sanPham.tenSanPham}', donViTinh = N'{sanPham.donViTinh}', giaBan = {sanPham.giaBan}, duongDanAnh = '{sanPham.duongDanAnh}' " +
-                           $"WHERE maSanPham = '{sanPham.maSanPham}';";
+            string query = $"UPDATE SanPham SET maLoaiSanPham = @maLoaiSanPham, maNhaCungCap = @maNhaCungCap, tenSanPham = @tenSanPham, donViTinh = @donViTinh, giaBan = @giaBan, duLieuAnh = @duLieuAnh " +
+                           $"WHERE maSanPham = @maSanPham;";
 
-            int rowsAffected = DBHelper.ExecuteNonQuery(query);
+            int rowsAffected = 0;
+
+            using (SqlConnection connection = new SqlConnection(DBHelper.connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+
+                command.Parameters.AddWithValue("@maSanPham", sanPham.maSanPham);
+                command.Parameters.AddWithValue("@maLoaiSanPham", sanPham.maLoaiSanPham);
+                command.Parameters.AddWithValue("@maNhaCungCap", sanPham.maNhaCungCap);
+                command.Parameters.AddWithValue("@tenSanPham", sanPham.tenSanPham);
+                command.Parameters.AddWithValue("@donViTinh", sanPham.donViTinh);             
+                command.Parameters.AddWithValue("@giaBan", sanPham.giaBan);
+                command.Parameters.AddWithValue("@duLieuAnh", sanPham.duLieuAnh);
+
+                try
+                {
+                    connection.Open();
+                    rowsAffected = command.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
 
             return rowsAffected > 0;
         }
@@ -127,7 +187,7 @@ namespace DAO
                     sanPham.donViTinh = row["donViTinh"].ToString();
                     sanPham.soLuong = (int)row["soLuong"];
                     sanPham.giaBan = (decimal)row["giaBan"];
-                    sanPham.duongDanAnh = row["duongDanAnh"].ToString();
+                    sanPham.duLieuAnh = (byte[])row["duLieuAnh"];
                     sanPham.trangThai = (bool)row["trangThai"];
 
                     listSanPham.Add(sanPham);
@@ -159,7 +219,7 @@ namespace DAO
                     sanPham.donViTinh = row["donViTinh"].ToString();
                     sanPham.soLuong = (int)row["soLuong"];
                     sanPham.giaBan = (decimal)row["giaBan"];
-                    sanPham.duongDanAnh = row["duongDanAnh"].ToString();
+                    sanPham.duLieuAnh = (byte[])row["duLieuAnh"];
                     sanPham.trangThai = (bool)row["trangThai"];
 
                     listSanPham.Add(sanPham);
@@ -191,7 +251,7 @@ namespace DAO
                     sanPham.donViTinh = row["donViTinh"].ToString();
                     sanPham.soLuong = (int)row["soLuong"];
                     sanPham.giaBan = (decimal)row["giaBan"];
-                    sanPham.duongDanAnh = row["duongDanAnh"].ToString();
+                    sanPham.duLieuAnh = (byte[])row["duLieuAnh"];
                     sanPham.trangThai = (bool)row["trangThai"];
 
                     listSanPham.Add(sanPham);

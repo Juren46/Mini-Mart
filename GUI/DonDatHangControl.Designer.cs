@@ -34,13 +34,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            guna2NumericUpDown1 = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            iconButton8 = new FontAwesome.Sharp.IconButton();
-            label2 = new Label();
-            label1 = new Label();
+            soLuongNumericUpDown = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            xoaButton = new FontAwesome.Sharp.IconButton();
+            tongGiaLabel = new Label();
+            tenSanPhamLabel = new Label();
             guna2ShadowPanel1.SuspendLayout();
             guna2CustomGradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2NumericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)soLuongNumericUpDown).BeginInit();
             SuspendLayout();
             // 
             // guna2ShadowPanel1
@@ -59,10 +59,10 @@
             // guna2CustomGradientPanel1
             // 
             guna2CustomGradientPanel1.BorderRadius = 5;
-            guna2CustomGradientPanel1.Controls.Add(guna2NumericUpDown1);
-            guna2CustomGradientPanel1.Controls.Add(iconButton8);
-            guna2CustomGradientPanel1.Controls.Add(label2);
-            guna2CustomGradientPanel1.Controls.Add(label1);
+            guna2CustomGradientPanel1.Controls.Add(soLuongNumericUpDown);
+            guna2CustomGradientPanel1.Controls.Add(xoaButton);
+            guna2CustomGradientPanel1.Controls.Add(tongGiaLabel);
+            guna2CustomGradientPanel1.Controls.Add(tenSanPhamLabel);
             guna2CustomGradientPanel1.CustomizableEdges = customizableEdges3;
             guna2CustomGradientPanel1.Dock = DockStyle.Fill;
             guna2CustomGradientPanel1.Location = new Point(0, 0);
@@ -71,61 +71,66 @@
             guna2CustomGradientPanel1.Size = new Size(581, 53);
             guna2CustomGradientPanel1.TabIndex = 1;
             // 
-            // guna2NumericUpDown1
+            // soLuongNumericUpDown
             // 
-            guna2NumericUpDown1.BackColor = Color.Transparent;
-            guna2NumericUpDown1.BorderRadius = 5;
-            guna2NumericUpDown1.CustomizableEdges = customizableEdges1;
-            guna2NumericUpDown1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2NumericUpDown1.Location = new Point(254, 9);
-            guna2NumericUpDown1.Name = "guna2NumericUpDown1";
-            guna2NumericUpDown1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2NumericUpDown1.Size = new Size(72, 34);
-            guna2NumericUpDown1.TabIndex = 13;
-            guna2NumericUpDown1.UpDownButtonFillColor = Color.FromArgb(0, 50, 90);
-            guna2NumericUpDown1.UpDownButtonForeColor = Color.White;
+            soLuongNumericUpDown.BackColor = Color.Transparent;
+            soLuongNumericUpDown.BorderRadius = 5;
+            soLuongNumericUpDown.CustomizableEdges = customizableEdges1;
+            soLuongNumericUpDown.Font = new Font("Segoe UI", 9F);
+            soLuongNumericUpDown.Location = new Point(254, 9);
+            soLuongNumericUpDown.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
+            soLuongNumericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            soLuongNumericUpDown.Name = "soLuongNumericUpDown";
+            soLuongNumericUpDown.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            soLuongNumericUpDown.Size = new Size(72, 34);
+            soLuongNumericUpDown.TabIndex = 13;
+            soLuongNumericUpDown.UpDownButtonFillColor = Color.FromArgb(0, 50, 90);
+            soLuongNumericUpDown.UpDownButtonForeColor = Color.White;
+            soLuongNumericUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            soLuongNumericUpDown.ValueChanged += soLuongNumericUpDown_ValueChanged;
             // 
-            // iconButton8
+            // xoaButton
             // 
-            iconButton8.BackColor = Color.White;
-            iconButton8.FlatAppearance.BorderSize = 0;
-            iconButton8.FlatAppearance.MouseOverBackColor = Color.MistyRose;
-            iconButton8.FlatStyle = FlatStyle.Flat;
-            iconButton8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton8.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            iconButton8.IconColor = Color.IndianRed;
-            iconButton8.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconButton8.IconSize = 20;
-            iconButton8.Location = new Point(546, 11);
-            iconButton8.Name = "iconButton8";
-            iconButton8.Padding = new Padding(0, 3, 0, 0);
-            iconButton8.Size = new Size(30, 30);
-            iconButton8.TabIndex = 12;
-            iconButton8.UseVisualStyleBackColor = false;
+            xoaButton.BackColor = Color.White;
+            xoaButton.FlatAppearance.BorderSize = 0;
+            xoaButton.FlatAppearance.MouseOverBackColor = Color.MistyRose;
+            xoaButton.FlatStyle = FlatStyle.Flat;
+            xoaButton.Font = new Font("Microsoft Sans Serif", 14.25F);
+            xoaButton.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            xoaButton.IconColor = Color.IndianRed;
+            xoaButton.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            xoaButton.IconSize = 20;
+            xoaButton.Location = new Point(546, 11);
+            xoaButton.Name = "xoaButton";
+            xoaButton.Padding = new Padding(0, 3, 0, 0);
+            xoaButton.Size = new Size(30, 30);
+            xoaButton.TabIndex = 12;
+            xoaButton.UseVisualStyleBackColor = false;
+            xoaButton.Click += xoaButton_Click;
             // 
-            // label2
+            // tongGiaLabel
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.White;
-            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(0, 50, 90);
-            label2.Location = new Point(354, 11);
-            label2.Name = "label2";
-            label2.Size = new Size(173, 30);
-            label2.TabIndex = 8;
-            label2.Text = "10.000.000 VNĐ";
+            tongGiaLabel.AutoSize = true;
+            tongGiaLabel.BackColor = Color.White;
+            tongGiaLabel.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
+            tongGiaLabel.ForeColor = Color.FromArgb(0, 50, 90);
+            tongGiaLabel.Location = new Point(354, 11);
+            tongGiaLabel.Name = "tongGiaLabel";
+            tongGiaLabel.Size = new Size(173, 30);
+            tongGiaLabel.TabIndex = 8;
+            tongGiaLabel.Text = "10.000.000 VNĐ";
             // 
-            // label1
+            // tenSanPhamLabel
             // 
-            label1.BackColor = Color.White;
-            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ActiveCaptionText;
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(236, 53);
-            label1.TabIndex = 7;
-            label1.Text = "Sữa tắm bảo vệ khỏi vi khuẩn lifebuoy chăm sóc da 980ml";
-            label1.TextAlign = ContentAlignment.MiddleLeft;
+            tenSanPhamLabel.BackColor = Color.White;
+            tenSanPhamLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            tenSanPhamLabel.ForeColor = SystemColors.ActiveCaptionText;
+            tenSanPhamLabel.Location = new Point(3, 0);
+            tenSanPhamLabel.Name = "tenSanPhamLabel";
+            tenSanPhamLabel.Size = new Size(236, 53);
+            tenSanPhamLabel.TabIndex = 7;
+            tenSanPhamLabel.Text = "Sữa tắm bảo vệ khỏi vi khuẩn lifebuoy chăm sóc da 980ml";
+            tenSanPhamLabel.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // DonDatHangControl
             // 
@@ -133,13 +138,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
             Controls.Add(guna2ShadowPanel1);
-            Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("Segoe UI", 14.25F);
             Name = "DonDatHangControl";
             Size = new Size(581, 53);
+            Load += DonDatHangControl_Load;
             guna2ShadowPanel1.ResumeLayout(false);
             guna2CustomGradientPanel1.ResumeLayout(false);
             guna2CustomGradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2NumericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)soLuongNumericUpDown).EndInit();
             ResumeLayout(false);
         }
 
@@ -151,5 +157,9 @@
         private FontAwesome.Sharp.IconButton iconButton8;
         private Label label2;
         private Label label1;
+        private Guna.UI2.WinForms.Guna2NumericUpDown soLuongNumericUpDown;
+        private FontAwesome.Sharp.IconButton xoaButton;
+        private Label tongGiaLabel;
+        private Label tenSanPhamLabel;
     }
 }
