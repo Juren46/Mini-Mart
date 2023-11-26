@@ -53,7 +53,7 @@
             guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             guna2ShadowPanel1.Radius = 15;
             guna2ShadowPanel1.ShadowColor = Color.Black;
-            guna2ShadowPanel1.Size = new Size(581, 53);
+            guna2ShadowPanel1.Size = new Size(575, 53);
             guna2ShadowPanel1.TabIndex = 0;
             // 
             // guna2CustomGradientPanel1
@@ -65,10 +65,12 @@
             guna2CustomGradientPanel1.Controls.Add(tenSanPhamLabel);
             guna2CustomGradientPanel1.CustomizableEdges = customizableEdges3;
             guna2CustomGradientPanel1.Dock = DockStyle.Fill;
+            guna2CustomGradientPanel1.FillColor2 = Color.WhiteSmoke;
+            guna2CustomGradientPanel1.FillColor4 = Color.WhiteSmoke;
             guna2CustomGradientPanel1.Location = new Point(0, 0);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2CustomGradientPanel1.Size = new Size(581, 53);
+            guna2CustomGradientPanel1.Size = new Size(575, 53);
             guna2CustomGradientPanel1.TabIndex = 1;
             // 
             // soLuongNumericUpDown
@@ -91,7 +93,7 @@
             // 
             // xoaButton
             // 
-            xoaButton.BackColor = Color.White;
+            xoaButton.BackColor = Color.Transparent;
             xoaButton.FlatAppearance.BorderSize = 0;
             xoaButton.FlatAppearance.MouseOverBackColor = Color.MistyRose;
             xoaButton.FlatStyle = FlatStyle.Flat;
@@ -100,7 +102,7 @@
             xoaButton.IconColor = Color.IndianRed;
             xoaButton.IconFont = FontAwesome.Sharp.IconFont.Solid;
             xoaButton.IconSize = 20;
-            xoaButton.Location = new Point(546, 11);
+            xoaButton.Location = new Point(542, 11);
             xoaButton.Name = "xoaButton";
             xoaButton.Padding = new Padding(0, 3, 0, 0);
             xoaButton.Size = new Size(30, 30);
@@ -111,7 +113,7 @@
             // tongGiaLabel
             // 
             tongGiaLabel.AutoSize = true;
-            tongGiaLabel.BackColor = Color.White;
+            tongGiaLabel.BackColor = Color.Transparent;
             tongGiaLabel.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             tongGiaLabel.ForeColor = Color.FromArgb(0, 50, 90);
             tongGiaLabel.Location = new Point(354, 11);
@@ -122,7 +124,7 @@
             // 
             // tenSanPhamLabel
             // 
-            tenSanPhamLabel.BackColor = Color.White;
+            tenSanPhamLabel.BackColor = Color.Transparent;
             tenSanPhamLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             tenSanPhamLabel.ForeColor = SystemColors.ActiveCaptionText;
             tenSanPhamLabel.Location = new Point(3, 0);
@@ -140,7 +142,7 @@
             Controls.Add(guna2ShadowPanel1);
             Font = new Font("Segoe UI", 14.25F);
             Name = "DonDatHangControl";
-            Size = new Size(581, 53);
+            Size = new Size(575, 53);
             Load += DonDatHangControl_Load;
             guna2ShadowPanel1.ResumeLayout(false);
             guna2CustomGradientPanel1.ResumeLayout(false);

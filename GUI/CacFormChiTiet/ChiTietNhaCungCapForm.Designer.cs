@@ -87,7 +87,7 @@
             panel2.Controls.Add(txtMaNCC);
             panel2.Controls.Add(panel1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            panel2.Font = new Font("Microsoft Sans Serif", 14.25F);
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(729, 536);
@@ -114,7 +114,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Font = new Font("Microsoft Sans Serif", 14.25F);
             label8.ForeColor = Color.FromArgb(0, 79, 111);
             label8.Location = new Point(377, 356);
             label8.Name = "label8";
@@ -131,7 +131,7 @@
             btnLuu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnLuu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnLuu.FillColor = Color.FromArgb(0, 79, 111);
-            btnLuu.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLuu.Font = new Font("Microsoft Sans Serif", 12F);
             btnLuu.ForeColor = Color.White;
             btnLuu.Location = new Point(507, 445);
             btnLuu.Name = "btnLuu";
@@ -151,7 +151,7 @@
             btnHuyBo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnHuyBo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnHuyBo.FillColor = Color.White;
-            btnHuyBo.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnHuyBo.Font = new Font("Microsoft Sans Serif", 12F);
             btnHuyBo.ForeColor = Color.FromArgb(0, 79, 111);
             btnHuyBo.Location = new Point(312, 445);
             btnHuyBo.Name = "btnHuyBo";
@@ -171,7 +171,7 @@
             txtEmail.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEmail.Font = new Font("Microsoft Sans Serif", 14.25F);
             txtEmail.Location = new Point(377, 162);
             txtEmail.Margin = new Padding(5, 5, 5, 5);
             txtEmail.Name = "txtEmail";
@@ -193,7 +193,7 @@
             txtDiaChi.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtDiaChi.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtDiaChi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDiaChi.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDiaChi.Font = new Font("Microsoft Sans Serif", 14.25F);
             txtDiaChi.Location = new Point(377, 258);
             txtDiaChi.Margin = new Padding(5, 5, 5, 5);
             txtDiaChi.Name = "txtDiaChi";
@@ -207,7 +207,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Font = new Font("Microsoft Sans Serif", 14.25F);
             label10.ForeColor = Color.FromArgb(0, 79, 111);
             label10.Location = new Point(377, 133);
             label10.Name = "label10";
@@ -218,7 +218,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Font = new Font("Microsoft Sans Serif", 14.25F);
             label9.ForeColor = Color.FromArgb(0, 79, 111);
             label9.Location = new Point(377, 229);
             label9.Name = "label9";
@@ -237,7 +237,7 @@
             txtSoDienThoai.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtSoDienThoai.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtSoDienThoai.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSoDienThoai.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSoDienThoai.Font = new Font("Microsoft Sans Serif", 14.25F);
             txtSoDienThoai.Location = new Point(64, 364);
             txtSoDienThoai.Margin = new Padding(5, 5, 5, 5);
             txtSoDienThoai.Name = "txtSoDienThoai";
@@ -251,7 +251,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Font = new Font("Microsoft Sans Serif", 14.25F);
             label7.ForeColor = Color.FromArgb(0, 79, 111);
             label7.Location = new Point(64, 335);
             label7.Name = "label7";
@@ -262,7 +262,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 14.25F);
             label3.ForeColor = Color.FromArgb(0, 79, 111);
             label3.Location = new Point(62, 229);
             label3.Name = "label3";
@@ -273,7 +273,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 14.25F);
             label2.ForeColor = Color.FromArgb(0, 79, 111);
             label2.Location = new Point(64, 133);
             label2.Name = "label2";
@@ -292,7 +292,7 @@
             txtTenNCC.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtTenNCC.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtTenNCC.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTenNCC.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTenNCC.Font = new Font("Microsoft Sans Serif", 14.25F);
             txtTenNCC.Location = new Point(64, 258);
             txtTenNCC.Margin = new Padding(5, 5, 5, 5);
             txtTenNCC.Name = "txtTenNCC";
@@ -314,7 +314,7 @@
             txtMaNCC.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtMaNCC.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtMaNCC.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMaNCC.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtMaNCC.Font = new Font("Microsoft Sans Serif", 14.25F);
             txtMaNCC.Location = new Point(64, 162);
             txtMaNCC.Margin = new Padding(5, 5, 5, 5);
             txtMaNCC.Name = "txtMaNCC";
@@ -354,7 +354,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
             label1.ForeColor = Color.White;
             label1.Location = new Point(38, 19);
             label1.Margin = new Padding(5, 0, 5, 0);
@@ -369,7 +369,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(729, 536);
             Controls.Add(panel2);
-            Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("Segoe UI", 14.25F);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
             Name = "ChiTietNhaCungCapForm";
