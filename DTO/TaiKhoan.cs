@@ -10,7 +10,7 @@ namespace DTO
     {
         public TaiKhoan()
         {
-            trangThai = true;
+            trangThai = "Chờ xử lý";
         }
 
         public TaiKhoan(string maPhanQuyen, string tenTaiKhoan, string matKhau)
@@ -18,12 +18,12 @@ namespace DTO
             this.maPhanQuyen = maPhanQuyen;
             this.tenTaiKhoan = tenTaiKhoan;
             this.matKhau = matKhau;
-            trangThai = true;
+            trangThai = "Chờ xử lý";
         }
 
         public string maPhanQuyen { get; set; }
         public string tenTaiKhoan { get; set; }
         public string matKhau { get; set; }
-        public bool trangThai { get; set; }
+        public string trangThai { get; set; }
     }
 }

@@ -32,7 +32,7 @@ namespace DAO
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Lỗi khi thực hiện truy vấn SQL: " + ex.Message);
+                    Debug.WriteLine("Lỗi khi thực hiện truy vấn SQL: " + ex.Message);
                 }
                 return dataTable;
             }
@@ -50,7 +50,7 @@ namespace DAO
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Lỗi khi thực hiện câu lệnh SQL: " + ex.Message);
+                    Debug.WriteLine("Lỗi khi thực hiện câu lệnh SQL: " + ex.Message);
                     return -1;
                 }
             }
