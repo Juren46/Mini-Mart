@@ -100,11 +100,11 @@ namespace BUS
             return "Xóa tài khoản thất bại!";
         }
 
-        public List<TaiKhoan> TimKiemTaiKhoan(string keyword)
+        public List<TaiKhoan> TimKiemTaiKhoan(string tuKhoa, string maPhanQuyen, string trangThai)
         {
-            keyword = keyword.Trim().ToLower();
+            tuKhoa = tuKhoa.Trim().ToLower();
 
-            return taiKhoanDAO.TimKiemTaiKhoan(keyword);
+            return taiKhoanDAO.TimKiemTaiKhoan(tuKhoa, maPhanQuyen, trangThai);
         }
 
         public List<TaiKhoan> LocTaiKhoanTheoPhanQuyen(string tenPhanQuyen)
