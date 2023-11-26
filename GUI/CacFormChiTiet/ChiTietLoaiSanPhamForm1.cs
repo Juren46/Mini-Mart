@@ -43,11 +43,6 @@ namespace GUI
             this.form = form;
         }
 
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
         private void chiTietLoaiSanPhamForm_Load(object sender, EventArgs e)
         {
             switch (context)
@@ -97,20 +92,28 @@ namespace GUI
 
             DialogResult result = MessageBox.Show("Bạn có muốn lưu loại sản phẩm không?", "Xác nhận", MessageBoxButtons.YesNo);
 
+            string message = "";
+
             if (result == DialogResult.Yes)
             {
                 switch (context)
                 {
                     case "Thêm":
-                        MessageBox.Show(loaiSanPhamBUS.ThemLoaiSanPham(maLoaiSanPham, tenLoaiSanPham));
+                        message = loaiSanPhamBUS.ThemLoaiSanPham(maLoaiSanPham, tenLoaiSanPham);
+                        MessageBox.Show(message);
                         break;
 
                     case "Sửa":
-                        MessageBox.Show(loaiSanPhamBUS.SuaLoaiSanPham(maLoaiSanPham, tenLoaiSanPham));
+                        message = loaiSanPhamBUS.SuaLoaiSanPham(maLoaiSanPham, tenLoaiSanPham);
+                        MessageBox.Show(message);
                         break;
                 }
 
-                form.lamMoiButton_Click(sender, e);
+                if (message.Equals("Thêm loại sản phẩm thành công!") || message.Equals("Sửa thông tin loại sản phẩm thành công!"))
+                {
+                    form.lamMoiButton_Click(sender, e);
+                    this.Close();
+                }
             }
         }
 

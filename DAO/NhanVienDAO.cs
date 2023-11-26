@@ -139,18 +139,16 @@ namespace DAO
             return rowsAffected > 0;
         }
 
-        public List<NhanVien> TimKiemNhanVien(string keyword)
+        public List<NhanVien> TimKiemNhanVien(string tuKhoa, string maPhanQuyen, string trangThai)
         {
             List<NhanVien> listNhanVien = new List<NhanVien>();
 
-            string query = $"SELECT * FROM NhanVien " +
-                           $"WHERE LOWER(maNhanVien) LIKE '%{keyword}%' " +
-                           $"OR  LOWER(tenTaiKhoan) LIKE '%{keyword}%' " +
-                           $"OR tenNhanVien COLLATE Latin1_General_CI_AI LIKE N'%{keyword}%' " +
-                           $"OR soDienThoai LIKE '%{keyword}%' " +
-                           $"OR LOWER(email) LIKE '%{keyword}%' " +
-                           $"OR diaChi COLLATE Latin1_General_CI_AI LIKE N'%{keyword}%' " +
-                           $"AND trangThai = 1;";
+            string query = $"SELECT * FROM NhanVien AS NV JOIN TaiKhoan AS TK ON NV.tenTaiKhoan = TK.tenTaiKhoan " +
+                           $"WHERE ('{tuKhoa}' = '' OR LOWER(NV.maNhanVien) LIKE '%{tuKhoa}%' " +
+                           $"OR LOWER(NV.tenTaiKhoan) LIKE '%{tuKhoa}%' " +
+                           $"OR NV.tenNhanVien COLLATE Latin1_General_CI_AI LIKE N'%{tuKhoa}%') " +
+                           $"AND ('{maPhanQuyen}' = '' OR TK.maPhanQuyen = '{maPhanQuyen}') " +
+                           $"AND ('{trangThai}' = '' OR NV.trangThai = '{trangThai}')";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 

@@ -103,11 +103,11 @@ namespace BUS
                 return "Sửa thông tin nhân viên thất bại!";
         }
 
-        public List<NhanVien> TimKiemNhanVien(string keyword)
+        public List<NhanVien> TimKiemNhanVien(string tuKhoa, string maPhanQuyen,string trangThai)
         {
-            keyword = keyword.Trim().ToLower();
+            tuKhoa = tuKhoa.Trim().ToLower();
 
-            return nhanVienDAO.TimKiemNhanVien(keyword);
+            return nhanVienDAO.TimKiemNhanVien(tuKhoa, maPhanQuyen, trangThai);
         }
 
         public List<NhanVien> LocNhanVienTheoPhanQuyen(string tenPhanQuyen)

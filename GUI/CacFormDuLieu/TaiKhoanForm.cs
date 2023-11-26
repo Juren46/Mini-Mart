@@ -19,7 +19,6 @@ namespace GUI
         TaiKhoanBUS taiKhoanBUS;
         List<TaiKhoan> listTaiKhoan;
         List<PhanQuyen> listPhanQuyen;
-        bool test = false;
 
         public TaiKhoanForm()
         {

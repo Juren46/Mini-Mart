@@ -51,31 +51,37 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
             panel3 = new Panel();
-            tsDangTonTai = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            nuRadioButton = new Guna.UI2.WinForms.Guna2RadioButton();
+            namRadioButton = new Guna.UI2.WinForms.Guna2RadioButton();
+            soDienThoaiTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            label1 = new Label();
+            chonTaiKhoanButton = new Guna.UI2.WinForms.Guna2Button();
+            trangThaiToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             label8 = new Label();
             panel1 = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            label1 = new Label();
-            btnLuu = new Guna.UI2.WinForms.Guna2Button();
-            btnHuyBo = new Guna.UI2.WinForms.Guna2Button();
-            txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
-            txtDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
+            quayLaiButton = new FontAwesome.Sharp.IconButton();
+            tieuDeFormLabel = new Label();
+            luuButton = new Guna.UI2.WinForms.Guna2Button();
+            huyBoButton = new Guna.UI2.WinForms.Guna2Button();
+            emailTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            diaChiTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             label10 = new Label();
             label9 = new Label();
-            txtSoDienThoai = new Guna.UI2.WinForms.Guna2TextBox();
-            dtpNgaySinh = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            cbbGioiTinh = new Guna.UI2.WinForms.Guna2ComboBox();
+            phanQuyenTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            ngaySinhDateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            txtTenTaiKhoan = new Guna.UI2.WinForms.Guna2TextBox();
-            txtTenNhanVien = new Guna.UI2.WinForms.Guna2TextBox();
-            txtMaNhanVien = new Guna.UI2.WinForms.Guna2TextBox();
+            tenTaiKhoanTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            tenNhanVienTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            maNhanVienTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -87,65 +93,155 @@
             panel2.BackColor = Color.FromArgb(223, 243, 252);
             panel2.Controls.Add(panel3);
             panel2.Dock = DockStyle.Fill;
-            panel2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            panel2.Font = new Font("Segoe UI", 14.25F);
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1038, 493);
+            panel2.Size = new Size(1038, 535);
             panel2.TabIndex = 6;
             // 
             // panel3
             // 
-            panel3.Controls.Add(tsDangTonTai);
+            panel3.Controls.Add(nuRadioButton);
+            panel3.Controls.Add(namRadioButton);
+            panel3.Controls.Add(soDienThoaiTextBox);
+            panel3.Controls.Add(label1);
+            panel3.Controls.Add(chonTaiKhoanButton);
+            panel3.Controls.Add(trangThaiToggleSwitch);
             panel3.Controls.Add(label8);
             panel3.Controls.Add(panel1);
-            panel3.Controls.Add(btnLuu);
-            panel3.Controls.Add(btnHuyBo);
-            panel3.Controls.Add(txtEmail);
-            panel3.Controls.Add(txtDiaChi);
+            panel3.Controls.Add(luuButton);
+            panel3.Controls.Add(huyBoButton);
+            panel3.Controls.Add(emailTextBox);
+            panel3.Controls.Add(diaChiTextBox);
             panel3.Controls.Add(label10);
             panel3.Controls.Add(label9);
-            panel3.Controls.Add(txtSoDienThoai);
-            panel3.Controls.Add(dtpNgaySinh);
-            panel3.Controls.Add(cbbGioiTinh);
+            panel3.Controls.Add(phanQuyenTextBox);
+            panel3.Controls.Add(ngaySinhDateTimePicker);
             panel3.Controls.Add(label7);
             panel3.Controls.Add(label6);
             panel3.Controls.Add(label5);
             panel3.Controls.Add(label4);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(label2);
-            panel3.Controls.Add(txtTenTaiKhoan);
-            panel3.Controls.Add(txtTenNhanVien);
-            panel3.Controls.Add(txtMaNhanVien);
+            panel3.Controls.Add(tenTaiKhoanTextBox);
+            panel3.Controls.Add(tenNhanVienTextBox);
+            panel3.Controls.Add(maNhanVienTextBox);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1038, 493);
+            panel3.Size = new Size(1038, 535);
             panel3.TabIndex = 52;
             // 
-            // tsDangTonTai
+            // nuRadioButton
             // 
-            tsDangTonTai.Checked = true;
-            tsDangTonTai.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tsDangTonTai.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
-            tsDangTonTai.CheckedState.InnerBorderColor = Color.White;
-            tsDangTonTai.CheckedState.InnerColor = Color.White;
-            tsDangTonTai.CustomizableEdges = customizableEdges1;
-            tsDangTonTai.Location = new Point(842, 317);
-            tsDangTonTai.Name = "tsDangTonTai";
-            tsDangTonTai.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            tsDangTonTai.Size = new Size(44, 23);
-            tsDangTonTai.TabIndex = 73;
-            tsDangTonTai.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
-            tsDangTonTai.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
-            tsDangTonTai.UncheckedState.InnerBorderColor = Color.White;
-            tsDangTonTai.UncheckedState.InnerColor = Color.White;
+            nuRadioButton.AutoSize = true;
+            nuRadioButton.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            nuRadioButton.CheckedState.BorderThickness = 0;
+            nuRadioButton.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            nuRadioButton.CheckedState.InnerColor = Color.White;
+            nuRadioButton.CheckedState.InnerOffset = -4;
+            nuRadioButton.Location = new Point(487, 130);
+            nuRadioButton.Name = "nuRadioButton";
+            nuRadioButton.Size = new Size(55, 29);
+            nuRadioButton.TabIndex = 78;
+            nuRadioButton.Text = "Nữ";
+            nuRadioButton.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            nuRadioButton.UncheckedState.BorderThickness = 2;
+            nuRadioButton.UncheckedState.FillColor = Color.Transparent;
+            nuRadioButton.UncheckedState.InnerColor = Color.Transparent;
+            // 
+            // namRadioButton
+            // 
+            namRadioButton.AutoSize = true;
+            namRadioButton.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            namRadioButton.CheckedState.BorderThickness = 0;
+            namRadioButton.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            namRadioButton.CheckedState.InnerColor = Color.White;
+            namRadioButton.CheckedState.InnerOffset = -4;
+            namRadioButton.Location = new Point(377, 130);
+            namRadioButton.Name = "namRadioButton";
+            namRadioButton.Size = new Size(70, 29);
+            namRadioButton.TabIndex = 77;
+            namRadioButton.Text = "Nam";
+            namRadioButton.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            namRadioButton.UncheckedState.BorderThickness = 2;
+            namRadioButton.UncheckedState.FillColor = Color.Transparent;
+            namRadioButton.UncheckedState.InnerColor = Color.Transparent;
+            // 
+            // soDienThoaiTextBox
+            // 
+            soDienThoaiTextBox.BorderColor = Color.FromArgb(0, 79, 111);
+            soDienThoaiTextBox.BorderRadius = 5;
+            soDienThoaiTextBox.CustomizableEdges = customizableEdges1;
+            soDienThoaiTextBox.DefaultText = "";
+            soDienThoaiTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            soDienThoaiTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            soDienThoaiTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            soDienThoaiTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            soDienThoaiTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            soDienThoaiTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
+            soDienThoaiTextBox.Location = new Point(691, 119);
+            soDienThoaiTextBox.Margin = new Padding(5, 5, 5, 5);
+            soDienThoaiTextBox.Name = "soDienThoaiTextBox";
+            soDienThoaiTextBox.PasswordChar = '\0';
+            soDienThoaiTextBox.PlaceholderText = "";
+            soDienThoaiTextBox.SelectedText = "";
+            soDienThoaiTextBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            soDienThoaiTextBox.Size = new Size(290, 42);
+            soDienThoaiTextBox.TabIndex = 76;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 14.25F);
+            label1.ForeColor = Color.FromArgb(0, 79, 111);
+            label1.Location = new Point(691, 94);
+            label1.Name = "label1";
+            label1.Size = new Size(121, 24);
+            label1.TabIndex = 75;
+            label1.Text = "Số điện thoại";
+            // 
+            // chonTaiKhoanButton
+            // 
+            chonTaiKhoanButton.CustomizableEdges = customizableEdges3;
+            chonTaiKhoanButton.DisabledState.BorderColor = Color.DarkGray;
+            chonTaiKhoanButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            chonTaiKhoanButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            chonTaiKhoanButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            chonTaiKhoanButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chonTaiKhoanButton.ForeColor = Color.White;
+            chonTaiKhoanButton.Location = new Point(377, 374);
+            chonTaiKhoanButton.Name = "chonTaiKhoanButton";
+            chonTaiKhoanButton.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            chonTaiKhoanButton.Size = new Size(142, 40);
+            chonTaiKhoanButton.TabIndex = 74;
+            chonTaiKhoanButton.Text = "Chọn tài khoản";
+            chonTaiKhoanButton.Click += chonTaiKhoanButton_Click;
+            // 
+            // trangThaiToggleSwitch
+            // 
+            trangThaiToggleSwitch.Checked = true;
+            trangThaiToggleSwitch.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            trangThaiToggleSwitch.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            trangThaiToggleSwitch.CheckedState.InnerBorderColor = Color.White;
+            trangThaiToggleSwitch.CheckedState.InnerColor = Color.White;
+            trangThaiToggleSwitch.CustomizableEdges = customizableEdges5;
+            trangThaiToggleSwitch.Location = new Point(207, 390);
+            trangThaiToggleSwitch.Name = "trangThaiToggleSwitch";
+            trangThaiToggleSwitch.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            trangThaiToggleSwitch.Size = new Size(44, 23);
+            trangThaiToggleSwitch.TabIndex = 73;
+            trangThaiToggleSwitch.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            trangThaiToggleSwitch.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            trangThaiToggleSwitch.UncheckedState.InnerBorderColor = Color.White;
+            trangThaiToggleSwitch.UncheckedState.InnerColor = Color.White;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Font = new Font("Microsoft Sans Serif", 14.25F);
             label8.ForeColor = Color.FromArgb(0, 79, 111);
-            label8.Location = new Point(692, 317);
+            label8.Location = new Point(57, 389);
             label8.Name = "label8";
             label8.Size = new Size(124, 24);
             label8.TabIndex = 72;
@@ -154,8 +250,8 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 79, 111);
-            panel1.Controls.Add(iconButton1);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(quayLaiButton);
+            panel1.Controls.Add(tieuDeFormLabel);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(5);
@@ -163,120 +259,123 @@
             panel1.Size = new Size(1038, 66);
             panel1.TabIndex = 71;
             // 
-            // iconButton1
+            // quayLaiButton
             // 
-            iconButton1.Dock = DockStyle.Right;
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
-            iconButton1.IconColor = Color.White;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(909, 0);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(129, 66);
-            iconButton1.TabIndex = 1;
-            iconButton1.UseVisualStyleBackColor = true;
+            quayLaiButton.Dock = DockStyle.Right;
+            quayLaiButton.FlatAppearance.BorderSize = 0;
+            quayLaiButton.FlatStyle = FlatStyle.Flat;
+            quayLaiButton.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
+            quayLaiButton.IconColor = Color.White;
+            quayLaiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            quayLaiButton.Location = new Point(909, 0);
+            quayLaiButton.Name = "quayLaiButton";
+            quayLaiButton.Size = new Size(129, 66);
+            quayLaiButton.TabIndex = 1;
+            quayLaiButton.UseVisualStyleBackColor = true;
+            quayLaiButton.Click += quayLaiButton_Click;
             // 
-            // label1
+            // tieuDeFormLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(38, 19);
-            label1.Margin = new Padding(5, 0, 5, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(213, 29);
-            label1.TabIndex = 0;
-            label1.Text = "Chi tiết nhân viên";
+            tieuDeFormLabel.AutoSize = true;
+            tieuDeFormLabel.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
+            tieuDeFormLabel.ForeColor = Color.White;
+            tieuDeFormLabel.Location = new Point(38, 19);
+            tieuDeFormLabel.Margin = new Padding(5, 0, 5, 0);
+            tieuDeFormLabel.Name = "tieuDeFormLabel";
+            tieuDeFormLabel.Size = new Size(213, 29);
+            tieuDeFormLabel.TabIndex = 0;
+            tieuDeFormLabel.Text = "Chi tiết nhân viên";
             // 
-            // btnLuu
+            // luuButton
             // 
-            btnLuu.BorderRadius = 5;
-            btnLuu.CustomizableEdges = customizableEdges3;
-            btnLuu.DisabledState.BorderColor = Color.DarkGray;
-            btnLuu.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnLuu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnLuu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnLuu.FillColor = Color.FromArgb(0, 79, 111);
-            btnLuu.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLuu.ForeColor = Color.White;
-            btnLuu.Location = new Point(746, 402);
-            btnLuu.Name = "btnLuu";
-            btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnLuu.Size = new Size(189, 53);
-            btnLuu.TabIndex = 70;
-            btnLuu.Text = "Lưu";
+            luuButton.BorderRadius = 5;
+            luuButton.CustomizableEdges = customizableEdges7;
+            luuButton.DisabledState.BorderColor = Color.DarkGray;
+            luuButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            luuButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            luuButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            luuButton.FillColor = Color.FromArgb(0, 79, 111);
+            luuButton.Font = new Font("Microsoft Sans Serif", 12F);
+            luuButton.ForeColor = Color.White;
+            luuButton.Location = new Point(818, 451);
+            luuButton.Name = "luuButton";
+            luuButton.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            luuButton.Size = new Size(189, 53);
+            luuButton.TabIndex = 70;
+            luuButton.Text = "Lưu";
+            luuButton.Click += luuButton_Click;
             // 
-            // btnHuyBo
+            // huyBoButton
             // 
-            btnHuyBo.BorderColor = Color.FromArgb(0, 79, 111);
-            btnHuyBo.BorderRadius = 5;
-            btnHuyBo.BorderThickness = 1;
-            btnHuyBo.CustomizableEdges = customizableEdges5;
-            btnHuyBo.DisabledState.BorderColor = Color.DarkGray;
-            btnHuyBo.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnHuyBo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnHuyBo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnHuyBo.FillColor = Color.White;
-            btnHuyBo.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnHuyBo.ForeColor = Color.FromArgb(0, 79, 111);
-            btnHuyBo.Location = new Point(551, 402);
-            btnHuyBo.Name = "btnHuyBo";
-            btnHuyBo.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnHuyBo.Size = new Size(189, 53);
-            btnHuyBo.TabIndex = 69;
-            btnHuyBo.Text = "Huỷ bỏ";
+            huyBoButton.BorderColor = Color.FromArgb(0, 79, 111);
+            huyBoButton.BorderRadius = 5;
+            huyBoButton.BorderThickness = 1;
+            huyBoButton.CustomizableEdges = customizableEdges9;
+            huyBoButton.DisabledState.BorderColor = Color.DarkGray;
+            huyBoButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            huyBoButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            huyBoButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            huyBoButton.FillColor = Color.White;
+            huyBoButton.Font = new Font("Microsoft Sans Serif", 12F);
+            huyBoButton.ForeColor = Color.FromArgb(0, 79, 111);
+            huyBoButton.Location = new Point(623, 451);
+            huyBoButton.Name = "huyBoButton";
+            huyBoButton.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            huyBoButton.Size = new Size(189, 53);
+            huyBoButton.TabIndex = 69;
+            huyBoButton.Text = "Huỷ bỏ";
+            huyBoButton.Click += huyBoButton_Click;
             // 
-            // txtEmail
+            // emailTextBox
             // 
-            txtEmail.BorderColor = Color.FromArgb(0, 79, 111);
-            txtEmail.BorderRadius = 5;
-            txtEmail.CustomizableEdges = customizableEdges7;
-            txtEmail.DefaultText = "";
-            txtEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtEmail.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtEmail.Location = new Point(692, 115);
-            txtEmail.Margin = new Padding(5, 5, 5, 5);
-            txtEmail.Name = "txtEmail";
-            txtEmail.PasswordChar = '\0';
-            txtEmail.PlaceholderText = "";
-            txtEmail.SelectedText = "";
-            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            txtEmail.Size = new Size(290, 40);
-            txtEmail.TabIndex = 66;
+            emailTextBox.BorderColor = Color.FromArgb(0, 79, 111);
+            emailTextBox.BorderRadius = 5;
+            emailTextBox.CustomizableEdges = customizableEdges11;
+            emailTextBox.DefaultText = "";
+            emailTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            emailTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            emailTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            emailTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            emailTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            emailTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
+            emailTextBox.Location = new Point(693, 219);
+            emailTextBox.Margin = new Padding(5, 5, 5, 5);
+            emailTextBox.Name = "emailTextBox";
+            emailTextBox.PasswordChar = '\0';
+            emailTextBox.PlaceholderText = "";
+            emailTextBox.SelectedText = "";
+            emailTextBox.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            emailTextBox.Size = new Size(290, 40);
+            emailTextBox.TabIndex = 66;
             // 
-            // txtDiaChi
+            // diaChiTextBox
             // 
-            txtDiaChi.BorderColor = Color.FromArgb(0, 79, 111);
-            txtDiaChi.BorderRadius = 5;
-            txtDiaChi.CustomizableEdges = customizableEdges9;
-            txtDiaChi.DefaultText = "";
-            txtDiaChi.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtDiaChi.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtDiaChi.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtDiaChi.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtDiaChi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDiaChi.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDiaChi.Location = new Point(692, 219);
-            txtDiaChi.Margin = new Padding(5, 5, 5, 5);
-            txtDiaChi.Name = "txtDiaChi";
-            txtDiaChi.PasswordChar = '\0';
-            txtDiaChi.PlaceholderText = "";
-            txtDiaChi.SelectedText = "";
-            txtDiaChi.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            txtDiaChi.Size = new Size(290, 40);
-            txtDiaChi.TabIndex = 65;
+            diaChiTextBox.BorderColor = Color.FromArgb(0, 79, 111);
+            diaChiTextBox.BorderRadius = 5;
+            diaChiTextBox.CustomizableEdges = customizableEdges13;
+            diaChiTextBox.DefaultText = "";
+            diaChiTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            diaChiTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            diaChiTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            diaChiTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            diaChiTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            diaChiTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
+            diaChiTextBox.Location = new Point(693, 325);
+            diaChiTextBox.Margin = new Padding(5, 5, 5, 5);
+            diaChiTextBox.Name = "diaChiTextBox";
+            diaChiTextBox.PasswordChar = '\0';
+            diaChiTextBox.PlaceholderText = "";
+            diaChiTextBox.SelectedText = "";
+            diaChiTextBox.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            diaChiTextBox.Size = new Size(290, 40);
+            diaChiTextBox.TabIndex = 65;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Font = new Font("Microsoft Sans Serif", 14.25F);
             label10.ForeColor = Color.FromArgb(0, 79, 111);
-            label10.Location = new Point(692, 86);
+            label10.Location = new Point(693, 190);
             label10.Name = "label10";
             label10.Size = new Size(57, 24);
             label10.TabIndex = 64;
@@ -285,90 +384,69 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Font = new Font("Microsoft Sans Serif", 14.25F);
             label9.ForeColor = Color.FromArgb(0, 79, 111);
-            label9.Location = new Point(692, 190);
+            label9.Location = new Point(693, 296);
             label9.Name = "label9";
             label9.Size = new Size(67, 24);
             label9.TabIndex = 63;
             label9.Text = "Địa chỉ";
             // 
-            // txtSoDienThoai
+            // phanQuyenTextBox
             // 
-            txtSoDienThoai.BorderColor = Color.FromArgb(0, 79, 111);
-            txtSoDienThoai.BorderRadius = 5;
-            txtSoDienThoai.CustomizableEdges = customizableEdges11;
-            txtSoDienThoai.DefaultText = "";
-            txtSoDienThoai.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtSoDienThoai.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtSoDienThoai.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtSoDienThoai.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtSoDienThoai.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSoDienThoai.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSoDienThoai.Location = new Point(57, 325);
-            txtSoDienThoai.Margin = new Padding(5, 5, 5, 5);
-            txtSoDienThoai.Name = "txtSoDienThoai";
-            txtSoDienThoai.PasswordChar = '\0';
-            txtSoDienThoai.PlaceholderText = "";
-            txtSoDienThoai.SelectedText = "";
-            txtSoDienThoai.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            txtSoDienThoai.Size = new Size(290, 40);
-            txtSoDienThoai.TabIndex = 62;
+            phanQuyenTextBox.BorderColor = Color.FromArgb(0, 79, 111);
+            phanQuyenTextBox.BorderRadius = 5;
+            phanQuyenTextBox.CustomizableEdges = customizableEdges15;
+            phanQuyenTextBox.DefaultText = "";
+            phanQuyenTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            phanQuyenTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            phanQuyenTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            phanQuyenTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            phanQuyenTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            phanQuyenTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
+            phanQuyenTextBox.Location = new Point(57, 325);
+            phanQuyenTextBox.Margin = new Padding(5, 5, 5, 5);
+            phanQuyenTextBox.Name = "phanQuyenTextBox";
+            phanQuyenTextBox.PasswordChar = '\0';
+            phanQuyenTextBox.PlaceholderText = "";
+            phanQuyenTextBox.SelectedText = "";
+            phanQuyenTextBox.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            phanQuyenTextBox.Size = new Size(290, 40);
+            phanQuyenTextBox.TabIndex = 62;
             // 
-            // dtpNgaySinh
+            // ngaySinhDateTimePicker
             // 
-            dtpNgaySinh.BackColor = Color.FromArgb(223, 243, 252);
-            dtpNgaySinh.BorderRadius = 5;
-            dtpNgaySinh.Checked = true;
-            dtpNgaySinh.CustomizableEdges = customizableEdges13;
-            dtpNgaySinh.FillColor = Color.Transparent;
-            dtpNgaySinh.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dtpNgaySinh.Format = DateTimePickerFormat.Long;
-            dtpNgaySinh.Location = new Point(377, 219);
-            dtpNgaySinh.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            dtpNgaySinh.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            dtpNgaySinh.Name = "dtpNgaySinh";
-            dtpNgaySinh.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            dtpNgaySinh.Size = new Size(290, 40);
-            dtpNgaySinh.TabIndex = 61;
-            dtpNgaySinh.Value = new DateTime(2023, 11, 17, 9, 22, 37, 260);
-            // 
-            // cbbGioiTinh
-            // 
-            cbbGioiTinh.BackColor = Color.Transparent;
-            cbbGioiTinh.BorderColor = Color.FromArgb(0, 79, 111);
-            cbbGioiTinh.BorderRadius = 5;
-            cbbGioiTinh.CustomizableEdges = customizableEdges15;
-            cbbGioiTinh.DrawMode = DrawMode.OwnerDrawFixed;
-            cbbGioiTinh.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbbGioiTinh.DropDownWidth = 30;
-            cbbGioiTinh.FocusedColor = Color.FromArgb(94, 148, 255);
-            cbbGioiTinh.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbbGioiTinh.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            cbbGioiTinh.ForeColor = Color.FromArgb(68, 88, 112);
-            cbbGioiTinh.ItemHeight = 30;
-            cbbGioiTinh.Items.AddRange(new object[] { "Nam", "Nữ ", "Bede" });
-            cbbGioiTinh.Location = new Point(377, 119);
-            cbbGioiTinh.Name = "cbbGioiTinh";
-            cbbGioiTinh.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            cbbGioiTinh.Size = new Size(290, 36);
-            cbbGioiTinh.TabIndex = 60;
+            ngaySinhDateTimePicker.BackColor = Color.FromArgb(223, 243, 252);
+            ngaySinhDateTimePicker.BorderRadius = 5;
+            ngaySinhDateTimePicker.CustomizableEdges = customizableEdges17;
+            ngaySinhDateTimePicker.FillColor = Color.Transparent;
+            ngaySinhDateTimePicker.Font = new Font("Microsoft Sans Serif", 14.25F);
+            ngaySinhDateTimePicker.Format = DateTimePickerFormat.Long;
+            ngaySinhDateTimePicker.Location = new Point(366, 219);
+            ngaySinhDateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            ngaySinhDateTimePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            ngaySinhDateTimePicker.Name = "ngaySinhDateTimePicker";
+            ngaySinhDateTimePicker.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            ngaySinhDateTimePicker.ShowCheckBox = true;
+            ngaySinhDateTimePicker.Size = new Size(301, 40);
+            ngaySinhDateTimePicker.TabIndex = 61;
+            ngaySinhDateTimePicker.Value = new DateTime(2023, 11, 17, 9, 22, 37, 260);
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Font = new Font("Microsoft Sans Serif", 14.25F);
             label7.ForeColor = Color.FromArgb(0, 79, 111);
             label7.Location = new Point(57, 296);
             label7.Name = "label7";
-            label7.Size = new Size(121, 24);
+            label7.Size = new Size(112, 24);
             label7.TabIndex = 59;
-            label7.Text = "Số điện thoại";
+            label7.Text = "Phân quyền";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Microsoft Sans Serif", 14.25F);
             label6.ForeColor = Color.FromArgb(0, 79, 111);
             label6.Location = new Point(377, 190);
             label6.Name = "label6";
@@ -379,7 +457,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Microsoft Sans Serif", 14.25F);
             label5.ForeColor = Color.FromArgb(0, 79, 111);
             label5.Location = new Point(377, 94);
             label5.Name = "label5";
@@ -390,7 +468,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Microsoft Sans Serif", 14.25F);
             label4.ForeColor = Color.FromArgb(0, 79, 111);
             label4.Location = new Point(377, 296);
             label4.Name = "label4";
@@ -401,7 +479,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 14.25F);
             label3.ForeColor = Color.FromArgb(0, 79, 111);
             label3.Location = new Point(57, 190);
             label3.Name = "label3";
@@ -412,7 +490,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 14.25F);
             label2.ForeColor = Color.FromArgb(0, 79, 111);
             label2.Location = new Point(59, 94);
             label2.Name = "label2";
@@ -420,83 +498,84 @@
             label2.TabIndex = 54;
             label2.Text = "Mã nhân viên";
             // 
-            // txtTenTaiKhoan
+            // tenTaiKhoanTextBox
             // 
-            txtTenTaiKhoan.BorderColor = Color.FromArgb(0, 79, 111);
-            txtTenTaiKhoan.BorderRadius = 5;
-            txtTenTaiKhoan.CustomizableEdges = customizableEdges17;
-            txtTenTaiKhoan.DefaultText = "";
-            txtTenTaiKhoan.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtTenTaiKhoan.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtTenTaiKhoan.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtTenTaiKhoan.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtTenTaiKhoan.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTenTaiKhoan.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTenTaiKhoan.Location = new Point(377, 325);
-            txtTenTaiKhoan.Margin = new Padding(5, 5, 5, 5);
-            txtTenTaiKhoan.Name = "txtTenTaiKhoan";
-            txtTenTaiKhoan.PasswordChar = '\0';
-            txtTenTaiKhoan.PlaceholderText = "";
-            txtTenTaiKhoan.SelectedText = "";
-            txtTenTaiKhoan.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            txtTenTaiKhoan.Size = new Size(290, 40);
-            txtTenTaiKhoan.TabIndex = 53;
+            tenTaiKhoanTextBox.BorderColor = Color.FromArgb(0, 79, 111);
+            tenTaiKhoanTextBox.BorderRadius = 5;
+            tenTaiKhoanTextBox.CustomizableEdges = customizableEdges19;
+            tenTaiKhoanTextBox.DefaultText = "";
+            tenTaiKhoanTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tenTaiKhoanTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tenTaiKhoanTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tenTaiKhoanTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tenTaiKhoanTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tenTaiKhoanTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
+            tenTaiKhoanTextBox.Location = new Point(377, 325);
+            tenTaiKhoanTextBox.Margin = new Padding(5, 5, 5, 5);
+            tenTaiKhoanTextBox.Name = "tenTaiKhoanTextBox";
+            tenTaiKhoanTextBox.PasswordChar = '\0';
+            tenTaiKhoanTextBox.PlaceholderText = "";
+            tenTaiKhoanTextBox.SelectedText = "";
+            tenTaiKhoanTextBox.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            tenTaiKhoanTextBox.Size = new Size(290, 40);
+            tenTaiKhoanTextBox.TabIndex = 53;
             // 
-            // txtTenNhanVien
+            // tenNhanVienTextBox
             // 
-            txtTenNhanVien.BorderColor = Color.FromArgb(0, 79, 111);
-            txtTenNhanVien.BorderRadius = 5;
-            txtTenNhanVien.CustomizableEdges = customizableEdges19;
-            txtTenNhanVien.DefaultText = "";
-            txtTenNhanVien.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtTenNhanVien.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtTenNhanVien.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtTenNhanVien.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtTenNhanVien.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTenNhanVien.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTenNhanVien.Location = new Point(57, 219);
-            txtTenNhanVien.Margin = new Padding(5, 5, 5, 5);
-            txtTenNhanVien.Name = "txtTenNhanVien";
-            txtTenNhanVien.PasswordChar = '\0';
-            txtTenNhanVien.PlaceholderText = "";
-            txtTenNhanVien.SelectedText = "";
-            txtTenNhanVien.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            txtTenNhanVien.Size = new Size(290, 40);
-            txtTenNhanVien.TabIndex = 52;
+            tenNhanVienTextBox.BorderColor = Color.FromArgb(0, 79, 111);
+            tenNhanVienTextBox.BorderRadius = 5;
+            tenNhanVienTextBox.CustomizableEdges = customizableEdges21;
+            tenNhanVienTextBox.DefaultText = "";
+            tenNhanVienTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tenNhanVienTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tenNhanVienTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tenNhanVienTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tenNhanVienTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tenNhanVienTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
+            tenNhanVienTextBox.Location = new Point(57, 219);
+            tenNhanVienTextBox.Margin = new Padding(5, 5, 5, 5);
+            tenNhanVienTextBox.Name = "tenNhanVienTextBox";
+            tenNhanVienTextBox.PasswordChar = '\0';
+            tenNhanVienTextBox.PlaceholderText = "";
+            tenNhanVienTextBox.SelectedText = "";
+            tenNhanVienTextBox.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            tenNhanVienTextBox.Size = new Size(290, 40);
+            tenNhanVienTextBox.TabIndex = 52;
             // 
-            // txtMaNhanVien
+            // maNhanVienTextBox
             // 
-            txtMaNhanVien.BorderColor = Color.FromArgb(0, 79, 111);
-            txtMaNhanVien.BorderRadius = 5;
-            txtMaNhanVien.CustomizableEdges = customizableEdges21;
-            txtMaNhanVien.DefaultText = "";
-            txtMaNhanVien.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtMaNhanVien.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtMaNhanVien.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtMaNhanVien.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtMaNhanVien.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMaNhanVien.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMaNhanVien.Location = new Point(59, 119);
-            txtMaNhanVien.Margin = new Padding(5, 5, 5, 5);
-            txtMaNhanVien.Name = "txtMaNhanVien";
-            txtMaNhanVien.PasswordChar = '\0';
-            txtMaNhanVien.PlaceholderText = "";
-            txtMaNhanVien.SelectedText = "";
-            txtMaNhanVien.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            txtMaNhanVien.Size = new Size(290, 40);
-            txtMaNhanVien.TabIndex = 51;
+            maNhanVienTextBox.BorderColor = Color.FromArgb(0, 79, 111);
+            maNhanVienTextBox.BorderRadius = 5;
+            maNhanVienTextBox.CustomizableEdges = customizableEdges23;
+            maNhanVienTextBox.DefaultText = "";
+            maNhanVienTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            maNhanVienTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            maNhanVienTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            maNhanVienTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            maNhanVienTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            maNhanVienTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
+            maNhanVienTextBox.Location = new Point(59, 119);
+            maNhanVienTextBox.Margin = new Padding(5, 5, 5, 5);
+            maNhanVienTextBox.Name = "maNhanVienTextBox";
+            maNhanVienTextBox.PasswordChar = '\0';
+            maNhanVienTextBox.PlaceholderText = "";
+            maNhanVienTextBox.SelectedText = "";
+            maNhanVienTextBox.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            maNhanVienTextBox.Size = new Size(290, 40);
+            maNhanVienTextBox.TabIndex = 51;
             // 
             // ChiTietNhanVienForm
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1038, 493);
+            ClientSize = new Size(1038, 535);
             Controls.Add(panel2);
-            Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("Segoe UI", 14.25F);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
             Name = "ChiTietNhanVienForm";
             Text = "CHI TIẾT NHÂN VIÊN";
+            Load += ChiTietNhanVienForm_Load;
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -510,28 +589,32 @@
         private Panel panel2;
         private Panel panel3;
         private Panel panel1;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private Label label1;
-        private Guna.UI2.WinForms.Guna2Button btnLuu;
-        private Guna.UI2.WinForms.Guna2Button btnHuyBo;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmail;
-        private Guna.UI2.WinForms.Guna2TextBox txtDiaChi;
+        private FontAwesome.Sharp.IconButton quayLaiButton;
+        private Label tieuDeFormLabel;
+        private Guna.UI2.WinForms.Guna2Button luuButton;
+        private Guna.UI2.WinForms.Guna2Button huyBoButton;
+        private Guna.UI2.WinForms.Guna2TextBox emailTextBox;
+        private Guna.UI2.WinForms.Guna2TextBox diaChiTextBox;
         private Label label10;
         private Label label9;
-        private Guna.UI2.WinForms.Guna2TextBox txtSoDienThoai;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNgaySinh;
-        private Guna.UI2.WinForms.Guna2ComboBox cbbGioiTinh;
+        private Guna.UI2.WinForms.Guna2TextBox phanQuyenTextBox;
+        private Guna.UI2.WinForms.Guna2DateTimePicker ngaySinhDateTimePicker;
         private Label label7;
         private Label label6;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label label2;
-        private Guna.UI2.WinForms.Guna2TextBox txtTenTaiKhoan;
-        private Guna.UI2.WinForms.Guna2TextBox txtTenNhanVien;
-        private Guna.UI2.WinForms.Guna2TextBox txtMaNhanVien;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch tsDangTonTai;
+        private Guna.UI2.WinForms.Guna2TextBox tenTaiKhoanTextBox;
+        private Guna.UI2.WinForms.Guna2TextBox tenNhanVienTextBox;
+        private Guna.UI2.WinForms.Guna2TextBox maNhanVienTextBox;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch trangThaiToggleSwitch;
         private Label label8;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
+        private Guna.UI2.WinForms.Guna2Button chonTaiKhoanButton;
+        private Guna.UI2.WinForms.Guna2TextBox soDienThoaiTextBox;
+        private Label label1;
+        private Guna.UI2.WinForms.Guna2RadioButton nuRadioButton;
+        private Guna.UI2.WinForms.Guna2RadioButton namRadioButton;
     }
 }

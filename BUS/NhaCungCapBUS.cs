@@ -44,9 +44,6 @@ namespace BUS
             if (!string.IsNullOrEmpty(email) && !InputValidate.EmailValidate(email))
                 return "Vui lòng nhập đúng email!";
 
-            if (nhaCungCapDAO.KiemTraNhaCungCapDaTonTai(tenNhaCungCap.ToLower()))
-                return "Tên nhà cung cấp đã tồn tại, vui lòng chọn tên khác!";
-
             NhaCungCap nhaCungCap = new NhaCungCap();
 
             nhaCungCap.maNhaCungCap = maNhaCungCap;

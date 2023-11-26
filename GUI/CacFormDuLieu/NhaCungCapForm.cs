@@ -1,4 +1,5 @@
 ﻿using BUS;
+using BUS.OtherFunctions;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -43,6 +44,65 @@ namespace GUI
                 nhaCungCapDataGridView.Rows[i].Cells[3].Value = listNhaCungCap[i].soDienThoai;
                 nhaCungCapDataGridView.Rows[i].Cells[4].Value = listNhaCungCap[i].email;
                 nhaCungCapDataGridView.Rows[i].Cells[5].Value = listNhaCungCap[i].diaChi;
+            }
+        }
+
+        private void timKiemButton_Click(object sender, EventArgs e)
+        {
+            string tuKhoa = timKiemTextBox.Text;
+
+            listNhaCungCap = nhaCungCapBUS.TimKiemNhaCungCap(tuKhoa);
+
+            LoadDataToDataGridView(listNhaCungCap);
+        }
+
+        private void timKiemTextBox_TextChanged(object sender, EventArgs e)
+        {
+            timKiemButton_Click(sender, e);
+        }
+
+        internal void lamMoiButton_Click(object sender, EventArgs e)
+        {
+            timKiemTextBox.Clear();
+
+            listNhaCungCap = nhaCungCapBUS.LayDanhSachNhaCungCap();
+
+            LoadDataToDataGridView(listNhaCungCap);
+        }
+
+        private void themMoiButton_Click(object sender, EventArgs e)
+        {
+            new ChiTietNhaCungCapForm("Thêm", this).Show();
+        }
+
+        private void xuatExcelButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+            saveFileDialog.Title = "Chọn vị trí lưu file Excel";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+                new XuatExcel(filePath).XuatExcelNhaCungCap(listNhaCungCap);
+                MessageBox.Show("File Excel đã được tạo tại: " + filePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void nhaCungCapDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            NhaCungCap nhaCungCap = nhaCungCapBUS.LayNhaCungCapTheoMa(nhaCungCapDataGridView["maNhaCungCapColumn", e.RowIndex].Value.ToString());
+
+            string columnName = nhaCungCapDataGridView.Columns[e.ColumnIndex].Name;
+
+            if (columnName.Equals("infoButtonColumn"))
+            {
+                new ChiTietNhaCungCapForm(nhaCungCap, "Chi tiết", this).Show();
+            }
+
+            if (columnName.Equals("editButtonColumn"))
+            {
+                new ChiTietNhaCungCapForm(nhaCungCap, "Sửa", this).Show();
             }
         }
 
