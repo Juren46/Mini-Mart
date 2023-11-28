@@ -28,39 +28,48 @@ namespace BUS
             return taiKhoanDAO.LayTaiKhoanTheoTen(tenTaiKhoan);
         }
 
+        public bool KiemTraTaiKhoanDangHoatDong(string tenTaiKhoan)
+        {
+            return taiKhoanDAO.KiemTraTaiKhoanDangHoatDong(tenTaiKhoan);
+        }
+
+        public bool KiemTraTaiKhoanCoNguoiDung(string tenTaiKhoan)
+        {
+            return taiKhoanDAO.KiemTraTaiKhoanCoNguoiDung(tenTaiKhoan);
+        }
+
         public string KiemTraDangNhap(string tenTaiKhoan, string matKhau)
         {
             if (string.IsNullOrEmpty(tenTaiKhoan) || string.IsNullOrEmpty(matKhau))
                 return "Vui lòng nhập đầy đủ thông tin!";
             else
             {
-                
-
                 if (!taiKhoanDAO.KiemTraDangNhap(tenTaiKhoan, matKhau))
                     return "Thông tin đăng nhập không chính xác!";
                 else
                 {
-                    if (!taiKhoanDAO.KiemTraTaiKhoanCoNguoiDung(tenTaiKhoan, matKhau))
+                    if (!taiKhoanDAO.KiemTraTaiKhoanCoNguoiDung(tenTaiKhoan))
                         return "Tài khoản chưa đăng ký người dùng!";
+                    else if (!KiemTraTaiKhoanDangHoatDong(tenTaiKhoan))
+                        return "Tài khoản đang tạm thời bị đình chỉ hoặc đã bị xóa!";
                     else
                         return "Đăng nhập thành công!";
                 }
-                    
             }
         }
 
-        public string ThemTaiKhoan(string tenPhanQuyen, string tenTaiKhoan, string matKhau)     //Chọn phân quyền bằng combobox trong GUI nên sẽ dùng tên phân quyền
+        public string ThemTaiKhoan(string maPhanQuyen, string tenTaiKhoan, string matKhau)
         {
-            if (string.IsNullOrEmpty(tenPhanQuyen) || string.IsNullOrEmpty(tenTaiKhoan) || string.IsNullOrEmpty(matKhau))
+            if (string.IsNullOrEmpty(maPhanQuyen) || string.IsNullOrEmpty(tenTaiKhoan) || string.IsNullOrEmpty(matKhau))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
             if (taiKhoanDAO.KiemTraTaiKhoanDaTonTai(tenTaiKhoan))
                 return "Tên tài khoản đã tồn tại, vui lòng chọn tên khác!";           
 
-            tenTaiKhoan = tenTaiKhoan.Trim();
-            matKhau = matKhau.Trim();
+            tenTaiKhoan = tenTaiKhoan;
+            matKhau = matKhau;
 
-            PhanQuyen phanQuyen = new PhanQuyenBUS().LayPhanQuyenTheoTen(tenPhanQuyen);
+            PhanQuyen phanQuyen = new PhanQuyenBUS().LayPhanQuyenTheoMa(maPhanQuyen);
 
             TaiKhoan taiKhoan = new TaiKhoan(phanQuyen.maPhanQuyen, tenTaiKhoan, matKhau);
 
@@ -92,12 +101,27 @@ namespace BUS
                 return "Đổi mật khẩu thất bại!";
         }
 
-        public string XoaTaiKhoan(string tenTaiKhoan)
+        public string SuaTaiKhoan(string tenTaiKhoan, string matKhau, string trangThai)
         {
-            if (taiKhoanDAO.XoaTaiKhoan(tenTaiKhoan))
-                return "Xóa tài khoản thành công!";
+            if (taiKhoanDAO.SuaTaiKhoan(tenTaiKhoan, matKhau, trangThai))
+                return "Chỉnh sửa thông tin tài khoản thành công!";
+            else
+                return "Chỉnh sửa thông tin tài khoản thất bại!";
+        }
 
-            return "Xóa tài khoản thất bại!";
+        public string VoHieuHoaTaiKhoan(string tenTaiKhoan, string trangThai)
+        {
+            bool hanhDong = false;
+            
+            if (trangThai.Equals("Xóa"))
+                hanhDong = taiKhoanDAO.VoHieuHoaTaiKhoan(tenTaiKhoan, "Đã xóa");
+            else if (trangThai.Equals("Đình chỉ"))
+                hanhDong = taiKhoanDAO.VoHieuHoaTaiKhoan(tenTaiKhoan, "Tạm đình chỉ");
+            
+            if (hanhDong)   
+                return trangThai + " tài khoản thành công!";
+            else
+                return trangThai + " tài khoản thất bại!";
         }
 
         public List<TaiKhoan> TimKiemTaiKhoan(string tuKhoa, string maPhanQuyen, string trangThai)
@@ -105,21 +129,6 @@ namespace BUS
             tuKhoa = tuKhoa.Trim().ToLower();
 
             return taiKhoanDAO.TimKiemTaiKhoan(tuKhoa, maPhanQuyen, trangThai);
-        }
-
-        public List<TaiKhoan> LocTaiKhoanTheoPhanQuyen(string tenPhanQuyen)
-        {
-            return taiKhoanDAO.LocTaiKhoanTheoPhanQuyen(tenPhanQuyen);
-        }
-
-        public List<TaiKhoan> LayDanhSachTaiKhoanChuaDung()
-        {
-            return taiKhoanDAO.LayDanhSachTaiKhoanChuaDung();
-        }
-
-        public bool KiemTraTaiKhoanCoNguoiDung(string tenTaiKhoan, string matKhau)
-        {
-            return taiKhoanDAO.KiemTraTaiKhoanCoNguoiDung(tenTaiKhoan, matKhau);
         }
     }
 }

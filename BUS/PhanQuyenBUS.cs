@@ -27,21 +27,16 @@ namespace BUS
             return phanQuyenDAO.LayPhanQuyenTheoMa(maPhanQuyen);
         }
 
-        public PhanQuyen LayPhanQuyenTheoTen(string tenPhanQuyen)
-        {
-            return phanQuyenDAO.LayPhanQuyenTheoTen(tenPhanQuyen);
-        }
-
         public PhanQuyen LayPhanQuyenTheoTenTaiKhoan(string tenTaiKhoan)
         {
             return phanQuyenDAO.LayPhanQuyenTheoTenTaiKhoan(tenTaiKhoan);
         }
 
-        public List<PhanQuyen> TimKiemPhanQuyen(string keyword)
+        public List<PhanQuyen> TimKiemPhanQuyen(string tuKhoa)
         {
-            keyword = keyword.Trim().ToLower();
+            tuKhoa = tuKhoa.Trim().ToLower();
 
-            return phanQuyenDAO.TimKiemPhanQuyen(keyword);
+            return phanQuyenDAO.TimKiemPhanQuyen(tuKhoa);
         }
     }
 }

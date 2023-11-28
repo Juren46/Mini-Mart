@@ -2,6 +2,7 @@
 using BUS.OtherFunctions;
 using DocumentFormat.OpenXml.Wordprocessing;
 using DTO;
+using GUI.CacFormChiTiet;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,6 +39,10 @@ namespace GUI
             phanQuyenComboBox.DataSource = listPhanQuyen;
             phanQuyenComboBox.DisplayMember = "tenPhanQuyen";
             phanQuyenComboBox.SelectedIndex = -1;
+
+            trangThaiComboBox.SelectedIndex = 0;
+
+            xoaTatCaButton.Visible = false;
         }
 
         private void LoadDataToDataGridView(List<TaiKhoan> listTaiKhoan)
@@ -55,33 +60,64 @@ namespace GUI
             }
         }
 
+        private void trangThaiComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (trangThaiComboBox.SelectedItem != null)
+            {
+                /*timKiemTextBox.Clear();
+
+                string maPhanQuyen = "";
+                if (phanQuyenComboBox.SelectedValue != null)
+                {
+                    PhanQuyen phanQuyen = phanQuyenComboBox.SelectedValue as PhanQuyen;
+                    maPhanQuyen = phanQuyen.maPhanQuyen;
+                }
+
+                string trangThai = trangThaiComboBox.SelectedItem.ToString();
+
+                listTaiKhoan = taiKhoanBUS.TimKiemTaiKhoan("", maPhanQuyen, trangThai);
+
+                LoadDataToDataGridView(listTaiKhoan);*/
+                timKiemButton_Click(sender, e);
+            }
+        }
+
         private void phanQuyenComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (phanQuyenComboBox.SelectedIndex != -1)
+            if (phanQuyenComboBox.SelectedValue != null)
             {
+                timKiemTextBox.Clear();
+
+                /*string trangThai = "";
+                if (trangThaiComboBox.SelectedItem != null)
+                    trangThai = trangThaiComboBox.SelectedItem.ToString();
+
                 PhanQuyen phanQuyen = phanQuyenComboBox.SelectedValue as PhanQuyen;
                 string maPhanQuyen = phanQuyen.maPhanQuyen;
 
-                listTaiKhoan = taiKhoanBUS.TimKiemTaiKhoan("", maPhanQuyen, "");
+                listTaiKhoan = taiKhoanBUS.TimKiemTaiKhoan("", maPhanQuyen, trangThai);
 
-                LoadDataToDataGridView(listTaiKhoan);
+                LoadDataToDataGridView(listTaiKhoan);*/
+                timKiemButton_Click(sender, e);
             }
         }
 
         private void timKiemButton_Click(object sender, EventArgs e)
         {
             string tuKhoa = timKiemTextBox.Text;
+
             string maPhanQuyen = "";
             if (phanQuyenComboBox.SelectedValue != null)
             {
                 PhanQuyen phanQuyen = phanQuyenComboBox.SelectedValue as PhanQuyen;
                 maPhanQuyen = phanQuyen.maPhanQuyen;
             }
-            string trangThai = "";  //CHỜ CHUYỂN TOGGLE SWITCH TRẠNG THÁI THÀNH COMBO BOX
-            /*if (trangThaiComboBox.SelectedValue != null)
+
+            string trangThai = "";
+            if (trangThaiComboBox.SelectedItem != null)
             {
-                trangThai = trangThaiComboBox.SelectedItem;
-            }*/
+                trangThai = trangThaiComboBox.SelectedItem.ToString();
+            }
 
             listTaiKhoan = taiKhoanBUS.TimKiemTaiKhoan(tuKhoa, maPhanQuyen, trangThai);
 
@@ -94,10 +130,12 @@ namespace GUI
             timKiemButton_Click(sender, e);
         }
 
-        private void lamMoiButton_Click(object sender, EventArgs e)
+        internal void lamMoiButton_Click(object sender, EventArgs e)
         {
             phanQuyenComboBox.SelectedItem = null;
             phanQuyenComboBox.SelectedIndex = -1;
+            trangThaiComboBox.SelectedItem = null;
+            trangThaiComboBox.SelectedIndex = 0;
             timKiemTextBox.Clear();
 
             listTaiKhoan = taiKhoanBUS.LayDanhSachTaiKhoan();
@@ -123,20 +161,34 @@ namespace GUI
 
         private void themMoiButton_Click(object sender, EventArgs e)
         {
-
+            new TestChiTietTaiKhoanForm(this, "Thêm").Show();
         }
 
         private void taiKhoanDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == taiKhoanDataGridView.Columns["deleteButtonColumn"].Index && e.RowIndex >= 0)
+            TaiKhoan taiKhoan = taiKhoanBUS.LayTaiKhoanTheoTen(taiKhoanDataGridView.Rows[e.RowIndex].Cells["tenTaiKhoanColumn"].Value.ToString());
+
+            string columnName = taiKhoanDataGridView.Columns[e.ColumnIndex].Name;
+
+            if (columnName.Equals("infoButtonColumn"))
             {
-                DialogResult result = MessageBox.Show("Bạn có muốn xóa tài khoản không?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+                new TestChiTietTaiKhoanForm(taiKhoan, this, "Chi tiết").Show();
+            }
+
+            if (columnName.Equals("editButtonColumn"))
+            {
+                new TestChiTietTaiKhoanForm(taiKhoan, this, "Sửa").Show();
+            }
+
+            if (columnName.Equals("deleteButtonColumn"))
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn xóa tài khoản không?", "Xác nhận", MessageBoxButtons.YesNo);
 
                 if (result == DialogResult.Yes)
                 {
                     string tenTaiKhoan = taiKhoanDataGridView.Rows[e.RowIndex].Cells["tenTaiKhoanColumn"].Value.ToString();
 
-                    MessageBox.Show(taiKhoanBUS.XoaTaiKhoan(tenTaiKhoan));
+                    MessageBox.Show(taiKhoanBUS.VoHieuHoaTaiKhoan(tenTaiKhoan, "Xóa"));
 
                     lamMoiButton_Click(sender, e);
                 }
@@ -145,7 +197,28 @@ namespace GUI
 
         private void xoaTatCaButton_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Bạn có muốn xóa các tài khoản đã chọn không?", "Xác nhận xóa", MessageBoxButtons.YesNo);
 
+            if (result == DialogResult.Yes)
+            {
+                bool hoanTat = true;
+
+                for (int i = 0; i < taiKhoanDataGridView.SelectedRows.Count; i++)
+                {
+                    string tenTaiKhoan = taiKhoanDataGridView.SelectedRows[i].Cells["tenTaiKhoanColumn"].Value.ToString();
+
+                    if (!taiKhoanBUS.VoHieuHoaTaiKhoan(tenTaiKhoan, "Xóa").Equals("Xóa tài khoản thành công!"))
+                    {
+                        hoanTat = false;
+                        break;
+                    }
+                }
+
+                if (hoanTat)
+                    MessageBox.Show("Đã xóa tất cả tài khoản đã chọn!");
+                else
+                    MessageBox.Show("Quá trình xóa xảy ra lỗi!");
+            }
         }
 
         private void taiKhoanDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -189,6 +262,14 @@ namespace GUI
 
                 e.Handled = true;
             }
+        }
+
+        private void taiKhoanDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (taiKhoanDataGridView.SelectedRows.Count > 1) 
+                xoaTatCaButton.Visible = true;
+            else
+                xoaTatCaButton.Visible = false;
         }
     }
 }

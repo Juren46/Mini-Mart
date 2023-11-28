@@ -95,13 +95,13 @@ namespace ConsoleTesting
 
         public static void TestTimKiemNhanVien()
         {
-            Console.Write("Nhập từ khóa: ");
+            /*Console.Write("Nhập từ khóa: ");
             string keyword = Console.ReadLine();
             List<NhanVien> listNhanVien = nhanVienBUS.TimKiemNhanVien(keyword);
             foreach (NhanVien nhanVien in listNhanVien)
             {
                 Console.WriteLine(nhanVien.maNhanVien + "\n" + nhanVien.tenTaiKhoan + "\n" + nhanVien.hoTen + "\n" + nhanVien.gioiTinh + "\n" + nhanVien.ngaySinh + "\n" + nhanVien.soDienThoai + "\n" + nhanVien.email + "\n" + nhanVien.diaChi + "\n" + nhanVien.trangThai + "\n");
-            }
+            }*/
         }
 
         public static void TestLocNhanVienTheoPhanQuyen()

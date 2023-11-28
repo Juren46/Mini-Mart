@@ -33,10 +33,10 @@ namespace ConsoleTesting
 
         public static void TestLayPhanQuyenTheoTen()
         {
-            Console.Write("Nhập tên phân quyền: ");  //Luôn đúng
+            /*Console.Write("Nhập tên phân quyền: ");  //Luôn đúng
             string tenPhanQuyen = Console.ReadLine();
             PhanQuyen phanQuyen = phanQuyenBUS.LayPhanQuyenTheoTen(tenPhanQuyen);
-            Console.WriteLine(phanQuyen.maPhanQuyen + "\n" + phanQuyen.tenPhanQuyen);
+            Console.WriteLine(phanQuyen.maPhanQuyen + "\n" + phanQuyen.tenPhanQuyen);*/
         }
 
         public static void TestLayPhanQuyenTheoTenTaiKhoan()

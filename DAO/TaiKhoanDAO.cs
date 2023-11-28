@@ -16,7 +16,7 @@ namespace DAO
         {
             List<TaiKhoan> listTaiKhoan = new List<TaiKhoan>();
 
-            string query = "SELECT * FROM TaiKhoan WHERE trangThai <> N'Đã xóa';";
+            string query = "SELECT * FROM TaiKhoan WHERE trangThai = N'Đang hoạt động';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
@@ -45,17 +45,38 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            taiKhoan.maPhanQuyen = dataTable.Rows[0]["maPhanQuyen"].ToString();
-            taiKhoan.tenTaiKhoan = dataTable.Rows[0]["tenTaiKhoan"].ToString();
-            taiKhoan.matKhau = dataTable.Rows[0]["matKhau"].ToString();
-            taiKhoan.trangThai = dataTable.Rows[0]["trangThai"].ToString();
+            if (dataTable.Rows.Count > 0)
+            {
+                taiKhoan.maPhanQuyen = dataTable.Rows[0]["maPhanQuyen"].ToString();
+                taiKhoan.tenTaiKhoan = dataTable.Rows[0]["tenTaiKhoan"].ToString();
+                taiKhoan.matKhau = dataTable.Rows[0]["matKhau"].ToString();
+                taiKhoan.trangThai = dataTable.Rows[0]["trangThai"].ToString();
+            }
 
             return taiKhoan;
-        } 
+        }
+
+        public bool KiemTraTaiKhoanCoNguoiDung(string tenTaiKhoan)
+        {
+            string query = $"SELECT * FROM TaiKhoan WHERE tenTaiKhoan = '{tenTaiKhoan}';";
+
+            DataTable dataTable = DBHelper.ExecuteQuery(query);
+
+            return dataTable.Rows.Count > 0;
+        }
+
+        public bool KiemTraTaiKhoanDangHoatDong(string tenTaiKhoan)
+        {
+            string query = $"SELECT * FROM TaiKhoan WHERE tenTaiKhoan = '{tenTaiKhoan}' AND trangThai = N'Đang hoạt động';";
+
+            DataTable dataTable = DBHelper.ExecuteQuery(query);
+
+            return dataTable.Rows.Count > 0;
+        }
 
         public bool KiemTraDangNhap(string tenTaiKhoan, string matKhau)
         {
-            string query = $"SELECT * FROM TaiKhoan WHERE tenTaiKhoan = '{tenTaiKhoan}' AND matKhau = '{matKhau}' AND  trangThai = N'Hoạt động';";
+            string query = $"SELECT * FROM TaiKhoan WHERE tenTaiKhoan = '{tenTaiKhoan}' AND matKhau = '{matKhau}';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
@@ -89,9 +110,18 @@ namespace DAO
             return rowsAffected > 0;
         }
 
-        public bool XoaTaiKhoan(string tenTaiKhoan)
+        public bool SuaTaiKhoan(string tenTaiKhoan, string matKhau, string trangThai)
         {
-            string query = $"UPDATE TaiKhoan SET trangThai = N'Đã xóa' WHERE tenTaiKhoan = '{tenTaiKhoan}';";
+            string query = $"UPDATE TaiKhoan SET matKhau = '{matKhau}', trangThai = N'{trangThai}' WHERE tenTaiKhoan = '{tenTaiKhoan}';";
+
+            int rowsAffected = DBHelper.ExecuteNonQuery(query);
+
+            return rowsAffected > 0;
+        }
+
+        public bool VoHieuHoaTaiKhoan(string tenTaiKhoan, string trangThai)
+        {
+            string query = $"UPDATE TaiKhoan SET trangThai = N'{trangThai}' WHERE tenTaiKhoan = '{tenTaiKhoan}';";
 
             int rowsAffected = DBHelper.ExecuteNonQuery(query);
 
@@ -127,33 +157,6 @@ namespace DAO
             return listTaiKhoan;
         }
 
-        public List<TaiKhoan> LocTaiKhoanTheoPhanQuyen(string tenPhanQuyen)
-        {
-            List<TaiKhoan> listTaiKhoan = new List<TaiKhoan>();
-
-            string query = $"SELECT TK.* " +
-                           $"FROM TaiKhoan AS TK JOIN PhanQuyen AS PQ ON TK.maPhanQuyen = PQ.maPhanQuyen " +
-                           $"WHERE PQ.tenPhanQuyen = N'{tenPhanQuyen}' AND TK.trangThai = 1;";
-
-            DataTable dataTable = DBHelper.ExecuteQuery(query);
-
-            if (dataTable.Rows.Count > 0)
-            {
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    TaiKhoan taiKhoan = new TaiKhoan();
-                    taiKhoan.maPhanQuyen = row["maPhanQuyen"].ToString();
-                    taiKhoan.tenTaiKhoan = row["tenTaiKhoan"].ToString();
-                    taiKhoan.matKhau = row["matKhau"].ToString();
-                    taiKhoan.trangThai = row["trangThai"].ToString();
-
-                    listTaiKhoan.Add(taiKhoan);
-                }
-            }
-
-            return listTaiKhoan;
-        }
-
         public List<TaiKhoan> LayDanhSachTaiKhoanChuaDung()
         {
             List<TaiKhoan> listTaiKhoan = new List<TaiKhoan>();
@@ -163,7 +166,7 @@ namespace DAO
                            "(SELECT TenTaiKhoan FROM NhanVien " +
                            "UNION SELECT TenTaiKhoan FROM Admin " +
                            "UNION SELECT TenTaiKhoan FROM QuanLi) " +
-                           "AND TK.trangThai = 1;";
+                           "AND TK.trangThai = N'Chờ xử lý';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
@@ -182,21 +185,6 @@ namespace DAO
             }
 
             return listTaiKhoan;
-        }
-
-        public bool KiemTraTaiKhoanCoNguoiDung(string tenTaiKhoan, string matKhau)
-        {
-            string query = "SELECT * FROM TaiKhoan AS TK " +
-                           "WHERE TK.tenTaiKhoan IN " +
-                           "(SELECT TenTaiKhoan FROM NhanVien " +
-                           "UNION SELECT TenTaiKhoan FROM Admin " +
-                           "UNION SELECT TenTaiKhoan FROM QuanLi) " +
-                           $"AND TK.tenTaiKhoan = '{tenTaiKhoan}' " +
-                           $"AND TK.matKhau = '{matKhau}';";
-
-            DataTable dataTable = DBHelper.ExecuteQuery(query);
-
-            return dataTable.Rows.Count > 0;
         }
     }
 }

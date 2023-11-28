@@ -42,13 +42,16 @@ namespace DAO
 
             string query = $"SELECT PhanQuyen.* " +
                            "FROM PhanQuyen " +
-                           "INNER JOIN TaiKhoan ON PhanQuyen.maPhanQuyen = TaiKhoan.maPhanQuyen " +
+                           "JOIN TaiKhoan ON PhanQuyen.maPhanQuyen = TaiKhoan.maPhanQuyen " +
                            $"WHERE TaiKhoan.tenTaiKhoan = '{tenTaiKhoan}';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            phanQuyen.maPhanQuyen = dataTable.Rows[0]["maPhanQuyen"].ToString();
-            phanQuyen.tenPhanQuyen = dataTable.Rows[0]["tenPhanQuyen"].ToString();
+            if (dataTable.Rows.Count > 0)
+            {
+                phanQuyen.maPhanQuyen = dataTable.Rows[0]["maPhanQuyen"].ToString();
+                phanQuyen.tenPhanQuyen = dataTable.Rows[0]["tenPhanQuyen"].ToString();
+            }
 
             return phanQuyen;
         }
@@ -61,37 +64,26 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            phanQuyen.maPhanQuyen = dataTable.Rows[0]["maPhanQuyen"].ToString();
-            phanQuyen.tenPhanQuyen = dataTable.Rows[0]["tenPhanQuyen"].ToString();
+            if (dataTable.Rows.Count > 0)
+            {
+                phanQuyen.maPhanQuyen = dataTable.Rows[0]["maPhanQuyen"].ToString();
+                phanQuyen.tenPhanQuyen = dataTable.Rows[0]["tenPhanQuyen"].ToString();
+            }
 
             return phanQuyen;
         }
 
-        public PhanQuyen LayPhanQuyenTheoTen(string tenPhanQuyen)
-        {
-            PhanQuyen phanQuyen = new PhanQuyen();
-
-            string query = $"SELECT * FROM PhanQuyen WHERE tenPhanQuyen = N'{tenPhanQuyen}';";
-
-            DataTable dataTable = DBHelper.ExecuteQuery(query);
-
-            phanQuyen.maPhanQuyen = dataTable.Rows[0]["maPhanQuyen"].ToString();
-            phanQuyen.tenPhanQuyen = dataTable.Rows[0]["tenPhanQuyen"].ToString();
-
-            return phanQuyen;
-        }
-
-        public List<PhanQuyen> TimKiemPhanQuyen(string keyword)
+        public List<PhanQuyen> TimKiemPhanQuyen(string tuKhoa)
         {
             List<PhanQuyen> listPhanQuyen = new List<PhanQuyen>();
 
             string query = $"SELECT * FROM PhanQuyen " +
-                           $"WHERE LOWER(maPhanQuyen) LIKE '%{keyword}%' " +
-                           $"OR tenPhanQuyen COLLATE Latin1_General_CI_AI LIKE N'%{keyword}%';";
+                           $"WHERE LOWER(maPhanQuyen) LIKE '%{tuKhoa}%' " +
+                           $"OR tenPhanQuyen COLLATE Latin1_General_CI_AI LIKE N'%{tuKhoa}%';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);          
 
-           if (dataTable.Rows.Count > 0)
+            if (dataTable.Rows.Count > 0)
             {
                 foreach (DataRow row in dataTable.Rows)
                 {
