@@ -674,51 +674,7 @@
             guna2Separator6.Name = "guna2Separator6";
             guna2Separator6.Size = new Size(542, 10);
             guna2Separator6.TabIndex = 125;
-            // 
-            // donDatHangControl1
-            // 
-            donDatHangControl1.BackColor = Color.Transparent;
-            donDatHangControl1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            donDatHangControl1.Location = new Point(8, 8);
-            donDatHangControl1.Name = "donDatHangControl1";
-            donDatHangControl1.Size = new Size(581, 53);
-            donDatHangControl1.TabIndex = 0;
-            // 
-            // donDatHangControl2
-            // 
-            donDatHangControl2.BackColor = Color.Transparent;
-            donDatHangControl2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            donDatHangControl2.Location = new Point(8, 67);
-            donDatHangControl2.Name = "donDatHangControl2";
-            donDatHangControl2.Size = new Size(581, 53);
-            donDatHangControl2.TabIndex = 1;
-            // 
-            // donDatHangControl3
-            // 
-            donDatHangControl3.BackColor = Color.Transparent;
-            donDatHangControl3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            donDatHangControl3.Location = new Point(8, 126);
-            donDatHangControl3.Name = "donDatHangControl3";
-            donDatHangControl3.Size = new Size(581, 53);
-            donDatHangControl3.TabIndex = 2;
-            // 
-            // donDatHangControl4
-            // 
-            donDatHangControl4.BackColor = Color.Transparent;
-            donDatHangControl4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            donDatHangControl4.Location = new Point(8, 185);
-            donDatHangControl4.Name = "donDatHangControl4";
-            donDatHangControl4.Size = new Size(581, 53);
-            donDatHangControl4.TabIndex = 3;
-            // 
-            // donDatHangControl5
-            // 
-            donDatHangControl5.BackColor = Color.Transparent;
-            donDatHangControl5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            donDatHangControl5.Location = new Point(8, 244);
-            donDatHangControl5.Name = "donDatHangControl5";
-            donDatHangControl5.Size = new Size(581, 53);
-            donDatHangControl5.TabIndex = 4;
+            
             // 
             // BanHangForm
             // 
