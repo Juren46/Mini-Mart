@@ -29,7 +29,6 @@ namespace GUI
             foreach(SanPham sanPham in listSanPham)
             {
                 sanPhamFlowLayoutPanel.Controls.Add(new SanPhamControl(sanPham, this));
-                chiTietDonHangFlowLayoutPanel.Controls.Add(new DonDatHangControl(sanPham));
             }           
         }
     }
