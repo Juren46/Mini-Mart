@@ -32,18 +32,10 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             nhaCungCapDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            timKiemButton = new FontAwesome.Sharp.IconButton();
-            xuatExcelButton = new FontAwesome.Sharp.IconButton();
-            themMoiButton = new FontAwesome.Sharp.IconButton();
-            panel2 = new Panel();
-            timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            lamMoiButton = new FontAwesome.Sharp.IconButton();
-            panel3 = new Panel();
-            panel1 = new Panel();
             Column2 = new DataGridViewTextBoxColumn();
             maNhaCungCapColumn = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -52,6 +44,14 @@
             Column6 = new DataGridViewTextBoxColumn();
             infoButtonColumn = new DataGridViewImageColumn();
             editButtonColumn = new DataGridViewImageColumn();
+            timKiemButton = new FontAwesome.Sharp.IconButton();
+            xuatExcelButton = new FontAwesome.Sharp.IconButton();
+            themMoiButton = new FontAwesome.Sharp.IconButton();
+            panel2 = new Panel();
+            timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            lamMoiButton = new FontAwesome.Sharp.IconButton();
+            panel3 = new Panel();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)nhaCungCapDataGridView).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -126,6 +126,73 @@
             nhaCungCapDataGridView.CellFormatting += nhaCungCapDataGridView_CellFormatting;
             nhaCungCapDataGridView.CellPainting += nhaCungCapDataGridView_CellPainting;
             // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            Column2.HeaderText = "#";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 46;
+            // 
+            // maNhaCungCapColumn
+            // 
+            maNhaCungCapColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            maNhaCungCapColumn.FillWeight = 129.305817F;
+            maNhaCungCapColumn.HeaderText = "Mã nhà cung cấp";
+            maNhaCungCapColumn.Name = "maNhaCungCapColumn";
+            maNhaCungCapColumn.ReadOnly = true;
+            maNhaCungCapColumn.Resizable = DataGridViewTriState.True;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column3.FillWeight = 155.167023F;
+            Column3.HeaderText = "Tên nhà cung cấp";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.FillWeight = 155.167023F;
+            Column4.HeaderText = "Số điện thoại";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Email";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Địa chỉ";
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
+            // infoButtonColumn
+            // 
+            infoButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            infoButtonColumn.FillWeight = 30F;
+            infoButtonColumn.HeaderText = "";
+            infoButtonColumn.Image = Properties.Resources._003_info1;
+            infoButtonColumn.Name = "infoButtonColumn";
+            infoButtonColumn.ReadOnly = true;
+            infoButtonColumn.Width = 5;
+            // 
+            // editButtonColumn
+            // 
+            editButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            editButtonColumn.FillWeight = 30F;
+            editButtonColumn.HeaderText = "";
+            editButtonColumn.Image = Properties.Resources._002_pencil1;
+            editButtonColumn.Name = "editButtonColumn";
+            editButtonColumn.ReadOnly = true;
+            editButtonColumn.Width = 5;
+            // 
             // timKiemButton
             // 
             timKiemButton.BackColor = Color.FromArgb(226, 153, 48);
@@ -154,7 +221,7 @@
             xuatExcelButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             xuatExcelButton.IconSize = 20;
             xuatExcelButton.ImageAlign = ContentAlignment.MiddleLeft;
-            xuatExcelButton.Location = new Point(811, 12);
+            xuatExcelButton.Location = new Point(690, 12);
             xuatExcelButton.Name = "xuatExcelButton";
             xuatExcelButton.Size = new Size(116, 36);
             xuatExcelButton.TabIndex = 31;
@@ -175,7 +242,7 @@
             themMoiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             themMoiButton.IconSize = 20;
             themMoiButton.ImageAlign = ContentAlignment.MiddleLeft;
-            themMoiButton.Location = new Point(690, 11);
+            themMoiButton.Location = new Point(812, 12);
             themMoiButton.Name = "themMoiButton";
             themMoiButton.Size = new Size(115, 36);
             themMoiButton.TabIndex = 30;
@@ -256,73 +323,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1183, 821);
             panel1.TabIndex = 3;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column2.DefaultCellStyle = dataGridViewCellStyle3;
-            Column2.HeaderText = "#";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 46;
-            // 
-            // maNhaCungCapColumn
-            // 
-            maNhaCungCapColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            maNhaCungCapColumn.FillWeight = 129.305817F;
-            maNhaCungCapColumn.HeaderText = "Mã nhà cung cấp";
-            maNhaCungCapColumn.Name = "maNhaCungCapColumn";
-            maNhaCungCapColumn.ReadOnly = true;
-            maNhaCungCapColumn.Resizable = DataGridViewTriState.True;
-            // 
-            // Column3
-            // 
-            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.FillWeight = 155.167023F;
-            Column3.HeaderText = "Tên nhà cung cấp";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.FillWeight = 155.167023F;
-            Column4.HeaderText = "Số điện thoại";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Email";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Địa chỉ";
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            // 
-            // infoButtonColumn
-            // 
-            infoButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            infoButtonColumn.FillWeight = 30F;
-            infoButtonColumn.HeaderText = "";
-            infoButtonColumn.Image = Properties.Resources._003_info1;
-            infoButtonColumn.Name = "infoButtonColumn";
-            infoButtonColumn.ReadOnly = true;
-            infoButtonColumn.Width = 5;
-            // 
-            // editButtonColumn
-            // 
-            editButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            editButtonColumn.FillWeight = 30F;
-            editButtonColumn.HeaderText = "";
-            editButtonColumn.Image = Properties.Resources._002_pencil1;
-            editButtonColumn.Name = "editButtonColumn";
-            editButtonColumn.ReadOnly = true;
-            editButtonColumn.Width = 5;
             // 
             // NhaCungCapForm
             // 

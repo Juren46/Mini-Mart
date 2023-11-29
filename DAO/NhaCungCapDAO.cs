@@ -93,16 +93,16 @@ namespace DAO
             return rowsAffected > 0;
         }
 
-        public List<NhaCungCap> TimKiemNhaCungCap(string keyword)
+        public List<NhaCungCap> TimKiemNhaCungCap(string tuKhoa)
         {
             List<NhaCungCap> listNhaCungCap = new List<NhaCungCap>();
 
             string query = $"SELECT * FROM NhaCungCap " +
-                           $"WHERE LOWER(maNhaCungCap) LIKE '%{keyword}%' " +
-                           $"OR tenNhaCungCap COLLATE Latin1_General_CI_AI LIKE N'%{keyword}%' " +
-                           $"OR soDienThoai LIKE '%{keyword}%' " +
-                           $"OR LOWER(email) LIKE '%{keyword}%' " +
-                           $"OR diaChi COLLATE Latin1_General_CI_AI LIKE N'%{keyword}%';";
+                           $"WHERE LOWER(maNhaCungCap) LIKE '%{tuKhoa}%' " +
+                           $"OR tenNhaCungCap COLLATE Latin1_General_CI_AI LIKE N'%{tuKhoa}%' " +
+                           $"OR soDienThoai LIKE '%{tuKhoa}%' " +
+                           $"OR LOWER(email) LIKE '%{tuKhoa}%' " +
+                           $"OR diaChi COLLATE Latin1_General_CI_AI LIKE N'%{tuKhoa}%';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 

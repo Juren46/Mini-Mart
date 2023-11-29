@@ -60,6 +60,9 @@ namespace GUI
                     emailTextBox.ReadOnly = true;
                     diaChiTextBox.ReadOnly = true;
                     luuButton.Visible = false;
+                    huyBoButton.Visible = false;
+                    this.Height -= huyBoButton.Height;
+
                     break;
 
                 case "Thêm":
@@ -68,6 +71,7 @@ namespace GUI
                     maNhaCungCapTextBox.Text = IDGenerator.GenerateNhaCungCapID();
 
                     maNhaCungCapTextBox.ReadOnly = true;
+
                     break;
 
                 case "Sửa":
@@ -91,7 +95,25 @@ namespace GUI
 
         private void huyBoButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show("Hủy bỏ các thông tin đã nhập?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                if (context.Equals("Sửa"))
+                {
+                    tenNhaCungCapTextBox.Text = nhaCungCap.tenNhaCungCap;
+                    soDienThoaiTextBox.Text = nhaCungCap.soDienThoai;
+                    emailTextBox.Text = nhaCungCap.email;
+                    diaChiTextBox.Text = nhaCungCap.diaChi;
+                }
+                else if (context.Equals("Thêm"))
+                {
+                    tenNhaCungCapTextBox.Clear();
+                    soDienThoaiTextBox.Clear();
+                    emailTextBox.Clear();
+                    diaChiTextBox.Clear();
+                }
+            }
         }
 
         private void luuButton_Click(object sender, EventArgs e)
@@ -104,24 +126,24 @@ namespace GUI
 
             DialogResult result = MessageBox.Show("Bạn có muốn lưu thông tin nhà cung cấp không?", "Xác nhận", MessageBoxButtons.YesNo);
 
-            string message = "";
-
             if (result == DialogResult.Yes)
             {
+                string message = "";
+
                 switch (context)
                 {
                     case "Thêm":
                         message = nhaCungCapBUS.ThemNhaCungCap(maNhaCungCap, tenNhaCungCap, soDienThoai, email, diaChi);
-                        MessageBox.Show(message);
                         break;
 
                     case "Sửa":
                         message = nhaCungCapBUS.SuaNhaCungCap(maNhaCungCap, tenNhaCungCap, soDienThoai, email, diaChi);
-                        MessageBox.Show(message);
                         break;
                 }
 
-                if (message.Equals("Thêm nhà cung cấp thành công!") || message.Equals("Sửa thông tin nhà cung cấp thành công!"))
+                MessageBox.Show(message);
+
+                if (message.Equals("Thêm nhà cung cấp thành công!") || message.Equals("Chỉnh sửa thông tin nhà cung cấp thành công!"))
                 {
                     form.lamMoiButton_Click(sender, e);
                     this.Close();

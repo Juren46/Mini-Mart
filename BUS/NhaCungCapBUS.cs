@@ -38,6 +38,9 @@ namespace BUS
             if (string.IsNullOrEmpty(tenNhaCungCap))
                 return "Tên nhà cung cấp không được bỏ trống!";
 
+            if (string.IsNullOrEmpty(soDienThoai) && string.IsNullOrEmpty(email))
+                return "Hãy nhập số điện thoại hoặc email để liên lạc nhà cung cấp!";
+
             if (!string.IsNullOrEmpty(soDienThoai) && !InputValidate.PhoneNumberValidate(soDienThoai))
                 return "Vui lòng nhập đúng số điện thoại!";
 
@@ -63,6 +66,9 @@ namespace BUS
             if (string.IsNullOrEmpty(tenNhaCungCap))
                 return "Tên nhà cung cấp không được bỏ trống!";
 
+            if (string.IsNullOrEmpty(soDienThoai) && string.IsNullOrEmpty(email))
+                return "Hãy nhập số điện thoại hoặc email để liên lạc nhà cung cấp!";
+
             if (!string.IsNullOrEmpty(soDienThoai) && !InputValidate.PhoneNumberValidate(soDienThoai))
                 return "Vui lòng nhập đúng số điện thoại!";
 
@@ -78,15 +84,15 @@ namespace BUS
             nhaCungCap.diaChi = diaChi.Trim();
 
             if (nhaCungCapDAO.SuaNhaCungCap(nhaCungCap))
-                return "Sửa thông tin nhà cung cấp thành công!";
+                return "Chỉnh sửa thông tin nhà cung cấp thành công!";
             else
-                return "Sửa thông tin nhà cung cấp thất bại!";
+                return "Chỉnh sửa thông tin nhà cung cấp thất bại!";
         }
 
-        public List<NhaCungCap> TimKiemNhaCungCap(string keyword)
+        public List<NhaCungCap> TimKiemNhaCungCap(string tuKhoa)
         {
-            keyword = keyword.Trim().ToLower();
-            return nhaCungCapDAO.TimKiemNhaCungCap(keyword);
+            tuKhoa = tuKhoa.Trim().ToLower();
+            return nhaCungCapDAO.TimKiemNhaCungCap(tuKhoa);
         }
     }
 }
