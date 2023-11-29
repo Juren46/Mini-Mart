@@ -70,7 +70,7 @@
             tenTaiKhoanTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tenTaiKhoanTextBox.FillColor = Color.WhiteSmoke;
             tenTaiKhoanTextBox.FocusedState.BorderColor = Color.Teal;
-            tenTaiKhoanTextBox.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tenTaiKhoanTextBox.Font = new Font("Segoe UI", 14.25F);
             tenTaiKhoanTextBox.ForeColor = Color.FromArgb(84, 155, 255);
             tenTaiKhoanTextBox.HoverState.BorderColor = Color.SteelBlue;
             tenTaiKhoanTextBox.Location = new Point(76, 196);
@@ -99,7 +99,7 @@
             matKhauTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             matKhauTextBox.FillColor = Color.WhiteSmoke;
             matKhauTextBox.FocusedState.BorderColor = Color.Teal;
-            matKhauTextBox.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            matKhauTextBox.Font = new Font("Segoe UI", 14.25F);
             matKhauTextBox.ForeColor = Color.FromArgb(84, 155, 255);
             matKhauTextBox.HoverState.BorderColor = Color.SteelBlue;
             matKhauTextBox.Location = new Point(76, 253);
@@ -125,7 +125,7 @@
             dangNhapButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             dangNhapButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             dangNhapButton.FillColor = Color.FromArgb(0, 71, 107);
-            dangNhapButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dangNhapButton.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             dangNhapButton.ForeColor = Color.White;
             dangNhapButton.Location = new Point(76, 310);
             dangNhapButton.Name = "dangNhapButton";
@@ -154,7 +154,7 @@
             iconButton8.FlatAppearance.BorderSize = 0;
             iconButton8.FlatAppearance.MouseOverBackColor = Color.IndianRed;
             iconButton8.FlatStyle = FlatStyle.Flat;
-            iconButton8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton8.Font = new Font("Microsoft Sans Serif", 14.25F);
             iconButton8.IconChar = FontAwesome.Sharp.IconChar.Xmark;
             iconButton8.IconColor = Color.FromArgb(0, 71, 107);
             iconButton8.IconFont = FontAwesome.Sharp.IconFont.Solid;
@@ -235,10 +235,11 @@
             // pictureBox4
             // 
             pictureBox4.BackColor = Color.FromArgb(0, 71, 107);
+            pictureBox4.Dock = DockStyle.Fill;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(6, -34);
+            pictureBox4.Location = new Point(0, 0);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(270, 270);
+            pictureBox4.Size = new Size(282, 425);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 17;
             pictureBox4.TabStop = false;
@@ -252,7 +253,7 @@
             Controls.Add(pictureBox4);
             Controls.Add(panel1);
             Controls.Add(guna2PictureBox1);
-            Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("Microsoft Sans Serif", 14.25F);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
             Name = "DangNhapForm";
