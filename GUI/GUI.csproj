@@ -52,8 +52,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="CacFormChon\Test\" />
-  </ItemGroup>
-
 </Project>

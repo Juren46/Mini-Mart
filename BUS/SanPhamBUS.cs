@@ -36,6 +36,7 @@ namespace BUS
         {
             if (string.IsNullOrEmpty(maLoaiSanPham) || string.IsNullOrEmpty(maNhaCungCap) || string.IsNullOrEmpty(tenSanPham) || string.IsNullOrEmpty(donViTinh) || string.IsNullOrEmpty(giaBan) || !(duLieuAnh != null && duLieuAnh.Length > 0))
                 return "Vui lòng nhập đầy đủ thông tin!";
+
             SanPham sanPham = new SanPham(maSanPham, maLoaiSanPham, maNhaCungCap, tenSanPham, donViTinh, Decimal.Parse(giaBan), duLieuAnh);
 
             if (sanPhamDAO.ThemSanPham(sanPham))
@@ -60,26 +61,16 @@ namespace BUS
             SanPham sanPham = new SanPham(maSanPham, maLoaiSanPham, maNhaCungCap, tenSanPham, donViTinh, Decimal.Parse(giaBan), duLieuAnh);
 
             if (sanPhamDAO.SuaSanPham(sanPham))
-                return "Sửa thông tin sản phẩm thành công!";
+                return "Chỉnh sửa thông tin sản phẩm thành công!";
             else
-                return "Sửa thông tin sản phẩm thất bại!";
+                return "Chỉnh sửa thông tin sản phẩm thất bại!";
         }
 
-        public List<SanPham> TimKiemSanPham(string keyword)
+        public List<SanPham> TimKiemSanPham(string tuKhoa, string maLoaiSanPham, string maNhaCungCap, string trangThai, string sapXep)
         {
-            keyword = keyword.Trim().ToLower();
+            tuKhoa = tuKhoa.Trim().ToLower();
 
-            return sanPhamDAO.TimKiemSanPham(keyword);
-        }
-
-        public List<SanPham> LocSanPhamTheoLoaiSanPham(string tenLoaiSanPham)
-        {
-            return sanPhamDAO.LocSanPhamTheoLoaiSanPham(tenLoaiSanPham);
-        }
-
-        public List<SanPham> LocSanPhamTheoNhaCungCap(string maNhaCungCap)
-        {
-            return sanPhamDAO.LocSanPhamTheoNhaCungCap(maNhaCungCap);
+            return sanPhamDAO.TimKiemSanPham(tuKhoa, maLoaiSanPham, maNhaCungCap, trangThai, sapXep);
         }
 
         public bool CapNhatSoLuong(string maSanPham, int soLuong)

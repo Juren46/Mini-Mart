@@ -91,9 +91,7 @@ namespace GUI
 
             string trangThai = "";
             if (trangThaiComboBox.SelectedItem != null)
-            {
                 trangThai = trangThaiComboBox.SelectedItem.ToString();
-            }
 
             listTaiKhoan = taiKhoanBUS.TimKiemTaiKhoan(tuKhoa, maPhanQuyen, trangThai);
 

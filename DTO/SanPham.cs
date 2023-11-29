@@ -11,20 +11,7 @@ namespace DTO
         public SanPham()
         {
             soLuong = 0;
-            trangThai = true;
-        }
-
-        public SanPham(string maSanPham, string maLoaiSanPham, string maNhaCungCap, string tenSanPham, string donViTinh, int soLuong, decimal giaBan, byte[]duLieuAnh)
-        {
-            this.maSanPham = maSanPham;
-            this.maLoaiSanPham = maLoaiSanPham;
-            this.maNhaCungCap = maNhaCungCap;
-            this.tenSanPham = tenSanPham;
-            this.donViTinh = donViTinh;
-            this.soLuong = soLuong;
-            this.giaBan = giaBan;
-            this.duLieuAnh = duLieuAnh;
-            trangThai = true;
+            trangThai = "Chờ xử lý";
         }
 
         public SanPham(string maSanPham, string maLoaiSanPham, string maNhaCungCap, string tenSanPham, string donViTinh, decimal giaBan, byte[] duLieuAnh)
@@ -34,9 +21,10 @@ namespace DTO
             this.maNhaCungCap = maNhaCungCap;
             this.tenSanPham = tenSanPham;
             this.donViTinh = donViTinh;
+            soLuong = 0;
             this.giaBan = giaBan;
             this.duLieuAnh = duLieuAnh;
-            trangThai = true;
+            trangThai = "Chờ xử lý";
         }
 
         public string maSanPham { get; set; }
@@ -47,6 +35,6 @@ namespace DTO
         public int soLuong { get; set; }
         public decimal giaBan { get; set; }
         public byte[] duLieuAnh { get; set; }
-        public bool trangThai { get; set; }
+        public string trangThai { get; set; }
     }
 }

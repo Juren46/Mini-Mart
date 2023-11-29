@@ -28,40 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             panel3 = new Panel();
             sanPhamDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             Column2 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
+            maSanPhamColumn = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
             Column8 = new DataGridViewTextBoxColumn();
-            Column9 = new DataGridViewImageColumn();
-            Column10 = new DataGridViewImageColumn();
-            Column11 = new DataGridViewImageColumn();
+            infoButtonColumn = new DataGridViewImageColumn();
+            editButtonColumn = new DataGridViewImageColumn();
+            deleteButtonColumn = new DataGridViewImageColumn();
             panel2 = new Panel();
+            trangThaiComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             lamMoiButton = new FontAwesome.Sharp.IconButton();
             xoaTatCaButton = new FontAwesome.Sharp.IconButton();
-            trangThaiToggleSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
@@ -70,7 +70,7 @@
             themMoiButton = new FontAwesome.Sharp.IconButton();
             timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             sapXepComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            nhomSanPhamComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            loaiSanPhamComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)sanPhamDataGridView).BeginInit();
@@ -99,41 +99,41 @@
             // sanPhamDataGridView
             // 
             sanPhamDataGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle9.BackColor = Color.White;
-            sanPhamDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            sanPhamDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             sanPhamDataGridView.BackgroundColor = Color.FromArgb(242, 245, 250);
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = Color.LightBlue;
-            dataGridViewCellStyle10.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = Color.FromArgb(30, 110, 142);
-            dataGridViewCellStyle10.SelectionBackColor = Color.LightBlue;
-            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            sanPhamDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.LightBlue;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 14.25F);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(30, 110, 142);
+            dataGridViewCellStyle2.SelectionBackColor = Color.LightBlue;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            sanPhamDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             sanPhamDataGridView.ColumnHeadersHeight = 40;
             sanPhamDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            sanPhamDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column2, Column1, Column3, Column4, Column5, Column6, Column7, Column8, Column9, Column10, Column11 });
-            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = Color.White;
-            dataGridViewCellStyle15.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle15.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle15.SelectionBackColor = Color.FromArgb(227, 248, 251);
-            dataGridViewCellStyle15.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.False;
-            sanPhamDataGridView.DefaultCellStyle = dataGridViewCellStyle15;
+            sanPhamDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column2, maSanPhamColumn, Column3, Column4, Column5, Column6, Column7, Column8, infoButtonColumn, editButtonColumn, deleteButtonColumn });
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.White;
+            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(227, 248, 251);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            sanPhamDataGridView.DefaultCellStyle = dataGridViewCellStyle7;
             sanPhamDataGridView.Dock = DockStyle.Fill;
             sanPhamDataGridView.GridColor = Color.FromArgb(242, 245, 250);
             sanPhamDataGridView.Location = new Point(0, 0);
             sanPhamDataGridView.Name = "sanPhamDataGridView";
             sanPhamDataGridView.ReadOnly = true;
-            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = Color.White;
-            dataGridViewCellStyle16.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle16.ForeColor = Color.FromArgb(242, 245, 250);
-            dataGridViewCellStyle16.SelectionBackColor = Color.White;
-            dataGridViewCellStyle16.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
-            sanPhamDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 14.25F);
+            dataGridViewCellStyle8.ForeColor = Color.FromArgb(242, 245, 250);
+            dataGridViewCellStyle8.SelectionBackColor = Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            sanPhamDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             sanPhamDataGridView.RowHeadersVisible = false;
             sanPhamDataGridView.RowHeadersWidth = 62;
             sanPhamDataGridView.RowTemplate.DividerHeight = 3;
@@ -141,7 +141,7 @@
             sanPhamDataGridView.Size = new Size(1183, 704);
             sanPhamDataGridView.TabIndex = 28;
             sanPhamDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            sanPhamDataGridView.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            sanPhamDataGridView.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 9F);
             sanPhamDataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = SystemColors.ControlText;
             sanPhamDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             sanPhamDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
@@ -149,18 +149,19 @@
             sanPhamDataGridView.ThemeStyle.GridColor = Color.FromArgb(242, 245, 250);
             sanPhamDataGridView.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(242, 245, 250);
             sanPhamDataGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            sanPhamDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            sanPhamDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Microsoft Sans Serif", 14.25F);
             sanPhamDataGridView.ThemeStyle.HeaderStyle.ForeColor = Color.DimGray;
             sanPhamDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             sanPhamDataGridView.ThemeStyle.HeaderStyle.Height = 40;
             sanPhamDataGridView.ThemeStyle.ReadOnly = true;
             sanPhamDataGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
             sanPhamDataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            sanPhamDataGridView.ThemeStyle.RowsStyle.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            sanPhamDataGridView.ThemeStyle.RowsStyle.Font = new Font("Microsoft Sans Serif", 14.25F);
             sanPhamDataGridView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
             sanPhamDataGridView.ThemeStyle.RowsStyle.Height = 50;
             sanPhamDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(0, 80, 112);
             sanPhamDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
+            sanPhamDataGridView.CellContentClick += sanPhamDataGridView_CellContentClick;
             sanPhamDataGridView.CellFormatting += sanPhamDataGridView_CellFormatting;
             sanPhamDataGridView.CellPainting += sanPhamDataGridView_CellPainting;
             sanPhamDataGridView.SelectionChanged += sanPhamDataGridView_SelectionChanged;
@@ -168,23 +169,23 @@
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column2.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column2.DefaultCellStyle = dataGridViewCellStyle3;
             Column2.HeaderText = "#";
             Column2.MinimumWidth = 8;
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
             Column2.Width = 43;
             // 
-            // Column1
+            // maSanPhamColumn
             // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 129.305817F;
-            Column1.HeaderText = "Mã sản phẩm";
-            Column1.MinimumWidth = 8;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Resizable = DataGridViewTriState.True;
+            maSanPhamColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            maSanPhamColumn.FillWeight = 129.305817F;
+            maSanPhamColumn.HeaderText = "Mã sản phẩm";
+            maSanPhamColumn.MinimumWidth = 8;
+            maSanPhamColumn.Name = "maSanPhamColumn";
+            maSanPhamColumn.ReadOnly = true;
+            maSanPhamColumn.Resizable = DataGridViewTriState.True;
             // 
             // Column3
             // 
@@ -216,8 +217,8 @@
             // Column6
             // 
             Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column6.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column6.DefaultCellStyle = dataGridViewCellStyle4;
             Column6.FillWeight = 64.65291F;
             Column6.HeaderText = "Đơn vị ";
             Column6.MinimumWidth = 8;
@@ -227,8 +228,8 @@
             // Column7
             // 
             Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column7.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column7.DefaultCellStyle = dataGridViewCellStyle5;
             Column7.FillWeight = 103.444656F;
             Column7.HeaderText = "Số lượng ";
             Column7.MinimumWidth = 8;
@@ -238,55 +239,55 @@
             // Column8
             // 
             Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column8.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column8.DefaultCellStyle = dataGridViewCellStyle6;
             Column8.FillWeight = 129.305817F;
             Column8.HeaderText = "Giá bán ";
             Column8.MinimumWidth = 8;
             Column8.Name = "Column8";
             Column8.ReadOnly = true;
             // 
-            // Column9
+            // infoButtonColumn
             // 
-            Column9.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column9.FillWeight = 30F;
-            Column9.HeaderText = "";
-            Column9.Image = Properties.Resources._003_info;
-            Column9.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            Column9.MinimumWidth = 8;
-            Column9.Name = "Column9";
-            Column9.ReadOnly = true;
-            Column9.Width = 8;
+            infoButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            infoButtonColumn.FillWeight = 30F;
+            infoButtonColumn.HeaderText = "";
+            infoButtonColumn.Image = Properties.Resources._003_info;
+            infoButtonColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            infoButtonColumn.MinimumWidth = 8;
+            infoButtonColumn.Name = "infoButtonColumn";
+            infoButtonColumn.ReadOnly = true;
+            infoButtonColumn.Width = 8;
             // 
-            // Column10
+            // editButtonColumn
             // 
-            Column10.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column10.FillWeight = 30F;
-            Column10.HeaderText = "";
-            Column10.Image = Properties.Resources._002_pencil1;
-            Column10.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            Column10.MinimumWidth = 8;
-            Column10.Name = "Column10";
-            Column10.ReadOnly = true;
-            Column10.Width = 8;
+            editButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            editButtonColumn.FillWeight = 30F;
+            editButtonColumn.HeaderText = "";
+            editButtonColumn.Image = Properties.Resources._002_pencil1;
+            editButtonColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            editButtonColumn.MinimumWidth = 8;
+            editButtonColumn.Name = "editButtonColumn";
+            editButtonColumn.ReadOnly = true;
+            editButtonColumn.Width = 8;
             // 
-            // Column11
+            // deleteButtonColumn
             // 
-            Column11.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column11.FillWeight = 30F;
-            Column11.HeaderText = "";
-            Column11.Image = Properties.Resources._001_bin;
-            Column11.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            Column11.MinimumWidth = 8;
-            Column11.Name = "Column11";
-            Column11.ReadOnly = true;
-            Column11.Width = 8;
+            deleteButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            deleteButtonColumn.FillWeight = 30F;
+            deleteButtonColumn.HeaderText = "";
+            deleteButtonColumn.Image = Properties.Resources._001_bin;
+            deleteButtonColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            deleteButtonColumn.MinimumWidth = 8;
+            deleteButtonColumn.Name = "deleteButtonColumn";
+            deleteButtonColumn.ReadOnly = true;
+            deleteButtonColumn.Width = 8;
             // 
             // panel2
             // 
+            panel2.Controls.Add(trangThaiComboBox);
             panel2.Controls.Add(lamMoiButton);
             panel2.Controls.Add(xoaTatCaButton);
-            panel2.Controls.Add(trangThaiToggleSwitch);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
@@ -295,12 +296,31 @@
             panel2.Controls.Add(themMoiButton);
             panel2.Controls.Add(timKiemTextBox);
             panel2.Controls.Add(sapXepComboBox);
-            panel2.Controls.Add(nhomSanPhamComboBox);
+            panel2.Controls.Add(loaiSanPhamComboBox);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(1183, 117);
             panel2.TabIndex = 28;
+            // 
+            // trangThaiComboBox
+            // 
+            trangThaiComboBox.BackColor = Color.Transparent;
+            trangThaiComboBox.CustomizableEdges = customizableEdges1;
+            trangThaiComboBox.DrawMode = DrawMode.OwnerDrawFixed;
+            trangThaiComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            trangThaiComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
+            trangThaiComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            trangThaiComboBox.Font = new Font("Segoe UI", 10F);
+            trangThaiComboBox.ForeColor = Color.FromArgb(68, 88, 112);
+            trangThaiComboBox.ItemHeight = 30;
+            trangThaiComboBox.Items.AddRange(new object[] { "Đang bán", "Chờ xử lý", "Hết hàng", "Ngừng kinh doanh" });
+            trangThaiComboBox.Location = new Point(16, 33);
+            trangThaiComboBox.Name = "trangThaiComboBox";
+            trangThaiComboBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            trangThaiComboBox.Size = new Size(180, 36);
+            trangThaiComboBox.TabIndex = 65;
+            trangThaiComboBox.SelectionChangeCommitted += trangThaiComboBox_SelectionChangeCommitted;
             // 
             // lamMoiButton
             // 
@@ -316,54 +336,37 @@
             lamMoiButton.Size = new Size(43, 36);
             lamMoiButton.TabIndex = 64;
             lamMoiButton.UseVisualStyleBackColor = false;
+            lamMoiButton.Click += lamMoiButton_Click;
             // 
             // xoaTatCaButton
             // 
             xoaTatCaButton.BackColor = Color.IndianRed;
             xoaTatCaButton.FlatAppearance.BorderSize = 0;
             xoaTatCaButton.FlatStyle = FlatStyle.Flat;
-            xoaTatCaButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            xoaTatCaButton.Font = new Font("Microsoft Sans Serif", 12F);
             xoaTatCaButton.ForeColor = Color.White;
             xoaTatCaButton.IconChar = FontAwesome.Sharp.IconChar.HandHoldingMedical;
             xoaTatCaButton.IconColor = Color.White;
             xoaTatCaButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             xoaTatCaButton.IconSize = 20;
             xoaTatCaButton.ImageAlign = ContentAlignment.MiddleLeft;
-            xoaTatCaButton.Location = new Point(1033, 75);
+            xoaTatCaButton.Location = new Point(1056, 33);
             xoaTatCaButton.Name = "xoaTatCaButton";
             xoaTatCaButton.Size = new Size(115, 36);
             xoaTatCaButton.TabIndex = 37;
             xoaTatCaButton.Text = "Xoá tất cả ";
             xoaTatCaButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             xoaTatCaButton.UseVisualStyleBackColor = false;
-            // 
-            // trangThaiToggleSwitch
-            // 
-            trangThaiToggleSwitch.BackColor = Color.FromArgb(223, 243, 252);
-            trangThaiToggleSwitch.Checked = true;
-            trangThaiToggleSwitch.CheckedState.BorderColor = Color.FromArgb(0, 71, 107);
-            trangThaiToggleSwitch.CheckedState.BorderRadius = 10;
-            trangThaiToggleSwitch.CheckedState.FillColor = Color.FromArgb(0, 71, 107);
-            trangThaiToggleSwitch.CheckedState.InnerBorderColor = Color.White;
-            trangThaiToggleSwitch.CheckedState.InnerColor = Color.White;
-            trangThaiToggleSwitch.CustomizableEdges = customizableEdges9;
-            trangThaiToggleSwitch.Location = new Point(58, 32);
-            trangThaiToggleSwitch.Name = "trangThaiToggleSwitch";
-            trangThaiToggleSwitch.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            trangThaiToggleSwitch.Size = new Size(66, 23);
-            trangThaiToggleSwitch.TabIndex = 36;
-            trangThaiToggleSwitch.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
-            trangThaiToggleSwitch.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
-            trangThaiToggleSwitch.UncheckedState.InnerBorderColor = Color.White;
-            trangThaiToggleSwitch.UncheckedState.InnerColor = Color.White;
+            xoaTatCaButton.Visible = false;
+            xoaTatCaButton.Click += xoaTatCaButton_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 12F);
             label3.ForeColor = SystemColors.GrayText;
-            label3.Location = new Point(169, 5);
+            label3.Location = new Point(458, 11);
             label3.Name = "label3";
             label3.Size = new Size(67, 20);
             label3.TabIndex = 35;
@@ -373,21 +376,21 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 12F);
             label2.ForeColor = SystemColors.GrayText;
-            label2.Location = new Point(402, 5);
+            label2.Location = new Point(202, 11);
             label2.Name = "label2";
-            label2.Size = new Size(125, 20);
+            label2.Size = new Size(113, 20);
             label2.TabIndex = 34;
-            label2.Text = "Nhóm sản phẩm";
+            label2.Text = "Loại sản phẩm";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 12F);
             label1.ForeColor = SystemColors.GrayText;
-            label1.Location = new Point(49, 5);
+            label1.Location = new Point(16, 9);
             label1.Name = "label1";
             label1.Size = new Size(80, 20);
             label1.TabIndex = 33;
@@ -407,40 +410,42 @@
             timKiemButton.Size = new Size(43, 36);
             timKiemButton.TabIndex = 32;
             timKiemButton.UseVisualStyleBackColor = false;
+            timKiemButton.Click += timKiemButton_Click;
             // 
             // xuatExcelButton
             // 
             xuatExcelButton.BackColor = Color.FromArgb(33, 31, 48);
             xuatExcelButton.FlatAppearance.BorderSize = 0;
             xuatExcelButton.FlatStyle = FlatStyle.Flat;
-            xuatExcelButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            xuatExcelButton.Font = new Font("Microsoft Sans Serif", 12F);
             xuatExcelButton.ForeColor = Color.White;
             xuatExcelButton.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
             xuatExcelButton.IconColor = Color.White;
             xuatExcelButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             xuatExcelButton.IconSize = 20;
             xuatExcelButton.ImageAlign = ContentAlignment.MiddleLeft;
-            xuatExcelButton.Location = new Point(689, 27);
+            xuatExcelButton.Location = new Point(1056, 75);
             xuatExcelButton.Name = "xuatExcelButton";
-            xuatExcelButton.Size = new Size(168, 36);
+            xuatExcelButton.Size = new Size(115, 36);
             xuatExcelButton.TabIndex = 31;
             xuatExcelButton.Text = "Xuất excel";
             xuatExcelButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             xuatExcelButton.UseVisualStyleBackColor = false;
+            xuatExcelButton.Click += xuatExcelButton_Click;
             // 
             // themMoiButton
             // 
             themMoiButton.BackColor = Color.FromArgb(226, 153, 48);
             themMoiButton.FlatAppearance.BorderSize = 0;
             themMoiButton.FlatStyle = FlatStyle.Flat;
-            themMoiButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            themMoiButton.Font = new Font("Microsoft Sans Serif", 12F);
             themMoiButton.ForeColor = Color.White;
             themMoiButton.IconChar = FontAwesome.Sharp.IconChar.HandHoldingMedical;
             themMoiButton.IconColor = Color.White;
             themMoiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             themMoiButton.IconSize = 20;
             themMoiButton.ImageAlign = ContentAlignment.MiddleLeft;
-            themMoiButton.Location = new Point(863, 27);
+            themMoiButton.Location = new Point(814, 33);
             themMoiButton.Name = "themMoiButton";
             themMoiButton.Size = new Size(115, 36);
             themMoiButton.TabIndex = 30;
@@ -451,59 +456,65 @@
             // 
             // timKiemTextBox
             // 
-            timKiemTextBox.CustomizableEdges = customizableEdges11;
+            timKiemTextBox.CustomizableEdges = customizableEdges3;
             timKiemTextBox.DefaultText = "";
             timKiemTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             timKiemTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             timKiemTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             timKiemTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             timKiemTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            timKiemTextBox.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            timKiemTextBox.Font = new Font("Segoe UI", 9F);
             timKiemTextBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
-            timKiemTextBox.Location = new Point(49, 75);
+            timKiemTextBox.Location = new Point(16, 75);
             timKiemTextBox.Name = "timKiemTextBox";
             timKiemTextBox.PasswordChar = '\0';
-            timKiemTextBox.PlaceholderText = "Nhập tên để tìm kiếm";
+            timKiemTextBox.PlaceholderText = "Tìm kiếm";
             timKiemTextBox.SelectedText = "";
-            timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            timKiemTextBox.Size = new Size(880, 36);
+            timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            timKiemTextBox.Size = new Size(913, 36);
             timKiemTextBox.TabIndex = 29;
+            timKiemTextBox.TextChanged += timKiemTextBox_TextChanged;
             // 
             // sapXepComboBox
             // 
+            sapXepComboBox.Anchor = AnchorStyles.None;
             sapXepComboBox.BackColor = Color.Transparent;
-            sapXepComboBox.CustomizableEdges = customizableEdges13;
+            sapXepComboBox.CustomizableEdges = customizableEdges5;
             sapXepComboBox.DrawMode = DrawMode.OwnerDrawFixed;
             sapXepComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             sapXepComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
             sapXepComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            sapXepComboBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            sapXepComboBox.Font = new Font("Segoe UI", 10F);
             sapXepComboBox.ForeColor = Color.FromArgb(68, 88, 112);
             sapXepComboBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
             sapXepComboBox.ItemHeight = 30;
-            sapXepComboBox.Location = new Point(162, 27);
+            sapXepComboBox.Items.AddRange(new object[] { "Giá tăng dần", "Giá giảm dần", "Số lượng tăng dần", "Số lượng giảm dần" });
+            sapXepComboBox.Location = new Point(458, 33);
             sapXepComboBox.Name = "sapXepComboBox";
-            sapXepComboBox.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            sapXepComboBox.Size = new Size(227, 36);
+            sapXepComboBox.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            sapXepComboBox.Size = new Size(250, 36);
             sapXepComboBox.TabIndex = 28;
+            sapXepComboBox.SelectionChangeCommitted += sapXepComboBox_SelectionChangeCommitted;
             // 
-            // nhomSanPhamComboBox
+            // loaiSanPhamComboBox
             // 
-            nhomSanPhamComboBox.BackColor = Color.Transparent;
-            nhomSanPhamComboBox.CustomizableEdges = customizableEdges15;
-            nhomSanPhamComboBox.DrawMode = DrawMode.OwnerDrawFixed;
-            nhomSanPhamComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            nhomSanPhamComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
-            nhomSanPhamComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            nhomSanPhamComboBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            nhomSanPhamComboBox.ForeColor = Color.FromArgb(68, 88, 112);
-            nhomSanPhamComboBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
-            nhomSanPhamComboBox.ItemHeight = 30;
-            nhomSanPhamComboBox.Location = new Point(395, 27);
-            nhomSanPhamComboBox.Name = "nhomSanPhamComboBox";
-            nhomSanPhamComboBox.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            nhomSanPhamComboBox.Size = new Size(288, 36);
-            nhomSanPhamComboBox.TabIndex = 27;
+            loaiSanPhamComboBox.Anchor = AnchorStyles.None;
+            loaiSanPhamComboBox.BackColor = Color.Transparent;
+            loaiSanPhamComboBox.CustomizableEdges = customizableEdges7;
+            loaiSanPhamComboBox.DrawMode = DrawMode.OwnerDrawFixed;
+            loaiSanPhamComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            loaiSanPhamComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
+            loaiSanPhamComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            loaiSanPhamComboBox.Font = new Font("Segoe UI", 10F);
+            loaiSanPhamComboBox.ForeColor = Color.FromArgb(68, 88, 112);
+            loaiSanPhamComboBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
+            loaiSanPhamComboBox.ItemHeight = 30;
+            loaiSanPhamComboBox.Location = new Point(202, 33);
+            loaiSanPhamComboBox.Name = "loaiSanPhamComboBox";
+            loaiSanPhamComboBox.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            loaiSanPhamComboBox.Size = new Size(250, 36);
+            loaiSanPhamComboBox.TabIndex = 27;
+            loaiSanPhamComboBox.SelectionChangeCommitted += loaiSanPhamComboBox_SelectionChangeCommitted;
             // 
             // SanPhamForm
             // 
@@ -512,7 +523,7 @@
             BackColor = Color.FromArgb(223, 243, 252);
             ClientSize = new Size(1183, 821);
             Controls.Add(panel1);
-            Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("Microsoft Sans Serif", 14.25F);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
             Name = "SanPhamForm";
@@ -533,26 +544,26 @@
         private Panel panel2;
         private FontAwesome.Sharp.IconButton lamMoiButton;
         private FontAwesome.Sharp.IconButton xoaTatCaButton;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch trangThaiToggleSwitch;
         private Label label3;
         private Label label2;
-        private Label label1;
         private FontAwesome.Sharp.IconButton timKiemButton;
         private FontAwesome.Sharp.IconButton xuatExcelButton;
         private FontAwesome.Sharp.IconButton themMoiButton;
         private Guna.UI2.WinForms.Guna2TextBox timKiemTextBox;
         private Guna.UI2.WinForms.Guna2ComboBox sapXepComboBox;
-        private Guna.UI2.WinForms.Guna2ComboBox nhomSanPhamComboBox;
+        private Guna.UI2.WinForms.Guna2ComboBox loaiSanPhamComboBox;
+        private Guna.UI2.WinForms.Guna2ComboBox trangThaiComboBox;
+        private Label label1;
         private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn maSanPhamColumn;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;
-        private DataGridViewImageColumn Column9;
-        private DataGridViewImageColumn Column10;
-        private DataGridViewImageColumn Column11;
+        private DataGridViewImageColumn infoButtonColumn;
+        private DataGridViewImageColumn editButtonColumn;
+        private DataGridViewImageColumn deleteButtonColumn;
     }
 }

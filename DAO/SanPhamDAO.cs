@@ -18,7 +18,7 @@ namespace DAO
         {
             List<SanPham> listSanPham = new List<SanPham>();
 
-            string query = "SELECT * FROM SanPham;";
+            string query = "SELECT * FROM SanPham WHERE trangThai = N'Đang bán';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
@@ -35,7 +35,7 @@ namespace DAO
                     sanPham.soLuong = (int)row["soLuong"];
                     sanPham.giaBan = (decimal)row["giaBan"];
                     sanPham.duLieuAnh = (byte[])row["duLieuAnh"];
-                    sanPham.trangThai = (bool)row["trangThai"];
+                    sanPham.trangThai = row["trangThai"].ToString();
 
                     listSanPham.Add(sanPham);
                 }
@@ -60,7 +60,7 @@ namespace DAO
             sanPham.soLuong = (int)dataTable.Rows[0]["soLuong"];
             sanPham.giaBan = (decimal)dataTable.Rows[0]["giaBan"];
             sanPham.duLieuAnh = (byte[])dataTable.Rows[0]["duLieuAnh"];
-            sanPham.trangThai = (bool)dataTable.Rows[0]["trangThai"];
+            sanPham.trangThai = dataTable.Rows[0]["trangThai"].ToString();
             
             return sanPham;
         }
@@ -118,7 +118,7 @@ namespace DAO
 
         public bool XoaSanPham(string maSanPham)
         {
-            string query = $"UPDATE SanPham SET trangThai = 0, soLuong = 0 WHERE maSanPham = '{maSanPham}';";
+            string query = $"UPDATE SanPham SET trangThai = N'Ngừng kinh doanh', soLuong = 0 WHERE maSanPham = '{maSanPham}';";
 
             int rowsAffected = DBHelper.ExecuteNonQuery(query);
 
@@ -162,48 +162,33 @@ namespace DAO
             return rowsAffected > 0;
         }
 
-        public List<SanPham> TimKiemSanPham(string keyword)
+        public List<SanPham> TimKiemSanPham(string tuKhoa, string maLoaiSanPham, string maNhaCungCap, string trangThai, string sapXep)
         {
             List<SanPham> listSanPham = new List<SanPham>();
 
-            string query = $"SELECT SP.* FROM SanPham AS SP " +
-                           $"JOIN LoaiSanPham AS LSP ON SP.maLoaiSanPham = LSP.maLoaiSanPham " +
-                           $"JOIN NhaCungCap AS NCC ON SP.maNhaCungCap = NCC.maNhaCungCap " +
-                           $"WHERE LOWER(LSP.tenLoaiSanPham) LIKE N'%{keyword}%' " +
-                           $"OR LOWER(NCC.tenNhaCungCap) LIKE N'%{keyword}%' " +
-                           $"OR LOWER(SP.tenSanPham) LIKE N'%{keyword}%';";
-
-            DataTable dataTable = DBHelper.ExecuteQuery(query);
-
-            if (dataTable.Rows.Count > 0)
+            switch(sapXep)
             {
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    SanPham sanPham = new SanPham();
-                    sanPham.maSanPham = row["maSanPham"].ToString();
-                    sanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
-                    sanPham.maNhaCungCap = row["maNhaCungCap"].ToString();
-                    sanPham.tenSanPham = row["tenSanPham"].ToString();
-                    sanPham.donViTinh = row["donViTinh"].ToString();
-                    sanPham.soLuong = (int)row["soLuong"];
-                    sanPham.giaBan = (decimal)row["giaBan"];
-                    sanPham.duLieuAnh = (byte[])row["duLieuAnh"];
-                    sanPham.trangThai = (bool)row["trangThai"];
-
-                    listSanPham.Add(sanPham);
-                }
+                case "Giá tăng dần":
+                    sapXep = "giaBan ASC;";
+                    break;
+                case "Giá giảm dần":
+                    sapXep = "giaBan DESC;";
+                    break;
+                case "Số lượng tăng dần":
+                    sapXep = "soLuong ASC;";
+                    break;
+                case "Số lượng giảm dần":
+                    sapXep = "soLuong DESC;";
+                    break;
             }
 
-            return listSanPham;
-        }
-
-        public List<SanPham> LocSanPhamTheoLoaiSanPham(string tenLoaiSanPham)
-        {
-            List<SanPham> listSanPham = new List<SanPham>();
-
-            string query = $"SELECT * FROM SanPham AS SP " +
-                           $"JOIN LoaiSanPham AS LSP ON SP.maLoaiSanPham = LSP.maLoaiSanPham " +
-                           $"WHERE LSP.tenLoaiSanPham = N'{tenLoaiSanPham}';";
+            string query = $"SELECT * FROM SanPham " +
+                           $"WHERE ('{tuKhoa}' = '' OR LOWER(maSanPham) LIKE '%{tuKhoa}%' OR tenSanPham COLLATE Latin1_General_CI_AI LIKE '%{tuKhoa}%') " +
+                           $"AND ('{maLoaiSanPham}' = '' OR maLoaiSanPham = '{maLoaiSanPham}') " +
+                           $"AND ('{maNhaCungCap}' = '' OR maNhaCungCap = '{maNhaCungCap}') " +
+                           $"AND ('{trangThai}' = '' OR trangThai = N'{trangThai}') ";
+            if (!string.IsNullOrEmpty(sapXep))
+                query += "ORDER BY " + sapXep;
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
@@ -220,39 +205,7 @@ namespace DAO
                     sanPham.soLuong = (int)row["soLuong"];
                     sanPham.giaBan = (decimal)row["giaBan"];
                     sanPham.duLieuAnh = (byte[])row["duLieuAnh"];
-                    sanPham.trangThai = (bool)row["trangThai"];
-
-                    listSanPham.Add(sanPham);
-                }
-            }
-
-            return listSanPham;
-        }
-
-        public List<SanPham> LocSanPhamTheoNhaCungCap(string maNhaCungCap)
-        {
-            List<SanPham> listSanPham = new List<SanPham>();
-
-            string query = $"SELECT * FROM SanPham AS SP " +
-                           $"JOIN NhaCungCap AS NCC ON SP.maNhaCungCap = NCC.maNhaCungCap " +
-                           $"WHERE NCC.maNhaCungCap = '{maNhaCungCap}';";
-
-            DataTable dataTable = DBHelper.ExecuteQuery(query);
-
-            if (dataTable.Rows.Count > 0)
-            {
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    SanPham sanPham = new SanPham();
-                    sanPham.maSanPham = row["maSanPham"].ToString();
-                    sanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
-                    sanPham.maNhaCungCap = row["maNhaCungCap"].ToString();
-                    sanPham.tenSanPham = row["tenSanPham"].ToString();
-                    sanPham.donViTinh = row["donViTinh"].ToString();
-                    sanPham.soLuong = (int)row["soLuong"];
-                    sanPham.giaBan = (decimal)row["giaBan"];
-                    sanPham.duLieuAnh = (byte[])row["duLieuAnh"];
-                    sanPham.trangThai = (bool)row["trangThai"];
+                    sanPham.trangThai = row["trangThai"].ToString();
 
                     listSanPham.Add(sanPham);
                 }

@@ -1,5 +1,7 @@
 ﻿using BUS;
+using BUS.OtherFunctions;
 using DTO;
+using GUI.CacFormChiTiet;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +25,14 @@ namespace GUI
 
             sanPhamBUS = new SanPhamBUS();
             listSanPham = sanPhamBUS.LayDanhSachSanPham();
+
+            List<LoaiSanPham> listLoaiSanPham = new LoaiSanPhamBUS().LayDanhSachLoaiSanPham();
+            loaiSanPhamComboBox.DataSource = listLoaiSanPham;
+            loaiSanPhamComboBox.DisplayMember = "tenLoaiSanPham";
+
+            trangThaiComboBox.SelectedIndex = 0;
+            loaiSanPhamComboBox.SelectedIndex = -1;
+            sapXepComboBox.SelectedIndex = -1;
         }
 
         private void SanPhamForm_Load(object sender, EventArgs e)
@@ -45,6 +55,157 @@ namespace GUI
                 sanPhamDataGridView.Rows[i].Cells[5].Value = listSanPham[i].donViTinh;
                 sanPhamDataGridView.Rows[i].Cells[6].Value = listSanPham[i].soLuong;
                 sanPhamDataGridView.Rows[i].Cells[7].Value = listSanPham[i].giaBan.ToString("#,##0") + " VNĐ";
+            }
+        }
+
+        private void timKiemButton_Click(object sender, EventArgs e)
+        {
+            string tuKhoa = timKiemTextBox.Text;
+
+            string trangThai = "";
+            if (trangThaiComboBox.SelectedItem != null)
+                trangThai = trangThaiComboBox.SelectedItem.ToString();
+            string maLoaiSanPham = "";
+            if (loaiSanPhamComboBox.SelectedValue != null)
+            {
+                LoaiSanPham loaiSanPham = loaiSanPhamComboBox.SelectedValue as LoaiSanPham;
+                maLoaiSanPham = loaiSanPham.maLoaiSanPham;
+            }
+            string maNhaCungCap = ""; //CHỜ SỬA
+            string sapXep = "";
+            if (sapXepComboBox.SelectedItem != null)
+                sapXep = sapXepComboBox.SelectedItem.ToString();
+
+            listSanPham = sanPhamBUS.TimKiemSanPham(tuKhoa, maLoaiSanPham, maNhaCungCap, trangThai, sapXep);
+
+            LoadDataToDataGridView(listSanPham);
+        }
+
+        private void timKiemTextBox_TextChanged(object sender, EventArgs e)
+        {
+            timKiemButton_Click(sender, e);
+        }
+
+        public void lamMoiButton_Click(object sender, EventArgs e)
+        {
+            timKiemTextBox.Clear();
+            trangThaiComboBox.SelectedItem = null;
+            trangThaiComboBox.SelectedIndex = 0;
+            loaiSanPhamComboBox.SelectedItem = null;
+            loaiSanPhamComboBox.SelectedIndex = -1;
+            sapXepComboBox.SelectedItem = null;
+            sapXepComboBox.SelectedIndex = -1;
+
+            listSanPham = sanPhamBUS.LayDanhSachSanPham();
+
+            LoadDataToDataGridView(listSanPham);
+        }
+
+        private void trangThaiComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (trangThaiComboBox.SelectedItem != null)
+            {
+                timKiemTextBox.Clear();
+                timKiemButton_Click(sender, e);
+            }
+        }
+
+        private void loaiSanPhamComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (loaiSanPhamComboBox.SelectedItem != null)
+            {
+                timKiemTextBox.Clear();
+                timKiemButton_Click(sender, e);
+            }
+        }
+
+        private void sapXepComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (sapXepComboBox.SelectedItem != null)
+            {
+                timKiemTextBox.Clear();
+                timKiemButton_Click(sender, e);
+            }
+        }
+
+        private void xuatExcelButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+            saveFileDialog.Title = "Chọn vị trí lưu file Excel";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+
+                new XuatExcel(filePath).XuatExcelSanPham(listSanPham);
+
+                MessageBox.Show("File Excel đã được tạo tại: " + filePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void themMoiButton_Click(object sender, EventArgs e)
+        {
+            new ChiTietSanPhamForm("Thêm", this).Show();
+        }
+
+        private void xoaTatCaButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn xóa các sản phẩm đã chọn không?", "Xác nhận", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                bool hoanTat = true;
+
+                for (int i = 0; i < sanPhamDataGridView.SelectedRows.Count; i++)
+                {
+                    string maSanPham = sanPhamDataGridView.SelectedRows[i].Cells["maSanPhamColumn"].Value.ToString();
+
+                    if (!sanPhamBUS.XoaSanPham(maSanPham).Equals("Xóa sản phẩm thành công!"))
+                    {
+                        hoanTat = false;
+                        break;
+                    }
+                }
+
+                if (hoanTat)
+                {
+                    MessageBox.Show("Đã xóa tất cả sản phẩm đã chọn!");
+                    lamMoiButton_Click(sender, e);
+                }
+                else
+                    MessageBox.Show("Quá trình xóa xảy ra lỗi!");
+            }
+        }
+
+        private void sanPhamDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SanPham sanPham = sanPhamBUS.LaySanPhamTheoMa(sanPhamDataGridView.Rows[e.RowIndex].Cells["maSanPhamColumn"].Value.ToString());
+
+            string columnName = sanPhamDataGridView.Columns[e.ColumnIndex].Name;
+
+            if (columnName.Equals("infoButtonColumn"))
+            {
+                new ChiTietSanPhamForm(sanPham, "Chi tiết", this).Show();
+            }
+
+            if (columnName.Equals("editButtonColumn"))
+            {
+                new ChiTietSanPhamForm(sanPham, "Sửa", this).Show();
+            }
+
+            if (columnName.Equals("deleteButtonColumn"))
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn xóa sản phẩm không?", "Xác nhận", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    string maSanPham = sanPhamDataGridView.Rows[e.RowIndex].Cells["maSanPhamColumn"].Value.ToString();
+
+                    MessageBox.Show(sanPhamBUS.XoaSanPham(maSanPham));
+
+                    lamMoiButton_Click(sender, e);
+                }
             }
         }
 
@@ -93,23 +254,14 @@ namespace GUI
 
         private void sanPhamDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            // Kiểm tra số lượng dòng được chọn
             if (sanPhamDataGridView.SelectedRows.Count > 1)
             {
-                // Nếu nhiều hơn 1 dòng được chọn, hiển thị nút xoá tất cả
                 xoaTatCaButton.Visible = true;
             }
             else
             {
-                // Nếu không có hoặc chỉ có 1 dòng được chọn, ẩn nút xoá tất cả
                 xoaTatCaButton.Visible = false;
             }
-        }
-
-        private void themMoiButton_Click(object sender, EventArgs e)
-        {
-            ChiTietSanPhamForm chitietsanphamfrom = new ChiTietSanPhamForm();
-            chitietsanphamfrom.ShowDialog();
         }
     }
 }
