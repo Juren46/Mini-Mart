@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -37,9 +39,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            trangThaiComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             luuButton = new Guna.UI2.WinForms.Guna2Button();
             huyBoButton = new Guna.UI2.WinForms.Guna2Button();
             panel1 = new Panel();
@@ -51,8 +53,6 @@
             tenLoaiSanPhamTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             maLoaiSanPhamTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
-            trangThaiComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -75,6 +75,35 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(469, 295);
             panel2.TabIndex = 4;
+            // 
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.ForeColor = Color.FromArgb(0, 79, 111);
+            guna2HtmlLabel1.Location = new Point(256, 73);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(87, 26);
+            guna2HtmlLabel1.TabIndex = 44;
+            guna2HtmlLabel1.Text = "Trạng thái";
+            // 
+            // trangThaiComboBox
+            // 
+            trangThaiComboBox.BackColor = Color.Transparent;
+            trangThaiComboBox.CustomizableEdges = customizableEdges1;
+            trangThaiComboBox.DrawMode = DrawMode.OwnerDrawFixed;
+            trangThaiComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            trangThaiComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
+            trangThaiComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            trangThaiComboBox.Font = new Font("Segoe UI", 10F);
+            trangThaiComboBox.ForeColor = Color.FromArgb(68, 88, 112);
+            trangThaiComboBox.ItemHeight = 30;
+            trangThaiComboBox.Items.AddRange(new object[] { "Đang sử dụng", "Đã xóa" });
+            trangThaiComboBox.Location = new Point(256, 105);
+            trangThaiComboBox.Name = "trangThaiComboBox";
+            trangThaiComboBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            trangThaiComboBox.Size = new Size(178, 36);
+            trangThaiComboBox.TabIndex = 43;
             // 
             // luuButton
             // 
@@ -227,37 +256,8 @@
             maLoaiSanPhamTextBox.PlaceholderText = "";
             maLoaiSanPhamTextBox.SelectedText = "";
             maLoaiSanPhamTextBox.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            maLoaiSanPhamTextBox.Size = new Size(163, 40);
+            maLoaiSanPhamTextBox.Size = new Size(171, 40);
             maLoaiSanPhamTextBox.TabIndex = 23;
-            // 
-            // trangThaiComboBox
-            // 
-            trangThaiComboBox.BackColor = Color.Transparent;
-            trangThaiComboBox.CustomizableEdges = customizableEdges1;
-            trangThaiComboBox.DrawMode = DrawMode.OwnerDrawFixed;
-            trangThaiComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            trangThaiComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
-            trangThaiComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            trangThaiComboBox.Font = new Font("Segoe UI", 10F);
-            trangThaiComboBox.ForeColor = Color.FromArgb(68, 88, 112);
-            trangThaiComboBox.ItemHeight = 30;
-            trangThaiComboBox.Items.AddRange(new object[] { "Đang sử dụng", "Đã xóa" });
-            trangThaiComboBox.Location = new Point(256, 105);
-            trangThaiComboBox.Name = "trangThaiComboBox";
-            trangThaiComboBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            trangThaiComboBox.Size = new Size(178, 36);
-            trangThaiComboBox.TabIndex = 43;
-            // 
-            // guna2HtmlLabel1
-            // 
-            guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.ForeColor = Color.FromArgb(0, 79, 111);
-            guna2HtmlLabel1.Location = new Point(256, 73);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(87, 26);
-            guna2HtmlLabel1.TabIndex = 44;
-            guna2HtmlLabel1.Text = "Trạng thái";
             // 
             // ChiTietLoaiSanPhamForm
             // 

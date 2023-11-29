@@ -137,8 +137,6 @@ namespace GUI
         {
             DialogResult result = MessageBox.Show("Bạn có muốn lưu thông tin loại sản phẩm không?", "Xác nhận", MessageBoxButtons.YesNo);
 
-           
-
             if (result == DialogResult.Yes)
             {
                 string maLoaiSanPham = maLoaiSanPhamTextBox.Text;
