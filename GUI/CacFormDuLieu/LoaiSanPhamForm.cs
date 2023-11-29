@@ -1,6 +1,7 @@
 ﻿using BUS;
 using BUS.OtherFunctions;
 using DTO;
+using GUI.CacFormThongBao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -104,7 +105,7 @@ namespace GUI
 
         private void xoaTatCaButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn xóa các loại sản phẩm đã chọn không?", "Xác nhận", MessageBoxButtons.YesNo);
+            DialogResult result = CacFormThongBao.XacNhanForm.ShowDialog("Bạn có muốn xóa các tài khoản đã chọn không?");
 
             if (result == DialogResult.Yes)
             {
@@ -123,11 +124,11 @@ namespace GUI
 
                 if (hoanTat)
                 {
-                    MessageBox.Show("Đã xóa tất cả loại sản phẩm đã chọn!");
+                    CanhBaoForm.ShowAlertMessage("Đã xóa tất cả sản phẩm đã chọn!", CanhBaoForm.AlertType.SUCCESS);
                     lamMoiButton_Click(sender, e);
                 }
                 else
-                    MessageBox.Show("Quá trình xóa xảy ra lỗi!");
+                    CanhBaoForm.ShowAlertMessage("Quá trình xóa xảy ra lỗi!", CanhBaoForm.AlertType.ERROR);
             }
         }
 
@@ -149,15 +150,16 @@ namespace GUI
 
             if (columnName.Equals("deleteButtonColumn"))
             {
-                DialogResult result = MessageBox.Show("Bạn có muốn xóa loại sản phẩm không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = CacFormThongBao.XacNhanForm.ShowDialog("Bạn có muốn xóa sản phẩm đã chọn không?");
 
                 if (result == DialogResult.Yes)
                 {
                     string message = loaiSanPhamBUS.XoaLoaiSanPham(loaiSanPham.maLoaiSanPham);
 
-                    MessageBox.Show(message);
+                    CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.SUCCESS);
+           
 
-                    lamMoiButton_Click(sender, e);
+                lamMoiButton_Click(sender, e);
                 }
             }
         }

@@ -50,8 +50,8 @@
             btnLuu.DisabledState.CustomBorderColor = Color.DarkGray;
             btnLuu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnLuu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnLuu.FillColor = Color.DarkOrange;
-            btnLuu.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLuu.FillColor = Color.FromArgb(226, 153, 48);
+            btnLuu.Font = new Font("Microsoft Sans Serif", 12F);
             btnLuu.ForeColor = Color.White;
             btnLuu.Location = new Point(253, 181);
             btnLuu.Name = "btnLuu";
@@ -71,7 +71,7 @@
             btnHuyBo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnHuyBo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnHuyBo.FillColor = Color.White;
-            btnHuyBo.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnHuyBo.Font = new Font("Microsoft Sans Serif", 12F);
             btnHuyBo.ForeColor = Color.Black;
             btnHuyBo.Location = new Point(122, 181);
             btnHuyBo.Name = "btnHuyBo";
@@ -83,7 +83,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.DarkOrange;
+            panel1.BackColor = Color.FromArgb(226, 153, 48);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -95,7 +95,7 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
             label1.ForeColor = Color.White;
             label1.Location = new Point(12, 15);
             label1.Name = "label1";
@@ -105,7 +105,7 @@
             // 
             // label2
             // 
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI", 12F);
             label2.ForeColor = Color.Gray;
             label2.Location = new Point(12, 70);
             label2.Name = "label2";
@@ -123,7 +123,7 @@
             Controls.Add(panel1);
             Controls.Add(btnLuu);
             Controls.Add(btnHuyBo);
-            Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("Segoe UI", 14.25F);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
             Name = "XacNhanForm";

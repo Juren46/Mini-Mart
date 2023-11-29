@@ -41,9 +41,11 @@
             xuatExcelButton = new FontAwesome.Sharp.IconButton();
             themMoiButton = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
-            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            trangThaiComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            label1 = new Label();
+            label2 = new Label();
+            panel4 = new Panel();
             xoaTatCaButton = new FontAwesome.Sharp.IconButton();
+            trangThaiComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             lamMoiButton = new FontAwesome.Sharp.IconButton();
             panel3 = new Panel();
@@ -57,6 +59,7 @@
             deleteButtonColumn = new DataGridViewImageColumn();
             panel1 = new Panel();
             panel2.SuspendLayout();
+            panel4.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)loaiSanPhamDataGridView).BeginInit();
             panel1.SuspendLayout();
@@ -71,7 +74,7 @@
             timKiemButton.IconColor = Color.White;
             timKiemButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             timKiemButton.IconSize = 20;
-            timKiemButton.Location = new Point(820, 53);
+            timKiemButton.Location = new Point(662, 54);
             timKiemButton.Name = "timKiemButton";
             timKiemButton.Size = new Size(43, 36);
             timKiemButton.TabIndex = 32;
@@ -90,7 +93,7 @@
             xuatExcelButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             xuatExcelButton.IconSize = 20;
             xuatExcelButton.ImageAlign = ContentAlignment.MiddleLeft;
-            xuatExcelButton.Location = new Point(1039, 53);
+            xuatExcelButton.Location = new Point(881, 53);
             xuatExcelButton.Name = "xuatExcelButton";
             xuatExcelButton.Size = new Size(116, 36);
             xuatExcelButton.TabIndex = 31;
@@ -111,7 +114,7 @@
             themMoiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             themMoiButton.IconSize = 20;
             themMoiButton.ImageAlign = ContentAlignment.MiddleLeft;
-            themMoiButton.Location = new Point(918, 54);
+            themMoiButton.Location = new Point(760, 54);
             themMoiButton.Name = "themMoiButton";
             themMoiButton.Size = new Size(115, 36);
             themMoiButton.TabIndex = 30;
@@ -122,9 +125,10 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(guna2HtmlLabel1);
+            panel2.Controls.Add(label1);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(panel4);
             panel2.Controls.Add(trangThaiComboBox);
-            panel2.Controls.Add(xoaTatCaButton);
             panel2.Controls.Add(timKiemTextBox);
             panel2.Controls.Add(lamMoiButton);
             panel2.Controls.Add(timKiemButton);
@@ -136,34 +140,36 @@
             panel2.Size = new Size(1167, 104);
             panel2.TabIndex = 28;
             // 
-            // guna2HtmlLabel1
+            // label1
             // 
-            guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(12, 22);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(73, 23);
-            guna2HtmlLabel1.TabIndex = 73;
-            guna2HtmlLabel1.Text = "Trạng thái";
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 14.25F);
+            label1.ForeColor = Color.FromArgb(0, 79, 111);
+            label1.Location = new Point(242, 22);
+            label1.Name = "label1";
+            label1.Size = new Size(87, 24);
+            label1.TabIndex = 76;
+            label1.Text = "Tìm kiếm";
             // 
-            // trangThaiComboBox
+            // label2
             // 
-            trangThaiComboBox.BackColor = Color.Transparent;
-            trangThaiComboBox.CustomizableEdges = customizableEdges1;
-            trangThaiComboBox.DrawMode = DrawMode.OwnerDrawFixed;
-            trangThaiComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            trangThaiComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
-            trangThaiComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            trangThaiComboBox.Font = new Font("Segoe UI", 10F);
-            trangThaiComboBox.ForeColor = Color.FromArgb(68, 88, 112);
-            trangThaiComboBox.ItemHeight = 30;
-            trangThaiComboBox.Items.AddRange(new object[] { "Đang sử dụng", "Đã xóa" });
-            trangThaiComboBox.Location = new Point(12, 51);
-            trangThaiComboBox.Name = "trangThaiComboBox";
-            trangThaiComboBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            trangThaiComboBox.Size = new Size(222, 36);
-            trangThaiComboBox.TabIndex = 72;
-            trangThaiComboBox.SelectionChangeCommitted += trangThaiComboBox_SelectionChangeCommitted;
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 14.25F);
+            label2.ForeColor = Color.FromArgb(0, 79, 111);
+            label2.Location = new Point(12, 22);
+            label2.Name = "label2";
+            label2.Size = new Size(94, 24);
+            label2.TabIndex = 75;
+            label2.Text = "Trạng thái";
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(xoaTatCaButton);
+            panel4.Dock = DockStyle.Right;
+            panel4.Location = new Point(1003, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(164, 104);
+            panel4.TabIndex = 74;
             // 
             // xoaTatCaButton
             // 
@@ -177,7 +183,7 @@
             xoaTatCaButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             xoaTatCaButton.IconSize = 20;
             xoaTatCaButton.ImageAlign = ContentAlignment.MiddleLeft;
-            xoaTatCaButton.Location = new Point(1040, 12);
+            xoaTatCaButton.Location = new Point(25, 51);
             xoaTatCaButton.Name = "xoaTatCaButton";
             xoaTatCaButton.Size = new Size(115, 36);
             xoaTatCaButton.TabIndex = 71;
@@ -186,6 +192,25 @@
             xoaTatCaButton.UseVisualStyleBackColor = false;
             xoaTatCaButton.Visible = false;
             xoaTatCaButton.Click += xoaTatCaButton_Click;
+            // 
+            // trangThaiComboBox
+            // 
+            trangThaiComboBox.BackColor = Color.Transparent;
+            trangThaiComboBox.CustomizableEdges = customizableEdges1;
+            trangThaiComboBox.DrawMode = DrawMode.OwnerDrawFixed;
+            trangThaiComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            trangThaiComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
+            trangThaiComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            trangThaiComboBox.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            trangThaiComboBox.ForeColor = Color.FromArgb(0, 79, 111);
+            trangThaiComboBox.ItemHeight = 30;
+            trangThaiComboBox.Items.AddRange(new object[] { "Đang sử dụng", "Đã xóa" });
+            trangThaiComboBox.Location = new Point(12, 51);
+            trangThaiComboBox.Name = "trangThaiComboBox";
+            trangThaiComboBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            trangThaiComboBox.Size = new Size(222, 36);
+            trangThaiComboBox.TabIndex = 72;
+            trangThaiComboBox.SelectionChangeCommitted += trangThaiComboBox_SelectionChangeCommitted;
             // 
             // timKiemTextBox
             // 
@@ -199,7 +224,7 @@
             timKiemTextBox.Font = new Font("Segoe UI", 12F);
             timKiemTextBox.ForeColor = Color.FromArgb(84, 155, 255);
             timKiemTextBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
-            timKiemTextBox.Location = new Point(242, 53);
+            timKiemTextBox.Location = new Point(242, 51);
             timKiemTextBox.Margin = new Padding(5);
             timKiemTextBox.Name = "timKiemTextBox";
             timKiemTextBox.PasswordChar = '\0';
@@ -207,7 +232,7 @@
             timKiemTextBox.PlaceholderText = "Nhập tên để tìm kiếm";
             timKiemTextBox.SelectedText = "";
             timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            timKiemTextBox.Size = new Size(570, 36);
+            timKiemTextBox.Size = new Size(412, 38);
             timKiemTextBox.TabIndex = 70;
             timKiemTextBox.TextChanged += timKiemTextBox_TextChanged;
             // 
@@ -220,7 +245,7 @@
             lamMoiButton.IconColor = Color.White;
             lamMoiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             lamMoiButton.IconSize = 20;
-            lamMoiButton.Location = new Point(869, 53);
+            lamMoiButton.Location = new Point(711, 54);
             lamMoiButton.Name = "lamMoiButton";
             lamMoiButton.Size = new Size(43, 36);
             lamMoiButton.TabIndex = 68;
@@ -394,6 +419,7 @@
             Load += LoaiSanPhamForm_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel4.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)loaiSanPhamDataGridView).EndInit();
             panel1.ResumeLayout(false);
@@ -420,7 +446,9 @@
         private DataGridViewImageColumn infoButtonColumn;
         private DataGridViewImageColumn editButtonColumn;
         private DataGridViewImageColumn deleteButtonColumn;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2ComboBox trangThaiComboBox;
+        private Panel panel4;
+        private Label label2;
+        private Label label1;
     }
 }

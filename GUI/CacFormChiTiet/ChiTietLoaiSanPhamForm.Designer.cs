@@ -137,7 +137,7 @@
             huyBoButton.FillColor = Color.White;
             huyBoButton.Font = new Font("Microsoft Sans Serif", 12F);
             huyBoButton.ForeColor = Color.FromArgb(0, 79, 111);
-            huyBoButton.Location = new Point(35, 238);
+            huyBoButton.Location = new Point(108, 238);
             huyBoButton.Name = "huyBoButton";
             huyBoButton.ShadowDecoration.CustomizableEdges = customizableEdges6;
             huyBoButton.Size = new Size(160, 40);
@@ -154,7 +154,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(469, 63);
+            panel1.Size = new Size(469, 54);
             panel1.TabIndex = 40;
             // 
             // panel3
@@ -163,7 +163,7 @@
             panel3.Dock = DockStyle.Right;
             panel3.Location = new Point(399, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(70, 63);
+            panel3.Size = new Size(70, 54);
             panel3.TabIndex = 1;
             // 
             // quayLaiButton
@@ -176,7 +176,7 @@
             quayLaiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             quayLaiButton.Location = new Point(0, 0);
             quayLaiButton.Name = "quayLaiButton";
-            quayLaiButton.Size = new Size(70, 63);
+            quayLaiButton.Size = new Size(70, 54);
             quayLaiButton.TabIndex = 2;
             quayLaiButton.UseVisualStyleBackColor = true;
             quayLaiButton.Click += quayLaiButton_Click;
@@ -186,7 +186,7 @@
             tieuDeFormLabel.AutoSize = true;
             tieuDeFormLabel.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tieuDeFormLabel.ForeColor = Color.White;
-            tieuDeFormLabel.Location = new Point(5, 15);
+            tieuDeFormLabel.Location = new Point(5, 9);
             tieuDeFormLabel.Margin = new Padding(5, 0, 5, 0);
             tieuDeFormLabel.Name = "tieuDeFormLabel";
             tieuDeFormLabel.Size = new Size(252, 32);
