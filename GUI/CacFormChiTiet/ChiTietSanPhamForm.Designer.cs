@@ -33,10 +33,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -51,6 +47,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             label1 = new Label();
@@ -59,8 +59,6 @@
             tsDangTonTai = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             btnChonAnh = new Guna.UI2.WinForms.Guna2Button();
             label8 = new Label();
-            btnLuu = new Guna.UI2.WinForms.Guna2Button();
-            btnHuyBo = new Guna.UI2.WinForms.Guna2Button();
             pbAnhSanPham = new Guna.UI2.WinForms.Guna2PictureBox();
             label7 = new Label();
             numSoLuong = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -75,6 +73,8 @@
             txtTenSanPham = new Guna.UI2.WinForms.Guna2TextBox();
             txtMaSanPham = new Guna.UI2.WinForms.Guna2TextBox();
             guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
+            btnLuu = new Guna.UI2.WinForms.Guna2Button();
+            btnHuyBo = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbAnhSanPham).BeginInit();
@@ -111,7 +111,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
             label1.ForeColor = Color.White;
             label1.Location = new Point(38, 19);
             label1.Margin = new Padding(5, 0, 5, 0);
@@ -150,7 +150,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Font = new Font("Microsoft Sans Serif", 14.25F);
             label9.ForeColor = Color.FromArgb(0, 79, 111);
             label9.Location = new Point(38, 53);
             label9.Name = "label9";
@@ -186,7 +186,7 @@
             btnChonAnh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnChonAnh.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnChonAnh.FillColor = Color.White;
-            btnChonAnh.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnChonAnh.Font = new Font("Microsoft Sans Serif", 12F);
             btnChonAnh.ForeColor = Color.Gray;
             btnChonAnh.Location = new Point(38, 329);
             btnChonAnh.Name = "btnChonAnh";
@@ -198,51 +198,13 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Font = new Font("Microsoft Sans Serif", 14.25F);
             label8.ForeColor = Color.FromArgb(0, 79, 111);
             label8.Location = new Point(338, 386);
             label8.Name = "label8";
             label8.Size = new Size(124, 24);
             label8.TabIndex = 39;
             label8.Text = "Đang tồn tại? ";
-            // 
-            // btnLuu
-            // 
-            btnLuu.BorderRadius = 5;
-            btnLuu.CustomizableEdges = customizableEdges5;
-            btnLuu.DisabledState.BorderColor = Color.DarkGray;
-            btnLuu.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnLuu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnLuu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnLuu.FillColor = Color.FromArgb(0, 79, 111);
-            btnLuu.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLuu.ForeColor = Color.White;
-            btnLuu.Location = new Point(734, 451);
-            btnLuu.Name = "btnLuu";
-            btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnLuu.Size = new Size(189, 53);
-            btnLuu.TabIndex = 38;
-            btnLuu.Text = "Lưu";
-            // 
-            // btnHuyBo
-            // 
-            btnHuyBo.BorderColor = Color.FromArgb(0, 79, 111);
-            btnHuyBo.BorderRadius = 5;
-            btnHuyBo.BorderThickness = 1;
-            btnHuyBo.CustomizableEdges = customizableEdges7;
-            btnHuyBo.DisabledState.BorderColor = Color.DarkGray;
-            btnHuyBo.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnHuyBo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnHuyBo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnHuyBo.FillColor = Color.White;
-            btnHuyBo.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnHuyBo.ForeColor = Color.FromArgb(0, 79, 111);
-            btnHuyBo.Location = new Point(539, 451);
-            btnHuyBo.Name = "btnHuyBo";
-            btnHuyBo.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnHuyBo.Size = new Size(189, 53);
-            btnHuyBo.TabIndex = 37;
-            btnHuyBo.Text = "Huỷ bỏ";
             // 
             // pbAnhSanPham
             // 
@@ -261,7 +223,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Font = new Font("Microsoft Sans Serif", 14.25F);
             label7.ForeColor = Color.FromArgb(0, 79, 111);
             label7.Location = new Point(633, 283);
             label7.Name = "label7";
@@ -275,7 +237,7 @@
             numSoLuong.BorderColor = Color.FromArgb(0, 79, 111);
             numSoLuong.BorderRadius = 5;
             numSoLuong.CustomizableEdges = customizableEdges11;
-            numSoLuong.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            numSoLuong.Font = new Font("Microsoft Sans Serif", 14.25F);
             numSoLuong.Location = new Point(633, 311);
             numSoLuong.Margin = new Padding(5, 5, 5, 5);
             numSoLuong.Name = "numSoLuong";
@@ -287,7 +249,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Microsoft Sans Serif", 14.25F);
             label6.ForeColor = Color.FromArgb(0, 79, 111);
             label6.Location = new Point(633, 168);
             label6.Name = "label6";
@@ -298,7 +260,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Microsoft Sans Serif", 14.25F);
             label5.ForeColor = Color.FromArgb(0, 79, 111);
             label5.Location = new Point(633, 53);
             label5.Name = "label5";
@@ -309,7 +271,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Microsoft Sans Serif", 14.25F);
             label4.ForeColor = Color.FromArgb(0, 79, 111);
             label4.Location = new Point(338, 283);
             label4.Name = "label4";
@@ -320,7 +282,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 14.25F);
             label3.ForeColor = Color.FromArgb(0, 79, 111);
             label3.Location = new Point(338, 168);
             label3.Name = "label3";
@@ -331,7 +293,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 14.25F);
             label2.ForeColor = Color.FromArgb(0, 79, 111);
             label2.Location = new Point(338, 53);
             label2.Name = "label2";
@@ -350,7 +312,7 @@
             txtDonVi.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtDonVi.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtDonVi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDonVi.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtDonVi.Font = new Font("Microsoft Sans Serif", 14.25F);
             txtDonVi.Location = new Point(338, 311);
             txtDonVi.Margin = new Padding(5, 5, 5, 5);
             txtDonVi.Name = "txtDonVi";
@@ -372,7 +334,7 @@
             txtGiaTien.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtGiaTien.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtGiaTien.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtGiaTien.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtGiaTien.Font = new Font("Microsoft Sans Serif", 14.25F);
             txtGiaTien.Location = new Point(633, 196);
             txtGiaTien.Margin = new Padding(5, 5, 5, 5);
             txtGiaTien.Name = "txtGiaTien";
@@ -394,7 +356,7 @@
             txtNhaCungCap.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtNhaCungCap.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtNhaCungCap.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtNhaCungCap.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNhaCungCap.Font = new Font("Microsoft Sans Serif", 14.25F);
             txtNhaCungCap.Location = new Point(338, 195);
             txtNhaCungCap.Margin = new Padding(5, 5, 5, 5);
             txtNhaCungCap.Name = "txtNhaCungCap";
@@ -416,7 +378,7 @@
             txtTenSanPham.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtTenSanPham.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtTenSanPham.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTenSanPham.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTenSanPham.Font = new Font("Microsoft Sans Serif", 14.25F);
             txtTenSanPham.Location = new Point(633, 81);
             txtTenSanPham.Margin = new Padding(5, 5, 5, 5);
             txtTenSanPham.Name = "txtTenSanPham";
@@ -438,7 +400,7 @@
             txtMaSanPham.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtMaSanPham.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtMaSanPham.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMaSanPham.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtMaSanPham.Font = new Font("Microsoft Sans Serif", 14.25F);
             txtMaSanPham.Location = new Point(338, 79);
             txtMaSanPham.Margin = new Padding(5, 5, 5, 5);
             txtMaSanPham.Name = "txtMaSanPham";
@@ -449,6 +411,44 @@
             txtMaSanPham.Size = new Size(290, 40);
             txtMaSanPham.TabIndex = 23;
             // 
+            // btnLuu
+            // 
+            btnLuu.BorderRadius = 5;
+            btnLuu.CustomizableEdges = customizableEdges5;
+            btnLuu.DisabledState.BorderColor = Color.DarkGray;
+            btnLuu.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnLuu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnLuu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnLuu.FillColor = Color.FromArgb(0, 79, 111);
+            btnLuu.Font = new Font("Microsoft Sans Serif", 12F);
+            btnLuu.ForeColor = Color.White;
+            btnLuu.Location = new Point(734, 451);
+            btnLuu.Name = "btnLuu";
+            btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnLuu.Size = new Size(189, 53);
+            btnLuu.TabIndex = 38;
+            btnLuu.Text = "Lưu";
+            // 
+            // btnHuyBo
+            // 
+            btnHuyBo.BorderColor = Color.FromArgb(0, 79, 111);
+            btnHuyBo.BorderRadius = 5;
+            btnHuyBo.BorderThickness = 1;
+            btnHuyBo.CustomizableEdges = customizableEdges7;
+            btnHuyBo.DisabledState.BorderColor = Color.DarkGray;
+            btnHuyBo.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnHuyBo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnHuyBo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnHuyBo.FillColor = Color.White;
+            btnHuyBo.Font = new Font("Microsoft Sans Serif", 12F);
+            btnHuyBo.ForeColor = Color.FromArgb(0, 79, 111);
+            btnHuyBo.Location = new Point(539, 451);
+            btnHuyBo.Name = "btnHuyBo";
+            btnHuyBo.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnHuyBo.Size = new Size(189, 53);
+            btnHuyBo.TabIndex = 37;
+            btnHuyBo.Text = "Huỷ bỏ";
+            // 
             // ChiTietSanPhamForm
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
@@ -458,7 +458,7 @@
             ControlBox = false;
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("Microsoft Sans Serif", 14.25F);
             Margin = new Padding(5);
             Name = "ChiTietSanPhamForm";
             panel1.ResumeLayout(false);
@@ -476,8 +476,6 @@
         private Panel panel2;
         private Guna.UI2.WinForms.Guna2Button btnChonAnh;
         private Label label8;
-        private Guna.UI2.WinForms.Guna2Button btnLuu;
-        private Guna.UI2.WinForms.Guna2Button btnHuyBo;
         private Guna.UI2.WinForms.Guna2PictureBox pbAnhSanPham;
         private Label label7;
         private Guna.UI2.WinForms.Guna2NumericUpDown numSoLuong;
@@ -495,5 +493,7 @@
         private Guna.UI2.WinForms.Guna2ToggleSwitch tsDangTonTai;
         private FontAwesome.Sharp.IconButton iconButton1;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
+        private Guna.UI2.WinForms.Guna2Button btnLuu;
+        private Guna.UI2.WinForms.Guna2Button btnHuyBo;
     }
 }

@@ -79,7 +79,7 @@ namespace GUI
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = saveFileDialog.FileName;
-                
+
                 new XuatExcel(filePath).XuatExcelPhanQuyen(listPhanQuyen);
 
                 MessageBox.Show("File Excel đã được tạo tại: " + filePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
