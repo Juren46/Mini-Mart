@@ -16,41 +16,11 @@ namespace DAO
         {
             List<KhuyenMai> listKhuyenMai = new List<KhuyenMai>();
 
-            string query = "SELECT * FROM KhuyenMai WHERE thoiGianKetThuc > GETDATE();";
-
+            string query = "SELECT * FROM KhuyenMai WHERE thoiGianKetThuc > GETDATE() AND thoiGianBatDau < GETDATE();";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
             if (dataTable.Rows.Count > 0 )
-            {
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    KhuyenMai khuyenMai = new KhuyenMai();
-
-                    khuyenMai.maKhuyenMai = row["maKhuyenMai"].ToString();
-                    khuyenMai.tenKhuyenMai = row["tenKhuyenMai"].ToString();
-                    khuyenMai.thoiGianBatDau = (DateTime)row["thoiGianBatDau"];
-                    khuyenMai.thoiGianKetThuc = (DateTime)row["thoiGianKetThuc"];
-                    khuyenMai.loaiGiaTri = row["loaiGiaTri"].ToString();
-                    khuyenMai.giaTriApDung = Decimal.Parse(row["giaTriApDung"].ToString());
-
-                    listKhuyenMai.Add(khuyenMai);
-                }
-            }
-
-            return listKhuyenMai;
-        }
-
-        public List<KhuyenMai> LayDanhSachKhuyenMaiDaKetThuc()
-        {
-            List<KhuyenMai> listKhuyenMai = new List<KhuyenMai>();
-
-            string query = "SELECT * FROM KhuyenMai WHERE thoiGianKetThuc <= GETDATE();";
-
-
-            DataTable dataTable = DBHelper.ExecuteQuery(query);
-
-            if (dataTable.Rows.Count > 0)
             {
                 foreach (DataRow row in dataTable.Rows)
                 {
@@ -78,12 +48,15 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            khuyenMai.maKhuyenMai = dataTable.Rows[0]["maKhuyenMai"].ToString();
-            khuyenMai.tenKhuyenMai = dataTable.Rows[0]["tenKhuyenMai"].ToString();
-            khuyenMai.thoiGianBatDau = (DateTime)dataTable.Rows[0]["thoiGianBatDau"];
-            khuyenMai.thoiGianKetThuc = (DateTime)dataTable.Rows[0]["thoiGianKetThuc"];
-            khuyenMai.loaiGiaTri = dataTable.Rows[0]["loaiGiaTri"].ToString();
-            khuyenMai.giaTriApDung = Decimal.Parse(dataTable.Rows[0]["giaTriApDung"].ToString());
+            if (dataTable.Rows.Count > 0 )
+            {
+                khuyenMai.maKhuyenMai = dataTable.Rows[0]["maKhuyenMai"].ToString();
+                khuyenMai.tenKhuyenMai = dataTable.Rows[0]["tenKhuyenMai"].ToString();
+                khuyenMai.thoiGianBatDau = (DateTime)dataTable.Rows[0]["thoiGianBatDau"];
+                khuyenMai.thoiGianKetThuc = (DateTime)dataTable.Rows[0]["thoiGianKetThuc"];
+                khuyenMai.loaiGiaTri = dataTable.Rows[0]["loaiGiaTri"].ToString();
+                khuyenMai.giaTriApDung = Decimal.Parse(dataTable.Rows[0]["giaTriApDung"].ToString());
+            }
 
             return khuyenMai;
         }
@@ -126,43 +99,41 @@ namespace DAO
             return rowsAffected > 0;
         }
 
-        public List<KhuyenMai> TimKiemKhuyenMai(string keyword)
+        public List<KhuyenMai> TimKiemKhuyenMai(string tuKhoa, string trangThai, string loaiGiaTri, string sapXep, DateTime? thoiGianBatDau, DateTime? thoiGianKetThuc)
         {
             List<KhuyenMai> listKhuyenMai = new List<KhuyenMai>();
 
             string query = $"SELECT * FROM KhuyenMai " +
-                           $"WHERE LOWER(maKhuyenMai) LIKE '%{keyword}%' " +
-                           $"OR tenKhuyenMai COLLATE Latin1_General_CI_AI LIKE N'%{keyword}%' " +
-                           $"AND thoiGianKetThuc > GETDATE();";
-
-            DataTable dataTable = DBHelper.ExecuteQuery(query);
-
-            if (dataTable.Rows.Count > 0 )
+                           $"WHERE ('{tuKhoa}' = '' OR LOWER(maKhuyenMai) LIKE '%{tuKhoa}%' " +
+                           $"OR tenKhuyenMai COLLATE Latin1_General_CI_AI LIKE N'%{tuKhoa}%') " +
+                           $"AND ('{loaiGiaTri}' = '' OR loaiGiaTri = N'{loaiGiaTri}')";
+            
+            switch (trangThai)
             {
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    KhuyenMai khuyenMai = new KhuyenMai();
-
-                    khuyenMai.maKhuyenMai = row["maKhuyenMai"].ToString();
-                    khuyenMai.tenKhuyenMai = row["tenKhuyenMai"].ToString();
-                    khuyenMai.thoiGianBatDau = (DateTime)row["thoiGianBatDau"];
-                    khuyenMai.thoiGianKetThuc = (DateTime)row["thoiGianKetThuc"];
-                    khuyenMai.loaiGiaTri = row["loaiGiaTri"].ToString();
-                    khuyenMai.giaTriApDung = Decimal.Parse(row["giaTriApDung"].ToString());
-
-                    listKhuyenMai.Add(khuyenMai);
-                }
+                case "Đang diễn ra":
+                    query += $" AND thoiGianKetThuc > GETDATE() AND thoiGianBatDau < GETDATE()";
+                    break;
+                case "Đã kết thúc":
+                    query += $" AND thoiGianKetThuc <= GETDATE()";
+                    break;
+                case "Chưa diễn ra":
+                    query += $" AND thoiGianBatDau > GETDATE() AND thoiGianKetThuc > GETDATE()";
+                    break;
             }
 
-            return listKhuyenMai;
-        }
+            if (thoiGianBatDau != null && thoiGianKetThuc != null)
+                query += $" AND thoiGianBatDau >= '{thoiGianBatDau}' AND thoiGianKetThuc <= '{thoiGianKetThuc}'";
 
-        public List<KhuyenMai> TimKiemKhuyenMaiTheoKhoangThoiGian(DateTime thoiGianBatDau, DateTime thoiGianKetThuc)
-        {
-            List<KhuyenMai> listKhuyenMai = new List<KhuyenMai>();
+            switch (sapXep)
+            {
+                case "Giá trị tăng dần":
+                    query += $" ORDER BY giaTriApDung ASC";
+                    break;
+                case "Giá trị giảm dần":
+                    query += $" ORDER BY giaTriApDung DESC";
+                    break;
+            }
 
-            string query = $"SELECT * FROM KhuyenMai WHERE thoiGianBatDau >= '{thoiGianBatDau}' AND thoiGianKetThuc <= '{thoiGianKetThuc}';";
-            
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
             if (dataTable.Rows.Count > 0 )

@@ -40,11 +40,11 @@ namespace BUS
             DateTime dateTimeBatDau = DateTime.ParseExact(thoiGianBatDau, "dd/MM/yyyy HH:mm:ss", null);
             DateTime dateTimeKetThuc = DateTime.ParseExact(thoiGianKetThuc, "dd/MM/yyyy HH:mm:ss", null);
 
-            if (dateTimeBatDau > dateTimeKetThuc)
-                return "Thời gian bắt đầu phải trước thời gian kết thúc!";
+            if (dateTimeBatDau >= dateTimeKetThuc)
+                return "Thời gian bắt đầu phải diễn ra trước thời gian kết thúc!";
 
-            if (dateTimeBatDau < DateTime.Now)
-                return "Thời gian bắt đầu không được trước thời điểm hiện tại!";
+            if (dateTimeBatDau <= DateTime.Now)
+                return "Thời gian bắt đầu không được diễn ra trước thời điểm hiện tại!";
 
             if (Decimal.Parse(giaTriApDung) <= 0)
                 return "Giá trị áp dụng không được bé hơn 0!";
@@ -80,10 +80,10 @@ namespace BUS
             DateTime dateTimeBatDau = DateTime.ParseExact(thoiGianBatDau, "dd/MM/yyyy HH:mm:ss", null);
             DateTime dateTimeKetThuc = DateTime.ParseExact(thoiGianKetThuc, "dd/MM/yyyy HH:mm:ss", null);
 
-            if (dateTimeBatDau > dateTimeKetThuc)
+            if (dateTimeBatDau >= dateTimeKetThuc)
                 return "Thời gian bắt đầu phải trước thời gian kết thúc!";
 
-            if (dateTimeBatDau < DateTime.Now)
+            if (dateTimeBatDau <= DateTime.Now)
                 return "Thời gian bắt đầu không được trước thời điểm hiện tại!";
 
             if (Decimal.Parse(giaTriApDung) <= 0)
@@ -99,24 +99,24 @@ namespace BUS
             khuyenMai.giaTriApDung = Decimal.Parse(giaTriApDung);
 
             if (khuyenMaiDAO.SuaKhuyenMai(khuyenMai))
-                return "Sửa thông tin khuyến mãi thành công!";
+                return "Chỉnh sửa thông tin khuyến mãi thành công!";
             else
-                return "Sửa thông tin khuyến mãi thất bại!";
+                return "Chỉnh sửa thông tin khuyến mãi thất bại!";
         }
 
-        public List<KhuyenMai> TimKiemKhuyenMai(string keyword)
+        public List<KhuyenMai> TimKiemKhuyenMai(string tuKhoa, string trangThai, string loaiGiaTri, string sapXep, string thoiGianBatDau, string thoiGianKetThuc)
         {
-            keyword = keyword.Trim().ToLower();
+            tuKhoa = tuKhoa.Trim().ToLower();
+            DateTime? dateTimeBatDau = null;
+            DateTime? dateTimeKetThuc = null;
 
-            return khuyenMaiDAO.TimKiemKhuyenMai(keyword);
-        }
+            if (!string.IsNullOrEmpty(thoiGianBatDau) && !string.IsNullOrEmpty(thoiGianKetThuc))
+            {
+                dateTimeBatDau = DateTime.ParseExact(thoiGianBatDau, "dd/MM/yyyy HH:mm:ss", null);
+                dateTimeKetThuc = DateTime.ParseExact(thoiGianKetThuc, "dd/MM/yyyy HH:mm:ss", null);
+            }
 
-        public List<KhuyenMai> TimKiemKhuyenMaiTheoKhoangThoiGian(string thoiGianBatDau, string thoiGianKetThuc)
-        {
-            DateTime dateTimeBatDau = DateTime.ParseExact(thoiGianBatDau, "dd/MM/yyyy HH:mm:ss", null);
-            DateTime dateTimeKetThuc = DateTime.ParseExact(thoiGianKetThuc, "dd/MM/yyyy HH:mm:ss", null);
-
-            return khuyenMaiDAO.TimKiemKhuyenMaiTheoKhoangThoiGian(dateTimeBatDau, dateTimeKetThuc);
+            return khuyenMaiDAO.TimKiemKhuyenMai(tuKhoa, trangThai, loaiGiaTri, sapXep, dateTimeBatDau, dateTimeKetThuc);
         }
 
         public decimal ApDungKhuyenMai(string maKhuyenMai,  string tongTien)

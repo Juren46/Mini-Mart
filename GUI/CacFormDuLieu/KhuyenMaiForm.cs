@@ -1,5 +1,7 @@
 ﻿using BUS;
+using BUS.OtherFunctions;
 using DTO;
+using GUI.CacFormChiTiet;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +30,13 @@ namespace GUI
         private void KhuyenMaiForm_Load(object sender, EventArgs e)
         {
             LoadDataToDataGridView(listKhuyenMai);
+
+            trangThaiComboBox.SelectedIndex = 0;
+            loaiGiaTriComboBox.SelectedIndex = -1;
+            sapXepComboBox.SelectedIndex = -1;
+            thoiGianCheckBox.Checked = false;
+            thoiGianBatDauDateTimePicker.Enabled = false;
+            thoiGianKetThucDateTimePicker.Enabled = false;
         }
 
         private void LoadDataToDataGridView(List<KhuyenMai> listKhuyenMai)
@@ -40,10 +49,190 @@ namespace GUI
                 khuyenMaiDataGridView.Rows[i].Cells[0].Value = i + 1;
                 khuyenMaiDataGridView.Rows[i].Cells[1].Value = listKhuyenMai[i].maKhuyenMai;
                 khuyenMaiDataGridView.Rows[i].Cells[2].Value = listKhuyenMai[i].tenKhuyenMai;
-                khuyenMaiDataGridView.Rows[i].Cells[3].Value = listKhuyenMai[i].thoiGianBatDau.ToString("dd/MM/yyyy");
-                khuyenMaiDataGridView.Rows[i].Cells[4].Value = listKhuyenMai[i].thoiGianKetThuc.ToString("dd/MM/yyyy");
+                khuyenMaiDataGridView.Rows[i].Cells[3].Value = listKhuyenMai[i].thoiGianBatDau.ToString("dd/MM/yyyy HH:mm:ss");
+                khuyenMaiDataGridView.Rows[i].Cells[4].Value = listKhuyenMai[i].thoiGianKetThuc.ToString("dd/MM/yyyy HH:mm:ss");
                 khuyenMaiDataGridView.Rows[i].Cells[5].Value = listKhuyenMai[i].loaiGiaTri;
                 khuyenMaiDataGridView.Rows[i].Cells[6].Value = listKhuyenMai[i].giaTriApDung;
+            }
+        }
+
+        private void timKiemButton_Click(object sender, EventArgs e)
+        {
+            string tuKhoa = timKiemTextBox.Text;
+            string trangThai = "";
+            if (trangThaiComboBox.SelectedItem != null)
+                trangThai = trangThaiComboBox.SelectedItem.ToString();
+            string loaiGiaTri = "";
+            if (loaiGiaTriComboBox.SelectedItem != null)
+                loaiGiaTri = loaiGiaTriComboBox.SelectedItem.ToString();
+            string sapXep = "";
+            if (sapXepComboBox.SelectedItem != null)
+                sapXep = sapXepComboBox.SelectedItem.ToString();
+            string thoiGianBatDau = "";
+            string thoiGianKetThuc = "";
+            if (thoiGianCheckBox.Checked)
+            {
+                thoiGianBatDau = thoiGianBatDauDateTimePicker.Value.ToString("dd/MM/yyyy HH:mm:ss");
+                thoiGianKetThuc = thoiGianKetThucDateTimePicker.Value.ToString("dd/MM/yyyy HH:mm:ss");
+            }
+
+            listKhuyenMai = khuyenMaiBUS.TimKiemKhuyenMai(tuKhoa, trangThai, loaiGiaTri, sapXep, thoiGianBatDau, thoiGianKetThuc);
+
+            LoadDataToDataGridView(listKhuyenMai);
+        }
+
+        private void timKiemTextBox_TextChanged(object sender, EventArgs e)
+        {
+            timKiemButton_Click(sender, e);
+        }
+
+        internal void lamMoiButton_Click(object sender, EventArgs e)
+        {
+            timKiemTextBox.Clear();
+            trangThaiComboBox.SelectedItem = null;
+            trangThaiComboBox.SelectedIndex = 0;
+            loaiGiaTriComboBox.SelectedItem = null;
+            loaiGiaTriComboBox.SelectedIndex = -1;
+            sapXepComboBox.SelectedItem = null;
+            sapXepComboBox.SelectedIndex = -1;
+            thoiGianCheckBox.Checked = false;
+            thoiGianBatDauDateTimePicker.Enabled = false;
+            thoiGianKetThucDateTimePicker.Enabled = false;
+
+            listKhuyenMai = khuyenMaiBUS.LayDanhSachKhuyenMai();
+
+            LoadDataToDataGridView(listKhuyenMai);
+        }
+
+        private void trangThaiComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (trangThaiComboBox.SelectedIndex != -1)
+            {
+                timKiemTextBox.Clear();
+                timKiemButton_Click(sender, e);
+            }
+        }
+
+        private void loaiGiaTriComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (loaiGiaTriComboBox.SelectedIndex != -1)
+            {
+                timKiemTextBox.Clear();
+                timKiemButton_Click(sender, e);
+            }
+        }
+
+        private void sapXepComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (sapXepComboBox.SelectedIndex != -1)
+            {
+                timKiemTextBox.Clear();
+                timKiemButton_Click(sender, e);
+            }
+        }
+
+        private void thoiGianCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (thoiGianCheckBox.Checked)
+            {
+                thoiGianBatDauDateTimePicker.Enabled = true;
+                thoiGianKetThucDateTimePicker.Enabled = true;
+            }
+            else
+            {
+                thoiGianBatDauDateTimePicker.Enabled = false;
+                thoiGianKetThucDateTimePicker.Enabled = false;
+            }
+        }
+
+        private void xuatExcelButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+            saveFileDialog.Title = "Chọn vị trí lưu file Excel";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+                new XuatExcel(filePath).XuatExcelKhuyenMai(listKhuyenMai);
+                MessageBox.Show("File Excel đã được tạo tại: " + filePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void themMoiButton_Click(object sender, EventArgs e)
+        {
+            new TestChiTietKhuyenMaiForm("Thêm", this).Show();
+        }
+
+        private void khuyenMaiDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            KhuyenMai khuyenMai = khuyenMaiBUS.LayKhuyenMaiTheoMa(khuyenMaiDataGridView.Rows[e.RowIndex].Cells["maKhuyenMaiColumn"].Value.ToString());
+
+            string columnName = khuyenMaiDataGridView.Columns[e.ColumnIndex].Name;
+
+            if (columnName.Equals("infoButtonColumn"))
+            {
+                new TestChiTietKhuyenMaiForm(khuyenMai, "Chi tiết", this).Show();
+            }
+
+            if (columnName.Equals("editButtonColumn"))
+            {
+                new TestChiTietKhuyenMaiForm(khuyenMai, "Sửa", this).Show();
+            }
+
+            if (columnName.Equals("deleteButtonColumn"))
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn xóa khuyến mãi không?", "Xác nhận", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    string maKhuyenMai = khuyenMaiDataGridView.Rows[e.RowIndex].Cells["maKhuyenMaiColumn"].Value.ToString();
+
+                    MessageBox.Show(khuyenMaiBUS.XoaKhuyenMai(maKhuyenMai));
+
+                    lamMoiButton_Click(sender, e);
+                }
+            }
+        }
+
+        private void xoaTatCaButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn xóa các khuyến mãi đã chọn không?", "Xác nhận", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                bool hoanTat = true;
+
+                for (int i = 0; i < khuyenMaiDataGridView.SelectedRows.Count; i++)
+                {
+                    string maKhuyenMai = khuyenMaiDataGridView.SelectedRows[i].Cells["maKhuyenMaiColumn"].Value.ToString();
+
+                    if (!khuyenMaiBUS.XoaKhuyenMai(maKhuyenMai).Equals("Xóa Khuyến mãi thành công!"))
+                    {
+                        hoanTat = false;
+                        break;
+                    }
+                }
+
+                if (hoanTat)
+                {
+                    MessageBox.Show("Đã xóa tất cả khuyến mãi đã chọn!");
+                    lamMoiButton_Click(sender, e);
+                }
+                else
+                    MessageBox.Show("Quá trình xóa xảy ra lỗi!");
+            }
+        }
+
+        private void khuyenMaiDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (khuyenMaiDataGridView.SelectedRows.Count > 1)
+            {
+                xoaTatCaButton.Visible = true;
+            }
+            else
+            {
+                xoaTatCaButton.Visible = false;
             }
         }
 

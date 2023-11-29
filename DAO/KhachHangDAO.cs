@@ -52,16 +52,19 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
            
-            khachHang.maKhachHang = dataTable.Rows[0]["maKhachHang"].ToString();
-            khachHang.hoTen = dataTable.Rows[0]["tenKhachHang"].ToString();
-            khachHang.gioiTinh = dataTable.Rows[0]["gioiTinh"].ToString();
-            try { khachHang.ngaySinh = (DateTime)dataTable.Rows[0]["ngaySinh"]; }
-            catch { khachHang.ngaySinh = null; }
-            khachHang.soDienThoai = dataTable.Rows[0]["soDienThoai"].ToString();
-            khachHang.email = dataTable.Rows[0]["email"].ToString();
-            khachHang.diaChi = dataTable.Rows[0]["diaChi"].ToString();
-            khachHang.bacThanhVien = dataTable.Rows[0]["bacThanhVien"].ToString();
-            khachHang.diemTichLuy = Decimal.Parse(dataTable.Rows[0]["diemTichLuy"].ToString());
+            if (dataTable.Rows.Count > 0 )
+            {
+                khachHang.maKhachHang = dataTable.Rows[0]["maKhachHang"].ToString();
+                khachHang.hoTen = dataTable.Rows[0]["tenKhachHang"].ToString();
+                khachHang.gioiTinh = dataTable.Rows[0]["gioiTinh"].ToString();
+                try { khachHang.ngaySinh = (DateTime)dataTable.Rows[0]["ngaySinh"]; }
+                catch { khachHang.ngaySinh = null; }
+                khachHang.soDienThoai = dataTable.Rows[0]["soDienThoai"].ToString();
+                khachHang.email = dataTable.Rows[0]["email"].ToString();
+                khachHang.diaChi = dataTable.Rows[0]["diaChi"].ToString();
+                khachHang.bacThanhVien = dataTable.Rows[0]["bacThanhVien"].ToString();
+                khachHang.diemTichLuy = Decimal.Parse(dataTable.Rows[0]["diemTichLuy"].ToString());
+            }
 
             return khachHang;
         }
@@ -74,16 +77,19 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
             
-            khachHang.maKhachHang = dataTable.Rows[0]["maKhachHang"].ToString();
-            khachHang.hoTen = dataTable.Rows[0]["tenKhachHang"].ToString();
-            khachHang.gioiTinh = dataTable.Rows[0]["gioiTinh"].ToString();
-            try { khachHang.ngaySinh = (DateTime)dataTable.Rows[0]["ngaySinh"]; }
-            catch { khachHang.ngaySinh = null; }
-            khachHang.soDienThoai = dataTable.Rows[0]["soDienThoai"].ToString();
-            khachHang.email = dataTable.Rows[0]["email"].ToString();
-            khachHang.diaChi = dataTable.Rows[0]["diaChi"].ToString();
-            khachHang.bacThanhVien = dataTable.Rows[0]["bacThanhVien"].ToString();
-            khachHang.diemTichLuy = Decimal.Parse(dataTable.Rows[0]["diemTichLuy"].ToString());
+            if (dataTable.Rows.Count > 0 )
+            {
+                khachHang.maKhachHang = dataTable.Rows[0]["maKhachHang"].ToString();
+                khachHang.hoTen = dataTable.Rows[0]["tenKhachHang"].ToString();
+                khachHang.gioiTinh = dataTable.Rows[0]["gioiTinh"].ToString();
+                try { khachHang.ngaySinh = (DateTime)dataTable.Rows[0]["ngaySinh"]; }
+                catch { khachHang.ngaySinh = null; }
+                khachHang.soDienThoai = dataTable.Rows[0]["soDienThoai"].ToString();
+                khachHang.email = dataTable.Rows[0]["email"].ToString();
+                khachHang.diaChi = dataTable.Rows[0]["diaChi"].ToString();
+                khachHang.bacThanhVien = dataTable.Rows[0]["bacThanhVien"].ToString();
+                khachHang.diemTichLuy = Decimal.Parse(dataTable.Rows[0]["diemTichLuy"].ToString());
+            }
 
             return khachHang;
         }
@@ -110,13 +116,15 @@ namespace DAO
 
         public bool ThemKhachHang(KhachHang khachHang)
         {
-            string query;
+            string ngaySinh;
 
             if (khachHang.ngaySinh.HasValue)
-                query = $"INSERT INTO KhachHang VALUES('{khachHang.maKhachHang}', N'{khachHang.hoTen}', N'{khachHang.gioiTinh}', '{khachHang.ngaySinh}', '{khachHang.soDienThoai}', '{khachHang.email}', N'{khachHang.diaChi}', N'{khachHang.bacThanhVien}',  {khachHang.diemTichLuy});";
-            else  
-                query = $"INSERT INTO KhachHang VALUES('{khachHang.maKhachHang}', N'{khachHang.hoTen}', N'{khachHang.gioiTinh}', NULL, '{khachHang.soDienThoai}', '{khachHang.email}', N'{khachHang.diaChi}', N'{khachHang.bacThanhVien}',  {khachHang.diemTichLuy});";
+                ngaySinh = $"\'{khachHang.ngaySinh.ToString()}\'";
+            else
+                ngaySinh = "NULL";
 
+            string query = $"INSERT INTO KhachHang VALUES('{khachHang.maKhachHang}', N'{khachHang.hoTen}', N'{khachHang.gioiTinh}', {ngaySinh}, '{khachHang.soDienThoai}', '{khachHang.email}', N'{khachHang.diaChi}', N'{khachHang.bacThanhVien}',  {khachHang.diemTichLuy});";
+            
             int rowsAffected = DBHelper.ExecuteNonQuery(query);
 
             return rowsAffected > 0;
@@ -124,99 +132,37 @@ namespace DAO
 
         public bool SuaKhachHang(KhachHang khachHang)
         {
-            string query;
+            string ngaySinh;
 
             if (khachHang.ngaySinh.HasValue)
-                query = $"UPDATE KhachHang SET tenKhachHang = N'{khachHang.hoTen}', gioiTinh = N'{khachHang.gioiTinh}', ngaySinh = '{khachHang.ngaySinh}', soDienThoai = '{khachHang.soDienThoai}', email = '{khachHang.email}', diaChi = N'{khachHang.diaChi}' WHERE maKhachHang = '{khachHang.maKhachHang}';";
+                ngaySinh = $"\'{khachHang.ngaySinh.ToString()}\'";
             else
-                query = $"UPDATE KhachHang SET tenKhachHang = N'{khachHang.hoTen}', gioiTinh = N'{khachHang.gioiTinh}', ngaySinh = NULL, soDienThoai = '{khachHang.soDienThoai}', email = '{khachHang.email}', diaChi = N'{khachHang.diaChi}' WHERE maKhachHang = '{khachHang.maKhachHang}';";
+                ngaySinh = "NULL";
+
+            string query = $"UPDATE KhachHang SET tenKhachHang = N'{khachHang.hoTen}', gioiTinh = N'{khachHang.gioiTinh}', ngaySinh = {ngaySinh}, soDienThoai = '{khachHang.soDienThoai}', email = '{khachHang.email}', diaChi = N'{khachHang.diaChi}' WHERE maKhachHang = '{khachHang.maKhachHang}';";
 
             int rowsAffected = DBHelper.ExecuteNonQuery(query);
 
             return rowsAffected > 0;
         }
 
-        public List<KhachHang> TimKiemKhachHang(string keyword)
+        public List<KhachHang> TimKiemKhachHang(string tuKhoa, string bacThanhVien, string gioiTinh)
         {
 
             List<KhachHang> listKhachHang = new List<KhachHang>();
 
             string query = $"SELECT * FROM KhachHang " +
-                           $"WHERE LOWER(maKhachHang) LIKE '%{keyword}%' " +
-                           $"OR tenKhachHang COLLATE Latin1_General_CI_AI LIKE N'%{keyword}%' " +
-                           $"OR soDienThoai LIKE '%{keyword}%' " +
-                           $"OR LOWER(email) LIKE '%{keyword}%' " +
-                           $"OR diaChi COLLATE Latin1_General_CI_AI LIKE N'%{keyword}%';";
+                           $"WHERE ('{tuKhoa}' = '' OR LOWER(maKhachHang) LIKE '%{tuKhoa}%' " +
+                           $"OR tenKhachHang COLLATE Latin1_General_CI_AI LIKE N'%{tuKhoa}%' " +
+                           $"OR soDienThoai LIKE '%{tuKhoa}%' " +
+                           $"OR LOWER(email) LIKE '%{tuKhoa}%' " +
+                           $"OR diaChi COLLATE Latin1_General_CI_AI LIKE N'%{tuKhoa}%') " +
+                           $"AND ('{bacThanhVien}' = '' OR bacThanhVien = N'{bacThanhVien}') " +
+                           $"AND ('{gioiTinh}' = '' OR gioiTinh = N'{gioiTinh}')";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
             if (dataTable.Rows.Count > 0 )
-            {
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    KhachHang khachHang = new KhachHang();
-
-                    khachHang.maKhachHang = row["maKhachHang"].ToString();
-                    khachHang.hoTen = row["tenKhachHang"].ToString();
-                    khachHang.gioiTinh = row["gioiTinh"].ToString();
-                    try { khachHang.ngaySinh = (DateTime)row["ngaySinh"]; }
-                    catch { khachHang.ngaySinh = null; }
-                    khachHang.soDienThoai = row["soDienThoai"].ToString();
-                    khachHang.email = row["email"].ToString();
-                    khachHang.diaChi = row["diaChi"].ToString();
-                    khachHang.bacThanhVien = row["bacThanhVien"].ToString();
-                    khachHang.diemTichLuy = Decimal.Parse(row["diemTichLuy"].ToString());
-
-                    listKhachHang.Add(khachHang);
-                }
-            }
-
-            return listKhachHang;
-        }
-
-        public List<KhachHang> LocKhachHangTheoGioiTinh(string gioiTinh)
-        {
-
-            List<KhachHang> listKhachHang = new List<KhachHang>();
-
-            string query = $"SELECT * FROM KhachHang WHERE gioiTinh = N'{gioiTinh}';";
-
-            DataTable dataTable = DBHelper.ExecuteQuery(query);
-
-            if (dataTable.Rows.Count > 0)
-            {
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    KhachHang khachHang = new KhachHang();
-
-                    khachHang.maKhachHang = row["maKhachHang"].ToString();
-                    khachHang.hoTen = row["tenKhachHang"].ToString();
-                    khachHang.gioiTinh = row["gioiTinh"].ToString();
-                    try { khachHang.ngaySinh = (DateTime)row["ngaySinh"]; }
-                    catch { khachHang.ngaySinh = null; }
-                    khachHang.soDienThoai = row["soDienThoai"].ToString();
-                    khachHang.email = row["email"].ToString();
-                    khachHang.diaChi = row["diaChi"].ToString();
-                    khachHang.bacThanhVien = row["bacThanhVien"].ToString();
-                    khachHang.diemTichLuy = Decimal.Parse(dataTable.Rows[0]["diemTichLuy"].ToString());
-
-                    listKhachHang.Add(khachHang);
-                }
-            }
-
-            return listKhachHang;
-        }
-
-        public List<KhachHang> LocKhachHangTheoBacThanhVien(string bacThanhVien)
-        {
-
-            List<KhachHang> listKhachHang = new List<KhachHang>();
-
-            string query = $"SELECT * FROM KhachHang WHERE bacThanhVien = N'{bacThanhVien}';";
-
-            DataTable dataTable = DBHelper.ExecuteQuery(query);
-
-            if (dataTable.Rows.Count > 0)
             {
                 foreach (DataRow row in dataTable.Rows)
                 {

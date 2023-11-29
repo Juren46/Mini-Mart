@@ -77,7 +77,7 @@ namespace BUS
             if (!string.IsNullOrEmpty(soDienThoai) && !InputValidate.PhoneNumberValidate(soDienThoai))
                 return "Vui lòng nhập đúng số điện thoại!";
 
-            if (khachHangDAO.KiemTraSoDienThoaiDaTonTai(soDienThoai))
+            if (khachHangDAO.KiemTraSoDienThoaiDaTonTai(soDienThoai) && !LayKhachHangTheoMa(maKhachHang).soDienThoai.Equals(soDienThoai))
                 return "Số điện thoại đã có khách hàng đăng kí, vui lòng sử dụng số khác!";
 
             if (!string.IsNullOrEmpty(email) && !InputValidate.EmailValidate(email))
@@ -95,26 +95,16 @@ namespace BUS
             khachHang.diaChi = diaChi.Trim();
 
             if (khachHangDAO.SuaKhachHang(khachHang))
-                return "Sửa thông tin khách hàng thành công!";
+                return "Chỉnh sửa thông tin khách hàng thành công!";
             else
-                return "Sửa thông tin khách hàng thất bại!";
+                return "Chỉnh sửa thông tin khách hàng thất bại!";
         }
 
-        public List<KhachHang> TimKiemKhachHang(string keyword)
+        public List<KhachHang> TimKiemKhachHang(string tuKhoa, string bacThanhVien, string gioiTinh)
         {
-            keyword = keyword.Trim().ToLower();
+            tuKhoa = tuKhoa.Trim().ToLower();
 
-            return khachHangDAO.TimKiemKhachHang(keyword);
-        }
-
-        public List<KhachHang> LocKhachHangTheoGioiTinh(string gioiTinh)
-        {
-            return khachHangDAO.LocKhachHangTheoGioiTinh(gioiTinh);
-        }
-
-        public List<KhachHang> LocKhachHangTheoBacThanhVien(string bacThanhVien)
-        {
-            return khachHangDAO.LocKhachHangTheoBacThanhVien(bacThanhVien);
+            return khachHangDAO.TimKiemKhachHang(tuKhoa, bacThanhVien, gioiTinh);
         }
 
         public decimal TichDiem(string maKhachHang, string tongTien)

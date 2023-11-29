@@ -40,15 +40,16 @@
             // 
             guna2DateTimePicker1.Checked = true;
             guna2DateTimePicker1.CustomizableEdges = customizableEdges1;
-            guna2DateTimePicker1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2DateTimePicker1.Format = DateTimePickerFormat.Long;
-            guna2DateTimePicker1.Location = new Point(12, 12);
+            guna2DateTimePicker1.Font = new Font("Segoe UI", 9F);
+            guna2DateTimePicker1.Format = DateTimePickerFormat.Time;
+            guna2DateTimePicker1.Location = new Point(8, 7);
+            guna2DateTimePicker1.Margin = new Padding(2, 2, 2, 2);
             guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             guna2DateTimePicker1.Name = "guna2DateTimePicker1";
             guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2DateTimePicker1.ShowCheckBox = true;
-            guna2DateTimePicker1.Size = new Size(285, 54);
+            guna2DateTimePicker1.Size = new Size(200, 32);
             guna2DateTimePicker1.TabIndex = 0;
             guna2DateTimePicker1.Value = new DateTime(2023, 11, 12, 20, 45, 8, 0);
             guna2DateTimePicker1.MouseUp += guna2DateTimePicker1_MouseUp;
@@ -62,24 +63,26 @@
             guna2TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             guna2TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2TextBox1.Font = new Font("Segoe UI", 9F);
             guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new Point(318, 12);
+            guna2TextBox1.Location = new Point(223, 7);
+            guna2TextBox1.Margin = new Padding(2, 2, 2, 2);
             guna2TextBox1.Name = "guna2TextBox1";
             guna2TextBox1.PasswordChar = '\0';
             guna2TextBox1.PlaceholderText = "";
             guna2TextBox1.SelectedText = "";
             guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2TextBox1.Size = new Size(300, 54);
+            guna2TextBox1.Size = new Size(210, 32);
             guna2TextBox1.TabIndex = 2;
             // 
             // TestDateTime
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(560, 270);
             Controls.Add(guna2TextBox1);
             Controls.Add(guna2DateTimePicker1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "TestDateTime";
             Text = "TestDateTime";
             ResumeLayout(false);
