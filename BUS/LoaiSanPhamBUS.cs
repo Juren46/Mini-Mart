@@ -27,11 +27,6 @@ namespace BUS
             return loaiSanPhamDAO.LayLoaiSanPhamTheoMa(maLoaiSanPham);
         }
 
-        public LoaiSanPham LayLoaiSanPhamTheoTen(string tenLoaiSanPham)
-        {
-            return loaiSanPhamDAO.LayLoaiSanPhamTheoTen(tenLoaiSanPham);
-        }
-
         public int DemSoLoaiSanPham()
         {
             return loaiSanPhamDAO.DemSoLoaiSanPham();
@@ -64,30 +59,31 @@ namespace BUS
             return "Xóa loại sản phẩm thất bại!";
         }
 
-        public string SuaLoaiSanPham(string maLoaiSanPham, string tenLoaiSanPham)
+        public string SuaLoaiSanPham(string maLoaiSanPham, string tenLoaiSanPham, string trangThai)
         {
             if (string.IsNullOrEmpty(tenLoaiSanPham))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
-            if (loaiSanPhamDAO.KiemTraLoaiSanPhamDaTonTai(tenLoaiSanPham.ToLower()))
+            if (loaiSanPhamDAO.KiemTraLoaiSanPhamDaTonTai(tenLoaiSanPham.ToLower()) && !loaiSanPhamDAO.LayLoaiSanPhamTheoMa(maLoaiSanPham).tenLoaiSanPham.Equals(tenLoaiSanPham))
                 return "Tên loại sản phẩm đã tồn tại, vui lòng chọn tên khác!";
 
             LoaiSanPham loaiSanPham = new LoaiSanPham();
 
             loaiSanPham.maLoaiSanPham = maLoaiSanPham;
             loaiSanPham.tenLoaiSanPham = tenLoaiSanPham.Trim();
+            loaiSanPham.trangThai = trangThai;
 
             if (loaiSanPhamDAO.SuaLoaiSanPham(loaiSanPham))
-                return "Sửa thông tin loại sản phẩm thành công!";
+                return "Chỉnh sửa thông tin loại sản phẩm thành công!";
             else
-                return "Sửa thông tin loại sản phẩm thất bại!";
+                return "Chỉnh sửa thông tin loại sản phẩm thất bại!";
         }
 
-        public List<LoaiSanPham> TimKiemLoaiSanPham(string keyword)
+        public List<LoaiSanPham> TimKiemLoaiSanPham(string tuKhoa, string trangThai)
         {
-            keyword = keyword.Trim().ToLower();
+            tuKhoa = tuKhoa.Trim().ToLower();
 
-            return loaiSanPhamDAO.TimKiemLoaiSanPham(keyword);
+            return loaiSanPhamDAO.TimKiemLoaiSanPham(tuKhoa, trangThai);
         }     
     }
 }

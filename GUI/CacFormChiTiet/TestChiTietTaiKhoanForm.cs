@@ -165,14 +165,6 @@ namespace GUI.CacFormChiTiet
                 {
                     tenTaiKhoanTextBox.Clear();
                     matKhauTextBox.Clear();
-                    foreach (var item in trangThaiComboBox.Items)
-                    {
-                        if (item.ToString().Equals("Chờ xử lý"))
-                        {
-                            trangThaiComboBox.SelectedItem = item;
-                            break;
-                        }
-                    }
                     phanQuyenComboBox.SelectedIndex = -1;
                 }
             }
@@ -190,32 +182,25 @@ namespace GUI.CacFormChiTiet
                 string maPhanQuyen = phanQuyen.maPhanQuyen;
                 string trangThai = trangThaiComboBox.SelectedItem.ToString();
 
-                if (context.Equals("Thêm"))
+                string message = "";
+
+                switch(context)
                 {
-                    string message = taiKhoanBUS.ThemTaiKhoan(maPhanQuyen, tenTaiKhoan, matKhau);
-
-                    MessageBox.Show(message);
-
-                    if (message.Equals("Thêm tài khoản thành công!"))
-                    {
-                        form.lamMoiButton_Click(sender, e);
-
-                        this.Close();
-                    }
+                    case "Thêm":
+                        message = taiKhoanBUS.ThemTaiKhoan(maPhanQuyen, tenTaiKhoan, matKhau);
+                        break;
+                    case "Sửa":
+                        message = taiKhoanBUS.SuaTaiKhoan(tenTaiKhoan, matKhau, trangThai);
+                        break;
                 }
-                    
-                else if (context.Equals("Sửa"))
+
+                MessageBox.Show(message);
+
+                if (message.Equals("Thêm tài khoản thành công!") || message.Equals("Chỉnh sửa thông tin tài khoản thành công!"))
                 {
-                    string message = taiKhoanBUS.SuaTaiKhoan(tenTaiKhoan, matKhau, trangThai);
+                    form.lamMoiButton_Click(sender, e);
 
-                    MessageBox.Show(message);
-
-                    if (message.Equals("Chỉnh sửa thông tin tài khoản thành công!"))
-                    {
-                        form.lamMoiButton_Click(sender, e);
-
-                        this.Close();
-                    }
+                    this.Close();
                 }
             }
         }

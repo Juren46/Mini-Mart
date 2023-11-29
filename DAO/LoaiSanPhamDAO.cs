@@ -16,7 +16,7 @@ namespace DAO
         {
             List<LoaiSanPham> listLoaiSanPham = new List<LoaiSanPham>();
 
-            string query = "SELECT * FROM LoaiSanPham WHERE trangThai = 1;";
+            string query = "SELECT * FROM LoaiSanPham WHERE trangThai = N'Đang sử dụng';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
@@ -27,7 +27,7 @@ namespace DAO
                     LoaiSanPham loaiSanPham = new LoaiSanPham();
                     loaiSanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
                     loaiSanPham.tenLoaiSanPham = row["tenLoaiSanPham"].ToString();
-                    loaiSanPham.trangThai = (bool)row["trangThai"];
+                    loaiSanPham.trangThai = row["trangThai"].ToString();
 
                     listLoaiSanPham.Add(loaiSanPham);
                 }
@@ -44,22 +44,12 @@ namespace DAO
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
-            loaiSanPham.maLoaiSanPham = dataTable.Rows[0]["maLoaiSanPham"].ToString();
-            loaiSanPham.tenLoaiSanPham = dataTable.Rows[0]["tenLoaiSanPham"].ToString();
-
-            return loaiSanPham;
-        }
-
-        public LoaiSanPham LayLoaiSanPhamTheoTen(string tenLoaiSanPham)
-        {
-            LoaiSanPham loaiSanPham = new LoaiSanPham();
-
-            string query = $"SELECT * FROM LoaiSanPham WHERE tenLoaiSanPham = N'{tenLoaiSanPham}';";
-
-            DataTable dataTable = DBHelper.ExecuteQuery(query);
-
-            loaiSanPham.maLoaiSanPham = dataTable.Rows[0]["maLoaiSanPham"].ToString();
-            loaiSanPham.tenLoaiSanPham = dataTable.Rows[0]["tenLoaiSanPham"].ToString();
+            if (dataTable.Rows.Count > 0)
+            {
+                loaiSanPham.maLoaiSanPham = dataTable.Rows[0]["maLoaiSanPham"].ToString();
+                loaiSanPham.tenLoaiSanPham = dataTable.Rows[0]["tenLoaiSanPham"].ToString();
+                loaiSanPham.trangThai = dataTable.Rows[0]["trangThai"].ToString();
+            }
 
             return loaiSanPham;
         }
@@ -86,7 +76,7 @@ namespace DAO
 
         public bool ThemLoaiSanPham(LoaiSanPham loaiSanPham)
         {
-            string query = $"INSERT INTO LoaiSanPham VALUES ('{loaiSanPham.maLoaiSanPham}', N'{loaiSanPham.tenLoaiSanPham}', 1);";
+            string query = $"INSERT INTO LoaiSanPham VALUES ('{loaiSanPham.maLoaiSanPham}', N'{loaiSanPham.tenLoaiSanPham}', N'Đang sử dụng');";
 
             int rowsAffected = DBHelper.ExecuteNonQuery(query);
 
@@ -95,7 +85,7 @@ namespace DAO
 
         public bool XoaLoaiSanPham(string maLoaiSanPham)
         {
-            string query = $"UPDATE LoaiSanPham SET trangThai = 0 WHERE maLoaiSanPham = '{maLoaiSanPham}';";
+            string query = $"UPDATE LoaiSanPham SET trangThai = N'Đã xóa' WHERE maLoaiSanPham = '{maLoaiSanPham}';";
 
             int rowsAffected = DBHelper.ExecuteNonQuery(query);
 
@@ -104,20 +94,20 @@ namespace DAO
 
         public bool SuaLoaiSanPham(LoaiSanPham loaiSanPham)
         {
-            string query = $"UPDATE LoaiSanPham SET tenLoaiSanPham = N'{loaiSanPham.tenLoaiSanPham}' WHERE maLoaiSanPham = '{loaiSanPham.maLoaiSanPham}';";
+            string query = $"UPDATE LoaiSanPham SET tenLoaiSanPham = N'{loaiSanPham.tenLoaiSanPham}', trangThai = N'{loaiSanPham.trangThai}' WHERE maLoaiSanPham = '{loaiSanPham.maLoaiSanPham}';";
 
             int rowsAffected = DBHelper.ExecuteNonQuery(query);
 
             return rowsAffected > 0;
         }
 
-        public List<LoaiSanPham> TimKiemLoaiSanPham(string keyword)
+        public List<LoaiSanPham> TimKiemLoaiSanPham(string tuKhoa, string trangThai)
         {
             List<LoaiSanPham> listLoaiSanPham = new List<LoaiSanPham>();
 
-            string query = $"SELECT * FROM LoaiSanPham WHERE LOWER(maLoaiSanPham) LIKE '%{keyword}%' " +
-                           $"OR tenLoaiSanPham COLLATE Latin1_General_CI_AI LIKE N'%{keyword}%' " +
-                           $"AND trangThai = 1;";
+            string query = $"SELECT * FROM LoaiSanPham " +
+                           $"WHERE ('{tuKhoa}' = '' OR LOWER(maLoaiSanPham) LIKE '%{tuKhoa}%' OR tenLoaiSanPham COLLATE Latin1_General_CI_AI LIKE N'%{tuKhoa}%') " +
+                           $"AND ('{trangThai}' = '' OR trangThai = N'{trangThai}');";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
@@ -129,6 +119,7 @@ namespace DAO
 
                     LoaiSanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
                     LoaiSanPham.tenLoaiSanPham = row["tenLoaiSanPham"].ToString();
+                    LoaiSanPham.trangThai = row["trangThai"].ToString();
 
                     listLoaiSanPham.Add(LoaiSanPham);
                 }

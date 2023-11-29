@@ -64,20 +64,7 @@ namespace GUI
         {
             if (trangThaiComboBox.SelectedItem != null)
             {
-                /*timKiemTextBox.Clear();
-
-                string maPhanQuyen = "";
-                if (phanQuyenComboBox.SelectedValue != null)
-                {
-                    PhanQuyen phanQuyen = phanQuyenComboBox.SelectedValue as PhanQuyen;
-                    maPhanQuyen = phanQuyen.maPhanQuyen;
-                }
-
-                string trangThai = trangThaiComboBox.SelectedItem.ToString();
-
-                listTaiKhoan = taiKhoanBUS.TimKiemTaiKhoan("", maPhanQuyen, trangThai);
-
-                LoadDataToDataGridView(listTaiKhoan);*/
+                timKiemTextBox.Clear();
                 timKiemButton_Click(sender, e);
             }
         }
@@ -87,17 +74,6 @@ namespace GUI
             if (phanQuyenComboBox.SelectedValue != null)
             {
                 timKiemTextBox.Clear();
-
-                /*string trangThai = "";
-                if (trangThaiComboBox.SelectedItem != null)
-                    trangThai = trangThaiComboBox.SelectedItem.ToString();
-
-                PhanQuyen phanQuyen = phanQuyenComboBox.SelectedValue as PhanQuyen;
-                string maPhanQuyen = phanQuyen.maPhanQuyen;
-
-                listTaiKhoan = taiKhoanBUS.TimKiemTaiKhoan("", maPhanQuyen, trangThai);
-
-                LoadDataToDataGridView(listTaiKhoan);*/
                 timKiemButton_Click(sender, e);
             }
         }
@@ -215,7 +191,10 @@ namespace GUI
                 }
 
                 if (hoanTat)
+                {
                     MessageBox.Show("Đã xóa tất cả tài khoản đã chọn!");
+                    lamMoiButton_Click(sender, e);
+                }
                 else
                     MessageBox.Show("Quá trình xóa xảy ra lỗi!");
             }

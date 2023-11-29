@@ -25,6 +25,7 @@ namespace GUI
 
             loaiSanPhamBUS = new LoaiSanPhamBUS();
             listLoaiSanPham = loaiSanPhamBUS.LayDanhSachLoaiSanPham();
+            trangThaiComboBox.SelectedIndex = 0;
         }
 
         private void LoaiSanPhamForm_Load(object sender, EventArgs e)
@@ -46,11 +47,23 @@ namespace GUI
             }
         }
 
+        private void trangThaiComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (trangThaiComboBox.SelectedItem != null)
+            {
+                timKiemTextBox.Clear();
+                timKiemButton_Click(sender, e);
+            }
+        }
+
         private void timKiemButton_Click(object sender, EventArgs e)
         {
             string tuKhoa = timKiemTextBox.Text;
+            string trangThai = "";
+            if (trangThaiComboBox.SelectedItem != null)
+                trangThai = trangThaiComboBox.SelectedItem.ToString();
 
-            listLoaiSanPham = loaiSanPhamBUS.TimKiemLoaiSanPham(tuKhoa);
+            listLoaiSanPham = loaiSanPhamBUS.TimKiemLoaiSanPham(tuKhoa, trangThai);
 
             LoadDataToDataGridView(listLoaiSanPham);
         }
@@ -63,6 +76,7 @@ namespace GUI
         internal void lamMoiButton_Click(object sender, EventArgs e)
         {
             timKiemTextBox.Clear();
+            trangThaiComboBox.SelectedIndex = 0;
 
             listLoaiSanPham = loaiSanPhamBUS.LayDanhSachLoaiSanPham();
 
@@ -85,12 +99,36 @@ namespace GUI
 
         private void themMoiButton_Click(object sender, EventArgs e)
         {
-            new chiTietLoaiSanPhamForm("Thêm", this).Show();
+            new ChiTietLoaiSanPhamForm("Thêm", this).Show();
         }
 
         private void xoaTatCaButton_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Bạn có muốn xóa các loại sản phẩm đã chọn không?", "Xác nhận", MessageBoxButtons.YesNo);
 
+            if (result == DialogResult.Yes)
+            {
+                bool hoanTat = true;
+
+                for (int i = 0; i < loaiSanPhamDataGridView.SelectedRows.Count; i++)
+                {
+                    string maLoaiSanPham = loaiSanPhamDataGridView.SelectedRows[i].Cells["maLoaiSanPhamColumn"].Value.ToString();
+
+                    if (!loaiSanPhamBUS.XoaLoaiSanPham(maLoaiSanPham).Equals("Xóa loại sản phẩm thành công!"))
+                    {
+                        hoanTat = false;
+                        break;
+                    }
+                }
+
+                if (hoanTat)
+                {
+                    MessageBox.Show("Đã xóa tất cả loại sản phẩm đã chọn!");
+                    lamMoiButton_Click(sender, e);
+                }
+                else
+                    MessageBox.Show("Quá trình xóa xảy ra lỗi!");
+            }
         }
 
         private void loaiSanPhamDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -99,9 +137,19 @@ namespace GUI
 
             string columnName = loaiSanPhamDataGridView.Columns[e.ColumnIndex].Name;
 
+            if (columnName.Equals("infoButtonColumn"))
+            {
+                new ChiTietLoaiSanPhamForm(loaiSanPham, "Chi tiết", this).Show();
+            }
+
+            if (columnName.Equals("editButtonColumn"))
+            {
+                new ChiTietLoaiSanPhamForm(loaiSanPham, "Sửa", this).Show();
+            }
+
             if (columnName.Equals("deleteButtonColumn"))
             {
-                DialogResult result = MessageBox.Show("Bạn có muốn xóa loại sản phẩm không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Bạn có muốn xóa loại sản phẩm không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
@@ -112,29 +160,16 @@ namespace GUI
                     lamMoiButton_Click(sender, e);
                 }
             }
-
-            if (columnName.Equals("infoButtonColumn"))
-            {
-                new chiTietLoaiSanPhamForm(loaiSanPham, "Chi tiết", this).Show();
-            }
-
-            if (columnName.Equals("editButtonColumn"))
-            {
-                new chiTietLoaiSanPhamForm(loaiSanPham, "Sửa", this).Show();
-            }
         }
 
-        private void sanPhamDataGridView_SelectionChanged(object sender, EventArgs e)
+        private void loaiSanPhamDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            // Kiểm tra số lượng dòng được chọn
             if (loaiSanPhamDataGridView.SelectedRows.Count > 1)
             {
-                // Nếu nhiều hơn 1 dòng được chọn, hiển thị nút xoá tất cả
                 xoaTatCaButton.Visible = true;
             }
             else
             {
-                // Nếu không có hoặc chỉ có 1 dòng được chọn, ẩn nút xoá tất cả
                 xoaTatCaButton.Visible = false;
             }
         }
