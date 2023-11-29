@@ -58,9 +58,9 @@
             iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             panel2 = new Panel();
             iconButton9 = new FontAwesome.Sharp.IconButton();
+            iconButton8 = new FontAwesome.Sharp.IconButton();
             iconButton7 = new FontAwesome.Sharp.IconButton();
             panelDesktop = new Panel();
-            iconButton8 = new FontAwesome.Sharp.IconButton();
             panelNav.SuspendLayout();
             panelMenu.SuspendLayout();
             fllMenu.SuspendLayout();
@@ -102,10 +102,10 @@
             // 
             fllMenu.Controls.Add(btnBanHang);
             fllMenu.Controls.Add(btnSanPham);
+            fllMenu.Controls.Add(btnThongKe);
             fllMenu.Controls.Add(btnKhuyenMai);
             fllMenu.Controls.Add(btnNhanVien);
             fllMenu.Controls.Add(btnPhieuNhap);
-            fllMenu.Controls.Add(btnThongKe);
             fllMenu.Controls.Add(btnLoaiSanPham);
             fllMenu.Controls.Add(btnKhachHang);
             fllMenu.Controls.Add(btnHoaDon);
@@ -123,7 +123,7 @@
             btnBanHang.BackColor = Color.FromArgb(0, 79, 111);
             btnBanHang.FlatAppearance.BorderSize = 0;
             btnBanHang.FlatStyle = FlatStyle.Flat;
-            btnBanHang.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBanHang.Font = new Font("Microsoft Sans Serif", 14.25F);
             btnBanHang.ForeColor = Color.White;
             btnBanHang.IconChar = FontAwesome.Sharp.IconChar.SackDollar;
             btnBanHang.IconColor = Color.White;
@@ -145,7 +145,7 @@
             btnSanPham.BackColor = Color.FromArgb(0, 79, 111);
             btnSanPham.FlatAppearance.BorderSize = 0;
             btnSanPham.FlatStyle = FlatStyle.Flat;
-            btnSanPham.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSanPham.Font = new Font("Microsoft Sans Serif", 14.25F);
             btnSanPham.ForeColor = Color.White;
             btnSanPham.IconChar = FontAwesome.Sharp.IconChar.Shopify;
             btnSanPham.IconColor = Color.White;
@@ -167,14 +167,14 @@
             btnKhuyenMai.BackColor = Color.FromArgb(0, 79, 111);
             btnKhuyenMai.FlatAppearance.BorderSize = 0;
             btnKhuyenMai.FlatStyle = FlatStyle.Flat;
-            btnKhuyenMai.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnKhuyenMai.Font = new Font("Microsoft Sans Serif", 14.25F);
             btnKhuyenMai.ForeColor = Color.White;
             btnKhuyenMai.IconChar = FontAwesome.Sharp.IconChar.Tags;
             btnKhuyenMai.IconColor = Color.White;
             btnKhuyenMai.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnKhuyenMai.IconSize = 40;
             btnKhuyenMai.ImageAlign = ContentAlignment.MiddleLeft;
-            btnKhuyenMai.Location = new Point(3, 115);
+            btnKhuyenMai.Location = new Point(3, 171);
             btnKhuyenMai.Name = "btnKhuyenMai";
             btnKhuyenMai.Padding = new Padding(10, 0, 20, 0);
             btnKhuyenMai.Size = new Size(238, 50);
@@ -189,14 +189,14 @@
             btnNhanVien.BackColor = Color.FromArgb(0, 79, 111);
             btnNhanVien.FlatAppearance.BorderSize = 0;
             btnNhanVien.FlatStyle = FlatStyle.Flat;
-            btnNhanVien.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNhanVien.Font = new Font("Microsoft Sans Serif", 14.25F);
             btnNhanVien.ForeColor = Color.White;
-            btnNhanVien.IconChar = FontAwesome.Sharp.IconChar.UserGear;
+            btnNhanVien.IconChar = FontAwesome.Sharp.IconChar.ClipboardUser;
             btnNhanVien.IconColor = Color.White;
             btnNhanVien.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnNhanVien.IconSize = 40;
             btnNhanVien.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNhanVien.Location = new Point(3, 171);
+            btnNhanVien.Location = new Point(3, 227);
             btnNhanVien.Name = "btnNhanVien";
             btnNhanVien.Padding = new Padding(10, 0, 20, 0);
             btnNhanVien.Size = new Size(238, 50);
@@ -211,14 +211,14 @@
             btnPhieuNhap.BackColor = Color.FromArgb(0, 79, 111);
             btnPhieuNhap.FlatAppearance.BorderSize = 0;
             btnPhieuNhap.FlatStyle = FlatStyle.Flat;
-            btnPhieuNhap.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnPhieuNhap.Font = new Font("Microsoft Sans Serif", 14.25F);
             btnPhieuNhap.ForeColor = Color.White;
             btnPhieuNhap.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
             btnPhieuNhap.IconColor = Color.White;
             btnPhieuNhap.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnPhieuNhap.IconSize = 40;
             btnPhieuNhap.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPhieuNhap.Location = new Point(3, 227);
+            btnPhieuNhap.Location = new Point(3, 283);
             btnPhieuNhap.Name = "btnPhieuNhap";
             btnPhieuNhap.Padding = new Padding(10, 0, 20, 0);
             btnPhieuNhap.Size = new Size(238, 50);
@@ -233,14 +233,14 @@
             btnThongKe.BackColor = Color.FromArgb(0, 79, 111);
             btnThongKe.FlatAppearance.BorderSize = 0;
             btnThongKe.FlatStyle = FlatStyle.Flat;
-            btnThongKe.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnThongKe.Font = new Font("Microsoft Sans Serif", 14.25F);
             btnThongKe.ForeColor = Color.White;
             btnThongKe.IconChar = FontAwesome.Sharp.IconChar.ChartSimple;
             btnThongKe.IconColor = Color.White;
             btnThongKe.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnThongKe.IconSize = 40;
             btnThongKe.ImageAlign = ContentAlignment.MiddleLeft;
-            btnThongKe.Location = new Point(3, 283);
+            btnThongKe.Location = new Point(3, 115);
             btnThongKe.Name = "btnThongKe";
             btnThongKe.Padding = new Padding(10, 0, 20, 0);
             btnThongKe.Size = new Size(238, 50);
@@ -255,9 +255,9 @@
             btnLoaiSanPham.BackColor = Color.FromArgb(0, 79, 111);
             btnLoaiSanPham.FlatAppearance.BorderSize = 0;
             btnLoaiSanPham.FlatStyle = FlatStyle.Flat;
-            btnLoaiSanPham.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLoaiSanPham.Font = new Font("Microsoft Sans Serif", 14.25F);
             btnLoaiSanPham.ForeColor = Color.White;
-            btnLoaiSanPham.IconChar = FontAwesome.Sharp.IconChar.Untappd;
+            btnLoaiSanPham.IconChar = FontAwesome.Sharp.IconChar.LayerGroup;
             btnLoaiSanPham.IconColor = Color.White;
             btnLoaiSanPham.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnLoaiSanPham.IconSize = 40;
@@ -277,7 +277,7 @@
             btnKhachHang.BackColor = Color.FromArgb(0, 79, 111);
             btnKhachHang.FlatAppearance.BorderSize = 0;
             btnKhachHang.FlatStyle = FlatStyle.Flat;
-            btnKhachHang.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnKhachHang.Font = new Font("Microsoft Sans Serif", 14.25F);
             btnKhachHang.ForeColor = Color.White;
             btnKhachHang.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
             btnKhachHang.IconColor = Color.White;
@@ -299,7 +299,7 @@
             btnHoaDon.BackColor = Color.FromArgb(0, 79, 111);
             btnHoaDon.FlatAppearance.BorderSize = 0;
             btnHoaDon.FlatStyle = FlatStyle.Flat;
-            btnHoaDon.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnHoaDon.Font = new Font("Microsoft Sans Serif", 14.25F);
             btnHoaDon.ForeColor = Color.White;
             btnHoaDon.IconChar = FontAwesome.Sharp.IconChar.FileInvoiceDollar;
             btnHoaDon.IconColor = Color.White;
@@ -321,7 +321,7 @@
             btnPhanQuyen.BackColor = Color.FromArgb(0, 79, 111);
             btnPhanQuyen.FlatAppearance.BorderSize = 0;
             btnPhanQuyen.FlatStyle = FlatStyle.Flat;
-            btnPhanQuyen.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnPhanQuyen.Font = new Font("Microsoft Sans Serif", 14.25F);
             btnPhanQuyen.ForeColor = Color.White;
             btnPhanQuyen.IconChar = FontAwesome.Sharp.IconChar.UserGear;
             btnPhanQuyen.IconColor = Color.White;
@@ -343,7 +343,7 @@
             btnNhaCungCap.BackColor = Color.FromArgb(0, 79, 111);
             btnNhaCungCap.FlatAppearance.BorderSize = 0;
             btnNhaCungCap.FlatStyle = FlatStyle.Flat;
-            btnNhaCungCap.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNhaCungCap.Font = new Font("Microsoft Sans Serif", 14.25F);
             btnNhaCungCap.ForeColor = Color.White;
             btnNhaCungCap.IconChar = FontAwesome.Sharp.IconChar.Shop;
             btnNhaCungCap.IconColor = Color.White;
@@ -365,9 +365,9 @@
             btnTaiKhoan.BackColor = Color.FromArgb(0, 79, 111);
             btnTaiKhoan.FlatAppearance.BorderSize = 0;
             btnTaiKhoan.FlatStyle = FlatStyle.Flat;
-            btnTaiKhoan.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTaiKhoan.Font = new Font("Microsoft Sans Serif", 14.25F);
             btnTaiKhoan.ForeColor = Color.White;
-            btnTaiKhoan.IconChar = FontAwesome.Sharp.IconChar.Tags;
+            btnTaiKhoan.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
             btnTaiKhoan.IconColor = Color.White;
             btnTaiKhoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnTaiKhoan.IconSize = 40;
@@ -396,7 +396,7 @@
             dangXuatButton.BackColor = Color.FromArgb(0, 79, 111);
             dangXuatButton.FlatAppearance.BorderSize = 0;
             dangXuatButton.FlatStyle = FlatStyle.Flat;
-            dangXuatButton.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dangXuatButton.Font = new Font("Microsoft Sans Serif", 14.25F);
             dangXuatButton.ForeColor = Color.White;
             dangXuatButton.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
             dangXuatButton.IconColor = Color.White;
@@ -461,7 +461,7 @@
             // tenNguoiDungLabel
             // 
             tenNguoiDungLabel.AutoSize = true;
-            tenNguoiDungLabel.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            tenNguoiDungLabel.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
             tenNguoiDungLabel.ForeColor = Color.MistyRose;
             tenNguoiDungLabel.Location = new Point(61, 29);
             tenNguoiDungLabel.Name = "tenNguoiDungLabel";
@@ -495,7 +495,7 @@
             // lblTitleChildForm
             // 
             lblTitleChildForm.AutoSize = true;
-            lblTitleChildForm.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTitleChildForm.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             lblTitleChildForm.ForeColor = Color.White;
             lblTitleChildForm.Location = new Point(91, 15);
             lblTitleChildForm.Name = "lblTitleChildForm";
@@ -521,10 +521,10 @@
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Right;
             panel2.Controls.Add(iconButton9);
             panel2.Controls.Add(iconButton8);
             panel2.Controls.Add(iconButton7);
-            panel2.Dock = DockStyle.Right;
             panel2.Location = new Point(1012, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(171, 60);
@@ -536,7 +536,7 @@
             iconButton9.FlatAppearance.BorderSize = 0;
             iconButton9.FlatAppearance.MouseOverBackColor = Color.FromArgb(150, 60, 60, 60);
             iconButton9.FlatStyle = FlatStyle.Flat;
-            iconButton9.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton9.Font = new Font("Microsoft Sans Serif", 14.25F);
             iconButton9.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
             iconButton9.IconColor = Color.White;
             iconButton9.IconFont = FontAwesome.Sharp.IconFont.Solid;
@@ -549,13 +549,32 @@
             iconButton9.UseVisualStyleBackColor = false;
             iconButton9.Click += btnMaximize_Click;
             // 
+            // iconButton8
+            // 
+            iconButton8.BackColor = Color.FromArgb(0, 50, 90);
+            iconButton8.FlatAppearance.BorderSize = 0;
+            iconButton8.FlatAppearance.MouseOverBackColor = Color.IndianRed;
+            iconButton8.FlatStyle = FlatStyle.Flat;
+            iconButton8.Font = new Font("Microsoft Sans Serif", 14.25F);
+            iconButton8.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            iconButton8.IconColor = Color.White;
+            iconButton8.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            iconButton8.IconSize = 20;
+            iconButton8.Location = new Point(123, 0);
+            iconButton8.Name = "iconButton8";
+            iconButton8.Padding = new Padding(0, 3, 0, 0);
+            iconButton8.Size = new Size(45, 34);
+            iconButton8.TabIndex = 9;
+            iconButton8.UseVisualStyleBackColor = false;
+            iconButton8.Click += btnExit_Click;
+            // 
             // iconButton7
             // 
             iconButton7.BackColor = Color.FromArgb(0, 50, 90);
             iconButton7.FlatAppearance.BorderSize = 0;
             iconButton7.FlatAppearance.MouseOverBackColor = Color.FromArgb(150, 60, 60, 60);
             iconButton7.FlatStyle = FlatStyle.Flat;
-            iconButton7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton7.Font = new Font("Microsoft Sans Serif", 14.25F);
             iconButton7.ForeColor = Color.White;
             iconButton7.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             iconButton7.IconColor = Color.White;
@@ -577,25 +596,6 @@
             panelDesktop.Size = new Size(1183, 821);
             panelDesktop.TabIndex = 2;
             // 
-            // iconButton8
-            // 
-            iconButton8.BackColor = Color.FromArgb(0, 50, 90);
-            iconButton8.FlatAppearance.BorderSize = 0;
-            iconButton8.FlatAppearance.MouseOverBackColor = Color.IndianRed;
-            iconButton8.FlatStyle = FlatStyle.Flat;
-            iconButton8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton8.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            iconButton8.IconColor = Color.White;
-            iconButton8.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconButton8.IconSize = 20;
-            iconButton8.Location = new Point(123, 0);
-            iconButton8.Name = "iconButton8";
-            iconButton8.Padding = new Padding(0, 3, 0, 0);
-            iconButton8.Size = new Size(45, 34);
-            iconButton8.TabIndex = 9;
-            iconButton8.UseVisualStyleBackColor = false;
-            iconButton8.Click += btnExit_Click;
-            // 
             // TrangChuForm
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
@@ -605,7 +605,7 @@
             Controls.Add(panelDesktop);
             Controls.Add(panel1);
             Controls.Add(panelNav);
-            Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("Microsoft Sans Serif", 14.25F);
             Margin = new Padding(5);
             Name = "TrangChuForm";
             Text = "TrangChuForm";

@@ -33,10 +33,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -85,6 +81,8 @@
             tenSanPhamTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             maSanPhamTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
+            btnLuu = new Guna.UI2.WinForms.Guna2Button();
+            btnHuyBo = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)anhSanPhamPictureBox).BeginInit();
@@ -542,6 +540,44 @@
             maSanPhamTextBox.ShadowDecoration.CustomizableEdges = customizableEdges28;
             maSanPhamTextBox.Size = new Size(188, 40);
             maSanPhamTextBox.TabIndex = 23;
+            // 
+            // btnLuu
+            // 
+            btnLuu.BorderRadius = 5;
+            btnLuu.CustomizableEdges = customizableEdges5;
+            btnLuu.DisabledState.BorderColor = Color.DarkGray;
+            btnLuu.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnLuu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnLuu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnLuu.FillColor = Color.FromArgb(0, 79, 111);
+            btnLuu.Font = new Font("Microsoft Sans Serif", 12F);
+            btnLuu.ForeColor = Color.White;
+            btnLuu.Location = new Point(734, 451);
+            btnLuu.Name = "btnLuu";
+            btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnLuu.Size = new Size(189, 53);
+            btnLuu.TabIndex = 38;
+            btnLuu.Text = "Lưu";
+            // 
+            // btnHuyBo
+            // 
+            btnHuyBo.BorderColor = Color.FromArgb(0, 79, 111);
+            btnHuyBo.BorderRadius = 5;
+            btnHuyBo.BorderThickness = 1;
+            btnHuyBo.CustomizableEdges = customizableEdges7;
+            btnHuyBo.DisabledState.BorderColor = Color.DarkGray;
+            btnHuyBo.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnHuyBo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnHuyBo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnHuyBo.FillColor = Color.White;
+            btnHuyBo.Font = new Font("Microsoft Sans Serif", 12F);
+            btnHuyBo.ForeColor = Color.FromArgb(0, 79, 111);
+            btnHuyBo.Location = new Point(539, 451);
+            btnHuyBo.Name = "btnHuyBo";
+            btnHuyBo.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnHuyBo.Size = new Size(189, 53);
+            btnHuyBo.TabIndex = 37;
+            btnHuyBo.Text = "Huỷ bỏ";
             // 
             // ChiTietSanPhamForm
             // 

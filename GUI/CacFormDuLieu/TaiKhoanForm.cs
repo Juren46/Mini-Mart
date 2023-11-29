@@ -3,6 +3,7 @@ using BUS.OtherFunctions;
 using DocumentFormat.OpenXml.Wordprocessing;
 using DTO;
 using GUI.CacFormChiTiet;
+using GUI.CacFormThongBao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -156,13 +157,14 @@ namespace GUI
 
             if (columnName.Equals("deleteButtonColumn"))
             {
-                DialogResult result = MessageBox.Show("Bạn có muốn xóa tài khoản không?", "Xác nhận", MessageBoxButtons.YesNo);
+                DialogResult result = CacFormThongBao.XacNhanForm.ShowDialog("Bạn có muốn xóa tài khoản không?");
 
                 if (result == DialogResult.Yes)
                 {
                     string tenTaiKhoan = taiKhoanDataGridView.Rows[e.RowIndex].Cells["tenTaiKhoanColumn"].Value.ToString();
 
-                    MessageBox.Show(taiKhoanBUS.VoHieuHoaTaiKhoan(tenTaiKhoan, "Xóa"));
+
+                    CanhBaoForm.ShowAlertMessage(taiKhoanBUS.VoHieuHoaTaiKhoan(tenTaiKhoan, "Xóa"), CanhBaoForm.AlertType.SUCCESS);
 
                     lamMoiButton_Click(sender, e);
                 }
@@ -171,7 +173,7 @@ namespace GUI
 
         private void xoaTatCaButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn xóa các tài khoản đã chọn không?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+            DialogResult result = CacFormThongBao.XacNhanForm.ShowDialog("Bạn có muốn xóa các tài khoản đã chọn không?");
 
             if (result == DialogResult.Yes)
             {
@@ -190,11 +192,12 @@ namespace GUI
 
                 if (hoanTat)
                 {
-                    MessageBox.Show("Đã xóa tất cả tài khoản đã chọn!");
+                    CanhBaoForm.ShowAlertMessage("Đã xóa tất cả tài khoản đã chọn!", CanhBaoForm.AlertType.SUCCESS);
                     lamMoiButton_Click(sender, e);
                 }
                 else
-                    MessageBox.Show("Quá trình xóa xảy ra lỗi!");
+
+                    CanhBaoForm.ShowAlertMessage("Quá trình xóa xảy ra lỗi!", CanhBaoForm.AlertType.ERROR);
             }
         }
 
@@ -243,7 +246,7 @@ namespace GUI
 
         private void taiKhoanDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            if (taiKhoanDataGridView.SelectedRows.Count > 1) 
+            if (taiKhoanDataGridView.SelectedRows.Count > 1)
                 xoaTatCaButton.Visible = true;
             else
                 xoaTatCaButton.Visible = false;

@@ -265,7 +265,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
             Name = "PhanQuyenForm";
-            Text = "PhanQuyenForm";
+            Text = "QUẢN LÝ PHÂN QUYỀN";
             Load += PhanQuyenForm_Load;
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
