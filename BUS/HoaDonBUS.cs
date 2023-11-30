@@ -55,6 +55,7 @@ namespace BUS
 
         public string ThemHoaDon(List<ChiTietHoaDon> listChiTietHoaDon, string maNhanVien, string maKhachHang, string maKhuyenMai, string tongTien, string giamGia, string thanhTien, string tienNhan, string tienThua)
         {
+            if(listChiTietHoaDon.Count <= 0) { return "Đơn hàng trống!"; }
             HoaDon hoaDon = new HoaDon();
 
             hoaDon.maHoaDon = IDGenerator.GenerateHoaDonID();

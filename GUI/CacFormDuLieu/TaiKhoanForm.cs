@@ -136,7 +136,7 @@ namespace GUI
 
         private void themMoiButton_Click(object sender, EventArgs e)
         {
-            new TestChiTietTaiKhoanForm(this, "Thêm").Show();
+            new TestChiTietTaiKhoanForm(this, "Thêm").ShowDialog();
         }
 
         private void taiKhoanDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -147,12 +147,12 @@ namespace GUI
 
             if (columnName.Equals("infoButtonColumn"))
             {
-                new TestChiTietTaiKhoanForm(taiKhoan, this, "Chi tiết").Show();
+                new TestChiTietTaiKhoanForm(taiKhoan, this, "Chi tiết").ShowDialog();
             }
 
             if (columnName.Equals("editButtonColumn"))
             {
-                new TestChiTietTaiKhoanForm(taiKhoan, this, "Sửa").Show();
+                new TestChiTietTaiKhoanForm(taiKhoan, this, "Sửa").ShowDialog();
             }
 
             if (columnName.Equals("deleteButtonColumn"))

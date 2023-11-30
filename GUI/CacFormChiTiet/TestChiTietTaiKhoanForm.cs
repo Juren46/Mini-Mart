@@ -188,8 +188,12 @@ namespace GUI.CacFormChiTiet
             {
                 string tenTaiKhoan = tenTaiKhoanTextBox.Text;
                 string matKhau = matKhauTextBox.Text;
-                PhanQuyen phanQuyen = phanQuyenComboBox.SelectedValue as PhanQuyen;
-                string maPhanQuyen = phanQuyen.maPhanQuyen;
+                string maPhanQuyen = "";
+                if (phanQuyenComboBox.SelectedValue != null)
+                {
+                    PhanQuyen phanQuyen = phanQuyenComboBox.SelectedValue as PhanQuyen;
+                    maPhanQuyen = phanQuyen.maPhanQuyen;
+                }
                 string trangThai = trangThaiComboBox.SelectedItem.ToString();
 
                 string message = "";
