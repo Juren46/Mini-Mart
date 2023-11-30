@@ -70,7 +70,7 @@ namespace GUI
                 maLoaiSanPham = loaiSanPham.maLoaiSanPham;
             }
 
-            listSanPham = sanPhamBUS.TimKiemSanPham(tuKhoa, maLoaiSanPham, "", "", "");
+            listSanPham = sanPhamBUS.TimKiemSanPham(tuKhoa, maLoaiSanPham, "", "Đang bán", "");
 
             LoadDataToFlowLayout(listSanPham);
         }
@@ -204,7 +204,7 @@ namespace GUI
         private void khuyenMaiKhacButton_Click(object sender, EventArgs e)
         {
             if (listSanPhamDonHang.Count > 0)
-                new TestChonKhuyenMaiForm(this).Show();
+                new ChonKhuyenMai(this).Show();
         }
 
         internal void lamMoiKhuyenMaiButton_Click(object sender, EventArgs e)
@@ -230,14 +230,14 @@ namespace GUI
                 string tongTien = tongTienLabel.Text.Replace(" VNĐ", "").Replace(",", "");
                 string giamGia = chietKhauLabel.Text.Replace(" VNĐ", "").Replace(",", "");
                 string thanhTien = thanhTienLabel.Text.Replace(" VNĐ", "").Replace(",", "");
-                string tienNhan = "0"; 
+                string tienNhan = "0";
                 if (!string.IsNullOrEmpty(tienNhanTextBox.Text))
                     tienNhan = tienNhanTextBox.Text;
                 string tienThua = tienThuaLabel.Text.Replace(" VNĐ", "").Replace(",", "");
 
                 List<ChiTietHoaDon> listChiTietHoaDon = new List<ChiTietHoaDon>();
 
-                foreach(Control control in chiTietDonHangFlowLayoutPanel.Controls)
+                foreach (Control control in chiTietDonHangFlowLayoutPanel.Controls)
                 {
                     if (control is DonDatHangControl)
                     {

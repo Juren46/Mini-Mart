@@ -94,20 +94,7 @@ namespace GUI
             }
         }
 
-        private void hoaDonDataGridView_SelectionChanged(object sender, EventArgs e)
-        {
-            // Kiểm tra số lượng dòng được chọn
-            if (hoaDonDataGridView.SelectedRows.Count > 1)
-            {
-                // Nếu nhiều hơn 1 dòng được chọn, hiển thị nút xoá tất cả
-                xoaTatCaButton.Visible = true;
-            }
-            else
-            {
-                // Nếu không có hoặc chỉ có 1 dòng được chọn, ẩn nút xoá tất cả
-                xoaTatCaButton.Visible = false;
-            }
-        }
+
 
 
     }
