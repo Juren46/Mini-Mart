@@ -2,6 +2,7 @@
 using BUS.OtherFunctions;
 using DTO;
 using GUI.CacFormChiTiet;
+using GUI.CacFormThongBao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -139,8 +140,8 @@ namespace GUI
                 string filePath = saveFileDialog.FileName;
 
                 new XuatExcel(filePath).XuatExcelSanPham(listSanPham);
+                DialogResult result = CacFormThongBao.XacNhanForm.ShowDialog("File Excel đã được tạo tại: " + filePath);
 
-                MessageBox.Show("File Excel đã được tạo tại: " + filePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -151,7 +152,7 @@ namespace GUI
 
         private void xoaTatCaButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn xóa các sản phẩm đã chọn không?", "Xác nhận", MessageBoxButtons.YesNo);
+            DialogResult result = CacFormThongBao.XacNhanForm.ShowDialog("Bạn có muốn xóa các sản phẩm đã chọn");
 
             if (result == DialogResult.Yes)
             {
@@ -170,11 +171,11 @@ namespace GUI
 
                 if (hoanTat)
                 {
-                    MessageBox.Show("Đã xóa tất cả sản phẩm đã chọn!");
+                    CanhBaoForm.ShowAlertMessage("Đã xóa tất cả sản phẩm đã chọn!", CanhBaoForm.AlertType.SUCCESS);
                     lamMoiButton_Click(sender, e);
                 }
                 else
-                    MessageBox.Show("Quá trình xóa xảy ra lỗi!");
+                    CanhBaoForm.ShowAlertMessage("Đã xóa tất cả sản phẩm đã chọn!", CanhBaoForm.AlertType.ERROR);
             }
         }
 
@@ -196,13 +197,12 @@ namespace GUI
 
             if (columnName.Equals("deleteButtonColumn"))
             {
-                DialogResult result = MessageBox.Show("Bạn có muốn xóa sản phẩm không?", "Xác nhận", MessageBoxButtons.YesNo);
+                DialogResult result = CacFormThongBao.XacNhanForm.ShowDialog("Bạn có muốn xóa sản phẩm không?");
 
                 if (result == DialogResult.Yes)
                 {
                     string maSanPham = sanPhamDataGridView.Rows[e.RowIndex].Cells["maSanPhamColumn"].Value.ToString();
-
-                    MessageBox.Show(sanPhamBUS.XoaSanPham(maSanPham));
+                    CanhBaoForm.ShowAlertMessage(sanPhamBUS.XoaSanPham(maSanPham), CanhBaoForm.AlertType.SUCCESS);
 
                     lamMoiButton_Click(sender, e);
                 }
@@ -263,5 +263,6 @@ namespace GUI
                 xoaTatCaButton.Visible = false;
             }
         }
+
     }
 }

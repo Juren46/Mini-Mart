@@ -2,12 +2,14 @@
 using BUS.OtherFunctions;
 using DTO;
 using GUI.CacFormChon;
+using GUI.CacFormThongBao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Authentication.ExtendedProtection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -154,17 +156,17 @@ namespace GUI
 
         private void chonLoaiSanPhamButton_Click(object sender, EventArgs e)
         {
-            new TestChonLoaiSanPham(this).Show();
+            new ChonLoaiSanPham(this).Show();
         }
 
         private void chonNhaCungCapButton_Click(object sender, EventArgs e)
         {
-            new TestChonNhaCungCap(this).Show();
+            new ChonNhaCungCap(this).Show();
         }
 
         private void huyBoButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Hủy bỏ các thông tin đã nhập?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = CacFormThongBao.XacNhanForm.ShowDialog("Bạn có muốn hủy thông tin đã nhập?");
 
             if (result == DialogResult.Yes)
             {
@@ -193,14 +195,14 @@ namespace GUI
                     nhaCungCapTextBox.Clear();
                     donViTextBox.Clear();
                     giaBanTextBox.Clear();
-                    anhSanPhamPictureBox.Image = null;
+                    anhSanPhamPictureBox.Image = Properties.Resources.gallery;
                 }
             }
         }
 
         private void luuButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn lưu thông tin sản phẩm?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = CacFormThongBao.XacNhanForm.ShowDialog("Bạn có muốn lưu thông tin sản phẩm?");
 
             if (result == DialogResult.Yes)
             {
@@ -215,7 +217,7 @@ namespace GUI
                 {
                     duLieuAnh = ImageHelper.ImageToByteArray(anhSanPhamPictureBox.Image);
                 }
-                catch 
+                catch
                 {
                     duLieuAnh = sanPham.duLieuAnh;
                 }
@@ -232,13 +234,19 @@ namespace GUI
                         break;
                 }
 
-                MessageBox.Show(message);
+                
 
                 if (message.Equals("Thêm sản phẩm thành công!") || message.Equals("Chỉnh sửa thông tin sản phẩm thành công!"))
                 {
                     form.lamMoiButton_Click(sender, e);
+                    CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.SUCCESS);
 
                     this.Close();
+                }
+                else
+                {
+                    CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.WARNING);
+                    
                 }
             }
         }

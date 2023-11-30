@@ -40,7 +40,6 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel2 = new Panel();
             bacThanhVienComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             lamMoiButton = new FontAwesome.Sharp.IconButton();
             xuatExcelButton = new FontAwesome.Sharp.IconButton();
@@ -48,6 +47,8 @@
             timKiemButton = new FontAwesome.Sharp.IconButton();
             panel3 = new Panel();
             khachHangDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            panel1 = new Panel();
+            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             Column2 = new DataGridViewTextBoxColumn();
             maKhachHangColumn = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -57,7 +58,6 @@
             Column11 = new DataGridViewTextBoxColumn();
             infoButtonColumn = new DataGridViewImageColumn();
             editButtonColumn = new DataGridViewImageColumn();
-            panel1 = new Panel();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)khachHangDataGridView).BeginInit();
@@ -66,8 +66,8 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(guna2HtmlLabel4);
             panel2.Controls.Add(bacThanhVienComboBox);
-            panel2.Controls.Add(guna2HtmlLabel2);
             panel2.Controls.Add(timKiemTextBox);
             panel2.Controls.Add(lamMoiButton);
             panel2.Controls.Add(xuatExcelButton);
@@ -98,15 +98,6 @@
             bacThanhVienComboBox.Size = new Size(203, 36);
             bacThanhVienComboBox.TabIndex = 89;
             bacThanhVienComboBox.SelectionChangeCommitted += bacThanhVienComboBox_SelectionChangeCommitted;
-            // 
-            // guna2HtmlLabel2
-            // 
-            guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.Location = new Point(12, 13);
-            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(81, 17);
-            guna2HtmlLabel2.TabIndex = 88;
-            guna2HtmlLabel2.Text = "Bậc thành viên";
             // 
             // timKiemTextBox
             // 
@@ -285,6 +276,29 @@
             khachHangDataGridView.CellFormatting += khachHangDataGridView_CellFormatting;
             khachHangDataGridView.CellPainting += khachHangDataGridView_CellPainting;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(223, 243, 252);
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1183, 821);
+            panel1.TabIndex = 1;
+            // 
+            // guna2HtmlLabel4
+            // 
+            guna2HtmlLabel4.BackColor = Color.Transparent;
+            guna2HtmlLabel4.Font = new Font("Segoe UI", 14.25F);
+            guna2HtmlLabel4.ForeColor = Color.FromArgb(0, 79, 111);
+            guna2HtmlLabel4.Location = new Point(12, 5);
+            guna2HtmlLabel4.Margin = new Padding(5);
+            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            guna2HtmlLabel4.Size = new Size(127, 27);
+            guna2HtmlLabel4.TabIndex = 101;
+            guna2HtmlLabel4.Text = "Bậc thành viên ";
+            // 
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -335,7 +349,7 @@
             // 
             // Column9
             // 
-            Column9.FillWeight = 50F;
+            Column9.FillWeight = 70F;
             Column9.HeaderText = "Bậc thành viên";
             Column9.MinimumWidth = 6;
             Column9.Name = "Column9";
@@ -371,17 +385,6 @@
             editButtonColumn.ReadOnly = true;
             editButtonColumn.Width = 6;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(223, 243, 252);
-            panel1.Controls.Add(panel3);
-            panel1.Controls.Add(panel2);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1183, 821);
-            panel1.TabIndex = 1;
-            // 
             // KhachHangForm
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
@@ -413,7 +416,7 @@
         private FontAwesome.Sharp.IconButton themMoiButton;
         private FontAwesome.Sharp.IconButton timKiemButton;
         private Guna.UI2.WinForms.Guna2ComboBox bacThanhVienComboBox;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn maKhachHangColumn;
         private DataGridViewTextBoxColumn Column3;
