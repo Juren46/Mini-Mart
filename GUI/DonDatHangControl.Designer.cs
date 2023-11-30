@@ -159,9 +159,9 @@
         private FontAwesome.Sharp.IconButton iconButton8;
         private Label label2;
         private Label label1;
-        private Guna.UI2.WinForms.Guna2NumericUpDown soLuongNumericUpDown;
         private FontAwesome.Sharp.IconButton xoaButton;
-        private Label tongGiaLabel;
         private Label tenSanPhamLabel;
+        internal Guna.UI2.WinForms.Guna2NumericUpDown soLuongNumericUpDown;
+        internal Label tongGiaLabel;
     }
 }

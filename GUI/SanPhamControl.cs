@@ -9,19 +9,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace GUI
 {
     public partial class SanPhamControl : UserControl
     {
         SanPham sanPham;
-        BanHangForm form;
-        public SanPhamControl(SanPham sanPham, BanHangForm form)
+        BanHangForm banHangForm;
+
+        public SanPhamControl(SanPham sanPham, BanHangForm banHangForm)
         {
             InitializeComponent();
 
             this.sanPham = sanPham;
-            this.form = form;
+            this.banHangForm = banHangForm;
         }
 
         private void SanPhamControl_Load(object sender, EventArgs e)
@@ -33,7 +36,23 @@ namespace GUI
 
         private void chonButton_Click(object sender, EventArgs e)
         {
-            form.chiTietDonHangFlowLayoutPanel.Controls.Add(new DonDatHangControl(sanPham));
+            if (banHangForm.listSanPhamDonHang.Contains(sanPham))
+            {
+                foreach(Control control in banHangForm.chiTietDonHangFlowLayoutPanel.Controls)
+                {
+                    if (control is DonDatHangControl)
+                    {
+                        DonDatHangControl donDatHangControl = (DonDatHangControl)control;
+                        if (donDatHangControl.sanPham == sanPham)
+                            donDatHangControl.soLuongNumericUpDown.Value++;
+                    }
+                }
+            }
+            else
+            {
+                banHangForm.listSanPhamDonHang.Add(sanPham);
+                banHangForm.chiTietDonHangFlowLayoutPanel.Controls.Add(new DonDatHangControl(sanPham, banHangForm));
+            }
         }
     }
 }

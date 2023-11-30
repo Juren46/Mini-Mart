@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -83,6 +84,10 @@ namespace GUI.CacFormChiTiet
                     tieuDeFormLabel.Text = "Thêm khuyến mãi";
 
                     maKhuyenMaiTextBox.Text = IDGenerator.GenerateKhuyenMaiID();
+                    thoiGianBatDauDateTimePicker.Value = DateTime.Now;
+                    thoiGianKetThucDateTimePicker.Value = DateTime.Now;
+                    thoiGianBatDauTimePicker.Value = DateTime.Now;
+                    thoiGianKetThucTimePicker.Value = DateTime.Now;
 
                     maKhuyenMaiTextBox.ReadOnly = true;
 
@@ -161,8 +166,16 @@ namespace GUI.CacFormChiTiet
                 if (cuTheRadioButton.Checked)
                     loaiGiaTri = "Cụ thể";
                 string giaTriApDung = giaTriKhuyenMaiTextBox.Text;
-                string thoiGianBatDau = thoiGianBatDauDateTimePicker.Value.ToString("dd/MM/yyyy HH:mm:ss");
-                string thoiGianKetThuc = thoiGianKetThucDateTimePicker.Value.ToString("dd/MM/yyyy HH:mm:ss");
+                string thoiGianBatDau = "";
+                string thoiGianKetThuc = "";
+                DateTime dateTimeNgayBatDau = DateTime.ParseExact(thoiGianBatDauDateTimePicker.Value.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                DateTime dateTimeGioBatDau = DateTime.ParseExact(thoiGianBatDauTimePicker.Value.ToString("HH:mm:ss"), "HH:mm:ss", CultureInfo.InvariantCulture);
+                DateTime dateTimeBatDau = dateTimeNgayBatDau.Add(new TimeSpan(dateTimeGioBatDau.Hour, dateTimeGioBatDau.Minute, dateTimeGioBatDau.Second));
+                thoiGianBatDau = dateTimeBatDau.ToString("dd/MM/yyyy HH:mm:ss", null);
+                DateTime dateTimeNgayKetThuc = DateTime.ParseExact(thoiGianKetThucDateTimePicker.Value.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                DateTime dateTimeGioKetThuc = DateTime.ParseExact(thoiGianKetThucTimePicker.Value.ToString("HH:mm:ss"), "HH:mm:ss", CultureInfo.InvariantCulture);
+                DateTime dateTimeKetThuc = dateTimeNgayKetThuc.Add(new TimeSpan(dateTimeGioKetThuc.Hour, dateTimeGioKetThuc.Minute, dateTimeGioKetThuc.Second));
+                thoiGianKetThuc = dateTimeKetThuc.ToString("dd/MM/yyyy HH:mm:ss", null);
 
                 string message = "";
 
