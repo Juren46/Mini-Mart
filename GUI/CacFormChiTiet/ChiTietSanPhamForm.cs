@@ -22,6 +22,7 @@ namespace GUI
         SanPham sanPham;
         string context;
         SanPhamForm form;
+        NhapHangForm nhapHangForm;
 
         public ChiTietSanPhamForm(SanPham sanPham, string context, SanPhamForm form)
         {
@@ -42,6 +43,16 @@ namespace GUI
             sanPhamBUS = new SanPhamBUS();
             this.context = context;
             this.form = form;
+        }
+
+        public ChiTietSanPhamForm(string context, NhapHangForm nhapHangForm)
+        {
+            InitializeComponent();
+            CenterToParent();
+
+            sanPhamBUS = new SanPhamBUS();
+            this.context = context;
+            this.nhapHangForm = nhapHangForm;
         }
 
         private void ChiTietSanPhamForm_Load(object sender, EventArgs e)
@@ -96,6 +107,11 @@ namespace GUI
                             trangThaiComboBox.SelectedItem = item;
                             break;
                         }
+                    }
+                    if (nhapHangForm != null)
+                    {
+                        nhaCungCapTextBox.Text = nhapHangForm.nhaCungCap.maNhaCungCap;
+                        chonNhaCungCapButton.Enabled = false;
                     }
 
                     maSanPhamTextBox.ReadOnly = true;
@@ -235,10 +251,10 @@ namespace GUI
                 }
 
                 
-
                 if (message.Equals("Thêm sản phẩm thành công!") || message.Equals("Chỉnh sửa thông tin sản phẩm thành công!"))
                 {
-                    form.lamMoiButton_Click(sender, e);
+                    if (form != null)
+                        form.lamMoiButton_Click(sender, e);
                     CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.SUCCESS);
 
                     this.Close();

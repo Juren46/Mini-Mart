@@ -34,33 +34,40 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             viewLEFT = new Panel();
             f = new Panel();
             sanPhamFlowLayoutPanel = new FlowLayoutPanel();
             panel1 = new Panel();
+            themSanPhamButton = new FontAwesome.Sharp.IconButton();
+            lamMoiSanPhamButton = new FontAwesome.Sharp.IconButton();
             label2 = new Label();
             label1 = new Label();
-            cbbSapXep = new Guna.UI2.WinForms.Guna2ComboBox();
+            loaiSanPhamComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            btnTimKiem = new FontAwesome.Sharp.IconButton();
-            btnLuu = new Guna.UI2.WinForms.Guna2Button();
+            timKiemButton = new FontAwesome.Sharp.IconButton();
+            luuButton = new Guna.UI2.WinForms.Guna2Button();
             viewRIGHT = new Panel();
+            chiTietDonHangFlowLayoutPanel = new FlowLayoutPanel();
             panel3 = new Panel();
+            canhBaoLabel = new Label();
+            label3 = new Label();
+            label6 = new Label();
+            chonNhaCungCapButton = new FontAwesome.Sharp.IconButton();
+            tenNhaCungCapTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            maNhaCungCapTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             panel2 = new Panel();
             guna2Separator5 = new Guna.UI2.WinForms.Guna2Separator();
-            label18 = new Label();
+            thanhTienLabel = new Label();
             label15 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label9 = new Label();
-            label8 = new Label();
-            guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
-            chiTietDonHangFlowLayoutPanel = new FlowLayoutPanel();
             viewLEFT.SuspendLayout();
             f.SuspendLayout();
             panel1.SuspendLayout();
             viewRIGHT.SuspendLayout();
+            panel3.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -87,31 +94,71 @@
             // 
             sanPhamFlowLayoutPanel.BackColor = Color.White;
             sanPhamFlowLayoutPanel.Dock = DockStyle.Fill;
-            sanPhamFlowLayoutPanel.Location = new Point(0, 108);
+            sanPhamFlowLayoutPanel.Location = new Point(0, 129);
             sanPhamFlowLayoutPanel.Name = "sanPhamFlowLayoutPanel";
-            sanPhamFlowLayoutPanel.Size = new Size(582, 713);
+            sanPhamFlowLayoutPanel.Size = new Size(582, 692);
             sanPhamFlowLayoutPanel.TabIndex = 1;
             // 
             // panel1
             // 
             panel1.BackColor = Color.LightBlue;
+            panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(themSanPhamButton);
+            panel1.Controls.Add(lamMoiSanPhamButton);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(cbbSapXep);
+            panel1.Controls.Add(loaiSanPhamComboBox);
             panel1.Controls.Add(timKiemTextBox);
-            panel1.Controls.Add(btnTimKiem);
+            panel1.Controls.Add(timKiemButton);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(582, 108);
+            panel1.Size = new Size(582, 129);
             panel1.TabIndex = 0;
+            // 
+            // themSanPhamButton
+            // 
+            themSanPhamButton.BackColor = Color.FromArgb(226, 153, 48);
+            themSanPhamButton.FlatAppearance.BorderSize = 0;
+            themSanPhamButton.FlatStyle = FlatStyle.Flat;
+            themSanPhamButton.Font = new Font("Microsoft Sans Serif", 12F);
+            themSanPhamButton.ForeColor = Color.White;
+            themSanPhamButton.IconChar = FontAwesome.Sharp.IconChar.HandHoldingMedical;
+            themSanPhamButton.IconColor = Color.White;
+            themSanPhamButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            themSanPhamButton.IconSize = 20;
+            themSanPhamButton.ImageAlign = ContentAlignment.MiddleLeft;
+            themSanPhamButton.Location = new Point(273, 25);
+            themSanPhamButton.Name = "themSanPhamButton";
+            themSanPhamButton.Size = new Size(115, 36);
+            themSanPhamButton.TabIndex = 97;
+            themSanPhamButton.Text = "Thêm mới";
+            themSanPhamButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            themSanPhamButton.UseVisualStyleBackColor = false;
+            themSanPhamButton.Click += themSanPhamButton_Click;
+            // 
+            // lamMoiSanPhamButton
+            // 
+            lamMoiSanPhamButton.BackColor = Color.FromArgb(33, 31, 48);
+            lamMoiSanPhamButton.FlatAppearance.BorderSize = 0;
+            lamMoiSanPhamButton.FlatStyle = FlatStyle.Flat;
+            lamMoiSanPhamButton.IconChar = FontAwesome.Sharp.IconChar.ArrowsRotate;
+            lamMoiSanPhamButton.IconColor = Color.White;
+            lamMoiSanPhamButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            lamMoiSanPhamButton.IconSize = 20;
+            lamMoiSanPhamButton.Location = new Point(345, 84);
+            lamMoiSanPhamButton.Name = "lamMoiSanPhamButton";
+            lamMoiSanPhamButton.Size = new Size(43, 36);
+            lamMoiSanPhamButton.TabIndex = 96;
+            lamMoiSanPhamButton.UseVisualStyleBackColor = false;
+            lamMoiSanPhamButton.Click += lamMoiSanPhamButton_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F);
             label2.ForeColor = SystemColors.ControlDarkDark;
-            label2.Location = new Point(343, 19);
+            label2.Location = new Point(12, 5);
             label2.Name = "label2";
             label2.Size = new Size(93, 17);
             label2.TabIndex = 91;
@@ -122,28 +169,29 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F);
             label1.ForeColor = SystemColors.ControlDarkDark;
-            label1.Location = new Point(10, 19);
+            label1.Location = new Point(12, 64);
             label1.Name = "label1";
             label1.Size = new Size(125, 17);
             label1.TabIndex = 90;
             label1.Text = "Tìm kiếm sản phẩm ";
             // 
-            // cbbSapXep
+            // loaiSanPhamComboBox
             // 
-            cbbSapXep.BackColor = Color.Transparent;
-            cbbSapXep.CustomizableEdges = customizableEdges1;
-            cbbSapXep.DrawMode = DrawMode.OwnerDrawFixed;
-            cbbSapXep.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbbSapXep.FocusedColor = Color.FromArgb(94, 148, 255);
-            cbbSapXep.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbbSapXep.Font = new Font("Segoe UI", 10F);
-            cbbSapXep.ForeColor = Color.FromArgb(68, 88, 112);
-            cbbSapXep.ItemHeight = 30;
-            cbbSapXep.Location = new Point(343, 39);
-            cbbSapXep.Name = "cbbSapXep";
-            cbbSapXep.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            cbbSapXep.Size = new Size(229, 36);
-            cbbSapXep.TabIndex = 89;
+            loaiSanPhamComboBox.BackColor = Color.Transparent;
+            loaiSanPhamComboBox.CustomizableEdges = customizableEdges1;
+            loaiSanPhamComboBox.DrawMode = DrawMode.OwnerDrawFixed;
+            loaiSanPhamComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            loaiSanPhamComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
+            loaiSanPhamComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            loaiSanPhamComboBox.Font = new Font("Segoe UI", 10F);
+            loaiSanPhamComboBox.ForeColor = Color.FromArgb(68, 88, 112);
+            loaiSanPhamComboBox.ItemHeight = 30;
+            loaiSanPhamComboBox.Location = new Point(12, 25);
+            loaiSanPhamComboBox.Name = "loaiSanPhamComboBox";
+            loaiSanPhamComboBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            loaiSanPhamComboBox.Size = new Size(229, 36);
+            loaiSanPhamComboBox.TabIndex = 89;
+            loaiSanPhamComboBox.SelectionChangeCommitted += loaiSanPhamComboBox_SelectionChangeCommitted;
             // 
             // timKiemTextBox
             // 
@@ -157,7 +205,7 @@
             timKiemTextBox.Font = new Font("Segoe UI", 12F);
             timKiemTextBox.ForeColor = Color.FromArgb(84, 155, 255);
             timKiemTextBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
-            timKiemTextBox.Location = new Point(10, 39);
+            timKiemTextBox.Location = new Point(12, 84);
             timKiemTextBox.Margin = new Padding(5);
             timKiemTextBox.Name = "timKiemTextBox";
             timKiemTextBox.PasswordChar = '\0';
@@ -167,39 +215,42 @@
             timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
             timKiemTextBox.Size = new Size(276, 36);
             timKiemTextBox.TabIndex = 88;
+            timKiemTextBox.TextChanged += timKiemTextBox_TextChanged;
             // 
-            // btnTimKiem
+            // timKiemButton
             // 
-            btnTimKiem.BackColor = Color.FromArgb(226, 153, 48);
-            btnTimKiem.FlatAppearance.BorderSize = 0;
-            btnTimKiem.FlatStyle = FlatStyle.Flat;
-            btnTimKiem.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            btnTimKiem.IconColor = Color.White;
-            btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnTimKiem.IconSize = 20;
-            btnTimKiem.Location = new Point(294, 39);
-            btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.Size = new Size(43, 36);
-            btnTimKiem.TabIndex = 87;
-            btnTimKiem.UseVisualStyleBackColor = false;
+            timKiemButton.BackColor = Color.FromArgb(226, 153, 48);
+            timKiemButton.FlatAppearance.BorderSize = 0;
+            timKiemButton.FlatStyle = FlatStyle.Flat;
+            timKiemButton.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            timKiemButton.IconColor = Color.White;
+            timKiemButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            timKiemButton.IconSize = 20;
+            timKiemButton.Location = new Point(296, 84);
+            timKiemButton.Name = "timKiemButton";
+            timKiemButton.Size = new Size(43, 36);
+            timKiemButton.TabIndex = 87;
+            timKiemButton.UseVisualStyleBackColor = false;
+            timKiemButton.Click += timKiemButton_Click;
             // 
-            // btnLuu
+            // luuButton
             // 
-            btnLuu.BorderRadius = 5;
-            btnLuu.CustomizableEdges = customizableEdges5;
-            btnLuu.DisabledState.BorderColor = Color.DarkGray;
-            btnLuu.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnLuu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnLuu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnLuu.FillColor = Color.FromArgb(0, 79, 111);
-            btnLuu.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLuu.ForeColor = Color.Azure;
-            btnLuu.Location = new Point(362, 128);
-            btnLuu.Name = "btnLuu";
-            btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnLuu.Size = new Size(210, 61);
-            btnLuu.TabIndex = 117;
-            btnLuu.Text = "HOÀN TẤT";
+            luuButton.BorderRadius = 5;
+            luuButton.CustomizableEdges = customizableEdges5;
+            luuButton.DisabledState.BorderColor = Color.DarkGray;
+            luuButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            luuButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            luuButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            luuButton.FillColor = Color.FromArgb(0, 79, 111);
+            luuButton.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            luuButton.ForeColor = Color.Azure;
+            luuButton.Location = new Point(379, 51);
+            luuButton.Name = "luuButton";
+            luuButton.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            luuButton.Size = new Size(210, 61);
+            luuButton.TabIndex = 117;
+            luuButton.Text = "HOÀN TẤT";
+            luuButton.Click += luuButton_Click;
             // 
             // viewRIGHT
             // 
@@ -212,128 +263,173 @@
             viewRIGHT.Size = new Size(601, 821);
             viewRIGHT.TabIndex = 2;
             // 
-            // panel3
-            // 
-            panel3.BackColor = Color.LightBlue;
-            panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(601, 108);
-            panel3.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.LightBlue;
-            panel2.Controls.Add(btnLuu);
-            panel2.Controls.Add(guna2Separator5);
-            panel2.Controls.Add(label18);
-            panel2.Controls.Add(label15);
-            panel2.Controls.Add(label4);
-            panel2.Controls.Add(label5);
-            panel2.Controls.Add(label9);
-            panel2.Controls.Add(label8);
-            panel2.Controls.Add(guna2Separator1);
-            panel2.Controls.Add(guna2Separator2);
-            panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 604);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(601, 217);
-            panel2.TabIndex = 0;
-            // 
-            // guna2Separator5
-            // 
-            guna2Separator5.FillColor = Color.DimGray;
-            guna2Separator5.Location = new Point(29, 131);
-            guna2Separator5.Name = "guna2Separator5";
-            guna2Separator5.Size = new Size(313, 10);
-            guna2Separator5.TabIndex = 110;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.Location = new Point(156, 144);
-            label18.Name = "label18";
-            label18.Size = new Size(186, 37);
-            label18.TabIndex = 109;
-            label18.Text = "100.000 VND";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            label15.Location = new Point(29, 154);
-            label15.Name = "label15";
-            label15.Size = new Size(102, 25);
-            label15.TabIndex = 106;
-            label15.Text = "Tổng cộng";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            label4.Location = new Point(29, 37);
-            label4.Name = "label4";
-            label4.Size = new Size(70, 17);
-            label4.TabIndex = 0;
-            label4.Text = "Nhân viên";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            label5.Location = new Point(29, 74);
-            label5.Name = "label5";
-            label5.Size = new Size(57, 17);
-            label5.TabIndex = 1;
-            label5.Text = "Chức vụ";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI Light", 12F);
-            label9.Location = new Point(180, 70);
-            label9.Name = "label9";
-            label9.Size = new Size(58, 21);
-            label9.TabIndex = 100;
-            label9.Text = "Quản lí";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Light", 12F);
-            label8.Location = new Point(178, 41);
-            label8.Name = "label8";
-            label8.Size = new Size(127, 21);
-            label8.TabIndex = 99;
-            label8.Text = "Nguyễn Ngọc Tín";
-            // 
-            // guna2Separator1
-            // 
-            guna2Separator1.FillColor = Color.DimGray;
-            guna2Separator1.Location = new Point(112, 52);
-            guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(243, 10);
-            guna2Separator1.TabIndex = 95;
-            // 
-            // guna2Separator2
-            // 
-            guna2Separator2.FillColor = Color.DimGray;
-            guna2Separator2.Location = new Point(112, 81);
-            guna2Separator2.Name = "guna2Separator2";
-            guna2Separator2.Size = new Size(243, 10);
-            guna2Separator2.TabIndex = 96;
-            // 
             // chiTietDonHangFlowLayoutPanel
             // 
             chiTietDonHangFlowLayoutPanel.AutoScroll = true;
             chiTietDonHangFlowLayoutPanel.BackColor = Color.FromArgb(223, 243, 252);
             chiTietDonHangFlowLayoutPanel.Dock = DockStyle.Fill;
-            chiTietDonHangFlowLayoutPanel.Location = new Point(0, 108);
+            chiTietDonHangFlowLayoutPanel.Location = new Point(0, 129);
             chiTietDonHangFlowLayoutPanel.Name = "chiTietDonHangFlowLayoutPanel";
             chiTietDonHangFlowLayoutPanel.Padding = new Padding(5);
-            chiTietDonHangFlowLayoutPanel.Size = new Size(601, 496);
+            chiTietDonHangFlowLayoutPanel.Size = new Size(601, 542);
             chiTietDonHangFlowLayoutPanel.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.LightBlue;
+            panel3.Controls.Add(canhBaoLabel);
+            panel3.Controls.Add(label3);
+            panel3.Controls.Add(label6);
+            panel3.Controls.Add(chonNhaCungCapButton);
+            panel3.Controls.Add(tenNhaCungCapTextBox);
+            panel3.Controls.Add(maNhaCungCapTextBox);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(601, 129);
+            panel3.TabIndex = 1;
+            // 
+            // canhBaoLabel
+            // 
+            canhBaoLabel.AutoSize = true;
+            canhBaoLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            canhBaoLabel.ForeColor = Color.Firebrick;
+            canhBaoLabel.Location = new Point(303, 92);
+            canhBaoLabel.Name = "canhBaoLabel";
+            canhBaoLabel.Size = new Size(287, 21);
+            canhBaoLabel.TabIndex = 100;
+            canhBaoLabel.Text = "Chọn nhà cung cấp để tiếp tục thao tác";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9.75F);
+            label3.ForeColor = SystemColors.ControlDarkDark;
+            label3.Location = new Point(19, 5);
+            label3.Name = "label3";
+            label3.Size = new Size(109, 17);
+            label3.TabIndex = 99;
+            label3.Text = "Mã nhà cung cấp";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9.75F);
+            label6.ForeColor = SystemColors.ControlDarkDark;
+            label6.Location = new Point(19, 66);
+            label6.Name = "label6";
+            label6.Size = new Size(110, 17);
+            label6.TabIndex = 98;
+            label6.Text = "Tên nhà cung cấp";
+            // 
+            // chonNhaCungCapButton
+            // 
+            chonNhaCungCapButton.BackColor = Color.FromArgb(226, 153, 48);
+            chonNhaCungCapButton.FlatAppearance.BorderSize = 0;
+            chonNhaCungCapButton.FlatStyle = FlatStyle.Flat;
+            chonNhaCungCapButton.Font = new Font("Microsoft Sans Serif", 12F);
+            chonNhaCungCapButton.ForeColor = Color.White;
+            chonNhaCungCapButton.IconChar = FontAwesome.Sharp.IconChar.HandHoldingMedical;
+            chonNhaCungCapButton.IconColor = Color.White;
+            chonNhaCungCapButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            chonNhaCungCapButton.IconSize = 20;
+            chonNhaCungCapButton.ImageAlign = ContentAlignment.MiddleLeft;
+            chonNhaCungCapButton.Location = new Point(303, 25);
+            chonNhaCungCapButton.Name = "chonNhaCungCapButton";
+            chonNhaCungCapButton.Size = new Size(175, 36);
+            chonNhaCungCapButton.TabIndex = 98;
+            chonNhaCungCapButton.Text = "Chọn nhà cung cấp";
+            chonNhaCungCapButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            chonNhaCungCapButton.UseVisualStyleBackColor = false;
+            chonNhaCungCapButton.Click += chonNhaCungCapButton_Click;
+            // 
+            // tenNhaCungCapTextBox
+            // 
+            tenNhaCungCapTextBox.CustomizableEdges = customizableEdges7;
+            tenNhaCungCapTextBox.DefaultText = "";
+            tenNhaCungCapTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tenNhaCungCapTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tenNhaCungCapTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tenNhaCungCapTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tenNhaCungCapTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tenNhaCungCapTextBox.Font = new Font("Segoe UI", 12F);
+            tenNhaCungCapTextBox.ForeColor = Color.FromArgb(84, 155, 255);
+            tenNhaCungCapTextBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
+            tenNhaCungCapTextBox.Location = new Point(19, 84);
+            tenNhaCungCapTextBox.Margin = new Padding(5);
+            tenNhaCungCapTextBox.Name = "tenNhaCungCapTextBox";
+            tenNhaCungCapTextBox.PasswordChar = '\0';
+            tenNhaCungCapTextBox.PlaceholderForeColor = Color.FromArgb(186, 215, 255);
+            tenNhaCungCapTextBox.PlaceholderText = "Nhập tên sản phẩm";
+            tenNhaCungCapTextBox.SelectedText = "";
+            tenNhaCungCapTextBox.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            tenNhaCungCapTextBox.Size = new Size(276, 36);
+            tenNhaCungCapTextBox.TabIndex = 90;
+            // 
+            // maNhaCungCapTextBox
+            // 
+            maNhaCungCapTextBox.CustomizableEdges = customizableEdges9;
+            maNhaCungCapTextBox.DefaultText = "";
+            maNhaCungCapTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            maNhaCungCapTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            maNhaCungCapTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            maNhaCungCapTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            maNhaCungCapTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            maNhaCungCapTextBox.Font = new Font("Segoe UI", 12F);
+            maNhaCungCapTextBox.ForeColor = Color.FromArgb(84, 155, 255);
+            maNhaCungCapTextBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
+            maNhaCungCapTextBox.Location = new Point(19, 25);
+            maNhaCungCapTextBox.Margin = new Padding(5);
+            maNhaCungCapTextBox.Name = "maNhaCungCapTextBox";
+            maNhaCungCapTextBox.PasswordChar = '\0';
+            maNhaCungCapTextBox.PlaceholderForeColor = Color.FromArgb(186, 215, 255);
+            maNhaCungCapTextBox.PlaceholderText = "Nhập tên sản phẩm";
+            maNhaCungCapTextBox.SelectedText = "";
+            maNhaCungCapTextBox.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            maNhaCungCapTextBox.Size = new Size(276, 36);
+            maNhaCungCapTextBox.TabIndex = 89;
+            maNhaCungCapTextBox.TextChanged += maNhaCungCapTextBox_TextChanged;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.LightBlue;
+            panel2.Controls.Add(luuButton);
+            panel2.Controls.Add(guna2Separator5);
+            panel2.Controls.Add(thanhTienLabel);
+            panel2.Controls.Add(label15);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 671);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(601, 150);
+            panel2.TabIndex = 0;
+            // 
+            // guna2Separator5
+            // 
+            guna2Separator5.FillColor = Color.DimGray;
+            guna2Separator5.Location = new Point(30, 62);
+            guna2Separator5.Name = "guna2Separator5";
+            guna2Separator5.Size = new Size(313, 10);
+            guna2Separator5.TabIndex = 110;
+            // 
+            // thanhTienLabel
+            // 
+            thanhTienLabel.AutoSize = true;
+            thanhTienLabel.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            thanhTienLabel.Location = new Point(157, 75);
+            thanhTienLabel.Name = "thanhTienLabel";
+            thanhTienLabel.Size = new Size(99, 37);
+            thanhTienLabel.TabIndex = 109;
+            thanhTienLabel.Text = "0 VNĐ";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            label15.Location = new Point(30, 85);
+            label15.Name = "label15";
+            label15.Size = new Size(103, 25);
+            label15.TabIndex = 106;
+            label15.Text = "Thành tiền";
             // 
             // NhapHangForm
             // 
@@ -347,11 +443,14 @@
             Margin = new Padding(5);
             Name = "NhapHangForm";
             Text = "NhapHangForm";
+            Load += NhapHangForm_Load;
             viewLEFT.ResumeLayout(false);
             f.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             viewRIGHT.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -365,22 +464,24 @@
         private Panel panel1;
         private Label label2;
         private Label label1;
-        private Guna.UI2.WinForms.Guna2ComboBox cbbSapXep;
+        private Guna.UI2.WinForms.Guna2ComboBox loaiSanPhamComboBox;
         private Guna.UI2.WinForms.Guna2TextBox timKiemTextBox;
-        private FontAwesome.Sharp.IconButton btnTimKiem;
-        private Guna.UI2.WinForms.Guna2Button btnLuu;
+        private FontAwesome.Sharp.IconButton timKiemButton;
+        private Guna.UI2.WinForms.Guna2Button luuButton;
         private Panel viewRIGHT;
         private Panel panel3;
         private Panel panel2;
-        private Label label4;
-        private Label label5;
-        private Label label9;
-        private Label label8;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator5;
-        private Label label18;
         private Label label15;
         public FlowLayoutPanel chiTietDonHangFlowLayoutPanel;
+        private FontAwesome.Sharp.IconButton lamMoiSanPhamButton;
+        private FontAwesome.Sharp.IconButton themSanPhamButton;
+        private Label label3;
+        private Label label6;
+        private FontAwesome.Sharp.IconButton chonNhaCungCapButton;
+        internal Label thanhTienLabel;
+        internal Guna.UI2.WinForms.Guna2TextBox tenNhaCungCapTextBox;
+        internal Guna.UI2.WinForms.Guna2TextBox maNhaCungCapTextBox;
+        internal Label canhBaoLabel;
     }
 }
