@@ -86,6 +86,7 @@ namespace GUI
                     break;
 
                 case "PQ04":
+                    nhapHangButton.Visible = true;
                     btnSanPham.Visible = true;
                     btnLoaiSanPham.Visible = true;
                     btnNhaCungCap.Visible = true;
@@ -237,6 +238,12 @@ namespace GUI
             OpenChildForm(new TaiKhoanForm());
         }
 
+        private void nhapHangButton_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new NhapHangForm());
+        }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -306,5 +313,7 @@ namespace GUI
 
             tenPhanQuyenLabel.Text = new PhanQuyenBUS().LayPhanQuyenTheoMa(DangNhapForm.taiKhoan.maPhanQuyen).tenPhanQuyen;
         }
+
+       
     }
 }
