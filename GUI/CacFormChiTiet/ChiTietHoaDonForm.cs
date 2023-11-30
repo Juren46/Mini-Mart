@@ -14,18 +14,65 @@ namespace GUI.CacFormChiTiet
 {
     public partial class ChiTietHoaDonForm : Form
     {
-        HoaDonBUS hoaDonBUS;
+        List<ChiTietHoaDon> listChiTietHoaDon;
         HoaDon hoaDon;
         ChiTietHoaDonBUS chiTietHoaDonBUS;
-        List<ChiTietHoaDon> listChiTietHoaDon;
+        HoaDonBUS hoaDonBUS;
+
         public ChiTietHoaDonForm(string maHoaDon)
         {
             InitializeComponent();
             CenterToParent();
+
             hoaDonBUS = new HoaDonBUS();
             chiTietHoaDonBUS = new ChiTietHoaDonBUS();
             hoaDon = hoaDonBUS.LayHoaDonTheoMa(maHoaDon);
+            listChiTietHoaDon = chiTietHoaDonBUS.LayDanhSachChiTietHoaDon(maHoaDon);
         }
+
+        private void ChiTietHoaDonForm_Load(object sender, EventArgs e)
+        {
+            maHoaDonTextBox.Text = hoaDon.maHoaDon;
+            maNhanVienTextBox.Text = hoaDon.maNhanVien;
+            maKhachHangTextBox.Text = hoaDon.maKhachHang;
+            maKhuyenMaiTextBox.Text = hoaDon.maKhuyenMai;
+            thoiGianTaoDateTimePicker.Value = hoaDon.thoiGianTao;
+            tongTienTextBox.Text = hoaDon.tongTien.ToString("#,##0") + " VNĐ";
+            giamGiaTextBox.Text = hoaDon.giamGia.ToString("#,##0") + " VNĐ";
+            thanhTienTextBox.Text = hoaDon.thanhTien.ToString("#,##0") + " VNĐ";
+            tienNhanTextBox.Text = hoaDon.tienNhan.ToString("#,##0") + " VNĐ";
+            tienThuaTextBox.Text = hoaDon.tienThua.ToString("#,##0") + " VNĐ";
+
+            maHoaDonTextBox.ReadOnly = true;
+            maNhanVienTextBox.ReadOnly = true;
+            maKhachHangTextBox.ReadOnly = true;
+            maKhuyenMaiTextBox.ReadOnly = true;
+            thoiGianTaoDateTimePicker.Enabled = false;
+            tongTienTextBox.ReadOnly = true;
+            giamGiaTextBox.ReadOnly = true;
+            thanhTienTextBox.ReadOnly = true;
+            tienNhanTextBox.ReadOnly = true;
+            tienThuaTextBox.ReadOnly = true;
+
+            LoadDataToDataGridView(listChiTietHoaDon);
+        }
+
+        private void LoadDataToDataGridView(List<ChiTietHoaDon> listChiTietHoaDon)
+        {
+            chiTietHoaDonDataGridView.Rows.Clear();
+
+            for (int i = 0; i < listChiTietHoaDon.Count; i++)
+            {
+                chiTietHoaDonDataGridView.Rows.Add(1);
+                chiTietHoaDonDataGridView.Rows[i].Cells[0].Value = listChiTietHoaDon[i].maHoaDon;
+                chiTietHoaDonDataGridView.Rows[i].Cells[1].Value = listChiTietHoaDon[i].maSanPham;
+                chiTietHoaDonDataGridView.Rows[i].Cells[2].Value = listChiTietHoaDon[i].soLuong;
+                chiTietHoaDonDataGridView.Rows[i].Cells[3].Value = listChiTietHoaDon[i].donViTinh;
+                chiTietHoaDonDataGridView.Rows[i].Cells[4].Value = listChiTietHoaDon[i].donGia.ToString("#,##0") + " VNĐ";
+                chiTietHoaDonDataGridView.Rows[i].Cells[5].Value = listChiTietHoaDon[i].thanhTien.ToString("#,##0") + " VNĐ";
+            }
+        }
+
         private void phanQuyenDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             int numberOfColumnsToSkip = 0; // Số lượng cột cuối cùng không cần chia
@@ -45,6 +92,11 @@ namespace GUI.CacFormChiTiet
 
                 e.Handled = true;
             }
+        }
+
+        private void quayLaiButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

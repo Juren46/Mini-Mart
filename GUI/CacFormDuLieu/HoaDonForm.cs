@@ -1,5 +1,6 @@
 ﻿using BUS;
 using DTO;
+using GUI.CacFormChiTiet;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,20 +35,23 @@ namespace GUI
         {
             hoaDonDataGridView.Rows.Clear();
 
-            for (int i = 0; i < listHoaDon.Count; i++)
+            if (listHoaDon.Count > 0)
             {
-                hoaDonDataGridView.Rows.Add(1);
-                hoaDonDataGridView.Rows[i].Cells[0].Value = i + 1;
-                hoaDonDataGridView.Rows[i].Cells[1].Value = listHoaDon[i].maHoaDon;
-                hoaDonDataGridView.Rows[i].Cells[2].Value = listHoaDon[i].maNhanVien;
-                hoaDonDataGridView.Rows[i].Cells[3].Value = listHoaDon[i].maKhachHang;
-                hoaDonDataGridView.Rows[i].Cells[4].Value = listHoaDon[i].maKhuyenMai;
-                hoaDonDataGridView.Rows[i].Cells[5].Value = listHoaDon[i].thoiGianTao.ToString("dd/MM/yyyy HH:mm:ss");
-                hoaDonDataGridView.Rows[i].Cells[6].Value = listHoaDon[i].tongTien.ToString("#,##0") + " VNĐ";
-                hoaDonDataGridView.Rows[i].Cells[7].Value = listHoaDon[i].giamGia.ToString("#,##0") + " VNĐ";
-                hoaDonDataGridView.Rows[i].Cells[8].Value = listHoaDon[i].thanhTien.ToString("#,##0") + " VNĐ";
-                hoaDonDataGridView.Rows[i].Cells[9].Value = listHoaDon[i].tienNhan.ToString("#,##0") + " VNĐ";
-                hoaDonDataGridView.Rows[i].Cells[10].Value = listHoaDon[i].tienThua.ToString("#,##0") + " VNĐ";
+                for (int i = 0; i < listHoaDon.Count; i++)
+                {
+                    hoaDonDataGridView.Rows.Add(1);
+                    hoaDonDataGridView.Rows[i].Cells[0].Value = i + 1;
+                    hoaDonDataGridView.Rows[i].Cells[1].Value = listHoaDon[i].maHoaDon;
+                    hoaDonDataGridView.Rows[i].Cells[2].Value = listHoaDon[i].maNhanVien;
+                    hoaDonDataGridView.Rows[i].Cells[3].Value = listHoaDon[i].maKhachHang;
+                    hoaDonDataGridView.Rows[i].Cells[4].Value = listHoaDon[i].maKhuyenMai;
+                    hoaDonDataGridView.Rows[i].Cells[5].Value = listHoaDon[i].thoiGianTao.ToString("dd/MM/yyyy HH:mm:ss");
+                    hoaDonDataGridView.Rows[i].Cells[6].Value = listHoaDon[i].tongTien.ToString("#,##0") + " VNĐ";
+                    hoaDonDataGridView.Rows[i].Cells[7].Value = listHoaDon[i].giamGia.ToString("#,##0") + " VNĐ";
+                    hoaDonDataGridView.Rows[i].Cells[8].Value = listHoaDon[i].thanhTien.ToString("#,##0") + " VNĐ";
+                    hoaDonDataGridView.Rows[i].Cells[9].Value = listHoaDon[i].tienNhan.ToString("#,##0") + " VNĐ";
+                    hoaDonDataGridView.Rows[i].Cells[10].Value = listHoaDon[i].tienThua.ToString("#,##0") + " VNĐ";
+                }
             }
         }
 
@@ -94,8 +98,19 @@ namespace GUI
             }
         }
 
+        private void hoaDonDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex <  hoaDonDataGridView.Columns.Count -1)
+            {
+                HoaDon hoaDon = hoaDonBUS.LayHoaDonTheoMa(hoaDonDataGridView.Rows[e.RowIndex].Cells["maHoaDonColumn"].Value.ToString());
 
+                string columnName = hoaDonDataGridView.Columns[e.ColumnIndex].Name;
 
-
+                if (columnName.Equals("infoButtonColumn"))
+                {
+                    new ChiTietHoaDonForm(hoaDon.maHoaDon).Show();
+                }
+            }
+        }
     }
 }

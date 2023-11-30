@@ -36,18 +36,18 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoaDonForm));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
             hoaDonDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             Column2 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
+            maHoaDonColumn = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
@@ -57,17 +57,17 @@
             Column9 = new DataGridViewTextBoxColumn();
             Column10 = new DataGridViewTextBoxColumn();
             Column11 = new DataGridViewTextBoxColumn();
-            Column12 = new DataGridViewImageColumn();
+            infoButtonColumn = new DataGridViewImageColumn();
             xuatExcelButton = new FontAwesome.Sharp.IconButton();
             timKiemButton = new FontAwesome.Sharp.IconButton();
             panel1 = new Panel();
-            timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            lamMoiButton = new FontAwesome.Sharp.IconButton();
             thoiGianCheckBox = new Guna.UI2.WinForms.Guna2ImageCheckBox();
             thoiGianKetThucDateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             thoiGianBatDauDateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            lamMoiButton = new FontAwesome.Sharp.IconButton();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)hoaDonDataGridView).BeginInit();
             panel1.SuspendLayout();
@@ -99,7 +99,7 @@
             hoaDonDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             hoaDonDataGridView.ColumnHeadersHeight = 40;
             hoaDonDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            hoaDonDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column2, Column1, Column3, Column4, Column5, Column6, Column7, Column8, Column9, Column10, Column11, Column12 });
+            hoaDonDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column2, maHoaDonColumn, Column3, Column4, Column5, Column6, Column7, Column8, Column9, Column10, Column11, infoButtonColumn });
             dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = Color.White;
             dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 12F);
@@ -148,6 +148,7 @@
             hoaDonDataGridView.ThemeStyle.RowsStyle.Height = 50;
             hoaDonDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(0, 80, 112);
             hoaDonDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
+            hoaDonDataGridView.CellContentClick += hoaDonDataGridView_CellContentClick;
             hoaDonDataGridView.CellFormatting += hoaDonDataGridView_CellFormatting;
             hoaDonDataGridView.CellPainting += hoaDonDataGridView_CellPainting;
             // 
@@ -162,14 +163,14 @@
             Column2.ReadOnly = true;
             Column2.Width = 39;
             // 
-            // Column1
+            // maHoaDonColumn
             // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.HeaderText = "Mã hóa đơn";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Resizable = DataGridViewTriState.True;
+            maHoaDonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            maHoaDonColumn.HeaderText = "Mã hóa đơn";
+            maHoaDonColumn.MinimumWidth = 6;
+            maHoaDonColumn.Name = "maHoaDonColumn";
+            maHoaDonColumn.ReadOnly = true;
+            maHoaDonColumn.Resizable = DataGridViewTriState.True;
             // 
             // Column3
             // 
@@ -252,16 +253,16 @@
             Column11.Name = "Column11";
             Column11.ReadOnly = true;
             // 
-            // Column12
+            // infoButtonColumn
             // 
-            Column12.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column12.FillWeight = 30F;
-            Column12.HeaderText = "";
-            Column12.Image = Properties.Resources._003_information;
-            Column12.MinimumWidth = 6;
-            Column12.Name = "Column12";
-            Column12.ReadOnly = true;
-            Column12.Width = 6;
+            infoButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            infoButtonColumn.FillWeight = 30F;
+            infoButtonColumn.HeaderText = "";
+            infoButtonColumn.Image = Properties.Resources._003_info;
+            infoButtonColumn.MinimumWidth = 6;
+            infoButtonColumn.Name = "infoButtonColumn";
+            infoButtonColumn.ReadOnly = true;
+            infoButtonColumn.Width = 6;
             // 
             // xuatExcelButton
             // 
@@ -315,44 +316,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1183, 89);
             panel1.TabIndex = 54;
-            // 
-            // timKiemTextBox
-            // 
-            timKiemTextBox.CustomizableEdges = customizableEdges6;
-            timKiemTextBox.DefaultText = "";
-            timKiemTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            timKiemTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            timKiemTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            timKiemTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            timKiemTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            timKiemTextBox.Font = new Font("Segoe UI", 12F);
-            timKiemTextBox.ForeColor = Color.FromArgb(84, 155, 255);
-            timKiemTextBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
-            timKiemTextBox.Location = new Point(5, 35);
-            timKiemTextBox.Margin = new Padding(5);
-            timKiemTextBox.Name = "timKiemTextBox";
-            timKiemTextBox.PasswordChar = '\0';
-            timKiemTextBox.PlaceholderForeColor = Color.FromArgb(186, 215, 255);
-            timKiemTextBox.PlaceholderText = "Nhập tên để tìm kiếm";
-            timKiemTextBox.SelectedText = "";
-            timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            timKiemTextBox.Size = new Size(373, 36);
-            timKiemTextBox.TabIndex = 87;
-            // 
-            // lamMoiButton
-            // 
-            lamMoiButton.BackColor = Color.FromArgb(33, 31, 48);
-            lamMoiButton.FlatAppearance.BorderSize = 0;
-            lamMoiButton.FlatStyle = FlatStyle.Flat;
-            lamMoiButton.IconChar = FontAwesome.Sharp.IconChar.ArrowsRotate;
-            lamMoiButton.IconColor = Color.White;
-            lamMoiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            lamMoiButton.IconSize = 20;
-            lamMoiButton.Location = new Point(435, 35);
-            lamMoiButton.Name = "lamMoiButton";
-            lamMoiButton.Size = new Size(43, 36);
-            lamMoiButton.TabIndex = 66;
-            lamMoiButton.UseVisualStyleBackColor = false;
             // 
             // thoiGianCheckBox
             // 
@@ -420,6 +383,44 @@
             guna2HtmlLabel4.TabIndex = 93;
             guna2HtmlLabel4.Text = "Thời gian bắt đầu";
             // 
+            // timKiemTextBox
+            // 
+            timKiemTextBox.CustomizableEdges = customizableEdges6;
+            timKiemTextBox.DefaultText = "";
+            timKiemTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            timKiemTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            timKiemTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            timKiemTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            timKiemTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            timKiemTextBox.Font = new Font("Segoe UI", 12F);
+            timKiemTextBox.ForeColor = Color.FromArgb(84, 155, 255);
+            timKiemTextBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
+            timKiemTextBox.Location = new Point(5, 35);
+            timKiemTextBox.Margin = new Padding(5);
+            timKiemTextBox.Name = "timKiemTextBox";
+            timKiemTextBox.PasswordChar = '\0';
+            timKiemTextBox.PlaceholderForeColor = Color.FromArgb(186, 215, 255);
+            timKiemTextBox.PlaceholderText = "Nhập tên để tìm kiếm";
+            timKiemTextBox.SelectedText = "";
+            timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            timKiemTextBox.Size = new Size(373, 36);
+            timKiemTextBox.TabIndex = 87;
+            // 
+            // lamMoiButton
+            // 
+            lamMoiButton.BackColor = Color.FromArgb(33, 31, 48);
+            lamMoiButton.FlatAppearance.BorderSize = 0;
+            lamMoiButton.FlatStyle = FlatStyle.Flat;
+            lamMoiButton.IconChar = FontAwesome.Sharp.IconChar.ArrowsRotate;
+            lamMoiButton.IconColor = Color.White;
+            lamMoiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            lamMoiButton.IconSize = 20;
+            lamMoiButton.Location = new Point(435, 35);
+            lamMoiButton.Name = "lamMoiButton";
+            lamMoiButton.Size = new Size(43, 36);
+            lamMoiButton.TabIndex = 66;
+            lamMoiButton.UseVisualStyleBackColor = false;
+            // 
             // HoaDonForm
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
@@ -450,8 +451,13 @@
         private Panel panel1;
         private FontAwesome.Sharp.IconButton lamMoiButton;
         private Guna.UI2.WinForms.Guna2TextBox timKiemTextBox;
+        private Guna.UI2.WinForms.Guna2ImageCheckBox thoiGianCheckBox;
+        private Guna.UI2.WinForms.Guna2DateTimePicker thoiGianKetThucDateTimePicker;
+        private Guna.UI2.WinForms.Guna2DateTimePicker thoiGianBatDauDateTimePicker;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn maHoaDonColumn;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
@@ -461,11 +467,6 @@
         private DataGridViewTextBoxColumn Column9;
         private DataGridViewTextBoxColumn Column10;
         private DataGridViewTextBoxColumn Column11;
-        private DataGridViewImageColumn Column12;
-        private Guna.UI2.WinForms.Guna2ImageCheckBox thoiGianCheckBox;
-        private Guna.UI2.WinForms.Guna2DateTimePicker thoiGianKetThucDateTimePicker;
-        private Guna.UI2.WinForms.Guna2DateTimePicker thoiGianBatDauDateTimePicker;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private DataGridViewImageColumn infoButtonColumn;
     }
 }
