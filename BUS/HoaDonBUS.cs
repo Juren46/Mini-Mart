@@ -68,12 +68,17 @@ namespace BUS
             hoaDon.tienNhan = Decimal.Parse(tienNhan);
             hoaDon.tienThua = Decimal.Parse(tienThua);
 
+            if (hoaDon.tienNhan == 0 || hoaDon.tienNhan < hoaDon.tienThua)
+                return "Khách hàng chưa thanh toán đủ!";
+
             foreach(ChiTietHoaDon chiTietHoaDon in listChiTietHoaDon)
             {
                 SanPhamBUS sanPhamBUS = new SanPhamBUS();
 
                 sanPhamBUS.CapNhatSoLuong(chiTietHoaDon.maSanPham, -(chiTietHoaDon.soLuong));
             }
+
+            new KhachHangBUS().TichDiem(maKhachHang, tongTien);
 
             if (hoaDonDAO.ThemHoaDon(hoaDon, listChiTietHoaDon))
                 return "Thanh toán thành công!";

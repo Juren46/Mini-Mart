@@ -50,13 +50,14 @@
             timKiemKhachHangTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             timKiemKhachHangButton = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
+            tienNhanTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            lamMoiKhuyenMaiButton = new FontAwesome.Sharp.IconButton();
             guna2Separator6 = new Guna.UI2.WinForms.Guna2Separator();
             label23 = new Label();
             khuyenMaiKhacButton = new Guna.UI2.WinForms.Guna2Button();
             khuyenMaiThanhVienButton = new Guna.UI2.WinForms.Guna2Button();
             hoanTatButton = new Guna.UI2.WinForms.Guna2Button();
             tenKhuyenMaiLabel = new Label();
-            tienNhanNumericUpDown = new Guna.UI2.WinForms.Guna2NumericUpDown();
             tienThuaLabel = new Label();
             label21 = new Label();
             label22 = new Label();
@@ -90,11 +91,9 @@
             loaiSanPhamComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             timKiemSanPhamTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             timKiemSanPhamButton = new FontAwesome.Sharp.IconButton();
-            lamMoiKhuyenMaiButton = new FontAwesome.Sharp.IconButton();
             viewRIGHT.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)tienNhanNumericUpDown).BeginInit();
             viewLEFT.SuspendLayout();
             f.SuspendLayout();
             panel1.SuspendLayout();
@@ -205,6 +204,7 @@
             // panel2
             // 
             panel2.BackColor = Color.LightBlue;
+            panel2.Controls.Add(tienNhanTextBox);
             panel2.Controls.Add(lamMoiKhuyenMaiButton);
             panel2.Controls.Add(guna2Separator6);
             panel2.Controls.Add(label23);
@@ -212,7 +212,6 @@
             panel2.Controls.Add(khuyenMaiThanhVienButton);
             panel2.Controls.Add(hoanTatButton);
             panel2.Controls.Add(tenKhuyenMaiLabel);
-            panel2.Controls.Add(tienNhanNumericUpDown);
             panel2.Controls.Add(tienThuaLabel);
             panel2.Controls.Add(label21);
             panel2.Controls.Add(label22);
@@ -242,6 +241,46 @@
             panel2.Size = new Size(601, 362);
             panel2.TabIndex = 0;
             // 
+            // tienNhanTextBox
+            // 
+            tienNhanTextBox.CustomizableEdges = customizableEdges3;
+            tienNhanTextBox.DefaultText = "";
+            tienNhanTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tienNhanTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tienNhanTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tienNhanTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tienNhanTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tienNhanTextBox.Font = new Font("Segoe UI", 12F);
+            tienNhanTextBox.ForeColor = Color.FromArgb(84, 155, 255);
+            tienNhanTextBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
+            tienNhanTextBox.Location = new Point(419, 171);
+            tienNhanTextBox.Margin = new Padding(5);
+            tienNhanTextBox.Name = "tienNhanTextBox";
+            tienNhanTextBox.PasswordChar = '\0';
+            tienNhanTextBox.PlaceholderForeColor = Color.FromArgb(186, 215, 255);
+            tienNhanTextBox.PlaceholderText = "";
+            tienNhanTextBox.SelectedText = "";
+            tienNhanTextBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            tienNhanTextBox.Size = new Size(152, 36);
+            tienNhanTextBox.TabIndex = 127;
+            tienNhanTextBox.TextChanged += tienNhanTextBox_TextChanged;
+            // 
+            // lamMoiKhuyenMaiButton
+            // 
+            lamMoiKhuyenMaiButton.BackColor = Color.FromArgb(0, 79, 111);
+            lamMoiKhuyenMaiButton.FlatAppearance.BorderSize = 0;
+            lamMoiKhuyenMaiButton.FlatStyle = FlatStyle.Flat;
+            lamMoiKhuyenMaiButton.IconChar = FontAwesome.Sharp.IconChar.ArrowsRotate;
+            lamMoiKhuyenMaiButton.IconColor = Color.White;
+            lamMoiKhuyenMaiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            lamMoiKhuyenMaiButton.IconSize = 20;
+            lamMoiKhuyenMaiButton.Location = new Point(408, 109);
+            lamMoiKhuyenMaiButton.Name = "lamMoiKhuyenMaiButton";
+            lamMoiKhuyenMaiButton.Size = new Size(164, 30);
+            lamMoiKhuyenMaiButton.TabIndex = 126;
+            lamMoiKhuyenMaiButton.UseVisualStyleBackColor = false;
+            lamMoiKhuyenMaiButton.Click += lamMoiKhuyenMaiButton_Click;
+            // 
             // guna2Separator6
             // 
             guna2Separator6.FillColor = Color.DimGray;
@@ -262,15 +301,10 @@
             // 
             // khuyenMaiKhacButton
             // 
-            khuyenMaiKhacButton.AccessibleRole = AccessibleRole.RadioButton;
             khuyenMaiKhacButton.BorderRadius = 5;
             khuyenMaiKhacButton.BorderThickness = 1;
-            khuyenMaiKhacButton.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            khuyenMaiKhacButton.CheckedState.FillColor = Color.FromArgb(0, 79, 111);
-            khuyenMaiKhacButton.CheckedState.ForeColor = Color.Azure;
-            khuyenMaiKhacButton.CustomBorderColor = Color.FromArgb(0, 79, 111);
             khuyenMaiKhacButton.CustomBorderThickness = new Padding(1);
-            khuyenMaiKhacButton.CustomizableEdges = customizableEdges3;
+            khuyenMaiKhacButton.CustomizableEdges = customizableEdges5;
             khuyenMaiKhacButton.DisabledState.BorderColor = Color.DarkGray;
             khuyenMaiKhacButton.DisabledState.CustomBorderColor = Color.DarkGray;
             khuyenMaiKhacButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -280,22 +314,18 @@
             khuyenMaiKhacButton.ForeColor = Color.FromArgb(0, 79, 111);
             khuyenMaiKhacButton.Location = new Point(408, 73);
             khuyenMaiKhacButton.Name = "khuyenMaiKhacButton";
-            khuyenMaiKhacButton.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            khuyenMaiKhacButton.ShadowDecoration.CustomizableEdges = customizableEdges6;
             khuyenMaiKhacButton.Size = new Size(164, 30);
             khuyenMaiKhacButton.TabIndex = 123;
             khuyenMaiKhacButton.Text = "Khuyễn mãi khác";
+            khuyenMaiKhacButton.Click += khuyenMaiKhacButton_Click;
             // 
             // khuyenMaiThanhVienButton
             // 
-            khuyenMaiThanhVienButton.AccessibleRole = AccessibleRole.RadioButton;
             khuyenMaiThanhVienButton.BorderRadius = 5;
             khuyenMaiThanhVienButton.BorderThickness = 1;
-            khuyenMaiThanhVienButton.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            khuyenMaiThanhVienButton.CheckedState.FillColor = Color.FromArgb(0, 79, 111);
-            khuyenMaiThanhVienButton.CheckedState.ForeColor = Color.Azure;
-            khuyenMaiThanhVienButton.CustomBorderColor = Color.FromArgb(0, 79, 111);
             khuyenMaiThanhVienButton.CustomBorderThickness = new Padding(1);
-            khuyenMaiThanhVienButton.CustomizableEdges = customizableEdges5;
+            khuyenMaiThanhVienButton.CustomizableEdges = customizableEdges7;
             khuyenMaiThanhVienButton.DisabledState.BorderColor = Color.DarkGray;
             khuyenMaiThanhVienButton.DisabledState.CustomBorderColor = Color.DarkGray;
             khuyenMaiThanhVienButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -305,16 +335,16 @@
             khuyenMaiThanhVienButton.ForeColor = Color.FromArgb(0, 79, 111);
             khuyenMaiThanhVienButton.Location = new Point(408, 39);
             khuyenMaiThanhVienButton.Name = "khuyenMaiThanhVienButton";
-            khuyenMaiThanhVienButton.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            khuyenMaiThanhVienButton.ShadowDecoration.CustomizableEdges = customizableEdges8;
             khuyenMaiThanhVienButton.Size = new Size(163, 30);
             khuyenMaiThanhVienButton.TabIndex = 122;
             khuyenMaiThanhVienButton.Text = "Khuyễn mãi thành viên";
-            khuyenMaiThanhVienButton.CheckedChanged += khuyenMaiThanhVienButton_CheckedChanged;
+            khuyenMaiThanhVienButton.Click += khuyenMaiThanhVienButton_Click;
             // 
             // hoanTatButton
             // 
             hoanTatButton.BorderRadius = 5;
-            hoanTatButton.CustomizableEdges = customizableEdges7;
+            hoanTatButton.CustomizableEdges = customizableEdges9;
             hoanTatButton.DisabledState.BorderColor = Color.DarkGray;
             hoanTatButton.DisabledState.CustomBorderColor = Color.DarkGray;
             hoanTatButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -324,10 +354,11 @@
             hoanTatButton.ForeColor = Color.Azure;
             hoanTatButton.Location = new Point(362, 289);
             hoanTatButton.Name = "hoanTatButton";
-            hoanTatButton.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            hoanTatButton.ShadowDecoration.CustomizableEdges = customizableEdges10;
             hoanTatButton.Size = new Size(210, 61);
             hoanTatButton.TabIndex = 117;
             hoanTatButton.Text = "HOÀN TẤT";
+            hoanTatButton.Click += hoanTatButton_Click;
             // 
             // tenKhuyenMaiLabel
             // 
@@ -339,52 +370,33 @@
             tenKhuyenMaiLabel.Size = new Size(0, 17);
             tenKhuyenMaiLabel.TabIndex = 116;
             // 
-            // tienNhanNumericUpDown
-            // 
-            tienNhanNumericUpDown.BackColor = Color.Transparent;
-            tienNhanNumericUpDown.BorderRadius = 5;
-            tienNhanNumericUpDown.CustomizableEdges = customizableEdges9;
-            tienNhanNumericUpDown.FillColor = Color.Azure;
-            tienNhanNumericUpDown.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tienNhanNumericUpDown.Increment = new decimal(new int[] { 1000, 0, 0, 0 });
-            tienNhanNumericUpDown.Location = new Point(449, 174);
-            tienNhanNumericUpDown.Margin = new Padding(4, 4, 4, 4);
-            tienNhanNumericUpDown.Maximum = new decimal(new int[] { 999000000, 0, 0, 0 });
-            tienNhanNumericUpDown.Name = "tienNhanNumericUpDown";
-            tienNhanNumericUpDown.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            tienNhanNumericUpDown.Size = new Size(123, 30);
-            tienNhanNumericUpDown.TabIndex = 115;
-            tienNhanNumericUpDown.ThousandsSeparator = true;
-            tienNhanNumericUpDown.UpDownButtonFillColor = Color.FromArgb(0, 50, 90);
-            tienNhanNumericUpDown.UpDownButtonForeColor = Color.White;
-            // 
             // tienThuaLabel
             // 
             tienThuaLabel.AutoSize = true;
-            tienThuaLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tienThuaLabel.Location = new Point(450, 229);
+            tienThuaLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tienThuaLabel.Location = new Point(419, 229);
             tienThuaLabel.Name = "tienThuaLabel";
-            tienThuaLabel.Size = new Size(66, 25);
+            tienThuaLabel.Size = new Size(56, 21);
             tienThuaLabel.TabIndex = 114;
             tienThuaLabel.Text = "0 VNĐ";
             // 
             // label21
             // 
             label21.AutoSize = true;
-            label21.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            label21.Location = new Point(299, 174);
+            label21.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label21.Location = new Point(297, 178);
             label21.Name = "label21";
-            label21.Size = new Size(143, 25);
+            label21.Size = new Size(114, 21);
             label21.TabIndex = 111;
             label21.Text = "Tiền khách đưa";
             // 
             // label22
             // 
             label22.AutoSize = true;
-            label22.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            label22.Location = new Point(299, 229);
+            label22.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label22.Location = new Point(337, 229);
             label22.Name = "label22";
-            label22.Size = new Size(93, 25);
+            label22.Size = new Size(74, 21);
             label22.TabIndex = 112;
             label22.Text = "Tiền thừa";
             // 
@@ -400,21 +412,23 @@
             // 
             tongTienLabel.AutoSize = true;
             tongTienLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tongTienLabel.Location = new Point(156, 174);
+            tongTienLabel.Location = new Point(137, 174);
             tongTienLabel.Name = "tongTienLabel";
             tongTienLabel.Size = new Size(66, 25);
             tongTienLabel.TabIndex = 107;
             tongTienLabel.Text = "0 VNĐ";
+            tongTienLabel.TextChanged += tongTienLabel_TextChanged;
             // 
             // chietKhauLabel
             // 
             chietKhauLabel.AutoSize = true;
             chietKhauLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            chietKhauLabel.Location = new Point(156, 229);
+            chietKhauLabel.Location = new Point(137, 229);
             chietKhauLabel.Name = "chietKhauLabel";
             chietKhauLabel.Size = new Size(66, 25);
             chietKhauLabel.TabIndex = 108;
-            chietKhauLabel.Text = "0 VND";
+            chietKhauLabel.Text = "0 VNĐ";
+            chietKhauLabel.TextChanged += chietKhauLabel_TextChanged;
             // 
             // thanhTienLabel
             // 
@@ -712,22 +726,6 @@
             timKiemSanPhamButton.UseVisualStyleBackColor = false;
             timKiemSanPhamButton.Click += timKiemSanPhamButton_Click;
             // 
-            // lamMoiKhuyenMaiButton
-            // 
-            lamMoiKhuyenMaiButton.BackColor = Color.FromArgb(0, 79, 111);
-            lamMoiKhuyenMaiButton.FlatAppearance.BorderSize = 0;
-            lamMoiKhuyenMaiButton.FlatStyle = FlatStyle.Flat;
-            lamMoiKhuyenMaiButton.IconChar = FontAwesome.Sharp.IconChar.ArrowsRotate;
-            lamMoiKhuyenMaiButton.IconColor = Color.White;
-            lamMoiKhuyenMaiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            lamMoiKhuyenMaiButton.IconSize = 20;
-            lamMoiKhuyenMaiButton.Location = new Point(408, 109);
-            lamMoiKhuyenMaiButton.Name = "lamMoiKhuyenMaiButton";
-            lamMoiKhuyenMaiButton.Size = new Size(164, 30);
-            lamMoiKhuyenMaiButton.TabIndex = 126;
-            lamMoiKhuyenMaiButton.UseVisualStyleBackColor = false;
-            lamMoiKhuyenMaiButton.Click += lamMoiKhuyenMaiButton_Click;
-            // 
             // BanHangForm
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
@@ -746,7 +744,6 @@
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)tienNhanNumericUpDown).EndInit();
             viewLEFT.ResumeLayout(false);
             f.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -793,10 +790,7 @@
         private Label tienThuaLabel;
         private Label label21;
         private Label label22;
-        private Guna.UI2.WinForms.Guna2NumericUpDown tienNhanNumericUpDown;
-        private Label tenKhuyenMaiLabel;
         private Guna.UI2.WinForms.Guna2Button hoanTatButton;
-        private Guna.UI2.WinForms.Guna2Button khuyenMaiKhacButton;
         private Guna.UI2.WinForms.Guna2Button khuyenMaiThanhVienButton;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator6;
         private Label label23;
@@ -806,5 +800,8 @@
         private FontAwesome.Sharp.IconButton lamMoiKhachHangButton;
         private FontAwesome.Sharp.IconButton lamMoiSanPhamButton;
         private FontAwesome.Sharp.IconButton lamMoiKhuyenMaiButton;
+        internal Guna.UI2.WinForms.Guna2Button khuyenMaiKhacButton;
+        private Guna.UI2.WinForms.Guna2TextBox tienNhanTextBox;
+        internal Label tenKhuyenMaiLabel;
     }
 }

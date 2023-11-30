@@ -1,5 +1,7 @@
 ﻿using BUS;
+using BUS.OtherFunctions;
 using DTO;
+using GUI.CacFormChon;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +20,7 @@ namespace GUI
         List<SanPham> listSanPham;
         internal List<SanPham> listSanPhamDonHang;
         internal KhachHang khachHang;
+        internal KhuyenMai khuyenMai;
 
         public BanHangForm()
         {
@@ -128,61 +131,156 @@ namespace GUI
             {
                 khuyenMaiThanhVienButton.Checked = false;
                 tenKhuyenMaiLabel.Text = string.Empty;
+                chietKhauLabel.Text = "0 VNĐ";
             }
         }
 
         private void TinhTien()
         {
-            decimal tongTien = 0;
-            foreach (Control control in chiTietDonHangFlowLayoutPanel.Controls)
-            {
-                if (control is DonDatHangControl)
-                {
-                    DonDatHangControl donDatHangControl = (DonDatHangControl)control;
-                    decimal tongGia = Decimal.Parse((donDatHangControl.tongGiaLabel.Text.Where(char.IsDigit).ToArray()));
-                    tongTien += tongGia;
-                }
-            }
-            decimal giamGia = Decimal.Parse((chietKhauLabel.Text.Where(char.IsDigit).ToArray()));
-            decimal thanhTien = tongTien - giamGia;
+            decimal tongTien = Decimal.Parse((tongTienLabel.Text.Where(char.IsDigit).ToArray()));
+            decimal giamGia = 0;
+            if (khuyenMai != null)
+                giamGia = new KhuyenMaiBUS().ApDungKhuyenMai(khuyenMai.maKhuyenMai, tongTien.ToString());
+            if (khuyenMai == null && khachHang != null && !chietKhauLabel.Text.Equals("0 VNĐ"))
+                giamGia = new KhachHangBUS().GiamGiaThanhVien(khachHang.maKhachHang, tongTien.ToString());
+            decimal thanhTien = 0;
+            decimal tienNhan = 0;
+            if (!string.IsNullOrEmpty(tienNhanTextBox.Text))
+                tienNhan = Decimal.Parse((tienNhanTextBox.Text.Where(char.IsDigit).ToArray()));
+            decimal tienThua = Decimal.Parse((tienThuaLabel.Text.Where(char.IsDigit).ToArray()));
 
-            tongTienLabel.Text = tongTien.ToString("#,##0") + " VNĐ";
+            thanhTien = tongTien - giamGia;
+            tienThua = tienNhan - thanhTien;
+
             thanhTienLabel.Text = thanhTien.ToString("#,##0") + " VNĐ";
+            tienThuaLabel.Text = tienThua.ToString("#,##0") + " VNĐ";
+            chietKhauLabel.Text = giamGia.ToString("#,##0") + " VNĐ";
         }
 
-        private void khuyenMaiThanhVienButton_CheckedChanged(object sender, EventArgs e)
+        private void tongTienLabel_TextChanged(object sender, EventArgs e)
         {
-            if (khuyenMaiThanhVienButton.Checked && khachHang != null)
+            TinhTien();
+        }
+
+        private void chietKhauLabel_TextChanged(object sender, EventArgs e)
+        {
+            TinhTien();
+        }
+
+        private void tienNhanTextBox_TextChanged(object sender, EventArgs e)
+        {
+            TinhTien();
+        }
+
+        private void khuyenMaiThanhVienButton_Click(object sender, EventArgs e)
+        {
+            decimal tongTien = Decimal.Parse((tongTienLabel.Text.Where(char.IsDigit).ToArray()));
+            decimal giamGia = Decimal.Parse((chietKhauLabel.Text.Where(char.IsDigit).ToArray()));
+
+            if (khachHang != null)
             {
-                decimal tongTien = Decimal.Parse((tongTienLabel.Text.Where(char.IsDigit).ToArray()));
-                decimal giamGia = new KhachHangBUS().GiamGiaThanhVien(khachHang.maKhachHang, tongTien.ToString("0"));
+                khuyenMai = null;
+                tenKhuyenMaiLabel.Text = string.Empty;
+                chietKhauLabel.Text = "0 VNĐ";
+
+                giamGia = new KhachHangBUS().GiamGiaThanhVien(khachHang.maKhachHang, tongTien.ToString());
                 chietKhauLabel.Text = giamGia.ToString("#,##0") + " VNĐ";
-                thanhTienLabel.Text = (tongTien - giamGia).ToString("#,##0") + " VNĐ";
+
                 switch (khachHang.bacThanhVien)
                 {
                     case "Đồng":
-                        tenKhuyenMaiLabel.Text = "(Khuyến mãi thành viên hạng đồng 2% tổng hóa đơn!)";
+                        tenKhuyenMaiLabel.Text = "(Khuyến mãi thành viên hạng đồng 2% tổng giá trị hóa đơn!)";
                         break;
                     case "Bạc":
-                        tenKhuyenMaiLabel.Text = "(Khuyến mãi thành viên hạng bạc 3% tổng hóa đơn!)";
+                        tenKhuyenMaiLabel.Text = "(Khuyến mãi thành viên hạng đồng 3% tổng giá trị hóa đơn!)";
                         break;
                     case "Vàng":
-                        tenKhuyenMaiLabel.Text = "(Khuyến mãi thành viên hạng vàng 5% tổng hóa đơn!)";
+                        tenKhuyenMaiLabel.Text = "(Khuyến mãi thành viên hạng đồng 5% tổng giá trị hóa đơn!)";
                         break;
                 }
             }
-            else
-            {
-                chietKhauLabel.Text = "0 VNĐ";
-                thanhTienLabel.Text = tongTienLabel.Text;
-                tenKhuyenMaiLabel.Text = string.Empty;
-            }
         }
 
-        private void lamMoiKhuyenMaiButton_Click(object sender, EventArgs e)
+        private void khuyenMaiKhacButton_Click(object sender, EventArgs e)
         {
-            khuyenMaiThanhVienButton.Checked = false;
-            khuyenMaiKhacButton.Checked = false;
+            if (listSanPhamDonHang.Count > 0)
+                new TestChonKhuyenMaiForm(this).Show();
+        }
+
+        internal void lamMoiKhuyenMaiButton_Click(object sender, EventArgs e)
+        {
+            khuyenMai = null;
+            tenKhuyenMaiLabel.Text = string.Empty;
+            chietKhauLabel.Text = "0 VNĐ";
+        }
+
+        private void hoanTatButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Xác nhận thanh toán?", "Xác nhận", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                string maNhanVien = new NhanVienBUS().LayNhanVienTheoTenTaiKhoan(DangNhapForm.taiKhoan.tenTaiKhoan).maNhanVien;
+                string maKhachHang = "";
+                if (khachHang != null)
+                    maKhachHang = khachHang.maKhachHang;
+                string maKhuyenMai = "";
+                if (khuyenMai != null)
+                    maKhuyenMai = khuyenMai.maKhuyenMai;
+                string tongTien = tongTienLabel.Text.Replace(" VNĐ", "").Replace(",", "");
+                string giamGia = chietKhauLabel.Text.Replace(" VNĐ", "").Replace(",", "");
+                string thanhTien = thanhTienLabel.Text.Replace(" VNĐ", "").Replace(",", "");
+                string tienNhan = "0"; 
+                if (!string.IsNullOrEmpty(tienNhanTextBox.Text))
+                    tienNhan = tienNhanTextBox.Text;
+                string tienThua = tienThuaLabel.Text.Replace(" VNĐ", "").Replace(",", "");
+
+                List<ChiTietHoaDon> listChiTietHoaDon = new List<ChiTietHoaDon>();
+
+                foreach(Control control in chiTietDonHangFlowLayoutPanel.Controls)
+                {
+                    if (control is DonDatHangControl)
+                    {
+                        DonDatHangControl donDatHangControl = (DonDatHangControl)control;
+
+                        ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
+                        chiTietHoaDon.maHoaDon = IDGenerator.GenerateHoaDonID();
+                        chiTietHoaDon.maSanPham = donDatHangControl.sanPham.maSanPham;
+                        chiTietHoaDon.soLuong = (int)donDatHangControl.soLuongNumericUpDown.Value;
+                        chiTietHoaDon.donGia = donDatHangControl.sanPham.giaBan;
+                        chiTietHoaDon.thanhTien = Decimal.Parse(donDatHangControl.tongGiaLabel.Text.Replace(" VNĐ", "").Replace(",", ""));
+
+                        listChiTietHoaDon.Add(chiTietHoaDon);
+                    }
+                }
+
+                string message = new HoaDonBUS().ThemHoaDon(listChiTietHoaDon, maNhanVien, maKhachHang, maKhuyenMai, tongTien, giamGia, thanhTien, tienNhan, tienThua);
+
+                MessageBox.Show(message);
+
+                if (message.Equals("Thanh toán thành công!"))
+                {
+                    listSanPham = sanPhamBUS.LayDanhSachSanPham();
+                    LoadDataToFlowLayout(listSanPham);
+                    lamMoiSanPhamButton_Click(sender, e);
+                    lamMoiKhachHangButton_Click(sender, e);
+                    lamMoiKhuyenMaiButton_Click(sender, e);
+                    List<Control> controlsToRemove = new List<Control>();
+
+                    foreach (Control control in chiTietDonHangFlowLayoutPanel.Controls)
+                    {
+                        controlsToRemove.Add(control);
+                    }
+
+                    foreach (Control control in controlsToRemove)
+                    {
+                        chiTietDonHangFlowLayoutPanel.Controls.Remove(control);
+                        control.Dispose();
+                    }
+                    tongTienLabel.Text = "0 VNĐ";
+                    tienNhanTextBox.Text = "0";
+                }
+            }
         }
     }
 }

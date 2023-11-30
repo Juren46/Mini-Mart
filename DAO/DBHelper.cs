@@ -12,13 +12,13 @@ namespace DAO
 {
     public class DBHelper
     {
-        /*private static string servername = "TRUNG-LAPTOP\\ELIO";
+        private static string servername = "TRUNG-LAPTOP\\ELIO";
         private static string dbName = "mini-mart";
         private static string username = "";
         private static string password = "";
-        public static string connectionString = $"Data Source={servername};Initial Catalog={dbName};Integrated Security=True;Encrypt=False";*/
+        public static string connectionString = $"Data Source={servername};Initial Catalog={dbName};Integrated Security=True;Encrypt=False";
         //public static string connectionString = @"Data Source=ngoctin\TIN;Initial Catalog=mini-mart;User ID=sa;Password=123;Encrypt=True;Trust Server Certificate=True";
-        public static string connectionString = @"Data Source=DESKTOP-QFAM29O\THU;Initial Catalog=mini-mart;User ID=sa;Password=123;Encrypt=True;Trust Server Certificate=True";
+        //public static string connectionString = @"Data Source=DESKTOP-QFAM29O\THU;Initial Catalog=mini-mart;User ID=sa;Password=123;Encrypt=True;Trust Server Certificate=True";
         public static DataTable ExecuteQuery(string query)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))

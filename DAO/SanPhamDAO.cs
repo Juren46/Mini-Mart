@@ -216,7 +216,8 @@ namespace DAO
 
         public bool CapNhatSoLuong(string maSanPham, int soLuong)
         {
-            string query = $"UPDATE SanPham SET soLuong = soLuong + {soLuong} WHERE maSanPham = '{maSanPham}';";
+            string query = $"UPDATE SanPham SET soLuong = soLuong + {soLuong} WHERE maSanPham = '{maSanPham}'; " +
+                           $"UPDATE SanPham SET trangThai = N'Hết hàng' WHERE maSanPham = '{maSanPham}' AND soLuong = 0;";
 
             int rowsAffected = DBHelper.ExecuteNonQuery(query);
 

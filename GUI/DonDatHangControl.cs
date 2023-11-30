@@ -27,6 +27,7 @@ namespace GUI
 
         private void DonDatHangControl_Load(object sender, EventArgs e)
         {
+            soLuongNumericUpDown.Maximum = sanPham.soLuong;
             tenSanPhamLabel.Text = sanPham.tenSanPham;
             tongGiaLabel.Text = sanPham.giaBan.ToString("#,##0") + " VNĐ";
 
@@ -36,6 +37,7 @@ namespace GUI
         private void TinhTien()
         {
             decimal tongTien = 0;
+
             foreach (Control control in banHangForm.chiTietDonHangFlowLayoutPanel.Controls)
             {
                 if (control is DonDatHangControl)
@@ -45,15 +47,17 @@ namespace GUI
                     tongTien += tongGia;
                 }
             }
-            decimal giamGia = Decimal.Parse((banHangForm.chietKhauLabel.Text.Where(char.IsDigit).ToArray()));
-            decimal thanhTien = tongTien - giamGia;
 
             banHangForm.tongTienLabel.Text = tongTien.ToString("#,##0") + " VNĐ";
-            banHangForm.thanhTienLabel.Text = thanhTien.ToString("#,##0") + " VNĐ";
         }
 
         private void soLuongNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
+            if (soLuongNumericUpDown.Value == soLuongNumericUpDown.Maximum)
+            {
+                MessageBox.Show("Số lượng sản phẩm đạt giới hạn, không thể tiếp tục thêm vào đơn hàng!");
+            }
+
             tongGiaLabel.Text = (sanPham.giaBan * soLuongNumericUpDown.Value).ToString("#,##0") + " VNĐ";
 
             TinhTien();
@@ -65,6 +69,14 @@ namespace GUI
             banHangForm.chiTietDonHangFlowLayoutPanel.Controls.Remove(this);
 
             TinhTien();
+
+            if (banHangForm.listSanPhamDonHang.Count <= 0)
+            {
+                banHangForm.khuyenMai = null;
+
+                banHangForm.tenKhuyenMaiLabel.Text = string.Empty;
+                banHangForm.chietKhauLabel.Text = "0 VNĐ";
+            }
 
             this.Dispose();
         }

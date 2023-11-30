@@ -165,7 +165,7 @@ namespace DAO
                 if (tongTien - (tongTien - khuyenMai.giaTriApDung) > tongTien * 70 / 100)
                     return tongTien * 70 / 100;
                 else
-                    return tongTien - khuyenMai.giaTriApDung;
+                    return khuyenMai.giaTriApDung;
             }
         }
     }
