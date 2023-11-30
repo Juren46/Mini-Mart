@@ -1,6 +1,7 @@
 ﻿using BUS;
 using BUS.OtherFunctions;
 using DTO;
+using GUI.CacFormThongBao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -186,7 +187,8 @@ namespace GUI
 
         private void luuButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn lưu thông tin khách hàng?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = CacFormThongBao.XacNhanForm.ShowDialog("Bạn có muốn lưu thông tin khách hàng?");
+
 
             if (result == DialogResult.Yes)
             {
@@ -216,13 +218,20 @@ namespace GUI
                         break;
                 }
 
-                MessageBox.Show(message);
 
                 if (message.Equals("Thêm khách hàng thành công!") || message.Equals("Chỉnh sửa thông tin khách hàng thành công!"))
                 {
+                    CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.SUCCESS);
                     khachHangForm.lamMoiButton_Click(sender, e);
 
                     this.Close();
+                }
+                else
+                {
+                    CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.WARNING);
+                    if(tenKhachHangTextBox.Text.Equals("")) { this.tenKhachHangTextBox.BorderColor = Color.Red; }
+                    if (soDienThoaiTextBox.Text.Equals("")) { this.soDienThoaiTextBox.BorderColor = Color.Red; }
+
                 }
             }
         }

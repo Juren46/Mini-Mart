@@ -33,6 +33,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -96,7 +100,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(979, 66);
+            panel1.Size = new Size(894, 66);
             panel1.TabIndex = 1;
             // 
             // quayLaiButton
@@ -107,7 +111,7 @@
             quayLaiButton.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
             quayLaiButton.IconColor = Color.White;
             quayLaiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            quayLaiButton.Location = new Point(850, 0);
+            quayLaiButton.Location = new Point(765, 0);
             quayLaiButton.Name = "quayLaiButton";
             quayLaiButton.Size = new Size(129, 66);
             quayLaiButton.TabIndex = 1;
@@ -154,7 +158,7 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 66);
             panel2.Name = "panel2";
-            panel2.Size = new Size(979, 554);
+            panel2.Size = new Size(894, 435);
             panel2.TabIndex = 2;
             // 
             // chonNhaCungCapButton
@@ -170,7 +174,7 @@
             chonNhaCungCapButton.FillColor = Color.White;
             chonNhaCungCapButton.Font = new Font("Microsoft Sans Serif", 12F);
             chonNhaCungCapButton.ForeColor = Color.FromArgb(0, 79, 111);
-            chonNhaCungCapButton.Location = new Point(851, 196);
+            chonNhaCungCapButton.Location = new Point(794, 247);
             chonNhaCungCapButton.Name = "chonNhaCungCapButton";
             chonNhaCungCapButton.ShadowDecoration.CustomizableEdges = customizableEdges2;
             chonNhaCungCapButton.Size = new Size(73, 40);
@@ -191,7 +195,7 @@
             chonLoaiSanPhamButton.FillColor = Color.White;
             chonLoaiSanPhamButton.Font = new Font("Microsoft Sans Serif", 12F);
             chonLoaiSanPhamButton.ForeColor = Color.FromArgb(0, 79, 111);
-            chonLoaiSanPhamButton.Location = new Point(534, 196);
+            chonLoaiSanPhamButton.Location = new Point(794, 156);
             chonLoaiSanPhamButton.Name = "chonLoaiSanPhamButton";
             chonLoaiSanPhamButton.ShadowDecoration.CustomizableEdges = customizableEdges4;
             chonLoaiSanPhamButton.Size = new Size(73, 40);
@@ -202,6 +206,7 @@
             // trangThaiComboBox
             // 
             trangThaiComboBox.BackColor = Color.Transparent;
+            trangThaiComboBox.CustomizableEdges = customizableEdges5;
             trangThaiComboBox.DrawMode = DrawMode.OwnerDrawFixed;
             trangThaiComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             trangThaiComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -210,9 +215,10 @@
             trangThaiComboBox.ForeColor = Color.FromArgb(68, 88, 112);
             trangThaiComboBox.ItemHeight = 30;
             trangThaiComboBox.Items.AddRange(new object[] { "Đang bán", "Chờ xử lý", "Hết hàng", "Ngừng kinh doanh" });
-            trangThaiComboBox.Location = new Point(652, 408);
+            trangThaiComboBox.Location = new Point(425, 251);
             trangThaiComboBox.Name = "trangThaiComboBox";
-            trangThaiComboBox.Size = new Size(188, 36);
+            trangThaiComboBox.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            trangThaiComboBox.Size = new Size(164, 36);
             trangThaiComboBox.TabIndex = 47;
             // 
             // label10
@@ -220,7 +226,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Microsoft Sans Serif", 14.25F);
             label10.ForeColor = Color.FromArgb(0, 79, 111);
-            label10.Location = new Point(655, 380);
+            label10.Location = new Point(425, 224);
             label10.Name = "label10";
             label10.Size = new Size(94, 24);
             label10.TabIndex = 46;
@@ -231,7 +237,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft Sans Serif", 14.25F);
             label8.ForeColor = Color.FromArgb(0, 79, 111);
-            label8.Location = new Point(338, 168);
+            label8.Location = new Point(602, 128);
             label8.Name = "label8";
             label8.Size = new Size(133, 24);
             label8.TabIndex = 45;
@@ -241,6 +247,7 @@
             // 
             loaiSanPhamTextBox.BorderColor = Color.FromArgb(0, 79, 111);
             loaiSanPhamTextBox.BorderRadius = 5;
+            loaiSanPhamTextBox.CustomizableEdges = customizableEdges7;
             loaiSanPhamTextBox.DefaultText = "";
             loaiSanPhamTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             loaiSanPhamTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -248,12 +255,13 @@
             loaiSanPhamTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             loaiSanPhamTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             loaiSanPhamTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
-            loaiSanPhamTextBox.Location = new Point(338, 196);
+            loaiSanPhamTextBox.Location = new Point(598, 156);
             loaiSanPhamTextBox.Margin = new Padding(5, 5, 5, 5);
             loaiSanPhamTextBox.Name = "loaiSanPhamTextBox";
             loaiSanPhamTextBox.PasswordChar = '\0';
             loaiSanPhamTextBox.PlaceholderText = "";
             loaiSanPhamTextBox.SelectedText = "";
+            loaiSanPhamTextBox.ShadowDecoration.CustomizableEdges = customizableEdges8;
             loaiSanPhamTextBox.Size = new Size(188, 40);
             loaiSanPhamTextBox.TabIndex = 44;
             // 
@@ -262,7 +270,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Microsoft Sans Serif", 14.25F);
             label9.ForeColor = Color.FromArgb(0, 79, 111);
-            label9.Location = new Point(38, 53);
+            label9.Location = new Point(75, 37);
             label9.Name = "label9";
             label9.Size = new Size(133, 24);
             label9.TabIndex = 43;
@@ -280,10 +288,10 @@
             chonAnhButton.FillColor = Color.White;
             chonAnhButton.Font = new Font("Microsoft Sans Serif", 12F);
             chonAnhButton.ForeColor = Color.Gray;
-            chonAnhButton.Location = new Point(38, 329);
+            chonAnhButton.Location = new Point(38, 249);
             chonAnhButton.Name = "chonAnhButton";
             chonAnhButton.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            chonAnhButton.Size = new Size(252, 37);
+            chonAnhButton.Size = new Size(221, 37);
             chonAnhButton.TabIndex = 40;
             chonAnhButton.Text = "Chọn ảnh";
             chonAnhButton.Click += chonAnhButton_Click;
@@ -299,7 +307,7 @@
             luuButton.FillColor = Color.FromArgb(0, 79, 111);
             luuButton.Font = new Font("Microsoft Sans Serif", 12F);
             luuButton.ForeColor = Color.White;
-            luuButton.Location = new Point(756, 489);
+            luuButton.Location = new Point(678, 331);
             luuButton.Name = "luuButton";
             luuButton.ShadowDecoration.CustomizableEdges = customizableEdges12;
             luuButton.Size = new Size(189, 53);
@@ -320,7 +328,7 @@
             huyBoButton.FillColor = Color.White;
             huyBoButton.Font = new Font("Microsoft Sans Serif", 12F);
             huyBoButton.ForeColor = Color.FromArgb(0, 79, 111);
-            huyBoButton.Location = new Point(338, 489);
+            huyBoButton.Location = new Point(483, 331);
             huyBoButton.Name = "huyBoButton";
             huyBoButton.ShadowDecoration.CustomizableEdges = customizableEdges14;
             huyBoButton.Size = new Size(189, 53);
@@ -330,15 +338,16 @@
             // 
             // anhSanPhamPictureBox
             // 
-            anhSanPhamPictureBox.BackColor = Color.Silver;
+            anhSanPhamPictureBox.BackColor = Color.Transparent;
             anhSanPhamPictureBox.BorderStyle = BorderStyle.FixedSingle;
             anhSanPhamPictureBox.CustomizableEdges = customizableEdges15;
             anhSanPhamPictureBox.FillColor = Color.Gainsboro;
+            anhSanPhamPictureBox.Image = Properties.Resources.gallery;
             anhSanPhamPictureBox.ImageRotate = 0F;
-            anhSanPhamPictureBox.Location = new Point(38, 79);
+            anhSanPhamPictureBox.Location = new Point(38, 64);
             anhSanPhamPictureBox.Name = "anhSanPhamPictureBox";
             anhSanPhamPictureBox.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            anhSanPhamPictureBox.Size = new Size(252, 227);
+            anhSanPhamPictureBox.Size = new Size(221, 178);
             anhSanPhamPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             anhSanPhamPictureBox.TabIndex = 36;
             anhSanPhamPictureBox.TabStop = false;
@@ -348,7 +357,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 14.25F);
             label7.ForeColor = Color.FromArgb(0, 79, 111);
-            label7.Location = new Point(655, 283);
+            label7.Location = new Point(282, 220);
             label7.Name = "label7";
             label7.Size = new Size(91, 24);
             label7.TabIndex = 34;
@@ -361,21 +370,22 @@
             soLuongNumericUpDown.BorderRadius = 5;
             soLuongNumericUpDown.CustomizableEdges = customizableEdges17;
             soLuongNumericUpDown.Font = new Font("Microsoft Sans Serif", 14.25F);
-            soLuongNumericUpDown.Location = new Point(655, 311);
+            soLuongNumericUpDown.Location = new Point(282, 247);
             soLuongNumericUpDown.Margin = new Padding(5, 5, 5, 5);
             soLuongNumericUpDown.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
             soLuongNumericUpDown.Name = "soLuongNumericUpDown";
             soLuongNumericUpDown.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            soLuongNumericUpDown.Size = new Size(188, 40);
+            soLuongNumericUpDown.Size = new Size(133, 40);
             soLuongNumericUpDown.TabIndex = 33;
             soLuongNumericUpDown.UpDownButtonFillColor = Color.FromArgb(0, 79, 111);
+            soLuongNumericUpDown.UpDownButtonForeColor = Color.White;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 14.25F);
             label6.ForeColor = Color.FromArgb(0, 79, 111);
-            label6.Location = new Point(338, 380);
+            label6.Location = new Point(425, 127);
             label6.Name = "label6";
             label6.Size = new Size(75, 24);
             label6.TabIndex = 32;
@@ -386,7 +396,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 14.25F);
             label5.ForeColor = Color.FromArgb(0, 79, 111);
-            label5.Location = new Point(655, 51);
+            label5.Location = new Point(425, 39);
             label5.Name = "label5";
             label5.Size = new Size(137, 24);
             label5.TabIndex = 31;
@@ -397,7 +407,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 14.25F);
             label4.ForeColor = Color.FromArgb(0, 79, 111);
-            label4.Location = new Point(338, 283);
+            label4.Location = new Point(282, 128);
             label4.Name = "label4";
             label4.Size = new Size(68, 24);
             label4.TabIndex = 30;
@@ -408,7 +418,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 14.25F);
             label3.ForeColor = Color.FromArgb(0, 79, 111);
-            label3.Location = new Point(655, 169);
+            label3.Location = new Point(598, 220);
             label3.Name = "label3";
             label3.Size = new Size(134, 24);
             label3.TabIndex = 29;
@@ -419,7 +429,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 14.25F);
             label2.ForeColor = Color.FromArgb(0, 79, 111);
-            label2.Location = new Point(338, 53);
+            label2.Location = new Point(282, 39);
             label2.Name = "label2";
             label2.Size = new Size(129, 24);
             label2.TabIndex = 28;
@@ -437,14 +447,14 @@
             donViTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             donViTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             donViTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
-            donViTextBox.Location = new Point(338, 311);
+            donViTextBox.Location = new Point(282, 156);
             donViTextBox.Margin = new Padding(5, 5, 5, 5);
             donViTextBox.Name = "donViTextBox";
             donViTextBox.PasswordChar = '\0';
             donViTextBox.PlaceholderText = "";
             donViTextBox.SelectedText = "";
             donViTextBox.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            donViTextBox.Size = new Size(188, 40);
+            donViTextBox.Size = new Size(133, 40);
             donViTextBox.TabIndex = 27;
             // 
             // giaBanTextBox
@@ -459,14 +469,14 @@
             giaBanTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             giaBanTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             giaBanTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
-            giaBanTextBox.Location = new Point(338, 408);
+            giaBanTextBox.Location = new Point(425, 156);
             giaBanTextBox.Margin = new Padding(5, 5, 5, 5);
             giaBanTextBox.Name = "giaBanTextBox";
             giaBanTextBox.PasswordChar = '\0';
             giaBanTextBox.PlaceholderText = "";
             giaBanTextBox.SelectedText = "";
             giaBanTextBox.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            giaBanTextBox.Size = new Size(188, 40);
+            giaBanTextBox.Size = new Size(164, 40);
             giaBanTextBox.TabIndex = 26;
             // 
             // nhaCungCapTextBox
@@ -481,7 +491,7 @@
             nhaCungCapTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             nhaCungCapTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             nhaCungCapTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
-            nhaCungCapTextBox.Location = new Point(655, 196);
+            nhaCungCapTextBox.Location = new Point(598, 247);
             nhaCungCapTextBox.Margin = new Padding(5, 5, 5, 5);
             nhaCungCapTextBox.Name = "nhaCungCapTextBox";
             nhaCungCapTextBox.PasswordChar = '\0';
@@ -503,14 +513,14 @@
             tenSanPhamTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             tenSanPhamTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             tenSanPhamTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
-            tenSanPhamTextBox.Location = new Point(655, 79);
+            tenSanPhamTextBox.Location = new Point(425, 65);
             tenSanPhamTextBox.Margin = new Padding(5, 5, 5, 5);
             tenSanPhamTextBox.Name = "tenSanPhamTextBox";
             tenSanPhamTextBox.PasswordChar = '\0';
             tenSanPhamTextBox.PlaceholderText = "";
             tenSanPhamTextBox.SelectedText = "";
             tenSanPhamTextBox.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            tenSanPhamTextBox.Size = new Size(290, 40);
+            tenSanPhamTextBox.Size = new Size(442, 40);
             tenSanPhamTextBox.TabIndex = 24;
             // 
             // maSanPhamTextBox
@@ -525,23 +535,22 @@
             maSanPhamTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             maSanPhamTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             maSanPhamTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
-            maSanPhamTextBox.Location = new Point(338, 79);
+            maSanPhamTextBox.Location = new Point(282, 65);
             maSanPhamTextBox.Margin = new Padding(5, 5, 5, 5);
             maSanPhamTextBox.Name = "maSanPhamTextBox";
             maSanPhamTextBox.PasswordChar = '\0';
             maSanPhamTextBox.PlaceholderText = "";
             maSanPhamTextBox.SelectedText = "";
             maSanPhamTextBox.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            maSanPhamTextBox.Size = new Size(188, 40);
+            maSanPhamTextBox.Size = new Size(133, 40);
             maSanPhamTextBox.TabIndex = 23;
-            
             // 
             // ChiTietSanPhamForm
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(223, 243, 252);
-            ClientSize = new Size(979, 620);
+            ClientSize = new Size(894, 501);
             ControlBox = false;
             Controls.Add(panel2);
             Controls.Add(panel1);

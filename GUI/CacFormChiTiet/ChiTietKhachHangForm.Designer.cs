@@ -131,7 +131,7 @@
             luuButton.FillColor = Color.FromArgb(0, 79, 111);
             luuButton.Font = new Font("Microsoft Sans Serif", 12F);
             luuButton.ForeColor = Color.White;
-            luuButton.Location = new Point(746, 402);
+            luuButton.Location = new Point(793, 399);
             luuButton.Name = "luuButton";
             luuButton.ShadowDecoration.CustomizableEdges = customizableEdges2;
             luuButton.Size = new Size(189, 53);
@@ -152,7 +152,7 @@
             huyBoButton.FillColor = Color.White;
             huyBoButton.Font = new Font("Microsoft Sans Serif", 12F);
             huyBoButton.ForeColor = Color.FromArgb(0, 79, 111);
-            huyBoButton.Location = new Point(551, 402);
+            huyBoButton.Location = new Point(598, 399);
             huyBoButton.Name = "huyBoButton";
             huyBoButton.ShadowDecoration.CustomizableEdges = customizableEdges4;
             huyBoButton.Size = new Size(189, 53);
@@ -267,7 +267,7 @@
             ngaySinhDateTimePicker.CustomizableEdges = customizableEdges11;
             ngaySinhDateTimePicker.FillColor = Color.Empty;
             ngaySinhDateTimePicker.Font = new Font("Microsoft Sans Serif", 14.25F);
-            ngaySinhDateTimePicker.Format = DateTimePickerFormat.Long;
+            ngaySinhDateTimePicker.Format = DateTimePickerFormat.Short;
             ngaySinhDateTimePicker.Location = new Point(377, 219);
             ngaySinhDateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             ngaySinhDateTimePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);

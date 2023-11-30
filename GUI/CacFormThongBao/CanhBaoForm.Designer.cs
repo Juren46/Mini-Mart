@@ -56,15 +56,14 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI", 12F);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(68, 25);
+            label1.Location = new Point(62, 9);
             label1.Name = "label1";
-            label1.Size = new Size(64, 21);
+            label1.Size = new Size(306, 52);
             label1.TabIndex = 1;
-            label1.Text = "Success";
+            label1.Text = "Tên khách hàng và số điện thoại không được để trống";
             label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
@@ -93,7 +92,6 @@
             Name = "CanhBaoForm";
             Text = "CanhBaoForm";
             guna2Panel1.ResumeLayout(false);
-            guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
