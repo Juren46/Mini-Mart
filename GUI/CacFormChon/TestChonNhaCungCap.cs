@@ -16,13 +16,23 @@ namespace GUI.CacFormChon
     {
         NhaCungCapBUS nhaCungCapBUS;
         List<NhaCungCap> listNhaCungCap;
-        ChiTietSanPhamForm form;
-        public TestChonNhaCungCap(ChiTietSanPhamForm form)
+        ChiTietSanPhamForm chiTietSanPhamForm;
+        NhapHangForm nhapHangForm;
+
+        public TestChonNhaCungCap(ChiTietSanPhamForm chiTietSanPhamForm)
         {
             InitializeComponent();
             nhaCungCapBUS = new NhaCungCapBUS();
             listNhaCungCap = nhaCungCapBUS.LayDanhSachNhaCungCap();
-            this.form = form;
+            this.chiTietSanPhamForm = chiTietSanPhamForm;
+        }
+
+        public TestChonNhaCungCap(NhapHangForm nhapHangForm)
+        {
+            InitializeComponent();
+            nhaCungCapBUS = new NhaCungCapBUS();
+            listNhaCungCap = nhaCungCapBUS.LayDanhSachNhaCungCap();
+            this.nhapHangForm = nhapHangForm;
         }
 
         private void TestChonNhaCungCap_Load(object sender, EventArgs e)
@@ -70,14 +80,27 @@ namespace GUI.CacFormChon
 
         private void nhaCungCapDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            NhaCungCap nhaCungCap = nhaCungCapBUS.LayNhaCungCapTheoMa(nhaCungCapDataGridView["maNhaCungCapColumn", e.RowIndex].Value.ToString());
-
-            string columnName = nhaCungCapDataGridView.Columns[e.ColumnIndex].Name;
-
-            if (columnName.Equals("chonNhaCungCapButtonColumn"))
+            if (e.RowIndex >= 0 && e.RowIndex < nhaCungCapDataGridView.Rows.Count - 1) 
             {
-                form.nhaCungCapTextBox.Text = nhaCungCap.maNhaCungCap;
-                this.Close();
+                NhaCungCap nhaCungCap = nhaCungCapBUS.LayNhaCungCapTheoMa(nhaCungCapDataGridView["maNhaCungCapColumn", e.RowIndex].Value.ToString());
+
+                string columnName = nhaCungCapDataGridView.Columns[e.ColumnIndex].Name;
+
+                if (columnName.Equals("chonNhaCungCapButtonColumn"))
+                {
+                    if (nhapHangForm != null)
+                    {
+                        nhapHangForm.nhaCungCap = nhaCungCap;
+                        nhapHangForm.listSanPham = new SanPhamBUS().TimKiemSanPham("", "", nhaCungCap.maNhaCungCap, "", "");
+                        nhapHangForm.maNhaCungCapTextBox.Text = nhaCungCap.maNhaCungCap;
+                        nhapHangForm.tenNhaCungCapTextBox.Text = nhaCungCap.tenNhaCungCap;
+                        nhapHangForm.canhBaoLabel.Visible = false;
+                    }
+                        
+                    if (chiTietSanPhamForm != null)
+                        chiTietSanPhamForm.nhaCungCapTextBox.Text = nhaCungCap.maNhaCungCap;
+                    this.Close();
+                }
             }
         }
     }

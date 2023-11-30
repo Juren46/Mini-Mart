@@ -31,41 +31,12 @@
             components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            tenSanPhamLabel = new Label();
-            guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
-            chonButton = new FontAwesome.Sharp.IconButton();
             anhSanPhamPictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
+            tenSanPhamLabel = new Label();
+            chonButton = new FontAwesome.Sharp.IconButton();
+            guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             ((System.ComponentModel.ISupportInitialize)anhSanPhamPictureBox).BeginInit();
             SuspendLayout();
-            // 
-            // tenSanPhamLabel
-            // 
-            tenSanPhamLabel.BackColor = Color.FromArgb(223, 243, 252);
-            tenSanPhamLabel.Font = new Font("Segoe UI", 11.25F);
-            tenSanPhamLabel.ForeColor = SystemColors.ActiveCaptionText;
-            tenSanPhamLabel.Location = new Point(89, 1);
-            tenSanPhamLabel.Name = "tenSanPhamLabel";
-            tenSanPhamLabel.Size = new Size(91, 93);
-            tenSanPhamLabel.TabIndex = 5;
-            tenSanPhamLabel.Text = "cà phê chả trà sữa bún đá ";
-            tenSanPhamLabel.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // chonButton
-            // 
-            chonButton.BackColor = Color.FromArgb(0, 50, 90);
-            chonButton.Dock = DockStyle.Bottom;
-            chonButton.FlatAppearance.BorderSize = 0;
-            chonButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            chonButton.ForeColor = Color.White;
-            chonButton.IconChar = FontAwesome.Sharp.IconChar.None;
-            chonButton.IconColor = Color.Black;
-            chonButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            chonButton.Location = new Point(0, 97);
-            chonButton.Name = "chonButton";
-            chonButton.Size = new Size(183, 48);
-            chonButton.TabIndex = 7;
-            chonButton.Text = "Chọn";
-            chonButton.UseVisualStyleBackColor = false;
             // 
             // anhSanPhamPictureBox
             // 
@@ -75,29 +46,63 @@
             anhSanPhamPictureBox.Location = new Point(3, 1);
             anhSanPhamPictureBox.Name = "anhSanPhamPictureBox";
             anhSanPhamPictureBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            anhSanPhamPictureBox.Size = new Size(80, 93);
+            anhSanPhamPictureBox.Size = new Size(80, 80);
             anhSanPhamPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             anhSanPhamPictureBox.TabIndex = 4;
             anhSanPhamPictureBox.TabStop = false;
+            anhSanPhamPictureBox.Click += anhSanPhamPictureBox_Click;
+            // 
+            // tenSanPhamLabel
+            // 
+            tenSanPhamLabel.BackColor = Color.FromArgb(223, 243, 252);
+            tenSanPhamLabel.Font = new Font("Segoe UI", 11.25F);
+            tenSanPhamLabel.ForeColor = SystemColors.ActiveCaptionText;
+            tenSanPhamLabel.Location = new Point(89, 1);
+            tenSanPhamLabel.Name = "tenSanPhamLabel";
+            tenSanPhamLabel.Size = new Size(91, 80);
+            tenSanPhamLabel.TabIndex = 5;
+            tenSanPhamLabel.Text = "cà phê chả trà sữa bún đá ";
+            tenSanPhamLabel.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // chonButton
+            // 
+            chonButton.BackColor = Color.FromArgb(0, 50, 90);
+            chonButton.Dock = DockStyle.Bottom;
+            chonButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            chonButton.ForeColor = Color.White;
+            chonButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            chonButton.IconColor = Color.Black;
+            chonButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            chonButton.Location = new Point(0, 84);
+            chonButton.Name = "chonButton";
+            chonButton.Size = new Size(183, 31);
+            chonButton.TabIndex = 7;
+            chonButton.Text = "Chọn";
+            chonButton.UseVisualStyleBackColor = false;
+            chonButton.Click += chonButton_Click;
             // 
             // SanPhamNhapHangUserControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(tenSanPhamLabel);
+            BackColor = Color.FromArgb(223, 243, 252);
             Controls.Add(chonButton);
+            Controls.Add(tenSanPhamLabel);
             Controls.Add(anhSanPhamPictureBox);
+            Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Margin = new Padding(5);
             Name = "SanPhamNhapHangUserControl";
-            Size = new Size(183, 145);
+            Size = new Size(183, 115);
+            Load += SanPhamNhapHangUserControl_Load;
             ((System.ComponentModel.ISupportInitialize)anhSanPhamPictureBox).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Label tenSanPhamLabel;
-        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
-        private FontAwesome.Sharp.IconButton chonButton;
         private Guna.UI2.WinForms.Guna2PictureBox anhSanPhamPictureBox;
+        private Label tenSanPhamLabel;
+        private FontAwesome.Sharp.IconButton chonButton;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
     }
 }
