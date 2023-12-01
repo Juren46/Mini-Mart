@@ -360,7 +360,7 @@
             tenNhaCungCapTextBox.Name = "tenNhaCungCapTextBox";
             tenNhaCungCapTextBox.PasswordChar = '\0';
             tenNhaCungCapTextBox.PlaceholderForeColor = Color.FromArgb(186, 215, 255);
-            tenNhaCungCapTextBox.PlaceholderText = "Nhập tên sản phẩm";
+            tenNhaCungCapTextBox.PlaceholderText = "";
             tenNhaCungCapTextBox.SelectedText = "";
             tenNhaCungCapTextBox.ShadowDecoration.CustomizableEdges = customizableEdges8;
             tenNhaCungCapTextBox.Size = new Size(276, 36);
@@ -383,7 +383,7 @@
             maNhaCungCapTextBox.Name = "maNhaCungCapTextBox";
             maNhaCungCapTextBox.PasswordChar = '\0';
             maNhaCungCapTextBox.PlaceholderForeColor = Color.FromArgb(186, 215, 255);
-            maNhaCungCapTextBox.PlaceholderText = "Nhập tên sản phẩm";
+            maNhaCungCapTextBox.PlaceholderText = "";
             maNhaCungCapTextBox.SelectedText = "";
             maNhaCungCapTextBox.ShadowDecoration.CustomizableEdges = customizableEdges10;
             maNhaCungCapTextBox.Size = new Size(276, 36);
@@ -442,7 +442,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
             Name = "NhapHangForm";
-            Text = "NhapHangForm";
+            Text = "NHẬP HÀNG";
             Load += NhapHangForm_Load;
             viewLEFT.ResumeLayout(false);
             f.ResumeLayout(false);

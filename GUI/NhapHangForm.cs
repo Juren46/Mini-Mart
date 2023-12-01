@@ -2,6 +2,7 @@
 using BUS.OtherFunctions;
 using DTO;
 using GUI.CacFormChon;
+using GUI.CacFormThongBao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,7 +63,7 @@ namespace GUI
 
         private void chonNhaCungCapButton_Click(object sender, EventArgs e)
         {
-            new TestChonNhaCungCap(this).Show();
+            new ChonNhaCungCap(this).Show();
         }
 
         private void maNhaCungCapTextBox_TextChanged(object sender, EventArgs e)
@@ -124,14 +125,14 @@ namespace GUI
         private void luuButton_Click(object sender, EventArgs e)
         {
             if (nhaCungCap == null)
-                MessageBox.Show("Vui lòng chọn nhà cung cấp để tiếp tục thao tác!");
+                CanhBaoForm.ShowAlertMessage("Vui lòng chọn nhà cung cấp để thao tác", CanhBaoForm.AlertType.WARNING);
             else
             {
                 if (listSanPhamNhapHang.Count <= 0)
-                    MessageBox.Show("Phiếu nhập trống!");
+                    CanhBaoForm.ShowAlertMessage("Phiếu nhập trống", CanhBaoForm.AlertType.WARNING);
                 else
                 {
-                    DialogResult result = MessageBox.Show("Xác nhận tạo phiếu nhập?", "Xác nhận", MessageBoxButtons.YesNo);
+                    DialogResult result = XacNhanForm.ShowDialog("Xác nhận tạo phiếu nhập?");
 
                     if (result == DialogResult.Yes)
                     {
@@ -154,17 +155,18 @@ namespace GUI
                                 chiTietPhieuNhap.soLuong = (int)donNhapHangUserControl.soLuongNumericUpDown.Value;
                                 chiTietPhieuNhap.donGia = donNhapHangUserControl.sanPham.giaBan;
                                 chiTietPhieuNhap.thanhTien = Decimal.Parse(donNhapHangUserControl.tongGiaLabel.Text.Replace(" VNĐ", "").Replace(",", ""));
-
+                            
                                 listChiTietPhieuNhap.Add(chiTietPhieuNhap);
                             }
                         }
 
                         string message = new PhieuNhapBUS().ThemPhieuNhap(listChiTietPhieuNhap, maPhieuNhap, maNhaCungCap, maNhanVien, thanhTien);
 
-                        MessageBox.Show(message);
+
 
                         if (message.Equals("Thêm phiếu nhập thành công!"))
                         {
+                            CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.SUCCESS);
                             listSanPham = null;
                             nhaCungCap = null;
                             maNhaCungCapTextBox.Clear();
@@ -194,6 +196,10 @@ namespace GUI
                                 control.Dispose();
                             }
                             thanhTienLabel.Text = "0 VNĐ";
+                        }
+                        else
+                        {
+                            CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.WARNING);
                         }
                     }
                 }
