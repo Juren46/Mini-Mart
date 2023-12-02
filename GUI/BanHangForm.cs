@@ -2,6 +2,7 @@
 using BUS.OtherFunctions;
 using DTO;
 using GUI.CacFormChon;
+using GUI.CacFormThongBao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -216,7 +217,7 @@ namespace GUI
 
         private void hoanTatButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Xác nhận thanh toán?", "Xác nhận", MessageBoxButtons.YesNo);
+            DialogResult result = XacNhanForm.ShowDialog("Xác nhận thanh toán?");
 
             if (result == DialogResult.Yes)
             {
@@ -256,10 +257,11 @@ namespace GUI
 
                 string message = new HoaDonBUS().ThemHoaDon(listChiTietHoaDon, maNhanVien, maKhachHang, maKhuyenMai, tongTien, giamGia, thanhTien, tienNhan, tienThua);
 
-                MessageBox.Show(message);
+                
 
                 if (message.Equals("Thanh toán thành công!"))
                 {
+                    CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.SUCCESS);
                     listSanPham = sanPhamBUS.LayDanhSachSanPham();
                     LoadDataToFlowLayout(listSanPham);
                     lamMoiSanPhamButton_Click(sender, e);
@@ -280,6 +282,10 @@ namespace GUI
                     tongTienLabel.Text = "0 VNĐ";
                     tienNhanTextBox.Text = "0";
                 }
+                else
+                {
+                    CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.WARNING);
+                }    
             }
         }
     }

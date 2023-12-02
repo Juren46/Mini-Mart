@@ -69,7 +69,7 @@ namespace BUS
             hoaDon.tienNhan = Decimal.Parse(tienNhan);
             hoaDon.tienThua = Decimal.Parse(tienThua);
 
-            if (hoaDon.tienNhan == 0 || hoaDon.tienNhan < hoaDon.tienThua)
+            if (hoaDon.tienNhan == 0 || hoaDon.tienNhan < hoaDon.thanhTien)
                 return "Khách hàng chưa thanh toán đủ!";
 
             foreach(ChiTietHoaDon chiTietHoaDon in listChiTietHoaDon)

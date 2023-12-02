@@ -314,6 +314,6 @@ namespace GUI
             tenPhanQuyenLabel.Text = new PhanQuyenBUS().LayPhanQuyenTheoMa(DangNhapForm.taiKhoan.maPhanQuyen).tenPhanQuyen;
         }
 
-       
+
     }
 }

@@ -64,6 +64,8 @@
             panel3 = new Panel();
             panel1 = new Panel();
             panel2 = new Panel();
+            panel4 = new Panel();
+            xoaTatCaButton = new FontAwesome.Sharp.IconButton();
             thoiGianCheckBox = new Guna.UI2.WinForms.Guna2ImageCheckBox();
             thoiGianKetThucDateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             thoiGianBatDauDateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -75,13 +77,11 @@
             trangThaiComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            xoaTatCaButton = new FontAwesome.Sharp.IconButton();
             timKiemButton = new FontAwesome.Sharp.IconButton();
             lamMoiButton = new FontAwesome.Sharp.IconButton();
             themMoiButton = new FontAwesome.Sharp.IconButton();
             xuatExcelButton = new FontAwesome.Sharp.IconButton();
             loaiGiaTriComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            panel4 = new Panel();
             ((System.ComponentModel.ISupportInitialize)khuyenMaiDataGridView).BeginInit();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
@@ -306,6 +306,37 @@
             panel2.Size = new Size(1183, 164);
             panel2.TabIndex = 36;
             // 
+            // panel4
+            // 
+            panel4.Controls.Add(xoaTatCaButton);
+            panel4.Dock = DockStyle.Right;
+            panel4.Location = new Point(983, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(200, 164);
+            panel4.TabIndex = 93;
+            // 
+            // xoaTatCaButton
+            // 
+            xoaTatCaButton.BackColor = Color.IndianRed;
+            xoaTatCaButton.FlatAppearance.BorderSize = 0;
+            xoaTatCaButton.FlatStyle = FlatStyle.Flat;
+            xoaTatCaButton.Font = new Font("Microsoft Sans Serif", 12F);
+            xoaTatCaButton.ForeColor = Color.White;
+            xoaTatCaButton.IconChar = FontAwesome.Sharp.IconChar.HandHoldingMedical;
+            xoaTatCaButton.IconColor = Color.White;
+            xoaTatCaButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            xoaTatCaButton.IconSize = 20;
+            xoaTatCaButton.ImageAlign = ContentAlignment.MiddleLeft;
+            xoaTatCaButton.Location = new Point(82, 122);
+            xoaTatCaButton.Name = "xoaTatCaButton";
+            xoaTatCaButton.Size = new Size(115, 36);
+            xoaTatCaButton.TabIndex = 85;
+            xoaTatCaButton.Text = "Xoá tất cả ";
+            xoaTatCaButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            xoaTatCaButton.UseVisualStyleBackColor = false;
+            xoaTatCaButton.Visible = false;
+            xoaTatCaButton.Click += xoaTatCaButton_Click;
+            // 
             // thoiGianCheckBox
             // 
             thoiGianCheckBox.CheckedState.Image = (Image)resources.GetObject("resource.Image");
@@ -468,28 +499,6 @@
             timKiemTextBox.TabIndex = 86;
             timKiemTextBox.TextChanged += timKiemTextBox_TextChanged;
             // 
-            // xoaTatCaButton
-            // 
-            xoaTatCaButton.BackColor = Color.IndianRed;
-            xoaTatCaButton.FlatAppearance.BorderSize = 0;
-            xoaTatCaButton.FlatStyle = FlatStyle.Flat;
-            xoaTatCaButton.Font = new Font("Microsoft Sans Serif", 12F);
-            xoaTatCaButton.ForeColor = Color.White;
-            xoaTatCaButton.IconChar = FontAwesome.Sharp.IconChar.HandHoldingMedical;
-            xoaTatCaButton.IconColor = Color.White;
-            xoaTatCaButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            xoaTatCaButton.IconSize = 20;
-            xoaTatCaButton.ImageAlign = ContentAlignment.MiddleLeft;
-            xoaTatCaButton.Location = new Point(82, 122);
-            xoaTatCaButton.Name = "xoaTatCaButton";
-            xoaTatCaButton.Size = new Size(115, 36);
-            xoaTatCaButton.TabIndex = 85;
-            xoaTatCaButton.Text = "Xoá tất cả ";
-            xoaTatCaButton.TextImageRelation = TextImageRelation.ImageBeforeText;
-            xoaTatCaButton.UseVisualStyleBackColor = false;
-            xoaTatCaButton.Visible = false;
-            xoaTatCaButton.Click += xoaTatCaButton_Click;
-            // 
             // timKiemButton
             // 
             timKiemButton.BackColor = Color.FromArgb(226, 153, 48);
@@ -582,15 +591,6 @@
             loaiGiaTriComboBox.Size = new Size(140, 36);
             loaiGiaTriComboBox.TabIndex = 78;
             loaiGiaTriComboBox.SelectionChangeCommitted += loaiGiaTriComboBox_SelectionChangeCommitted;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(xoaTatCaButton);
-            panel4.Dock = DockStyle.Right;
-            panel4.Location = new Point(983, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(200, 164);
-            panel4.TabIndex = 93;
             // 
             // KhuyenMaiForm
             // 

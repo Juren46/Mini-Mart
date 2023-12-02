@@ -412,7 +412,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
             Name = "PhieuNhapForm";
-            Text = "PhieuNhapForm";
+            Text = "QUẢN LÝ PHIẾU NHẬP";
             Load += PhieuNhapForm_Load;
             panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);

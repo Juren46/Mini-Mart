@@ -33,6 +33,7 @@
             panelNav = new Guna.UI2.WinForms.Guna2Panel();
             panelMenu = new Panel();
             fllMenu = new FlowLayoutPanel();
+            nhapHangButton = new FontAwesome.Sharp.IconButton();
             btnBanHang = new FontAwesome.Sharp.IconButton();
             btnSanPham = new FontAwesome.Sharp.IconButton();
             btnThongKe = new FontAwesome.Sharp.IconButton();
@@ -61,7 +62,6 @@
             iconButton8 = new FontAwesome.Sharp.IconButton();
             iconButton7 = new FontAwesome.Sharp.IconButton();
             panelDesktop = new Panel();
-            nhapHangButton = new FontAwesome.Sharp.IconButton();
             panelNav.SuspendLayout();
             panelMenu.SuspendLayout();
             fllMenu.SuspendLayout();
@@ -119,6 +119,29 @@
             fllMenu.Name = "fllMenu";
             fllMenu.Size = new Size(251, 681);
             fllMenu.TabIndex = 0;
+            // 
+            // nhapHangButton
+            // 
+            nhapHangButton.BackColor = Color.FromArgb(0, 79, 111);
+            nhapHangButton.FlatAppearance.BorderSize = 0;
+            nhapHangButton.FlatStyle = FlatStyle.Flat;
+            nhapHangButton.Font = new Font("Microsoft Sans Serif", 14.25F);
+            nhapHangButton.ForeColor = Color.White;
+            nhapHangButton.IconChar = FontAwesome.Sharp.IconChar.Truck;
+            nhapHangButton.IconColor = Color.White;
+            nhapHangButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            nhapHangButton.IconSize = 40;
+            nhapHangButton.ImageAlign = ContentAlignment.MiddleLeft;
+            nhapHangButton.Location = new Point(3, 3);
+            nhapHangButton.Name = "nhapHangButton";
+            nhapHangButton.Padding = new Padding(10, 0, 20, 0);
+            nhapHangButton.Size = new Size(238, 50);
+            nhapHangButton.TabIndex = 13;
+            nhapHangButton.Text = "Nhập hàng";
+            nhapHangButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            nhapHangButton.UseVisualStyleBackColor = false;
+            nhapHangButton.Visible = false;
+            nhapHangButton.Click += nhapHangButton_Click;
             // 
             // btnBanHang
             // 
@@ -597,28 +620,6 @@
             panelDesktop.Name = "panelDesktop";
             panelDesktop.Size = new Size(1183, 821);
             panelDesktop.TabIndex = 2;
-            // 
-            // nhapHangButton
-            // 
-            nhapHangButton.BackColor = Color.FromArgb(0, 79, 111);
-            nhapHangButton.FlatAppearance.BorderSize = 0;
-            nhapHangButton.FlatStyle = FlatStyle.Flat;
-            nhapHangButton.Font = new Font("Microsoft Sans Serif", 14.25F);
-            nhapHangButton.ForeColor = Color.White;
-            nhapHangButton.IconChar = FontAwesome.Sharp.IconChar.Truck;
-            nhapHangButton.IconColor = Color.White;
-            nhapHangButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            nhapHangButton.IconSize = 40;
-            nhapHangButton.ImageAlign = ContentAlignment.MiddleLeft;
-            nhapHangButton.Location = new Point(3, 3);
-            nhapHangButton.Name = "nhapHangButton";
-            nhapHangButton.Padding = new Padding(10, 0, 20, 0);
-            nhapHangButton.Size = new Size(238, 50);
-            nhapHangButton.TabIndex = 13;
-            nhapHangButton.Text = "Nhập hàng";
-            nhapHangButton.TextImageRelation = TextImageRelation.ImageBeforeText;
-            nhapHangButton.UseVisualStyleBackColor = false;
-            nhapHangButton.Click += nhapHangButton_Click;
             // 
             // TrangChuForm
             // 

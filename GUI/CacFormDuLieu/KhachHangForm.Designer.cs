@@ -39,6 +39,7 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel2 = new Panel();
+            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             bacThanhVienComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             lamMoiButton = new FontAwesome.Sharp.IconButton();
@@ -47,8 +48,6 @@
             timKiemButton = new FontAwesome.Sharp.IconButton();
             panel3 = new Panel();
             khachHangDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            panel1 = new Panel();
-            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             Column2 = new DataGridViewTextBoxColumn();
             maKhachHangColumn = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -58,6 +57,7 @@
             Column11 = new DataGridViewTextBoxColumn();
             infoButtonColumn = new DataGridViewImageColumn();
             editButtonColumn = new DataGridViewImageColumn();
+            panel1 = new Panel();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)khachHangDataGridView).BeginInit();
@@ -79,6 +79,18 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1183, 84);
             panel2.TabIndex = 44;
+            // 
+            // guna2HtmlLabel4
+            // 
+            guna2HtmlLabel4.BackColor = Color.Transparent;
+            guna2HtmlLabel4.Font = new Font("Segoe UI", 14.25F);
+            guna2HtmlLabel4.ForeColor = Color.FromArgb(0, 79, 111);
+            guna2HtmlLabel4.Location = new Point(12, 5);
+            guna2HtmlLabel4.Margin = new Padding(5);
+            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            guna2HtmlLabel4.Size = new Size(127, 27);
+            guna2HtmlLabel4.TabIndex = 101;
+            guna2HtmlLabel4.Text = "Bậc thành viên ";
             // 
             // bacThanhVienComboBox
             // 
@@ -276,29 +288,6 @@
             khachHangDataGridView.CellFormatting += khachHangDataGridView_CellFormatting;
             khachHangDataGridView.CellPainting += khachHangDataGridView_CellPainting;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(223, 243, 252);
-            panel1.Controls.Add(panel3);
-            panel1.Controls.Add(panel2);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1183, 821);
-            panel1.TabIndex = 1;
-            // 
-            // guna2HtmlLabel4
-            // 
-            guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.Font = new Font("Segoe UI", 14.25F);
-            guna2HtmlLabel4.ForeColor = Color.FromArgb(0, 79, 111);
-            guna2HtmlLabel4.Location = new Point(12, 5);
-            guna2HtmlLabel4.Margin = new Padding(5);
-            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(127, 27);
-            guna2HtmlLabel4.TabIndex = 101;
-            guna2HtmlLabel4.Text = "Bậc thành viên ";
-            // 
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -385,6 +374,17 @@
             editButtonColumn.ReadOnly = true;
             editButtonColumn.Width = 6;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(223, 243, 252);
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1183, 821);
+            panel1.TabIndex = 1;
+            // 
             // KhachHangForm
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
@@ -395,7 +395,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
             Name = "KhachHangForm";
-            Text = "KhachHangForm";
+            Text = "QUẢN LÝ KHÁCH HÀNG";
             Load += KhachHangForm_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
