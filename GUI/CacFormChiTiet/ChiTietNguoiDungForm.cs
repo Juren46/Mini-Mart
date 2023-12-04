@@ -44,7 +44,7 @@ namespace GUI
             this.form = form;
         }
 
-        private void ChiTietNguoiDungForm_Load(object sender, EventArgs e)
+        internal void ChiTietNguoiDungForm_Load(object sender, EventArgs e)
         {
             listPhanQuyen = new PhanQuyenBUS().LayDanhSachPhanQuyen();
             phanQuyenComboBox.DataSource = listPhanQuyen;
@@ -181,7 +181,7 @@ namespace GUI
 
         private void doiMatKhauButton_Click(object sender, EventArgs e)
         {
-
+            new DoiMatKhauForm(this, nguoiDung).ShowDialog();
         }
 
         private void quayLaiButton_Click(object sender, EventArgs e)
@@ -189,7 +189,7 @@ namespace GUI
             this.Close();
         }
 
-        private void huyBoButton_Click(object sender, EventArgs e)
+        internal void huyBoButton_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Hủy bỏ các thông tin đã nhập?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 

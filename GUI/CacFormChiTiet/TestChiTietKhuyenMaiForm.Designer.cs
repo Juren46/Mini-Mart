@@ -131,6 +131,7 @@
             giaTriKhuyenMaiTextBox.ShadowDecoration.CustomizableEdges = customizableEdges6;
             giaTriKhuyenMaiTextBox.Size = new Size(290, 40);
             giaTriKhuyenMaiTextBox.TabIndex = 2;
+            giaTriKhuyenMaiTextBox.KeyPress += giaTriKhuyenMaiTextBox_KeyPress;
             // 
             // thoiGianBatDauDateTimePicker
             // 
@@ -139,7 +140,7 @@
             thoiGianBatDauDateTimePicker.CustomizableEdges = customizableEdges7;
             thoiGianBatDauDateTimePicker.Font = new Font("Segoe UI", 14.25F);
             thoiGianBatDauDateTimePicker.ForeColor = SystemColors.ControlText;
-            thoiGianBatDauDateTimePicker.Format = DateTimePickerFormat.Short;
+            thoiGianBatDauDateTimePicker.Format = DateTimePickerFormat.Custom;
             thoiGianBatDauDateTimePicker.Location = new Point(356, 183);
             thoiGianBatDauDateTimePicker.Margin = new Padding(5);
             thoiGianBatDauDateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -156,7 +157,7 @@
             thoiGianKetThucDateTimePicker.CustomFormat = "dd/MM/yyyy";
             thoiGianKetThucDateTimePicker.CustomizableEdges = customizableEdges9;
             thoiGianKetThucDateTimePicker.Font = new Font("Segoe UI", 14.25F);
-            thoiGianKetThucDateTimePicker.Format = DateTimePickerFormat.Short;
+            thoiGianKetThucDateTimePicker.Format = DateTimePickerFormat.Custom;
             thoiGianKetThucDateTimePicker.Location = new Point(356, 272);
             thoiGianKetThucDateTimePicker.Margin = new Padding(5);
             thoiGianKetThucDateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -197,7 +198,7 @@
             thoiGianBatDauTimePicker.CustomFormat = "HH:mm:ss";
             thoiGianBatDauTimePicker.CustomizableEdges = customizableEdges11;
             thoiGianBatDauTimePicker.Font = new Font("Segoe UI", 14.25F);
-            thoiGianBatDauTimePicker.Format = DateTimePickerFormat.Custom;
+            thoiGianBatDauTimePicker.Format = DateTimePickerFormat.Time;
             thoiGianBatDauTimePicker.Location = new Point(550, 183);
             thoiGianBatDauTimePicker.Margin = new Padding(5);
             thoiGianBatDauTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -205,7 +206,7 @@
             thoiGianBatDauTimePicker.Name = "thoiGianBatDauTimePicker";
             thoiGianBatDauTimePicker.ShadowDecoration.CustomizableEdges = customizableEdges12;
             thoiGianBatDauTimePicker.ShowUpDown = true;
-            thoiGianBatDauTimePicker.Size = new Size(133, 40);
+            thoiGianBatDauTimePicker.Size = new Size(152, 40);
             thoiGianBatDauTimePicker.TabIndex = 17;
             thoiGianBatDauTimePicker.Value = new DateTime(2023, 11, 30, 5, 44, 59, 177);
             // 
@@ -215,7 +216,7 @@
             thoiGianKetThucTimePicker.CustomFormat = "HH:mm:ss";
             thoiGianKetThucTimePicker.CustomizableEdges = customizableEdges13;
             thoiGianKetThucTimePicker.Font = new Font("Segoe UI", 14.25F);
-            thoiGianKetThucTimePicker.Format = DateTimePickerFormat.Custom;
+            thoiGianKetThucTimePicker.Format = DateTimePickerFormat.Time;
             thoiGianKetThucTimePicker.Location = new Point(550, 272);
             thoiGianKetThucTimePicker.Margin = new Padding(5);
             thoiGianKetThucTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -223,7 +224,7 @@
             thoiGianKetThucTimePicker.Name = "thoiGianKetThucTimePicker";
             thoiGianKetThucTimePicker.ShadowDecoration.CustomizableEdges = customizableEdges14;
             thoiGianKetThucTimePicker.ShowUpDown = true;
-            thoiGianKetThucTimePicker.Size = new Size(133, 40);
+            thoiGianKetThucTimePicker.Size = new Size(152, 40);
             thoiGianKetThucTimePicker.TabIndex = 18;
             thoiGianKetThucTimePicker.Value = new DateTime(2023, 11, 30, 5, 44, 59, 177);
             // 

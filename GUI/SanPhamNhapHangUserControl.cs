@@ -38,7 +38,7 @@ namespace GUI
 
         private void chonButton_Click(object sender, EventArgs e)
         {
-            if (nhapHangForm.listSanPhamNhapHang.Contains(sanPham))
+            if (nhapHangForm.listSanPhamNhapHang != null && nhapHangForm.listSanPhamNhapHang.Contains(sanPham))
             {
                 foreach (Control control in nhapHangForm.chiTietDonHangFlowLayoutPanel.Controls)
                 {

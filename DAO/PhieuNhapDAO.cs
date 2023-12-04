@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,7 +59,7 @@ namespace DAO
         {
             List<PhieuNhap> listPhieuNhap = new List<PhieuNhap>();
 
-            string query = "SELECT * FROM PhieuNhap;";
+            string query = "SELECT * FROM PhieuNhap WHERE trangThai = N'Chưa duyệt' OR trangThai = N'Đã duyệt';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
@@ -231,19 +232,19 @@ namespace DAO
             return rowsAffected > 0;
         }
 
-        public List<PhieuNhap> TimKiemPhieuNhap(string tuKhoa, string trangThai)
+        public List<PhieuNhap> TimKiemPhieuNhap(string tuKhoa, string trangThai, string thoiGianBatDau, string thoiGianKetThuc)
         {
             List<PhieuNhap> listPhieuNhap = new List<PhieuNhap> ();
 
             string query = $"SELECT * FROM PhieuNhap " +
-                           $"WHERE LOWER(maPhieuNhap) LIKE '%{tuKhoa}%' " +
-                           $"OR LOWER(maNhaCungCap) LIKE '%{tuKhoa}%' " +
-                           $"OR LOWER(maNhanVien) LIKE '%{tuKhoa}%' " +
-                           $"OR LOWER(maQuanLi) LIKE '%{tuKhoa}%' " +
-                           $"OR thanhTien = {tuKhoa} " +
-                           $"WHERE trangThai = N'{trangThai}';";
+                           $"WHERE ('{tuKhoa}' = '' OR LOWER(maPhieuNhap) LIKE '%{tuKhoa}%' OR LOWER(maNhaCungCap) LIKE '%{tuKhoa}%' OR LOWER(maNguoiDuyet) LIKE '%{tuKhoa}%' OR LOWER(maNguoiTao) LIKE '%{tuKhoa}%') AND ('{trangThai}' = '' OR trangThai = N'{trangThai}') ";
+            if (!string.IsNullOrEmpty(thoiGianBatDau) && !string.IsNullOrEmpty(thoiGianKetThuc))
+            {
+                query += $"AND thoiGianTao BETWEEN '{thoiGianBatDau}' AND '{thoiGianKetThuc}';";
+            }
+                
 
-            DataTable dataTable = new DataTable();
+            DataTable dataTable = DBHelper.ExecuteQuery(query);
 
             if (dataTable.Rows.Count > 0)
             {
@@ -251,19 +252,21 @@ namespace DAO
                 {
                     PhieuNhap phieuNhap = new PhieuNhap();
 
-                    phieuNhap.maPhieuNhap = dataTable.Rows[0]["maPhieuNhap"].ToString();
-                    phieuNhap.maNhaCungCap = dataTable.Rows[0]["maNhaCungCap"].ToString();
-                    phieuNhap.maNguoiTao = dataTable.Rows[0]["maNguoiTao"].ToString();
-                    phieuNhap.maNguoiDuyet = dataTable.Rows[0]["maNguoiDuyet"].ToString();
-                    phieuNhap.thoiGianTao = (DateTime)dataTable.Rows[0]["thoiGianTao"];
-                    try { phieuNhap.thoiGianDuyet = (DateTime)dataTable.Rows[0]["thoiGianDuyet"]; }
+                    phieuNhap.maPhieuNhap = row["maPhieuNhap"].ToString();
+                    phieuNhap.maNhaCungCap = row["maNhaCungCap"].ToString();
+                    phieuNhap.maNguoiTao = row["maNguoiTao"].ToString();
+                    phieuNhap.maNguoiDuyet = row["maNguoiDuyet"].ToString();
+                    phieuNhap.thoiGianTao = (DateTime)row["thoiGianTao"];
+                    try { phieuNhap.thoiGianDuyet = (DateTime)row["thoiGianDuyet"]; }
                     catch { phieuNhap.thoiGianDuyet = null; }
-                    phieuNhap.thanhTien = Decimal.Parse(dataTable.Rows[0]["thanhTien"].ToString());
-                    phieuNhap.trangThai = dataTable.Rows[0]["trangThai"].ToString();
+                    phieuNhap.thanhTien = Decimal.Parse(row["thanhTien"].ToString());
+                    phieuNhap.trangThai = row["trangThai"].ToString();
 
                     listPhieuNhap.Add(phieuNhap);
                 }
             }
+            else
+                Debug.WriteLine("Lỗi gì đó datatable rỗng");
 
             return listPhieuNhap;
         }

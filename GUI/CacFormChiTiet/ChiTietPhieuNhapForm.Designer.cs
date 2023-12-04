@@ -1,4 +1,4 @@
-﻿namespace GUI
+﻿namespace GUI.CacFormChiTiet
 {
     partial class ChiTietPhieuNhapForm
     {
@@ -35,6 +35,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -47,384 +51,621 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            panel1 = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            label1 = new Label();
-            txtMaNhanVien = new Guna.UI2.WinForms.Guna2TextBox();
-            label7 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            txtMaNCC = new Guna.UI2.WinForms.Guna2TextBox();
-            txtMaPhieuNhap = new Guna.UI2.WinForms.Guna2TextBox();
-            dtpThoiGianTao = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            label6 = new Label();
-            label4 = new Label();
-            txtThanhTien = new Guna.UI2.WinForms.Guna2TextBox();
-            label5 = new Label();
-            txtMaQuanLy = new Guna.UI2.WinForms.Guna2TextBox();
-            tsTrangThaiDuyet = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            thoiGianDuyetDateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            label9 = new Label();
+            maNguoiTaoTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             label8 = new Label();
-            btnLuu = new Guna.UI2.WinForms.Guna2Button();
-            btnHuyBo = new Guna.UI2.WinForms.Guna2Button();
+            label6 = new Label();
+            quayLaiButton = new FontAwesome.Sharp.IconButton();
+            maNguoiDuyetTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            chiTietPhieuNhapDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            khongDuyetButton = new Guna.UI2.WinForms.Guna2Button();
+            duyetButton = new Guna.UI2.WinForms.Guna2Button();
+            label5 = new Label();
+            trangThaiTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            thoiGianTaoDateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            label3 = new Label();
+            label4 = new Label();
+            thanhTienTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            label1 = new Label();
+            maNhaCungCapTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            label2 = new Label();
+            maPhieuNhapTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            panel1 = new Panel();
+            tieuDeFormLabel = new Label();
             guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
+            maSanPhamColumn = new DataGridViewTextBoxColumn();
+            column = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column9 = new DataGridViewTextBoxColumn();
+            suaButtonColumn = new DataGridViewButtonColumn();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chiTietPhieuNhapDataGridView).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // thoiGianDuyetDateTimePicker
             // 
-            panel1.BackColor = Color.FromArgb(0, 79, 111);
-            panel1.Controls.Add(iconButton1);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(5);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(690, 66);
-            panel1.TabIndex = 72;
+            thoiGianDuyetDateTimePicker.BackColor = Color.FromArgb(223, 243, 252);
+            thoiGianDuyetDateTimePicker.BorderRadius = 5;
+            thoiGianDuyetDateTimePicker.Checked = true;
+            thoiGianDuyetDateTimePicker.CustomizableEdges = customizableEdges1;
+            thoiGianDuyetDateTimePicker.Enabled = false;
+            thoiGianDuyetDateTimePicker.FillColor = Color.Transparent;
+            thoiGianDuyetDateTimePicker.Font = new Font("Microsoft Sans Serif", 14.25F);
+            thoiGianDuyetDateTimePicker.Format = DateTimePickerFormat.Long;
+            thoiGianDuyetDateTimePicker.Location = new Point(455, 158);
+            thoiGianDuyetDateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            thoiGianDuyetDateTimePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            thoiGianDuyetDateTimePicker.Name = "thoiGianDuyetDateTimePicker";
+            thoiGianDuyetDateTimePicker.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            thoiGianDuyetDateTimePicker.Size = new Size(292, 40);
+            thoiGianDuyetDateTimePicker.TabIndex = 95;
+            thoiGianDuyetDateTimePicker.Value = new DateTime(2023, 11, 17, 9, 22, 37, 260);
             // 
-            // iconButton1
+            // label9
             // 
-            iconButton1.Dock = DockStyle.Right;
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
-            iconButton1.IconColor = Color.White;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(561, 0);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(129, 66);
-            iconButton1.TabIndex = 1;
-            iconButton1.UseVisualStyleBackColor = true;
+            label9.AutoSize = true;
+            label9.Font = new Font("Microsoft Sans Serif", 14.25F);
+            label9.ForeColor = Color.FromArgb(0, 79, 111);
+            label9.Location = new Point(38, 133);
+            label9.Name = "label9";
+            label9.Size = new Size(119, 24);
+            label9.TabIndex = 90;
+            label9.Text = "Mã người tạo";
             // 
-            // label1
+            // maNguoiTaoTextBox
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(38, 19);
-            label1.Margin = new Padding(5, 0, 5, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(231, 29);
-            label1.TabIndex = 0;
-            label1.Text = "Chi tiết phiếu nhập";
+            maNguoiTaoTextBox.BorderColor = Color.FromArgb(0, 79, 111);
+            maNguoiTaoTextBox.BorderRadius = 5;
+            maNguoiTaoTextBox.CustomizableEdges = customizableEdges3;
+            maNguoiTaoTextBox.DefaultText = "";
+            maNguoiTaoTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            maNguoiTaoTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            maNguoiTaoTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            maNguoiTaoTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            maNguoiTaoTextBox.Enabled = false;
+            maNguoiTaoTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            maNguoiTaoTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
+            maNguoiTaoTextBox.Location = new Point(38, 158);
+            maNguoiTaoTextBox.Margin = new Padding(5, 5, 5, 5);
+            maNguoiTaoTextBox.Name = "maNguoiTaoTextBox";
+            maNguoiTaoTextBox.PasswordChar = '\0';
+            maNguoiTaoTextBox.PlaceholderText = "";
+            maNguoiTaoTextBox.SelectedText = "";
+            maNguoiTaoTextBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            maNguoiTaoTextBox.Size = new Size(290, 40);
+            maNguoiTaoTextBox.TabIndex = 89;
             // 
-            // txtMaNhanVien
+            // label8
             // 
-            txtMaNhanVien.BorderColor = Color.FromArgb(0, 79, 111);
-            txtMaNhanVien.BorderRadius = 5;
-            txtMaNhanVien.CustomizableEdges = customizableEdges1;
-            txtMaNhanVien.DefaultText = "";
-            txtMaNhanVien.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtMaNhanVien.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtMaNhanVien.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtMaNhanVien.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtMaNhanVien.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMaNhanVien.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMaNhanVien.Location = new Point(52, 323);
-            txtMaNhanVien.Margin = new Padding(5, 5, 5, 5);
-            txtMaNhanVien.Name = "txtMaNhanVien";
-            txtMaNhanVien.PasswordChar = '\0';
-            txtMaNhanVien.PlaceholderText = "";
-            txtMaNhanVien.SelectedText = "";
-            txtMaNhanVien.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txtMaNhanVien.Size = new Size(290, 40);
-            txtMaNhanVien.TabIndex = 78;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.ForeColor = Color.FromArgb(0, 79, 111);
-            label7.Location = new Point(50, 294);
-            label7.Name = "label7";
-            label7.Size = new Size(124, 24);
-            label7.TabIndex = 77;
-            label7.Text = "Mã nhân viên";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.FromArgb(0, 79, 111);
-            label3.Location = new Point(50, 188);
-            label3.Name = "label3";
-            label3.Size = new Size(157, 24);
-            label3.TabIndex = 76;
-            label3.Text = "Mã nhà cung cấp";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(0, 79, 111);
-            label2.Location = new Point(52, 92);
-            label2.Name = "label2";
-            label2.Size = new Size(137, 24);
-            label2.TabIndex = 75;
-            label2.Text = "Mã phiếu nhập";
-            // 
-            // txtMaNCC
-            // 
-            txtMaNCC.BorderColor = Color.FromArgb(0, 79, 111);
-            txtMaNCC.BorderRadius = 5;
-            txtMaNCC.CustomizableEdges = customizableEdges3;
-            txtMaNCC.DefaultText = "";
-            txtMaNCC.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtMaNCC.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtMaNCC.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtMaNCC.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtMaNCC.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMaNCC.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMaNCC.Location = new Point(52, 217);
-            txtMaNCC.Margin = new Padding(5, 5, 5, 5);
-            txtMaNCC.Name = "txtMaNCC";
-            txtMaNCC.PasswordChar = '\0';
-            txtMaNCC.PlaceholderText = "";
-            txtMaNCC.SelectedText = "";
-            txtMaNCC.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txtMaNCC.Size = new Size(290, 40);
-            txtMaNCC.TabIndex = 74;
-            // 
-            // txtMaPhieuNhap
-            // 
-            txtMaPhieuNhap.BorderColor = Color.FromArgb(0, 79, 111);
-            txtMaPhieuNhap.BorderRadius = 5;
-            txtMaPhieuNhap.CustomizableEdges = customizableEdges5;
-            txtMaPhieuNhap.DefaultText = "";
-            txtMaPhieuNhap.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtMaPhieuNhap.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtMaPhieuNhap.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtMaPhieuNhap.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtMaPhieuNhap.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMaPhieuNhap.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMaPhieuNhap.Location = new Point(52, 117);
-            txtMaPhieuNhap.Margin = new Padding(5, 5, 5, 5);
-            txtMaPhieuNhap.Name = "txtMaPhieuNhap";
-            txtMaPhieuNhap.PasswordChar = '\0';
-            txtMaPhieuNhap.PlaceholderText = "";
-            txtMaPhieuNhap.SelectedText = "";
-            txtMaPhieuNhap.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            txtMaPhieuNhap.Size = new Size(290, 40);
-            txtMaPhieuNhap.TabIndex = 73;
-            // 
-            // dtpThoiGianTao
-            // 
-            dtpThoiGianTao.BackColor = Color.FromArgb(223, 243, 252);
-            dtpThoiGianTao.BorderRadius = 5;
-            dtpThoiGianTao.Checked = true;
-            dtpThoiGianTao.CustomizableEdges = customizableEdges7;
-            dtpThoiGianTao.FillColor = Color.Transparent;
-            dtpThoiGianTao.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dtpThoiGianTao.Format = DateTimePickerFormat.Long;
-            dtpThoiGianTao.Location = new Point(350, 217);
-            dtpThoiGianTao.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            dtpThoiGianTao.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            dtpThoiGianTao.Name = "dtpThoiGianTao";
-            dtpThoiGianTao.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            dtpThoiGianTao.Size = new Size(290, 40);
-            dtpThoiGianTao.TabIndex = 84;
-            dtpThoiGianTao.Value = new DateTime(2023, 11, 17, 9, 22, 37, 260);
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft Sans Serif", 14.25F);
+            label8.ForeColor = Color.FromArgb(0, 79, 111);
+            label8.Location = new Point(455, 133);
+            label8.Name = "label8";
+            label8.Size = new Size(140, 24);
+            label8.TabIndex = 88;
+            label8.Text = "Thời gian duyệt";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Microsoft Sans Serif", 14.25F);
             label6.ForeColor = Color.FromArgb(0, 79, 111);
-            label6.Location = new Point(350, 188);
+            label6.Location = new Point(38, 201);
             label6.Name = "label6";
-            label6.Size = new Size(119, 24);
-            label6.TabIndex = 82;
-            label6.Text = "Thời gian tạo";
+            label6.Size = new Size(140, 24);
+            label6.TabIndex = 84;
+            label6.Text = "Mã người duyệt";
+            // 
+            // quayLaiButton
+            // 
+            quayLaiButton.Dock = DockStyle.Right;
+            quayLaiButton.FlatAppearance.BorderSize = 0;
+            quayLaiButton.FlatStyle = FlatStyle.Flat;
+            quayLaiButton.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
+            quayLaiButton.IconColor = Color.White;
+            quayLaiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            quayLaiButton.Location = new Point(1073, 0);
+            quayLaiButton.Name = "quayLaiButton";
+            quayLaiButton.Size = new Size(129, 58);
+            quayLaiButton.TabIndex = 1;
+            quayLaiButton.UseVisualStyleBackColor = true;
+            quayLaiButton.Click += quayLaiButton_Click;
+            // 
+            // maNguoiDuyetTextBox
+            // 
+            maNguoiDuyetTextBox.BorderColor = Color.FromArgb(0, 79, 111);
+            maNguoiDuyetTextBox.BorderRadius = 5;
+            maNguoiDuyetTextBox.CustomizableEdges = customizableEdges5;
+            maNguoiDuyetTextBox.DefaultText = "";
+            maNguoiDuyetTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            maNguoiDuyetTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            maNguoiDuyetTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            maNguoiDuyetTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            maNguoiDuyetTextBox.Enabled = false;
+            maNguoiDuyetTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            maNguoiDuyetTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
+            maNguoiDuyetTextBox.Location = new Point(38, 226);
+            maNguoiDuyetTextBox.Margin = new Padding(5, 5, 5, 5);
+            maNguoiDuyetTextBox.Name = "maNguoiDuyetTextBox";
+            maNguoiDuyetTextBox.PasswordChar = '\0';
+            maNguoiDuyetTextBox.PlaceholderText = "";
+            maNguoiDuyetTextBox.SelectedText = "";
+            maNguoiDuyetTextBox.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            maNguoiDuyetTextBox.Size = new Size(290, 40);
+            maNguoiDuyetTextBox.TabIndex = 83;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(223, 243, 252);
+            panel2.Controls.Add(panel3);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Font = new Font("Segoe UI", 14.25F);
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1202, 522);
+            panel2.TabIndex = 7;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(chiTietPhieuNhapDataGridView);
+            panel3.Controls.Add(khongDuyetButton);
+            panel3.Controls.Add(duyetButton);
+            panel3.Controls.Add(label5);
+            panel3.Controls.Add(trangThaiTextBox);
+            panel3.Controls.Add(thoiGianTaoDateTimePicker);
+            panel3.Controls.Add(label3);
+            panel3.Controls.Add(thoiGianDuyetDateTimePicker);
+            panel3.Controls.Add(label9);
+            panel3.Controls.Add(maNguoiTaoTextBox);
+            panel3.Controls.Add(label8);
+            panel3.Controls.Add(label6);
+            panel3.Controls.Add(maNguoiDuyetTextBox);
+            panel3.Controls.Add(label4);
+            panel3.Controls.Add(thanhTienTextBox);
+            panel3.Controls.Add(label1);
+            panel3.Controls.Add(maNhaCungCapTextBox);
+            panel3.Controls.Add(label2);
+            panel3.Controls.Add(maPhieuNhapTextBox);
+            panel3.Controls.Add(panel1);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1202, 522);
+            panel3.TabIndex = 52;
+            // 
+            // chiTietPhieuNhapDataGridView
+            // 
+            chiTietPhieuNhapDataGridView.AllowUserToAddRows = false;
+            chiTietPhieuNhapDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            chiTietPhieuNhapDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            chiTietPhieuNhapDataGridView.BackgroundColor = Color.FromArgb(242, 245, 250);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.LightBlue;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 14.25F);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(30, 110, 142);
+            dataGridViewCellStyle2.SelectionBackColor = Color.LightBlue;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            chiTietPhieuNhapDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            chiTietPhieuNhapDataGridView.ColumnHeadersHeight = 40;
+            chiTietPhieuNhapDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            chiTietPhieuNhapDataGridView.Columns.AddRange(new DataGridViewColumn[] { maSanPhamColumn, column, Column4, Column3, Column6, Column1, Column9, suaButtonColumn });
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(227, 248, 251);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            chiTietPhieuNhapDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            chiTietPhieuNhapDataGridView.Dock = DockStyle.Bottom;
+            chiTietPhieuNhapDataGridView.GridColor = Color.FromArgb(242, 245, 250);
+            chiTietPhieuNhapDataGridView.Location = new Point(0, 279);
+            chiTietPhieuNhapDataGridView.Name = "chiTietPhieuNhapDataGridView";
+            chiTietPhieuNhapDataGridView.ReadOnly = true;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 14.25F);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(242, 245, 250);
+            dataGridViewCellStyle5.SelectionBackColor = Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            chiTietPhieuNhapDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            chiTietPhieuNhapDataGridView.RowHeadersVisible = false;
+            chiTietPhieuNhapDataGridView.RowHeadersWidth = 51;
+            chiTietPhieuNhapDataGridView.RowTemplate.DividerHeight = 3;
+            chiTietPhieuNhapDataGridView.RowTemplate.Height = 50;
+            chiTietPhieuNhapDataGridView.Size = new Size(1202, 243);
+            chiTietPhieuNhapDataGridView.TabIndex = 102;
+            chiTietPhieuNhapDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            chiTietPhieuNhapDataGridView.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 9F);
+            chiTietPhieuNhapDataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = SystemColors.ControlText;
+            chiTietPhieuNhapDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            chiTietPhieuNhapDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            chiTietPhieuNhapDataGridView.ThemeStyle.BackColor = Color.FromArgb(242, 245, 250);
+            chiTietPhieuNhapDataGridView.ThemeStyle.GridColor = Color.FromArgb(242, 245, 250);
+            chiTietPhieuNhapDataGridView.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(242, 245, 250);
+            chiTietPhieuNhapDataGridView.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            chiTietPhieuNhapDataGridView.ThemeStyle.HeaderStyle.Font = new Font("Microsoft Sans Serif", 14.25F);
+            chiTietPhieuNhapDataGridView.ThemeStyle.HeaderStyle.ForeColor = Color.DimGray;
+            chiTietPhieuNhapDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            chiTietPhieuNhapDataGridView.ThemeStyle.HeaderStyle.Height = 40;
+            chiTietPhieuNhapDataGridView.ThemeStyle.ReadOnly = true;
+            chiTietPhieuNhapDataGridView.ThemeStyle.RowsStyle.BackColor = Color.White;
+            chiTietPhieuNhapDataGridView.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            chiTietPhieuNhapDataGridView.ThemeStyle.RowsStyle.Font = new Font("Microsoft Sans Serif", 14.25F);
+            chiTietPhieuNhapDataGridView.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            chiTietPhieuNhapDataGridView.ThemeStyle.RowsStyle.Height = 50;
+            chiTietPhieuNhapDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(0, 80, 112);
+            chiTietPhieuNhapDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
+            chiTietPhieuNhapDataGridView.CellContentClick += chiTietPhieuNhapDataGridView_CellContentClick;
+            chiTietPhieuNhapDataGridView.CellPainting += chiTietPhieuNhapDataGridView_CellPainting;
+            // 
+            // khongDuyetButton
+            // 
+            khongDuyetButton.CustomizableEdges = customizableEdges7;
+            khongDuyetButton.DisabledState.BorderColor = Color.DarkGray;
+            khongDuyetButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            khongDuyetButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            khongDuyetButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            khongDuyetButton.Font = new Font("Segoe UI", 9F);
+            khongDuyetButton.ForeColor = Color.White;
+            khongDuyetButton.Location = new Point(1010, 221);
+            khongDuyetButton.Name = "khongDuyetButton";
+            khongDuyetButton.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            khongDuyetButton.Size = new Size(180, 45);
+            khongDuyetButton.TabIndex = 101;
+            khongDuyetButton.Text = "Không duyệt";
+            khongDuyetButton.Visible = false;
+            khongDuyetButton.Click += khongDuyetButton_Click;
+            // 
+            // duyetButton
+            // 
+            duyetButton.CustomizableEdges = customizableEdges9;
+            duyetButton.DisabledState.BorderColor = Color.DarkGray;
+            duyetButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            duyetButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            duyetButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            duyetButton.Font = new Font("Segoe UI", 9F);
+            duyetButton.ForeColor = Color.White;
+            duyetButton.Location = new Point(824, 221);
+            duyetButton.Name = "duyetButton";
+            duyetButton.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            duyetButton.Size = new Size(180, 45);
+            duyetButton.TabIndex = 100;
+            duyetButton.Text = "Duyệt";
+            duyetButton.Visible = false;
+            duyetButton.Click += duyetButton_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 14.25F);
+            label5.ForeColor = Color.FromArgb(0, 79, 111);
+            label5.Location = new Point(824, 133);
+            label5.Name = "label5";
+            label5.Size = new Size(94, 24);
+            label5.TabIndex = 99;
+            label5.Text = "Trạng thái";
+            // 
+            // trangThaiTextBox
+            // 
+            trangThaiTextBox.BorderColor = Color.FromArgb(0, 79, 111);
+            trangThaiTextBox.BorderRadius = 5;
+            trangThaiTextBox.CustomizableEdges = customizableEdges11;
+            trangThaiTextBox.DefaultText = "";
+            trangThaiTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            trangThaiTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            trangThaiTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            trangThaiTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            trangThaiTextBox.Enabled = false;
+            trangThaiTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            trangThaiTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
+            trangThaiTextBox.Location = new Point(824, 158);
+            trangThaiTextBox.Margin = new Padding(5, 5, 5, 5);
+            trangThaiTextBox.Name = "trangThaiTextBox";
+            trangThaiTextBox.PasswordChar = '\0';
+            trangThaiTextBox.PlaceholderText = "";
+            trangThaiTextBox.SelectedText = "";
+            trangThaiTextBox.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            trangThaiTextBox.Size = new Size(290, 40);
+            trangThaiTextBox.TabIndex = 98;
+            // 
+            // thoiGianTaoDateTimePicker
+            // 
+            thoiGianTaoDateTimePicker.BackColor = Color.FromArgb(223, 243, 252);
+            thoiGianTaoDateTimePicker.BorderRadius = 5;
+            thoiGianTaoDateTimePicker.Checked = true;
+            thoiGianTaoDateTimePicker.CustomizableEdges = customizableEdges13;
+            thoiGianTaoDateTimePicker.Enabled = false;
+            thoiGianTaoDateTimePicker.FillColor = Color.Transparent;
+            thoiGianTaoDateTimePicker.Font = new Font("Microsoft Sans Serif", 14.25F);
+            thoiGianTaoDateTimePicker.Format = DateTimePickerFormat.Long;
+            thoiGianTaoDateTimePicker.Location = new Point(455, 90);
+            thoiGianTaoDateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            thoiGianTaoDateTimePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            thoiGianTaoDateTimePicker.Name = "thoiGianTaoDateTimePicker";
+            thoiGianTaoDateTimePicker.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            thoiGianTaoDateTimePicker.Size = new Size(292, 40);
+            thoiGianTaoDateTimePicker.TabIndex = 97;
+            thoiGianTaoDateTimePicker.Value = new DateTime(2023, 11, 17, 9, 22, 37, 260);
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 14.25F);
+            label3.ForeColor = Color.FromArgb(0, 79, 111);
+            label3.Location = new Point(455, 65);
+            label3.Name = "label3";
+            label3.Size = new Size(119, 24);
+            label3.TabIndex = 96;
+            label3.Text = "Thời gian tạo";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Microsoft Sans Serif", 14.25F);
             label4.ForeColor = Color.FromArgb(0, 79, 111);
-            label4.Location = new Point(350, 294);
+            label4.Location = new Point(824, 65);
             label4.Name = "label4";
             label4.Size = new Size(100, 24);
             label4.TabIndex = 80;
             label4.Text = "Thành tiền";
             // 
-            // txtThanhTien
+            // thanhTienTextBox
             // 
-            txtThanhTien.BorderColor = Color.FromArgb(0, 79, 111);
-            txtThanhTien.BorderRadius = 5;
-            txtThanhTien.CustomizableEdges = customizableEdges9;
-            txtThanhTien.DefaultText = "";
-            txtThanhTien.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtThanhTien.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtThanhTien.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtThanhTien.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtThanhTien.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtThanhTien.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtThanhTien.Location = new Point(350, 323);
-            txtThanhTien.Margin = new Padding(5, 5, 5, 5);
-            txtThanhTien.Name = "txtThanhTien";
-            txtThanhTien.PasswordChar = '\0';
-            txtThanhTien.PlaceholderText = "";
-            txtThanhTien.SelectedText = "";
-            txtThanhTien.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            txtThanhTien.Size = new Size(290, 40);
-            txtThanhTien.TabIndex = 79;
+            thanhTienTextBox.BorderColor = Color.FromArgb(0, 79, 111);
+            thanhTienTextBox.BorderRadius = 5;
+            thanhTienTextBox.CustomizableEdges = customizableEdges15;
+            thanhTienTextBox.DefaultText = "";
+            thanhTienTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            thanhTienTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            thanhTienTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            thanhTienTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            thanhTienTextBox.Enabled = false;
+            thanhTienTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            thanhTienTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
+            thanhTienTextBox.Location = new Point(824, 90);
+            thanhTienTextBox.Margin = new Padding(5, 5, 5, 5);
+            thanhTienTextBox.Name = "thanhTienTextBox";
+            thanhTienTextBox.PasswordChar = '\0';
+            thanhTienTextBox.PlaceholderText = "";
+            thanhTienTextBox.SelectedText = "";
+            thanhTienTextBox.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            thanhTienTextBox.Size = new Size(290, 40);
+            thanhTienTextBox.TabIndex = 79;
             // 
-            // label5
+            // label1
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = Color.FromArgb(0, 79, 111);
-            label5.Location = new Point(350, 92);
-            label5.Name = "label5";
-            label5.Size = new Size(102, 24);
-            label5.TabIndex = 86;
-            label5.Text = "Mã quản lý";
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 14.25F);
+            label1.ForeColor = Color.FromArgb(0, 79, 111);
+            label1.Location = new Point(455, 201);
+            label1.Name = "label1";
+            label1.Size = new Size(157, 24);
+            label1.TabIndex = 76;
+            label1.Text = "Mã nhà cung cấp";
             // 
-            // txtMaQuanLy
+            // maNhaCungCapTextBox
             // 
-            txtMaQuanLy.BorderColor = Color.FromArgb(0, 79, 111);
-            txtMaQuanLy.BorderRadius = 5;
-            txtMaQuanLy.CustomizableEdges = customizableEdges11;
-            txtMaQuanLy.DefaultText = "";
-            txtMaQuanLy.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtMaQuanLy.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtMaQuanLy.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtMaQuanLy.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtMaQuanLy.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMaQuanLy.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMaQuanLy.Location = new Point(350, 117);
-            txtMaQuanLy.Margin = new Padding(5, 5, 5, 5);
-            txtMaQuanLy.Name = "txtMaQuanLy";
-            txtMaQuanLy.PasswordChar = '\0';
-            txtMaQuanLy.PlaceholderText = "";
-            txtMaQuanLy.SelectedText = "";
-            txtMaQuanLy.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            txtMaQuanLy.Size = new Size(290, 40);
-            txtMaQuanLy.TabIndex = 85;
+            maNhaCungCapTextBox.BorderColor = Color.FromArgb(0, 79, 111);
+            maNhaCungCapTextBox.BorderRadius = 5;
+            maNhaCungCapTextBox.CustomizableEdges = customizableEdges17;
+            maNhaCungCapTextBox.DefaultText = "";
+            maNhaCungCapTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            maNhaCungCapTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            maNhaCungCapTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            maNhaCungCapTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            maNhaCungCapTextBox.Enabled = false;
+            maNhaCungCapTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            maNhaCungCapTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
+            maNhaCungCapTextBox.Location = new Point(455, 226);
+            maNhaCungCapTextBox.Margin = new Padding(5, 5, 5, 5);
+            maNhaCungCapTextBox.Name = "maNhaCungCapTextBox";
+            maNhaCungCapTextBox.PasswordChar = '\0';
+            maNhaCungCapTextBox.PlaceholderText = "";
+            maNhaCungCapTextBox.SelectedText = "";
+            maNhaCungCapTextBox.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            maNhaCungCapTextBox.Size = new Size(290, 40);
+            maNhaCungCapTextBox.TabIndex = 75;
             // 
-            // tsTrangThaiDuyet
+            // label2
             // 
-            tsTrangThaiDuyet.Checked = true;
-            tsTrangThaiDuyet.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
-            tsTrangThaiDuyet.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
-            tsTrangThaiDuyet.CheckedState.InnerBorderColor = Color.White;
-            tsTrangThaiDuyet.CheckedState.InnerColor = Color.White;
-            tsTrangThaiDuyet.CustomizableEdges = customizableEdges13;
-            tsTrangThaiDuyet.Location = new Point(202, 407);
-            tsTrangThaiDuyet.Name = "tsTrangThaiDuyet";
-            tsTrangThaiDuyet.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            tsTrangThaiDuyet.Size = new Size(44, 23);
-            tsTrangThaiDuyet.TabIndex = 88;
-            tsTrangThaiDuyet.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
-            tsTrangThaiDuyet.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
-            tsTrangThaiDuyet.UncheckedState.InnerBorderColor = Color.White;
-            tsTrangThaiDuyet.UncheckedState.InnerColor = Color.White;
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 14.25F);
+            label2.ForeColor = Color.FromArgb(0, 79, 111);
+            label2.Location = new Point(38, 63);
+            label2.Name = "label2";
+            label2.Size = new Size(137, 24);
+            label2.TabIndex = 74;
+            label2.Text = "Mã phiếu nhập";
             // 
-            // label8
+            // maPhieuNhapTextBox
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.ForeColor = Color.FromArgb(0, 79, 111);
-            label8.Location = new Point(52, 407);
-            label8.Name = "label8";
-            label8.Size = new Size(94, 24);
-            label8.TabIndex = 87;
-            label8.Text = "Đã duyệt?";
+            maPhieuNhapTextBox.BorderColor = Color.FromArgb(0, 79, 111);
+            maPhieuNhapTextBox.BorderRadius = 5;
+            maPhieuNhapTextBox.CustomizableEdges = customizableEdges19;
+            maPhieuNhapTextBox.DefaultText = "";
+            maPhieuNhapTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            maPhieuNhapTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            maPhieuNhapTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            maPhieuNhapTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            maPhieuNhapTextBox.Enabled = false;
+            maPhieuNhapTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            maPhieuNhapTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
+            maPhieuNhapTextBox.Location = new Point(38, 88);
+            maPhieuNhapTextBox.Margin = new Padding(5, 5, 5, 5);
+            maPhieuNhapTextBox.Name = "maPhieuNhapTextBox";
+            maPhieuNhapTextBox.PasswordChar = '\0';
+            maPhieuNhapTextBox.PlaceholderText = "";
+            maPhieuNhapTextBox.SelectedText = "";
+            maPhieuNhapTextBox.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            maPhieuNhapTextBox.Size = new Size(290, 40);
+            maPhieuNhapTextBox.TabIndex = 73;
             // 
-            // btnLuu
+            // panel1
             // 
-            btnLuu.BorderRadius = 5;
-            btnLuu.CustomizableEdges = customizableEdges15;
-            btnLuu.DisabledState.BorderColor = Color.DarkGray;
-            btnLuu.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnLuu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnLuu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnLuu.FillColor = Color.FromArgb(0, 79, 111);
-            btnLuu.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLuu.ForeColor = Color.White;
-            btnLuu.Location = new Point(458, 439);
-            btnLuu.Name = "btnLuu";
-            btnLuu.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            btnLuu.Size = new Size(189, 53);
-            btnLuu.TabIndex = 90;
-            btnLuu.Text = "Lưu";
+            panel1.BackColor = Color.FromArgb(0, 79, 111);
+            panel1.Controls.Add(quayLaiButton);
+            panel1.Controls.Add(tieuDeFormLabel);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(5);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1202, 58);
+            panel1.TabIndex = 71;
             // 
-            // btnHuyBo
+            // tieuDeFormLabel
             // 
-            btnHuyBo.BorderColor = Color.FromArgb(0, 79, 111);
-            btnHuyBo.BorderRadius = 5;
-            btnHuyBo.BorderThickness = 1;
-            btnHuyBo.CustomizableEdges = customizableEdges17;
-            btnHuyBo.DisabledState.BorderColor = Color.DarkGray;
-            btnHuyBo.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnHuyBo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnHuyBo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnHuyBo.FillColor = Color.White;
-            btnHuyBo.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnHuyBo.ForeColor = Color.FromArgb(0, 79, 111);
-            btnHuyBo.Location = new Point(263, 439);
-            btnHuyBo.Name = "btnHuyBo";
-            btnHuyBo.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            btnHuyBo.Size = new Size(189, 53);
-            btnHuyBo.TabIndex = 89;
-            btnHuyBo.Text = "Huỷ bỏ";
+            tieuDeFormLabel.AutoSize = true;
+            tieuDeFormLabel.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
+            tieuDeFormLabel.ForeColor = Color.White;
+            tieuDeFormLabel.Location = new Point(38, 19);
+            tieuDeFormLabel.Margin = new Padding(5, 0, 5, 0);
+            tieuDeFormLabel.Name = "tieuDeFormLabel";
+            tieuDeFormLabel.Size = new Size(231, 29);
+            tieuDeFormLabel.TabIndex = 0;
+            tieuDeFormLabel.Text = "Chi tiết phiếu nhập";
+            // 
+            // maSanPhamColumn
+            // 
+            maSanPhamColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            maSanPhamColumn.HeaderText = "Mã sản phẩm";
+            maSanPhamColumn.MinimumWidth = 6;
+            maSanPhamColumn.Name = "maSanPhamColumn";
+            maSanPhamColumn.ReadOnly = true;
+            maSanPhamColumn.Resizable = DataGridViewTriState.True;
+            maSanPhamColumn.Width = 149;
+            // 
+            // column
+            // 
+            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            column.HeaderText = "Tên sản phẩm";
+            column.Name = "column";
+            column.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            Column4.FillWeight = 60F;
+            Column4.HeaderText = "Đơn vị";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            Column4.Width = 89;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            Column3.FillWeight = 120F;
+            Column3.HeaderText = "Số lượng";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Width = 110;
+            // 
+            // Column6
+            // 
+            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column6.DefaultCellStyle = dataGridViewCellStyle3;
+            Column6.HeaderText = "Giá bán";
+            Column6.MinimumWidth = 6;
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.HeaderText = "Giá nhập";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            Column9.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column9.FillWeight = 70F;
+            Column9.HeaderText = "Tổng tiền";
+            Column9.MinimumWidth = 6;
+            Column9.Name = "Column9";
+            Column9.ReadOnly = true;
+            // 
+            // suaButtonColumn
+            // 
+            suaButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            suaButtonColumn.HeaderText = "Chỉnh sửa";
+            suaButtonColumn.Name = "suaButtonColumn";
+            suaButtonColumn.ReadOnly = true;
+            suaButtonColumn.Resizable = DataGridViewTriState.True;
+            suaButtonColumn.SortMode = DataGridViewColumnSortMode.Automatic;
+            suaButtonColumn.Text = "Sửa";
+            suaButtonColumn.UseColumnTextForButtonValue = true;
+            suaButtonColumn.Width = 119;
             // 
             // ChiTietPhieuNhapForm
             // 
-            AutoScaleDimensions = new SizeF(11F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(223, 243, 252);
-            ClientSize = new Size(690, 504);
-            Controls.Add(btnLuu);
-            Controls.Add(btnHuyBo);
-            Controls.Add(tsTrangThaiDuyet);
-            Controls.Add(label8);
-            Controls.Add(label5);
-            Controls.Add(txtMaQuanLy);
-            Controls.Add(dtpThoiGianTao);
-            Controls.Add(label6);
-            Controls.Add(label4);
-            Controls.Add(txtThanhTien);
-            Controls.Add(txtMaNhanVien);
-            Controls.Add(label7);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(txtMaNCC);
-            Controls.Add(txtMaPhieuNhap);
-            Controls.Add(panel1);
-            Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(5);
+            ClientSize = new Size(1202, 522);
+            Controls.Add(panel2);
             Name = "ChiTietPhieuNhapForm";
-            Text = "CHI TIẾT PHIẾU NHẬP";
-            Load += themPhieuNhapForm_Load;
+            Text = "ChiTietPhieuNhapForm";
+            Load += ChiTietPhieuNhapForm_Load;
+            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chiTietPhieuNhapDataGridView).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Panel panel1;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox txtMaNhanVien;
-        private Label label7;
-        private Label label3;
-        private Label label2;
-        private Guna.UI2.WinForms.Guna2TextBox txtMaNCC;
-        private Guna.UI2.WinForms.Guna2TextBox txtMaPhieuNhap;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpThoiGianTao;
-        private Label label6;
-        private Label label4;
-        private Guna.UI2.WinForms.Guna2TextBox txtThanhTien;
-        private Label label5;
-        private Guna.UI2.WinForms.Guna2TextBox txtMaQuanLy;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch tsTrangThaiDuyet;
+        private Guna.UI2.WinForms.Guna2DateTimePicker thoiGianDuyetDateTimePicker;
+        private Label label9;
+        private Guna.UI2.WinForms.Guna2TextBox maNguoiTaoTextBox;
         private Label label8;
-        private Guna.UI2.WinForms.Guna2Button btnLuu;
-        private Guna.UI2.WinForms.Guna2Button btnHuyBo;
+        private Label label6;
+        private FontAwesome.Sharp.IconButton quayLaiButton;
+        private Guna.UI2.WinForms.Guna2TextBox maNguoiDuyetTextBox;
+        private Panel panel2;
+        private Panel panel3;
+        private Label label4;
+        private Guna.UI2.WinForms.Guna2TextBox thanhTienTextBox;
+        private Label label1;
+        private Guna.UI2.WinForms.Guna2TextBox maNhaCungCapTextBox;
+        private Label label2;
+        private Guna.UI2.WinForms.Guna2TextBox maPhieuNhapTextBox;
+        private Panel panel1;
+        private Label tieuDeFormLabel;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
+        private Guna.UI2.WinForms.Guna2Button khongDuyetButton;
+        private Guna.UI2.WinForms.Guna2Button duyetButton;
+        private Label label5;
+        private Guna.UI2.WinForms.Guna2TextBox trangThaiTextBox;
+        private Guna.UI2.WinForms.Guna2DateTimePicker thoiGianTaoDateTimePicker;
+        private Label label3;
+        private Guna.UI2.WinForms.Guna2DataGridView chiTietPhieuNhapDataGridView;
+        private DataGridViewTextBoxColumn maSanPhamColumn;
+        private DataGridViewTextBoxColumn column;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column9;
+        private DataGridViewButtonColumn suaButtonColumn;
     }
 }

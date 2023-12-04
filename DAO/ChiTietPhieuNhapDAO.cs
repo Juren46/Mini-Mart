@@ -38,5 +38,37 @@ namespace DAO
 
             return listChiTietPhieuNhap;
         }
+
+        public ChiTietPhieuNhap LayChiTietPhieuNhap(string maPhieuNhap, string maSanPham)
+        {
+            ChiTietPhieuNhap chiTietPhieuNhap = new ChiTietPhieuNhap();
+
+            string query = $"SELECT * FROM ChiTietPhieuNhap WHERE maPhieuNhap = '{maPhieuNhap}' AND maSanPham = '{maSanPham}'";
+
+            DataTable dataTable = DBHelper.ExecuteQuery(query);
+
+            if (dataTable != null && dataTable.Rows.Count > 0)
+            {
+                chiTietPhieuNhap.maPhieuNhap = dataTable.Rows[0]["maPhieuNhap"].ToString();
+                chiTietPhieuNhap.maSanPham = dataTable.Rows[0]["maSanPham"].ToString();
+                chiTietPhieuNhap.tenSanPham = dataTable.Rows[0]["tenSanPham"].ToString();
+                chiTietPhieuNhap.donVi = dataTable.Rows[0]["donVi"].ToString();
+                chiTietPhieuNhap.soLuong = (int)dataTable.Rows[0]["soLuong"];
+                chiTietPhieuNhap.giaBan = Decimal.Parse(dataTable.Rows[0]["giaBan"].ToString());
+                chiTietPhieuNhap.giaNhap = Decimal.Parse(dataTable.Rows[0]["giaNhap"].ToString());
+                chiTietPhieuNhap.tongTien = Decimal.Parse(dataTable.Rows[0]["tongTien"].ToString());
+            }
+
+            return chiTietPhieuNhap;
+        }
+
+        public bool SuaChiTietPhieuNhap(ChiTietPhieuNhap chiTietPhieuNhap)
+        {
+            string query = $"UPDATE ChiTietPhieuNhap SET soLuong = {chiTietPhieuNhap.soLuong}, giaBan = {chiTietPhieuNhap.giaBan}, giaNhap = {chiTietPhieuNhap.giaNhap}, tongTien = {chiTietPhieuNhap.tongTien} WHERE maPhieuNhap = '{chiTietPhieuNhap.maPhieuNhap}' AND maSanPham = '{chiTietPhieuNhap.maSanPham}'";
+
+            int rowsAffected = DBHelper.ExecuteNonQuery(query);
+
+            return rowsAffected > 0;
+        }
     }
 }

@@ -97,6 +97,22 @@ namespace BUS
                 return "Duyệt phiếu nhập thất bại!";
         }
 
+        public List<PhieuNhap> TimKiemPhieuNhap(string tuKhoa, string trangThai, string thoiGianBatDau, string thoiGianKetThuc)
+        {
+            if (!string.IsNullOrEmpty(thoiGianBatDau) && !string.IsNullOrEmpty(thoiGianKetThuc))
+            {
+                DateTime dateTimeBatDau = DateTime.ParseExact(thoiGianBatDau, "dd/MM/yyyy HH:mm:ss", null);
+                DateTime dateTimeKetThuc = DateTime.ParseExact(thoiGianKetThuc, "dd/MM/yyyy HH:mm:ss", null);
+
+                if (dateTimeBatDau > dateTimeKetThuc)
+                    return null;
+            }
+
+            tuKhoa = tuKhoa.Trim().ToLower();
+
+            return phieuNhapDAO.TimKiemPhieuNhap(tuKhoa, trangThai, thoiGianBatDau, thoiGianKetThuc);
+        }
+
         public string TuChoiPhieuNhap(string maPhieuNhap)
         {
             if (phieuNhapDAO.TuChoiDuyetPhieuNhap(maPhieuNhap))

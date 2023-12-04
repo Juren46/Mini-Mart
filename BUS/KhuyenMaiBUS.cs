@@ -47,7 +47,7 @@ namespace BUS
                 return "Thời gian bắt đầu không được diễn ra trước thời điểm hiện tại!";
 
             if (Decimal.Parse(giaTri) <= 0)
-                return "Giá trị áp dụng không được bé hơn 0!";
+                return "Giá trị không được bé hơn 0!";
 
             KhuyenMai khuyenMai = new KhuyenMai();
 
@@ -83,7 +83,7 @@ namespace BUS
             if (dateTimeBatDau >= dateTimeKetThuc)
                 return "Thời gian bắt đầu phải trước thời gian kết thúc!";
 
-            if (dateTimeBatDau <= DateTime.Now)
+            if (dateTimeBatDau <= DateTime.Now && !dateTimeBatDau.Equals(LayKhuyenMaiTheoMa(maKhuyenMai).thoiGianBatDau))
                 return "Thời gian bắt đầu không được trước thời điểm hiện tại!";
 
             if (Decimal.Parse(giaTri) <= 0)

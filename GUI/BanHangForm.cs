@@ -247,6 +247,7 @@ namespace GUI
                         ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
                         chiTietHoaDon.maHoaDon = IDGenerator.GenerateHoaDonID();
                         chiTietHoaDon.maSanPham = donDatHangControl.sanPham.maSanPham;
+                        chiTietHoaDon.tenSanPham = donDatHangControl.sanPham.tenSanPham;
                         chiTietHoaDon.soLuong = (int)donDatHangControl.soLuongNumericUpDown.Value;
                         chiTietHoaDon.donGia = donDatHangControl.sanPham.giaBan;
                         chiTietHoaDon.tongTien = Decimal.Parse(donDatHangControl.tongGiaLabel.Text.Replace(" VNĐ", "").Replace(",", ""));
@@ -257,7 +258,7 @@ namespace GUI
 
                 string message = new HoaDonBUS().ThemHoaDon(listChiTietHoaDon, maNhanVien, maKhachHang, maKhuyenMai, tongTien, giamGia, thanhTien, tienNhan, tienThua);
 
-                
+
 
                 if (message.Equals("Thanh toán thành công!"))
                 {
@@ -285,8 +286,13 @@ namespace GUI
                 else
                 {
                     CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.WARNING);
-                }    
+                }
             }
+        }
+
+        private void themMoiNguoiDungButton_Click(object sender, EventArgs e)
+        {
+            //new ChiTietKhachHangForm("Thêm").ShowDialog();
         }
     }
 }

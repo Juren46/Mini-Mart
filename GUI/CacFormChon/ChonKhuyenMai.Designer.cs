@@ -42,15 +42,15 @@
             timKiemButton = new FontAwesome.Sharp.IconButton();
             timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             khuyenMaiDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            maKhuyenMaiColumn = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            chonKhuyenMaiButtonColumn = new DataGridViewButtonColumn();
             panel3 = new Panel();
             panel1 = new Panel();
+            maKhuyenMaiColumn = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            chonKhuyenMaiButtonColumn = new DataGridViewButtonColumn();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)khuyenMaiDataGridView).BeginInit();
@@ -182,7 +182,7 @@
             khuyenMaiDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             khuyenMaiDataGridView.ColumnHeadersHeight = 40;
             khuyenMaiDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            khuyenMaiDataGridView.Columns.AddRange(new DataGridViewColumn[] { maKhuyenMaiColumn, Column2, Column3, Column4, Column5, Column1, chonKhuyenMaiButtonColumn });
+            khuyenMaiDataGridView.Columns.AddRange(new DataGridViewColumn[] { maKhuyenMaiColumn, Column2, Column5, Column1, Column3, Column4, chonKhuyenMaiButtonColumn });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 12F);
@@ -233,57 +233,6 @@
             khuyenMaiDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
             khuyenMaiDataGridView.CellContentClick += khuyenMaiDataGridView_CellContentClick;
             // 
-            // maKhuyenMaiColumn
-            // 
-            maKhuyenMaiColumn.FillWeight = 80F;
-            maKhuyenMaiColumn.HeaderText = "Mã khuyến mãi";
-            maKhuyenMaiColumn.Name = "maKhuyenMaiColumn";
-            maKhuyenMaiColumn.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.FillWeight = 140F;
-            Column2.HeaderText = "Tên khuyến mãi";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.FillWeight = 80F;
-            Column3.HeaderText = "Loại giá trị";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Giá trị áp dụng";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Thời gian bắt đầu";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Thời gian kết thúc";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // chonKhuyenMaiButtonColumn
-            // 
-            chonKhuyenMaiButtonColumn.FillWeight = 50F;
-            chonKhuyenMaiButtonColumn.FlatStyle = FlatStyle.Flat;
-            chonKhuyenMaiButtonColumn.HeaderText = "Chọn";
-            chonKhuyenMaiButtonColumn.Name = "chonKhuyenMaiButtonColumn";
-            chonKhuyenMaiButtonColumn.ReadOnly = true;
-            chonKhuyenMaiButtonColumn.Resizable = DataGridViewTriState.True;
-            chonKhuyenMaiButtonColumn.SortMode = DataGridViewColumnSortMode.Automatic;
-            chonKhuyenMaiButtonColumn.Text = "Chọn";
-            chonKhuyenMaiButtonColumn.UseColumnTextForButtonValue = true;
-            // 
             // panel3
             // 
             panel3.Controls.Add(khuyenMaiDataGridView);
@@ -304,6 +253,57 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(910, 502);
             panel1.TabIndex = 5;
+            // 
+            // maKhuyenMaiColumn
+            // 
+            maKhuyenMaiColumn.FillWeight = 80F;
+            maKhuyenMaiColumn.HeaderText = "Mã khuyến mãi";
+            maKhuyenMaiColumn.Name = "maKhuyenMaiColumn";
+            maKhuyenMaiColumn.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.FillWeight = 140F;
+            Column2.HeaderText = "Tên khuyến mãi";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Thời gian bắt đầu";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Thời gian kết thúc";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.FillWeight = 80F;
+            Column3.HeaderText = "Loại giá trị";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Giá trị áp dụng";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // chonKhuyenMaiButtonColumn
+            // 
+            chonKhuyenMaiButtonColumn.FillWeight = 50F;
+            chonKhuyenMaiButtonColumn.FlatStyle = FlatStyle.Flat;
+            chonKhuyenMaiButtonColumn.HeaderText = "Chọn";
+            chonKhuyenMaiButtonColumn.Name = "chonKhuyenMaiButtonColumn";
+            chonKhuyenMaiButtonColumn.ReadOnly = true;
+            chonKhuyenMaiButtonColumn.Resizable = DataGridViewTriState.True;
+            chonKhuyenMaiButtonColumn.SortMode = DataGridViewColumnSortMode.Automatic;
+            chonKhuyenMaiButtonColumn.Text = "Chọn";
+            chonKhuyenMaiButtonColumn.UseColumnTextForButtonValue = true;
             // 
             // ChonKhuyenMai
             // 

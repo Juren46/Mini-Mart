@@ -60,7 +60,6 @@
             label10 = new Label();
             label9 = new Label();
             soDienThoaiTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            ngaySinhDateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
@@ -72,6 +71,7 @@
             maKhachHangTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             panel2 = new Panel();
             panel3 = new Panel();
+            ngaySinhDateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             bacThanhVienComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             nuRadioButton = new RadioButton();
             namRadioButton = new RadioButton();
@@ -192,6 +192,7 @@
             emailTextBox.ShadowDecoration.CustomizableEdges = customizableEdges6;
             emailTextBox.Size = new Size(290, 40);
             emailTextBox.TabIndex = 66;
+            emailTextBox.KeyPress += emailTextBox_KeyPress;
             // 
             // diaChiTextBox
             // 
@@ -258,25 +259,7 @@
             soDienThoaiTextBox.ShadowDecoration.CustomizableEdges = customizableEdges10;
             soDienThoaiTextBox.Size = new Size(290, 40);
             soDienThoaiTextBox.TabIndex = 62;
-            // 
-            // ngaySinhDateTimePicker
-            // 
-            ngaySinhDateTimePicker.BackColor = Color.FromArgb(223, 243, 252);
-            ngaySinhDateTimePicker.BorderRadius = 5;
-            ngaySinhDateTimePicker.Checked = true;
-            ngaySinhDateTimePicker.CustomizableEdges = customizableEdges11;
-            ngaySinhDateTimePicker.FillColor = Color.Empty;
-            ngaySinhDateTimePicker.Font = new Font("Microsoft Sans Serif", 14.25F);
-            ngaySinhDateTimePicker.Format = DateTimePickerFormat.Long;
-            ngaySinhDateTimePicker.Location = new Point(377, 219);
-            ngaySinhDateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            ngaySinhDateTimePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            ngaySinhDateTimePicker.Name = "ngaySinhDateTimePicker";
-            ngaySinhDateTimePicker.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            ngaySinhDateTimePicker.ShowCheckBox = true;
-            ngaySinhDateTimePicker.Size = new Size(290, 40);
-            ngaySinhDateTimePicker.TabIndex = 61;
-            ngaySinhDateTimePicker.Value = new DateTime(2023, 11, 17, 9, 22, 37, 260);
+            soDienThoaiTextBox.KeyPress += soDienThoaiTextBox_KeyPress;
             // 
             // label7
             // 
@@ -348,7 +331,7 @@
             // 
             diemTichLuyTextBox.BorderColor = Color.FromArgb(0, 79, 111);
             diemTichLuyTextBox.BorderRadius = 5;
-            diemTichLuyTextBox.CustomizableEdges = customizableEdges13;
+            diemTichLuyTextBox.CustomizableEdges = customizableEdges11;
             diemTichLuyTextBox.DefaultText = "";
             diemTichLuyTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             diemTichLuyTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -362,7 +345,7 @@
             diemTichLuyTextBox.PasswordChar = '\0';
             diemTichLuyTextBox.PlaceholderText = "";
             diemTichLuyTextBox.SelectedText = "";
-            diemTichLuyTextBox.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            diemTichLuyTextBox.ShadowDecoration.CustomizableEdges = customizableEdges12;
             diemTichLuyTextBox.Size = new Size(290, 40);
             diemTichLuyTextBox.TabIndex = 53;
             // 
@@ -370,7 +353,7 @@
             // 
             tenKhachHangTextBox.BorderColor = Color.FromArgb(0, 79, 111);
             tenKhachHangTextBox.BorderRadius = 5;
-            tenKhachHangTextBox.CustomizableEdges = customizableEdges15;
+            tenKhachHangTextBox.CustomizableEdges = customizableEdges13;
             tenKhachHangTextBox.DefaultText = "";
             tenKhachHangTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tenKhachHangTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -384,7 +367,7 @@
             tenKhachHangTextBox.PasswordChar = '\0';
             tenKhachHangTextBox.PlaceholderText = "";
             tenKhachHangTextBox.SelectedText = "";
-            tenKhachHangTextBox.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            tenKhachHangTextBox.ShadowDecoration.CustomizableEdges = customizableEdges14;
             tenKhachHangTextBox.Size = new Size(290, 40);
             tenKhachHangTextBox.TabIndex = 52;
             // 
@@ -392,7 +375,7 @@
             // 
             maKhachHangTextBox.BorderColor = Color.FromArgb(0, 79, 111);
             maKhachHangTextBox.BorderRadius = 5;
-            maKhachHangTextBox.CustomizableEdges = customizableEdges17;
+            maKhachHangTextBox.CustomizableEdges = customizableEdges15;
             maKhachHangTextBox.DefaultText = "";
             maKhachHangTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             maKhachHangTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -406,7 +389,7 @@
             maKhachHangTextBox.PasswordChar = '\0';
             maKhachHangTextBox.PlaceholderText = "";
             maKhachHangTextBox.SelectedText = "";
-            maKhachHangTextBox.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            maKhachHangTextBox.ShadowDecoration.CustomizableEdges = customizableEdges16;
             maKhachHangTextBox.Size = new Size(290, 40);
             maKhachHangTextBox.TabIndex = 51;
             // 
@@ -423,6 +406,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(ngaySinhDateTimePicker);
             panel3.Controls.Add(bacThanhVienComboBox);
             panel3.Controls.Add(nuRadioButton);
             panel3.Controls.Add(namRadioButton);
@@ -435,7 +419,6 @@
             panel3.Controls.Add(label10);
             panel3.Controls.Add(label9);
             panel3.Controls.Add(soDienThoaiTextBox);
-            panel3.Controls.Add(ngaySinhDateTimePicker);
             panel3.Controls.Add(label7);
             panel3.Controls.Add(label6);
             panel3.Controls.Add(label5);
@@ -450,6 +433,22 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1038, 493);
             panel3.TabIndex = 52;
+            // 
+            // ngaySinhDateTimePicker
+            // 
+            ngaySinhDateTimePicker.Checked = true;
+            ngaySinhDateTimePicker.CustomizableEdges = customizableEdges17;
+            ngaySinhDateTimePicker.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ngaySinhDateTimePicker.Format = DateTimePickerFormat.Long;
+            ngaySinhDateTimePicker.Location = new Point(382, 219);
+            ngaySinhDateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            ngaySinhDateTimePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            ngaySinhDateTimePicker.Name = "ngaySinhDateTimePicker";
+            ngaySinhDateTimePicker.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            ngaySinhDateTimePicker.ShowCheckBox = true;
+            ngaySinhDateTimePicker.Size = new Size(255, 40);
+            ngaySinhDateTimePicker.TabIndex = 75;
+            ngaySinhDateTimePicker.Value = new DateTime(2023, 12, 4, 17, 59, 30, 840);
             // 
             // bacThanhVienComboBox
             // 
@@ -524,7 +523,6 @@
         private Label label10;
         private Label label9;
         private Guna.UI2.WinForms.Guna2TextBox soDienThoaiTextBox;
-        private Guna.UI2.WinForms.Guna2DateTimePicker ngaySinhDateTimePicker;
         private Label label7;
         private Label label6;
         private Label label5;
@@ -540,5 +538,6 @@
         private RadioButton nuRadioButton;
         private RadioButton namRadioButton;
         private Guna.UI2.WinForms.Guna2ComboBox bacThanhVienComboBox;
+        private Guna.UI2.WinForms.Guna2DateTimePicker ngaySinhDateTimePicker;
     }
 }

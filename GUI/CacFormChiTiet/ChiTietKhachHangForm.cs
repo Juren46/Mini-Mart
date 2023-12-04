@@ -20,6 +20,7 @@ namespace GUI
         KhachHang khachHang;
         KhachHangForm khachHangForm;
         string context;
+        BanHangForm banHangForm;
 
         public ChiTietKhachHangForm(KhachHang khachHang, string context, KhachHangForm khachHangForm)
         {
@@ -40,6 +41,16 @@ namespace GUI
             khachHangBUS = new KhachHangBUS();
             this.context = context;
             this.khachHangForm = khachHangForm;
+        }
+
+        public ChiTietKhachHangForm(string context, BanHangForm banHangForm)
+        {
+            InitializeComponent();
+            CenterToParent();
+
+            khachHangBUS = new KhachHangBUS();
+            this.context = context;
+            this.banHangForm = banHangForm;
         }
 
         private void ChiTietKhachHangForm_Load(object sender, EventArgs e)
@@ -222,17 +233,39 @@ namespace GUI
                 if (message.Equals("Thêm khách hàng thành công!") || message.Equals("Chỉnh sửa thông tin khách hàng thành công!"))
                 {
                     CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.SUCCESS);
-                    khachHangForm.lamMoiButton_Click(sender, e);
+                    
+                    if (khachHangForm != null)
+                        khachHangForm.lamMoiButton_Click(sender, e);
+                    if (banHangForm != null)
+                    {
+
+                    }
 
                     this.Close();
                 }
                 else
                 {
                     CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.WARNING);
-                    if(tenKhachHangTextBox.Text.Equals("")) { this.tenKhachHangTextBox.BorderColor = Color.Red; }
+                    if (tenKhachHangTextBox.Text.Equals("")) { this.tenKhachHangTextBox.BorderColor = Color.Red; }
                     if (soDienThoaiTextBox.Text.Equals("")) { this.soDienThoaiTextBox.BorderColor = Color.Red; }
 
                 }
+            }
+        }
+
+        private void soDienThoaiTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void emailTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ' || e.KeyChar > 127)
+            {
+                e.Handled = true;
             }
         }
     }

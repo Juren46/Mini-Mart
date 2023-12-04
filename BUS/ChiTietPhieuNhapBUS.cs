@@ -20,5 +20,18 @@ namespace BUS
         {
             return chiTietPhieuNhapDAO.LayDanhSachChiTietPhieuNhap(maPhieuNhap);
         }
+
+        public ChiTietPhieuNhap LayChiTietPhieuNhap(string maPhieuNhap, string maSanPham)
+        {
+            return chiTietPhieuNhapDAO.LayChiTietPhieuNhap(maPhieuNhap, maSanPham);
+        }
+
+        public string SuaChiTietPhieuNhap(ChiTietPhieuNhap chiTietPhieuNhap)
+        {
+            if (chiTietPhieuNhapDAO.SuaChiTietPhieuNhap(chiTietPhieuNhap))
+                return "Chỉnh sửa chi tiết phiếu nhập thành công!";
+            else
+                return "Chỉnh sửa chi tiết phiếu nhập thất bại!";
+        }
     }
 }

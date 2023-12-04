@@ -147,18 +147,18 @@ namespace DAO
             return rowsAffected > 0;
         }
 
-        public List<KhachHang> TimKiemKhachHang(string tuKhoa, string bacThanhVien, string gioiTinh)
+        public List<KhachHang> TimKiemKhachHang(string tuKhoa, string hangThanhVien, string gioiTinh)
         {
 
             List<KhachHang> listKhachHang = new List<KhachHang>();
 
             string query = $"SELECT * FROM KhachHang " +
                            $"WHERE ('{tuKhoa}' = '' OR LOWER(maKhachHang) LIKE '%{tuKhoa}%' " +
-                           $"OR tenKhachHang COLLATE Latin1_General_CI_AI LIKE N'%{tuKhoa}%' " +
+                           $"OR hoTen COLLATE Latin1_General_CI_AI LIKE N'%{tuKhoa}%' " +
                            $"OR soDienThoai LIKE '%{tuKhoa}%' " +
                            $"OR LOWER(email) LIKE '%{tuKhoa}%' " +
                            $"OR diaChi COLLATE Latin1_General_CI_AI LIKE N'%{tuKhoa}%') " +
-                           $"AND ('{bacThanhVien}' = '' OR bacThanhVien = N'{bacThanhVien}') " +
+                           $"AND ('{hangThanhVien}' = '' OR hangThanhVien = N'{hangThanhVien}') " +
                            $"AND ('{gioiTinh}' = '' OR gioiTinh = N'{gioiTinh}')";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
@@ -215,8 +215,8 @@ namespace DAO
                     break;
             }
 
-            string query = $"UPDATE KhachHang SET bacThanhVien = N'{khachHang.hangThanhVien}',  " +
-                $"diemTichLuy = CASE WHEN diemTichLuy > 10000 THEN 10000 ELSE {khachHang.diemThanhVien} END " +
+            string query = $"UPDATE KhachHang SET hangThanhVien = N'{khachHang.hangThanhVien}',  " +
+                $"diemThanhVien = CASE WHEN diemThanhVien > 10000 THEN 10000 ELSE {khachHang.diemThanhVien} END " +
                 $"WHERE maKhachHang = '{khachHang.maKhachHang}';";
 
             DBHelper.ExecuteNonQuery(query);

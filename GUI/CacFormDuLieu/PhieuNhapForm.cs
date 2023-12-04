@@ -1,5 +1,9 @@
 ﻿using BUS;
+using BUS.OtherFunctions;
+using DocumentFormat.OpenXml.Spreadsheet;
+using DocumentFormat.OpenXml.Wordprocessing;
 using DTO;
+using GUI.CacFormChiTiet;
 using GUI.CacFormThongBao;
 using System;
 using System.Collections.Generic;
@@ -29,6 +33,9 @@ namespace GUI
         private void PhieuNhapForm_Load(object sender, EventArgs e)
         {
             LoadDataToDataGridView(listPhieuNhap);
+            thoiGianCheckBox.Checked = false;
+            thoiGianBatDauDateTimePicker.Enabled = false;
+            thoiGianKetThucDateTimePicker.Enabled=false;
         }
 
         private void LoadDataToDataGridView(List<PhieuNhap> listPhieuNhap)
@@ -50,6 +57,83 @@ namespace GUI
             }
         }
 
+        private void timKiemButton_Click(object sender, EventArgs e)
+        {
+            string tuKhoa = timKiemTextBox.Text;
+            string trangThai = "";
+            if (trangThaiComboBox.SelectedItem != null)
+                trangThai = trangThaiComboBox.SelectedItem.ToString();
+            string thoiGianBatDau = "";
+            string thoiGianKetThuc = "";
+            if (thoiGianCheckBox.Checked && thoiGianBatDauDateTimePicker.Enabled && thoiGianKetThucDateTimePicker.Enabled)
+            {
+                thoiGianBatDau = thoiGianBatDauDateTimePicker.Value.ToString("dd/MM/yyyy HH:mm:ss");
+                thoiGianKetThuc = thoiGianKetThucDateTimePicker.Value.ToString("dd/MM/yyyy HH:mm:ss");
+            }
+
+            if (!(tuKhoa == "" && trangThai == "" && thoiGianBatDau == "" && thoiGianKetThuc == ""))
+            {
+                if (phieuNhapBUS.TimKiemPhieuNhap(tuKhoa, trangThai, thoiGianBatDau, thoiGianKetThuc) == null)
+                    MessageBox.Show("Thời gian tìm kiếm bắt đầu không được lớn hơn kết thúc!");
+                else
+                {
+                    listPhieuNhap = phieuNhapBUS.TimKiemPhieuNhap(tuKhoa, trangThai, thoiGianBatDau, thoiGianKetThuc);
+                    LoadDataToDataGridView(listPhieuNhap);
+                }
+            }
+        }
+
+        private void trangThaiComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (trangThaiComboBox.SelectedItem != null)
+            {
+                timKiemTextBox.Clear();
+                timKiemButton_Click(sender, e);
+            }
+        }
+
+        private void timKiemTextBox_TextChanged(object sender, EventArgs e)
+        {
+            timKiemButton_Click(sender, e);
+        }
+
+        internal void lamMoiButton_Click(object sender, EventArgs e)
+        {
+            timKiemTextBox.Clear();
+            trangThaiComboBox.SelectedIndex = -1;
+            thoiGianCheckBox.Checked = false;
+            listPhieuNhap = phieuNhapBUS.LayDanhSachPhieuNhap();
+            LoadDataToDataGridView(listPhieuNhap);
+        }
+
+        private void xuatExcelButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+            saveFileDialog.Title = "Chọn vị trí lưu file Excel";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+                new XuatExcel(filePath).XuatExcelPhieuNhap(listPhieuNhap);
+                MessageBox.Show("File Excel đã được tạo tại: " + filePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void thoiGianCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (thoiGianCheckBox.Checked)
+            {
+                thoiGianBatDauDateTimePicker.Enabled = true;
+                thoiGianKetThucDateTimePicker.Enabled= true;
+            }
+            else
+            {
+                thoiGianBatDauDateTimePicker.Enabled = false;
+                thoiGianKetThucDateTimePicker.Enabled = false;
+            }
+        }
+
         private void phieuNhapDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             int numberOfColumnsToSkip = 3; // Số lượng cột cuối cùng không cần chia
@@ -59,7 +143,7 @@ namespace GUI
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
                 // Đặt màu cho đường kẻ giữa các cột (nếu không thuộc vào cột cuối cùng)
-                using (Pen pen = new Pen(Color.FromArgb(242, 245, 250), 5))
+                using (Pen pen = new Pen(System.Drawing.Color.FromArgb(242, 245, 250), 5))
                 {
                     int x = e.CellBounds.Right - 1;
                     int y1 = e.CellBounds.Top;
@@ -74,21 +158,35 @@ namespace GUI
         private void phieuNhapDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Kiểm tra xem cell đang được định dạng có phải là cell hình ảnh không.
-            if ((e.ColumnIndex == 9 || e.ColumnIndex == 10 || e.ColumnIndex == 11) && e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
-                // Kiểm tra giá trị của cell có phải là hình ảnh không.
-                if (e.Value is Image)
+                if ((e.ColumnIndex == 9 || e.ColumnIndex == 10 || e.ColumnIndex == 11) && e.RowIndex >= 0)
                 {
-                    // Thiết lập kích thước mới cho hình ảnh.
-                    int newWidth = 25; // Kích thước mới theo chiều rộng
-                    int newHeight = 25; // Kích thước mới theo chiều cao
+                    // Kiểm tra giá trị của cell có phải là hình ảnh không.
+                    if (e.Value is Image && e != null)
+                    {
+                        // Thiết lập kích thước mới cho hình ảnh.
+                        int newWidth = 25; // Kích thước mới theo chiều rộng
+                        int newHeight = 25; // Kích thước mới theo chiều cao
 
-                    // Đổi kích thước hình ảnh.
-                    Image originalImage = (Image)e.Value;
-                    Image resizedImage = new Bitmap(originalImage, new Size(newWidth, newHeight));
+                        // Đổi kích thước hình ảnh.
+                        Image originalImage = (Image)e.Value;
+                        Image resizedImage = new Bitmap(originalImage, new Size(newWidth, newHeight));
 
-                    // Gán hình ảnh mới vào cell.
-                    e.Value = resizedImage;
+                        // Gán hình ảnh mới vào cell.
+                        e.Value = resizedImage;
+                    }
+                }
+
+                if ((e.ColumnIndex == 10 || e.ColumnIndex == 11) && e.RowIndex >= 0)
+                {
+                    var trangThaiValue = phieuNhapDataGridView.Rows[e.RowIndex].Cells["trangThaiColumn"].Value?.ToString();
+
+                    if (trangThaiValue != "Chưa duyệt") // Thay "da duyet" bằng giá trị cần kiểm tra trong cột "trangthaicolumn"
+                    {
+                        // Ẩn hình ảnh tại cột chỉ số 10 và 11 trong các hàng thỏa mãn điều kiện
+                        e.Value = null; // Gán giá trị của ô là null để ẩn hình ảnh
+                    }
                 }
             }
         }
@@ -101,17 +199,22 @@ namespace GUI
 
                 string columnName = phieuNhapDataGridView.Columns[e.ColumnIndex].Name;
 
-                /*if (columnName.Equals("infoButtonColumn"))
+                if (columnName.Equals("infoButtonColumn"))
                 {
-                    new ChiTietLoaiSanPhamForm(loaiSanPham, "Chi tiết", this).ShowDialog();
-                }*/
+                    new ChiTietPhieuNhapForm(phieuNhap.maPhieuNhap, this).ShowDialog();
+                }
 
                 if (columnName.Equals("duyetButtonColumn"))
                 {
                     DialogResult result = CacFormThongBao.XacNhanForm.ShowDialog("Bạn có muốn duyệt phiếu nhập đã chọn không?");
 
                     if (result == DialogResult.Yes)
+                    {
                         MessageBox.Show(phieuNhapBUS.DuyetPhieuNhap(phieuNhap.maPhieuNhap, DangNhapForm.nguoiDung.maNguoiDung));
+                        lamMoiButton_Click(sender, e);
+                    }
+                        
+
                 }
 
                 if (columnName.Equals("khongDuyetButtonColumn"))
@@ -119,9 +222,15 @@ namespace GUI
                     DialogResult result = CacFormThongBao.XacNhanForm.ShowDialog("Bạn có muốn từ chối duyệt phiếu nhập đã chọn không?");
 
                     if (result == DialogResult.Yes)
+                    {
                         MessageBox.Show(phieuNhapBUS.TuChoiPhieuNhap(phieuNhap.maPhieuNhap));
+                        lamMoiButton_Click(sender, e);
+                    }
+                        
                 }
             }
         }
+
+        
     }
 }

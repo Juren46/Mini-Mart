@@ -154,5 +154,21 @@ namespace BUS
 
             return nguoiDungDAO.TimKiemNguoiDung(tuKhoa, maPhanQuyen, gioiTinh, trangThai);
         }
+
+        public string DoiMatKhau(string maNguoiDung, string matKhauCu, string matKhauMoi, string xacNhan)
+        {
+            if (string.IsNullOrEmpty(matKhauCu) || string.IsNullOrEmpty(matKhauMoi) || string.IsNullOrEmpty(xacNhan))
+                return "Vui lòng nhập đầy đủ thông tin!";
+            if (!matKhauCu.Equals(LayNguoiDungTheoMa(maNguoiDung).matKhau))
+                return "Mật khẩu cũ không chính xác!";
+            if (matKhauCu.Equals(matKhauMoi))
+                return "Mật khẩu mới không được giống mật khẩu cũ!";
+            if (!matKhauMoi.Equals(xacNhan))
+                return "Xác nhận mật khẩu mới không chính xác, hãy kiểm tra lại!";
+            if (nguoiDungDAO.DoiMatKhau(maNguoiDung, matKhauMoi))
+                return "Đổi mật khẩu thành công!";
+            else
+                return "Đổi mật khẩu thất bại!";
+        }
     }
 }

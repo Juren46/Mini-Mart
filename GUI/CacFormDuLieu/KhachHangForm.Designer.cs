@@ -40,7 +40,7 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel2 = new Panel();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            bacThanhVienComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            hangThanhVienComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             lamMoiButton = new FontAwesome.Sharp.IconButton();
             xuatExcelButton = new FontAwesome.Sharp.IconButton();
@@ -48,7 +48,6 @@
             timKiemButton = new FontAwesome.Sharp.IconButton();
             panel3 = new Panel();
             khachHangDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            panel1 = new Panel();
             Column2 = new DataGridViewTextBoxColumn();
             maKhachHangColumn = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -58,6 +57,7 @@
             Column11 = new DataGridViewTextBoxColumn();
             infoButtonColumn = new DataGridViewImageColumn();
             editButtonColumn = new DataGridViewImageColumn();
+            panel1 = new Panel();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)khachHangDataGridView).BeginInit();
@@ -67,7 +67,7 @@
             // panel2
             // 
             panel2.Controls.Add(guna2HtmlLabel4);
-            panel2.Controls.Add(bacThanhVienComboBox);
+            panel2.Controls.Add(hangThanhVienComboBox);
             panel2.Controls.Add(timKiemTextBox);
             panel2.Controls.Add(lamMoiButton);
             panel2.Controls.Add(xuatExcelButton);
@@ -88,28 +88,28 @@
             guna2HtmlLabel4.Location = new Point(12, 5);
             guna2HtmlLabel4.Margin = new Padding(5);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(127, 27);
+            guna2HtmlLabel4.Size = new Size(142, 27);
             guna2HtmlLabel4.TabIndex = 101;
-            guna2HtmlLabel4.Text = "Bậc thành viên ";
+            guna2HtmlLabel4.Text = "Hạng thành viên ";
             // 
-            // bacThanhVienComboBox
+            // hangThanhVienComboBox
             // 
-            bacThanhVienComboBox.BackColor = Color.Transparent;
-            bacThanhVienComboBox.CustomizableEdges = customizableEdges1;
-            bacThanhVienComboBox.DrawMode = DrawMode.OwnerDrawFixed;
-            bacThanhVienComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            bacThanhVienComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
-            bacThanhVienComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            bacThanhVienComboBox.Font = new Font("Segoe UI", 10F);
-            bacThanhVienComboBox.ForeColor = Color.FromArgb(68, 88, 112);
-            bacThanhVienComboBox.ItemHeight = 30;
-            bacThanhVienComboBox.Items.AddRange(new object[] { "Đồng", "Bạc", "Vàng" });
-            bacThanhVienComboBox.Location = new Point(12, 36);
-            bacThanhVienComboBox.Name = "bacThanhVienComboBox";
-            bacThanhVienComboBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            bacThanhVienComboBox.Size = new Size(203, 36);
-            bacThanhVienComboBox.TabIndex = 89;
-            bacThanhVienComboBox.SelectionChangeCommitted += bacThanhVienComboBox_SelectionChangeCommitted;
+            hangThanhVienComboBox.BackColor = Color.Transparent;
+            hangThanhVienComboBox.CustomizableEdges = customizableEdges1;
+            hangThanhVienComboBox.DrawMode = DrawMode.OwnerDrawFixed;
+            hangThanhVienComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            hangThanhVienComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
+            hangThanhVienComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            hangThanhVienComboBox.Font = new Font("Segoe UI", 10F);
+            hangThanhVienComboBox.ForeColor = Color.FromArgb(68, 88, 112);
+            hangThanhVienComboBox.ItemHeight = 30;
+            hangThanhVienComboBox.Items.AddRange(new object[] { "Đồng", "Bạc", "Vàng" });
+            hangThanhVienComboBox.Location = new Point(12, 36);
+            hangThanhVienComboBox.Name = "hangThanhVienComboBox";
+            hangThanhVienComboBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            hangThanhVienComboBox.Size = new Size(203, 36);
+            hangThanhVienComboBox.TabIndex = 89;
+            hangThanhVienComboBox.SelectionChangeCommitted += hangThanhVienComboBox_SelectionChangeCommitted;
             // 
             // timKiemTextBox
             // 
@@ -288,17 +288,6 @@
             khachHangDataGridView.CellFormatting += khachHangDataGridView_CellFormatting;
             khachHangDataGridView.CellPainting += khachHangDataGridView_CellPainting;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(223, 243, 252);
-            panel1.Controls.Add(panel3);
-            panel1.Controls.Add(panel2);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1183, 821);
-            panel1.TabIndex = 1;
-            // 
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -385,6 +374,17 @@
             editButtonColumn.ReadOnly = true;
             editButtonColumn.Width = 6;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(223, 243, 252);
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1183, 821);
+            panel1.TabIndex = 1;
+            // 
             // KhachHangForm
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
@@ -415,7 +415,7 @@
         private FontAwesome.Sharp.IconButton xuatExcelButton;
         private FontAwesome.Sharp.IconButton themMoiButton;
         private FontAwesome.Sharp.IconButton timKiemButton;
-        private Guna.UI2.WinForms.Guna2ComboBox bacThanhVienComboBox;
+        private Guna.UI2.WinForms.Guna2ComboBox hangThanhVienComboBox;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn maKhachHangColumn;

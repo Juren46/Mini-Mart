@@ -31,7 +31,7 @@ namespace GUI
         {
             LoadDataToDataGridView(listKhachHang);
 
-            bacThanhVienComboBox.SelectedIndex = -1;
+            hangThanhVienComboBox.SelectedIndex = -1;
         }
 
         private void LoadDataToDataGridView(List<KhachHang> listKhachHang)
@@ -54,13 +54,13 @@ namespace GUI
         private void timKiemButton_Click(object sender, EventArgs e)
         {
             string tuKhoa = timKiemTextBox.Text;
-            string bacThanhVien = "";
-            if (bacThanhVienComboBox.SelectedItem != null)
-                bacThanhVien = bacThanhVienComboBox.SelectedItem.ToString();
+            string hangThanhVien = "";
+            if (hangThanhVienComboBox.SelectedItem != null)
+                hangThanhVien = hangThanhVienComboBox.SelectedItem.ToString();
             string gioiTinh = "";
             //CHỜ THÊM
 
-            listKhachHang = khachHangBUS.TimKiemKhachHang(tuKhoa, bacThanhVien, gioiTinh);
+            listKhachHang = khachHangBUS.TimKiemKhachHang(tuKhoa, hangThanhVien, gioiTinh);
 
             LoadDataToDataGridView(listKhachHang);
         }
@@ -70,9 +70,9 @@ namespace GUI
             timKiemButton_Click(sender, e);
         }
 
-        private void bacThanhVienComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        private void hangThanhVienComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (bacThanhVienComboBox.SelectedIndex != -1)
+            if (hangThanhVienComboBox.SelectedIndex != -1)
             {
                 timKiemTextBox.Clear();
                 timKiemButton_Click(sender, e);
@@ -82,8 +82,8 @@ namespace GUI
         internal void lamMoiButton_Click(object sender, EventArgs e)
         {
             timKiemTextBox.Clear();
-            bacThanhVienComboBox.SelectedItem = null;
-            bacThanhVienComboBox.SelectedIndex = -1;
+            hangThanhVienComboBox.SelectedItem = null;
+            hangThanhVienComboBox.SelectedIndex = -1;
 
             listKhachHang = khachHangBUS.LayDanhSachKhachHang();
 
@@ -168,5 +168,7 @@ namespace GUI
                 e.Handled = true;
             }
         }
+
+        
     }
 }

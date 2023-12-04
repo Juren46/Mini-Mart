@@ -453,6 +453,7 @@
             // chiTietHoaDonDataGridView
             // 
             chiTietHoaDonDataGridView.AllowUserToAddRows = false;
+            chiTietHoaDonDataGridView.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             chiTietHoaDonDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             chiTietHoaDonDataGridView.BackgroundColor = Color.FromArgb(242, 245, 250);
@@ -515,7 +516,7 @@
             chiTietHoaDonDataGridView.ThemeStyle.RowsStyle.Height = 50;
             chiTietHoaDonDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(0, 80, 112);
             chiTietHoaDonDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
-            chiTietHoaDonDataGridView.CellPainting += phanQuyenDataGridView_CellPainting;
+            chiTietHoaDonDataGridView.CellPainting += this.phanQuyenDataGridView_CellPainting;
             // 
             // Column2
             // 
@@ -598,7 +599,7 @@
             quayLaiButton.Size = new Size(129, 58);
             quayLaiButton.TabIndex = 1;
             quayLaiButton.UseVisualStyleBackColor = true;
-            quayLaiButton.Click += quayLaiButton_Click;
+            quayLaiButton.Click += this.quayLaiButton_Click;
             // 
             // tieuDeFormLabel
             // 
@@ -631,7 +632,7 @@
             Controls.Add(panel2);
             Name = "ChiTietHoaDonForm";
             Text = "ChiTietHoaDon";
-            Load += ChiTietHoaDonForm_Load;
+            Load += this.ChiTietHoaDonForm_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)chiTietHoaDonDataGridView).EndInit();

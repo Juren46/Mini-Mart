@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -166,31 +167,34 @@ namespace GUI
 
         private void khuyenMaiDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            KhuyenMai khuyenMai = khuyenMaiBUS.LayKhuyenMaiTheoMa(khuyenMaiDataGridView.Rows[e.RowIndex].Cells["maKhuyenMaiColumn"].Value.ToString());
-
-            string columnName = khuyenMaiDataGridView.Columns[e.ColumnIndex].Name;
-
-            if (columnName.Equals("infoButtonColumn"))
+            if (e.RowIndex >= 0)
             {
-                new TestChiTietKhuyenMaiForm(khuyenMai, "Chi tiết", this).Show();
-            }
+                KhuyenMai khuyenMai = khuyenMaiBUS.LayKhuyenMaiTheoMa(khuyenMaiDataGridView.Rows[e.RowIndex].Cells["maKhuyenMaiColumn"].Value.ToString());
 
-            if (columnName.Equals("editButtonColumn"))
-            {
-                new TestChiTietKhuyenMaiForm(khuyenMai, "Sửa", this).Show();
-            }
+                string columnName = khuyenMaiDataGridView.Columns[e.ColumnIndex].Name;
 
-            if (columnName.Equals("deleteButtonColumn"))
-            {
-                DialogResult result = MessageBox.Show("Bạn có muốn xóa khuyến mãi không?", "Xác nhận", MessageBoxButtons.YesNo);
-
-                if (result == DialogResult.Yes)
+                if (columnName.Equals("infoButtonColumn"))
                 {
-                    string maKhuyenMai = khuyenMaiDataGridView.Rows[e.RowIndex].Cells["maKhuyenMaiColumn"].Value.ToString();
+                    new TestChiTietKhuyenMaiForm(khuyenMai, "Chi tiết", this).Show();
+                }
 
-                    MessageBox.Show(khuyenMaiBUS.XoaKhuyenMai(maKhuyenMai));
+                if (columnName.Equals("editButtonColumn"))
+                {
+                    new TestChiTietKhuyenMaiForm(khuyenMai, "Sửa", this).Show();
+                }
 
-                    lamMoiButton_Click(sender, e);
+                if (columnName.Equals("deleteButtonColumn"))
+                {
+                    DialogResult result = MessageBox.Show("Bạn có muốn xóa khuyến mãi không?", "Xác nhận", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        string maKhuyenMai = khuyenMaiDataGridView.Rows[e.RowIndex].Cells["maKhuyenMaiColumn"].Value.ToString();
+
+                        MessageBox.Show(khuyenMaiBUS.XoaKhuyenMai(maKhuyenMai));
+
+                        lamMoiButton_Click(sender, e);
+                    }
                 }
             }
         }

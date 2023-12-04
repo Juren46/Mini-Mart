@@ -32,6 +32,10 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhapForm));
@@ -42,13 +46,21 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel3 = new Panel();
             phieuNhapDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            Column2 = new DataGridViewTextBoxColumn();
+            maPhieuNhapColumn = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
+            trangThaiColumn = new DataGridViewTextBoxColumn();
+            infoButtonColumn = new DataGridViewImageColumn();
+            duyetButtonColumn = new DataGridViewImageColumn();
+            khongDuyetButtonColumn = new DataGridViewImageColumn();
             panel2 = new Panel();
             trangThaiComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             label1 = new Label();
@@ -61,18 +73,6 @@
             lamMoiButton = new FontAwesome.Sharp.IconButton();
             xuatExcelButton = new FontAwesome.Sharp.IconButton();
             timKiemButton = new FontAwesome.Sharp.IconButton();
-            Column2 = new DataGridViewTextBoxColumn();
-            maPhieuNhapColumn = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewTextBoxColumn();
-            Column9 = new DataGridViewTextBoxColumn();
-            infoButtonColumn = new DataGridViewImageColumn();
-            duyetButtonColumn = new DataGridViewImageColumn();
-            khongDuyetButtonColumn = new DataGridViewImageColumn();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)phieuNhapDataGridView).BeginInit();
@@ -116,7 +116,7 @@
             phieuNhapDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             phieuNhapDataGridView.ColumnHeadersHeight = 40;
             phieuNhapDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            phieuNhapDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column2, maPhieuNhapColumn, Column3, Column4, Column5, Column6, Column7, Column8, Column9, infoButtonColumn, duyetButtonColumn, khongDuyetButtonColumn });
+            phieuNhapDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column2, maPhieuNhapColumn, Column3, Column4, Column5, Column6, Column7, Column8, trangThaiColumn, infoButtonColumn, duyetButtonColumn, khongDuyetButtonColumn });
             dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = Color.White;
             dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 12F);
@@ -168,195 +168,6 @@
             phieuNhapDataGridView.CellContentClick += phieuNhapDataGridView_CellContentClick;
             phieuNhapDataGridView.CellFormatting += phieuNhapDataGridView_CellFormatting;
             phieuNhapDataGridView.CellPainting += phieuNhapDataGridView_CellPainting;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(trangThaiComboBox);
-            panel2.Controls.Add(label1);
-            panel2.Controls.Add(thoiGianCheckBox);
-            panel2.Controls.Add(thoiGianKetThucDateTimePicker);
-            panel2.Controls.Add(thoiGianBatDauDateTimePicker);
-            panel2.Controls.Add(guna2HtmlLabel5);
-            panel2.Controls.Add(guna2HtmlLabel4);
-            panel2.Controls.Add(timKiemTextBox);
-            panel2.Controls.Add(lamMoiButton);
-            panel2.Controls.Add(xuatExcelButton);
-            panel2.Controls.Add(timKiemButton);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Margin = new Padding(3, 2, 3, 2);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1183, 99);
-            panel2.TabIndex = 44;
-            // 
-            // trangThaiComboBox
-            // 
-            trangThaiComboBox.BackColor = Color.Transparent;
-            trangThaiComboBox.CustomizableEdges = customizableEdges1;
-            trangThaiComboBox.DrawMode = DrawMode.OwnerDrawFixed;
-            trangThaiComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            trangThaiComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
-            trangThaiComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            trangThaiComboBox.Font = new Font("Segoe UI", 10F);
-            trangThaiComboBox.ForeColor = Color.FromArgb(68, 88, 112);
-            trangThaiComboBox.ItemHeight = 30;
-            trangThaiComboBox.Items.AddRange(new object[] { "Chưa duyệt", "Đã duyệt", "Không duyệt" });
-            trangThaiComboBox.Location = new Point(12, 37);
-            trangThaiComboBox.Name = "trangThaiComboBox";
-            trangThaiComboBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            trangThaiComboBox.Size = new Size(169, 36);
-            trangThaiComboBox.TabIndex = 108;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Microsoft Sans Serif", 12F);
-            label1.ForeColor = SystemColors.GrayText;
-            label1.Location = new Point(12, 11);
-            label1.Name = "label1";
-            label1.Size = new Size(80, 20);
-            label1.TabIndex = 107;
-            label1.Text = "Trạng thái";
-            // 
-            // thoiGianCheckBox
-            // 
-            thoiGianCheckBox.CheckedState.Image = (Image)resources.GetObject("resource.Image");
-            thoiGianCheckBox.CheckedState.ImageSize = new Size(40, 40);
-            thoiGianCheckBox.Image = (Image)resources.GetObject("thoiGianCheckBox.Image");
-            thoiGianCheckBox.ImageOffset = new Point(0, 0);
-            thoiGianCheckBox.ImageRotate = 0F;
-            thoiGianCheckBox.ImageSize = new Size(40, 40);
-            thoiGianCheckBox.Location = new Point(1127, 37);
-            thoiGianCheckBox.Name = "thoiGianCheckBox";
-            thoiGianCheckBox.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            thoiGianCheckBox.Size = new Size(50, 50);
-            thoiGianCheckBox.TabIndex = 106;
-            // 
-            // thoiGianKetThucDateTimePicker
-            // 
-            thoiGianKetThucDateTimePicker.Checked = true;
-            thoiGianKetThucDateTimePicker.CustomizableEdges = customizableEdges4;
-            thoiGianKetThucDateTimePicker.Font = new Font("Microsoft Sans Serif", 14.25F);
-            thoiGianKetThucDateTimePicker.Format = DateTimePickerFormat.Short;
-            thoiGianKetThucDateTimePicker.Location = new Point(961, 37);
-            thoiGianKetThucDateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            thoiGianKetThucDateTimePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            thoiGianKetThucDateTimePicker.Name = "thoiGianKetThucDateTimePicker";
-            thoiGianKetThucDateTimePicker.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            thoiGianKetThucDateTimePicker.Size = new Size(160, 36);
-            thoiGianKetThucDateTimePicker.TabIndex = 105;
-            thoiGianKetThucDateTimePicker.Value = new DateTime(2023, 11, 30, 4, 24, 4, 22);
-            // 
-            // thoiGianBatDauDateTimePicker
-            // 
-            thoiGianBatDauDateTimePicker.Checked = true;
-            thoiGianBatDauDateTimePicker.CustomizableEdges = customizableEdges6;
-            thoiGianBatDauDateTimePicker.Font = new Font("Microsoft Sans Serif", 14.25F);
-            thoiGianBatDauDateTimePicker.Format = DateTimePickerFormat.Short;
-            thoiGianBatDauDateTimePicker.Location = new Point(795, 37);
-            thoiGianBatDauDateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            thoiGianBatDauDateTimePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            thoiGianBatDauDateTimePicker.Name = "thoiGianBatDauDateTimePicker";
-            thoiGianBatDauDateTimePicker.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            thoiGianBatDauDateTimePicker.Size = new Size(160, 36);
-            thoiGianBatDauDateTimePicker.TabIndex = 104;
-            thoiGianBatDauDateTimePicker.Value = new DateTime(2023, 11, 30, 4, 23, 58, 417);
-            // 
-            // guna2HtmlLabel5
-            // 
-            guna2HtmlLabel5.BackColor = Color.Transparent;
-            guna2HtmlLabel5.Font = new Font("Microsoft Sans Serif", 14.25F);
-            guna2HtmlLabel5.ForeColor = Color.FromArgb(0, 79, 111);
-            guna2HtmlLabel5.Location = new Point(961, 10);
-            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            guna2HtmlLabel5.Size = new Size(152, 26);
-            guna2HtmlLabel5.TabIndex = 103;
-            guna2HtmlLabel5.Text = "Thời gian kết thúc";
-            // 
-            // guna2HtmlLabel4
-            // 
-            guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.Font = new Font("Microsoft Sans Serif", 14.25F);
-            guna2HtmlLabel4.ForeColor = Color.FromArgb(0, 79, 111);
-            guna2HtmlLabel4.Location = new Point(795, 10);
-            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(150, 26);
-            guna2HtmlLabel4.TabIndex = 102;
-            guna2HtmlLabel4.Text = "Thời gian bắt đầu";
-            // 
-            // timKiemTextBox
-            // 
-            timKiemTextBox.CustomizableEdges = customizableEdges8;
-            timKiemTextBox.DefaultText = "";
-            timKiemTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            timKiemTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            timKiemTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            timKiemTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            timKiemTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            timKiemTextBox.Font = new Font("Segoe UI", 12F);
-            timKiemTextBox.ForeColor = Color.FromArgb(84, 155, 255);
-            timKiemTextBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
-            timKiemTextBox.Location = new Point(197, 37);
-            timKiemTextBox.Margin = new Padding(5);
-            timKiemTextBox.Name = "timKiemTextBox";
-            timKiemTextBox.PasswordChar = '\0';
-            timKiemTextBox.PlaceholderForeColor = Color.FromArgb(186, 215, 255);
-            timKiemTextBox.PlaceholderText = "Nhập tên để tìm kiếm";
-            timKiemTextBox.SelectedText = "";
-            timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            timKiemTextBox.Size = new Size(373, 36);
-            timKiemTextBox.TabIndex = 101;
-            // 
-            // lamMoiButton
-            // 
-            lamMoiButton.BackColor = Color.FromArgb(33, 31, 48);
-            lamMoiButton.FlatAppearance.BorderSize = 0;
-            lamMoiButton.FlatStyle = FlatStyle.Flat;
-            lamMoiButton.IconChar = FontAwesome.Sharp.IconChar.ArrowsRotate;
-            lamMoiButton.IconColor = Color.White;
-            lamMoiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            lamMoiButton.IconSize = 20;
-            lamMoiButton.Location = new Point(627, 37);
-            lamMoiButton.Name = "lamMoiButton";
-            lamMoiButton.Size = new Size(43, 36);
-            lamMoiButton.TabIndex = 100;
-            lamMoiButton.UseVisualStyleBackColor = false;
-            // 
-            // xuatExcelButton
-            // 
-            xuatExcelButton.BackColor = Color.FromArgb(33, 31, 48);
-            xuatExcelButton.FlatAppearance.BorderSize = 0;
-            xuatExcelButton.FlatStyle = FlatStyle.Flat;
-            xuatExcelButton.Font = new Font("Microsoft Sans Serif", 12F);
-            xuatExcelButton.ForeColor = Color.White;
-            xuatExcelButton.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
-            xuatExcelButton.IconColor = Color.White;
-            xuatExcelButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            xuatExcelButton.IconSize = 20;
-            xuatExcelButton.ImageAlign = ContentAlignment.MiddleLeft;
-            xuatExcelButton.Location = new Point(677, 37);
-            xuatExcelButton.Name = "xuatExcelButton";
-            xuatExcelButton.Size = new Size(114, 36);
-            xuatExcelButton.TabIndex = 98;
-            xuatExcelButton.Text = "Xuất excel";
-            xuatExcelButton.TextImageRelation = TextImageRelation.ImageBeforeText;
-            xuatExcelButton.UseVisualStyleBackColor = false;
-            // 
-            // timKiemButton
-            // 
-            timKiemButton.BackColor = Color.FromArgb(226, 153, 48);
-            timKiemButton.FlatAppearance.BorderSize = 0;
-            timKiemButton.FlatStyle = FlatStyle.Flat;
-            timKiemButton.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            timKiemButton.IconColor = Color.White;
-            timKiemButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            timKiemButton.IconSize = 20;
-            timKiemButton.Location = new Point(577, 37);
-            timKiemButton.Name = "timKiemButton";
-            timKiemButton.Size = new Size(43, 36);
-            timKiemButton.TabIndex = 99;
-            timKiemButton.UseVisualStyleBackColor = false;
             // 
             // Column2
             // 
@@ -439,14 +250,14 @@
             Column8.Name = "Column8";
             Column8.ReadOnly = true;
             // 
-            // Column9
+            // trangThaiColumn
             // 
-            Column9.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column9.FillWeight = 102.030586F;
-            Column9.HeaderText = "Trạng thái";
-            Column9.MinimumWidth = 6;
-            Column9.Name = "Column9";
-            Column9.ReadOnly = true;
+            trangThaiColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            trangThaiColumn.FillWeight = 102.030586F;
+            trangThaiColumn.HeaderText = "Trạng thái";
+            trangThaiColumn.MinimumWidth = 6;
+            trangThaiColumn.Name = "trangThaiColumn";
+            trangThaiColumn.ReadOnly = true;
             // 
             // infoButtonColumn
             // 
@@ -477,6 +288,205 @@
             khongDuyetButtonColumn.Name = "khongDuyetButtonColumn";
             khongDuyetButtonColumn.ReadOnly = true;
             khongDuyetButtonColumn.Width = 5;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(trangThaiComboBox);
+            panel2.Controls.Add(label1);
+            panel2.Controls.Add(thoiGianCheckBox);
+            panel2.Controls.Add(thoiGianKetThucDateTimePicker);
+            panel2.Controls.Add(thoiGianBatDauDateTimePicker);
+            panel2.Controls.Add(guna2HtmlLabel5);
+            panel2.Controls.Add(guna2HtmlLabel4);
+            panel2.Controls.Add(timKiemTextBox);
+            panel2.Controls.Add(lamMoiButton);
+            panel2.Controls.Add(xuatExcelButton);
+            panel2.Controls.Add(timKiemButton);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1183, 99);
+            panel2.TabIndex = 44;
+            // 
+            // trangThaiComboBox
+            // 
+            trangThaiComboBox.BackColor = Color.Transparent;
+            trangThaiComboBox.CustomizableEdges = customizableEdges1;
+            trangThaiComboBox.DrawMode = DrawMode.OwnerDrawFixed;
+            trangThaiComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            trangThaiComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
+            trangThaiComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            trangThaiComboBox.Font = new Font("Segoe UI", 10F);
+            trangThaiComboBox.ForeColor = Color.FromArgb(68, 88, 112);
+            trangThaiComboBox.ItemHeight = 30;
+            trangThaiComboBox.Items.AddRange(new object[] { "Chưa duyệt", "Đã duyệt", "Không duyệt" });
+            trangThaiComboBox.Location = new Point(12, 37);
+            trangThaiComboBox.Name = "trangThaiComboBox";
+            trangThaiComboBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            trangThaiComboBox.Size = new Size(169, 36);
+            trangThaiComboBox.TabIndex = 108;
+            trangThaiComboBox.SelectionChangeCommitted += trangThaiComboBox_SelectionChangeCommitted;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Microsoft Sans Serif", 12F);
+            label1.ForeColor = SystemColors.GrayText;
+            label1.Location = new Point(12, 11);
+            label1.Name = "label1";
+            label1.Size = new Size(80, 20);
+            label1.TabIndex = 107;
+            label1.Text = "Trạng thái";
+            // 
+            // thoiGianCheckBox
+            // 
+            thoiGianCheckBox.CheckedState.Image = (Image)resources.GetObject("resource.Image");
+            thoiGianCheckBox.CheckedState.ImageSize = new Size(40, 40);
+            thoiGianCheckBox.Image = (Image)resources.GetObject("thoiGianCheckBox.Image");
+            thoiGianCheckBox.ImageOffset = new Point(0, 0);
+            thoiGianCheckBox.ImageRotate = 0F;
+            thoiGianCheckBox.ImageSize = new Size(40, 40);
+            thoiGianCheckBox.Location = new Point(1127, 37);
+            thoiGianCheckBox.Name = "thoiGianCheckBox";
+            thoiGianCheckBox.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            thoiGianCheckBox.Size = new Size(50, 50);
+            thoiGianCheckBox.TabIndex = 106;
+            thoiGianCheckBox.CheckedChanged += thoiGianCheckBox_CheckedChanged;
+            // 
+            // thoiGianKetThucDateTimePicker
+            // 
+            thoiGianKetThucDateTimePicker.Checked = true;
+            thoiGianKetThucDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            thoiGianKetThucDateTimePicker.CustomizableEdges = customizableEdges4;
+            thoiGianKetThucDateTimePicker.Enabled = false;
+            thoiGianKetThucDateTimePicker.Font = new Font("Microsoft Sans Serif", 14.25F);
+            thoiGianKetThucDateTimePicker.Format = DateTimePickerFormat.Custom;
+            thoiGianKetThucDateTimePicker.Location = new Point(961, 37);
+            thoiGianKetThucDateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            thoiGianKetThucDateTimePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            thoiGianKetThucDateTimePicker.Name = "thoiGianKetThucDateTimePicker";
+            thoiGianKetThucDateTimePicker.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            thoiGianKetThucDateTimePicker.Size = new Size(160, 36);
+            thoiGianKetThucDateTimePicker.TabIndex = 105;
+            thoiGianKetThucDateTimePicker.Value = new DateTime(2023, 11, 30, 4, 24, 4, 22);
+            // 
+            // thoiGianBatDauDateTimePicker
+            // 
+            thoiGianBatDauDateTimePicker.Checked = true;
+            thoiGianBatDauDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            thoiGianBatDauDateTimePicker.CustomizableEdges = customizableEdges6;
+            thoiGianBatDauDateTimePicker.Enabled = false;
+            thoiGianBatDauDateTimePicker.Font = new Font("Microsoft Sans Serif", 14.25F);
+            thoiGianBatDauDateTimePicker.Format = DateTimePickerFormat.Custom;
+            thoiGianBatDauDateTimePicker.Location = new Point(795, 37);
+            thoiGianBatDauDateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            thoiGianBatDauDateTimePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            thoiGianBatDauDateTimePicker.Name = "thoiGianBatDauDateTimePicker";
+            thoiGianBatDauDateTimePicker.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            thoiGianBatDauDateTimePicker.Size = new Size(160, 36);
+            thoiGianBatDauDateTimePicker.TabIndex = 104;
+            thoiGianBatDauDateTimePicker.Value = new DateTime(2023, 11, 30, 4, 23, 58, 417);
+            // 
+            // guna2HtmlLabel5
+            // 
+            guna2HtmlLabel5.BackColor = Color.Transparent;
+            guna2HtmlLabel5.Font = new Font("Microsoft Sans Serif", 14.25F);
+            guna2HtmlLabel5.ForeColor = Color.FromArgb(0, 79, 111);
+            guna2HtmlLabel5.Location = new Point(961, 10);
+            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            guna2HtmlLabel5.Size = new Size(152, 26);
+            guna2HtmlLabel5.TabIndex = 103;
+            guna2HtmlLabel5.Text = "Thời gian kết thúc";
+            // 
+            // guna2HtmlLabel4
+            // 
+            guna2HtmlLabel4.BackColor = Color.Transparent;
+            guna2HtmlLabel4.Font = new Font("Microsoft Sans Serif", 14.25F);
+            guna2HtmlLabel4.ForeColor = Color.FromArgb(0, 79, 111);
+            guna2HtmlLabel4.Location = new Point(795, 10);
+            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            guna2HtmlLabel4.Size = new Size(150, 26);
+            guna2HtmlLabel4.TabIndex = 102;
+            guna2HtmlLabel4.Text = "Thời gian bắt đầu";
+            // 
+            // timKiemTextBox
+            // 
+            timKiemTextBox.CustomizableEdges = customizableEdges8;
+            timKiemTextBox.DefaultText = "";
+            timKiemTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            timKiemTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            timKiemTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            timKiemTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            timKiemTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            timKiemTextBox.Font = new Font("Segoe UI", 12F);
+            timKiemTextBox.ForeColor = Color.FromArgb(84, 155, 255);
+            timKiemTextBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
+            timKiemTextBox.Location = new Point(197, 37);
+            timKiemTextBox.Margin = new Padding(5);
+            timKiemTextBox.Name = "timKiemTextBox";
+            timKiemTextBox.PasswordChar = '\0';
+            timKiemTextBox.PlaceholderForeColor = Color.FromArgb(186, 215, 255);
+            timKiemTextBox.PlaceholderText = "Nhập tên để tìm kiếm";
+            timKiemTextBox.SelectedText = "";
+            timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            timKiemTextBox.Size = new Size(373, 36);
+            timKiemTextBox.TabIndex = 101;
+            timKiemTextBox.TextChanged += timKiemTextBox_TextChanged;
+            // 
+            // lamMoiButton
+            // 
+            lamMoiButton.BackColor = Color.FromArgb(33, 31, 48);
+            lamMoiButton.FlatAppearance.BorderSize = 0;
+            lamMoiButton.FlatStyle = FlatStyle.Flat;
+            lamMoiButton.IconChar = FontAwesome.Sharp.IconChar.ArrowsRotate;
+            lamMoiButton.IconColor = Color.White;
+            lamMoiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            lamMoiButton.IconSize = 20;
+            lamMoiButton.Location = new Point(627, 37);
+            lamMoiButton.Name = "lamMoiButton";
+            lamMoiButton.Size = new Size(43, 36);
+            lamMoiButton.TabIndex = 100;
+            lamMoiButton.UseVisualStyleBackColor = false;
+            lamMoiButton.Click += lamMoiButton_Click;
+            // 
+            // xuatExcelButton
+            // 
+            xuatExcelButton.BackColor = Color.FromArgb(33, 31, 48);
+            xuatExcelButton.FlatAppearance.BorderSize = 0;
+            xuatExcelButton.FlatStyle = FlatStyle.Flat;
+            xuatExcelButton.Font = new Font("Microsoft Sans Serif", 12F);
+            xuatExcelButton.ForeColor = Color.White;
+            xuatExcelButton.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
+            xuatExcelButton.IconColor = Color.White;
+            xuatExcelButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            xuatExcelButton.IconSize = 20;
+            xuatExcelButton.ImageAlign = ContentAlignment.MiddleLeft;
+            xuatExcelButton.Location = new Point(677, 37);
+            xuatExcelButton.Name = "xuatExcelButton";
+            xuatExcelButton.Size = new Size(114, 36);
+            xuatExcelButton.TabIndex = 98;
+            xuatExcelButton.Text = "Xuất excel";
+            xuatExcelButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            xuatExcelButton.UseVisualStyleBackColor = false;
+            xuatExcelButton.Click += xuatExcelButton_Click;
+            // 
+            // timKiemButton
+            // 
+            timKiemButton.BackColor = Color.FromArgb(226, 153, 48);
+            timKiemButton.FlatAppearance.BorderSize = 0;
+            timKiemButton.FlatStyle = FlatStyle.Flat;
+            timKiemButton.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            timKiemButton.IconColor = Color.White;
+            timKiemButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            timKiemButton.IconSize = 20;
+            timKiemButton.Location = new Point(577, 37);
+            timKiemButton.Name = "timKiemButton";
+            timKiemButton.Size = new Size(43, 36);
+            timKiemButton.TabIndex = 99;
+            timKiemButton.UseVisualStyleBackColor = false;
+            timKiemButton.Click += timKiemButton_Click;
             // 
             // PhieuNhapForm
             // 
@@ -528,5 +538,6 @@
         private DataGridViewImageColumn infoButtonColumn;
         private DataGridViewImageColumn duyetButtonColumn;
         private DataGridViewImageColumn khongDuyetButtonColumn;
+        private DataGridViewTextBoxColumn trangThaiColumn;
     }
 }

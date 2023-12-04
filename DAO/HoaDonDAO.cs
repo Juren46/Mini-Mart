@@ -101,8 +101,8 @@ namespace DAO
 
             foreach (ChiTietHoaDon chiTietHoaDon in listChiTietHoaDon)
             {
-                string chiTietHoaDonQuery = $"INSERT INTO ChiTietHoaDon (maHoaDon, maSanPham, soLuong, donVi, donGia, thanhTien) " +
-                                            $"SELECT '{hoaDon.maHoaDon}' AS maHoaDon, maSanPham, {chiTietHoaDon.soLuong} AS soLuong, donVi, donGia, donGia * {chiTietHoaDon.soLuong} AS thanhTien " +
+                string chiTietHoaDonQuery = $"INSERT INTO ChiTietHoaDon (maHoaDon, maSanPham, tenSanPham, donVi, soLuong, donGia, tongTien) " +
+                                            $"SELECT '{hoaDon.maHoaDon}' AS maHoaDon, maSanPham, tenSanPham, donVi, {chiTietHoaDon.soLuong} AS soLuong, giaBan, giaBan * {chiTietHoaDon.soLuong} AS tongTien " +
                                             $"FROM SanPham WHERE maSanPham = '{chiTietHoaDon.maSanPham}';";
 
                 rowsAffected += DBHelper.ExecuteNonQuery(chiTietHoaDonQuery);

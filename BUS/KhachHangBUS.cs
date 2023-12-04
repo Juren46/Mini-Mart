@@ -100,11 +100,11 @@ namespace BUS
                 return "Chỉnh sửa thông tin khách hàng thất bại!";
         }
 
-        public List<KhachHang> TimKiemKhachHang(string tuKhoa, string bacThanhVien, string gioiTinh)
+        public List<KhachHang> TimKiemKhachHang(string tuKhoa, string hangThanhVien, string gioiTinh)
         {
             tuKhoa = tuKhoa.Trim().ToLower();
 
-            return khachHangDAO.TimKiemKhachHang(tuKhoa, bacThanhVien, gioiTinh);
+            return khachHangDAO.TimKiemKhachHang(tuKhoa, hangThanhVien, gioiTinh);
         }
 
         public decimal TichDiem(string maKhachHang, string tongTien)

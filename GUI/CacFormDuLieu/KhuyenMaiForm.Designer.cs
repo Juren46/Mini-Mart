@@ -32,10 +32,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhuyenMaiForm));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -50,17 +46,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             khuyenMaiDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            Column2 = new DataGridViewTextBoxColumn();
-            maKhuyenMaiColumn = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewTextBoxColumn();
-            infoButtonColumn = new DataGridViewImageColumn();
-            editButtonColumn = new DataGridViewImageColumn();
-            deleteButtonColumn = new DataGridViewImageColumn();
             panel3 = new Panel();
             panel1 = new Panel();
             panel2 = new Panel();
@@ -82,6 +72,16 @@
             themMoiButton = new FontAwesome.Sharp.IconButton();
             xuatExcelButton = new FontAwesome.Sharp.IconButton();
             loaiGiaTriComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            Column2 = new DataGridViewTextBoxColumn();
+            maKhuyenMaiColumn = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
+            infoButtonColumn = new DataGridViewImageColumn();
+            editButtonColumn = new DataGridViewImageColumn();
+            deleteButtonColumn = new DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)khuyenMaiDataGridView).BeginInit();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
@@ -158,106 +158,6 @@
             khuyenMaiDataGridView.CellFormatting += khuyenMaiDataGridView_CellFormatting;
             khuyenMaiDataGridView.CellPainting += khuyenMaiDataGridView_CellPainting;
             khuyenMaiDataGridView.SelectionChanged += khuyenMaiDataGridView_SelectionChanged;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column2.DefaultCellStyle = dataGridViewCellStyle3;
-            Column2.HeaderText = "#";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 46;
-            // 
-            // maKhuyenMaiColumn
-            // 
-            maKhuyenMaiColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            maKhuyenMaiColumn.HeaderText = "Mã khuyến mãi";
-            maKhuyenMaiColumn.MinimumWidth = 6;
-            maKhuyenMaiColumn.Name = "maKhuyenMaiColumn";
-            maKhuyenMaiColumn.ReadOnly = true;
-            maKhuyenMaiColumn.Resizable = DataGridViewTriState.True;
-            // 
-            // Column4
-            // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.FillWeight = 150F;
-            Column4.HeaderText = "Tên khuyến mãi";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.HeaderText = "Bắt đầu";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column6.DefaultCellStyle = dataGridViewCellStyle4;
-            Column6.HeaderText = "Kết thúc";
-            Column6.MinimumWidth = 6;
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column7.DefaultCellStyle = dataGridViewCellStyle5;
-            Column7.HeaderText = "Loại giá trị";
-            Column7.MinimumWidth = 6;
-            Column7.Name = "Column7";
-            Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column8.DefaultCellStyle = dataGridViewCellStyle6;
-            Column8.HeaderText = "Giá trị áp dụng";
-            Column8.MinimumWidth = 6;
-            Column8.Name = "Column8";
-            Column8.ReadOnly = true;
-            // 
-            // infoButtonColumn
-            // 
-            infoButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            infoButtonColumn.FillWeight = 30F;
-            infoButtonColumn.HeaderText = "";
-            infoButtonColumn.Image = Properties.Resources._003_info1;
-            infoButtonColumn.MinimumWidth = 6;
-            infoButtonColumn.Name = "infoButtonColumn";
-            infoButtonColumn.ReadOnly = true;
-            infoButtonColumn.Width = 6;
-            // 
-            // editButtonColumn
-            // 
-            editButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            editButtonColumn.FillWeight = 30F;
-            editButtonColumn.HeaderText = "";
-            editButtonColumn.Image = Properties.Resources._002_pencil1;
-            editButtonColumn.MinimumWidth = 6;
-            editButtonColumn.Name = "editButtonColumn";
-            editButtonColumn.ReadOnly = true;
-            editButtonColumn.Width = 6;
-            // 
-            // deleteButtonColumn
-            // 
-            deleteButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            deleteButtonColumn.FillWeight = 30F;
-            deleteButtonColumn.HeaderText = "";
-            deleteButtonColumn.Image = Properties.Resources._001_bin;
-            deleteButtonColumn.MinimumWidth = 6;
-            deleteButtonColumn.Name = "deleteButtonColumn";
-            deleteButtonColumn.ReadOnly = true;
-            deleteButtonColumn.Width = 6;
             // 
             // panel3
             // 
@@ -345,7 +245,7 @@
             thoiGianCheckBox.ImageOffset = new Point(0, 0);
             thoiGianCheckBox.ImageRotate = 0F;
             thoiGianCheckBox.ImageSize = new Size(40, 40);
-            thoiGianCheckBox.Location = new Point(884, 57);
+            thoiGianCheckBox.Location = new Point(919, 57);
             thoiGianCheckBox.Name = "thoiGianCheckBox";
             thoiGianCheckBox.ShadowDecoration.CustomizableEdges = customizableEdges1;
             thoiGianCheckBox.Size = new Size(50, 50);
@@ -355,10 +255,12 @@
             // thoiGianKetThucDateTimePicker
             // 
             thoiGianKetThucDateTimePicker.Checked = true;
+            thoiGianKetThucDateTimePicker.CustomFormat = "dd/MM/yyyy";
             thoiGianKetThucDateTimePicker.CustomizableEdges = customizableEdges2;
+            thoiGianKetThucDateTimePicker.Enabled = false;
             thoiGianKetThucDateTimePicker.Font = new Font("Microsoft Sans Serif", 14.25F);
-            thoiGianKetThucDateTimePicker.Format = DateTimePickerFormat.Short;
-            thoiGianKetThucDateTimePicker.Location = new Point(718, 57);
+            thoiGianKetThucDateTimePicker.Format = DateTimePickerFormat.Custom;
+            thoiGianKetThucDateTimePicker.Location = new Point(753, 57);
             thoiGianKetThucDateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             thoiGianKetThucDateTimePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             thoiGianKetThucDateTimePicker.Name = "thoiGianKetThucDateTimePicker";
@@ -370,10 +272,12 @@
             // thoiGianBatDauDateTimePicker
             // 
             thoiGianBatDauDateTimePicker.Checked = true;
+            thoiGianBatDauDateTimePicker.CustomFormat = "dd/MM/yyyy";
             thoiGianBatDauDateTimePicker.CustomizableEdges = customizableEdges4;
+            thoiGianBatDauDateTimePicker.Enabled = false;
             thoiGianBatDauDateTimePicker.Font = new Font("Microsoft Sans Serif", 14.25F);
-            thoiGianBatDauDateTimePicker.Format = DateTimePickerFormat.Short;
-            thoiGianBatDauDateTimePicker.Location = new Point(552, 57);
+            thoiGianBatDauDateTimePicker.Format = DateTimePickerFormat.Custom;
+            thoiGianBatDauDateTimePicker.Location = new Point(587, 57);
             thoiGianBatDauDateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             thoiGianBatDauDateTimePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             thoiGianBatDauDateTimePicker.Name = "thoiGianBatDauDateTimePicker";
@@ -398,7 +302,7 @@
             guna2HtmlLabel5.BackColor = Color.Transparent;
             guna2HtmlLabel5.Font = new Font("Microsoft Sans Serif", 14.25F);
             guna2HtmlLabel5.ForeColor = Color.FromArgb(0, 79, 111);
-            guna2HtmlLabel5.Location = new Point(718, 30);
+            guna2HtmlLabel5.Location = new Point(753, 30);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             guna2HtmlLabel5.Size = new Size(152, 26);
             guna2HtmlLabel5.TabIndex = 2;
@@ -409,7 +313,7 @@
             guna2HtmlLabel4.BackColor = Color.Transparent;
             guna2HtmlLabel4.Font = new Font("Microsoft Sans Serif", 14.25F);
             guna2HtmlLabel4.ForeColor = Color.FromArgb(0, 79, 111);
-            guna2HtmlLabel4.Location = new Point(552, 30);
+            guna2HtmlLabel4.Location = new Point(587, 30);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             guna2HtmlLabel4.Size = new Size(150, 26);
             guna2HtmlLabel4.TabIndex = 1;
@@ -508,7 +412,7 @@
             timKiemButton.IconColor = Color.White;
             timKiemButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             timKiemButton.IconSize = 20;
-            timKiemButton.Location = new Point(552, 103);
+            timKiemButton.Location = new Point(558, 103);
             timKiemButton.Name = "timKiemButton";
             timKiemButton.Size = new Size(43, 36);
             timKiemButton.TabIndex = 81;
@@ -524,7 +428,7 @@
             lamMoiButton.IconColor = Color.White;
             lamMoiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             lamMoiButton.IconSize = 20;
-            lamMoiButton.Location = new Point(598, 103);
+            lamMoiButton.Location = new Point(607, 103);
             lamMoiButton.Name = "lamMoiButton";
             lamMoiButton.Size = new Size(43, 36);
             lamMoiButton.TabIndex = 84;
@@ -543,7 +447,7 @@
             themMoiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             themMoiButton.IconSize = 20;
             themMoiButton.ImageAlign = ContentAlignment.MiddleLeft;
-            themMoiButton.Location = new Point(762, 103);
+            themMoiButton.Location = new Point(797, 103);
             themMoiButton.Name = "themMoiButton";
             themMoiButton.Size = new Size(115, 36);
             themMoiButton.TabIndex = 79;
@@ -564,7 +468,7 @@
             xuatExcelButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             xuatExcelButton.IconSize = 20;
             xuatExcelButton.ImageAlign = ContentAlignment.MiddleLeft;
-            xuatExcelButton.Location = new Point(644, 103);
+            xuatExcelButton.Location = new Point(679, 103);
             xuatExcelButton.Name = "xuatExcelButton";
             xuatExcelButton.Size = new Size(115, 36);
             xuatExcelButton.TabIndex = 80;
@@ -591,6 +495,106 @@
             loaiGiaTriComboBox.Size = new Size(140, 36);
             loaiGiaTriComboBox.TabIndex = 78;
             loaiGiaTriComboBox.SelectionChangeCommitted += loaiGiaTriComboBox_SelectionChangeCommitted;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            Column2.HeaderText = "#";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 46;
+            // 
+            // maKhuyenMaiColumn
+            // 
+            maKhuyenMaiColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            maKhuyenMaiColumn.HeaderText = "Mã khuyến mãi";
+            maKhuyenMaiColumn.MinimumWidth = 6;
+            maKhuyenMaiColumn.Name = "maKhuyenMaiColumn";
+            maKhuyenMaiColumn.ReadOnly = true;
+            maKhuyenMaiColumn.Resizable = DataGridViewTriState.True;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.FillWeight = 150F;
+            Column4.HeaderText = "Tên khuyến mãi";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.HeaderText = "Bắt đầu";
+            Column5.MinimumWidth = 6;
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column6.DefaultCellStyle = dataGridViewCellStyle4;
+            Column6.HeaderText = "Kết thúc";
+            Column6.MinimumWidth = 6;
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column7.DefaultCellStyle = dataGridViewCellStyle5;
+            Column7.HeaderText = "Loại giá trị";
+            Column7.MinimumWidth = 6;
+            Column7.Name = "Column7";
+            Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column8.DefaultCellStyle = dataGridViewCellStyle6;
+            Column8.HeaderText = "Giá trị";
+            Column8.MinimumWidth = 6;
+            Column8.Name = "Column8";
+            Column8.ReadOnly = true;
+            // 
+            // infoButtonColumn
+            // 
+            infoButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            infoButtonColumn.FillWeight = 30F;
+            infoButtonColumn.HeaderText = "";
+            infoButtonColumn.Image = Properties.Resources._003_info1;
+            infoButtonColumn.MinimumWidth = 6;
+            infoButtonColumn.Name = "infoButtonColumn";
+            infoButtonColumn.ReadOnly = true;
+            infoButtonColumn.Width = 6;
+            // 
+            // editButtonColumn
+            // 
+            editButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            editButtonColumn.FillWeight = 30F;
+            editButtonColumn.HeaderText = "";
+            editButtonColumn.Image = Properties.Resources._002_pencil1;
+            editButtonColumn.MinimumWidth = 6;
+            editButtonColumn.Name = "editButtonColumn";
+            editButtonColumn.ReadOnly = true;
+            editButtonColumn.Width = 6;
+            // 
+            // deleteButtonColumn
+            // 
+            deleteButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            deleteButtonColumn.FillWeight = 30F;
+            deleteButtonColumn.HeaderText = "";
+            deleteButtonColumn.Image = Properties.Resources._001_bin;
+            deleteButtonColumn.MinimumWidth = 6;
+            deleteButtonColumn.Name = "deleteButtonColumn";
+            deleteButtonColumn.ReadOnly = true;
+            deleteButtonColumn.Width = 6;
             // 
             // KhuyenMaiForm
             // 

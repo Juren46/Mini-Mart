@@ -45,6 +45,7 @@
             viewRIGHT = new Panel();
             chiTietDonHangFlowLayoutPanel = new FlowLayoutPanel();
             panel3 = new Panel();
+            themMoiNguoiDungButton = new FontAwesome.Sharp.IconButton();
             lamMoiKhachHangButton = new FontAwesome.Sharp.IconButton();
             label3 = new Label();
             timKiemKhachHangTextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -124,6 +125,7 @@
             // panel3
             // 
             panel3.BackColor = Color.LightBlue;
+            panel3.Controls.Add(themMoiNguoiDungButton);
             panel3.Controls.Add(lamMoiKhachHangButton);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(timKiemKhachHangTextBox);
@@ -134,6 +136,27 @@
             panel3.Size = new Size(601, 108);
             panel3.TabIndex = 1;
             // 
+            // themMoiNguoiDungButton
+            // 
+            themMoiNguoiDungButton.BackColor = Color.FromArgb(226, 153, 48);
+            themMoiNguoiDungButton.FlatAppearance.BorderSize = 0;
+            themMoiNguoiDungButton.FlatStyle = FlatStyle.Flat;
+            themMoiNguoiDungButton.Font = new Font("Microsoft Sans Serif", 12F);
+            themMoiNguoiDungButton.ForeColor = Color.White;
+            themMoiNguoiDungButton.IconChar = FontAwesome.Sharp.IconChar.HandHoldingMedical;
+            themMoiNguoiDungButton.IconColor = Color.White;
+            themMoiNguoiDungButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            themMoiNguoiDungButton.IconSize = 20;
+            themMoiNguoiDungButton.ImageAlign = ContentAlignment.MiddleLeft;
+            themMoiNguoiDungButton.Location = new Point(474, 39);
+            themMoiNguoiDungButton.Name = "themMoiNguoiDungButton";
+            themMoiNguoiDungButton.Size = new Size(115, 36);
+            themMoiNguoiDungButton.TabIndex = 98;
+            themMoiNguoiDungButton.Text = "Thêm mới";
+            themMoiNguoiDungButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            themMoiNguoiDungButton.UseVisualStyleBackColor = false;
+            themMoiNguoiDungButton.Click += themMoiNguoiDungButton_Click;
+            // 
             // lamMoiKhachHangButton
             // 
             lamMoiKhachHangButton.BackColor = Color.FromArgb(33, 31, 48);
@@ -143,7 +166,7 @@
             lamMoiKhachHangButton.IconColor = Color.White;
             lamMoiKhachHangButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             lamMoiKhachHangButton.IconSize = 20;
-            lamMoiKhachHangButton.Location = new Point(510, 39);
+            lamMoiKhachHangButton.Location = new Point(425, 39);
             lamMoiKhachHangButton.Name = "lamMoiKhachHangButton";
             lamMoiKhachHangButton.Size = new Size(43, 36);
             lamMoiKhachHangButton.TabIndex = 94;
@@ -181,7 +204,7 @@
             timKiemKhachHangTextBox.PlaceholderText = "Nhập số điện thoại";
             timKiemKhachHangTextBox.SelectedText = "";
             timKiemKhachHangTextBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            timKiemKhachHangTextBox.Size = new Size(423, 36);
+            timKiemKhachHangTextBox.Size = new Size(338, 36);
             timKiemKhachHangTextBox.TabIndex = 92;
             timKiemKhachHangTextBox.TextChanged += timKiemKhachHangTextBox_TextChanged;
             // 
@@ -194,7 +217,7 @@
             timKiemKhachHangButton.IconColor = Color.White;
             timKiemKhachHangButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             timKiemKhachHangButton.IconSize = 20;
-            timKiemKhachHangButton.Location = new Point(461, 39);
+            timKiemKhachHangButton.Location = new Point(376, 39);
             timKiemKhachHangButton.Name = "timKiemKhachHangButton";
             timKiemKhachHangButton.Size = new Size(43, 36);
             timKiemKhachHangButton.TabIndex = 91;
@@ -804,5 +827,6 @@
         internal Guna.UI2.WinForms.Guna2Button khuyenMaiKhacButton;
         private Guna.UI2.WinForms.Guna2TextBox tienNhanTextBox;
         internal Label tenKhuyenMaiLabel;
+        internal FontAwesome.Sharp.IconButton themMoiNguoiDungButton;
     }
 }

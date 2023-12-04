@@ -184,6 +184,15 @@ namespace DAO
             return rowsAffected > 0;
         }
 
+        public bool DoiMatKhau(string maNguoiDung, string matKhau)
+        {
+            string query = $"UPDATE NguoiDung SET matKhau = '{matKhau}' WHERE maNguoiDung = '{maNguoiDung}';";
+
+            int rowsAffected = DBHelper.ExecuteNonQuery(query);
+
+            return rowsAffected > 0;
+        }
+
         public List<NguoiDung> TimKiemNguoiDung(string tuKhoa, string maPhanQuyen, string gioiTinh, string trangThai)
         {
 

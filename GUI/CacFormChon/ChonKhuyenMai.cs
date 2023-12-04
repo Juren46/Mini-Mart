@@ -73,7 +73,7 @@ namespace GUI.CacFormChon
 
         private void khuyenMaiDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < khuyenMaiDataGridView.Rows.Count - 1)
+            if (e.RowIndex >= 0)
             {
                 KhuyenMai khuyenMai = khuyenMaiBUS.LayKhuyenMaiTheoMa(khuyenMaiDataGridView.Rows[e.RowIndex].Cells["maKhuyenMaiColumn"].Value.ToString());
 

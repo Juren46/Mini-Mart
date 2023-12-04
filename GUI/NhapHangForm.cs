@@ -162,7 +162,7 @@ namespace GUI
                         if (message.Equals("Thêm phiếu nhập thành công!"))
                         {
                             CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.SUCCESS);
-                            listSanPhamNhapHang = null;
+                            listSanPhamNhapHang.Clear();
                             nhaCungCap = null;
                             maNhaCungCapTextBox.Clear();
                             tenNhaCungCapTextBox.Clear();
@@ -191,6 +191,8 @@ namespace GUI
                                 control.Dispose();
                             }
                             thanhTienLabel.Text = "0 VNĐ";
+                            listSanPham = sanPhamBUS.TimKiemSanPham("", "", "", "");
+                            LoadDataToFlowLayout(listSanPham);
                         }
                         else
                         {
