@@ -17,7 +17,7 @@ namespace GUI
 {
     public partial class TrangChuForm : Form
     {
-        TaiKhoanBUS taiKhoanBUS;
+        NguoiDungBUS nguoiDungBUS;
 
         private IconButton currentBtn;
         private Panel leftBorderBtn;
@@ -27,7 +27,7 @@ namespace GUI
             InitializeComponent();
             CenterToScreen();
 
-            taiKhoanBUS = new TaiKhoanBUS();
+            nguoiDungBUS = new NguoiDungBUS();
 
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 50);
@@ -39,33 +39,24 @@ namespace GUI
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
-        private void HideSideMenu()
+        private void TrangChuForm_Load(object sender, EventArgs e)
         {
-            btnBanHang.Visible = false;
-            btnSanPham.Visible = false;
-            btnKhuyenMai.Visible = false;
-            btnNhanVien.Visible = false;
-            btnPhieuNhap.Visible = false;
-            btnThongKe.Visible = false;
-            btnLoaiSanPham.Visible = false;
-            btnKhachHang.Visible = false;
-            btnHoaDon.Visible = false;
-            btnPhanQuyen.Visible = false;
-            btnNhaCungCap.Visible = false;
-            btnTaiKhoan.Visible = false;
+            HienThiSideMenuTheoPhanQuyen();
+            tenNguoiDungLabel.Text = DangNhapForm.nguoiDung.hoTen;
+            tenPhanQuyenLabel.Text = DangNhapForm.nguoiDung.maPhanQuyen;
         }
 
         private void HienThiSideMenuTheoPhanQuyen()
         {
-            switch (DangNhapForm.taiKhoan.maPhanQuyen)
+            switch (DangNhapForm.nguoiDung.maPhanQuyen)
             {
                 case "PQ01":
                     btnPhanQuyen.Visible = true;
-                    btnTaiKhoan.Visible = true;
+                    nguoiDungButton.Visible = true;
                     break;
 
                 case "PQ02":
-                    btnNhanVien.Visible = true;
+                    nguoiDungButton.Visible = true;
                     btnSanPham.Visible = true;
                     btnLoaiSanPham.Visible = true;
                     btnNhaCungCap.Visible = true;
@@ -182,10 +173,10 @@ namespace GUI
             OpenChildForm(new KhuyenMaiForm());
         }
 
-        private void btnNhanVien_Click(object sender, EventArgs e)
+        private void nguoiDungButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new NhanVienForm());
+            OpenChildForm(new NguoiDungForm());
 
         }
 
@@ -230,12 +221,6 @@ namespace GUI
         {
             ActivateButton(sender, RGBColors.color2);
             OpenChildForm(new NhaCungCapForm());
-        }
-
-        private void btnTaiKhoan_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new TaiKhoanForm());
         }
 
         private void nhapHangButton_Click(object sender, EventArgs e)
@@ -286,34 +271,5 @@ namespace GUI
                 dangNhap.Show();
             }
         }
-
-        private void TrangChuForm_Load(object sender, EventArgs e)
-        {
-            HideSideMenu();
-            HienThiSideMenuTheoPhanQuyen();
-
-            switch (DangNhapForm.taiKhoan.maPhanQuyen)
-            {
-                case "PQ01":
-                    tenNguoiDungLabel.Text = new AdminBUS().LayAdminTheoTenTaiKhoan(DangNhapForm.taiKhoan.tenTaiKhoan).hoTen;
-                    break;
-
-                case "PQ02":
-                    tenNguoiDungLabel.Text = new QuanLiBUS().LayQuanLiTheoTenTaiKhoan(DangNhapForm.taiKhoan.tenTaiKhoan).hoTen;
-                    break;
-
-                case "PQ03":
-                    tenNguoiDungLabel.Text = new NhanVienBUS().LayNhanVienTheoTenTaiKhoan(DangNhapForm.taiKhoan.tenTaiKhoan).hoTen;
-                    break;
-
-                case "PQ04":
-                    tenNguoiDungLabel.Text = new NhanVienBUS().LayNhanVienTheoTenTaiKhoan(DangNhapForm.taiKhoan.tenTaiKhoan).hoTen;
-                    break;
-            }
-
-            tenPhanQuyenLabel.Text = new PhanQuyenBUS().LayPhanQuyenTheoMa(DangNhapForm.taiKhoan.maPhanQuyen).tenPhanQuyen;
-        }
-
-
     }
 }

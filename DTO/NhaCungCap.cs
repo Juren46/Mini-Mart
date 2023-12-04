@@ -10,9 +10,11 @@ namespace DTO
     {
         public NhaCungCap()
         {
+            maNhaCungCap = string.Empty;
+            tenNhaCungCap = string.Empty;
         }
 
-        public NhaCungCap(string maNhaCungCap, string tenNhaCungCap, string soDienThoai, string email, string diaChi)
+        public NhaCungCap(string maNhaCungCap, string tenNhaCungCap, string? soDienThoai, string? email, string? diaChi)
         {
             this.maNhaCungCap = maNhaCungCap;
             this.tenNhaCungCap = tenNhaCungCap;
@@ -23,9 +25,9 @@ namespace DTO
 
         public string maNhaCungCap { get; set; }
         public string tenNhaCungCap { get; set; }
-        public string soDienThoai { get; set; }
-        public string email { get; set; }
-        public string diaChi { get; set; }
+        public string? soDienThoai { get; set; }
+        public string? email { get; set; }
+        public string? diaChi { get; set; }
 
     }
 }

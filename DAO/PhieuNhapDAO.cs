@@ -27,7 +27,7 @@ namespace DAO
         {
             List<PhieuNhap> listPhieuNhap = new List<PhieuNhap> ();
 
-            string query = "SELECT * FROM PhieuNhap WHERE trangThaiDuyet = N'Chưa duyệt';";
+            string query = "SELECT * FROM PhieuNhap WHERE trangThai = N'Chưa duyệt';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
@@ -39,13 +39,13 @@ namespace DAO
 
                     phieuNhap.maPhieuNhap = dataTable.Rows[0]["maPhieuNhap"].ToString();
                     phieuNhap.maNhaCungCap = dataTable.Rows[0]["maNhaCungCap"].ToString();
-                    phieuNhap.maNhanVien = dataTable.Rows[0]["maNhanVien"].ToString();
-                    phieuNhap.maQuanLi = dataTable.Rows[0]["maQuanLi"].ToString();
+                    phieuNhap.maNguoiTao = dataTable.Rows[0]["maNguoiTao"].ToString();
+                    phieuNhap.maNguoiDuyet = dataTable.Rows[0]["maNguoiDuyet"].ToString();
                     phieuNhap.thoiGianTao = (DateTime)dataTable.Rows[0]["thoiGianTao"];
                     try { phieuNhap.thoiGianDuyet = (DateTime)dataTable.Rows[0]["thoiGianDuyet"]; }
                     catch { phieuNhap.thoiGianDuyet = null; }
                     phieuNhap.thanhTien = Decimal.Parse(dataTable.Rows[0]["thanhTien"].ToString());
-                    phieuNhap.trangThaiDuyet = dataTable.Rows[0]["trangThaiDuyet"].ToString();
+                    phieuNhap.trangThai = dataTable.Rows[0]["trangThai"].ToString();
 
                     listPhieuNhap.Add(phieuNhap);
                 }
@@ -70,13 +70,13 @@ namespace DAO
 
                     phieuNhap.maPhieuNhap = row["maPhieuNhap"].ToString();
                     phieuNhap.maNhaCungCap = row["maNhaCungCap"].ToString();
-                    phieuNhap.maNhanVien =row["maNhanVien"].ToString();
-                    phieuNhap.maQuanLi = row["maQuanLi"].ToString();
+                    phieuNhap.maNguoiTao =row["maNguoiTao"].ToString();
+                    phieuNhap.maNguoiDuyet = row["maNguoiDuyet"].ToString();
                     phieuNhap.thoiGianTao = (DateTime)row["thoiGianTao"];
                     try { phieuNhap.thoiGianDuyet = (DateTime)row["thoiGianDuyet"]; }
                     catch { phieuNhap.thoiGianDuyet = null; }
                     phieuNhap.thanhTien = Decimal.Parse(row["thanhTien"].ToString());
-                    phieuNhap.trangThaiDuyet = row["trangThaiDuyet"].ToString();
+                    phieuNhap.trangThai = row["trangThai"].ToString();
 
                     listPhieuNhap.Add(phieuNhap);
                 }
@@ -89,7 +89,7 @@ namespace DAO
         {
             List<PhieuNhap> listPhieuNhap = new List<PhieuNhap>();
 
-            string query = "SELECT * FROM PhieuNhap WHERE trangThaiDuyet = N'Đã duyệt';";
+            string query = "SELECT * FROM PhieuNhap WHERE trangThai = N'Đã duyệt';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
@@ -101,13 +101,13 @@ namespace DAO
 
                     phieuNhap.maPhieuNhap = dataTable.Rows[0]["maPhieuNhap"].ToString();
                     phieuNhap.maNhaCungCap = dataTable.Rows[0]["maNhaCungCap"].ToString();
-                    phieuNhap.maNhanVien = dataTable.Rows[0]["maNhanVien"].ToString();
-                    phieuNhap.maQuanLi = dataTable.Rows[0]["maQuanLi"].ToString();
+                    phieuNhap.maNguoiTao = dataTable.Rows[0]["maNguoiTao"].ToString();
+                    phieuNhap.maNguoiDuyet = dataTable.Rows[0]["maNguoiDuyet"].ToString();
                     phieuNhap.thoiGianTao = (DateTime)dataTable.Rows[0]["thoiGianTao"];
                     try { phieuNhap.thoiGianDuyet = (DateTime)dataTable.Rows[0]["thoiGianDuyet"]; }
                     catch { phieuNhap.thoiGianDuyet = null; }
                     phieuNhap.thanhTien = Decimal.Parse(dataTable.Rows[0]["thanhTien"].ToString());
-                    phieuNhap.trangThaiDuyet = dataTable.Rows[0]["trangThaiDuyet"].ToString();
+                    phieuNhap.trangThai = dataTable.Rows[0]["trangThai"].ToString();
 
                     listPhieuNhap.Add(phieuNhap);
                 }
@@ -120,7 +120,7 @@ namespace DAO
         {
             List<PhieuNhap> listPhieuNhap = new List<PhieuNhap>();
 
-            string query = "SELECT * FROM PhieuNhap WHERE trangThaiDuyet = N'Từ chối';";
+            string query = "SELECT * FROM PhieuNhap WHERE trangThai = N'Không duyệt';";
 
             DataTable dataTable = DBHelper.ExecuteQuery(query);
 
@@ -132,13 +132,13 @@ namespace DAO
 
                     phieuNhap.maPhieuNhap = dataTable.Rows[0]["maPhieuNhap"].ToString();
                     phieuNhap.maNhaCungCap = dataTable.Rows[0]["maNhaCungCap"].ToString();
-                    phieuNhap.maNhanVien = dataTable.Rows[0]["maNhanVien"].ToString();
-                    phieuNhap.maQuanLi = dataTable.Rows[0]["maQuanLi"].ToString();
+                    phieuNhap.maNguoiTao = dataTable.Rows[0]["maNguoiTao"].ToString();
+                    phieuNhap.maNguoiDuyet = dataTable.Rows[0]["maNguoiDuyet"].ToString();
                     phieuNhap.thoiGianTao = (DateTime)dataTable.Rows[0]["thoiGianTao"];
                     try { phieuNhap.thoiGianDuyet = (DateTime)dataTable.Rows[0]["thoiGianDuyet"]; }
                     catch { phieuNhap.thoiGianDuyet = null; }
                     phieuNhap.thanhTien = Decimal.Parse(dataTable.Rows[0]["thanhTien"].ToString());
-                    phieuNhap.trangThaiDuyet = dataTable.Rows[0]["trangThaiDuyet"].ToString();
+                    phieuNhap.trangThai = dataTable.Rows[0]["trangThai"].ToString();
 
                     listPhieuNhap.Add(phieuNhap);
                 }
@@ -159,13 +159,13 @@ namespace DAO
             {
                 phieuNhap.maPhieuNhap = dataTable.Rows[0]["maPhieuNhap"].ToString();
                 phieuNhap.maNhaCungCap = dataTable.Rows[0]["maNhaCungCap"].ToString();
-                phieuNhap.maNhanVien = dataTable.Rows[0]["maNhanVien"].ToString();
-                phieuNhap.maQuanLi = dataTable.Rows[0]["maQuanLi"].ToString();
+                phieuNhap.maNguoiTao = dataTable.Rows[0]["maNguoiTao"].ToString();
+                phieuNhap.maNguoiDuyet = dataTable.Rows[0]["maNguoiDuyet"].ToString();
                 phieuNhap.thoiGianTao = (DateTime)dataTable.Rows[0]["thoiGianTao"];
                 try { phieuNhap.thoiGianDuyet = (DateTime)dataTable.Rows[0]["thoiGianDuyet"]; }
                 catch { phieuNhap.thoiGianDuyet = null; }
                 phieuNhap.thanhTien = Decimal.Parse(dataTable.Rows[0]["thanhTien"].ToString());
-                phieuNhap.trangThaiDuyet = dataTable.Rows[0]["trangThaiDuyet"].ToString();
+                phieuNhap.trangThai = dataTable.Rows[0]["trangThai"].ToString();
             }
 
             return phieuNhap;
@@ -175,14 +175,14 @@ namespace DAO
         {
             int rowsAffected = 0;
 
-            string phieuNhapQuery = $"INSERT INTO PhieuNhap VALUES('{phieuNhap.maPhieuNhap}', '{phieuNhap.maNhaCungCap}', '{phieuNhap.maNhanVien}', NULL, '{phieuNhap.thoiGianTao}', NULL, {phieuNhap.thanhTien}, N'Chưa duyệt');";
+            string phieuNhapQuery = $"INSERT INTO PhieuNhap VALUES('{phieuNhap.maPhieuNhap}', '{phieuNhap.maNhaCungCap}', '{phieuNhap.maNguoiTao}', NULL, '{phieuNhap.thoiGianTao}', NULL, {phieuNhap.thanhTien}, N'Chưa duyệt');";
                                  
             rowsAffected += DBHelper.ExecuteNonQuery(phieuNhapQuery);
 
             foreach (ChiTietPhieuNhap chiTietPhieuNhap in listChiTietPhieuNhap)
             {
-                string chiTietPhieuNhapQuery = $"INSERT INTO ChiTietPhieuNhap (maPhieuNhap, maSanPham, soLuong, donViTinh, donGia, thanhTien) " +
-                                               $"SELECT '{phieuNhap.maPhieuNhap}' AS maPhieuNhap, maSanPham, {chiTietPhieuNhap.soLuong} AS soLuong, donViTinh, {chiTietPhieuNhap.donGia} AS donGia, {chiTietPhieuNhap.donGia} * {chiTietPhieuNhap.soLuong} AS thanhTien " +
+                string chiTietPhieuNhapQuery = $"INSERT INTO ChiTietPhieuNhap (maPhieuNhap, maSanPham, tenSanPham, soLuong, donVi, giaBan, giaNhap, tongTien) " +
+                                               $"SELECT '{phieuNhap.maPhieuNhap}' AS maPhieuNhap, maSanPham, tenSanPham,{chiTietPhieuNhap.soLuong} AS soLuong, donVi, {chiTietPhieuNhap.giaBan} AS giaBan, {chiTietPhieuNhap.giaNhap} AS giaNhap,  {chiTietPhieuNhap.giaNhap} * {chiTietPhieuNhap.soLuong} AS tongTien " +
                                                $"FROM SanPham WHERE maSanPham = '{chiTietPhieuNhap.maSanPham}';";
 
                 rowsAffected += DBHelper.ExecuteNonQuery(chiTietPhieuNhapQuery);
@@ -199,11 +199,11 @@ namespace DAO
 
             foreach(ChiTietPhieuNhap chiTietPhieuNhap in listChiTietPhieuNhap)
             {
-                query = $"UPDATE ChiTietPhieuNhap SET soLuong = {chiTietPhieuNhap.soLuong}, donGia = {chiTietPhieuNhap.donGia}, thanhTien = {chiTietPhieuNhap.thanhTien} WHERE maPhieuNhap = '{chiTietPhieuNhap.maPhieuNhap}' AND maSanPham = '{chiTietPhieuNhap.maSanPham}';";
+                query = $"UPDATE ChiTietPhieuNhap SET soLuong = {chiTietPhieuNhap.soLuong}, giaBan = {chiTietPhieuNhap.giaBan}, giaNhap = {chiTietPhieuNhap.giaNhap}, tongTien = {chiTietPhieuNhap.tongTien} WHERE maPhieuNhap = '{chiTietPhieuNhap.maPhieuNhap}' AND maSanPham = '{chiTietPhieuNhap.maSanPham}';";
 
                 rowsAffected += DBHelper.ExecuteNonQuery(query);
 
-                thanhTien += chiTietPhieuNhap.thanhTien;
+                thanhTien += chiTietPhieuNhap.tongTien;
             }
 
             query = $"UPDATE PhieuNhap SET thanhTien = {thanhTien} WHERE maPhieuNhap = '{listChiTietPhieuNhap[0].maPhieuNhap}';";
@@ -213,9 +213,9 @@ namespace DAO
             return rowsAffected == listChiTietPhieuNhap.Count + 1;
         }
 
-        public bool DuyetPhieuNhap(string maPhieuNhap, string maQuanLi, DateTime thoiGianDuyet)
+        public bool DuyetPhieuNhap(string maPhieuNhap, string maNguoiDuyet, DateTime thoiGianDuyet)
         {
-            string query = $"UPDATE PhieuNhap SET maQuanLi = '{maQuanLi}', thoiGianDuyet = '{thoiGianDuyet}',trangThaiDuyet = N'Đã duyệt' WHERE maPhieuNhap = '{maPhieuNhap}';";
+            string query = $"UPDATE PhieuNhap SET maNguoiDuyet = '{maNguoiDuyet}', thoiGianDuyet = '{thoiGianDuyet}', trangThai = N'Đã duyệt' WHERE maPhieuNhap = '{maPhieuNhap}';";
 
             int rowsAffected = DBHelper.ExecuteNonQuery(query);
 
@@ -224,14 +224,14 @@ namespace DAO
 
         public bool TuChoiDuyetPhieuNhap(string maPhieuNhap)
         {
-            string query = $"UPDATE PhieuNhap SET trangThaiDuyet = N'Từ chối' WHERE maPhieuNhap = '{maPhieuNhap}';";
+            string query = $"UPDATE PhieuNhap SET trangThai = N'Không duyệt' WHERE maPhieuNhap = '{maPhieuNhap}';";
 
             int rowsAffected = DBHelper.ExecuteNonQuery(query);
 
             return rowsAffected > 0;
         }
 
-        public List<PhieuNhap> TimKiemPhieuNhap(string tuKhoa, string trangThaiDuyet)
+        public List<PhieuNhap> TimKiemPhieuNhap(string tuKhoa, string trangThai)
         {
             List<PhieuNhap> listPhieuNhap = new List<PhieuNhap> ();
 
@@ -241,7 +241,7 @@ namespace DAO
                            $"OR LOWER(maNhanVien) LIKE '%{tuKhoa}%' " +
                            $"OR LOWER(maQuanLi) LIKE '%{tuKhoa}%' " +
                            $"OR thanhTien = {tuKhoa} " +
-                           $"WHERE trangThaiDuyet = N'{trangThaiDuyet}';";
+                           $"WHERE trangThai = N'{trangThai}';";
 
             DataTable dataTable = new DataTable();
 
@@ -253,13 +253,13 @@ namespace DAO
 
                     phieuNhap.maPhieuNhap = dataTable.Rows[0]["maPhieuNhap"].ToString();
                     phieuNhap.maNhaCungCap = dataTable.Rows[0]["maNhaCungCap"].ToString();
-                    phieuNhap.maNhanVien = dataTable.Rows[0]["maNhanVien"].ToString();
-                    phieuNhap.maQuanLi = dataTable.Rows[0]["maQuanLi"].ToString();
+                    phieuNhap.maNguoiTao = dataTable.Rows[0]["maNguoiTao"].ToString();
+                    phieuNhap.maNguoiDuyet = dataTable.Rows[0]["maNguoiDuyet"].ToString();
                     phieuNhap.thoiGianTao = (DateTime)dataTable.Rows[0]["thoiGianTao"];
                     try { phieuNhap.thoiGianDuyet = (DateTime)dataTable.Rows[0]["thoiGianDuyet"]; }
                     catch { phieuNhap.thoiGianDuyet = null; }
                     phieuNhap.thanhTien = Decimal.Parse(dataTable.Rows[0]["thanhTien"].ToString());
-                    phieuNhap.trangThaiDuyet = dataTable.Rows[0]["trangThaiDuyet"].ToString();
+                    phieuNhap.trangThai = dataTable.Rows[0]["trangThai"].ToString();
 
                     listPhieuNhap.Add(phieuNhap);
                 }

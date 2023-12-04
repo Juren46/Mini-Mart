@@ -173,6 +173,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap duyet {
+            get {
+                object obj = ResourceManager.GetObject("duyet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap error_white {
             get {
                 object obj = ResourceManager.GetObject("error-white", resourceCulture);
@@ -206,6 +216,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap info {
             get {
                 object obj = ResourceManager.GetObject("info", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap khongDuyet {
+            get {
+                object obj = ResourceManager.GetObject("khongDuyet", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -67,9 +67,9 @@ namespace GUI.CacFormChiTiet
                 chiTietHoaDonDataGridView.Rows[i].Cells[0].Value = listChiTietHoaDon[i].maHoaDon;
                 chiTietHoaDonDataGridView.Rows[i].Cells[1].Value = listChiTietHoaDon[i].maSanPham;
                 chiTietHoaDonDataGridView.Rows[i].Cells[2].Value = listChiTietHoaDon[i].soLuong;
-                chiTietHoaDonDataGridView.Rows[i].Cells[3].Value = listChiTietHoaDon[i].donViTinh;
+                chiTietHoaDonDataGridView.Rows[i].Cells[3].Value = listChiTietHoaDon[i].donVi;
                 chiTietHoaDonDataGridView.Rows[i].Cells[4].Value = listChiTietHoaDon[i].donGia.ToString("#,##0") + " VNĐ";
-                chiTietHoaDonDataGridView.Rows[i].Cells[5].Value = listChiTietHoaDon[i].thanhTien.ToString("#,##0") + " VNĐ";
+                chiTietHoaDonDataGridView.Rows[i].Cells[5].Value = listChiTietHoaDon[i].tongTien.ToString("#,##0") + " VNĐ";
             }
         }
 

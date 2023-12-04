@@ -59,7 +59,7 @@ namespace GUI.CacFormChiTiet
                         phanTramRadioButton.Checked = true;
                     else
                         cuTheRadioButton.Checked = true;
-                    giaTriKhuyenMaiTextBox.Text = khuyenMai.giaTriApDung.ToString();
+                    giaTriKhuyenMaiTextBox.Text = khuyenMai.giaTri.ToString();
                     thoiGianBatDauDateTimePicker.Value = khuyenMai.thoiGianBatDau;
                     thoiGianKetThucDateTimePicker.Value = khuyenMai.thoiGianKetThuc;
                     thoiGianBatDauTimePicker.Value = khuyenMai.thoiGianBatDau;
@@ -102,7 +102,7 @@ namespace GUI.CacFormChiTiet
                         phanTramRadioButton.Checked = true;
                     else
                         cuTheRadioButton.Checked = true;
-                    giaTriKhuyenMaiTextBox.Text = khuyenMai.giaTriApDung.ToString();
+                    giaTriKhuyenMaiTextBox.Text = khuyenMai.giaTri.ToString();
                     thoiGianBatDauDateTimePicker.Value = khuyenMai.thoiGianBatDau;
                     thoiGianKetThucDateTimePicker.Value = khuyenMai.thoiGianKetThuc;
                     thoiGianBatDauTimePicker.Value = khuyenMai.thoiGianBatDau;
@@ -132,7 +132,7 @@ namespace GUI.CacFormChiTiet
                         phanTramRadioButton.Checked = true;
                     else
                         cuTheRadioButton.Checked = true;
-                    giaTriKhuyenMaiTextBox.Text = khuyenMai.giaTriApDung.ToString();
+                    giaTriKhuyenMaiTextBox.Text = khuyenMai.giaTri.ToString();
                     thoiGianBatDauDateTimePicker.Value = khuyenMai.thoiGianBatDau;
                     thoiGianKetThucDateTimePicker.Value = khuyenMai.thoiGianKetThuc;
                     thoiGianBatDauTimePicker.Value = khuyenMai.thoiGianBatDau;

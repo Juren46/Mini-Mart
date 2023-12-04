@@ -28,6 +28,7 @@ namespace GUI
             InitializeComponent();
 
             sanPhamBUS = new SanPhamBUS();
+            listSanPham = sanPhamBUS.TimKiemSanPham("", "", "", "");
             listSanPhamNhapHang = new List<SanPham>();
             loaiSanPhamComboBox.DataSource = new LoaiSanPhamBUS().LayDanhSachLoaiSanPham();
             loaiSanPhamComboBox.DisplayMember = "tenLoaiSanPham";
@@ -38,6 +39,7 @@ namespace GUI
         {
             maNhaCungCapTextBox.ReadOnly = true;
             tenNhaCungCapTextBox.ReadOnly = true;
+            LoadDataToFlowLayout(listSanPham);
         }
 
         private void LoadDataToFlowLayout(List<SanPham> listSanPham)
@@ -61,33 +63,26 @@ namespace GUI
             }
         }
 
-        private void chonNhaCungCapButton_Click(object sender, EventArgs e)
+        private void loaiSanPhamComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            new ChonNhaCungCap(this).Show();
-        }
-
-        private void maNhaCungCapTextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(maNhaCungCapTextBox.Text))
+            if (loaiSanPhamComboBox.SelectedValue != null)
             {
-                LoadDataToFlowLayout(listSanPham);
+                timKiemTextBox.Clear();
+                timKiemButton_Click(sender, e);
             }
         }
 
         private void timKiemButton_Click(object sender, EventArgs e)
         {
-            if (nhaCungCap != null)
+            string tuKhoa = timKiemTextBox.Text;
+            string maLoaiSanPham = "";
+            if (loaiSanPhamComboBox.SelectedValue != null)
             {
-                string tuKhoa = timKiemTextBox.Text;
-                string maLoaiSanPham = "";
-                if (loaiSanPhamComboBox.SelectedValue != null)
-                {
-                    LoaiSanPham loaiSanPham = loaiSanPhamComboBox.SelectedValue as LoaiSanPham;
-                    maLoaiSanPham = loaiSanPham.maLoaiSanPham;
-                }
-                listSanPham = sanPhamBUS.TimKiemSanPham(tuKhoa, maLoaiSanPham, nhaCungCap.maNhaCungCap, "", "");
-                LoadDataToFlowLayout(listSanPham);
+                LoaiSanPham loaiSanPham = loaiSanPhamComboBox.SelectedValue as LoaiSanPham;
+                maLoaiSanPham = loaiSanPham.maLoaiSanPham;
             }
+            listSanPham = sanPhamBUS.TimKiemSanPham(tuKhoa, maLoaiSanPham, "", "");
+            LoadDataToFlowLayout(listSanPham);
         }
 
         private void timKiemTextBox_TextChanged(object sender, EventArgs e)
@@ -95,31 +90,28 @@ namespace GUI
             timKiemButton_Click(sender, e);
         }
 
-        private void loaiSanPhamComboBox_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            if (loaiSanPhamComboBox.SelectedItem != null)
-            {
-                timKiemTextBox.Clear();
-                timKiemButton_Click(sender, e);
-            }
-        }
-
-        private void lamMoiSanPhamButton_Click(object sender, EventArgs e)
+        internal void lamMoiSanPhamButton_Click(object sender, EventArgs e)
         {
             timKiemTextBox.Clear();
             loaiSanPhamComboBox.SelectedItem = null;
             loaiSanPhamComboBox.SelectedIndex = -1;
-            if (nhaCungCap != null)
-            {
-                listSanPham = sanPhamBUS.TimKiemSanPham("", "", nhaCungCap.maNhaCungCap, "", "");
-                LoadDataToFlowLayout(listSanPham);
-            }
+            listSanPham = sanPhamBUS.TimKiemSanPham("", "", "", "");
+            LoadDataToFlowLayout(listSanPham);
         }
 
         private void themSanPhamButton_Click(object sender, EventArgs e)
         {
-            if (nhaCungCap != null)
-                new ChiTietSanPhamForm("Thêm", this).Show();
+            new ChiTietSanPhamForm("Thêm", this).Show();
+        }
+
+        private void chonNhaCungCapButton_Click(object sender, EventArgs e)
+        {
+            new ChonNhaCungCap(this).Show();
+        }
+
+        private void themMoiNhaCungCapButton_Click(object sender, EventArgs e)
+        {
+            new ChiTietNhaCungCapForm("Thêm", this).Show();
         }
 
         private void luuButton_Click(object sender, EventArgs e)
@@ -138,7 +130,7 @@ namespace GUI
                     {
                         string maPhieuNhap = IDGenerator.GeneratePhieuNhapID();
                         string maNhaCungCap = nhaCungCap.maNhaCungCap;
-                        string maNhanVien = new NhanVienBUS().LayNhanVienTheoTenTaiKhoan(DangNhapForm.taiKhoan.tenTaiKhoan).maNhanVien;
+                        string maNguoiTao = DangNhapForm.nguoiDung.maNguoiDung;
                         string thanhTien = thanhTienLabel.Text.Replace(" VNĐ", "").Replace(",", "");
 
                         List<ChiTietPhieuNhap> listChiTietPhieuNhap = new List<ChiTietPhieuNhap>();
@@ -150,24 +142,27 @@ namespace GUI
                                 DonNhapHangUserControl donNhapHangUserControl = (DonNhapHangUserControl)control;
 
                                 ChiTietPhieuNhap chiTietPhieuNhap = new ChiTietPhieuNhap();
+
                                 chiTietPhieuNhap.maPhieuNhap = IDGenerator.GeneratePhieuNhapID();
                                 chiTietPhieuNhap.maSanPham = donNhapHangUserControl.sanPham.maSanPham;
+                                chiTietPhieuNhap.tenSanPham = donNhapHangUserControl.sanPham.tenSanPham;
                                 chiTietPhieuNhap.soLuong = (int)donNhapHangUserControl.soLuongNumericUpDown.Value;
-                                chiTietPhieuNhap.donGia = donNhapHangUserControl.sanPham.giaBan;
-                                chiTietPhieuNhap.thanhTien = Decimal.Parse(donNhapHangUserControl.tongGiaLabel.Text.Replace(" VNĐ", "").Replace(",", ""));
-                            
+                                chiTietPhieuNhap.giaBan = Decimal.Parse(donNhapHangUserControl.giaBanTextBox.Text.Replace(" VNĐ", "").Replace(",", ""));
+                                chiTietPhieuNhap.giaNhap = Decimal.Parse(donNhapHangUserControl.giaNhapTextBox.Text.Replace(" VNĐ", "").Replace(",", "")); 
+                                chiTietPhieuNhap.tongTien = Decimal.Parse(donNhapHangUserControl.tongGiaLabel.Text.Replace(" VNĐ", "").Replace(",", ""));
+
                                 listChiTietPhieuNhap.Add(chiTietPhieuNhap);
                             }
                         }
 
-                        string message = new PhieuNhapBUS().ThemPhieuNhap(listChiTietPhieuNhap, maPhieuNhap, maNhaCungCap, maNhanVien, thanhTien);
+                        string message = new PhieuNhapBUS().ThemPhieuNhap(listChiTietPhieuNhap, maPhieuNhap, maNhaCungCap, maNguoiTao, thanhTien);
 
 
 
                         if (message.Equals("Thêm phiếu nhập thành công!"))
                         {
                             CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.SUCCESS);
-                            listSanPham = null;
+                            listSanPhamNhapHang = null;
                             nhaCungCap = null;
                             maNhaCungCapTextBox.Clear();
                             tenNhaCungCapTextBox.Clear();
@@ -205,5 +200,7 @@ namespace GUI
                 }
             }
         }
+
+        
     }
 }

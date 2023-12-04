@@ -26,10 +26,11 @@ namespace DAO
 
                 chiTietHoaDon.maHoaDon = row["maHoaDon"].ToString();
                 chiTietHoaDon.maSanPham = row["maSanPham"].ToString();
-                chiTietHoaDon.donViTinh = row["donViTinh"].ToString();
+                chiTietHoaDon.tenSanPham = row["tenSanPham"].ToString();
+                chiTietHoaDon.donVi = row["donVi"].ToString();
                 chiTietHoaDon.soLuong = (int)row["soLuong"];
-                chiTietHoaDon.donGia = Decimal.Parse(row["giaBan"].ToString());
-                chiTietHoaDon.thanhTien = Decimal.Parse(row["thanhTien"].ToString());
+                chiTietHoaDon.donGia = Decimal.Parse(row["donGia"].ToString());
+                chiTietHoaDon.tongTien = Decimal.Parse(row["tongTien"].ToString());
 
                 listChiTietHoaDon.Add(chiTietHoaDon);
             }

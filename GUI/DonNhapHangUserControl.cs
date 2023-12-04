@@ -27,6 +27,8 @@ namespace GUI
         private void DonNhapHangUserControl_Load(object sender, EventArgs e)
         {
             tenSanPhamLabel.Text = sanPham.tenSanPham;
+            if (sanPham.giaBan != 0)
+                giaBanTextBox.Text = sanPham.giaBan.ToString("0");
         }
 
         private void giaNhapTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -35,6 +37,20 @@ namespace GUI
             {
                 e.Handled = true;
             }
+        }
+
+        private void giaBanTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void giaBanTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(giaBanTextBox.Text))
+                giaBanTextBox.Text = "0";
         }
 
         private void giaNhapTextBox_TextChanged(object sender, EventArgs e)

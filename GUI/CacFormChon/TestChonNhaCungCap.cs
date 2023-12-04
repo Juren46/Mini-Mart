@@ -16,7 +16,6 @@ namespace GUI.CacFormChon
     {
         NhaCungCapBUS nhaCungCapBUS;
         List<NhaCungCap> listNhaCungCap;
-        ChiTietSanPhamForm chiTietSanPhamForm;
         NhapHangForm nhapHangForm;
 
         public TestChonNhaCungCap(ChiTietSanPhamForm chiTietSanPhamForm)
@@ -24,7 +23,6 @@ namespace GUI.CacFormChon
             InitializeComponent();
             nhaCungCapBUS = new NhaCungCapBUS();
             listNhaCungCap = nhaCungCapBUS.LayDanhSachNhaCungCap();
-            this.chiTietSanPhamForm = chiTietSanPhamForm;
         }
 
         public TestChonNhaCungCap(NhapHangForm nhapHangForm)
@@ -91,14 +89,10 @@ namespace GUI.CacFormChon
                     if (nhapHangForm != null)
                     {
                         nhapHangForm.nhaCungCap = nhaCungCap;
-                        nhapHangForm.listSanPham = new SanPhamBUS().TimKiemSanPham("", "", nhaCungCap.maNhaCungCap, "", "");
                         nhapHangForm.maNhaCungCapTextBox.Text = nhaCungCap.maNhaCungCap;
                         nhapHangForm.tenNhaCungCapTextBox.Text = nhaCungCap.tenNhaCungCap;
                         nhapHangForm.canhBaoLabel.Visible = false;
                     }
-                        
-                    if (chiTietSanPhamForm != null)
-                        chiTietSanPhamForm.nhaCungCapTextBox.Text = nhaCungCap.maNhaCungCap;
                     this.Close();
                 }
             }

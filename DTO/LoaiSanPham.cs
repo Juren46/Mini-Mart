@@ -10,14 +10,16 @@ namespace DTO
     {
         public LoaiSanPham()
         {
+            maLoaiSanPham = string.Empty;
+            tenLoaiSanPham = string.Empty;
             trangThai = "Đang sử dụng";
         }
 
-        public LoaiSanPham(string maLoaiSanPham, string tenLoaiSanPham)
+        public LoaiSanPham(string maLoaiSanPham, string tenLoaiSanPham, string trangThai)
         {
             this.maLoaiSanPham = maLoaiSanPham;
             this.tenLoaiSanPham = tenLoaiSanPham;
-            trangThai = "Đang sử dụng";
+            this.trangThai = trangThai;
         }
 
         public string maLoaiSanPham { get; set; }

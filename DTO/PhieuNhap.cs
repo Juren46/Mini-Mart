@@ -10,28 +10,33 @@ namespace DTO
     {
         public PhieuNhap()
         {
-            trangThaiDuyet = "Chưa duyệt";
+            maPhieuNhap = string.Empty;
+            maNhaCungCap = string.Empty;
+            maNguoiTao = string.Empty;
+            thoiGianTao = DateTime.MinValue;
+            thanhTien = 0;
+            trangThai = "Chưa duyệt";
         }
 
-        public PhieuNhap(string maPhieuNhap, string maNhaCungCap, string maNhanVien, string maQuanLi, DateTime thoiGianTao, DateTime thoiGianDuyet, decimal thanhTien)
+        public PhieuNhap(string maPhieuNhap, string maNhaCungCap, string maNguoiTao, string? maNguoiDuyet, DateTime thoiGianTao, DateTime? thoiGianDuyet, decimal thanhTien, string trangThai)
         {
             this.maPhieuNhap = maPhieuNhap;
             this.maNhaCungCap = maNhaCungCap;
-            this.maNhanVien = maNhanVien;
-            this.maQuanLi = maQuanLi;
+            this.maNguoiTao = maNguoiTao;
+            this.maNguoiDuyet = maNguoiDuyet;
             this.thoiGianTao = thoiGianTao;
             this.thoiGianDuyet = thoiGianDuyet;
             this.thanhTien = thanhTien;
-            trangThaiDuyet = "Chưa duyệt";
+            this.trangThai = trangThai;
         }
 
         public string maPhieuNhap { get; set; }
         public string maNhaCungCap { get; set; }
-        public string maNhanVien { get; set; }
-        public string? maQuanLi { get; set; }
+        public string maNguoiTao { get; set; }
+        public string? maNguoiDuyet { get; set; }
         public DateTime thoiGianTao { get; set; }
         public DateTime? thoiGianDuyet { get; set; }
         public decimal thanhTien { get; set; }
-        public string trangThaiDuyet { get; set; }
+        public string trangThai { get; set; }
     }
 }

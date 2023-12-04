@@ -72,7 +72,7 @@ namespace GUI
 
         private void themMoiButton_Click(object sender, EventArgs e)
         {
-            new ChiTietNhaCungCapForm("Thêm", this).Show();
+            new ChiTietNhaCungCapForm("Thêm", this).ShowDialog();
         }
 
         private void xuatExcelButton_Click(object sender, EventArgs e)
@@ -97,12 +97,12 @@ namespace GUI
 
             if (columnName.Equals("infoButtonColumn"))
             {
-                new ChiTietNhaCungCapForm(nhaCungCap, "Chi tiết", this).Show();
+                new ChiTietNhaCungCapForm(nhaCungCap, "Chi tiết", this).ShowDialog();
             }
 
             if (columnName.Equals("editButtonColumn"))
             {
-                new ChiTietNhaCungCapForm(nhaCungCap, "Sửa", this).Show();
+                new ChiTietNhaCungCapForm(nhaCungCap, "Sửa", this).ShowDialog();
             }
         }
 

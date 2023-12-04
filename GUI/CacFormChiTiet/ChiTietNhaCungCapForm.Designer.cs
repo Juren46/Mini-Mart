@@ -148,6 +148,7 @@
             emailTextBox.ShadowDecoration.CustomizableEdges = customizableEdges6;
             emailTextBox.Size = new Size(290, 40);
             emailTextBox.TabIndex = 88;
+            emailTextBox.KeyPress += emailTextBox_KeyPress;
             // 
             // diaChiTextBox
             // 
@@ -214,6 +215,7 @@
             soDienThoaiTextBox.ShadowDecoration.CustomizableEdges = customizableEdges10;
             soDienThoaiTextBox.Size = new Size(290, 40);
             soDienThoaiTextBox.TabIndex = 84;
+            soDienThoaiTextBox.KeyPress += soDienThoaiTextBox_KeyPress;
             // 
             // label7
             // 

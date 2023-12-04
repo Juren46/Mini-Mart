@@ -60,10 +60,10 @@ namespace GUI
                     soDienThoaiTextBox.Text = khachHang.soDienThoai;
                     emailTextBox.Text = khachHang.email;
                     diaChiTextBox.Text = khachHang.diaChi;
-                    diemTichLuyTextBox.Text = khachHang.diemTichLuy.ToString();
+                    diemTichLuyTextBox.Text = khachHang.diemThanhVien.ToString();
                     foreach (var item in bacThanhVienComboBox.Items)
                     {
-                        if (item.ToString().Equals(khachHang.bacThanhVien))
+                        if (item.ToString().Equals(khachHang.hangThanhVien))
                         {
                             bacThanhVienComboBox.SelectedItem = item;
                             break;
@@ -125,10 +125,10 @@ namespace GUI
                     soDienThoaiTextBox.Text = khachHang.soDienThoai;
                     emailTextBox.Text = khachHang.email;
                     diaChiTextBox.Text = khachHang.diaChi;
-                    diemTichLuyTextBox.Text = khachHang.diemTichLuy.ToString();
+                    diemTichLuyTextBox.Text = khachHang.diemThanhVien.ToString();
                     foreach (var item in bacThanhVienComboBox.Items)
                     {
-                        if (item.ToString().Equals(khachHang.bacThanhVien))
+                        if (item.ToString().Equals(khachHang.hangThanhVien))
                         {
                             bacThanhVienComboBox.SelectedItem = item;
                             break;
@@ -170,7 +170,7 @@ namespace GUI
                     soDienThoaiTextBox.Text = khachHang.soDienThoai;
                     emailTextBox.Text = khachHang.email;
                     diaChiTextBox.Text = khachHang.diaChi;
-                    diemTichLuyTextBox.Text = khachHang.diemTichLuy.ToString();
+                    diemTichLuyTextBox.Text = khachHang.diemThanhVien.ToString();
                 }
                 else if (context.Equals("Thêm"))
                 {

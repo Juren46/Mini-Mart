@@ -32,31 +32,26 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhapForm));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhapForm));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel3 = new Panel();
             phieuNhapDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewTextBoxColumn();
-            Column9 = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
+            trangThaiComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            label1 = new Label();
             thoiGianCheckBox = new Guna.UI2.WinForms.Guna2ImageCheckBox();
             thoiGianKetThucDateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             thoiGianBatDauDateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -66,6 +61,18 @@
             lamMoiButton = new FontAwesome.Sharp.IconButton();
             xuatExcelButton = new FontAwesome.Sharp.IconButton();
             timKiemButton = new FontAwesome.Sharp.IconButton();
+            Column2 = new DataGridViewTextBoxColumn();
+            maPhieuNhapColumn = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
+            Column9 = new DataGridViewTextBoxColumn();
+            infoButtonColumn = new DataGridViewImageColumn();
+            duyetButtonColumn = new DataGridViewImageColumn();
+            khongDuyetButtonColumn = new DataGridViewImageColumn();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)phieuNhapDataGridView).BeginInit();
@@ -109,7 +116,7 @@
             phieuNhapDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             phieuNhapDataGridView.ColumnHeadersHeight = 40;
             phieuNhapDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            phieuNhapDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column2, Column1, Column3, Column4, Column5, Column6, Column7, Column8, Column9 });
+            phieuNhapDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column2, maPhieuNhapColumn, Column3, Column4, Column5, Column6, Column7, Column8, Column9, infoButtonColumn, duyetButtonColumn, khongDuyetButtonColumn });
             dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = Color.White;
             dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 12F);
@@ -158,94 +165,14 @@
             phieuNhapDataGridView.ThemeStyle.RowsStyle.Height = 50;
             phieuNhapDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(0, 80, 112);
             phieuNhapDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
+            phieuNhapDataGridView.CellContentClick += phieuNhapDataGridView_CellContentClick;
+            phieuNhapDataGridView.CellFormatting += phieuNhapDataGridView_CellFormatting;
             phieuNhapDataGridView.CellPainting += phieuNhapDataGridView_CellPainting;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column2.DefaultCellStyle = dataGridViewCellStyle3;
-            Column2.HeaderText = "#";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 42;
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.HeaderText = "Mã phiếu nhập";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Resizable = DataGridViewTriState.True;
-            // 
-            // Column3
-            // 
-            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.FillWeight = 120F;
-            Column3.HeaderText = "Tên nhà cung cấp";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.FillWeight = 60F;
-            Column4.HeaderText = "Nhân viên";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.FillWeight = 80F;
-            Column5.HeaderText = "Quản lý";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column6.DefaultCellStyle = dataGridViewCellStyle4;
-            Column6.HeaderText = "Thời gian tạo";
-            Column6.MinimumWidth = 6;
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column7.DefaultCellStyle = dataGridViewCellStyle5;
-            Column7.HeaderText = "Thời gian duyệt";
-            Column7.MinimumWidth = 6;
-            Column7.Name = "Column7";
-            Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column8.DefaultCellStyle = dataGridViewCellStyle6;
-            Column8.HeaderText = "Thành tiền";
-            Column8.MinimumWidth = 6;
-            Column8.Name = "Column8";
-            Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            Column9.HeaderText = "Trạng thái duyệt";
-            Column9.MinimumWidth = 6;
-            Column9.Name = "Column9";
-            Column9.ReadOnly = true;
             // 
             // panel2
             // 
+            panel2.Controls.Add(trangThaiComboBox);
+            panel2.Controls.Add(label1);
             panel2.Controls.Add(thoiGianCheckBox);
             panel2.Controls.Add(thoiGianKetThucDateTimePicker);
             panel2.Controls.Add(thoiGianBatDauDateTimePicker);
@@ -262,6 +189,36 @@
             panel2.Size = new Size(1183, 99);
             panel2.TabIndex = 44;
             // 
+            // trangThaiComboBox
+            // 
+            trangThaiComboBox.BackColor = Color.Transparent;
+            trangThaiComboBox.CustomizableEdges = customizableEdges1;
+            trangThaiComboBox.DrawMode = DrawMode.OwnerDrawFixed;
+            trangThaiComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            trangThaiComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
+            trangThaiComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            trangThaiComboBox.Font = new Font("Segoe UI", 10F);
+            trangThaiComboBox.ForeColor = Color.FromArgb(68, 88, 112);
+            trangThaiComboBox.ItemHeight = 30;
+            trangThaiComboBox.Items.AddRange(new object[] { "Chưa duyệt", "Đã duyệt", "Không duyệt" });
+            trangThaiComboBox.Location = new Point(12, 37);
+            trangThaiComboBox.Name = "trangThaiComboBox";
+            trangThaiComboBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            trangThaiComboBox.Size = new Size(169, 36);
+            trangThaiComboBox.TabIndex = 108;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Microsoft Sans Serif", 12F);
+            label1.ForeColor = SystemColors.GrayText;
+            label1.Location = new Point(12, 11);
+            label1.Name = "label1";
+            label1.Size = new Size(80, 20);
+            label1.TabIndex = 107;
+            label1.Text = "Trạng thái";
+            // 
             // thoiGianCheckBox
             // 
             thoiGianCheckBox.CheckedState.Image = (Image)resources.GetObject("resource.Image");
@@ -270,23 +227,23 @@
             thoiGianCheckBox.ImageOffset = new Point(0, 0);
             thoiGianCheckBox.ImageRotate = 0F;
             thoiGianCheckBox.ImageSize = new Size(40, 40);
-            thoiGianCheckBox.Location = new Point(937, 41);
+            thoiGianCheckBox.Location = new Point(1127, 37);
             thoiGianCheckBox.Name = "thoiGianCheckBox";
-            thoiGianCheckBox.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            thoiGianCheckBox.ShadowDecoration.CustomizableEdges = customizableEdges3;
             thoiGianCheckBox.Size = new Size(50, 50);
             thoiGianCheckBox.TabIndex = 106;
             // 
             // thoiGianKetThucDateTimePicker
             // 
             thoiGianKetThucDateTimePicker.Checked = true;
-            thoiGianKetThucDateTimePicker.CustomizableEdges = customizableEdges2;
+            thoiGianKetThucDateTimePicker.CustomizableEdges = customizableEdges4;
             thoiGianKetThucDateTimePicker.Font = new Font("Microsoft Sans Serif", 14.25F);
             thoiGianKetThucDateTimePicker.Format = DateTimePickerFormat.Short;
-            thoiGianKetThucDateTimePicker.Location = new Point(771, 41);
+            thoiGianKetThucDateTimePicker.Location = new Point(961, 37);
             thoiGianKetThucDateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             thoiGianKetThucDateTimePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             thoiGianKetThucDateTimePicker.Name = "thoiGianKetThucDateTimePicker";
-            thoiGianKetThucDateTimePicker.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            thoiGianKetThucDateTimePicker.ShadowDecoration.CustomizableEdges = customizableEdges5;
             thoiGianKetThucDateTimePicker.Size = new Size(160, 36);
             thoiGianKetThucDateTimePicker.TabIndex = 105;
             thoiGianKetThucDateTimePicker.Value = new DateTime(2023, 11, 30, 4, 24, 4, 22);
@@ -294,14 +251,14 @@
             // thoiGianBatDauDateTimePicker
             // 
             thoiGianBatDauDateTimePicker.Checked = true;
-            thoiGianBatDauDateTimePicker.CustomizableEdges = customizableEdges4;
+            thoiGianBatDauDateTimePicker.CustomizableEdges = customizableEdges6;
             thoiGianBatDauDateTimePicker.Font = new Font("Microsoft Sans Serif", 14.25F);
             thoiGianBatDauDateTimePicker.Format = DateTimePickerFormat.Short;
-            thoiGianBatDauDateTimePicker.Location = new Point(605, 41);
+            thoiGianBatDauDateTimePicker.Location = new Point(795, 37);
             thoiGianBatDauDateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             thoiGianBatDauDateTimePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             thoiGianBatDauDateTimePicker.Name = "thoiGianBatDauDateTimePicker";
-            thoiGianBatDauDateTimePicker.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            thoiGianBatDauDateTimePicker.ShadowDecoration.CustomizableEdges = customizableEdges7;
             thoiGianBatDauDateTimePicker.Size = new Size(160, 36);
             thoiGianBatDauDateTimePicker.TabIndex = 104;
             thoiGianBatDauDateTimePicker.Value = new DateTime(2023, 11, 30, 4, 23, 58, 417);
@@ -311,7 +268,7 @@
             guna2HtmlLabel5.BackColor = Color.Transparent;
             guna2HtmlLabel5.Font = new Font("Microsoft Sans Serif", 14.25F);
             guna2HtmlLabel5.ForeColor = Color.FromArgb(0, 79, 111);
-            guna2HtmlLabel5.Location = new Point(771, 14);
+            guna2HtmlLabel5.Location = new Point(961, 10);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             guna2HtmlLabel5.Size = new Size(152, 26);
             guna2HtmlLabel5.TabIndex = 103;
@@ -322,7 +279,7 @@
             guna2HtmlLabel4.BackColor = Color.Transparent;
             guna2HtmlLabel4.Font = new Font("Microsoft Sans Serif", 14.25F);
             guna2HtmlLabel4.ForeColor = Color.FromArgb(0, 79, 111);
-            guna2HtmlLabel4.Location = new Point(605, 14);
+            guna2HtmlLabel4.Location = new Point(795, 10);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             guna2HtmlLabel4.Size = new Size(150, 26);
             guna2HtmlLabel4.TabIndex = 102;
@@ -330,7 +287,7 @@
             // 
             // timKiemTextBox
             // 
-            timKiemTextBox.CustomizableEdges = customizableEdges6;
+            timKiemTextBox.CustomizableEdges = customizableEdges8;
             timKiemTextBox.DefaultText = "";
             timKiemTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             timKiemTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -340,14 +297,14 @@
             timKiemTextBox.Font = new Font("Segoe UI", 12F);
             timKiemTextBox.ForeColor = Color.FromArgb(84, 155, 255);
             timKiemTextBox.HoverState.BorderColor = Color.FromArgb(0, 192, 192);
-            timKiemTextBox.Location = new Point(7, 41);
+            timKiemTextBox.Location = new Point(197, 37);
             timKiemTextBox.Margin = new Padding(5);
             timKiemTextBox.Name = "timKiemTextBox";
             timKiemTextBox.PasswordChar = '\0';
             timKiemTextBox.PlaceholderForeColor = Color.FromArgb(186, 215, 255);
             timKiemTextBox.PlaceholderText = "Nhập tên để tìm kiếm";
             timKiemTextBox.SelectedText = "";
-            timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges9;
             timKiemTextBox.Size = new Size(373, 36);
             timKiemTextBox.TabIndex = 101;
             // 
@@ -360,7 +317,7 @@
             lamMoiButton.IconColor = Color.White;
             lamMoiButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             lamMoiButton.IconSize = 20;
-            lamMoiButton.Location = new Point(437, 41);
+            lamMoiButton.Location = new Point(627, 37);
             lamMoiButton.Name = "lamMoiButton";
             lamMoiButton.Size = new Size(43, 36);
             lamMoiButton.TabIndex = 100;
@@ -378,7 +335,7 @@
             xuatExcelButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             xuatExcelButton.IconSize = 20;
             xuatExcelButton.ImageAlign = ContentAlignment.MiddleLeft;
-            xuatExcelButton.Location = new Point(487, 41);
+            xuatExcelButton.Location = new Point(677, 37);
             xuatExcelButton.Name = "xuatExcelButton";
             xuatExcelButton.Size = new Size(114, 36);
             xuatExcelButton.TabIndex = 98;
@@ -395,11 +352,131 @@
             timKiemButton.IconColor = Color.White;
             timKiemButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             timKiemButton.IconSize = 20;
-            timKiemButton.Location = new Point(387, 41);
+            timKiemButton.Location = new Point(577, 37);
             timKiemButton.Name = "timKiemButton";
             timKiemButton.Size = new Size(43, 36);
             timKiemButton.TabIndex = 99;
             timKiemButton.UseVisualStyleBackColor = false;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            Column2.HeaderText = "#";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 42;
+            // 
+            // maPhieuNhapColumn
+            // 
+            maPhieuNhapColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            maPhieuNhapColumn.FillWeight = 102.030586F;
+            maPhieuNhapColumn.HeaderText = "Mã phiếu nhập";
+            maPhieuNhapColumn.MinimumWidth = 6;
+            maPhieuNhapColumn.Name = "maPhieuNhapColumn";
+            maPhieuNhapColumn.ReadOnly = true;
+            maPhieuNhapColumn.Resizable = DataGridViewTriState.True;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column3.FillWeight = 122.436714F;
+            Column3.HeaderText = "Nhà cung cấp";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.FillWeight = 61.2183571F;
+            Column4.HeaderText = "Người tạo";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.FillWeight = 81.6244659F;
+            Column5.HeaderText = "Người duyệt";
+            Column5.MinimumWidth = 6;
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column6.DefaultCellStyle = dataGridViewCellStyle4;
+            Column6.FillWeight = 102.030586F;
+            Column6.HeaderText = "Thời gian tạo";
+            Column6.MinimumWidth = 6;
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column7.DefaultCellStyle = dataGridViewCellStyle5;
+            Column7.FillWeight = 102.030586F;
+            Column7.HeaderText = "Thời gian duyệt";
+            Column7.MinimumWidth = 6;
+            Column7.Name = "Column7";
+            Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column8.DefaultCellStyle = dataGridViewCellStyle6;
+            Column8.FillWeight = 102.030586F;
+            Column8.HeaderText = "Thành tiền";
+            Column8.MinimumWidth = 6;
+            Column8.Name = "Column8";
+            Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            Column9.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column9.FillWeight = 102.030586F;
+            Column9.HeaderText = "Trạng thái";
+            Column9.MinimumWidth = 6;
+            Column9.Name = "Column9";
+            Column9.ReadOnly = true;
+            // 
+            // infoButtonColumn
+            // 
+            infoButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            infoButtonColumn.FillWeight = 80.50633F;
+            infoButtonColumn.HeaderText = "";
+            infoButtonColumn.Image = Properties.Resources._003_info;
+            infoButtonColumn.Name = "infoButtonColumn";
+            infoButtonColumn.ReadOnly = true;
+            infoButtonColumn.Width = 5;
+            // 
+            // duyetButtonColumn
+            // 
+            duyetButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            duyetButtonColumn.FillWeight = 102.030586F;
+            duyetButtonColumn.HeaderText = "";
+            duyetButtonColumn.Image = Properties.Resources.duyet;
+            duyetButtonColumn.Name = "duyetButtonColumn";
+            duyetButtonColumn.ReadOnly = true;
+            duyetButtonColumn.Width = 5;
+            // 
+            // khongDuyetButtonColumn
+            // 
+            khongDuyetButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            khongDuyetButtonColumn.FillWeight = 102.030586F;
+            khongDuyetButtonColumn.HeaderText = "";
+            khongDuyetButtonColumn.Image = Properties.Resources.khongDuyet;
+            khongDuyetButtonColumn.Name = "khongDuyetButtonColumn";
+            khongDuyetButtonColumn.ReadOnly = true;
+            khongDuyetButtonColumn.Width = 5;
             // 
             // PhieuNhapForm
             // 
@@ -427,15 +504,6 @@
         private Panel panel1;
         private Panel panel3;
         private Guna.UI2.WinForms.Guna2DataGridView phieuNhapDataGridView;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column8;
-        private DataGridViewTextBoxColumn Column9;
         private Panel panel2;
         private Guna.UI2.WinForms.Guna2ImageCheckBox thoiGianCheckBox;
         private Guna.UI2.WinForms.Guna2DateTimePicker thoiGianKetThucDateTimePicker;
@@ -446,5 +514,19 @@
         private FontAwesome.Sharp.IconButton lamMoiButton;
         private FontAwesome.Sharp.IconButton xuatExcelButton;
         private FontAwesome.Sharp.IconButton timKiemButton;
+        private Guna.UI2.WinForms.Guna2ComboBox trangThaiComboBox;
+        private Label label1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn maPhieuNhapColumn;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column9;
+        private DataGridViewImageColumn infoButtonColumn;
+        private DataGridViewImageColumn duyetButtonColumn;
+        private DataGridViewImageColumn khongDuyetButtonColumn;
     }
 }

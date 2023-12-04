@@ -8,7 +8,11 @@ namespace DTO
 {
     public class PhanQuyen
     {
-        public PhanQuyen() { }
+        public PhanQuyen() 
+        {
+            maPhanQuyen = string.Empty;
+            tenPhanQuyen = string.Empty;
+        }
 
         public PhanQuyen(string maPhanQuyen, string tenPhanQuyen)
         {

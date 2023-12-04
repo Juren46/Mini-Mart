@@ -31,27 +31,34 @@ namespace BUS.OtherFunctions
             return nhaCungCapID;
         }
 
-        public static string GenerateNhanVienID(string tenPhanQuyen)
+        public static string GenerateNguoiDungID(string maPhanQuyen)
         {
-            NhanVienDAO nhanVienDAO = new NhanVienDAO();
+            NguoiDungBUS nguoiDungBUS = new NguoiDungBUS();
 
-            string nhanVienID = "";
+            string nguoiDungID = "";
+            int count = 0;
 
-            if (tenPhanQuyen.Equals("Nhân viên bán hàng"))
+            switch(maPhanQuyen)
             {
-                int count = nhanVienDAO.DemSoNhanVienTheoPhanQuyen(tenPhanQuyen);
-
-                nhanVienID = string.Format("NVB{0:D5}", ++count);
+                case "PQ01":
+                    count = nguoiDungBUS.DemSoNguoiDungTheoPhanQuyen(maPhanQuyen);
+                    nguoiDungID = string.Format("ADM{0:D5}", ++count);
+                    break;
+                case "PQ02":
+                    count = nguoiDungBUS.DemSoNguoiDungTheoPhanQuyen(maPhanQuyen);
+                    nguoiDungID = string.Format("QLI{0:D5}", ++count);
+                    break;
+                case "PQ03":
+                    count = nguoiDungBUS.DemSoNguoiDungTheoPhanQuyen(maPhanQuyen);
+                    nguoiDungID = string.Format("NVB{0:D5}", ++count);
+                    break;
+                case "PQ04":
+                    count = nguoiDungBUS.DemSoNguoiDungTheoPhanQuyen(maPhanQuyen);
+                    nguoiDungID = string.Format("NVK{0:D5}", ++count);
+                    break;
             }
 
-            if (tenPhanQuyen.Equals("Nhân viên kho"))
-            {
-                int count = nhanVienDAO.DemSoNhanVienTheoPhanQuyen(tenPhanQuyen);
-
-                nhanVienID = string.Format("NVK{0:D5}", ++count);
-            }
-
-            return nhanVienID;
+            return nguoiDungID;
         }
 
         public static string GenerateKhachHangID()
@@ -107,17 +114,6 @@ namespace BUS.OtherFunctions
             string phieuNhapID = string.Format("{0}-PN{1:D4}", DateTime.Now.ToString("dd/MM/yyyy"), ++count);
 
             return phieuNhapID;
-        }
-
-        public static string GenerateQuanLiID()
-        {
-            QuanLiBUS quanLiBUS = new QuanLiBUS();
-
-            int count = quanLiBUS.DemSoQuanLi();
-
-            string quanLiID = string.Format("QLI{0:D5}", ++count); ;
-
-            return quanLiID;
         }
     }
 }

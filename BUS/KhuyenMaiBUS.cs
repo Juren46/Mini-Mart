@@ -32,9 +32,9 @@ namespace BUS
             return khuyenMaiDAO.LayKhuyenMaiTheoMa(maKhuyenMai);
         }
 
-        public string ThemKhuyenMai(string maKhuyenMai, string tenKhuyenMai, string thoiGianBatDau, string thoiGianKetThuc, string loaiGiaTri, string giaTriApDung)
+        public string ThemKhuyenMai(string maKhuyenMai, string tenKhuyenMai, string thoiGianBatDau, string thoiGianKetThuc, string loaiGiaTri, string giaTri)
         {
-            if (string.IsNullOrEmpty(tenKhuyenMai) || string.IsNullOrEmpty(thoiGianBatDau) || string.IsNullOrEmpty(thoiGianKetThuc) || string.IsNullOrEmpty(loaiGiaTri) || string.IsNullOrEmpty(giaTriApDung))
+            if (string.IsNullOrEmpty(tenKhuyenMai) || string.IsNullOrEmpty(thoiGianBatDau) || string.IsNullOrEmpty(thoiGianKetThuc) || string.IsNullOrEmpty(loaiGiaTri) || string.IsNullOrEmpty(giaTri))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
             DateTime dateTimeBatDau = DateTime.ParseExact(thoiGianBatDau, "dd/MM/yyyy HH:mm:ss", null);
@@ -46,7 +46,7 @@ namespace BUS
             if (dateTimeBatDau <= DateTime.Now)
                 return "Thời gian bắt đầu không được diễn ra trước thời điểm hiện tại!";
 
-            if (Decimal.Parse(giaTriApDung) <= 0)
+            if (Decimal.Parse(giaTri) <= 0)
                 return "Giá trị áp dụng không được bé hơn 0!";
 
             KhuyenMai khuyenMai = new KhuyenMai();
@@ -56,7 +56,7 @@ namespace BUS
             khuyenMai.thoiGianBatDau = dateTimeBatDau;
             khuyenMai.thoiGianKetThuc = dateTimeKetThuc;
             khuyenMai.loaiGiaTri = loaiGiaTri;
-            khuyenMai.giaTriApDung = Decimal.Parse(giaTriApDung);
+            khuyenMai.giaTri = Decimal.Parse(giaTri);
 
             if (khuyenMaiDAO.ThemKhuyenMai(khuyenMai))
                 return "Thêm khuyến mãi thành công!";
@@ -72,9 +72,9 @@ namespace BUS
                 return "Xóa khuyến mãi thất bại!";
         }
 
-        public string SuaKhuyenMai(string maKhuyenMai, string tenKhuyenMai, string thoiGianBatDau, string thoiGianKetThuc, string loaiGiaTri, string giaTriApDung)
+        public string SuaKhuyenMai(string maKhuyenMai, string tenKhuyenMai, string thoiGianBatDau, string thoiGianKetThuc, string loaiGiaTri, string giaTri)
         {
-            if (string.IsNullOrEmpty(tenKhuyenMai) || string.IsNullOrEmpty(thoiGianBatDau) || string.IsNullOrEmpty(thoiGianKetThuc) || string.IsNullOrEmpty(loaiGiaTri) || string.IsNullOrEmpty(giaTriApDung))
+            if (string.IsNullOrEmpty(tenKhuyenMai) || string.IsNullOrEmpty(thoiGianBatDau) || string.IsNullOrEmpty(thoiGianKetThuc) || string.IsNullOrEmpty(loaiGiaTri) || string.IsNullOrEmpty(giaTri))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
             DateTime dateTimeBatDau = DateTime.ParseExact(thoiGianBatDau, "dd/MM/yyyy HH:mm:ss", null);
@@ -86,7 +86,7 @@ namespace BUS
             if (dateTimeBatDau <= DateTime.Now)
                 return "Thời gian bắt đầu không được trước thời điểm hiện tại!";
 
-            if (Decimal.Parse(giaTriApDung) <= 0)
+            if (Decimal.Parse(giaTri) <= 0)
                 return "Giá trị áp dụng không được bé hơn 0!";
 
             KhuyenMai khuyenMai = new KhuyenMai();
@@ -96,7 +96,7 @@ namespace BUS
             khuyenMai.thoiGianBatDau = dateTimeBatDau;
             khuyenMai.thoiGianKetThuc = dateTimeKetThuc;
             khuyenMai.loaiGiaTri = loaiGiaTri;
-            khuyenMai.giaTriApDung = Decimal.Parse(giaTriApDung);
+            khuyenMai.giaTri = Decimal.Parse(giaTri);
 
             if (khuyenMaiDAO.SuaKhuyenMai(khuyenMai))
                 return "Chỉnh sửa thông tin khuyến mãi thành công!";

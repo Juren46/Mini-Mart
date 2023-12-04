@@ -46,65 +46,38 @@ namespace BUS.OtherFunctions
             }
         }
 
-        public void XuatExcelTaiKhoan(List<TaiKhoan> listTaiKhoan)
+        public void XuatExcelNguoiDung(List<NguoiDung> listNguoiDung)
         {
             using (var workbook = new XLWorkbook())
             {
                 var worksheet = workbook.Worksheets.Add("DataSheet");
 
-                worksheet.Cell(1, 1).Value = "Tên tài khoản";
+                worksheet.Cell(1, 1).Value = "Mã người dùng";
                 worksheet.Cell(1, 2).Value = "Mã phân quyền";
-                worksheet.Cell(1, 3).Value = "Mật khẩu";
-                worksheet.Cell(1, 4).Value = "Trạng thái";
+                worksheet.Cell(1, 3).Value = "Tên đăng nhập";
+                worksheet.Cell(1, 4).Value = "Mật khẩu";
+                worksheet.Cell(1, 5).Value = "Họ tên";
+                worksheet.Cell(1, 6).Value = "Giới tính";
+                worksheet.Cell(1, 7).Value = "Ngày sinh";
+                worksheet.Cell(1, 8).Value = "Số điện thoại";
+                worksheet.Cell(1, 9).Value = "Email";
+                worksheet.Cell(1, 10).Value = "Địa chỉ";
+                worksheet.Cell(1, 11).Value = "Trạng thái";
 
                 int row = 2;
-                foreach (TaiKhoan taiKhoan in listTaiKhoan)
+                foreach (NguoiDung nguoiDung in listNguoiDung)
                 {
-                    worksheet.Cell(row, 1).Value = taiKhoan.tenTaiKhoan;
-                    worksheet.Cell(row, 2).Value = taiKhoan.maPhanQuyen;
-                    worksheet.Cell(row, 3).Value = taiKhoan.matKhau;
-                    worksheet.Cell(row, 4).Value = taiKhoan.trangThai;
-
-                    row++;
-                }
-
-                foreach (var item in worksheet.ColumnsUsed())
-                {
-                    item.AdjustToContents();
-                }
-
-                workbook.SaveAs(filePath);
-            }
-        }
-
-        public void XuatExcelNhanVien(List<NhanVien> listNhanVien)
-        {
-            using (var workbook = new XLWorkbook())
-            {
-                var worksheet = workbook.Worksheets.Add("DataSheet");
-
-                worksheet.Cell(1, 1).Value = "Mã nhân viên";
-                worksheet.Cell(1, 2).Value = "Tên tài khoản";
-                worksheet.Cell(1, 3).Value = "Tên nhân viên";
-                worksheet.Cell(1, 4).Value = "Giới tính";
-                worksheet.Cell(1, 5).Value = "Ngày sinh";
-                worksheet.Cell(1, 6).Value = "Số điện thoại";
-                worksheet.Cell(1, 7).Value = "Email";
-                worksheet.Cell(1, 8).Value = "Địa chỉ";
-                worksheet.Cell(1, 9).Value = "Trạng thái";
-
-                int row = 2;
-                foreach (NhanVien nhanVien in listNhanVien)
-                {
-                    worksheet.Cell(row, 1).Value = nhanVien.maNhanVien;
-                    worksheet.Cell(row, 2).Value = nhanVien.tenTaiKhoan;
-                    worksheet.Cell(row, 3).Value = nhanVien.hoTen;
-                    worksheet.Cell(row, 4).Value = nhanVien.gioiTinh;
-                    worksheet.Cell(row, 5).Value = nhanVien.ngaySinh?.ToString("dd/MM/yyyy");
-                    worksheet.Cell(row, 6).Value = nhanVien.soDienThoai;
-                    worksheet.Cell(row, 7).Value = nhanVien.email;
-                    worksheet.Cell(row, 8).Value = nhanVien.diaChi;
-                    worksheet.Cell(row, 9).Value = nhanVien.trangThai;
+                    worksheet.Cell(row, 1).Value = nguoiDung.maNguoiDung;
+                    worksheet.Cell(row, 2).Value = nguoiDung.maPhanQuyen;
+                    worksheet.Cell(row, 3).Value = nguoiDung.tenDangNhap;
+                    worksheet.Cell(row, 4).Value = nguoiDung.matKhau;
+                    worksheet.Cell(row, 5).Value = nguoiDung.hoTen;
+                    worksheet.Cell(row, 6).Value = nguoiDung.gioiTinh;
+                    worksheet.Cell(row, 7).Value = nguoiDung.ngaySinh?.ToString("dd/MM/yyyy");
+                    worksheet.Cell(row, 8).Value = nguoiDung.soDienThoai;
+                    worksheet.Cell(row, 9).Value = nguoiDung.email;
+                    worksheet.Cell(row, 10).Value = nguoiDung.diaChi;
+                    worksheet.Cell(row, 11).Value = nguoiDung.trangThai;
 
                     row++;
                 }
@@ -144,8 +117,8 @@ namespace BUS.OtherFunctions
                     worksheet.Cell(row, 5).Value = khachHang.soDienThoai;
                     worksheet.Cell(row, 6).Value = khachHang.email;
                     worksheet.Cell(row, 7).Value = khachHang.diaChi;
-                    worksheet.Cell(row, 8).Value = khachHang.bacThanhVien;
-                    worksheet.Cell(row, 9).Value = khachHang.diemTichLuy;
+                    worksheet.Cell(row, 8).Value = khachHang.hangThanhVien;
+                    worksheet.Cell(row, 9).Value = khachHang.diemThanhVien;
 
                     row++;
                 }
@@ -229,24 +202,22 @@ namespace BUS.OtherFunctions
 
                 worksheet.Cell(1, 1).Value = "Mã sản phẩm";
                 worksheet.Cell(1, 2).Value = "Mã loại sản phẩm";
-                worksheet.Cell(1, 3).Value = "Mã nhà cung cấp";
-                worksheet.Cell(1, 4).Value = "Tên sản phẩm";
-                worksheet.Cell(1, 5).Value = "Đơn vị tính";
-                worksheet.Cell(1, 6).Value = "Số lượng";
-                worksheet.Cell(1, 7).Value = "Giá bán";
-                worksheet.Cell(1, 8).Value = "Trạng thái";
+                worksheet.Cell(1, 3).Value = "Tên sản phẩm";
+                worksheet.Cell(1, 4).Value = "Đơn vị";
+                worksheet.Cell(1, 5).Value = "Số lượng";
+                worksheet.Cell(1, 6).Value = "Giá bán";
+                worksheet.Cell(1, 7).Value = "Trạng thái";
 
                 int row = 2;
                 foreach (SanPham sanPham in listSanPham)
                 {
                     worksheet.Cell(row, 1).Value = sanPham.maSanPham;
                     worksheet.Cell(row, 2).Value = sanPham.maLoaiSanPham;
-                    worksheet.Cell(row, 3).Value = sanPham.maNhaCungCap;
-                    worksheet.Cell(row, 4).Value = sanPham.tenSanPham;
-                    worksheet.Cell(row, 5).Value = sanPham.donViTinh;
-                    worksheet.Cell(row, 6).Value = sanPham.soLuong;
-                    worksheet.Cell(row, 7).Value = sanPham.giaBan;
-                    worksheet.Cell(row, 8).Value = sanPham.trangThai;
+                    worksheet.Cell(row, 3).Value = sanPham.tenSanPham;
+                    worksheet.Cell(row, 4).Value = sanPham.donVi;
+                    worksheet.Cell(row, 5).Value = sanPham.soLuong;
+                    worksheet.Cell(row, 6).Value = sanPham.giaBan;
+                    worksheet.Cell(row, 7).Value = sanPham.trangThai;
 
                     row++;
                 }
@@ -271,7 +242,7 @@ namespace BUS.OtherFunctions
                 worksheet.Cell(1, 3).Value = "Thời gian bắt đầu";
                 worksheet.Cell(1, 4).Value = "Thời gian kết thúc";
                 worksheet.Cell(1, 5).Value = "Loại giá trị";
-                worksheet.Cell(1, 6).Value = "Giá trị áp dụng";
+                worksheet.Cell(1, 6).Value = "Giá trị";
 
                 int row = 2;
                 foreach (KhuyenMai khuyenMai in listKhuyenMai)
@@ -281,7 +252,7 @@ namespace BUS.OtherFunctions
                     worksheet.Cell(row, 3).Value = khuyenMai.thoiGianBatDau.ToString("dd/MM/yyyy HH:mm:ss");
                     worksheet.Cell(row, 4).Value = khuyenMai.thoiGianKetThuc.ToString("dd/MM/yyyy HH:mm:ss");
                     worksheet.Cell(row, 5).Value = khuyenMai.loaiGiaTri;
-                    worksheet.Cell(row, 6).Value = khuyenMai.giaTriApDung;
+                    worksheet.Cell(row, 6).Value = khuyenMai.giaTri;
 
                     row++;
                 }
@@ -346,24 +317,24 @@ namespace BUS.OtherFunctions
 
                 worksheet.Cell(1, 1).Value = "Mã phiếu nhập";
                 worksheet.Cell(1, 2).Value = "Mã nhà cung cấp";
-                worksheet.Cell(1, 3).Value = "Mã nhân viên";
-                worksheet.Cell(1, 4).Value = "Mã quản lí";
+                worksheet.Cell(1, 3).Value = "Mã người tạo";
+                worksheet.Cell(1, 4).Value = "Mã người duyệt";
                 worksheet.Cell(1, 5).Value = "Thời gian tạo";
                 worksheet.Cell(1, 6).Value = "Thời gian duyệt";
                 worksheet.Cell(1, 7).Value = "Thành tiền";
-                worksheet.Cell(1, 8).Value = "Trạng thái duyệt";
+                worksheet.Cell(1, 8).Value = "Trạng thái";
 
                 int row = 2;
                 foreach (PhieuNhap phieuNhap in listPhieuNhap)
                 {
                     worksheet.Cell(row, 1).Value = phieuNhap.maPhieuNhap;
                     worksheet.Cell(row, 2).Value = phieuNhap.maNhaCungCap;
-                    worksheet.Cell(row, 3).Value = phieuNhap.maNhanVien;
-                    worksheet.Cell(row, 4).Value = phieuNhap.maQuanLi;
+                    worksheet.Cell(row, 3).Value = phieuNhap.maNguoiTao;
+                    worksheet.Cell(row, 4).Value = phieuNhap.maNguoiDuyet;
                     worksheet.Cell(row, 5).Value = phieuNhap.thoiGianTao.ToString("dd/MM/yyyy HH:mm:ss");
                     worksheet.Cell(row, 6).Value = phieuNhap.thoiGianDuyet?.ToString("dd/MM/yyyy HH:mm:ss");
                     worksheet.Cell(row, 7).Value = phieuNhap.thanhTien;
-                    worksheet.Cell(row, 8).Value = phieuNhap.trangThaiDuyet;
+                    worksheet.Cell(row, 8).Value = phieuNhap.trangThai;
 
                     row++;
                 }

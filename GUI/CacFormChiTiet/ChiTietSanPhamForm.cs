@@ -23,6 +23,7 @@ namespace GUI
         string context;
         SanPhamForm form;
         NhapHangForm nhapHangForm;
+        List<LoaiSanPham> listLoaiSanPham;
 
         public ChiTietSanPhamForm(SanPham sanPham, string context, SanPhamForm form)
         {
@@ -57,6 +58,11 @@ namespace GUI
 
         private void ChiTietSanPhamForm_Load(object sender, EventArgs e)
         {
+            listLoaiSanPham = new LoaiSanPhamBUS().LayDanhSachLoaiSanPham();
+            loaiSanPhamComboBox.DataSource = listLoaiSanPham;
+            loaiSanPhamComboBox.DisplayMember = "tenLoaiSanPham";
+            loaiSanPhamComboBox.SelectedIndex = -1;
+
             switch (context)
             {
                 case "Chi tiết":
@@ -64,11 +70,18 @@ namespace GUI
 
                     maSanPhamTextBox.Text = sanPham.maSanPham;
                     tenSanPhamTextBox.Text = sanPham.tenSanPham;
-                    loaiSanPhamTextBox.Text = sanPham.maLoaiSanPham;
-                    nhaCungCapTextBox.Text = sanPham.maNhaCungCap;
-                    donViTextBox.Text = sanPham.donViTinh;
+                    foreach (var item in loaiSanPhamComboBox.Items)
+                    {
+                        LoaiSanPham loaiSanPham = item as LoaiSanPham;
+                        if (loaiSanPham.maLoaiSanPham.Equals(sanPham.maLoaiSanPham))
+                        {
+                            loaiSanPhamComboBox.SelectedItem = item;
+                            break;
+                        }
+                    }
+                    donViTextBox.Text = sanPham.donVi;
                     soLuongNumericUpDown.Value = sanPham.soLuong;
-                    giaBanTextBox.Text = sanPham.giaBan.ToString();
+                    giaBanTextBox.Text = sanPham.giaBan.ToString("0");
                     foreach (var item in trangThaiComboBox.Items)
                     {
                         if (item.ToString().Equals(sanPham.trangThai))
@@ -81,15 +94,12 @@ namespace GUI
 
                     maSanPhamTextBox.ReadOnly = true;
                     tenSanPhamTextBox.ReadOnly = true;
-                    loaiSanPhamTextBox.ReadOnly = true;
-                    nhaCungCapTextBox.ReadOnly = true;
+                    loaiSanPhamComboBox.Enabled = false;
                     donViTextBox.ReadOnly = true;
                     soLuongNumericUpDown.Enabled = false;
                     giaBanTextBox.ReadOnly = true;
                     trangThaiComboBox.Enabled = false;
                     chonAnhButton.Visible = false;
-                    chonLoaiSanPhamButton.Visible = false;
-                    chonNhaCungCapButton.Visible = false;
                     huyBoButton.Visible = false;
                     luuButton.Visible = false;
                     this.Height -= huyBoButton.Height;
@@ -108,17 +118,11 @@ namespace GUI
                             break;
                         }
                     }
-                    if (nhapHangForm != null)
-                    {
-                        nhaCungCapTextBox.Text = nhapHangForm.nhaCungCap.maNhaCungCap;
-                        chonNhaCungCapButton.Enabled = false;
-                    }
 
                     maSanPhamTextBox.ReadOnly = true;
                     soLuongNumericUpDown.Enabled = false;
                     trangThaiComboBox.Enabled = false;
-                    loaiSanPhamTextBox.ReadOnly = true;
-                    nhaCungCapTextBox.ReadOnly = true;
+                    giaBanTextBox.ReadOnly = true;
 
                     break;
 
@@ -127,11 +131,18 @@ namespace GUI
 
                     maSanPhamTextBox.Text = sanPham.maSanPham;
                     tenSanPhamTextBox.Text = sanPham.tenSanPham;
-                    loaiSanPhamTextBox.Text = sanPham.maLoaiSanPham;
-                    nhaCungCapTextBox.Text = sanPham.maNhaCungCap;
-                    donViTextBox.Text = sanPham.donViTinh;
+                    foreach (var item in loaiSanPhamComboBox.Items)
+                    {
+                        LoaiSanPham loaiSanPham = item as LoaiSanPham;
+                        if (loaiSanPham.maLoaiSanPham.Equals(sanPham.maLoaiSanPham))
+                        {
+                            loaiSanPhamComboBox.SelectedItem = item;
+                            break;
+                        }
+                    }
+                    donViTextBox.Text = sanPham.donVi;
                     soLuongNumericUpDown.Value = sanPham.soLuong;
-                    giaBanTextBox.Text = sanPham.giaBan.ToString();
+                    giaBanTextBox.Text = sanPham.giaBan.ToString("0");
                     foreach (var item in trangThaiComboBox.Items)
                     {
                         if (item.ToString().Equals(sanPham.trangThai))
@@ -140,13 +151,30 @@ namespace GUI
                             break;
                         }
                     }
+                    if (sanPham.trangThai.Equals("Ngừng kinh doanh"))
+                    {
+                        foreach(var item in trangThaiComboBox.Items)
+                        {
+                            if (!item.ToString().Equals("Chờ xử lý"))
+                                trangThaiComboBox.Items.Remove(item);
+                        }
+                    }
+                    if (sanPham.trangThai.Equals("Chờ xử lý"))
+                    {
+                        foreach (var item in trangThaiComboBox.Items)
+                        {
+                            if (item.ToString().Equals("Đang bán") || item.ToString().Equals("Hết hàng"))
+                                trangThaiComboBox.Items.Remove(item);
+                        }
+                    }
+                    if (!sanPham.trangThai.Equals("Đang bán"))
+                    {
+                        giaBanTextBox.ReadOnly = true;
+                    }
                     anhSanPhamPictureBox.Image = ImageHelper.ByteArrayToImage(sanPham.duLieuAnh);
 
                     maSanPhamTextBox.ReadOnly = true;
                     soLuongNumericUpDown.Enabled = false;
-                    trangThaiComboBox.Enabled = false;
-                    loaiSanPhamTextBox.ReadOnly = true;
-                    nhaCungCapTextBox.ReadOnly = true;
 
                     break;
             }
@@ -170,16 +198,6 @@ namespace GUI
             }
         }
 
-        private void chonLoaiSanPhamButton_Click(object sender, EventArgs e)
-        {
-            new ChonLoaiSanPham(this).Show();
-        }
-
-        private void chonNhaCungCapButton_Click(object sender, EventArgs e)
-        {
-            new ChonNhaCungCap(this).Show();
-        }
-
         private void huyBoButton_Click(object sender, EventArgs e)
         {
             DialogResult result = CacFormThongBao.XacNhanForm.ShowDialog("Bạn có muốn hủy thông tin đã nhập?");
@@ -189,11 +207,18 @@ namespace GUI
                 if (context.Equals("Sửa"))
                 {
                     tenSanPhamTextBox.Text = sanPham.tenSanPham;
-                    loaiSanPhamTextBox.Text = sanPham.maLoaiSanPham;
-                    nhaCungCapTextBox.Text = sanPham.maNhaCungCap;
-                    donViTextBox.Text = sanPham.donViTinh;
+                    foreach (var item in loaiSanPhamComboBox.Items)
+                    {
+                        LoaiSanPham loaiSanPham = item as LoaiSanPham;
+                        if (loaiSanPham.maLoaiSanPham.Equals(sanPham.maLoaiSanPham))
+                        {
+                            loaiSanPhamComboBox.SelectedItem = item;
+                            break;
+                        }
+                    }
+                    donViTextBox.Text = sanPham.donVi;
                     soLuongNumericUpDown.Value = sanPham.soLuong;
-                    giaBanTextBox.Text = sanPham.giaBan.ToString();
+                    giaBanTextBox.Text = sanPham.giaBan.ToString("0");
                     foreach (var item in trangThaiComboBox.Items)
                     {
                         if (item.ToString().Equals(sanPham.trangThai))
@@ -207,8 +232,8 @@ namespace GUI
                 else if (context.Equals("Thêm"))
                 {
                     tenSanPhamTextBox.Clear();
-                    loaiSanPhamTextBox.Clear();
-                    nhaCungCapTextBox.Clear();
+                    loaiSanPhamComboBox.SelectedItem = null;
+                    loaiSanPhamComboBox.SelectedIndex = -1;
                     donViTextBox.Clear();
                     giaBanTextBox.Clear();
                     anhSanPhamPictureBox.Image = Properties.Resources.gallery;
@@ -224,9 +249,13 @@ namespace GUI
             {
                 string maSanPham = maSanPhamTextBox.Text;
                 string tenSanPham = tenSanPhamTextBox.Text;
-                string maLoaiSanPham = loaiSanPhamTextBox.Text;
-                string maNhaCungCap = nhaCungCapTextBox.Text;
-                string donVi = nhaCungCapTextBox.Text;
+                string maLoaiSanPham = "";
+                if (loaiSanPhamComboBox.SelectedValue != null)
+                {
+                    LoaiSanPham loaiSanPham = loaiSanPhamComboBox.SelectedValue as LoaiSanPham;
+                    maLoaiSanPham = loaiSanPham.maLoaiSanPham;
+                }
+                string donVi = donViTextBox.Text;
                 string giaBan = giaBanTextBox.Text;
                 byte[] duLieuAnh;
                 try
@@ -237,16 +266,17 @@ namespace GUI
                 {
                     duLieuAnh = sanPham.duLieuAnh;
                 }
+                string trangThai = trangThaiComboBox.SelectedItem.ToString();
 
                 string message = "";
 
                 switch (context)
                 {
                     case "Thêm":
-                        message = sanPhamBUS.ThemSanPham(maSanPham, maLoaiSanPham, maNhaCungCap, tenSanPham, donVi, giaBan, duLieuAnh);
+                        message = sanPhamBUS.ThemSanPham(maSanPham, maLoaiSanPham,tenSanPham, donVi, giaBan, duLieuAnh);
                         break;
                     case "Sửa":
-                        message = sanPhamBUS.SuaSanPham(maSanPham, maLoaiSanPham, maNhaCungCap, tenSanPham, donVi, giaBan, duLieuAnh);
+                        message = sanPhamBUS.SuaSanPham(maSanPham, maLoaiSanPham, tenSanPham, donVi, giaBan, duLieuAnh, trangThai);
                         break;
                 }
 
@@ -255,6 +285,8 @@ namespace GUI
                 {
                     if (form != null)
                         form.lamMoiButton_Click(sender, e);
+                    if (nhapHangForm != null)
+                        nhapHangForm.lamMoiSanPhamButton_Click(sender, e);
                     CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.SUCCESS);
 
                     this.Close();
@@ -264,6 +296,22 @@ namespace GUI
                     CanhBaoForm.ShowAlertMessage(message, CanhBaoForm.AlertType.WARNING);
                     
                 }
+            }
+        }
+
+        private void giaBanTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(giaBanTextBox.Text))
+            {
+                giaBanTextBox.Text = "0"; 
+            }
+        }
+
+        private void giaBan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; 
             }
         }
     }

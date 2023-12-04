@@ -39,7 +39,7 @@ namespace BUS
                 return "Tên nhà cung cấp không được bỏ trống!";
 
             if (string.IsNullOrEmpty(soDienThoai) && string.IsNullOrEmpty(email))
-                return "Hãy nhập số điện thoại hoặc email để liên lạc nhà cung cấp!";
+                return "Hãy nhập số điện thoại hoặc email để có thể liên lạc nhà cung cấp!";
 
             if (!string.IsNullOrEmpty(soDienThoai) && !InputValidate.PhoneNumberValidate(soDienThoai))
                 return "Vui lòng nhập đúng số điện thoại!";

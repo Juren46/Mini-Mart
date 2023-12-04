@@ -51,22 +51,14 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             quayLaiButton = new FontAwesome.Sharp.IconButton();
             tieuDeFormLabel = new Label();
             panel2 = new Panel();
-            chonNhaCungCapButton = new Guna.UI2.WinForms.Guna2Button();
-            chonLoaiSanPhamButton = new Guna.UI2.WinForms.Guna2Button();
+            loaiSanPhamComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             trangThaiComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             label10 = new Label();
             label8 = new Label();
-            loaiSanPhamTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             label9 = new Label();
             chonAnhButton = new Guna.UI2.WinForms.Guna2Button();
             luuButton = new Guna.UI2.WinForms.Guna2Button();
@@ -77,11 +69,9 @@
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
-            label3 = new Label();
             label2 = new Label();
             donViTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             giaBanTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            nhaCungCapTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             tenSanPhamTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             maSanPhamTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
@@ -132,12 +122,10 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(chonNhaCungCapButton);
-            panel2.Controls.Add(chonLoaiSanPhamButton);
+            panel2.Controls.Add(loaiSanPhamComboBox);
             panel2.Controls.Add(trangThaiComboBox);
             panel2.Controls.Add(label10);
             panel2.Controls.Add(label8);
-            panel2.Controls.Add(loaiSanPhamTextBox);
             panel2.Controls.Add(label9);
             panel2.Controls.Add(chonAnhButton);
             panel2.Controls.Add(luuButton);
@@ -148,11 +136,9 @@
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label4);
-            panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(donViTextBox);
             panel2.Controls.Add(giaBanTextBox);
-            panel2.Controls.Add(nhaCungCapTextBox);
             panel2.Controls.Add(tenSanPhamTextBox);
             panel2.Controls.Add(maSanPhamTextBox);
             panel2.Dock = DockStyle.Fill;
@@ -161,52 +147,28 @@
             panel2.Size = new Size(894, 435);
             panel2.TabIndex = 2;
             // 
-            // chonNhaCungCapButton
+            // loaiSanPhamComboBox
             // 
-            chonNhaCungCapButton.BorderColor = Color.FromArgb(0, 79, 111);
-            chonNhaCungCapButton.BorderRadius = 5;
-            chonNhaCungCapButton.BorderThickness = 1;
-            chonNhaCungCapButton.CustomizableEdges = customizableEdges1;
-            chonNhaCungCapButton.DisabledState.BorderColor = Color.DarkGray;
-            chonNhaCungCapButton.DisabledState.CustomBorderColor = Color.DarkGray;
-            chonNhaCungCapButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            chonNhaCungCapButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            chonNhaCungCapButton.FillColor = Color.White;
-            chonNhaCungCapButton.Font = new Font("Microsoft Sans Serif", 12F);
-            chonNhaCungCapButton.ForeColor = Color.FromArgb(0, 79, 111);
-            chonNhaCungCapButton.Location = new Point(794, 247);
-            chonNhaCungCapButton.Name = "chonNhaCungCapButton";
-            chonNhaCungCapButton.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            chonNhaCungCapButton.Size = new Size(73, 40);
-            chonNhaCungCapButton.TabIndex = 49;
-            chonNhaCungCapButton.Text = "Chọn";
-            chonNhaCungCapButton.Click += chonNhaCungCapButton_Click;
-            // 
-            // chonLoaiSanPhamButton
-            // 
-            chonLoaiSanPhamButton.BorderColor = Color.FromArgb(0, 79, 111);
-            chonLoaiSanPhamButton.BorderRadius = 5;
-            chonLoaiSanPhamButton.BorderThickness = 1;
-            chonLoaiSanPhamButton.CustomizableEdges = customizableEdges3;
-            chonLoaiSanPhamButton.DisabledState.BorderColor = Color.DarkGray;
-            chonLoaiSanPhamButton.DisabledState.CustomBorderColor = Color.DarkGray;
-            chonLoaiSanPhamButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            chonLoaiSanPhamButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            chonLoaiSanPhamButton.FillColor = Color.White;
-            chonLoaiSanPhamButton.Font = new Font("Microsoft Sans Serif", 12F);
-            chonLoaiSanPhamButton.ForeColor = Color.FromArgb(0, 79, 111);
-            chonLoaiSanPhamButton.Location = new Point(794, 156);
-            chonLoaiSanPhamButton.Name = "chonLoaiSanPhamButton";
-            chonLoaiSanPhamButton.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            chonLoaiSanPhamButton.Size = new Size(73, 40);
-            chonLoaiSanPhamButton.TabIndex = 48;
-            chonLoaiSanPhamButton.Text = "Chọn";
-            chonLoaiSanPhamButton.Click += chonLoaiSanPhamButton_Click;
+            loaiSanPhamComboBox.BackColor = Color.Transparent;
+            loaiSanPhamComboBox.CustomizableEdges = customizableEdges1;
+            loaiSanPhamComboBox.DrawMode = DrawMode.OwnerDrawFixed;
+            loaiSanPhamComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            loaiSanPhamComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
+            loaiSanPhamComboBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            loaiSanPhamComboBox.Font = new Font("Segoe UI", 10F);
+            loaiSanPhamComboBox.ForeColor = Color.FromArgb(68, 88, 112);
+            loaiSanPhamComboBox.ItemHeight = 30;
+            loaiSanPhamComboBox.Items.AddRange(new object[] { "Đang bán", "Chờ xử lý", "Hết hàng", "Ngừng kinh doanh" });
+            loaiSanPhamComboBox.Location = new Point(602, 160);
+            loaiSanPhamComboBox.Name = "loaiSanPhamComboBox";
+            loaiSanPhamComboBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            loaiSanPhamComboBox.Size = new Size(265, 36);
+            loaiSanPhamComboBox.TabIndex = 48;
             // 
             // trangThaiComboBox
             // 
             trangThaiComboBox.BackColor = Color.Transparent;
-            trangThaiComboBox.CustomizableEdges = customizableEdges5;
+            trangThaiComboBox.CustomizableEdges = customizableEdges3;
             trangThaiComboBox.DrawMode = DrawMode.OwnerDrawFixed;
             trangThaiComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             trangThaiComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -217,7 +179,7 @@
             trangThaiComboBox.Items.AddRange(new object[] { "Đang bán", "Chờ xử lý", "Hết hàng", "Ngừng kinh doanh" });
             trangThaiComboBox.Location = new Point(425, 251);
             trangThaiComboBox.Name = "trangThaiComboBox";
-            trangThaiComboBox.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            trangThaiComboBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
             trangThaiComboBox.Size = new Size(164, 36);
             trangThaiComboBox.TabIndex = 47;
             // 
@@ -243,28 +205,6 @@
             label8.TabIndex = 45;
             label8.Text = "Loại sản phẩm";
             // 
-            // loaiSanPhamTextBox
-            // 
-            loaiSanPhamTextBox.BorderColor = Color.FromArgb(0, 79, 111);
-            loaiSanPhamTextBox.BorderRadius = 5;
-            loaiSanPhamTextBox.CustomizableEdges = customizableEdges7;
-            loaiSanPhamTextBox.DefaultText = "";
-            loaiSanPhamTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            loaiSanPhamTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            loaiSanPhamTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            loaiSanPhamTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            loaiSanPhamTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            loaiSanPhamTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
-            loaiSanPhamTextBox.Location = new Point(598, 156);
-            loaiSanPhamTextBox.Margin = new Padding(5, 5, 5, 5);
-            loaiSanPhamTextBox.Name = "loaiSanPhamTextBox";
-            loaiSanPhamTextBox.PasswordChar = '\0';
-            loaiSanPhamTextBox.PlaceholderText = "";
-            loaiSanPhamTextBox.SelectedText = "";
-            loaiSanPhamTextBox.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            loaiSanPhamTextBox.Size = new Size(188, 40);
-            loaiSanPhamTextBox.TabIndex = 44;
-            // 
             // label9
             // 
             label9.AutoSize = true;
@@ -280,7 +220,7 @@
             // 
             chonAnhButton.BorderColor = Color.FromArgb(0, 79, 111);
             chonAnhButton.BorderThickness = 1;
-            chonAnhButton.CustomizableEdges = customizableEdges9;
+            chonAnhButton.CustomizableEdges = customizableEdges5;
             chonAnhButton.DisabledState.BorderColor = Color.DarkGray;
             chonAnhButton.DisabledState.CustomBorderColor = Color.DarkGray;
             chonAnhButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -290,7 +230,7 @@
             chonAnhButton.ForeColor = Color.Gray;
             chonAnhButton.Location = new Point(38, 249);
             chonAnhButton.Name = "chonAnhButton";
-            chonAnhButton.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            chonAnhButton.ShadowDecoration.CustomizableEdges = customizableEdges6;
             chonAnhButton.Size = new Size(221, 37);
             chonAnhButton.TabIndex = 40;
             chonAnhButton.Text = "Chọn ảnh";
@@ -299,7 +239,7 @@
             // luuButton
             // 
             luuButton.BorderRadius = 5;
-            luuButton.CustomizableEdges = customizableEdges11;
+            luuButton.CustomizableEdges = customizableEdges7;
             luuButton.DisabledState.BorderColor = Color.DarkGray;
             luuButton.DisabledState.CustomBorderColor = Color.DarkGray;
             luuButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -309,7 +249,7 @@
             luuButton.ForeColor = Color.White;
             luuButton.Location = new Point(678, 331);
             luuButton.Name = "luuButton";
-            luuButton.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            luuButton.ShadowDecoration.CustomizableEdges = customizableEdges8;
             luuButton.Size = new Size(189, 53);
             luuButton.TabIndex = 38;
             luuButton.Text = "Lưu";
@@ -320,7 +260,7 @@
             huyBoButton.BorderColor = Color.FromArgb(0, 79, 111);
             huyBoButton.BorderRadius = 5;
             huyBoButton.BorderThickness = 1;
-            huyBoButton.CustomizableEdges = customizableEdges13;
+            huyBoButton.CustomizableEdges = customizableEdges9;
             huyBoButton.DisabledState.BorderColor = Color.DarkGray;
             huyBoButton.DisabledState.CustomBorderColor = Color.DarkGray;
             huyBoButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -330,7 +270,7 @@
             huyBoButton.ForeColor = Color.FromArgb(0, 79, 111);
             huyBoButton.Location = new Point(483, 331);
             huyBoButton.Name = "huyBoButton";
-            huyBoButton.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            huyBoButton.ShadowDecoration.CustomizableEdges = customizableEdges10;
             huyBoButton.Size = new Size(189, 53);
             huyBoButton.TabIndex = 37;
             huyBoButton.Text = "Huỷ bỏ";
@@ -340,13 +280,13 @@
             // 
             anhSanPhamPictureBox.BackColor = Color.Transparent;
             anhSanPhamPictureBox.BorderStyle = BorderStyle.FixedSingle;
-            anhSanPhamPictureBox.CustomizableEdges = customizableEdges15;
+            anhSanPhamPictureBox.CustomizableEdges = customizableEdges11;
             anhSanPhamPictureBox.FillColor = Color.Gainsboro;
             anhSanPhamPictureBox.Image = Properties.Resources.gallery;
             anhSanPhamPictureBox.ImageRotate = 0F;
             anhSanPhamPictureBox.Location = new Point(38, 64);
             anhSanPhamPictureBox.Name = "anhSanPhamPictureBox";
-            anhSanPhamPictureBox.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            anhSanPhamPictureBox.ShadowDecoration.CustomizableEdges = customizableEdges12;
             anhSanPhamPictureBox.Size = new Size(221, 178);
             anhSanPhamPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             anhSanPhamPictureBox.TabIndex = 36;
@@ -368,13 +308,13 @@
             soLuongNumericUpDown.BackColor = Color.Transparent;
             soLuongNumericUpDown.BorderColor = Color.FromArgb(0, 79, 111);
             soLuongNumericUpDown.BorderRadius = 5;
-            soLuongNumericUpDown.CustomizableEdges = customizableEdges17;
+            soLuongNumericUpDown.CustomizableEdges = customizableEdges13;
             soLuongNumericUpDown.Font = new Font("Microsoft Sans Serif", 14.25F);
             soLuongNumericUpDown.Location = new Point(282, 247);
             soLuongNumericUpDown.Margin = new Padding(5, 5, 5, 5);
             soLuongNumericUpDown.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
             soLuongNumericUpDown.Name = "soLuongNumericUpDown";
-            soLuongNumericUpDown.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            soLuongNumericUpDown.ShadowDecoration.CustomizableEdges = customizableEdges14;
             soLuongNumericUpDown.Size = new Size(133, 40);
             soLuongNumericUpDown.TabIndex = 33;
             soLuongNumericUpDown.UpDownButtonFillColor = Color.FromArgb(0, 79, 111);
@@ -413,17 +353,6 @@
             label4.TabIndex = 30;
             label4.Text = "Đơn vị ";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 14.25F);
-            label3.ForeColor = Color.FromArgb(0, 79, 111);
-            label3.Location = new Point(598, 220);
-            label3.Name = "label3";
-            label3.Size = new Size(134, 24);
-            label3.TabIndex = 29;
-            label3.Text = "Nhà cung cấp ";
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -439,7 +368,7 @@
             // 
             donViTextBox.BorderColor = Color.FromArgb(0, 79, 111);
             donViTextBox.BorderRadius = 5;
-            donViTextBox.CustomizableEdges = customizableEdges19;
+            donViTextBox.CustomizableEdges = customizableEdges15;
             donViTextBox.DefaultText = "";
             donViTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             donViTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -453,7 +382,7 @@
             donViTextBox.PasswordChar = '\0';
             donViTextBox.PlaceholderText = "";
             donViTextBox.SelectedText = "";
-            donViTextBox.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            donViTextBox.ShadowDecoration.CustomizableEdges = customizableEdges16;
             donViTextBox.Size = new Size(133, 40);
             donViTextBox.TabIndex = 27;
             // 
@@ -461,8 +390,8 @@
             // 
             giaBanTextBox.BorderColor = Color.FromArgb(0, 79, 111);
             giaBanTextBox.BorderRadius = 5;
-            giaBanTextBox.CustomizableEdges = customizableEdges21;
-            giaBanTextBox.DefaultText = "";
+            giaBanTextBox.CustomizableEdges = customizableEdges17;
+            giaBanTextBox.DefaultText = "0";
             giaBanTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             giaBanTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             giaBanTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
@@ -475,37 +404,17 @@
             giaBanTextBox.PasswordChar = '\0';
             giaBanTextBox.PlaceholderText = "";
             giaBanTextBox.SelectedText = "";
-            giaBanTextBox.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            giaBanTextBox.ShadowDecoration.CustomizableEdges = customizableEdges18;
             giaBanTextBox.Size = new Size(164, 40);
             giaBanTextBox.TabIndex = 26;
-            // 
-            // nhaCungCapTextBox
-            // 
-            nhaCungCapTextBox.BorderColor = Color.FromArgb(0, 79, 111);
-            nhaCungCapTextBox.BorderRadius = 5;
-            nhaCungCapTextBox.CustomizableEdges = customizableEdges23;
-            nhaCungCapTextBox.DefaultText = "";
-            nhaCungCapTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            nhaCungCapTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            nhaCungCapTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            nhaCungCapTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            nhaCungCapTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            nhaCungCapTextBox.Font = new Font("Microsoft Sans Serif", 14.25F);
-            nhaCungCapTextBox.Location = new Point(598, 247);
-            nhaCungCapTextBox.Margin = new Padding(5, 5, 5, 5);
-            nhaCungCapTextBox.Name = "nhaCungCapTextBox";
-            nhaCungCapTextBox.PasswordChar = '\0';
-            nhaCungCapTextBox.PlaceholderText = "";
-            nhaCungCapTextBox.SelectedText = "";
-            nhaCungCapTextBox.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            nhaCungCapTextBox.Size = new Size(188, 40);
-            nhaCungCapTextBox.TabIndex = 25;
+            giaBanTextBox.TextChanged += giaBanTextBox_TextChanged;
+            giaBanTextBox.KeyPress += giaBan_KeyPress;
             // 
             // tenSanPhamTextBox
             // 
             tenSanPhamTextBox.BorderColor = Color.FromArgb(0, 79, 111);
             tenSanPhamTextBox.BorderRadius = 5;
-            tenSanPhamTextBox.CustomizableEdges = customizableEdges25;
+            tenSanPhamTextBox.CustomizableEdges = customizableEdges19;
             tenSanPhamTextBox.DefaultText = "";
             tenSanPhamTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tenSanPhamTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -519,7 +428,7 @@
             tenSanPhamTextBox.PasswordChar = '\0';
             tenSanPhamTextBox.PlaceholderText = "";
             tenSanPhamTextBox.SelectedText = "";
-            tenSanPhamTextBox.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            tenSanPhamTextBox.ShadowDecoration.CustomizableEdges = customizableEdges20;
             tenSanPhamTextBox.Size = new Size(442, 40);
             tenSanPhamTextBox.TabIndex = 24;
             // 
@@ -527,7 +436,7 @@
             // 
             maSanPhamTextBox.BorderColor = Color.FromArgb(0, 79, 111);
             maSanPhamTextBox.BorderRadius = 5;
-            maSanPhamTextBox.CustomizableEdges = customizableEdges27;
+            maSanPhamTextBox.CustomizableEdges = customizableEdges21;
             maSanPhamTextBox.DefaultText = "";
             maSanPhamTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             maSanPhamTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -541,7 +450,7 @@
             maSanPhamTextBox.PasswordChar = '\0';
             maSanPhamTextBox.PlaceholderText = "";
             maSanPhamTextBox.SelectedText = "";
-            maSanPhamTextBox.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            maSanPhamTextBox.ShadowDecoration.CustomizableEdges = customizableEdges22;
             maSanPhamTextBox.Size = new Size(133, 40);
             maSanPhamTextBox.TabIndex = 23;
             // 
@@ -580,7 +489,6 @@
         private Label label6;
         private Label label5;
         private Label label4;
-        private Label label3;
         private Label label2;
         private Guna.UI2.WinForms.Guna2TextBox donViTextBox;
         private Guna.UI2.WinForms.Guna2TextBox giaBanTextBox;
@@ -592,9 +500,6 @@
         private Label label8;
         private Guna.UI2.WinForms.Guna2ComboBox trangThaiComboBox;
         private Label label10;
-        private Guna.UI2.WinForms.Guna2Button chonNhaCungCapButton;
-        private Guna.UI2.WinForms.Guna2Button chonLoaiSanPhamButton;
-        public Guna.UI2.WinForms.Guna2TextBox nhaCungCapTextBox;
-        public Guna.UI2.WinForms.Guna2TextBox loaiSanPhamTextBox;
+        private Guna.UI2.WinForms.Guna2ComboBox loaiSanPhamComboBox;
     }
 }

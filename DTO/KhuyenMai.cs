@@ -10,16 +10,22 @@ namespace DTO
     {
         public KhuyenMai()
         {
+            maKhuyenMai = string.Empty;
+            tenKhuyenMai = string.Empty;
+            thoiGianBatDau = DateTime.MinValue;
+            thoiGianKetThuc  = DateTime.MinValue;
+            loaiGiaTri = string.Empty;
+            giaTri = 0;
         }
 
-        public KhuyenMai(string maKhuyenMai, string tenKhuyenMai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string loaiGiaTri, decimal giaTriApDung)
+        public KhuyenMai(string maKhuyenMai, string tenKhuyenMai, DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string loaiGiaTri, decimal giaTri)
         {
             this.maKhuyenMai = maKhuyenMai;
             this.tenKhuyenMai = tenKhuyenMai;
             this.thoiGianBatDau = thoiGianBatDau;
             this.thoiGianKetThuc = thoiGianKetThuc;
             this.loaiGiaTri = loaiGiaTri;
-            this.giaTriApDung = giaTriApDung;
+            this.giaTri = giaTri;
         }
 
         public string maKhuyenMai { get; set; }
@@ -27,6 +33,6 @@ namespace DTO
         public DateTime thoiGianBatDau { get; set; }
         public DateTime thoiGianKetThuc { get; set; }
         public string loaiGiaTri { get; set; }
-        public decimal giaTriApDung { get; set; }
+        public decimal giaTri { get; set; }
     }
 }

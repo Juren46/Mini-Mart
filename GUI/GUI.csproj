@@ -9,20 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="InAn\Reports\HoaDonReport.rdlc" />
-    <None Remove="InAn\Reports\PhieuNhapReport.rdlc" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="InAn\Reports\HoaDonReport.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InAn\Reports\PhieuNhapReport.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
     <PackageReference Include="FontAwesome.Sharp.Pro" Version="6.3.0" />
     <PackageReference Include="Guna.Charts.WinForms" Version="1.0.9" />

@@ -27,16 +27,16 @@ namespace DAO
                     KhachHang khachHang = new KhachHang();
 
                     khachHang.maKhachHang = row["maKhachHang"].ToString();
-                    khachHang.hoTen = row["tenKhachHang"].ToString();
+                    khachHang.hangThanhVien = row["hangThanhVien"].ToString();
+                    khachHang.diemThanhVien = (int)row["diemThanhVien"];
+                    khachHang.hoTen = row["hoTen"].ToString();
                     khachHang.gioiTinh = row["gioiTinh"].ToString();
                     try { khachHang.ngaySinh = (DateTime)row["ngaySinh"]; }
                     catch { khachHang.ngaySinh = null; }
                     khachHang.soDienThoai = row["soDienThoai"].ToString();
                     khachHang.email = row["email"].ToString();
                     khachHang.diaChi = row["diaChi"].ToString();
-                    khachHang.bacThanhVien = row["bacThanhVien"].ToString();
-                    khachHang.diemTichLuy = Decimal.Parse(row["diemTichLuy"].ToString());
-
+                    
                     listKhachHang.Add(khachHang);
                 }
             }
@@ -55,15 +55,15 @@ namespace DAO
             if (dataTable.Rows.Count > 0 )
             {
                 khachHang.maKhachHang = dataTable.Rows[0]["maKhachHang"].ToString();
-                khachHang.hoTen = dataTable.Rows[0]["tenKhachHang"].ToString();
+                khachHang.hangThanhVien = dataTable.Rows[0]["hangThanhVien"].ToString();
+                khachHang.diemThanhVien = (int)dataTable.Rows[0]["diemThanhVien"];
+                khachHang.hoTen = dataTable.Rows[0]["hoTen"].ToString();
                 khachHang.gioiTinh = dataTable.Rows[0]["gioiTinh"].ToString();
                 try { khachHang.ngaySinh = (DateTime)dataTable.Rows[0]["ngaySinh"]; }
                 catch { khachHang.ngaySinh = null; }
                 khachHang.soDienThoai = dataTable.Rows[0]["soDienThoai"].ToString();
                 khachHang.email = dataTable.Rows[0]["email"].ToString();
                 khachHang.diaChi = dataTable.Rows[0]["diaChi"].ToString();
-                khachHang.bacThanhVien = dataTable.Rows[0]["bacThanhVien"].ToString();
-                khachHang.diemTichLuy = Decimal.Parse(dataTable.Rows[0]["diemTichLuy"].ToString());
             }
 
             return khachHang;
@@ -80,15 +80,16 @@ namespace DAO
             if (dataTable.Rows.Count > 0 )
             {
                 khachHang.maKhachHang = dataTable.Rows[0]["maKhachHang"].ToString();
-                khachHang.hoTen = dataTable.Rows[0]["tenKhachHang"].ToString();
+                khachHang.hangThanhVien = dataTable.Rows[0]["hangThanhVien"].ToString();
+                khachHang.diemThanhVien = (int)dataTable.Rows[0]["diemThanhVien"];
+                khachHang.hoTen = dataTable.Rows[0]["hoTen"].ToString();
                 khachHang.gioiTinh = dataTable.Rows[0]["gioiTinh"].ToString();
                 try { khachHang.ngaySinh = (DateTime)dataTable.Rows[0]["ngaySinh"]; }
                 catch { khachHang.ngaySinh = null; }
                 khachHang.soDienThoai = dataTable.Rows[0]["soDienThoai"].ToString();
                 khachHang.email = dataTable.Rows[0]["email"].ToString();
                 khachHang.diaChi = dataTable.Rows[0]["diaChi"].ToString();
-                khachHang.bacThanhVien = dataTable.Rows[0]["bacThanhVien"].ToString();
-                khachHang.diemTichLuy = Decimal.Parse(dataTable.Rows[0]["diemTichLuy"].ToString());
+                
             }
 
             return khachHang;
@@ -123,7 +124,7 @@ namespace DAO
             else
                 ngaySinh = "NULL";
 
-            string query = $"INSERT INTO KhachHang VALUES('{khachHang.maKhachHang}', N'{khachHang.hoTen}', N'{khachHang.gioiTinh}', {ngaySinh}, '{khachHang.soDienThoai}', '{khachHang.email}', N'{khachHang.diaChi}', N'{khachHang.bacThanhVien}',  {khachHang.diemTichLuy});";
+            string query = $"INSERT INTO KhachHang VALUES('{khachHang.maKhachHang}', N'{khachHang.hangThanhVien}', {khachHang.diemThanhVien}, N'{khachHang.hoTen}', N'{khachHang.gioiTinh}', {ngaySinh}, '{khachHang.soDienThoai}', '{khachHang.email}', N'{khachHang.diaChi}');";
             
             int rowsAffected = DBHelper.ExecuteNonQuery(query);
 
@@ -139,7 +140,7 @@ namespace DAO
             else
                 ngaySinh = "NULL";
 
-            string query = $"UPDATE KhachHang SET tenKhachHang = N'{khachHang.hoTen}', gioiTinh = N'{khachHang.gioiTinh}', ngaySinh = {ngaySinh}, soDienThoai = '{khachHang.soDienThoai}', email = '{khachHang.email}', diaChi = N'{khachHang.diaChi}' WHERE maKhachHang = '{khachHang.maKhachHang}';";
+            string query = $"UPDATE KhachHang SET hoTen = N'{khachHang.hoTen}', gioiTinh = N'{khachHang.gioiTinh}', ngaySinh = {ngaySinh}, soDienThoai = '{khachHang.soDienThoai}', email = '{khachHang.email}', diaChi = N'{khachHang.diaChi}' WHERE maKhachHang = '{khachHang.maKhachHang}';";
 
             int rowsAffected = DBHelper.ExecuteNonQuery(query);
 
@@ -169,15 +170,16 @@ namespace DAO
                     KhachHang khachHang = new KhachHang();
 
                     khachHang.maKhachHang = row["maKhachHang"].ToString();
-                    khachHang.hoTen = row["tenKhachHang"].ToString();
+                    khachHang.hangThanhVien = row["hangThanhVien"].ToString();
+                    khachHang.diemThanhVien = (int)row["diemThanhVien"];
+                    khachHang.hoTen = row["hoTen"].ToString();
                     khachHang.gioiTinh = row["gioiTinh"].ToString();
                     try { khachHang.ngaySinh = (DateTime)row["ngaySinh"]; }
                     catch { khachHang.ngaySinh = null; }
                     khachHang.soDienThoai = row["soDienThoai"].ToString();
                     khachHang.email = row["email"].ToString();
                     khachHang.diaChi = row["diaChi"].ToString();
-                    khachHang.bacThanhVien = row["bacThanhVien"].ToString();
-                    khachHang.diemTichLuy = Decimal.Parse(row["diemTichLuy"].ToString());
+                    
 
                     listKhachHang.Add(khachHang);
                 }
@@ -188,33 +190,33 @@ namespace DAO
 
         public decimal TichDiem(KhachHang khachHang, decimal tongTien)
         {
-            decimal diemTichLuy = 0;
+            int diemTichLuy = 0;
 
-            switch(khachHang.bacThanhVien)
+            switch(khachHang.hangThanhVien)
             {
                 case "Đồng":
-                    diemTichLuy = (decimal)(tongTien * 0.5m / 100);
-                    khachHang.diemTichLuy += diemTichLuy;
+                    diemTichLuy = (int)(tongTien * 0.5m / 100);
+                    khachHang.diemThanhVien += diemTichLuy;
 
-                    if (khachHang.diemTichLuy >= 5000 && khachHang.diemTichLuy < 10000)
-                        khachHang.bacThanhVien = "Bạc";
-                    else if (khachHang.diemTichLuy >= 10000)
-                        khachHang.bacThanhVien = "Vàng";
+                    if (khachHang.diemThanhVien >= 5000 && khachHang.diemThanhVien < 10000)
+                        khachHang.hangThanhVien = "Bạc";
+                    else if (khachHang.diemThanhVien >= 10000)
+                        khachHang.hangThanhVien = "Vàng";
 
                     break;
 
                 case "Bạc":
-                    diemTichLuy = (decimal)(tongTien * 0.25m / 100);
-                    khachHang.diemTichLuy += diemTichLuy;
+                    diemTichLuy = (int)(tongTien * 0.25m / 100);
+                    khachHang.diemThanhVien += diemTichLuy;
                     
-                    if (khachHang.diemTichLuy >= 10000)
-                        khachHang.bacThanhVien = "Vàng";
+                    if (khachHang.diemThanhVien >= 10000)
+                        khachHang.hangThanhVien = "Vàng";
 
                     break;
             }
 
-            string query = $"UPDATE KhachHang SET bacThanhVien = N'{khachHang.bacThanhVien}',  " +
-                $"diemTichLuy = CASE WHEN diemTichLuy > 10000 THEN 10000 ELSE {khachHang.diemTichLuy} END " +
+            string query = $"UPDATE KhachHang SET bacThanhVien = N'{khachHang.hangThanhVien}',  " +
+                $"diemTichLuy = CASE WHEN diemTichLuy > 10000 THEN 10000 ELSE {khachHang.diemThanhVien} END " +
                 $"WHERE maKhachHang = '{khachHang.maKhachHang}';";
 
             DBHelper.ExecuteNonQuery(query);
@@ -226,9 +228,9 @@ namespace DAO
         {
             decimal giamGia = 0;
 
-            if (khachHang.bacThanhVien.Equals("Đồng"))
+            if (khachHang.hangThanhVien.Equals("Đồng"))
                 giamGia = tongTien * 2 / 100;
-            else if (khachHang.bacThanhVien.Equals("Bạc"))
+            else if (khachHang.hangThanhVien.Equals("Bạc"))
                 giamGia = tongTien * 5 / 100;
             else 
                 giamGia = tongTien * 7 / 100;

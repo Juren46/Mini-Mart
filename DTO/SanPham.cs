@@ -10,28 +10,32 @@ namespace DTO
     {
         public SanPham()
         {
+            maSanPham = string.Empty;
+            maLoaiSanPham = string.Empty;
+            tenSanPham = string.Empty;
+            donVi = string.Empty;
             soLuong = 0;
+            giaBan = 0;
+            duLieuAnh = Array.Empty<Byte>();
             trangThai = "Chờ xử lý";
         }
 
-        public SanPham(string maSanPham, string maLoaiSanPham, string maNhaCungCap, string tenSanPham, string donViTinh, decimal giaBan, byte[] duLieuAnh)
+        public SanPham(string maSanPham, string maLoaiSanPham, string tenSanPham, string donVi, decimal giaBan, byte[] duLieuAnh, string trangThai)
         {
             this.maSanPham = maSanPham;
             this.maLoaiSanPham = maLoaiSanPham;
-            this.maNhaCungCap = maNhaCungCap;
             this.tenSanPham = tenSanPham;
-            this.donViTinh = donViTinh;
+            this.donVi = donVi;
             soLuong = 0;
             this.giaBan = giaBan;
             this.duLieuAnh = duLieuAnh;
-            trangThai = "Chờ xử lý";
+            this.trangThai = trangThai;
         }
 
         public string maSanPham { get; set; }
         public string maLoaiSanPham { get; set; }
-        public string maNhaCungCap { get; set; }
         public string tenSanPham { get; set; }
-        public string donViTinh { get; set; }
+        public string donVi { get; set; }
         public int soLuong { get; set; }
         public decimal giaBan { get; set; }
         public byte[] duLieuAnh { get; set; }

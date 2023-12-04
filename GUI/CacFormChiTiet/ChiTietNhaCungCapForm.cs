@@ -19,6 +19,7 @@ namespace GUI
         string context;
         NhaCungCapBUS nhaCungCapBUS;
         NhaCungCapForm form;
+        NhapHangForm nhapHangForm;
 
         public ChiTietNhaCungCapForm(NhaCungCap nhaCungCap, string context, NhaCungCapForm form)
         {
@@ -39,6 +40,16 @@ namespace GUI
             nhaCungCapBUS = new NhaCungCapBUS();
             this.context = context;
             this.form = form;
+        }
+
+        public ChiTietNhaCungCapForm(string context, NhapHangForm form)
+        {
+            InitializeComponent();
+            CenterToParent();
+
+            nhaCungCapBUS = new NhaCungCapBUS();
+            this.context = context;
+            this.nhapHangForm = nhapHangForm;
         }
 
         private void ChiTietNhaCungCapForm_Load(object sender, EventArgs e)
@@ -145,9 +156,35 @@ namespace GUI
 
                 if (message.Equals("Thêm nhà cung cấp thành công!") || message.Equals("Chỉnh sửa thông tin nhà cung cấp thành công!"))
                 {
-                    form.lamMoiButton_Click(sender, e);
+                    if (form != null)
+                        form.lamMoiButton_Click(sender, e);
+
+                    if (nhapHangForm != null)
+                    {
+                        nhaCungCap = nhaCungCapBUS.LayNhaCungCapTheoMa(maNhaCungCap);
+                        nhapHangForm.nhaCungCap = nhaCungCap;
+                        nhapHangForm.maNhaCungCapTextBox.Text = nhaCungCap.maNhaCungCap;
+                        nhapHangForm.tenNhaCungCapTextBox.Text = nhaCungCap.tenNhaCungCap;
+                        nhapHangForm.canhBaoLabel.Visible = false;
+                    }
                     this.Close();
                 }
+            }
+        }
+
+        private void emailTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && (e.KeyChar < 32 || e.KeyChar > 126 || e.KeyChar == ' '))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void soDienThoaiTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

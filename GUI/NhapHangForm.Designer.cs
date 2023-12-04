@@ -53,6 +53,7 @@
             viewRIGHT = new Panel();
             chiTietDonHangFlowLayoutPanel = new FlowLayoutPanel();
             panel3 = new Panel();
+            themMoiNhaCungCapButton = new FontAwesome.Sharp.IconButton();
             canhBaoLabel = new Label();
             label3 = new Label();
             label6 = new Label();
@@ -92,6 +93,7 @@
             // 
             // sanPhamFlowLayoutPanel
             // 
+            sanPhamFlowLayoutPanel.AutoScroll = true;
             sanPhamFlowLayoutPanel.BackColor = Color.White;
             sanPhamFlowLayoutPanel.Dock = DockStyle.Fill;
             sanPhamFlowLayoutPanel.Location = new Point(0, 129);
@@ -210,7 +212,7 @@
             timKiemTextBox.Name = "timKiemTextBox";
             timKiemTextBox.PasswordChar = '\0';
             timKiemTextBox.PlaceholderForeColor = Color.FromArgb(186, 215, 255);
-            timKiemTextBox.PlaceholderText = "Nhập tên sản phẩm";
+            timKiemTextBox.PlaceholderText = "Tìm kiếm sản phẩm";
             timKiemTextBox.SelectedText = "";
             timKiemTextBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
             timKiemTextBox.Size = new Size(276, 36);
@@ -244,7 +246,7 @@
             luuButton.FillColor = Color.FromArgb(0, 79, 111);
             luuButton.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             luuButton.ForeColor = Color.Azure;
-            luuButton.Location = new Point(379, 51);
+            luuButton.Location = new Point(379, 77);
             luuButton.Name = "luuButton";
             luuButton.ShadowDecoration.CustomizableEdges = customizableEdges6;
             luuButton.Size = new Size(210, 61);
@@ -277,6 +279,7 @@
             // panel3
             // 
             panel3.BackColor = Color.LightBlue;
+            panel3.Controls.Add(themMoiNhaCungCapButton);
             panel3.Controls.Add(canhBaoLabel);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(label6);
@@ -289,6 +292,27 @@
             panel3.Size = new Size(601, 129);
             panel3.TabIndex = 1;
             // 
+            // themMoiNhaCungCapButton
+            // 
+            themMoiNhaCungCapButton.BackColor = Color.FromArgb(226, 153, 48);
+            themMoiNhaCungCapButton.FlatAppearance.BorderSize = 0;
+            themMoiNhaCungCapButton.FlatStyle = FlatStyle.Flat;
+            themMoiNhaCungCapButton.Font = new Font("Microsoft Sans Serif", 12F);
+            themMoiNhaCungCapButton.ForeColor = Color.White;
+            themMoiNhaCungCapButton.IconChar = FontAwesome.Sharp.IconChar.HandHoldingMedical;
+            themMoiNhaCungCapButton.IconColor = Color.White;
+            themMoiNhaCungCapButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            themMoiNhaCungCapButton.IconSize = 20;
+            themMoiNhaCungCapButton.ImageAlign = ContentAlignment.MiddleLeft;
+            themMoiNhaCungCapButton.Location = new Point(303, 56);
+            themMoiNhaCungCapButton.Name = "themMoiNhaCungCapButton";
+            themMoiNhaCungCapButton.Size = new Size(115, 36);
+            themMoiNhaCungCapButton.TabIndex = 101;
+            themMoiNhaCungCapButton.Text = "Thêm mới";
+            themMoiNhaCungCapButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            themMoiNhaCungCapButton.UseVisualStyleBackColor = false;
+            themMoiNhaCungCapButton.Click += themMoiNhaCungCapButton_Click;
+            // 
             // canhBaoLabel
             // 
             canhBaoLabel.AutoSize = true;
@@ -296,9 +320,9 @@
             canhBaoLabel.ForeColor = Color.Firebrick;
             canhBaoLabel.Location = new Point(303, 92);
             canhBaoLabel.Name = "canhBaoLabel";
-            canhBaoLabel.Size = new Size(287, 21);
+            canhBaoLabel.Size = new Size(231, 21);
             canhBaoLabel.TabIndex = 100;
-            canhBaoLabel.Text = "Chọn nhà cung cấp để tiếp tục thao tác";
+            canhBaoLabel.Text = "Chọn nhà cung cấp để hoàn tất";
             // 
             // label3
             // 
@@ -334,7 +358,7 @@
             chonNhaCungCapButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             chonNhaCungCapButton.IconSize = 20;
             chonNhaCungCapButton.ImageAlign = ContentAlignment.MiddleLeft;
-            chonNhaCungCapButton.Location = new Point(303, 25);
+            chonNhaCungCapButton.Location = new Point(303, 12);
             chonNhaCungCapButton.Name = "chonNhaCungCapButton";
             chonNhaCungCapButton.Size = new Size(175, 36);
             chonNhaCungCapButton.TabIndex = 98;
@@ -388,7 +412,6 @@
             maNhaCungCapTextBox.ShadowDecoration.CustomizableEdges = customizableEdges10;
             maNhaCungCapTextBox.Size = new Size(276, 36);
             maNhaCungCapTextBox.TabIndex = 89;
-            maNhaCungCapTextBox.TextChanged += maNhaCungCapTextBox_TextChanged;
             // 
             // panel2
             // 
@@ -415,7 +438,7 @@
             // 
             thanhTienLabel.AutoSize = true;
             thanhTienLabel.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            thanhTienLabel.Location = new Point(157, 75);
+            thanhTienLabel.Location = new Point(34, 75);
             thanhTienLabel.Name = "thanhTienLabel";
             thanhTienLabel.Size = new Size(99, 37);
             thanhTienLabel.TabIndex = 109;
@@ -425,7 +448,7 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            label15.Location = new Point(30, 85);
+            label15.Location = new Point(30, 34);
             label15.Name = "label15";
             label15.Size = new Size(103, 25);
             label15.TabIndex = 106;
@@ -483,5 +506,6 @@
         internal Guna.UI2.WinForms.Guna2TextBox tenNhaCungCapTextBox;
         internal Guna.UI2.WinForms.Guna2TextBox maNhaCungCapTextBox;
         internal Label canhBaoLabel;
+        private FontAwesome.Sharp.IconButton themMoiNhaCungCapButton;
     }
 }

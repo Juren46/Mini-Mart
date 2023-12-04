@@ -26,10 +26,12 @@ namespace DAO
 
                 chiTietPhieuNhap.maPhieuNhap = row["maPhieuNhap"].ToString();
                 chiTietPhieuNhap.maSanPham = row["maSanPham"].ToString();
-                chiTietPhieuNhap.donViTinh = row["donViTinh"].ToString();
+                chiTietPhieuNhap.tenSanPham = row["tenSanPham"].ToString();
+                chiTietPhieuNhap.donVi = row["donVi"].ToString();
                 chiTietPhieuNhap.soLuong = (int)row["soLuong"];
-                chiTietPhieuNhap.donGia = Decimal.Parse(row["donGia"].ToString());
-                chiTietPhieuNhap.thanhTien = Decimal.Parse(row["thanhTien"].ToString());
+                chiTietPhieuNhap.giaBan = Decimal.Parse(row["giaBan"].ToString());
+                chiTietPhieuNhap.giaNhap = Decimal.Parse(row["giaNhap"].ToString());
+                chiTietPhieuNhap.tongTien = Decimal.Parse(row["tongTien"].ToString());
 
                 listChiTietPhieuNhap.Add(chiTietPhieuNhap);
             }

@@ -71,7 +71,7 @@ namespace GUI
                 maLoaiSanPham = loaiSanPham.maLoaiSanPham;
             }
 
-            listSanPham = sanPhamBUS.TimKiemSanPham(tuKhoa, maLoaiSanPham, "", "Đang bán", "");
+            listSanPham = sanPhamBUS.TimKiemSanPham(tuKhoa, maLoaiSanPham, "Đang bán", "");
 
             LoadDataToFlowLayout(listSanPham);
         }
@@ -110,8 +110,8 @@ namespace GUI
                 khachHang = listKhachHang[0];
                 tenKhachHangLabel.Text = khachHang.hoTen;
                 soDienThoaiLabel.Text = khachHang.soDienThoai;
-                bacThanhVienLabel.Text = khachHang.bacThanhVien;
-                diemTichLuyLabel.Text = khachHang.diemTichLuy.ToString();
+                bacThanhVienLabel.Text = khachHang.hangThanhVien;
+                diemTichLuyLabel.Text = khachHang.diemThanhVien.ToString();
             }
         }
 
@@ -187,7 +187,7 @@ namespace GUI
                 giamGia = new KhachHangBUS().GiamGiaThanhVien(khachHang.maKhachHang, tongTien.ToString());
                 chietKhauLabel.Text = giamGia.ToString("#,##0") + " VNĐ";
 
-                switch (khachHang.bacThanhVien)
+                switch (khachHang.hangThanhVien)
                 {
                     case "Đồng":
                         tenKhuyenMaiLabel.Text = "(Khuyến mãi thành viên hạng đồng 2% tổng giá trị hóa đơn!)";
@@ -221,7 +221,7 @@ namespace GUI
 
             if (result == DialogResult.Yes)
             {
-                string maNhanVien = new NhanVienBUS().LayNhanVienTheoTenTaiKhoan(DangNhapForm.taiKhoan.tenTaiKhoan).maNhanVien;
+                string maNhanVien = DangNhapForm.nguoiDung.maNguoiDung;
                 string maKhachHang = "";
                 if (khachHang != null)
                     maKhachHang = khachHang.maKhachHang;
@@ -249,7 +249,7 @@ namespace GUI
                         chiTietHoaDon.maSanPham = donDatHangControl.sanPham.maSanPham;
                         chiTietHoaDon.soLuong = (int)donDatHangControl.soLuongNumericUpDown.Value;
                         chiTietHoaDon.donGia = donDatHangControl.sanPham.giaBan;
-                        chiTietHoaDon.thanhTien = Decimal.Parse(donDatHangControl.tongGiaLabel.Text.Replace(" VNĐ", "").Replace(",", ""));
+                        chiTietHoaDon.tongTien = Decimal.Parse(donDatHangControl.tongGiaLabel.Text.Replace(" VNĐ", "").Replace(",", ""));
 
                         listChiTietHoaDon.Add(chiTietHoaDon);
                     }

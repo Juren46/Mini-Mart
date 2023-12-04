@@ -38,7 +38,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhapForm));
-            tenTaiKhoanTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            tenDangNhapTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             matKhauTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             dangNhapButton = new Guna.UI2.WinForms.Guna2Button();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -57,34 +57,34 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
-            // tenTaiKhoanTextBox
+            // tenDangNhapTextBox
             // 
-            tenTaiKhoanTextBox.BorderColor = Color.FromArgb(0, 71, 107);
-            tenTaiKhoanTextBox.BorderRadius = 17;
-            tenTaiKhoanTextBox.BorderThickness = 0;
-            tenTaiKhoanTextBox.CustomizableEdges = customizableEdges1;
-            tenTaiKhoanTextBox.DefaultText = "";
-            tenTaiKhoanTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            tenTaiKhoanTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            tenTaiKhoanTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            tenTaiKhoanTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            tenTaiKhoanTextBox.FillColor = Color.WhiteSmoke;
-            tenTaiKhoanTextBox.FocusedState.BorderColor = Color.Teal;
-            tenTaiKhoanTextBox.Font = new Font("Segoe UI", 14.25F);
-            tenTaiKhoanTextBox.ForeColor = Color.FromArgb(84, 155, 255);
-            tenTaiKhoanTextBox.HoverState.BorderColor = Color.SteelBlue;
-            tenTaiKhoanTextBox.Location = new Point(76, 196);
-            tenTaiKhoanTextBox.Margin = new Padding(5, 5, 5, 5);
-            tenTaiKhoanTextBox.Name = "tenTaiKhoanTextBox";
-            tenTaiKhoanTextBox.PasswordChar = '\0';
-            tenTaiKhoanTextBox.PlaceholderForeColor = Color.FromArgb(186, 215, 255);
-            tenTaiKhoanTextBox.PlaceholderText = "Tên đăng nhập";
-            tenTaiKhoanTextBox.SelectedText = "";
-            tenTaiKhoanTextBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            tenTaiKhoanTextBox.Size = new Size(271, 40);
-            tenTaiKhoanTextBox.TabIndex = 4;
-            tenTaiKhoanTextBox.TextOffset = new Point(30, 0);
-            tenTaiKhoanTextBox.KeyPress += tenTaiKhoanTextBox_KeyPress;
+            tenDangNhapTextBox.BorderColor = Color.FromArgb(0, 71, 107);
+            tenDangNhapTextBox.BorderRadius = 17;
+            tenDangNhapTextBox.BorderThickness = 0;
+            tenDangNhapTextBox.CustomizableEdges = customizableEdges1;
+            tenDangNhapTextBox.DefaultText = "";
+            tenDangNhapTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tenDangNhapTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tenDangNhapTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tenDangNhapTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tenDangNhapTextBox.FillColor = Color.WhiteSmoke;
+            tenDangNhapTextBox.FocusedState.BorderColor = Color.Teal;
+            tenDangNhapTextBox.Font = new Font("Segoe UI", 14.25F);
+            tenDangNhapTextBox.ForeColor = Color.FromArgb(84, 155, 255);
+            tenDangNhapTextBox.HoverState.BorderColor = Color.SteelBlue;
+            tenDangNhapTextBox.Location = new Point(76, 196);
+            tenDangNhapTextBox.Margin = new Padding(5, 5, 5, 5);
+            tenDangNhapTextBox.Name = "tenDangNhapTextBox";
+            tenDangNhapTextBox.PasswordChar = '\0';
+            tenDangNhapTextBox.PlaceholderForeColor = Color.FromArgb(186, 215, 255);
+            tenDangNhapTextBox.PlaceholderText = "Tên đăng nhập";
+            tenDangNhapTextBox.SelectedText = "";
+            tenDangNhapTextBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            tenDangNhapTextBox.Size = new Size(271, 40);
+            tenDangNhapTextBox.TabIndex = 4;
+            tenDangNhapTextBox.TextOffset = new Point(30, 0);
+            tenDangNhapTextBox.KeyPress += tenDangNhapTextBox_KeyPress;
             // 
             // matKhauTextBox
             // 
@@ -195,7 +195,7 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(pictureBox3);
-            panel1.Controls.Add(tenTaiKhoanTextBox);
+            panel1.Controls.Add(tenDangNhapTextBox);
             panel1.Controls.Add(matKhauTextBox);
             panel1.Controls.Add(dangNhapButton);
             panel1.Controls.Add(iconButton8);
@@ -268,7 +268,7 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2TextBox tenTaiKhoanTextBox;
+        private Guna.UI2.WinForms.Guna2TextBox tenDangNhapTextBox;
         private Guna.UI2.WinForms.Guna2TextBox matKhauTextBox;
         private Guna.UI2.WinForms.Guna2Button dangNhapButton;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;

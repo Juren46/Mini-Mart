@@ -52,7 +52,7 @@ namespace GUI
                 khuyenMaiDataGridView.Rows[i].Cells[3].Value = listKhuyenMai[i].thoiGianBatDau.ToString("dd/MM/yyyy HH:mm:ss");
                 khuyenMaiDataGridView.Rows[i].Cells[4].Value = listKhuyenMai[i].thoiGianKetThuc.ToString("dd/MM/yyyy HH:mm:ss");
                 khuyenMaiDataGridView.Rows[i].Cells[5].Value = listKhuyenMai[i].loaiGiaTri;
-                khuyenMaiDataGridView.Rows[i].Cells[6].Value = listKhuyenMai[i].giaTriApDung;
+                khuyenMaiDataGridView.Rows[i].Cells[6].Value = listKhuyenMai[i].giaTri;
             }
         }
 

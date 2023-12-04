@@ -31,7 +31,7 @@ namespace DAO
                     khuyenMai.thoiGianBatDau = (DateTime)row["thoiGianBatDau"];
                     khuyenMai.thoiGianKetThuc = (DateTime)row["thoiGianKetThuc"];
                     khuyenMai.loaiGiaTri = row["loaiGiaTri"].ToString();
-                    khuyenMai.giaTriApDung = Decimal.Parse(row["giaTriApDung"].ToString());
+                    khuyenMai.giaTri = Decimal.Parse(row["giaTri"].ToString());
 
                     listKhuyenMai.Add(khuyenMai);
                 }
@@ -55,7 +55,7 @@ namespace DAO
                 khuyenMai.thoiGianBatDau = (DateTime)dataTable.Rows[0]["thoiGianBatDau"];
                 khuyenMai.thoiGianKetThuc = (DateTime)dataTable.Rows[0]["thoiGianKetThuc"];
                 khuyenMai.loaiGiaTri = dataTable.Rows[0]["loaiGiaTri"].ToString();
-                khuyenMai.giaTriApDung = Decimal.Parse(dataTable.Rows[0]["giaTriApDung"].ToString());
+                khuyenMai.giaTri = Decimal.Parse(dataTable.Rows[0]["giaTri"].ToString());
             }
 
             return khuyenMai;
@@ -74,7 +74,7 @@ namespace DAO
 
         public bool ThemKhuyenMai(KhuyenMai khuyenMai)
         {
-            string query = $"INSERT INTO KhuyenMai VALUES ('{khuyenMai.maKhuyenMai}', N'{khuyenMai.tenKhuyenMai}', '{khuyenMai.thoiGianBatDau}', '{khuyenMai.thoiGianKetThuc}', N'{khuyenMai.loaiGiaTri}', '{khuyenMai.giaTriApDung}');";
+            string query = $"INSERT INTO KhuyenMai VALUES ('{khuyenMai.maKhuyenMai}', N'{khuyenMai.tenKhuyenMai}', '{khuyenMai.thoiGianBatDau}', '{khuyenMai.thoiGianKetThuc}', N'{khuyenMai.loaiGiaTri}', '{khuyenMai.giaTri}');";
 
             int rowsAffected = DBHelper.ExecuteNonQuery(query);
 
@@ -92,7 +92,7 @@ namespace DAO
 
         public bool SuaKhuyenMai(KhuyenMai khuyenMai)
         {
-            string query = $"UPDATE KhuyenMai SET tenKhuyenMai = N'{khuyenMai.tenKhuyenMai}', thoiGianBatDau = '{khuyenMai.thoiGianBatDau}', thoiGianKetThuc = '{khuyenMai.thoiGianKetThuc}', loaiGiaTri = N'{khuyenMai.loaiGiaTri}', giaTriApDung = '{khuyenMai.giaTriApDung}' WHERE maKhuyenMai = '{khuyenMai.maKhuyenMai}';";
+            string query = $"UPDATE KhuyenMai SET tenKhuyenMai = N'{khuyenMai.tenKhuyenMai}', thoiGianBatDau = '{khuyenMai.thoiGianBatDau}', thoiGianKetThuc = '{khuyenMai.thoiGianKetThuc}', loaiGiaTri = N'{khuyenMai.loaiGiaTri}', giaTri = '{khuyenMai.giaTri}' WHERE maKhuyenMai = '{khuyenMai.maKhuyenMai}';";
 
             int rowsAffected = DBHelper.ExecuteNonQuery(query);
 
@@ -127,10 +127,10 @@ namespace DAO
             switch (sapXep)
             {
                 case "Giá trị tăng dần":
-                    query += $" ORDER BY giaTriApDung ASC";
+                    query += $" ORDER BY giaTri ASC";
                     break;
                 case "Giá trị giảm dần":
-                    query += $" ORDER BY giaTriApDung DESC";
+                    query += $" ORDER BY giaTri DESC";
                     break;
             }
 
@@ -147,7 +147,7 @@ namespace DAO
                     khuyenMai.thoiGianBatDau = (DateTime)row["thoiGianBatDau"];
                     khuyenMai.thoiGianKetThuc = (DateTime)row["thoiGianKetThuc"];
                     khuyenMai.loaiGiaTri = row["loaiGiaTri"].ToString();
-                    khuyenMai.giaTriApDung = Decimal.Parse(row["giaTriApDung"].ToString());
+                    khuyenMai.giaTri = Decimal.Parse(row["giaTri"].ToString());
 
                     listKhuyenMai.Add(khuyenMai);
                 }
@@ -159,13 +159,13 @@ namespace DAO
         public decimal ApDungKhuyenMai(KhuyenMai khuyenMai, decimal tongTien)
         {
             if (khuyenMai.loaiGiaTri.Equals("Phần trăm"))
-                return tongTien * khuyenMai.giaTriApDung / 100;
+                return tongTien * khuyenMai.giaTri / 100;
             else
             {
-                if (tongTien - (tongTien - khuyenMai.giaTriApDung) > tongTien * 70 / 100)
+                if (tongTien - (tongTien - khuyenMai.giaTri) > tongTien * 70 / 100)
                     return tongTien * 70 / 100;
                 else
-                    return khuyenMai.giaTriApDung;
+                    return khuyenMai.giaTri;
             }
         }
     }

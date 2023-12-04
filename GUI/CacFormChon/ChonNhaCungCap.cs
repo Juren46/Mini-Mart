@@ -78,7 +78,7 @@ namespace GUI.CacFormChon
 
         private void nhaCungCapDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < nhaCungCapDataGridView.Rows.Count - 1)
+            if (e.RowIndex >= 0)
             {
                 NhaCungCap nhaCungCap = nhaCungCapBUS.LayNhaCungCapTheoMa(nhaCungCapDataGridView["maNhaCungCapColumn", e.RowIndex].Value.ToString());
 
@@ -89,14 +89,11 @@ namespace GUI.CacFormChon
                     if (nhapHangForm != null)
                     {
                         nhapHangForm.nhaCungCap = nhaCungCap;
-                        nhapHangForm.listSanPham = new SanPhamBUS().TimKiemSanPham("", "", nhaCungCap.maNhaCungCap, "", "");
                         nhapHangForm.maNhaCungCapTextBox.Text = nhaCungCap.maNhaCungCap;
                         nhapHangForm.tenNhaCungCapTextBox.Text = nhaCungCap.tenNhaCungCap;
                         nhapHangForm.canhBaoLabel.Visible = false;
                     }
 
-                    if (chiTietSanPhamForm != null)
-                        chiTietSanPhamForm.nhaCungCapTextBox.Text = nhaCungCap.maNhaCungCap;
                     this.Close();
                 }
             }

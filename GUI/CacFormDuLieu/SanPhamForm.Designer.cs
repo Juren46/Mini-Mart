@@ -32,10 +32,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -44,20 +40,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel3 = new Panel();
             sanPhamDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            Column2 = new DataGridViewTextBoxColumn();
-            maSanPhamColumn = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewTextBoxColumn();
-            infoButtonColumn = new DataGridViewImageColumn();
-            editButtonColumn = new DataGridViewImageColumn();
-            deleteButtonColumn = new DataGridViewImageColumn();
             panel2 = new Panel();
             panel4 = new Panel();
             xoaTatCaButton = new FontAwesome.Sharp.IconButton();
@@ -72,6 +61,17 @@
             timKiemTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             sapXepComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             loaiSanPhamComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            Column2 = new DataGridViewTextBoxColumn();
+            maSanPhamColumn = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            infoButtonColumn = new DataGridViewImageColumn();
+            editButtonColumn = new DataGridViewImageColumn();
+            deleteButtonColumn = new DataGridViewImageColumn();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)sanPhamDataGridView).BeginInit();
@@ -114,7 +114,7 @@
             sanPhamDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             sanPhamDataGridView.ColumnHeadersHeight = 40;
             sanPhamDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            sanPhamDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column2, maSanPhamColumn, Column3, Column4, Column5, Column6, Column7, Column8, infoButtonColumn, editButtonColumn, deleteButtonColumn });
+            sanPhamDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column2, maSanPhamColumn, Column3, Column4, Column6, Column7, Column8, Column5, infoButtonColumn, editButtonColumn, deleteButtonColumn });
             dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = Color.White;
             dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 12F);
@@ -167,123 +167,6 @@
             sanPhamDataGridView.CellFormatting += sanPhamDataGridView_CellFormatting;
             sanPhamDataGridView.CellPainting += sanPhamDataGridView_CellPainting;
             sanPhamDataGridView.SelectionChanged += sanPhamDataGridView_SelectionChanged;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column2.DefaultCellStyle = dataGridViewCellStyle3;
-            Column2.HeaderText = "#";
-            Column2.MinimumWidth = 8;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 43;
-            // 
-            // maSanPhamColumn
-            // 
-            maSanPhamColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            maSanPhamColumn.FillWeight = 129.305817F;
-            maSanPhamColumn.HeaderText = "Mã sản phẩm";
-            maSanPhamColumn.MinimumWidth = 8;
-            maSanPhamColumn.Name = "maSanPhamColumn";
-            maSanPhamColumn.ReadOnly = true;
-            maSanPhamColumn.Resizable = DataGridViewTriState.True;
-            // 
-            // Column3
-            // 
-            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.FillWeight = 155.167023F;
-            Column3.HeaderText = "Tên sản phẩm";
-            Column3.MinimumWidth = 8;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.FillWeight = 155.167023F;
-            Column4.HeaderText = "Loại sản phẩm";
-            Column4.MinimumWidth = 8;
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.FillWeight = 155.167023F;
-            Column5.HeaderText = "Nhà cung cấp ";
-            Column5.MinimumWidth = 8;
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column6.DefaultCellStyle = dataGridViewCellStyle4;
-            Column6.FillWeight = 64.65291F;
-            Column6.HeaderText = "Đơn vị ";
-            Column6.MinimumWidth = 8;
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column7.DefaultCellStyle = dataGridViewCellStyle5;
-            Column7.FillWeight = 103.444656F;
-            Column7.HeaderText = "Số lượng ";
-            Column7.MinimumWidth = 8;
-            Column7.Name = "Column7";
-            Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Column8.DefaultCellStyle = dataGridViewCellStyle6;
-            Column8.FillWeight = 129.305817F;
-            Column8.HeaderText = "Giá bán ";
-            Column8.MinimumWidth = 8;
-            Column8.Name = "Column8";
-            Column8.ReadOnly = true;
-            // 
-            // infoButtonColumn
-            // 
-            infoButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            infoButtonColumn.FillWeight = 30F;
-            infoButtonColumn.HeaderText = "";
-            infoButtonColumn.Image = Properties.Resources._003_info;
-            infoButtonColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            infoButtonColumn.MinimumWidth = 8;
-            infoButtonColumn.Name = "infoButtonColumn";
-            infoButtonColumn.ReadOnly = true;
-            infoButtonColumn.Width = 8;
-            // 
-            // editButtonColumn
-            // 
-            editButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            editButtonColumn.FillWeight = 30F;
-            editButtonColumn.HeaderText = "";
-            editButtonColumn.Image = Properties.Resources._002_pencil1;
-            editButtonColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            editButtonColumn.MinimumWidth = 8;
-            editButtonColumn.Name = "editButtonColumn";
-            editButtonColumn.ReadOnly = true;
-            editButtonColumn.Width = 8;
-            // 
-            // deleteButtonColumn
-            // 
-            deleteButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            deleteButtonColumn.FillWeight = 30F;
-            deleteButtonColumn.HeaderText = "";
-            deleteButtonColumn.Image = Properties.Resources._001_bin;
-            deleteButtonColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            deleteButtonColumn.MinimumWidth = 8;
-            deleteButtonColumn.Name = "deleteButtonColumn";
-            deleteButtonColumn.ReadOnly = true;
-            deleteButtonColumn.Width = 8;
             // 
             // panel2
             // 
@@ -528,6 +411,123 @@
             loaiSanPhamComboBox.TabIndex = 27;
             loaiSanPhamComboBox.SelectionChangeCommitted += loaiSanPhamComboBox_SelectionChangeCommitted;
             // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            Column2.HeaderText = "#";
+            Column2.MinimumWidth = 8;
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 43;
+            // 
+            // maSanPhamColumn
+            // 
+            maSanPhamColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            maSanPhamColumn.FillWeight = 129.305817F;
+            maSanPhamColumn.HeaderText = "Mã sản phẩm";
+            maSanPhamColumn.MinimumWidth = 8;
+            maSanPhamColumn.Name = "maSanPhamColumn";
+            maSanPhamColumn.ReadOnly = true;
+            maSanPhamColumn.Resizable = DataGridViewTriState.True;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column3.FillWeight = 155.167023F;
+            Column3.HeaderText = "Tên sản phẩm";
+            Column3.MinimumWidth = 8;
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.FillWeight = 155.167023F;
+            Column4.HeaderText = "Loại sản phẩm";
+            Column4.MinimumWidth = 8;
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column6.DefaultCellStyle = dataGridViewCellStyle4;
+            Column6.FillWeight = 64.65291F;
+            Column6.HeaderText = "Đơn vị ";
+            Column6.MinimumWidth = 8;
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column7.DefaultCellStyle = dataGridViewCellStyle5;
+            Column7.FillWeight = 103.444656F;
+            Column7.HeaderText = "Số lượng ";
+            Column7.MinimumWidth = 8;
+            Column7.Name = "Column7";
+            Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column8.DefaultCellStyle = dataGridViewCellStyle6;
+            Column8.FillWeight = 129.305817F;
+            Column8.HeaderText = "Giá bán ";
+            Column8.MinimumWidth = 8;
+            Column8.Name = "Column8";
+            Column8.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.FillWeight = 155.167023F;
+            Column5.HeaderText = "Trạng thái";
+            Column5.MinimumWidth = 8;
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // infoButtonColumn
+            // 
+            infoButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            infoButtonColumn.FillWeight = 30F;
+            infoButtonColumn.HeaderText = "";
+            infoButtonColumn.Image = Properties.Resources._003_info;
+            infoButtonColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            infoButtonColumn.MinimumWidth = 8;
+            infoButtonColumn.Name = "infoButtonColumn";
+            infoButtonColumn.ReadOnly = true;
+            infoButtonColumn.Width = 8;
+            // 
+            // editButtonColumn
+            // 
+            editButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            editButtonColumn.FillWeight = 30F;
+            editButtonColumn.HeaderText = "";
+            editButtonColumn.Image = Properties.Resources._002_pencil1;
+            editButtonColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            editButtonColumn.MinimumWidth = 8;
+            editButtonColumn.Name = "editButtonColumn";
+            editButtonColumn.ReadOnly = true;
+            editButtonColumn.Width = 8;
+            // 
+            // deleteButtonColumn
+            // 
+            deleteButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            deleteButtonColumn.FillWeight = 30F;
+            deleteButtonColumn.HeaderText = "";
+            deleteButtonColumn.Image = Properties.Resources._001_bin;
+            deleteButtonColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            deleteButtonColumn.MinimumWidth = 8;
+            deleteButtonColumn.Name = "deleteButtonColumn";
+            deleteButtonColumn.ReadOnly = true;
+            deleteButtonColumn.Width = 8;
+            // 
             // SanPhamForm
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
@@ -567,17 +567,17 @@
         private Guna.UI2.WinForms.Guna2ComboBox loaiSanPhamComboBox;
         private Guna.UI2.WinForms.Guna2ComboBox trangThaiComboBox;
         private Label label1;
+        private Panel panel4;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn maSanPhamColumn;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column5;
         private DataGridViewImageColumn infoButtonColumn;
         private DataGridViewImageColumn editButtonColumn;
         private DataGridViewImageColumn deleteButtonColumn;
-        private Panel panel4;
     }
 }

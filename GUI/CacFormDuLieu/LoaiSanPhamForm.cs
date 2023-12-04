@@ -100,7 +100,7 @@ namespace GUI
 
         private void themMoiButton_Click(object sender, EventArgs e)
         {
-            new ChiTietLoaiSanPhamForm("Thêm", this).Show();
+            new ChiTietLoaiSanPhamForm("Thêm", this).ShowDialog();
         }
 
         private void xoaTatCaButton_Click(object sender, EventArgs e)
@@ -140,12 +140,12 @@ namespace GUI
 
             if (columnName.Equals("infoButtonColumn"))
             {
-                new ChiTietLoaiSanPhamForm(loaiSanPham, "Chi tiết", this).Show();
+                new ChiTietLoaiSanPhamForm(loaiSanPham, "Chi tiết", this).ShowDialog();
             }
 
             if (columnName.Equals("editButtonColumn"))
             {
-                new ChiTietLoaiSanPhamForm(loaiSanPham, "Sửa", this).Show();
+                new ChiTietLoaiSanPhamForm(loaiSanPham, "Sửa", this).ShowDialog();
             }
 
             if (columnName.Equals("deleteButtonColumn"))

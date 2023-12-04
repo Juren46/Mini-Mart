@@ -48,6 +48,7 @@
             timKiemButton = new FontAwesome.Sharp.IconButton();
             panel3 = new Panel();
             khachHangDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            panel1 = new Panel();
             Column2 = new DataGridViewTextBoxColumn();
             maKhachHangColumn = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -57,7 +58,6 @@
             Column11 = new DataGridViewTextBoxColumn();
             infoButtonColumn = new DataGridViewImageColumn();
             editButtonColumn = new DataGridViewImageColumn();
-            panel1 = new Panel();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)khachHangDataGridView).BeginInit();
@@ -288,6 +288,17 @@
             khachHangDataGridView.CellFormatting += khachHangDataGridView_CellFormatting;
             khachHangDataGridView.CellPainting += khachHangDataGridView_CellPainting;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(223, 243, 252);
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1183, 821);
+            panel1.TabIndex = 1;
+            // 
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -339,7 +350,7 @@
             // Column9
             // 
             Column9.FillWeight = 70F;
-            Column9.HeaderText = "Bậc thành viên";
+            Column9.HeaderText = "Hạng thành viên";
             Column9.MinimumWidth = 6;
             Column9.Name = "Column9";
             Column9.ReadOnly = true;
@@ -347,7 +358,7 @@
             // Column11
             // 
             Column11.FillWeight = 80F;
-            Column11.HeaderText = "Điểm tích lũy";
+            Column11.HeaderText = "Điểm thành viên";
             Column11.MinimumWidth = 6;
             Column11.Name = "Column11";
             Column11.ReadOnly = true;
@@ -373,17 +384,6 @@
             editButtonColumn.Name = "editButtonColumn";
             editButtonColumn.ReadOnly = true;
             editButtonColumn.Width = 6;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(223, 243, 252);
-            panel1.Controls.Add(panel3);
-            panel1.Controls.Add(panel2);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1183, 821);
-            panel1.TabIndex = 1;
             // 
             // KhachHangForm
             // 

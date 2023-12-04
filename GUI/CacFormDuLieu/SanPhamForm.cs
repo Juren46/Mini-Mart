@@ -52,10 +52,10 @@ namespace GUI
                 sanPhamDataGridView.Rows[i].Cells[1].Value = listSanPham[i].maSanPham;
                 sanPhamDataGridView.Rows[i].Cells[2].Value = listSanPham[i].tenSanPham;
                 sanPhamDataGridView.Rows[i].Cells[3].Value = new LoaiSanPhamBUS().LayLoaiSanPhamTheoMa(listSanPham[i].maLoaiSanPham).tenLoaiSanPham;
-                sanPhamDataGridView.Rows[i].Cells[4].Value = listSanPham[i].maNhaCungCap;
-                sanPhamDataGridView.Rows[i].Cells[5].Value = listSanPham[i].donViTinh;
-                sanPhamDataGridView.Rows[i].Cells[6].Value = listSanPham[i].soLuong;
-                sanPhamDataGridView.Rows[i].Cells[7].Value = listSanPham[i].giaBan.ToString("#,##0") + " VNĐ";
+                sanPhamDataGridView.Rows[i].Cells[4].Value = listSanPham[i].donVi;
+                sanPhamDataGridView.Rows[i].Cells[5].Value = listSanPham[i].soLuong;
+                sanPhamDataGridView.Rows[i].Cells[6].Value = listSanPham[i].giaBan.ToString("#,##0") + " VNĐ";
+                sanPhamDataGridView.Rows[i].Cells[7].Value = listSanPham[i].trangThai;
             }
         }
 
@@ -77,7 +77,7 @@ namespace GUI
             if (sapXepComboBox.SelectedItem != null)
                 sapXep = sapXepComboBox.SelectedItem.ToString();
 
-            listSanPham = sanPhamBUS.TimKiemSanPham(tuKhoa, maLoaiSanPham, maNhaCungCap, trangThai, sapXep);
+            listSanPham = sanPhamBUS.TimKiemSanPham(tuKhoa, maLoaiSanPham, trangThai, sapXep);
 
             LoadDataToDataGridView(listSanPham);
         }
@@ -147,7 +147,7 @@ namespace GUI
 
         private void themMoiButton_Click(object sender, EventArgs e)
         {
-            new ChiTietSanPhamForm("Thêm", this).Show();
+            new ChiTietSanPhamForm("Thêm", this).ShowDialog();
         }
 
         private void xoaTatCaButton_Click(object sender, EventArgs e)
@@ -175,7 +175,7 @@ namespace GUI
                     lamMoiButton_Click(sender, e);
                 }
                 else
-                    CanhBaoForm.ShowAlertMessage("Đã xóa tất cả sản phẩm đã chọn!", CanhBaoForm.AlertType.ERROR);
+                    CanhBaoForm.ShowAlertMessage("Quá trình xóa xảy ra lỗi!", CanhBaoForm.AlertType.ERROR);
             }
         }
 
@@ -187,12 +187,12 @@ namespace GUI
 
             if (columnName.Equals("infoButtonColumn"))
             {
-                new ChiTietSanPhamForm(sanPham, "Chi tiết", this).Show();
+                new ChiTietSanPhamForm(sanPham, "Chi tiết", this).ShowDialog();
             }
 
             if (columnName.Equals("editButtonColumn"))
             {
-                new ChiTietSanPhamForm(sanPham, "Sửa", this).Show();
+                new ChiTietSanPhamForm(sanPham, "Sửa", this).ShowDialog();
             }
 
             if (columnName.Equals("deleteButtonColumn"))

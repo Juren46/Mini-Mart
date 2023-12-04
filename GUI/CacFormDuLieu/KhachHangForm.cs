@@ -46,8 +46,8 @@ namespace GUI
                 khachHangDataGridView.Rows[i].Cells[2].Value = listKhachHang[i].hoTen;
                 khachHangDataGridView.Rows[i].Cells[3].Value = listKhachHang[i].gioiTinh;
                 khachHangDataGridView.Rows[i].Cells[4].Value = listKhachHang[i].soDienThoai;
-                khachHangDataGridView.Rows[i].Cells[5].Value = listKhachHang[i].bacThanhVien;
-                khachHangDataGridView.Rows[i].Cells[6].Value = listKhachHang[i].diemTichLuy;
+                khachHangDataGridView.Rows[i].Cells[5].Value = listKhachHang[i].hangThanhVien;
+                khachHangDataGridView.Rows[i].Cells[6].Value = listKhachHang[i].diemThanhVien;
             }
         }
 

@@ -167,9 +167,9 @@
             label11.ForeColor = Color.FromArgb(0, 79, 111);
             label11.Location = new Point(692, 296);
             label11.Name = "label11";
-            label11.Size = new Size(134, 24);
+            label11.Size = new Size(148, 24);
             label11.TabIndex = 67;
-            label11.Text = "Bậc thành viên";
+            label11.Text = "Hạng thành viên";
             // 
             // emailTextBox
             // 
@@ -267,7 +267,7 @@
             ngaySinhDateTimePicker.CustomizableEdges = customizableEdges11;
             ngaySinhDateTimePicker.FillColor = Color.Empty;
             ngaySinhDateTimePicker.Font = new Font("Microsoft Sans Serif", 14.25F);
-            ngaySinhDateTimePicker.Format = DateTimePickerFormat.Short;
+            ngaySinhDateTimePicker.Format = DateTimePickerFormat.Long;
             ngaySinhDateTimePicker.Location = new Point(377, 219);
             ngaySinhDateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             ngaySinhDateTimePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -318,9 +318,9 @@
             label4.ForeColor = Color.FromArgb(0, 79, 111);
             label4.Location = new Point(377, 296);
             label4.Name = "label4";
-            label4.Size = new Size(117, 24);
+            label4.Size = new Size(146, 24);
             label4.TabIndex = 56;
-            label4.Text = "Điểm tích lũy";
+            label4.Text = "Điểm thành viên";
             // 
             // label3
             // 
