@@ -236,10 +236,6 @@ namespace GUI
                     
                     if (khachHangForm != null)
                         khachHangForm.lamMoiButton_Click(sender, e);
-                    if (banHangForm != null)
-                    {
-
-                    }
 
                     this.Close();
                 }

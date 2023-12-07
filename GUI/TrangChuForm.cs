@@ -64,7 +64,6 @@ namespace GUI
                     btnHoaDon.Visible = true;
                     btnKhuyenMai.Visible = true;
                     btnKhachHang.Visible = true;
-                    btnThongKe.Visible = true;
                     break;
 
                 case "PQ03":

@@ -292,7 +292,7 @@ namespace GUI
 
         private void themMoiNguoiDungButton_Click(object sender, EventArgs e)
         {
-            //new ChiTietKhachHangForm("Thêm").ShowDialog();
+            new ChiTietKhachHangForm("Thêm", this).ShowDialog();
         }
     }
 }
